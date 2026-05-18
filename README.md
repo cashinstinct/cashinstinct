@@ -9,12 +9,12 @@
 
 ## Offres disponibles
 
-| Service | Type | Code / Clé | Avantage |
+| Service | Type | Code | Avantage pour vous |
 |---|---|---|---|
-| [EBOX Internet](https://cashinstinct.github.io/ebox-referral-code-2026/) | Internet résidentiel | `GE911` | Crédit sur les premières factures |
+| [EBOX Internet](https://cashinstinct.github.io/ebox-referral-code-2026/) | Internet résidentiel | `GE911` | Crédit 25$ CAD sur la 2e facture |
 | [HP Instant Ink](https://cashinstinct.github.io/hp-instant-ink/) | Impression & encre | `SVdn7` | 1 mois gratuit |
-| [Stickermule](https://cashinstinct.github.io/stickermule/) | Autocollants & merch | — | Crédit sur la première commande |
-| [Tangerine](https://cashinstinct.github.io/tangerine-orange-key/) | Banque en ligne | Clé Orange | Bonus d'activation |
+| [Stickermule](https://cashinstinct.github.io/stickermule/) | Autocollants & merch | `CASHINSTINCT`  | Crédit 12,50$ CAD sur la première commande |
+| [Tangerine](https://cashinstinct.github.io/tangerine-orange-key/) | Banque en ligne | `14130944S1` | Bonus 50$ CAD d'activation |
 
 ---
 
@@ -41,8 +41,8 @@ Repos associés :
 
 ## Transparence
 
-Certains liens sont affiliés ou de parrainage : vous obtenez le même avantage (rabais, mois gratuit ou bonus),
-et je peux recevoir une récompense en retour — sans coût additionnel pour vous.
+Les liens sont affiliés ou de parrainage : vous obtenez l'avantage (rabais, mois gratuit ou bonus),
+et j'obtiens récompense en retour — sans coût additionnel pour vous.
 
 Si une offre n'est plus valide ou si vous avez une question, ouvrez une [issue](https://github.com/cashinstinct/cashinstinct.github.io/issues).
 
