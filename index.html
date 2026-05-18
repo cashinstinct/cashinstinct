@@ -8,6 +8,44 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cashinstinct.github.io/">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Codes de parrainage Cash Instinct",
+      "description": "Sélection de codes de parrainage et offres exclusives valides au Canada pour l'année 2026.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "EBOX Internet",
+          "url": "https://cashinstinct.github.io/ebox-referral-code-2026/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "HP Instant Ink",
+          "url": "https://cashinstinct.github.io/hp-instant-ink/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Stickermule",
+          "url": "https://cashinstinct.github.io/stickermule/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Tangerine",
+          "url": "https://cashinstinct.github.io/tangerine-orange-key/"
+        }
+      ]
+    }
+  }
+  </script>
+
   <style>
     :root {
       --bg: #f8fafc;
@@ -69,7 +107,7 @@
       letter-spacing: -0.02em;
     }
 
-    h2 {
+    .subtitle {
       font-size: 1.1rem;
       margin: 12px 0 24px;
       color: var(--muted);
@@ -104,8 +142,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 18px 18px 16px;
-      text-decoration: none;
-      color: inherit;
+      position: relative;
       display: block;
       transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
       box-shadow: var(--shadow);
@@ -118,6 +155,16 @@
       background: #f9fbff;
     }
 
+    .link-card-link::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
+
     .link-header {
       display: flex;
       align-items: center;
@@ -127,12 +174,21 @@
     }
 
     .link-title {
-      font-weight: 700;
       font-size: 1.05rem;
       color: var(--text);
       display: flex;
       align-items: center;
       gap: 6px;
+    }
+
+    .link-card-link {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .link-card-link:hover {
+      color: var(--blue);
     }
 
     .link-tag {
@@ -171,6 +227,8 @@
     footer a {
       color: var(--blue);
       text-decoration: none;
+      position: relative;
+      z-index: 2;
     }
 
     footer a:hover {
@@ -197,9 +255,9 @@
         <span>Codes valides au Canada · 2026</span>
       </div>
       <h1>Cash Instinct</h1>
-      <h2>Codes de parrainage au Québec et au Canada</h2>
+      <div class="subtitle">Codes de parrainage au Québec et au Canada</div>
       <p class="intro">
-        Je regroupe ici mes meilleurs codes de parrainage testés au Canada :
+        Je regroupe ici mes meilleurs codes de parrainage testés au Canada&nbsp;:
         rabais sur l’Internet résidentiel, HP Instant Ink, impressions Stickermule
         et offres bancaires Tangerine. Chaque lien mène vers une page dédiée avec
         les conditions détaillées et la marche à suivre.
@@ -207,84 +265,84 @@
     </header>
 
     <section aria-label="Codes de parrainage">
-      <div class="section-label">Internet & services</div>
+      <h2 class="section-label">Internet &amp; services</h2>
       <div class="links-container">
 
-        <a href="./ebox-referral-code-2026/" class="link-card">
+        <article class="link-card">
           <div class="link-header">
-            <div class="link-title">
-              EBOX Internet <span aria-hidden="true">🌐</span>
-            </div>
-            <div class="link-tag">Internet résidentiel</div>
+            <h3 class="link-title">
+              <a href="./ebox-referral-code-2026/" class="link-card-link">EBOX Internet <span aria-hidden="true">🌐</span></a>
+            </h3>
+            <span class="link-tag">Internet résidentiel</span>
           </div>
-          <div class="link-desc">
-            Obtenez exceptionnellement <strong>50$ de crédit</strong> sur vos premières factures EBOX avec le code client
+          <p class="link-desc">
+            Obtenez exceptionnellement <strong>50&nbsp;$ de crédit</strong> sur vos premières factures EBOX avec le code client
             <strong>GE911</strong> (Offre valide jusqu'au 31 mai 2026). Idéal pour réduire le coût de ton installation Internet au Québec.
-          </div>
+          </p>
           <div class="link-meta">
             Détails du montant exact, conditions et capture d’écran de la promo sur la page dédiée.
           </div>
-        </a>
+        </article>
 
-        <a href="./hp-instant-ink/" class="link-card">
+        <article class="link-card">
           <div class="link-header">
-            <div class="link-title">
-              HP Instant Ink <span aria-hidden="true">🖨️</span>
-            </div>
-            <div class="link-tag">Impression & encre</div>
+            <h3 class="link-title">
+              <a href="./hp-instant-ink/" class="link-card-link">HP Instant Ink <span aria-hidden="true">🖨️</span></a>
+            </h3>
+            <span class="link-tag">Impression &amp; encre</span>
           </div>
-          <div class="link-desc">
+          <p class="link-desc">
             1 mois gratuit d’impression avec le code de parrainage
             <strong>SVdn7</strong>. Compatible avec la plupart des imprimantes
             HP récentes (DeskJet, ENVY, OfficeJet, LaserJet) au Canada.
-          </div>
+          </p>
           <div class="link-meta">
             Tutoriel pas à pas + FAQ sur l’abonnement HP Instant Ink et fonctionnement du parrainage.
           </div>
-        </a>
+        </article>
 
       </div>
 
-      <div class="section-label" style="margin-top:24px;">Shopping & impression</div>
+      <h2 class="section-label" style="margin-top:24px;">Shopping &amp; impression</h2>
       <div class="links-container">
 
-        <a href="./stickermule/" class="link-card">
+        <article class="link-card">
           <div class="link-header">
-            <div class="link-title">
-              Stickermule <span aria-hidden="true">📦</span>
-            </div>
-            <div class="link-tag">Autocollants & merch</div>
+            <h3 class="link-title">
+              <a href="./stickermule/" class="link-card-link">Stickermule <span aria-hidden="true">📦</span></a>
+            </h3>
+            <span class="link-tag">Autocollants &amp; merch</span>
           </div>
-          <div class="link-desc">
+          <p class="link-desc">
             Crédit de bienvenue à appliquer sur ta première commande d’autocollants,
             sous-bocks, enveloppes bulles et autres produits personnalisés avec le code de parrainage <strong>CASHINSTINCT</strong>.
-          </div>
+          </p>
           <div class="link-meta">
             Exemple de commande, idées d’utilisation et détails du crédit sur la page Stickermule.
           </div>
-        </a>
+        </article>
 
       </div>
 
-      <div class="section-label" style="margin-top:24px;">Banque & finances</div>
+      <h2 class="section-label" style="margin-top:24px;">Banque &amp; finances</h2>
       <div class="links-container">
 
-        <a href="./tangerine-orange-key/" class="link-card">
+        <article class="link-card">
           <div class="link-header">
-            <div class="link-title">
-              Tangerine <span aria-hidden="true">🍊</span>
-            </div>
-            <div class="link-tag">Banque en ligne</div>
+            <h3 class="link-title">
+              <a href="./tangerine-orange-key/" class="link-card-link">Tangerine <span aria-hidden="true">🍊</span></a>
+            </h3>
+            <span class="link-tag">Banque en ligne</span>
           </div>
-          <div class="link-desc">
+          <p class="link-desc">
             Bonus de bienvenue avec la Clé Orange <strong>14130944S1</strong> à l’ouverture d’un compte chèque
             ou épargne Tangerine. Banque en ligne sans frais mensuels, pratique
             pour un premier compte au Canada.
-          </div>
+          </p>
           <div class="link-meta">
             Explications des conditions, délais de versement du bonus et étapes d’activation.
           </div>
-        </a>
+        </article>
 
       </div>
     </section>
@@ -292,7 +350,7 @@
     <footer>
       <p>© 2026 Cashinstinct — Sélection personnelle de codes de parrainage pour le Canada.</p>
       <p>
-        Les liens sont affiliés : vous obtenez l'avantage (rabais, mois gratuit ou bonus),
+        Les liens sont affiliés&nbsp;: vous obtenez l'avantage (rabais, mois gratuit ou bonus),
         et j'obtiens une récompense de parrainage en retour.
       </p>
       <p>
