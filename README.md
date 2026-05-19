@@ -1,4 +1,4 @@
-# Cash Instinct — Codes de parrainage au Canada 🇨🇦
+# Cashinstinct — Codes de parrainage au Canada 🇨🇦
 
 > Hub de codes de parrainage et offres exclusives testées au Canada (Québec et reste du Canada).  
 > Chaque page liste les conditions exactes, les étapes d'activation et la marche à suivre.
