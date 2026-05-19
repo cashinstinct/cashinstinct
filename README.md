@@ -9,18 +9,21 @@
 
 ## Offres disponibles
 
-| Service | Type | Code/Lien| Avantage pour vous |
+| Service | Type | Code / Lien | Avantage pour vous |
 |---|---|---|---|
-| [EBOX Internet](https://cashinstinct.github.io/ebox-referral-code-2026/) | Internet résidentiel | `GE911` | Crédit 25$ CAD sur la 2e facture |
+| [EBOX Internet](https://cashinstinct.github.io/ebox-referral-code-2026/) | Internet résidentiel | `GE911` | Crédit 50 $ CAD sur les premières factures |
 | [HP Instant Ink](https://cashinstinct.github.io/hp-instant-ink/) | Impression & encre | `SVdn7` | 1 mois gratuit |
-| [Stickermule](https://cashinstinct.github.io/stickermule/) | Autocollants & merch | `CASHINSTINCT`  | Crédit 12,50$ CAD sur la première commande |
-| [Rakuten Canada](https://cashinstinct.github.io/rakuten-canada/) | Achats en ligne | [Lien](https://cashinstinct.github.io/rakuten-canada/) | Bonus 30$ CAD |
-| [Tangerine](https://cashinstinct.github.io/tangerine-orange-key/) | Banque en ligne | `14130944S1` | Bonus 50$ CAD d'activation |
-| [Achieva](https://cashinstinct.github.io/achieva-referral-code) | Banque en ligne | `V381566198` | Bonus 25$ CAD d'activation |
+| [Stickermule](https://cashinstinct.github.io/stickermule/) | Autocollants & merch | `CASHINSTINCT` | Crédit 12,50 $ CAD sur la première commande |
+| [Rakuten Canada](https://cashinstinct.github.io/rakuten-canada/) | Cashback en ligne | [Lien](https://cashinstinct.github.io/rakuten-canada/) | Bonus 30 $ CAD |
+| [Tangerine](https://cashinstinct.github.io/tangerine-orange-key/) | Banque en ligne | `14130944S1` | Bonus 50 $ CAD d'activation |
+| [Achieva Financial](https://cashinstinct.github.io/achieva-referral-code/) | Épargne en ligne | `V381566198` | Bonus 25 $ CAD à l'ouverture |
 
 ---
 
 ## Structure du dépôt
+
+Ce repo (`cashinstinct.github.io`) héberge la **page d'accueil du hub** et le sitemap centralisé.  
+Chaque offre est un repo GitHub Pages indépendant avec sa propre landing page.
 
 Ce repo (`cashinstinct.github.io`) héberge la **page d'accueil du hub** et le sitemap centralisé.  
 Chaque offre est un repo GitHub Pages indépendant avec sa propre landing page.
@@ -34,8 +37,8 @@ cashinstinct.github.io/
 ```
 
 Repos associés :
-- [`hp-instant-ink`](https://github.com/cashinstinct/hp-instant-ink)
 - [`ebox-referral-code-2026`](https://github.com/cashinstinct/ebox-referral-code-2026)
+- [`hp-instant-ink`](https://github.com/cashinstinct/hp-instant-ink)
 - [`stickermule`](https://github.com/cashinstinct/stickermule)
 - [`rakuten-canada`](https://github.com/cashinstinct/rakuten-canada)
 - [`tangerine-orange-key`](https://github.com/cashinstinct/tangerine-orange-key)
@@ -46,7 +49,7 @@ Repos associés :
 ## Transparence
 
 Les liens sont affiliés ou de parrainage : vous obtenez l'avantage (rabais, mois gratuit ou bonus),
-et j'obtiens récompense en retour — sans coût additionnel pour vous.
+et j'obtiens une récompense en retour — sans coût additionnel pour vous.
 
 Si une offre n'est plus valide ou si vous avez une question, ouvrez une [issue](https://github.com/cashinstinct/cashinstinct.github.io/issues).
 
