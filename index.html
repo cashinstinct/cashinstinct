@@ -62,9 +62,10 @@
             { "@type": "ListItem", "position": 2, "name": "Sticker Mule", "url": "https://cashinstinct.github.io/stickermule/fr/" },
             { "@type": "ListItem", "position": 3, "name": "HP Instant Ink", "url": "https://cashinstinct.github.io/hp-instant-ink/" },
             { "@type": "ListItem", "position": 4, "name": "Tangerine", "url": "https://cashinstinct.github.io/tangerine-orange-key/" },
-            { "@type": "ListItem", "position": 5, "name": "Achieva Financial", "url": "https://cashinstinct.github.io/achieva-referral-code/" }
+            { "@type": "ListItem", "position": 5, "name": "Achieva Financial", "url": "https://cashinstinct.github.io/achieva-referral-code/" },
             { "@type": "ListItem", "position": 6, "name": "Rakuten Canada", "url": "https://cashinstinct.github.io/rakuten-canada/" },
-            { "@type": "ListItem", "position": 7, "name": "Swagbucks Canada", "url": "https://cashinstinct.github.io/swagbucks-canada/" },]
+            { "@type": "ListItem", "position": 7, "name": "Swagbucks Canada", "url": "https://cashinstinct.github.io/swagbucks-canada/" }
+          ]
         }
       }
     ]
@@ -76,6 +77,7 @@
       --bg: #f8fafc;
       --surface: #ffffff;
       --surface-soft: #f1f5f9;
+      --surface-muted: #e2e8f0;
       --text: #0f172a;
       --muted: #475569;
       --line: #e2e8f0;
@@ -89,6 +91,7 @@
       --bg: #0b0f17;
       --surface: #131a26;
       --surface-soft: #1a2333;
+      --surface-muted: #222f44;
       --text: #f1f5f9;
       --muted: #94a3b8;
       --line: #1e293b;
@@ -147,6 +150,29 @@
       color: var(--muted);
       margin-bottom: 28px;
       max-width: 60ch;
+    }
+
+    .method-block {
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow);
+    }
+    .method-block h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .method-block p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .method-block p:last-child {
+      margin-bottom: 0;
     }
 
     .links-container {
@@ -215,7 +241,7 @@
       font-size: 0.78rem;
       padding: 2px 8px;
       border-radius: 999px;
-      background: var(--surface-soft);
+      background: var(--surface-muted);
       color: var(--text);
       font-weight: 500;
       white-space: nowrap;
@@ -298,11 +324,16 @@
       </p>
     </header>
 
-        <section aria-label="Codes de parrainage">
+    <section class="method-block" aria-label="Méthodologie et gestion des offres">
+      <h2>Comment sont sélectionnées et suivies les offres ?</h2>
+      <p>Optimiser ses finances personnelles ne doit pas se faire au détriment de la clarté. Contrairement aux plateformes d'accumulation massives qui répertorient des centaines de coupons expirés, Cashinstinct applique une politique de sélection stricte : chaque service présenté ici est utilisé au quotidien ou a fait l'objet d'un suivi de facturation rigoureux.</p>
+      <p>Les critères de maintien d'une offre reposent sur la stabilité technique du parrainage, la transparence des clauses de versement des bonus et l'absence de frais cachés. Les données de cette plateforme sont auditées et nettoyées à chaque cycle trimestriel pour correspondre exactement aux architectures de suivi en vigueur au Canada.</p>
+    </section>
+
+    <section aria-label="Codes de parrainage">
 
       <h2 class="section-label">Internet &amp; Services résidentiels</h2>
       <div class="links-container">
-
         <article class="link-card">
           <div class="link-header">
             <h3 class="link-title">
@@ -318,12 +349,10 @@
             Détails, conditions et capture d'écran de la promo sur la page dédiée.
           </div>
         </article>
-
       </div>
 
       <h2 class="section-label" style="margin-top:24px;">Impression et Marchandise</h2>
       <div class="links-container">
-
         <article class="link-card">
           <div class="link-header">
             <h3 class="link-title">
@@ -354,10 +383,10 @@
             Tutoriel pas à pas + FAQ sur l'abonnement HP Instant Ink.
           </div>
         </article>
+      </div>
 
-         <h2 class="section-label" style="margin-top:24px;">Banque &amp; finances</h2>
+      <h2 class="section-label" style="margin-top:24px;">Banque &amp; finances</h2>
       <div class="links-container">
-
         <article class="link-card">
           <div class="link-header">
             <h3 class="link-title">
@@ -389,12 +418,10 @@
             Taux d'intérêt compétitifs, ouverture 100 % en ligne et détails du bonus sur la page dédiée.
           </div>
         </article>
-
       </div>
 
-      <h2 class="section-label" style="margin-top:24px;">Cashback & Récompenses</h2>
+      <h2 class="section-label" style="margin-top:24px;">Cashback &amp; Récompenses</h2>
       <div class="links-container">
-   
         <article class="link-card">
           <div class="link-header">
             <h3 class="link-title">
@@ -411,7 +438,6 @@
           </div>
         </article>
 
-             
         <article class="link-card">
           <div class="link-header">
             <h3 class="link-title">
@@ -426,10 +452,8 @@
             Inscription gratuite. Plateforme testée personnellement depuis 2009 avec plus de 26 000 SB gagnés.
           </div>
         </article>
-
       </div>
 
-      </div>
     </section>
 
     <footer>
@@ -450,7 +474,7 @@
         <a href="https://cashinstinct.github.io/tangerine-orange-key/">Tangerine</a> · 
         <a href="https://cashinstinct.github.io/achieva-referral-code/">Achieva</a> · 
         <a href="https://cashinstinct.github.io/rakuten-canada/">Rakuten</a> · 
-       <a href="https://cashinstinct.github.io/swagbucks-canada/">Swagbucks</a>
+        <a href="https://cashinstinct.github.io/swagbucks-canada/">Swagbucks</a>
       </div>
     </footer>
   </main>
