@@ -112,8 +112,14 @@
       justify-content: center;
     }
 
-    main { width: 100%; max-width: 720px; text-align: left; }
-    header { margin-bottom: 32px; }
+    main { 
+      width: 100%; 
+      max-width: 720px; 
+      margin-inline: auto; /* Centre parfaitement tout le bloc au milieu du desktop */
+      text-align: left; 
+    }
+    
+    header { margin-bottom: 32px; position: relative; }
 
     .badge {
       display: inline-flex;
@@ -148,8 +154,30 @@
     .intro {
       font-size: 0.95rem;
       color: var(--muted);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       max-width: 60ch;
+    }
+
+    /* Bouton de thème intégré proprement dans la structure pour éviter les sauts */
+    .theme-wrap {
+      margin-bottom: 28px;
+    }
+    .theme-btn {
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 6px 16px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      transition: background 0.15s ease;
+    }
+    .theme-btn:hover {
+      background: var(--surface-muted);
     }
 
     .method-block {
@@ -265,19 +293,6 @@
       z-index: 2;
     }
 
-    .theme-btn {
-      position: absolute;
-      top: 24px;
-      right: 16px;
-      background: var(--surface-soft);
-      border: 1px solid var(--line);
-      color: var(--text);
-      cursor: pointer;
-      font-size: 1rem;
-      padding: 6px 12px;
-      border-radius: 6px;
-    }
-
     footer {
       margin-top: 24px;
       font-size: 0.82rem;
@@ -298,15 +313,11 @@
     }
 
     @media (max-width: 520px) {
-      body { padding-top: 64px; }
       .link-header { align-items: flex-start; flex-direction: column; gap: 4px; }
-      .theme-btn { top: 12px; right: 16px; }
     }
   </style>
 </head>
 <body>
-
-  <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle dark mode">🌙</button>
 
   <main>
     <header>
@@ -322,6 +333,10 @@
         Chaque lien mène vers une page dédiée avec les conditions détaillées
         et la marche à suivre.
       </p>
+      
+      <div class="theme-wrap">
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle dark mode">🌙 Mode Sombre</button>
+      </div>
     </header>
 
     <section class="method-block" aria-label="Méthodologie et gestion des offres">
@@ -484,7 +499,7 @@
     const root = document.documentElement;
 
     function setThemeUI(isDark) {
-      themeToggle.textContent = isDark ? "☀️" : "🌙";
+      themeToggle.textContent = isDark ? "☀️ Mode Clair" : "🌙 Mode Sombre";
       themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
     }
 
