@@ -102,24 +102,63 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    
     body {
       background: var(--bg);
       color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.5;
       padding: 40px 16px 56px;
-      display: flex;
-      justify-content: center;
     }
 
-    main { 
-      width: 100%; 
-      max-width: 720px; 
-      margin-inline: auto; /* Centre parfaitement tout le bloc au milieu du desktop */
-      text-align: left; 
+    /* Conteneur principal centré global qui gère la largeur desktop */
+    .wrapper {
+      width: 100%;
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    
-    header { margin-bottom: 32px; position: relative; }
+
+    header { 
+      margin-bottom: 32px; 
+      position: relative; 
+      padding-top: 10px;
+    }
+
+    /* Zone contenant le titre h1 et le bouton alignés sur la même ligne */
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 3vw, 2.3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .theme-btn {
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.95rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background 0.15s ease;
+      flex-shrink: 0;
+    }
+    .theme-btn:hover {
+      background: var(--surface-muted);
+    }
 
     .badge {
       display: inline-flex;
@@ -133,20 +172,13 @@
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
     .badge span.flag { font-size: 0.9rem; }
 
-    h1 {
-      font-size: clamp(1.9rem, 3vw, 2.3rem);
-      font-weight: 800;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-
     .subtitle {
       font-size: 1.1rem;
-      margin: 12px 0 24px;
+      margin: 0 0 24px 0;
       color: var(--muted);
       font-weight: 600;
     }
@@ -154,30 +186,8 @@
     .intro {
       font-size: 0.95rem;
       color: var(--muted);
-      margin-bottom: 24px;
-      max-width: 60ch;
-    }
-
-    /* Bouton de thème intégré proprement dans la structure pour éviter les sauts */
-    .theme-wrap {
       margin-bottom: 28px;
-    }
-    .theme-btn {
-      background: var(--surface-soft);
-      border: 1px solid var(--line);
-      color: var(--text);
-      cursor: pointer;
-      font-size: 1rem;
-      padding: 6px 16px;
-      border-radius: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-      transition: background 0.15s ease;
-    }
-    .theme-btn:hover {
-      background: var(--surface-muted);
+      max-width: 60ch;
     }
 
     .method-block {
@@ -217,6 +227,7 @@
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 12px;
+      display: block;
     }
 
     .link-card {
@@ -313,19 +324,26 @@
     }
 
     @media (max-width: 520px) {
+      .header-top { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .theme-btn { align-self: flex-start; }
       .link-header { align-items: flex-start; flex-direction: column; gap: 4px; }
     }
   </style>
 </head>
 <body>
 
-  <main>
+  <div class="wrapper">
     <header>
       <div class="badge">
         <span class="flag">🇨🇦</span>
         <span>Codes valides au Canada · 2026</span>
       </div>
-      <h1>Cashinstinct</h1>
+      
+      <div class="header-top">
+        <h1>Cashinstinct</h1>
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle dark mode">🌙 Mode Sombre</button>
+      </div>
+
       <div class="subtitle">Codes de parrainage au Québec et au Canada</div>
       <p class="intro">
         Je regroupe ici mes meilleurs codes de parrainage testés au Canada&nbsp;:
@@ -333,10 +351,6 @@
         Chaque lien mène vers une page dédiée avec les conditions détaillées
         et la marche à suivre.
       </p>
-      
-      <div class="theme-wrap">
-        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle dark mode">🌙 Mode Sombre</button>
-      </div>
     </header>
 
     <section class="method-block" aria-label="Méthodologie et gestion des offres">
@@ -492,7 +506,7 @@
         <a href="https://cashinstinct.github.io/swagbucks-canada/">Swagbucks</a>
       </div>
     </footer>
-  </main>
+  </div>
 
   <script>
     const themeToggle = document.getElementById("theme-toggle");
