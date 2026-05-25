@@ -101,7 +101,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; background: var(--bg); }
+    html { scroll-behavior: smooth; }
     
     body {
       background: var(--bg);
@@ -109,20 +109,19 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.5;
       padding: 40px 16px 56px;
-      width: 100%;
     }
 
-    /* Le Wrapper Centré Absolu Impeccable sur Desktop Wide */
     .wrapper {
       width: 100%;
       max-width: 740px;
-      margin: 0 auto; /* Force l'équilibrage strict des marges gauche et droite */
-      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     header { 
       margin-bottom: 32px; 
-      position: relative;
+      position: relative; 
+      padding-top: 10px;
     }
 
     .header-top {
@@ -194,7 +193,8 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 20px;
-      margin-bottom: 40px;
+      margin-top: 48px; /* Espacement propre pour la fin de page */
+      margin-bottom: 24px;
       box-shadow: var(--shadow);
     }
     .method-block h2 {
@@ -352,12 +352,6 @@
       </p>
     </header>
 
-    <section class="method-block" aria-label="Méthodologie et gestion des offres">
-      <h2>Comment sont sélectionnées et suivies les offres ?</h2>
-      <p>Optimiser ses finances personnelles ne doit pas se faire au détriment de la clarté. Contrairement aux plateformes d'accumulation massives qui répertorient des centaines de coupons expirés, Cashinstinct applique une politique de sélection stricte : chaque service présenté ici est utilisé au quotidien ou a fait l'objet d'un suivi de facturation rigoureux.</p>
-      <p>Les critères de maintien d'une offre reposent sur la stabilité technique du parrainage, la transparence des clauses de versement des bonus et l'absence de frais caches. Les données de cette plateforme sont auditées et nettoyées à chaque cycle trimestriel pour correspondre exactement aux architectures de suivi en vigueur au Canada.</p>
-    </section>
-
     <section aria-label="Codes de parrainage">
 
       <h2 class="section-label">Internet &amp; Services résidentiels</h2>
@@ -482,6 +476,12 @@
         </article>
       </div>
 
+    </section>
+
+    <section class="method-block" aria-label="Méthodologie et gestion des offres">
+      <h2>Comment sont sélectionnées et suivies les offres ?</h2>
+      <p>Optimiser ses finances personnelles ne doit pas se faire au détriment de la clarté. Contrairement aux plateformes d'accumulation massives qui répertorient des centaines de coupons expirés, Cashinstinct applique une politique de sélection stricte : chaque service présenté ici est utilisé au quotidien ou a fait l'objet d'un suivi de facturation rigoureux.</p>
+      <p>Les critères de maintien d'une offre reposent sur la stabilité technique du parrainage, la transparence des clauses de versement des bonus et l'absence de frais cachés. Les données de cette plateforme sont auditées et nettoyées à chaque cycle trimestriel pour correspondre exactement aux architectures de suivi en vigueur au Canada.</p>
     </section>
 
     <footer>
