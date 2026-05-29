@@ -53,7 +53,7 @@
         "name": "Cashinstinct — Codes de parrainage Canada",
         "isPartOf": { "@id": "https://cashinstinct.github.io/#website" },
         "inLanguage": "fr-CA",
-        "dateModified": "2026-05-24",
+        "dateModified": "2026-05-29",
         "mainEntity": {
           "@type": "ItemList",
           "name": "Sélection de parrainages Cash Instinct",
@@ -83,6 +83,7 @@
       --line: #e2e8f0;
       --blue: #2563eb;
       --blue-soft: #dbeafe;
+      --blue-contrast: #1e40af; /* Ratio optimal WCAG AA pour le mode clair */
       --shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
       --radius: 14px;
     }
@@ -97,6 +98,7 @@
       --line: #1e293b;
       --blue: #3b82f6;
       --blue-soft: #1e293b;
+      --blue-contrast: #3b82f6;
       --shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
     }
 
@@ -108,18 +110,18 @@
       color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.5;
-      padding: 40px 16px 56px;
+      padding: 40px 24px 56px;
     }
 
     .wrapper {
       width: 100%;
-      max-width: 740px;
+      max-width: 1140px; /* Élargi pour utiliser l'espace bureau */
       margin-left: auto;
       margin-right: auto;
     }
 
     header { 
-      margin-bottom: 32px; 
+      margin-bottom: 40px; 
       position: relative; 
       padding-top: 10px;
     }
@@ -133,7 +135,7 @@
     }
 
     h1 {
-      font-size: clamp(1.9rem, 3vw, 2.3rem);
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
       font-weight: 800;
       letter-spacing: -0.02em;
     }
@@ -165,9 +167,9 @@
       padding: 4px 12px;
       border-radius: 999px;
       background: var(--blue-soft);
-      color: var(--blue);
+      color: var(--blue-contrast);
       font-size: 0.78rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       margin-bottom: 14px;
@@ -175,36 +177,36 @@
     .badge span.flag { font-size: 0.9rem; }
 
     .subtitle {
-      font-size: 1.1rem;
-      margin: 0 0 24px 0;
+      font-size: 1.25rem;
+      margin: 0 0 16px 0;
       color: var(--muted);
       font-weight: 600;
     }
 
     .intro {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--muted);
       margin-bottom: 28px;
-      max-width: 60ch;
+      max-width: 75ch;
     }
 
     .method-block {
       background: var(--surface-soft);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 20px;
-      margin-top: 48px; /* Espacement propre pour la fin de page */
+      padding: 24px;
+      margin-top: 48px;
       margin-bottom: 24px;
       box-shadow: var(--shadow);
     }
     .method-block h2 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 800;
       margin-bottom: 12px;
       color: var(--text);
     }
     .method-block p {
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       color: var(--muted);
       margin-bottom: 12px;
     }
@@ -212,20 +214,27 @@
       margin-bottom: 0;
     }
 
+    /* Grille élargie pour le bureau, liste simple sur mobile */
     .links-container {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
       margin-bottom: 32px;
     }
 
+    @media (min-width: 768px) {
+      .links-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     .section-label {
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       display: block;
     }
 
@@ -233,9 +242,11 @@
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 18px 18px 16px;
+      padding: 22px;
       position: relative;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
       box-shadow: var(--shadow);
     }
@@ -256,12 +267,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 4px;
+      gap: 12px;
+      margin-bottom: 10px;
     }
 
     .link-title {
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       color: var(--text);
       display: flex;
       align-items: center;
@@ -277,55 +288,68 @@
 
     .link-tag {
       font-size: 0.78rem;
-      padding: 2px 8px;
+      padding: 2px 10px;
       border-radius: 999px;
       background: var(--surface-muted);
       color: var(--text);
-      font-weight: 500;
+      font-weight: 600;
       white-space: nowrap;
       position: relative;
       z-index: 2;
     }
 
     .link-desc {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--muted);
-      margin-bottom: 6px;
+      margin-bottom: 12px;
       position: relative;
       z-index: 2;
+      flex-grow: 1;
     }
 
     .link-meta {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--muted);
-      opacity: 0.8;
+      opacity: 0.9;
       position: relative;
       z-index: 2;
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+    
+    .link-meta a {
+      color: var(--blue-contrast);
+      text-decoration: underline;
+      position: relative;
+      z-index: 3;
+      font-weight: 600;
     }
 
     footer {
-      margin-top: 24px;
-      font-size: 0.82rem;
+      margin-top: 40px;
+      font-size: 0.85rem;
       color: var(--muted);
       border-top: 1px solid var(--line);
-      padding-top: 16px;
+      padding-top: 24px;
     }
-    footer p + p { margin-top: 4px; }
-    footer a { color: var(--blue); text-decoration: none; position: relative; z-index: 2; }
+    footer p + p { margin-top: 6px; }
+    footer a { color: var(--blue-contrast); text-decoration: none; position: relative; z-index: 2; font-weight: 600; }
     footer a:hover { text-decoration: underline; }
 
     .internal-links {
-      margin-top: 12px;
-      font-size: 0.78rem;
+      margin-top: 16px;
+      font-size: 0.8rem;
       display: flex;
-      gap: 8px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     @media (max-width: 520px) {
+      body { padding: 24px 16px 40px; }
       .header-top { flex-direction: column; align-items: flex-start; gap: 12px; }
       .theme-btn { align-self: flex-start; }
-      .link-header { align-items: flex-start; flex-direction: column; gap: 4px; }
+      .link-header { align-items: flex-start; flex-direction: column; gap: 6px; }
+      .link-tag { align-self: flex-start; }
     }
   </style>
 </head>
@@ -341,158 +365,162 @@
       <div class="header-top">
         <h1>Cashinstinct</h1>
         <div style="display: flex; gap: 10px; align-items: center;">
-          <a href="https://www.youtube.com/@cashinstinct_hub" target="_blank" rel="noopener noreferrer" class="theme-btn" style="text-decoration: none;">
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="theme-btn" style="text-decoration: none;">
             ▶️ YouTube
           </a>
-          <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle dark mode">🌙 Mode Sombre</button>
+          <button id="theme-toggle" class="theme-btn" type="button" aria-label="Changer le mode de couleur">HN Mode Sombre</button>
         </div>
       </div>
 
       <div class="subtitle">Codes de parrainage au Québec et au Canada</div>
       <p class="intro">
-        Je regroupe ici mes meilleurs codes de parrainage testés au Canada&nbsp;:
+        Je regroupe ici mes meilleurs codes de parrainage testés au Canada :
         Internet résidentiel, impression, shopping, cashback et comptes en ligne.
         Chaque lien mène vers une page dédiée avec les conditions détaillées
         et la marche à suivre.
       </p>
     </header>
 
-    <section aria-label="Codes de parrainage">
+    <main id="main-content">
 
-      <h2 class="section-label">Internet &amp; Services résidentiels</h2>
-      <div class="links-container">
-        <article class="link-card">
-          <div class="link-header">
-            <h3 class="link-title">
-              <a href="https://cashinstinct.github.io/ebox-referral-code-2026/" class="link-card-link">EBOX Internet <span aria-hidden="true">🌐</span></a>
-            </h3>
-            <span class="link-tag">Internet résidentiel</span>
-          </div>
-          <p class="link-desc">
-            Obtenez exceptionnellement <strong>50&nbsp;$ de crédit</strong> sur vos premières factures EBOX avec le code client
-            <strong>GE911</strong> (offre de parrainage valide jusqu'au 31 mai 2026).
-          </p>
-          <div class="link-meta">
-            Détails, conditions et capture d'écran de la promo sur la page dédiée.
-          </div>
-        </article>
-      </div>
+      <section aria-label="Codes de parrainage">
 
-      <h2 class="section-label" style="margin-top:24px;">Impression et Marchandise</h2>
-      <div class="links-container">
-        <article class="link-card">
-          <div class="link-header">
-            <h3 class="link-title">
-              <a href="https://cashinstinct.github.io/stickermule/fr/" class="link-card-link">Sticker Mule <span aria-hidden="true">📦</span></a>
-            </h3>
-            <span class="link-tag">Autocollants &amp; merch</span>
-          </div>
-          <p class="link-desc">
-            Bénéficiez automatiquement d'un <strong>crédit promotionnel de 10 $ USD (ou 12,50 $ CAD)</strong> lors de votre inscription via notre lien d'invitation officiel pour toute première commande d'autocollants personnalisés de 30 $ USD (38 $ CAD) ou plus.
-          </p>
-          <div class="link-meta">
-            Explications sur les devises et guide d'activation complet en français. Version <a href="https://cashinstinct.github.io/stickermule/" style="position: relative; z-index: 2; color: var(--blue); text-decoration: none;">Global / English</a> aussi disponible.
-          </div>
-        </article>
+        <h2 class="section-label">Internet & Services résidentiels</h2>
+        <div class="links-container">
+          <article class="link-card">
+            <div class="link-header">
+              <h3 class="link-title">
+                <a href="https://cashinstinct.github.io/ebox-referral-code-2026/" class="link-card-link">EBOX Internet <span aria-hidden="true">🌐</span></a>
+              </h3>
+              <span class="link-tag">Internet résidentiel</span>
+            </div>
+            <p class="link-desc">
+              Obtenez exceptionnellement <strong>50 $ de crédit</strong> sur vos premières factures EBOX avec le code client
+              <strong>GE911</strong> (offre de parrainage valide jusqu'au 31 mai 2026).
+            </p>
+            <div class="link-meta">
+              Détails, conditions et capture d'écran de la promo sur la page dédiée.
+            </div>
+          </article>
+        </div>
 
-        <article class="link-card">
-          <div class="link-header">
-            <h3 class="link-title">
-              <a href="https://cashinstinct.github.io/hp-instant-ink/" class="link-card-link">HP Instant Ink <span aria-hidden="true">🖨️</span></a>
-            </h3>
-            <span class="link-tag">Impression &amp; encre</span>
-          </div>
-          <p class="link-desc">
-            1 mois gratuit d'impression avec le code de parrainage
-            <strong>SVdn7</strong>. Compatible avec la plupart des imprimantes HP récentes au Canada.
-          </p>
-          <div class="link-meta">
-            Tutoriel pas à pas + FAQ sur l'abonnement HP Instant Ink.
-          </div>
-        </article>
-      </div>
+        <h2 class="section-label" style="margin-top:24px;">Impression et Marchandise</h2>
+        <div class="links-container">
+          <article class="link-card">
+            <div class="link-header">
+              <h3 class="link-title">
+                <a href="https://cashinstinct.github.io/stickermule/fr/" class="link-card-link">Sticker Mule <span aria-hidden="true">📦</span></a>
+              </h3>
+              <span class="link-tag">Autocollants & merch</span>
+            </div>
+            <p class="link-desc">
+              Bénéficiez automatiquement d'un <strong>crédit promotionnel de 10 $ USD (ou 12,50 $ CAD)</strong> lors de votre inscription via notre lien d'invitation officiel pour toute première commande d'autocollants personnalisés de 30 $ USD (38 $ CAD) ou plus.
+            </p>
+            <div class="link-meta">
+              Explications sur les devises et guide d'activation complet en français. Version <a href="https://cashinstinct.github.io/stickermule/">Global / English</a> aussi disponible.
+            </div>
+          </article>
 
-      <h2 class="section-label" style="margin-top:24px;">Banque &amp; finances</h2>
-      <div class="links-container">
-        <article class="link-card">
-          <div class="link-header">
-            <h3 class="link-title">
-              <a href="https://cashinstinct.github.io/tangerine-orange-key/" class="link-card-link">Banque Tangerine <span aria-hidden="true">🍊</span></a>
-            </h3>
-            <span class="link-tag">Banque en ligne</span>
-          </div>
-          <p class="link-desc">
-            Bonus de bienvenue avec la Clé Orange <strong>14130944S1</strong> à l'ouverture d'un compte chèque
-            ou épargne Tangerine. Banque en ligne sans frais mensuels.
-          </p>
-          <div class="link-meta">
-            Conditions, délais de versement du bonus et étapes d'activation sur la page dédiée.
-          </div>
-        </article>
+          <article class="link-card">
+            <div class="link-header">
+              <h3 class="link-title">
+                <a href="https://cashinstinct.github.io/hp-instant-ink/" class="link-card-link">HP Instant Ink <span aria-hidden="true">🖨️</span></a>
+              </h3>
+              <span class="link-tag">Impression & encre</span>
+            </div>
+            <p class="link-desc">
+              1 mois gratuit d'impression avec le code de parrainage
+              <strong>SVdn7</strong>. Compatible avec la plupart des imprimantes HP récentes au Canada.
+            </p>
+            <div class="link-meta">
+              Tutoriel pas à pas + FAQ sur l'abonnement HP Instant Ink.
+            </div>
+          </article>
+        </div>
 
-        <article class="link-card">
-          <div class="link-header">
-            <h3 class="link-title">
-              <a href="https://cashinstinct.github.io/achieva-referral-code/" class="link-card-link">Achieva Financial <span aria-hidden="true">🏦</span></a>
-            </h3>
-            <span class="link-tag">Épargne en ligne</span>
-          </div>
-          <p class="link-desc">
-            <strong>25&nbsp;$ de bonus</strong> à l'ouverture d'un compte avec le code de parrainage
-            <strong>V381566198</strong>. Dépôt minimum de 250&nbsp;$ et compte maintenu au moins 1 mois.
-          </p>
-          <div class="link-meta">
-            Taux d'intérêt compétitifs, ouverture 100 % en ligne et détails du bonus sur la page dédiée.
-          </div>
-        </article>
-      </div>
+        <h2 class="section-label" style="margin-top:24px;">Banque & finances</h2>
+        <div class="links-container">
+          <article class="link-card">
+            <div class="link-header">
+              <h3 class="link-title">
+                <a href="https://cashinstinct.github.io/tangerine-orange-key/" class="link-card-link">Banque Tangerine <span aria-hidden="true">🍊</span></a>
+              </h3>
+              <span class="link-tag">Banque en ligne</span>
+            </div>
+            <p class="link-desc">
+              Bonus de bienvenue avec la Clé Orange <strong>14130944S1</strong> à l'ouverture d'un compte chèque
+              ou épargne Tangerine. Banque en ligne sans frais mensuels.
+            </p>
+            <div class="link-meta">
+              Conditions, délais de versement du bonus et étapes d'activation sur la page dédiée.
+            </div>
+          </article>
 
-      <h2 class="section-label" style="margin-top:24px;">Cashback &amp; Récompenses</h2>
-      <div class="links-container">
-        <article class="link-card">
-          <div class="link-header">
-            <h3 class="link-title">
-              <a href="https://cashinstinct.github.io/rakuten-canada/" class="link-card-link">Rakuten Canada <span aria-hidden="true">💰</span></a>
-            </h3>
-            <span class="link-tag">Cashback</span>
-          </div>
-          <p class="link-desc">
-            Obtenez <strong>30&nbsp;$ de cashback</strong> en argent réel sur votre premier achat de 30&nbsp;$+ via le lien de parrainage.
-            Aucun code à entrer — le lien active le bonus automatiquement.
-          </p>
-          <div class="link-meta">
-            Guide étape par étape, marchands partenaires et FAQ sur la page dédiée.
-          </div>
-        </article>
+          <article class="link-card">
+            <div class="link-header">
+              <h3 class="link-title">
+                <a href="https://cashinstinct.github.io/achieva-referral-code/" class="link-card-link">Achieva Financial <span aria-hidden="true">🏦</span></a>
+              </h3>
+              <span class="link-tag">Épargne en ligne</span>
+            </div>
+            <p class="link-desc">
+              <strong>25 $ de bonus</strong> à l'ouverture d'un compte avec le code de parrainage
+              <strong>V381566198</strong>. Dépôt minimum de 250 $ et compte maintenu au moins 1 mois.
+            </p>
+            <div class="link-meta">
+              Taux d'intérêt compétitifs, ouverture 100 % en ligne et détails du bonus sur la page dédiée.
+            </div>
+          </article>
+        </div>
 
-        <article class="link-card">
-          <div class="link-header">
-            <h3 class="link-title">
-              <a href="https://cashinstinct.github.io/swagbucks-canada/" class="link-card-link">Swagbucks<span aria-hidden="true">🎯</span></a>
-            </h3>
-            <span class="link-tag">Sondages &amp; récompenses</span>
-          </div>
-          <p class="link-desc">
-            Obtenez un <strong>bonus de 300 SB (3&nbsp;$)</strong>. Accumulez des cartes-cadeaux et de l'argent PayPal gratuitement en répondant à des sondages ou en magasinant.
-          </p>
-          <div class="link-meta">
-            Inscription gratuite. Plateforme testée personnellement depuis 2009 avec plus de 26 000 SB gagnés.
-          </div>
-        </article>
-      </div>
+        <h2 class="section-label" style="margin-top:24px;">Cashback & Récompenses</h2>
+        <div class="links-container">
+          <article class="link-card">
+            <div class="link-header">
+              <h3 class="link-title">
+                <a href="https://cashinstinct.github.io/rakuten-canada/" class="link-card-link">Rakuten Canada <span aria-hidden="true">💰</span></a>
+              </h3>
+              <span class="link-tag">Cashback</span>
+            </div>
+            <p class="link-desc">
+              Obtenez <strong>30 $ de cashback</strong> en argent réel sur votre premier achat de 30 $+ via le lien de parrainage.
+              Aucun code à entrer — le lien active le bonus automatiquement.
+            </p>
+            <div class="link-meta">
+              Guide étape par étape, marchands partenaires et FAQ sur la page dédiée.
+            </div>
+          </article>
 
-    </section>
+          <article class="link-card">
+            <div class="link-header">
+              <h3 class="link-title">
+                <a href="https://cashinstinct.github.io/swagbucks-canada/" class="link-card-link">Swagbucks <span aria-hidden="true">🎯</span></a>
+              </h3>
+              <span class="link-tag">Sondages & récompenses</span>
+            </div>
+            <p class="link-desc">
+              Obtenez un <strong>bonus de 300 SB (3 $)</strong>. Accumulez des cartes-cadeaux et de l'argent PayPal gratuitement en répondant à des sondages ou en magasinant.
+            </p>
+            <div class="link-meta">
+              Inscription gratuite. Plateforme testée personnellement depuis 2009 avec plus de 26 000 SB gagnés.
+            </div>
+          </article>
+        </div>
 
-    <section class="method-block" aria-label="Méthodologie et gestion des offres">
-      <h2>Comment sont sélectionnées et suivies les offres ?</h2>
-      <p>Optimiser ses finances personnelles ne doit pas se faire au détriment de la clarté. Contrairement aux plateformes d'accumulation massives qui répertorient des centaines de coupons expirés, Cashinstinct applique une politique de sélection stricte : chaque service présenté ici est utilisé au quotidien ou a fait l'objet d'un suivi de facturation rigoureux.</p>
-      <p>Les critères de maintien d'une offre reposent sur la stabilité technique du parrainage, la transparence des clauses de versement des bonus et l'absence de frais cachés. Les données de cette plateforme sont auditées et nettoyées à chaque cycle trimestriel pour correspondre exactement aux architectures de suivi en vigueur au Canada.</p>
-    </section>
+      </section>
+
+      <section class="method-block" aria-label="Méthodologie et gestion des offres">
+        <h2>Comment sont sélectionnées et suivies les offres ?</h2>
+        <p>Optimiser ses finances personnelles ne doit pas se faire au détriment de la clarté. Contrairement aux plateformes d'accumulation massives qui répertorient des centaines de coupons expirés, Cashinstinct applique une politique de sélection stricte : chaque service présenté ici est utilisé au quotidien ou a fait l'objet d'un suivi de facturation rigoureux.</p>
+        <p>Les critères de maintien d'une offre reposent sur la stabilité technique du parrainage, la transparence des clauses de versement des bonus et l'absence de frais cachés. Les données de cette plateforme sont auditées et nettoyées à chaque cycle trimestriel pour correspondre exactement aux architectures de suivi en vigueur au Canada.</p>
+      </section>
+
+    </main>
 
     <footer>
       <p>© 2026 Cashinstinct — Sélection personnelle de codes de parrainage pour le Canada.</p>
       <p>
-        Les liens sont affiliés&nbsp;: vous obtenez l'avantage (rabais, mois gratuit, cashback ou bonus),
+        Les liens sont affiliés : vous obtenez l'avantage (rabais, mois gratuit, cashback ou bonus),
         et j'obtiens une récompense de parrainage en retour.
       </p>
       <p>
