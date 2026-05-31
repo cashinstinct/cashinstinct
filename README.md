@@ -18,7 +18,7 @@
 | [Tangerine](https://cashinstinct.github.io/tangerine-orange-key/) | Banque en ligne | `14130944S1` | Bonus 50 $ CAD à l'ouverture |
 | [Achieva Financial](https://cashinstinct.github.io/achieva-referral-code/) | Épargne en ligne | `V381566198` | Bonus 25 $ CAD à l'ouverture |
 | [Rakuten Canada](https://cashinstinct.github.io/rakuten-canada/) | Cashback en ligne | [Lien](https://www.rakuten.ca/r/cashinstinct?src=Link) | Bonus 30 $ CAD |
-| [Swagbucks](https://cashinstinct.github.io/swagbucks-canada/) | Récompenses Sondages | [Lien](https://swaggbucks.com/profile/Cashinstinct?rp=1) | Bonus 300 SB |
+| [Swagbucks](https://cashinstinct.github.io/swagbucks-canada/) | Récompenses Sondages | [Lien](https://swaggbucks.com/profile/Cashinstinct?rp=1) | Bonus 10 $ à l'ouverture |
 
 ---
 
