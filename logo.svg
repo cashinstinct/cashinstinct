@@ -1,0 +1,30 @@
+<svg viewBox="0 0 810 810" xmlns="http://www.w3.org/2000/svg" role="img" width="100%" style="margin: auto;">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Cashinstinct Hub Logo v2</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Refined CI monogram — cream on deep burgundy, minimal terracotta accent</desc>
+
+  <rect width="800" height="800" fill="#0D050A" style="fill:rgb(13, 5, 10);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Main circle -->
+  <circle cx="400" cy="400" r="386" fill="#561220" style="fill:rgb(86, 18, 32);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Inner rings: premium border detail -->
+  <circle cx="400" cy="400" r="374" fill="none" stroke="#F0E2C2" stroke-width="1" opacity="0.25" style="fill:none;stroke:rgb(240, 226, 194);color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.25;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="400" cy="400" r="368" fill="none" stroke="#C35535" stroke-width="0.8" opacity="0.35" style="fill:none;stroke:rgb(195, 85, 53);color:rgb(0, 0, 0);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.35;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- "C" — cream, center (359,400), r_outer=190, r_inner=125, opening ±50° -->
+  <!-- Outer top: (481,255) Outer bottom: (481,545) -->
+  <!-- Inner top: (439,304) Inner bottom: (439,496) -->
+  <path d="M 481 255 A 190 190 0 1 0 481 545 L 439 496 A 125 125 0 1 1 439 304 Z" fill="#F0E2C2" style="fill:rgb(240, 226, 194);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- "I" — all cream, slab serif, center x=566 -->
+  <!-- Top bar: 501-631, 255-297 | Stem: 533-599, 297-503 | Bottom bar: 501-631, 503-545 -->
+  <rect x="501" y="255" width="130" height="42" fill="#F0E2C2" style="fill:rgb(240, 226, 194);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="533" y="297" width="66" height="206" fill="#F0E2C2" style="fill:rgb(240, 226, 194);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="501" y="503" width="130" height="42" fill="#F0E2C2" style="fill:rgb(240, 226, 194);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Upward accent: thin open chevron in terracotta, above I center -->
+  <polyline points="549,232 566,212 583,232" fill="none" stroke="#C35535" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgb(195, 85, 53);color:rgb(0, 0, 0);stroke-width:3px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Outer circle edge -->
+  <circle cx="400" cy="400" r="386" fill="none" stroke="#3A0A14" stroke-width="2" style="fill:none;stroke:rgb(58, 10, 20);color:rgb(0, 0, 0);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</svg>
