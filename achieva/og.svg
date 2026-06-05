@@ -1,0 +1,23 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f5f7f2" />
+  
+  <g font-family="sans-serif" text-anchor="middle">
+    
+    <g transform="translate(600, 110)">
+      <path d="M0 -50 L13 -15 L50 -15 L20 10 L30 45 L0 25 L-30 45 L-20 10 L-50 -15 L-13 -15 Z" fill="none" stroke="#5b7b3b" stroke-width="8"/>
+    </g>
+    
+    <text x="600" y="240" font-size="90" font-weight="800" fill="#5b7b3b">Achieva Financial</text>
+    
+    <g transform="translate(600, 350)">
+      <rect x="-400" y="-70" width="800" height="135" rx="12" fill="#5b7b3b" />
+      <text x="0" y="25" font-size="105" font-weight="900" fill="#ffffff" letter-spacing="0.08em">V381566198</text>
+    </g>
+    
+    <text x="600" y="505" font-size="80" font-weight="900" fill="#5b7b3b" letter-spacing="0.02em">ACHIEVAL PETAL CODE</text>
+
+    
+    <text x="600" y="605" font-size="80" font-weight="900" fill="#5b7b3b" letter-spacing="0.02em">$25 BONUS</text>
+    
+  </g>
+</svg>
