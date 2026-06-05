@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <rect width="1200" height="630" fill="#ff6600"/>
+  <text x="600" y="160" font-family="Arial" font-size="100" 
+        font-weight="bold" fill="white" text-anchor="middle">🍊 Tangerine Bank</text>
+  <text x="600" y="280" font-family="Arial" font-size="100" 
+        fill="white" text-anchor="middle">Clé Orange / Orange Key</text>
+  <text x="600" y="390" font-family="Arial" font-size="100" 
+        fill="white" text-anchor="middle">14130944S1</text>
+  <text x="600" y="520" font-family="Arial" font-size="85" 
+        fill="white" text-anchor="middle">Prime de 50 $ CAD — 2026</text>
+</svg>
