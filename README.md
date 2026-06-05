@@ -3,7 +3,7 @@
 > Hub de codes de parrainage et offres exclusives testées au Canada (Québec et reste du Canada).  
 > Chaque page liste les conditions exactes, les étapes d'activation et la marche à suivre.
 
-🔗 **Site :** [cashinstinct.github.io](https://cashinstinct.github.io/)
+🔗 **Site :** [cashinstinct.ca](https://cashinstinct.ca/)
 
 ---
 
@@ -11,14 +11,14 @@
 
 | Service | Type | Code / Lien | Avantage pour vous |
 |---|---|---|---|
-| [EBOX Internet](https://cashinstinct.github.io/ebox) | Internet résidentiel | `GE911` | Crédit 25 $ CAD sur la 2e facture |
-| [Stickermule Global](https://cashinstinct.github.io/stickermule/) | Autocollants & merch | `CASHINSTINCT` ou [Lien](https://www.stickermule.com/unlock?ref_id=6042474701) | Crédit $10 sur la première commande de $30 |
-| [Stickermule FR](https://cashinstinct.github.io/stickermule/fr/) | Autocollants & merch | [Lien](https://www.stickermule.com/ca/unlock?ref_id=6042474701) | Crédit 12,50 $ CAD sur la première commande de 38$ CAD |
-| [HP Instant Ink](https://cashinstinct.github.io/hp-instant-ink/) | Impression & encre | `SVdn7` | 1 mois gratuit |
-| [Tangerine](https://cashinstinct.github.io/tangerine/) | Banque en ligne | `14130944S1` | Bonus 50 $ CAD à l'ouverture |
-| [Achieva Financial](https://cashinstinct.github.io/achieva/) | Épargne en ligne | `V381566198` | Bonus 25 $ CAD à l'ouverture |
-| [Rakuten Canada](https://cashinstinct.github.io/rakuten-canada/) | Cashback en ligne | [Lien](https://www.rakuten.ca/r/cashinstinct?src=Link) | Bonus 30 $ CAD |
-| [Swagbucks](https://cashinstinct.github.io/swagbucks-canada/) | Récompenses Sondages | [Lien](https://swaggbucks.com/profile/Cashinstinct?rp=1) | Bonus 10 $ |
+| [EBOX Internet](https://cashinstinct.ca/ebox/fr/) | Internet résidentiel | `GE911` | Crédit 25 $ CAD sur la 2e facture |
+| [Stickermule Global](https://cashinstinct.ca/stickermule/en/) | Autocollants & merch | `CASHINSTINCT` ou [Lien](https://www.stickermule.com/unlock?ref_id=6042474701) | Crédit $10 sur la première commande de $30 |
+| [Stickermule FR](https://cashinstinct.ca/stickermule/fr/) | Autocollants & merch | [Lien](https://www.stickermule.com/ca/unlock?ref_id=6042474701) | Crédit 12,50 $ CAD sur la première commande de 38$ CAD |
+| [HP Instant Ink](https://cashinstinct.ca/hp-instant-ink/fr/) | Impression & encre | `SVdn7` | 1 mois gratuit |
+| [Tangerine](https://cashinstinct.ca/tangerine/fr/) | Banque en ligne | `14130944S1` | Bonus 50 $ CAD à l'ouverture |
+| [Achieva Financial](https://cashinstinct.ca/achieva/fr/) | Épargne en ligne | `V381566198` | Bonus 25 $ CAD à l'ouverture |
+| [Rakuten Canada](https://cashinstinct.ca/rakuten-canada/fr/) | Cashback en ligne | [Lien](https://www.rakuten.ca/r/cashinstinct?src=Link) | Bonus 30 $ CAD |
+| [Swagbucks](https://cashinstinct.ca/swagbucks/en/) | Récompenses Sondages | [Lien](https://swaggbucks.com/profile/Cashinstinct?rp=1) | Bonus 10 $ |
 
 ---
 
@@ -28,21 +28,12 @@ Ce repo (`cashinstinct.github.io`) héberge la **page d'accueil du hub** et le s
 Chaque offre est un repo GitHub Pages indépendant avec sa propre landing page.
 
 ```
-cashinstinct.github.io/
+cashinstinct.ca/
 ├── index.html       ← Hub landing page (FR, optimisé SEO)
 ├── sitemap.xml      ← Sitemap centralisé (toutes les pages)
 ├── robots.txt       ← Directives Googlebot
 └── README.md        ← Ce fichier
 ```
-
-Repos associés :
-- [`ebox-referral-code-2026`](https://github.com/cashinstinct/ebox/)
-- [`stickermule`](https://github.com/cashinstinct/stickermule/)
-- [`hp-instant-ink`](https://github.com/cashinstinct/hp-instant-ink/)
-- [`tangerine-orange-key`](https://github.com/cashinstinct/tangerine/)
-- [`achieva-referral-code`](https://github.com/cashinstinct/achieva/)
-- [`rakuten-canada`](https://github.com/cashinstinct/rakuten-canada/)
-- [`swagbucks-canada`](https://github.com/cashinstinct/swagbucks-canada/)
     
 ---
 
