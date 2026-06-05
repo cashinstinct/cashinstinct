@@ -1,4 +1,7 @@
+/ebox/ /ebox/fr/:splat 301 
 /code-client-ebox/* /ebox/:splat 301 
 /ebox-referral-code-2026/* /ebox/:splat 301 
-/tangerine-orange-key/* /tangerine/:splat 301 
+/stickermule/ /stickermule/en/:splat 301 
+/tangerine/ /tangerine/fr/:splat 301 
+/tangerine-orange-key/* /tangerine/:splat 301
 /achieva-referral-code/* /achieva/:splat 301
