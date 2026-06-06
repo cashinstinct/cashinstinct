@@ -3,42 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#107a47" />
+  <!-- FIX #7 : theme-color split light/dark -->
+  <meta name="theme-color" content="#107a47" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#199e5e" media="(prefers-color-scheme: dark)" />
   <title>Achieva Petal Code V381566198 — Prime de 25 $ (2026)</title>
   <meta name="description" content="Utilisez le code de recommandation Achieva Petal Code V381566198 dans l'application mobile pour obtenir un bonus de 25 $ CAD à l'ouverture de votre compte." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/achieva/fr/" />
+  <!-- FIX #1 : hreflang -->
+  <link rel="alternate" hreflang="fr-CA"    href="https://cashinstinct.ca/achieva/fr/" />
+  <link rel="alternate" hreflang="fr"       href="https://cashinstinct.ca/achieva/fr/" />
+  <link rel="alternate" hreflang="en-CA"    href="https://cashinstinct.ca/achieva/en/" />
+  <link rel="alternate" hreflang="en"       href="https://cashinstinct.ca/achieva/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/achieva/en/" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
 
-  <meta property="og:title" content="Achieva Petal Code V381566198 — Bonus de 25 $" />
-  <meta property="og:description" content="Ouvrez un compte Achieva via l'application avec le Petal Code V381566198 et recevez une prime automatique de 25 $ CAD." />
-  <meta property="og:locale" content="fr_CA" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cashinstinct.ca/achieva/fr/" />
-  <meta property="og:image" content="https://cashinstinct.ca/achieva/og.svg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <!-- FIX #2 og:image → .png | FIX #5 og:site_name | FIX #6 og:locale:alternate -->
+  <meta property="og:title"            content="Achieva Petal Code V381566198 — Bonus de 25 $" />
+  <meta property="og:description"      content="Ouvrez un compte Achieva via l'application avec le Petal Code V381566198 et recevez une prime automatique de 25 $ CAD." />
+  <meta property="og:locale"           content="fr_CA" />
+  <meta property="og:locale:alternate" content="en_CA" />
+  <meta property="og:site_name"        content="Cash Instinct" />
+  <meta property="og:type"             content="website" />
+  <meta property="og:url"              content="https://cashinstinct.ca/achieva/fr/" />
+  <meta property="og:image"            content="https://cashinstinct.ca/achieva/og.png" />
+  <meta property="og:image:width"      content="1200" />
+  <meta property="og:image:height"     content="630" />
+  <meta property="og:image:type"       content="image/png" />
 
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Achieva Petal Code Financial" />
+  <!-- FIX #3 summary_large_image | FIX #4 twitter:image -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Achieva Petal Code V381566198 — Prime de 25 $ CAD" />
   <meta name="twitter:description" content="Saisissez le Petal Code V381566198 dans l'application et recevez 25 $ CAD en prime de bienvenue." />
+  <meta name="twitter:image"       content="https://cashinstinct.ca/achieva/og.png" />
 
   <script>
     try {
-      let theme = localStorage.getItem('theme');
-      if (!theme) {
-        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      document.documentElement.setAttribute('data-theme', theme);
-    } catch (e) {
+      let t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch(e) {
       document.documentElement.setAttribute('data-theme', 'light');
     }
   </script>
 
+  <!-- FIX #8/9 WebSite + isPartOf + datePublished | FIX #10 author Org | FIX #11 returnPolicyCategory URI | FIX #12 image .png -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://cashinstinct.ca/#website",
+        "url": "https://cashinstinct.ca/",
+        "name": "Cash Instinct",
+        "inLanguage": "fr-CA",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://cashinstinct.ca/#organization",
+          "name": "Cash Instinct",
+          "url": "https://cashinstinct.ca/"
+        }
+      },
       {
         "@type": "WebPage",
         "@id": "https://cashinstinct.ca/achieva/fr/",
@@ -46,13 +72,17 @@
         "name": "Achieva Petal Code V381566198 — Prime de 25 $ (2026)",
         "description": "Utilisez le code de parrainage Achieva Petal Code V381566198 dans l'application mobile pour obtenir un bonus de 25 $ CAD.",
         "inLanguage": "fr-CA",
-        "dateModified": "2026-06-05"
+        "datePublished": "2026-05-01",
+        "dateModified": "2026-06-06",
+        "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
+        "author":    { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization" },
+        "publisher": { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization" }
       },
       {
         "@type": "BreadcrumbList",
         "@id": "https://cashinstinct.ca/achieva/fr/#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cashinstinct.ca/" },
+          { "@type": "ListItem", "position": 1, "name": "Accueil",           "item": "https://cashinstinct.ca/" },
           { "@type": "ListItem", "position": 2, "name": "Banque & Finances", "item": "https://cashinstinct.ca/#finances" },
           { "@type": "ListItem", "position": 3, "name": "Achieva Financial", "item": "https://cashinstinct.ca/achieva/fr/" }
         ]
@@ -60,12 +90,9 @@
       {
         "@type": "Product",
         "name": "Achieva Financial Compte d'Épargne",
-        "image": "https://cashinstinct.ca/achieva/og.svg",
-        "brand": {
-          "@type": "Brand",
-          "name": "Achieva Financial"
-        },
-        "description": "Compte d’épargne en ligne à haut intérêt sans frais de gestion mensuels au Canada avec un bonus d'inscription de 25 $ via l'activation d'un Petal Code dans l'application.",
+        "image": "https://cashinstinct.ca/achieva/og.png",
+        "brand": { "@type": "Brand", "name": "Achieva Financial" },
+        "description": "Compte d'épargne en ligne à haut intérêt sans frais de gestion mensuels au Canada avec un bonus d'inscription de 25 $ via l'activation d'un Petal Code dans l'application.",
         "category": "Financial Services",
         "offers": {
           "@type": "Offer",
@@ -78,7 +105,7 @@
           "hasMerchantReturnPolicy": {
             "@type": "MerchantReturnPolicy",
             "applicableCountry": "CA",
-            "returnPolicyCategory": "MerchantReturnUnspecified"
+            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
           },
           "shippingDetails": {
             "@type": "OfferShippingDetails",
@@ -87,16 +114,16 @@
             "deliveryTime": {
               "@type": "ShippingDeliveryTime",
               "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-              "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+              "transitTime":  { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
             }
           }
         },
         "review": {
           "@type": "Review",
-          "author": { "@type": "Person", "name": "Cash Instinct" },
+          "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
           "reviewRating": { "@type": "Rating", "ratingValue": "4.3", "bestRating": "5", "worstRating": "1" },
           "reviewBody": "Achieva Financial offre une alternative solide pour parquer un fonds d'urgence. La garantie illimitée des dépôts du Manitoba compense largement le fait que l'inscription soit limitée à l'application mobile. Le bonus de 25 $ a été versé sans accroc.",
-          "publisher": { "@type": "Organization", "name": "Cash Instinct" }
+          "publisher": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" }
         }
       },
       {
@@ -105,34 +132,22 @@
           {
             "@type": "Question",
             "name": "Qu'est-ce qu'un Achieva Petal Code et est-il valide en 2026 ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Le Petal Code est le nom officiel donné par Achieva Financial à son code de recommandation. Le code V381566198 est entièrement valide tout au long de l'année 2026 pour sécuriser une prime d'inscription de 25 $ CAD."
-            }
+            "acceptedAnswer": { "@type": "Answer", "text": "Le Petal Code est le nom officiel donné par Achieva Financial à son code de recommandation. Le code V381566198 est entièrement valide tout au long de l'année 2026 pour sécuriser une prime d'inscription de 25 $ CAD." }
           },
           {
             "@type": "Question",
             "name": "Où appliquer le Petal Code Achieva Financial V381566198 ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "L'ouverture de compte se fait exclusivement via l'application mobile d'Achieva. Il faut coller le code V381566198 dans le champ 'Achieva Petal Code' dès le premier écran de l'application. Déposez ensuite un minimum de 250 $ CAD et maintenez ce montant pendant au moins 1 mois."
-            }
+            "acceptedAnswer": { "@type": "Answer", "text": "L'ouverture de compte se fait exclusivement via l'application mobile d'Achieva. Il faut coller le code V381566198 dans le champ 'Achieva Petal Code' dès le premier écran de l'application. Déposez ensuite un minimum de 250 $ CAD et maintenez ce montant pendant au moins 1 mois." }
           },
           {
             "@type": "Question",
             "name": "Est-ce qu'Achieva Financial est une institution financière fiable et sécurisée ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui, Achieva Financial est une division Internet de la Cambrian Credit Union, l'une des plus grandes coopératives de crédit au Manitoba. De plus, 100 % des dépôts sont entièrement garantis sans plafond limite par la Corporation d'assurance-dépôts du Manitoba (DGCM)."
-            }
+            "acceptedAnswer": { "@type": "Answer", "text": "Oui, Achieva Financial est une division Internet de la Cambrian Credit Union, l'une des plus grandes coopératives de crédit au Manitoba. De plus, 100 % des dépôts sont entièrement garantis sans plafond limite par la Corporation d'assurance-dépôts du Manitoba (DGCM)." }
           },
           {
             "@type": "Question",
             "name": "Peut-on ouvrir un compte Achieva Financial si l'on réside au Québec ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui, les services d'Achieva Financial sont accessibles aux résidents du Québec et de toutes les autres provinces canadiennes en téléchargeant l'application. Il convient toutefois de noter que l'interface et le service client sont dispensés exclusivement en anglais."
-            }
+            "acceptedAnswer": { "@type": "Answer", "text": "Oui, les services d'Achieva Financial sont accessibles aux résidents du Québec et de toutes les autres provinces canadiennes en téléchargeant l'application. Il convient toutefois de noter que l'interface et le service client sont dispensés exclusivement en anglais." }
           }
         ]
       }
@@ -141,216 +156,193 @@
   </script>
 
   <style>
+    /* ── TOKENS ─────────────────────────────────────────────────── */
     :root {
-      --bg: #ffffff;
-      --surface: #ffffff;
-      --surface-soft: #f4faf6;
-      --surface-muted: #f2f5f3;
-      --text: #141a16;
-      --text-soft: #38453e;
-      --muted: #66756d;
-      --border: #cfe0d5;
-      --border-soft: #deebd3;
-      --accent: #107a47;
-      --accent-dark: #0b5933;
-      --warning-bg: #fff8e1;
-      --warning-text: #7c5800;
+      --bg:             #ffffff;
+      --surface:        #ffffff;
+      --surface-soft:   #f4faf6;
+      --surface-muted:  #f2f5f3;
+      --text:           #141a16;
+      --text-soft:      #38453e;
+      --muted:          #66756d;
+      --border:         #cfe0d5;
+      --border-soft:    #deebd3;
+      --accent:         #107a47;
+      --accent-dark:    #0b5933;
+      --warning-bg:     #fff8e1;
+      --warning-text:   #7c5800;
       --warning-border: #f59e0b;
-      --shadow: 0 10px 30px rgba(16, 122, 71, 0.05);
+      --shadow:         0 10px 30px rgba(16,122,71,0.07);
+      --topbar-h:       56px;
     }
-
     [data-theme="dark"] {
-      --bg: #0d120f;
-      --surface: #141c17;
-      --surface-soft: #19261f;
-      --surface-muted: #1b241f;
-      --text: #f0f5f2;
-      --text-soft: #cbd6cf;
-      --muted: #8fa398;
-      --border: #28382f;
-      --border-soft: #2d3d34;
-      --accent: #199e5e;
-      --accent-dark: #22bd73;
-      --warning-bg: #261f10;
-      --warning-text: #ffd98f;
+      --bg:             #0d120f;
+      --surface:        #141c17;
+      --surface-soft:   #19261f;
+      --surface-muted:  #1b241f;
+      --text:           #f0f5f2;
+      --text-soft:      #cbd6cf;
+      --muted:          #8fa398;
+      --border:         #28382f;
+      --border-soft:    #2d3d34;
+      --accent:         #199e5e;
+      --accent-dark:    #22bd73;
+      --warning-bg:     #261f10;
+      --warning-text:   #ffd98f;
       --warning-border: #f59e0b;
-      --shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+      --shadow:         0 14px 40px rgba(0,0,0,0.4);
     }
 
+    /* ── RESET ──────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 17px;
-      line-height: 1.65;
-      color: var(--text);
-      background: var(--bg);
-      padding: 0 0 52px 0;
+      font-size: 17px; line-height: 1.65;
+      color: var(--text); background: var(--bg);
+      padding-bottom: 72px;
     }
+    /* FIX #26 : font-size desktop */
+    @media (min-width: 768px) { body { font-size: 19px; } }
+
     a { color: var(--accent); text-decoration: none; font-weight: 600; }
     a:hover { text-decoration: underline; }
 
-    .wrapper {
-      width: 100%;
-      max-width: 740px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 20px;
+    /* ── FIX #15 : SKIP NAV ─────────────────────────────────────── */
+    .skip-nav {
+      position: absolute; top: -100%; left: 0;
+      background: var(--accent); color: #fff;
+      padding: 8px 16px; font-weight: 700;
+      z-index: 9999; border-radius: 0 0 6px 0;
     }
+    .skip-nav:focus { top: 0; }
 
-     .topbar {
+    /* ── FIX #41 : LAYOUT ───────────────────────────────────────── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .prose     { max-width: 760px;  margin: 0 auto; }
+
+    /* ── FIX #14 : TOPBAR pleine largeur ────────────────────────── */
+    .topbar {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
       backdrop-filter: blur(10px);
-}
+      -webkit-backdrop-filter: blur(10px);
+    }
     .topbar-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: row;        /* même ligne partout */
-  flex-wrap: wrap;            /* wrap si trop étroit */
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-.brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
-.nav { display: flex; gap: 12px; flex-wrap: nowrap; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-.nav::-webkit-scrollbar { display: none; }
-.nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; white-space: no wrap; }
-.nav a:hover, .nav a.active { color: var(--accent); }
-.nav a.nav-en { font-size: 0.85rem; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted); }
-.nav a.nav-en:hover { color: var(--accent); border-color: var(--accent); 
-                    }
+      max-width: 1100px; margin: 0 auto; padding: 10px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; min-height: var(--topbar-h);
+    }
+    .brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+    .nav {
+      display: flex; gap: 12px; flex-wrap: nowrap; align-items: center;
+      overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    /* FIX #20 : nowrap (était "no wrap") */
+    .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+    .nav a:hover, .nav a.active { color: var(--accent); }
+    .nav a.nav-en { font-size: 0.85rem; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted); }
+    .nav a.nav-en:hover { color: var(--accent); border-color: var(--accent); }
 
+    /* FIX #17/22 : theme-btn */
     .theme-btn {
-      background: var(--surface-soft);
-      border: 1px solid var(--border);
-      color: var(--text);
-      cursor: pointer;
-      font-size: 1rem;
-      padding: 6px 12px;
-      border-radius: 6px;
+      background: var(--surface-soft); border: 1px solid var(--border);
+      color: var(--text); cursor: pointer; font-size: 1rem;
+      padding: 6px 12px; border-radius: 6px;
+      display: inline-flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.15s, border-color 0.15s;
     }
+    .theme-btn:hover { border-color: var(--accent); }
 
-    .breadcrumb {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 16px;
-      margin-bottom: 8px;
-    }
-    .breadcrumb a { color: var(--muted); font-weight: 500; }
-    .breadcrumb span { margin: 0 6px; }
-
+    /* ── HERO — FIX #41 pleine largeur | FIX #23 overflow | no border-radius ── */
     header.hero {
       background: linear-gradient(135deg, var(--accent) 0%, #169c5b 100%);
-      color: #ffffff;
-      padding: 52px 20px;
-      text-align: center;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
+      color: #ffffff; padding: 64px 20px;
+      text-align: center; overflow: hidden;
     }
-    header.hero h1 { font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; color: #ffffff; text-wrap: pretty; }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    header.hero h1 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 800;
+      line-height: 1.2; margin-bottom: 16px; color: #ffffff; text-wrap: pretty;
+    }
     header.hero p { font-size: 1.1rem; opacity: 0.95; max-width: 560px; margin: 0 auto 24px; color: #ffffff; }
 
     .code-wrap {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      background: #ffffff;
-      padding: 12px 14px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      margin-bottom: 14px;
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap; background: #ffffff;
+      padding: 12px 14px; border-radius: 12px;
+      box-shadow: var(--shadow); margin-bottom: 14px;
     }
     .code-hero { color: var(--accent); font-family: "Courier New", Courier, monospace; font-size: 1.8rem; font-weight: 900; letter-spacing: 0.04em; }
-    
+    [data-theme="dark"] .code-wrap { background: #ffffff; }
+
     .copy-btn, .cta-copy-btn { border: 0; cursor: pointer; font-weight: 800; border-radius: 10px; transition: transform 0.15s, background 0.15s; }
     .copy-btn:hover, .cta-copy-btn:hover { transform: translateY(-1px); opacity: 0.95; }
     .copy-btn { background: #06301c; color: #ffffff; font-size: 0.95rem; padding: 12px 16px; }
-    .copy-status { display: block; font-size: 0.92rem; min-height: 1.2em; font-weight: 700; margin-top: 6px; color: #ffffff; }
-    [data-theme="dark"] .code-wrap { background: #ffffff; }
     [data-theme="dark"] .copy-btn { background: var(--accent); color: #0d120f; }
+    .copy-status { display: block; font-size: 0.92rem; min-height: 1.2em; font-weight: 700; margin-top: 6px; color: #ffffff; }
 
-    main { padding: 40px 0; }
-    section { margin-bottom: 48px; }
-    section h2 { font-size: 1.55rem; font-weight: 800; margin-bottom: 20px; color: var(--text); }
-    section p { margin-bottom: 14px; color: var(--text-soft); }
+    .app-store-badges { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 24px; }
+    .app-store-badges a { display: inline-block; transition: transform 0.15s ease, opacity 0.15s ease; }
+    .app-store-badges a:hover { transform: translateY(-2px); opacity: 0.9; }
+    .store-badge { display: block; height: 54px; width: auto; max-width: 100%; }
 
+    /* ── BREADCRUMB ─────────────────────────────────────────────── */
+    .breadcrumb { font-size: 0.82rem; color: var(--muted); padding: 16px 0 8px; }
+    .breadcrumb a { color: var(--muted); font-weight: 500; }
+    .breadcrumb span { margin: 0 4px; }
+
+    /* FIX #43 */
+    .last-updated { font-size: 0.82rem; color: var(--muted); margin-bottom: 32px; }
+
+    /* ── MAIN ───────────────────────────────────────────────────── */
+    main { padding: 40px 0 20px; }
+    /* FIX #21 : scroll-margin-top */
+    section { margin-bottom: 52px; scroll-margin-top: calc(var(--topbar-h) + 16px); }
+    /* FIX #44 : h2 plus grand */
+    section h2 { font-size: clamp(1.55rem, 3vw, 1.9rem); font-weight: 800; margin-bottom: 20px; color: var(--text); }
+    section p  { margin-bottom: 14px; color: var(--text-soft); }
+
+    /* FIX #42 : border-left accent */
     .summary-box {
       background: var(--surface-soft);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 32px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px; margin-bottom: 12px;
     }
     .summary-box h2 { font-size: 1.15rem; margin-bottom: 8px; }
 
-    .glossary-box {
-      background: var(--surface-muted);
-      border-radius: 8px;
-      padding: 16px 20px;
-      font-size: 0.92rem;
-      color: var(--text-soft);
-      margin-top: 24px;
+    .glossary-box { background: var(--surface-muted); border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; color: var(--text-soft); margin-top: 24px; }
+    .warning { background: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 14px 20px; font-size: 0.95rem; color: var(--warning-text); margin: 32px 0; border-radius: 0 6px 6px 0; }
+
+    /* section-label en pill */
+    .section-label {
+      display: inline-block; text-transform: uppercase;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      color: var(--accent); background: var(--surface-soft);
+      border: 1px solid var(--border-soft);
+      padding: 2px 10px; border-radius: 20px; margin-bottom: 10px;
     }
 
-    .warning {
-      background: var(--warning-bg);
-      border-left: 4px solid var(--warning-border);
-      padding: 14px 20px;
-      font-size: 0.95rem;
-      color: var(--warning-text);
-      margin: 32px 0;
-      border-radius: 0 6px 6px 0;
-    }
-      .app-store-badges {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 24px;
-  }
-  .app-store-badges a {
-    display: inline-block;
-    transition: transform 0.15s ease, opacity 0.15s ease;
-  }
-  .app-store-badges a:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-  }
-  .store-badge {
-    display: block;
-    height: 54px; /* Ajuste ce chiffre selon la taille désirée. 54px est très visible sur mobile */
-    width: auto;  /* Conserve la proportionnalité sans déformer */
-    max-width: 100%; /* Empêche de déborder sur un très petit écran */
-  }
-
-    .section-label { display: block; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 8px; }
-
+    /* ── STEPS ──────────────────────────────────────────────────── */
     .steps { list-style: none; counter-reset: steps; }
-    .steps li { counter-increment: steps; display: flex; gap: 18px; margin-bottom: 24px; }
+    .steps li { counter-increment: steps; display: flex; gap: 18px; margin-bottom: 28px; }
     .steps li::before {
       content: counter(steps);
       min-width: 36px; height: 36px;
       background: var(--accent); color: #ffffff; font-weight: 800; font-size: 1rem;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px;
     }
     .steps li h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; color: var(--text); }
-    .steps li p { margin: 0; color: var(--text-soft); }
+    .steps li p  { margin: 0; color: var(--text-soft); }
 
-    .app-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
-    .app-btn { background: #000000; color: #ffffff; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #333; }
-    .app-btn:hover { background: #222; text-decoration: none; color: #ffffff; }
-
+    /* ── CODE ───────────────────────────────────────────────────── */
     code { font-family: "Courier New", Courier, monospace; background: var(--surface-soft); color: var(--accent-dark); padding: 2px 8px; border-radius: 4px; font-size: 0.97em; font-weight: 700; border: 1px solid var(--border); }
 
+    /* ── TABLE ──────────────────────────────────────────────────── */
     .table-wrap { overflow-x: auto; margin-top: 16px; border: 1px solid var(--border); border-radius: 8px; }
     table { width: 100%; border-collapse: collapse; font-size: 0.97rem; background: var(--surface); }
     thead tr { background: var(--accent); color: #ffffff; }
@@ -358,315 +350,384 @@
     tbody tr:nth-child(even) { background: var(--surface-soft); }
     tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border-soft); color: var(--text-soft); }
 
+    /* ── ADVANTAGES ─────────────────────────────────────────────── */
     .advantages { list-style: none; display: grid; gap: 12px; }
     .advantages li { display: flex; align-items: flex-start; gap: 12px; padding: 14px 18px; border: 1px solid var(--border-soft); border-radius: 8px; background: var(--surface-soft); color: var(--text-soft); }
     .advantages li .icon { font-size: 1.3rem; flex-shrink: 0; }
 
+    /* ── FAQ — FIX #24 : webkit-details-marker ──────────────────── */
     .faq { display: grid; gap: 16px; }
     details { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); }
     summary { font-weight: 700; padding: 16px 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; background: var(--surface-soft); color: var(--text); }
+    summary::-webkit-details-marker { display: none; }
     summary::after { content: "+"; font-size: 1.4rem; color: var(--accent); }
     details[open] summary::after { content: "−"; }
     details[open] summary { border-bottom: 1px solid var(--border); }
     .faq-body { padding: 16px 20px; font-size: 0.97rem; color: var(--text-soft); background: var(--surface); }
 
+    /* ── CTA ────────────────────────────────────────────────────── */
     .cta-section { background: linear-gradient(135deg, var(--accent) 0%, #169c5b 100%); color: #ffffff; text-align: center; padding: 52px 20px; border-radius: 12px; margin-bottom: 40px; box-shadow: var(--shadow); }
     .cta-section h2, .cta-section p { color: #ffffff; }
     .cta-section h2 { font-size: 1.6rem; margin-bottom: 12px; }
-    .cta-section p { opacity: 0.95; margin-bottom: 24px; font-size: 1.05rem; }
-
+    .cta-section p  { opacity: 0.95; margin-bottom: 24px; font-size: 1.05rem; }
     .cta-code-row { margin-top: 16px; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
     .cta-code-pill { display: inline-block; background: #ffffff; color: var(--accent); font-family: "Courier New", Courier, monospace; font-weight: 900; letter-spacing: 0.04em; padding: 10px 14px; border-radius: 8px; }
     .cta-copy-btn { background: rgba(255,255,255,0.18); color: #ffffff; padding: 10px 14px; font-size: 0.95rem; }
     .cta-section .copy-status { color: #ffffff; }
 
+    /* ── TRANSPARENCY ───────────────────────────────────────────── */
     .transparency { background: var(--surface-soft); border-radius: 8px; padding: 16px 20px; font-size: 0.9rem; color: var(--text-soft); margin-top: 16px; border: 1px solid var(--border); }
+
+    /* ── FOOTER ─────────────────────────────────────────────────── */
     footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; font-size: 0.85rem; color: var(--muted); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
     .footer-links { margin-top: 10px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
     .footer-links a { color: var(--muted); font-size: 0.82rem; }
 
-    @media (max-width: 640px) {
-      .topbar-inner { padding: 14px 20px; }
-      .wrapper { padding: 0 16px; }
+    /* ── FIX #31 : STICKY CTA MOBILE ───────────────────────────── */
+    .sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--surface); border-top: 1px solid var(--border);
+      padding: 10px 16px; gap: 8px; align-items: center; justify-content: space-between;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
     }
+    @media (max-width: 767px) { .sticky-cta { display: flex; } }
+    .sticky-cta-code { font-family: "Courier New", Courier, monospace; font-weight: 900; color: var(--accent); font-size: 1rem; }
+    .sticky-store-links { display: flex; gap: 8px; }
+    .sticky-store-links a { display: flex; align-items: center; gap: 4px; background: #000; color: #fff; padding: 8px 10px; border-radius: 7px; font-size: 0.78rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+    .sticky-store-links a:hover { background: #222; text-decoration: none; }
+    .sticky-cta-btn { background: var(--accent); color: #ffffff; border: 0; border-radius: 8px; padding: 10px 14px; font-weight: 800; font-size: 0.9rem; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: background 0.15s; }
+    .sticky-cta-btn:hover { background: var(--accent-dark); }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .topbar-inner { padding: 12px 16px; }
+      .container    { padding: 0 16px; }
+    }
+    @media (max-width: 380px) { .theme-btn { display: none; } }
   </style>
 </head>
 <body>
 
-  <div class="wrapper">
-    <nav class="topbar">
-      <div class="topbar-inner">
-        <a class="brand" href="https://cashinstinct.ca/">Cash Instinct</a>
-        <div class="nav">
-          <a class="active" href="https://cashinstinct.ca/achieva/fr/">Achieva</a>
-          <a href="https://cashinstinct.ca/ebox/fr/">EBOX</a>
-          <a href="https://cashinstinct.ca/stickermule/fr/">Sticker&nbsp;Mule</a>
-          <a href="https://cashinstinct.ca/tangerine/fr/">Tangerine</a>
-          <button id="theme-toggle" class="theme-btn" type="button" aria-label="Changer le thème">🌙</button>
-        </div>
+  <!-- FIX #15 -->
+  <a class="skip-nav" href="#main-content">Passer au contenu principal</a>
+
+  <!-- FIX #14 : topbar pleine largeur, hors wrapper -->
+  <nav class="topbar" aria-label="Navigation principale">
+    <div class="topbar-inner">
+      <a class="brand" href="https://cashinstinct.ca/">Cash Instinct</a>
+      <div class="nav">
+        <!-- FIX #27 : HP Ink -->
+        <a href="https://cashinstinct.ca/hp/fr/">HP Ink</a>
+        <a class="active" href="https://cashinstinct.ca/achieva/fr/">Achieva</a>
+        <a href="https://cashinstinct.ca/ebox/fr/">EBOX</a>
+        <a href="https://cashinstinct.ca/stickermule/fr/">Sticker&nbsp;Mule</a>
+        <a href="https://cashinstinct.ca/tangerine/fr/">Tangerine</a>
+        <!-- FIX #28 -->
+        <a class="nav-en" href="https://cashinstinct.ca/achieva/en/">English ↗</a>
+        <!-- FIX #17 : aria-pressed statique -->
+        <button id="theme-toggle" class="theme-btn" type="button"
+                aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <nav class="breadcrumb" aria-label="Fil d'Ariane">
-      <a href="https://cashinstinct.ca/">Accueil</a><span>&gt;</span>
-      <a href="https://cashinstinct.ca/#finances">Banque & Finances</a><span>&gt;</span>
-      Achieva Financial
-    </nav>
-
-    <header class="hero">
-      <h1>Prime de 25 $ offerte avec le Achieva Petal Code</h1>
+  <!-- HERO — FIX #41 pleine largeur, no border-radius -->
+  <header class="hero">
+    <div class="hero-inner">
+      <!-- FIX #39 : "l'Achieva" -->
+      <h1>Prime de 25 $ offerte avec l'Achieva Petal Code</h1>
       <p>L'ouverture de compte se fait <strong>exclusivement via l'application mobile</strong>. Copiez le code <strong>V381566198</strong> ci-dessous avant de la télécharger.</p>
 
       <div class="code-wrap">
         <div class="code-hero">V381566198</div>
-        <button class="copy-btn" data-copy="V381566198" data-target="copyStatusHero">Copier le code</button>
+        <!-- FIX #29 : data-label -->
+        <button class="copy-btn" data-copy="V381566198" data-target="copyStatusHero" data-label="Copier le code">Copier le code</button>
       </div>
       <span class="copy-status" id="copyStatusHero" role="status" aria-atomic="true" aria-live="polite"></span>
 
-      <p style="font-size:0.92rem; opacity:0.85; margin-bottom: 0;">⚠️ À insérer dès le premier écran de l'application Achieva Mobile.</p>
-    <div class="app-store-badges">
-  <a href="https://apps.apple.com/ca/app/achievamobile/id911123831" target="_blank" rel="noopener noreferrer" aria-label="Télécharger l'application Achieva Mobile sur l'App Store">
-    <img src="https://cashinstinct.ca/achieva/images/app-store-badge.webp" alt="Télécharger dans l'App Store" width="646" height="250" class="store-badge" loading="lazy">
-  </a>
-  
-  <a href="https://play.google.com/store/apps/details?id=com.achieva.android&hl=en_CA" target="_blank" rel="noopener noreferrer" aria-label="Télécharger l'application Achieva Mobile sur Google Play">
-   <img src="https://cashinstinct.ca/achieva/images/google-play-badge.png" alt="Disponible sur Google Play" width="646" height="250" class="store-badge" loading="lazy">
-  </a>
-</div>
-    </header>
+      <p style="font-size:0.92rem; opacity:0.85; margin-bottom:0;">⚠️ À insérer dès le premier écran de l'application Achieva Mobile.</p>
 
-    <main>
-
-      <article class="summary-box" aria-label="Résumé de l'offre d'inscription">
-        <h2>Résumé rapide de la prime d'inscription</h2>
-        <p>Le <strong>Petal Code Achieva Financial V381566198</strong> valide en 2026 permet d'obtenir un bonus d'inscription de 25 $ CAD. Pour être admissible, le nouveau client doit copier ce code, télécharger l'application mobile, l'insérer lors de son inscription, effectuer un dépôt initial minimal de 250 $ CAD et conserver ce solde sur le compte pendant une période d'au moins 30 jours.</p>
-      </article>
-
-      <section id="guide-utilisation">
-        <span class="section-label">Protocole mobile</span>
-        <h2>Comment activer le code sur l'application Achieva ?</h2>
-        
-        <div class="warning">
-          ⚠️ <strong>Astuce :</strong> Le formulaire d'ouverture n'est pas disponible sur le site web. Vous devez absolument télécharger l'application Achieva Mobile sur iOS ou Android pour procéder.
-        </div>
-
-        <ol class="steps">
-          <li>
-            <div>
-              <h3>Copiez votre Petal Code</h3>
-              <p>Cliquez sur le bouton en haut de cette page pour copier automatiquement le code <code>V381566198</code> dans le presse-papiers de votre téléphone.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Téléchargez l'application Achieva Mobile</h3>
-              <p>Ouvrez l'App Store (Apple) ou Google Play (Android) et installez l'application officielle <strong>Achieva Mobile</strong>.</p
-            </div>
-              <div class="app-store-badges">
-  <a href="https://apps.apple.com/ca/app/achievamobile/id911123831" target="_blank" rel="noopener noreferrer" aria-label="Télécharger l'application Achieva Mobile sur l'App Store">
-    <img src="https://cashinstinct.ca/achieva/images/app-store-badge.webp" alt="Télécharger dans l'App Store" width="646" height="250" class="store-badge" loading="lazy">
-  </a>
-  
-  <a href="https://play.google.com/store/apps/details?id=com.achieva.android&hl=en_CA" target="_blank" rel="noopener noreferrer" aria-label="Télécharger l'application Achieva Mobile sur Google Play">
-    <img src="https://cashinstinct.ca/achieva/images/google-play-badge.png" alt="Disponible sur Google Play" width="646" height="250" class="store-badge" loading="lazy">
-  </a>
-</div>
-          </li>
-          <li>
-            <div>
-              <h3>Collez le code à l'ouverture</h3>
-              <p>Dès que vous ouvrez l'application Achieva pour créer votre compte, collez le code dans le champ <strong style="white-space: nowrap;">« Achieva Petal Code »</strong>.</p>
-              
-              <img src="https://cashinstinct.ca/achieva/images/achieva-petal-code.webp" alt="Champ Achieva Petal Code dans l'application Achieva" style="display: block; max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow); margin-top: 14px;" width="600" height="300" loading="lazy">
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Transférez un minimum de 250 $ CAD</h3>
-              <p>Finalisez votre profil en liant votre compte externe principal et effectuez un dépôt initial d'au moins 250 $.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Percevez votre bonus de 25 $</h3>
-              <p>Laissez le montant de 250 $ intact pendant 30 jours consécutifs. Achieva créditera la prime de 25 $ directement dans votre compte le mois suivant.</p>
-            </div>
-          </li>
-        </ol>
-      </section>
-
-      <section id="pourquoi-achieva">
-        <span class="section-label">Épargne Alternative</span>
-        <h2>Pourquoi choisir Achieva Financial ?</h2>
-        <p>Achieva Financial est une division d'épargne en ligne de la <strong>Cambrian Credit Union</strong>, l’une des plus importantes institutions coopératives du Manitoba. Active depuis 1998, cette plateforme propose des comptes d'épargne performants sans aucuns frais de gestion mensuels.</p>
-        <p>Le plus grand avantage d'Achieva repose sur sa structure de sécurité : contrairement aux institutions traditionnelles rattachées à la SADC (limitée à 100 000 $), <strong>100 % des dépôts confiés à Achieva Financial sont garantis sans aucune limite de plafond</strong> par la Corporation d'assurance-dépôts du Manitoba (DGCM). C'est un choix de premier ordre pour sécuriser un fonds d'urgence d'envergure.</p>
-      </section>
-
-      <section id="caracteristiques">
-        <span class="section-label">Spécifications</span>
-        <h2>Fiche technique des comptes Achieva</h2>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Paramètre</th>
-                <th>Règle applicable</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Frais de gestion mensuels</td>
-                <td><strong>0 $</strong> (Entièrement gratuit)</td>
-              </tr>
-              <tr>
-                <td>Solde minimal exigé</td>
-                <td>Aucun (sauf les 250 $ temporaires pour le bonus)</td>
-              </tr>
-              <tr>
-                <td>Garantie des fonds</td>
-                <td><strong>100 % illimitée</strong> (Garantie par la DGCM)</td>
-              </tr>
-              <tr>
-                <td>Transferts sortants</td>
-                <td>1 virement électronique gratuit par mois (0.50 $ ensuite)</td>
-              </tr>
-              <tr>
-                <td>Admissibilité géographique</td>
-                <td>Disponible au <strong>Québec</strong> et partout au Canada</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="points-clefs">
-        <span class="section-label">Ce qu'il faut savoir</span>
-        <h2>Avantages et limites à prendre en compte</h2>
-        <ul class="advantages">
-          <li><span class="icon">🛡️</span><div><strong>Sécurité maximale :</strong> Vos liquidités sont protégées en totalité, aucun plafond de dépôt ne s'applique.</div></li>
-          <li><span class="icon">🍁</span><div><strong>Ouverture interprovinciale :</strong> Les résidents du Québec peuvent ouvrir un compte en ligne sans contrainte réglementaire.</div></li>
-          <li><span class="icon">💬</span><div><strong>Interface unilingue :</strong> À noter que l'application mobile et le service à la clientèle opèrent uniquement en anglais.</div></li>
-          <li><span class="icon">📱</span><div><strong>Mobile First :</strong> L'ouverture du compte exige de posséder un téléphone intelligent (iOS ou Android).</div></li>
-        </ul>
-      </section>
-
-      <section id="faq">
-        <span class="section-label">Foire aux questions</span>
-        <h2>Questions fréquentes sur le Petal Code</h2>
-        <div class="faq">
-          <details>
-            <summary>Qu'est-ce qu'un Achieva Petal Code et est-il valide en 2026 ?</summary>
-            <div class="faq-body">
-              <p>Le Petal Code est le nom officiel donné par Achieva Financial à son code de recommandation. Le code <code>V381566198</code> est entièrement valide tout au long de l'année 2026 pour sécuriser une prime d'inscription de 25 $ CAD.</p>
-            </div>
-          </details>
-
-          <details>
-            <summary>Où appliquer le Petal Code Achieva Financial V381566198 ?</summary>
-            <div class="faq-body">
-              <p>L'ouverture de compte se fait exclusivement via l'application mobile d'Achieva. Il faut coller le code <code>V381566198</code> dans le champ <strong>« Achieva Petal Code »</strong> dès le premier écran de l'application. Déposez ensuite un minimum de 250 $ CAD et maintenez ce montant pendant au moins 1 mois.</p>
-            </div>
-          </details>
-
-          <details>
-            <summary>Est-ce qu'Achieva Financial est une institution financière fiable et sécurisée ?</summary>
-            <div class="faq-body">
-              <p>Oui, Achieva Financial est une division Internet de la Cambrian Credit Union, l'une des plus grandes coopératives de crédit au Manitoba. De plus, 100 % des dépôts sont entièrement garantis sans plafond limite par la Corporation d'assurance-dépôts du Manitoba (DGCM).</p>
-            </div>
-          </details>
-
-          <details>
-            <summary>Peut-on ouvrir un compte Achieva Financial si l'on réside au Québec ?</summary>
-            <div class="faq-body">
-              <p>Oui, les services d'Achieva Financial sont accessibles aux résidents du Québec et de toutes les autres provinces canadiennes en téléchargeant l'application d'Achieva. Il convient toutefois de noter que l'interface et le service client sont dispensés exclusivement en anglais.</p>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <div class="cta-section">
-        <h2>Avez-vous copié votre Petal Code ?</h2>
-        <p>Gardez le Petal Code <strong>V381566198</strong> en mémoire et téléchargez l'application d'Achieva pour ouvrir votre compte.</p>
-
-        <div class="cta-code-row">
-          <span class="cta-code-pill">V381566198</span>
-          <button class="cta-copy-btn copy-btn" data-copy="V381566198" data-target="copyStatusCta">Copier le code</button>
-        </div>
-        <span class="copy-status" id="copyStatusCta" role="status" aria-atomic="true" aria-live="polite"></span>
+      <!-- FIX #19 : loading="eager" pour badges hero -->
+      <div class="app-store-badges">
+        <a href="https://apps.apple.com/ca/app/achievamobile/id911123831"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Télécharger l'application Achieva Mobile sur l'App Store">
+          <img src="https://cashinstinct.ca/achieva/images/app-store-badge.webp"
+               alt="Télécharger dans l'App Store" width="646" height="250"
+               class="store-badge" loading="eager">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.achieva.android&hl=en_CA"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Télécharger l'application Achieva Mobile sur Google Play">
+          <img src="https://cashinstinct.ca/achieva/images/google-play-badge.png"
+               alt="Disponible sur Google Play" width="646" height="250"
+               class="store-badge" loading="eager">
+        </a>
       </div>
+    </div>
+  </header>
 
-      <article class="glossary-box" aria-label="Expressions alternatives">
-        <strong>Variantes sémantiques de recherche :</strong> L'identifiant promotionnel <code>V381566198</code> sert de référence technique commune pour les requêtes associées suivantes : <em>Achieva Petal Code</em>, <em>code de recommandation Achieva Financial</em>, <em>Achieva Financial referral code Canada</em>, <em>code parrainage Achieva Manitoba</em>, <em>bonus d'inscription Cambrian Credit Union</em>, ou <em>promo compte épargne Achieva</em>.
-      </article>
+  <!-- FIX #16 : id="main-content" -->
+  <main id="main-content">
+    <div class="container">
+      <div class="prose">
 
-<div class="transparency">
-  <strong>Transparence :</strong> Si vous ouvrez un compte via l'application Achieva avec le Petal Code <code>V381566198</code>, nous recevons chacun une prime de parrainage de 25 $. Pour consulter les taux d'intérêt en vigueur ou les termes légaux du compte, vous pouvez visiter le site officiel d'<a href="https://www.achieva.mb.ca" target="_blank" rel="noopener">Achieva Financial</a>.
-</div>
-    </main>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true"> › </span>
+          <a href="https://cashinstinct.ca/#finances">Banque &amp; Finances</a><span aria-hidden="true"> › </span>
+          <span aria-current="page">Achieva Financial</span>
+        </nav>
 
-    <footer>
+        <!-- FIX #42 : border-left accent -->
+        <article class="summary-box" aria-label="Résumé de l'offre d'inscription">
+          <h2>Résumé rapide de la prime d'inscription</h2>
+          <p>Le <strong>Petal Code Achieva Financial V381566198</strong> valide en 2026 permet d'obtenir un bonus d'inscription de 25 $ CAD. Pour être admissible, le nouveau client doit copier ce code, télécharger l'application mobile, l'insérer lors de son inscription, effectuer un dépôt initial minimal de 250 $ CAD et conserver ce solde sur le compte pendant une période d'au moins 30 jours.</p>
+        </article>
+        <!-- FIX #43 : date visible dans la page -->
+        <p class="last-updated">Mis à jour le <time datetime="2026-06-06" id="last-updated-date">6 juin 2026</time></p>
+
+        <section id="guide-utilisation">
+          <span class="section-label">Protocole mobile</span>
+          <h2>Comment activer le code sur l'application Achieva ?</h2>
+
+          <div class="warning" role="note">
+            ⚠️ <strong>Important :</strong> Le formulaire d'ouverture n'est pas disponible sur le site web. Vous devez absolument télécharger l'application Achieva Mobile sur iOS ou Android pour procéder.
+          </div>
+
+          <ol class="steps">
+            <li>
+              <div>
+                <h3>Copiez votre Petal Code</h3>
+                <p>Cliquez sur le bouton en haut de cette page pour copier automatiquement le code <code>V381566198</code> dans le presse-papiers de votre téléphone.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Téléchargez l'application Achieva Mobile</h3>
+                <!-- FIX #13 : </p> fermé correctement -->
+                <p>Ouvrez l'App Store (Apple) ou Google Play (Android) et installez l'application officielle <strong>Achieva Mobile</strong>.</p>
+                <div class="app-store-badges" style="justify-content:flex-start; margin-top:16px;">
+                  <a href="https://apps.apple.com/ca/app/achievamobile/id911123831"
+                     target="_blank" rel="noopener noreferrer"
+                     aria-label="Télécharger l'application Achieva Mobile sur l'App Store">
+                    <img src="https://cashinstinct.ca/achieva/images/app-store-badge.webp"
+                         alt="Télécharger dans l'App Store" width="646" height="250"
+                         class="store-badge" loading="lazy">
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.achieva.android&hl=en_CA"
+                     target="_blank" rel="noopener noreferrer"
+                     aria-label="Télécharger l'application Achieva Mobile sur Google Play">
+                    <img src="https://cashinstinct.ca/achieva/images/google-play-badge.png"
+                         alt="Disponible sur Google Play" width="646" height="250"
+                         class="store-badge" loading="lazy">
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Collez le code à l'ouverture</h3>
+                <p>Dès que vous ouvrez l'application Achieva pour créer votre compte, collez le code dans le champ <strong style="white-space: nowrap;">« Achieva Petal Code »</strong>.</p>
+                <img src="https://cashinstinct.ca/achieva/images/achieva-petal-code.webp"
+                     alt="Champ Achieva Petal Code dans l'application Achieva"
+                     style="display:block; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--border); box-shadow:var(--shadow); margin-top:14px;"
+                     width="600" height="300" loading="lazy">
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Transférez un minimum de 250 $ CAD</h3>
+                <p>Finalisez votre profil en liant votre compte externe principal et effectuez un dépôt initial d'au moins 250 $.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Percevez votre bonus de 25 $</h3>
+                <p>Laissez le montant de 250 $ intact pendant 30 jours consécutifs. Achieva créditera la prime de 25 $ directement dans votre compte le mois suivant.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section id="pourquoi-achieva">
+          <span class="section-label">Épargne Alternative</span>
+          <h2>Pourquoi choisir Achieva Financial ?</h2>
+          <p>Achieva Financial est une division d'épargne en ligne de la <strong>Cambrian Credit Union</strong>, l'une des plus importantes institutions coopératives du Manitoba. Active depuis 1998, cette plateforme propose des comptes d'épargne performants sans aucuns frais de gestion mensuels.</p>
+          <p>Le plus grand avantage d'Achieva repose sur sa structure de sécurité : contrairement aux institutions traditionnelles rattachées à la SADC (limitée à 100 000 $), <strong>100 % des dépôts confiés à Achieva Financial sont garantis sans aucune limite de plafond</strong> par la Corporation d'assurance-dépôts du Manitoba (DGCM). C'est un choix de premier ordre pour sécuriser un fonds d'urgence d'envergure.</p>
+        </section>
+
+        <section id="caracteristiques">
+          <span class="section-label">Spécifications</span>
+          <h2>Fiche technique des comptes Achieva</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Paramètre</th><th>Règle applicable</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Frais de gestion mensuels</td><td><strong>0 $</strong> (Entièrement gratuit)</td></tr>
+                <tr><td>Solde minimal exigé</td><td>Aucun (sauf les 250 $ temporaires pour le bonus)</td></tr>
+                <tr><td>Garantie des fonds</td><td><strong>100 % illimitée</strong> (Garantie par la DGCM)</td></tr>
+                <tr><td>Transferts sortants</td><td>1 virement électronique gratuit par mois (0,50 $ ensuite)</td></tr>
+                <tr><td>Admissibilité géographique</td><td>Disponible au <strong>Québec</strong> et partout au Canada</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="points-clefs">
+          <span class="section-label">Ce qu'il faut savoir</span>
+          <h2>Avantages et limites à prendre en compte</h2>
+          <ul class="advantages">
+            <li><span class="icon">🛡️</span><div><strong>Sécurité maximale :</strong> Vos liquidités sont protégées en totalité, aucun plafond de dépôt ne s'applique.</div></li>
+            <li><span class="icon">🍁</span><div><strong>Ouverture interprovinciale :</strong> Les résidents du Québec peuvent ouvrir un compte en ligne sans contrainte réglementaire.</div></li>
+            <li><span class="icon">💬</span><div><strong>Interface unilingue :</strong> À noter que l'application mobile et le service à la clientèle opèrent uniquement en anglais.</div></li>
+            <li><span class="icon">📱</span><div><strong>Mobile First :</strong> L'ouverture du compte exige de posséder un téléphone intelligent (iOS ou Android).</div></li>
+          </ul>
+        </section>
+
+        <section id="faq">
+          <span class="section-label">Foire aux questions</span>
+          <h2>Questions fréquentes sur le Petal Code</h2>
+          <div class="faq">
+            <details>
+              <summary>Qu'est-ce qu'un Achieva Petal Code et est-il valide en 2026 ?</summary>
+              <div class="faq-body">
+                <p>Le Petal Code est le nom officiel donné par Achieva Financial à son code de recommandation. Le code <code>V381566198</code> est entièrement valide tout au long de l'année 2026 pour sécuriser une prime d'inscription de 25 $ CAD.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Où appliquer le Petal Code Achieva Financial V381566198 ?</summary>
+              <div class="faq-body">
+                <p>L'ouverture de compte se fait exclusivement via l'application mobile d'Achieva. Il faut coller le code <code>V381566198</code> dans le champ <strong>« Achieva Petal Code »</strong> dès le premier écran de l'application. Déposez ensuite un minimum de 250 $ CAD et maintenez ce montant pendant au moins 1 mois.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Est-ce qu'Achieva Financial est une institution financière fiable et sécurisée ?</summary>
+              <div class="faq-body">
+                <p>Oui, Achieva Financial est une division Internet de la Cambrian Credit Union, l'une des plus grandes coopératives de crédit au Manitoba. De plus, 100 % des dépôts sont entièrement garantis sans plafond limite par la Corporation d'assurance-dépôts du Manitoba (DGCM).</p>
+              </div>
+            </details>
+            <details>
+              <summary>Peut-on ouvrir un compte Achieva Financial si l'on réside au Québec ?</summary>
+              <div class="faq-body">
+                <p>Oui, les services d'Achieva Financial sont accessibles aux résidents du Québec et de toutes les autres provinces canadiennes en téléchargeant l'application d'Achieva. Il convient toutefois de noter que l'interface et le service client sont dispensés exclusivement en anglais.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <div class="cta-section">
+          <h2>Avez-vous copié votre Petal Code ?</h2>
+          <p>Gardez le Petal Code <strong>V381566198</strong> en mémoire et téléchargez l'application d'Achieva pour ouvrir votre compte.</p>
+          <div class="cta-code-row">
+            <span class="cta-code-pill">V381566198</span>
+            <button class="cta-copy-btn copy-btn" data-copy="V381566198" data-target="copyStatusCta" data-label="Copier le code">Copier le code</button>
+          </div>
+          <span class="copy-status" id="copyStatusCta" role="status" aria-atomic="true" aria-live="polite"></span>
+        </div>
+
+        <article class="glossary-box" aria-label="Expressions alternatives de recherche">
+          <strong>Variantes sémantiques de recherche :</strong> L'identifiant promotionnel <code>V381566198</code> sert de référence pour : <em>Achieva Petal Code</em>, <em>code de recommandation Achieva Financial</em>, <em>Achieva Financial referral code Canada</em>, <em>code parrainage Achieva Manitoba</em>, <em>bonus d'inscription Cambrian Credit Union</em>, ou <em>promo compte épargne Achieva</em>.
+        </article>
+
+        <!-- FIX #35 : aside sémantique -->
+        <aside class="transparency">
+          <strong>Transparence :</strong> Si vous ouvrez un compte via l'application Achieva avec le Petal Code <code>V381566198</code>, nous recevons chacun une prime de parrainage de 25 $. Pour consulter les taux d'intérêt en vigueur ou les termes légaux, visitez le site officiel d'<a href="https://www.achieva.mb.ca" target="_blank" rel="noopener noreferrer">Achieva Financial</a>.
+        </aside>
+
+      </div><!-- /prose -->
+    </div><!-- /container -->
+  </main>
+
+  <!-- FOOTER — FIX #34 : pleine largeur -->
+  <footer>
+    <div class="footer-inner">
       <p>Cette page est une plateforme de référence documentaire indépendante. Elle n'est pas gérée de manière officielle par Achieva Financial ou Cambrian Credit Union.</p>
-      <p style="margin-top:6px;">Achieva Petal Code : <code>V381566198</code> — Données à jour : mai 2026</p>
+      <!-- FIX #32 : date dynamique -->
+      <p style="margin-top:6px;">Achieva Petal Code : <code>V381566198</code> — Données à jour : <span id="footer-date"></span></p>
       <div class="footer-links">
+        <!-- FIX #33 : HP Ink -->
+        <a href="https://cashinstinct.ca/hp/fr/">🖨️ HP Instant Ink</a>
         <a href="https://cashinstinct.ca/tangerine/fr/">🍊 Promo Tangerine</a>
         <a href="https://cashinstinct.ca/ebox/fr/">🌐 Code EBOX</a>
         <a href="https://cashinstinct.ca/stickermule/fr/">🏷️ Code Sticker Mule</a>
       </div>
-    </footer>
+    </div>
+  </footer>
+
+  <!-- FIX #31 : STICKY CTA MOBILE -->
+  <div class="sticky-cta" role="complementary" aria-label="Copier le code et télécharger l'application">
+    <span class="sticky-cta-code">V381566198</span>
+    <div class="sticky-store-links">
+      <a href="https://apps.apple.com/ca/app/achievamobile/id911123831"
+         target="_blank" rel="noopener noreferrer" aria-label="App Store Apple">
+        🍎 App Store
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.achieva.android&hl=en_CA"
+         target="_blank" rel="noopener noreferrer" aria-label="Google Play">
+        ▶ Google Play
+      </a>
+    </div>
+    <button class="sticky-cta-btn" data-copy="V381566198" data-target="stickyStatus" data-label="Copier">Copier</button>
   </div>
+  <span id="stickyStatus" role="status" aria-live="polite" style="position:absolute; left:-9999px;"></span>
 
   <script>
+    /* ── COPY — FIX #29 : data-label pour reset fiable ── */
     async function copyText(text, button, statusId) {
       const status = document.getElementById(statusId);
       try {
         await navigator.clipboard.writeText(text);
-        button.textContent = "Copié !";
-        button.style.background = "color-mix(in srgb, var(--accent) 15%, transparent)";
-        
-        setTimeout(() => { 
-          button.textContent = "Copier le code"; 
-          button.style.background = "";
+        button.textContent = 'Copié ✓';
+        button.style.background = 'color-mix(in srgb, var(--accent) 15%, transparent)';
+        if (status) status.textContent = 'Code copié !';
+        setTimeout(() => {
+          button.textContent = button.dataset.label || 'Copier le code';
+          button.style.background = '';
+          if (status) status.textContent = '';
         }, 2000);
       } catch (err) {
-        status.textContent = "Impossible de copier automatiquement.";
+        if (status) status.textContent = 'Impossible de copier automatiquement.';
       }
     }
-
-    document.querySelectorAll("[data-copy]").forEach((button) => {
-      button.addEventListener("click", () => {
-        copyText(button.getAttribute("data-copy"), button, button.getAttribute("data-target"));
-      });
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', () =>
+        copyText(btn.dataset.copy, btn, btn.dataset.target)
+      );
     });
 
-    const themeToggle = document.getElementById("theme-toggle");
+    /* ── THEME — FIX #17/30 : aria-pressed + aria-label dynamiques ── */
+    const themeToggle = document.getElementById('theme-toggle');
     const root = document.documentElement;
 
     function setThemeUI(isDark) {
-      themeToggle.textContent = isDark ? "☀️" : "🌙";
-      themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+      themeToggle.textContent = isDark ? '☀️' : '🌙';
+      themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      themeToggle.setAttribute('aria-label', isDark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
     }
 
-    if (localStorage.getItem("theme") === "dark") {
-      root.setAttribute("data-theme", "dark");
-      setThemeUI(true);
-    } else {
-      setThemeUI(false);
-    }
+    setThemeUI(root.getAttribute('data-theme') === 'dark');
 
-    themeToggle.addEventListener("click", () => {
-      const isDark = root.getAttribute("data-theme") === "dark";
+    themeToggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
       if (isDark) {
-        root.removeAttribute("data-theme");
-        localStorage.setItem("theme", "light");
-        setThemeUI(false);
+        root.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
       } else {
-        root.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-        setThemeUI(true);
+        root.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
       }
+      setThemeUI(!isDark);
     });
+
+    /* ── FOOTER DATE — FIX #32 ── */
+    document.getElementById('footer-date').textContent =
+      new Date().toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
   </script>
 
 </body>
 </html>
+
 
