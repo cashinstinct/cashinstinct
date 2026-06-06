@@ -249,6 +249,7 @@
       color: #fff;
       padding: 56px 20px 48px;
       text-align: center;
+      overflow: hidden; /* ← empêche tout débordement enfant */
     }
     header.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
     header.hero p { font-size: 1.15rem; opacity: 0.95; max-width: 620px; margin: 0 auto 28px; color: #fff; }
@@ -290,18 +291,51 @@
       .hero-methods > div { flex: 1; }
     }
 
-    /* ── COPY ── */
-    .input-copy-group { display: flex; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; padding: 4px; }
-    .copy-btn, .cta-copy-btn {
-      appearance: none; border: 0; cursor: pointer;
-      font-weight: 800; border-radius: 6px;
-      transition: background 0.15s ease, color 0.15s ease;
-    }
-    .copy-btn { background: var(--text); color: var(--surface); font-size: 0.95rem; padding: 0 20px; white-space: nowrap; -webkit-appearance: none; }
-    .cta-copy-btn { background: rgba(255,255,255,0.18); color: #fff; padding: 10px 14px; font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.4); }
-    .cta-copy-btn.copied { background: #fff; color: var(--accent); }
-    .copy-status { display: block; min-height: 1.2em; font-size: 0.85rem; text-align: center; margin-top: 6px; }
+  /* ── COPY ── */
+.input-copy-group {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 4px;
+  gap: 4px;
+}
+@media (min-width: 480px) {
+  .input-copy-group { flex-direction: row; gap: 0; }
+}
 
+.copy-btn, .cta-copy-btn {
+  appearance: none; -webkit-appearance: none; border: 0; cursor: pointer;
+  font-weight: 800; border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.copy-btn {
+  background: var(--text); color: var(--surface);
+  font-size: 0.95rem; padding: 0 20px;
+  white-space: nowrap; min-height: 48px;
+}
+/* Mobile : bouton pleine largeur SOUS le code */
+@media (max-width: 479px) {
+  .copy-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    min-height: 52px;
+  }
+}
+.cta-copy-btn {
+  background: rgba(255,255,255,0.18); color: #fff;
+  padding: 10px 14px; font-size: 0.95rem;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.cta-copy-btn.copied { background: #fff; color: var(--accent); }
+.copy-status {
+  display: block; min-height: 1.2em; font-size: 0.85rem;
+  text-align: center; margin-top: 6px;
+}
     /* ── MAIN ── */
     main { padding: 42px 0 52px; }
     section { margin-bottom: 56px; scroll-margin-top: 72px; }
@@ -319,22 +353,24 @@
     .ai-summary strong { color: var(--text); font-weight: 800; }
 
     /* ── CUMUL BADGE (hero) ── */
-    .cumul-badge {
-      display: inline-flex;
-      align-items: center;
-      flex-wrap: nowrap;
-      gap: 6px;
-      background: rgba(0,0,0,.25);
-      border: 2px solid rgba(255,255,255,.6);
-      border-radius: 40px;
-      padding: 10px 20px;
-      font-size: 1rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 28px;
-      max-width: 100%;
-      white-space: nowrap;
-    }
+   .cumul-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;           /* ← wrap au lieu de nowrap */
+  justify-content: center;   /* ← centrage si wrap */
+  gap: 6px;
+  background: rgba(0,0,0,.25);
+  border: 2px solid rgba(255,255,255,.6);
+  border-radius: 40px;
+  padding: 10px 16px;
+  font-size: 0.9rem;         /* ← légèrement réduit */
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 28px;
+  max-width: calc(100% - 32px); /* ← respecte le padding du container */
+  box-sizing: border-box;
+  /* white-space: nowrap; ← supprimé */
+}
     .cumul-badge .plus { opacity: .8; font-size: .9em; margin: 0 2px; }
     .cumul-badge .total-pill {
       background: #fff;
