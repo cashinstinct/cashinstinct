@@ -216,23 +216,6 @@
             }
           }
         ]
-      },
-      {
-        "@type": "VideoObject",
-        "name": "EBOX Client Code GE911 Tutorial",
-        "description": "Screen recording showing where to enter referral code GE911 when ordering EBOX.",
-        "thumbnailUrl": "https://img.youtube.com/vi/dUFRORlBJYA/maxresdefault.jpg",
-        "uploadDate": "2026-06-01T00:00:00+00:00",
-        "contentUrl": "https://www.youtube.com/watch?v=dUFRORlBJYA",
-        "embedUrl": "https://www.youtube.com/embed/dUFRORlBJYA",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Cash Instinct",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://cashinstinct.ca/logo.png"
-          }
-        }
       }
     ]
   }
@@ -650,16 +633,29 @@
         transition: transform 0.3s ease;
       }
       .sticky-mobile-cta.visible { transform: translateY(0); }
+      .sticky-mobile-cta .s-left {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
       .sticky-mobile-cta .s-code {
         font-family: "Courier New", Courier, monospace;
         font-weight: 900;
         font-size: 1.1rem;
         letter-spacing: 0.06em;
+        line-height: 1.1;
       }
       .sticky-mobile-cta .s-label {
-        font-size: 0.72rem;
-        opacity: 0.85;
+        font-size: 0.68rem;
         font-weight: 600;
+        color: rgba(255,255,255,0.72);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .sticky-mobile-cta .s-actions {
+        display: flex;
+        gap: 8px;
+        align-items: center;
       }
       .sticky-mobile-cta .s-btn {
         background: rgba(255,255,255,0.18);
@@ -667,13 +663,18 @@
         color: #fff;
         font-weight: 800;
         font-size: 0.88rem;
-        padding: 8px 12px;
+        padding: 8px 14px;
         border-radius: 6px;
         cursor: pointer;
         white-space: nowrap;
         flex-shrink: 0;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
-      .sticky-mobile-cta .s-btn.copied {
+      .sticky-mobile-cta .s-btn.copied,
+      .sticky-mobile-cta .s-open-btn:hover {
         background: #fff;
         color: var(--accent);
       }
@@ -1010,50 +1011,6 @@
           </div>
         </section>
 
-        <section id="video-tutorial" aria-label="EBOX Video Tutorial">
-          <span class="section-label">Video Guide</span>
-          <h2>Where to enter client code GE911 — video walkthrough</h2>
-          <p>Here is a quick screen recording showing exactly where to find the referral field when ordering EBOX.</p>
-
-          <div id="ebox-video-facade"
-            style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;
-                   border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow);
-                   margin-top:24px; margin-bottom:24px; cursor:pointer; background:#000;"
-            onclick="
-              var iframe = document.createElement('iframe');
-              iframe.src = 'https://www.youtube-nocookie.com/embed/dUFRORlBJYA?autoplay=1';
-              iframe.title = 'EBOX Client Code GE911 Tutorial';
-              iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-              iframe.allowFullscreen = true;
-              iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
-              this.innerHTML = '';
-              this.appendChild(iframe);
-            ">
-            <img
-              src="https://img.youtube.com/vi/dUFRORlBJYA/maxresdefault.jpg"
-              alt="EBOX Client Code GE911 Tutorial — click to play"
-              loading="lazy"
-              width="1280"
-              height="720"
-              style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"
-            >
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-                        width:72px;height:72px;background:rgba(176,49,45,0.92);
-                        border-radius:50%;display:flex;align-items:center;justify-content:center;
-                        box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:transform 0.15s;"
-                 onmouseover="this.style.transform='translate(-50%,-50%) scale(1.1)'"
-                 onmouseout="this.style.transform='translate(-50%,-50%) scale(1)'">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-                <polygon points="5,3 19,12 5,21"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="transparency">
-            <strong>Visual reminder:</strong> As shown in the video, do not confuse it with the "Promo Code" field (at the top). Code <code>GE911</code> must be entered in the <strong>second section</strong> <strong>"Code — $25 for you and your friends!"</strong> to activate the $25 credit.
-          </div>
-        </section>
-
         <section id="eligibility" aria-label="Eligibility criteria">
           <span class="section-label">Conditions</span>
           <h2>Who can use the EBOX referral code?</h2>
@@ -1323,6 +1280,18 @@
   </script>
 
   <script>
+    function legacyCopy(text) {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none;';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        return ok;
+      } catch(e) { return false; }
+    }
     function copyText(text, button, statusId) {
       const status = document.getElementById(statusId);
       const originalText = button.textContent;
@@ -1337,20 +1306,15 @@
           button.classList.remove("copied");
         }, 2000);
       };
+      const doFail = () => {
+        if (status) status.textContent = "Unable to copy automatically.";
+      };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(doFeedback).catch(() => {
-          if (status) status.textContent = "Unable to copy automatically.";
+          legacyCopy(text) ? doFeedback() : doFail();
         });
       } else {
-        // Fallback for Safari/iOS
-        const ta = document.createElement("textarea");
-        ta.value = text;
-        ta.style.cssText = "position:fixed;opacity:0;pointer-events:none;";
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand("copy"); doFeedback(); }
-        catch(e) { if (status) status.textContent = "Unable to copy automatically."; }
-        document.body.removeChild(ta);
+        legacyCopy(text) ? doFeedback() : doFail();
       }
     }
 
@@ -1435,12 +1399,14 @@
   </script>
 
   <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="EBOX code to copy">
-    <div>
-      <div class="s-code">GE911</div>
-      <div class="s-label">EBOX client code</div>
+    <div class="s-left">
+      <span class="s-code">GE911</span>
+      <span class="s-label">EBOX client code</span>
     </div>
-    <button class="s-btn" id="sticky-copy-btn" type="button">Copy</button>
-    <a class="s-link" href="https://www.ebox.ca/" target="_blank" rel="noopener noreferrer">ebox.ca ↗</a>
+    <div class="s-actions">
+      <button class="s-btn" id="sticky-copy-btn" type="button">Copy</button>
+      <a class="s-btn s-open-btn" href="https://www.ebox.ca/en/order" target="_blank" rel="noopener noreferrer" aria-label="Open EBOX sign-up page">Open ↗</a>
+    </div>
   </div>
 
   <script>
@@ -1484,16 +1450,13 @@
           btn.classList.add('copied');
           setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
         };
+        var doFail = function() { btn.textContent = 'GE911'; };
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText('GE911').then(doFeedback).catch(function() { btn.textContent = 'GE911'; });
+          navigator.clipboard.writeText('GE911').then(doFeedback).catch(function() {
+            legacyCopy('GE911') ? doFeedback() : doFail();
+          });
         } else {
-          var ta = document.createElement('textarea');
-          ta.value = 'GE911';
-          ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
-          document.body.appendChild(ta);
-          ta.select();
-          try { document.execCommand('copy'); doFeedback(); } catch(e) { btn.textContent = 'GE911'; }
-          document.body.removeChild(ta);
+          legacyCopy('GE911') ? doFeedback() : doFail();
         }
       });
     })();
