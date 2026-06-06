@@ -31,31 +31,37 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cashinstinct.ca/hp-instant-ink/</loc>
+    <loc>https://cashinstinct.ca/hp-instant-ink/fr/</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cashinstinct.ca/tangerine/</loc>
+    <loc>https://cashinstinct.ca/tangerine/fr/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+   <url>
+    <loc>https://cashinstinct.ca/tangerine/en/</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cashinstinct.ca/achieva/</loc>
+    <loc>https://cashinstinct.ca/achieva/fr/</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cashinstinct.ca/rakuten-canada/</loc>
+    <loc>https://cashinstinct.ca/rakuten-canada/fr/</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cashinstinct.ca/swagbucks/</loc>
+    <loc>https://cashinstinct.ca/swagbucks/en/</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
