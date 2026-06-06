@@ -36,6 +36,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+   <url>
+    <loc>https://cashinstinct.ca/hp-instant-ink/en/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url> 
   <url>
     <loc>https://cashinstinct.ca/tangerine/fr/</loc>
     <lastmod>2026-06-05</lastmod>
