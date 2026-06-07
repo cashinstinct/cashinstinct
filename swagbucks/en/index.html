@@ -296,17 +296,17 @@
     .breadcrumb span { margin: 0 5px; }
 
     /* ── HERO ── */
-    header.hero {
-      background: var(--surface-soft);
-      border-bottom: 1px solid var(--border);
-      padding: 72px 24px 64px;
-      text-align: center;
-    }
-    header.hero h1 {
-      font-size: clamp(2rem, 4.5vw, 3rem);
-      font-weight: 900; line-height: 1.15; margin-bottom: 18px;
-      letter-spacing: -0.02em; color: var(--text);
-    }
+header.hero {
+  background: var(--surface-soft);
+  border-bottom: 1px solid var(--border);
+  padding: 40px 16px 32px; /* Réduit pour gagner de l'espace sur mobile */
+  text-align: center;
+}
+
+header.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem); /* Légèrement réduit */
+  margin-bottom: 12px;
+}
     header.hero h1 span { color: var(--accent); }
     header.hero .hero-sub {
       font-size: clamp(1rem, 2vw, 1.2rem);
@@ -593,18 +593,18 @@
         on your new account — valid in all Canadian provinces.
       </p>
 
+      <a class="cta-btn-hero"
+         href="https://www.swagbucks.com/profile/Cashinstinct?rp=1"
+         target="_blank" rel="noopener noreferrer sponsored">
+        Get My $10 Swagbucks Bonus →
+      </a>
+      
       <div class="trust-row" aria-label="Trust indicators">
         <span class="trust-badge">✓ Verified member since 2009</span>
         <span class="trust-badge">💙 26,418 SB lifetime earned</span>
         <span class="trust-badge">🇨🇦 All provinces including Quebec</span>
         <span class="trust-badge">🔒 Zero cost to you</span>
       </div>
-
-      <a class="cta-btn-hero"
-         href="https://www.swagbucks.com/profile/Cashinstinct?rp=1"
-         target="_blank" rel="noopener noreferrer sponsored">
-        Get My $10 Swagbucks Bonus →
-      </a>
 
       <div class="hero-proof">
         <p class="hero-proof-label">✓ Verified Amethyst Level Member Profile — Active Since June 2009</p>
