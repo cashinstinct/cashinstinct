@@ -9,10 +9,10 @@
   <meta name="description" content="Use Achieva Petal Code V381566198 in the mobile app when opening your account to receive a $25 CAD welcome bonus. Valid across Canada in 2026." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/achieva/en/" />
-  <link rel="alternate" hreflang="en-CA"    href="https://cashinstinct.ca/achieva/en/" />
-  <link rel="alternate" hreflang="en"       href="https://cashinstinct.ca/achieva/en/" />
-  <link rel="alternate" hreflang="fr-CA"    href="https://cashinstinct.ca/achieva/fr/" />
-  <link rel="alternate" hreflang="fr"       href="https://cashinstinct.ca/achieva/fr/" />
+  <link rel="alternate" hreflang="en-CA"     href="https://cashinstinct.ca/achieva/en/" />
+  <link rel="alternate" hreflang="en"        href="https://cashinstinct.ca/achieva/en/" />
+  <link rel="alternate" hreflang="fr-CA"     href="https://cashinstinct.ca/achieva/fr/" />
+  <link rel="alternate" hreflang="fr"        href="https://cashinstinct.ca/achieva/fr/" />
   <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/achieva/en/" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
 
@@ -151,7 +151,6 @@
   </script>
 
   <style>
-    /* ── TOKENS ─────────────────────────────────────────────────── */
     :root {
       --bg:             #ffffff;
       --surface:        #ffffff;
@@ -188,7 +187,6 @@
       --shadow:         0 14px 40px rgba(0,0,0,0.4);
     }
 
-    /* ── RESET ──────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -213,7 +211,6 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
     .prose     { max-width: 760px;  margin: 0 auto; }
 
-    /* ── TOPBAR ─────────────────────────────────────────────────── */
     .topbar {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -246,7 +243,6 @@
     }
     .theme-btn:hover { border-color: var(--accent); }
 
-    /* ── HERO ───────────────────────────────────────────────────── */
     header.hero {
       background: linear-gradient(135deg, var(--accent) 0%, #169c5b 100%);
       color: #ffffff; padding: 64px 20px;
@@ -268,10 +264,23 @@
     .code-hero { color: var(--accent); font-family: "Courier New", Courier, monospace; font-size: 1.8rem; font-weight: 900; letter-spacing: 0.04em; }
     [data-theme="dark"] .code-wrap { background: #ffffff; }
 
-    .copy-btn, .cta-copy-btn { border: 0; cursor: pointer; font-weight: 800; border-radius: 10px; transition: transform 0.15s, background 0.15s; }
-    .copy-btn:hover, .cta-copy-btn:hover { transform: translateY(-1px); opacity: 0.95; }
-    .copy-btn { background: #06301c; color: #ffffff; font-size: 0.95rem; padding: 12px 16px; }
+    /* FIX #2 — classes séparées */
+    .copy-btn {
+      border: 0; cursor: pointer; font-weight: 800; border-radius: 10px;
+      transition: transform 0.15s, background 0.15s;
+      background: #06301c; color: #ffffff; font-size: 0.95rem; padding: 12px 16px;
+    }
+    .copy-btn:hover { transform: translateY(-1px); opacity: 0.95; }
     [data-theme="dark"] .copy-btn { background: var(--accent); color: #0d120f; }
+
+    .cta-copy-btn {
+      border: 0; cursor: pointer; font-weight: 800; border-radius: 10px;
+      transition: transform 0.15s, background 0.15s;
+      background: rgba(255,255,255,0.18); color: #ffffff;
+      padding: 10px 14px; font-size: 0.95rem;
+    }
+    .cta-copy-btn:hover { transform: translateY(-1px); opacity: 0.95; }
+
     .copy-status { display: block; font-size: 0.92rem; min-height: 1.2em; font-weight: 700; margin-top: 6px; color: #ffffff; }
 
     .app-store-badges { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 24px; }
@@ -279,14 +288,12 @@
     .app-store-badges a:hover { transform: translateY(-2px); opacity: 0.9; }
     .store-badge { display: block; height: 54px; width: auto; max-width: 100%; }
 
-    /* ── BREADCRUMB ─────────────────────────────────────────────── */
     .breadcrumb { font-size: 0.82rem; color: var(--muted); padding: 16px 0 8px; }
     .breadcrumb a { color: var(--muted); font-weight: 500; }
     .breadcrumb span { margin: 0 4px; }
 
     .last-updated { font-size: 0.82rem; color: var(--muted); margin-bottom: 32px; }
 
-    /* ── MAIN ───────────────────────────────────────────────────── */
     main { padding: 40px 0 20px; }
     section { margin-bottom: 52px; scroll-margin-top: calc(var(--topbar-h) + 16px); }
     section h2 { font-size: clamp(1.55rem, 3vw, 1.9rem); font-weight: 800; margin-bottom: 20px; color: var(--text); }
@@ -312,7 +319,6 @@
       padding: 2px 10px; border-radius: 20px; margin-bottom: 10px;
     }
 
-    /* ── STEPS ──────────────────────────────────────────────────── */
     .steps { list-style: none; counter-reset: steps; }
     .steps li { counter-increment: steps; display: flex; gap: 18px; margin-bottom: 28px; }
     .steps li::before {
@@ -352,7 +358,6 @@
     .cta-section p  { opacity: 0.95; margin-bottom: 24px; font-size: 1.05rem; }
     .cta-code-row { margin-top: 16px; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
     .cta-code-pill { display: inline-block; background: #ffffff; color: var(--accent); font-family: "Courier New", Courier, monospace; font-weight: 900; letter-spacing: 0.04em; padding: 10px 14px; border-radius: 8px; }
-    .cta-copy-btn { background: rgba(255,255,255,0.18); color: #ffffff; padding: 10px 14px; font-size: 0.95rem; }
     .cta-section .copy-status { color: #ffffff; }
 
     .transparency { background: var(--surface-soft); border-radius: 8px; padding: 16px 20px; font-size: 0.9rem; color: var(--text-soft); margin-top: 16px; border: 1px solid var(--border); }
@@ -362,14 +367,21 @@
     .footer-links { margin-top: 10px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
     .footer-links a { color: var(--muted); font-size: 0.82rem; }
 
-    /* ── STICKY CTA MOBILE ──────────────────────────────────────── */
+    /* FIX #3 — sticky CTA hidden by default, revealed on scroll */
     .sticky-cta {
       display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
       background: var(--surface); border-top: 1px solid var(--border);
       padding: 10px 16px; gap: 8px; align-items: center; justify-content: space-between;
       box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
     }
-    @media (max-width: 767px) { .sticky-cta { display: flex; } }
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: flex;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+      .sticky-cta.visible { transform: translateY(0); }
+    }
     .sticky-cta-code { font-family: "Courier New", Courier, monospace; font-weight: 900; color: var(--accent); font-size: 1rem; }
     .sticky-store-links { display: flex; gap: 8px; }
     .sticky-store-links a { display: flex; align-items: center; gap: 4px; background: #000; color: #fff; padding: 8px 10px; border-radius: 7px; font-size: 0.78rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
@@ -397,7 +409,7 @@
         <a href="https://cashinstinct.ca/ebox/en/">EBOX</a>
         <a href="https://cashinstinct.ca/stickermule/en/">Sticker&nbsp;Mule</a>
         <a href="https://cashinstinct.ca/tangerine/en/">Tangerine</a>
-        <a class="nav-fr" href="https://cashinstinct.ca/achieva/fr/">Français ↗</a>
+        <a class="nav-fr" href="https://cashinstinct.ca/achieva/fr/">Français ↗</a>
         <button id="theme-toggle" class="theme-btn" type="button"
                 aria-label="Enable dark mode" aria-pressed="false">🌙</button>
       </div>
@@ -418,19 +430,20 @@
       <p style="font-size:0.92rem; opacity:0.85; margin-bottom:0;">⚠️ Enter this code on the very first screen of the Achieva Mobile app.</p>
 
       <div class="app-store-badges">
+        <!-- FIX #4 — fetchpriority="high" on hero badges -->
         <a href="https://apps.apple.com/ca/app/achievamobile/id911123831"
            target="_blank" rel="noopener noreferrer"
            aria-label="Download Achieva Mobile on the App Store">
           <img src="https://cashinstinct.ca/achieva/images/app-store-badge.webp"
                alt="Download on the App Store" width="646" height="250"
-               class="store-badge" loading="eager">
+               class="store-badge" loading="eager" fetchpriority="high">
         </a>
         <a href="https://play.google.com/store/apps/details?id=com.achieva.android&hl=en_CA"
            target="_blank" rel="noopener noreferrer"
            aria-label="Download Achieva Mobile on Google Play">
           <img src="https://cashinstinct.ca/achieva/images/google-play-badge.png"
                alt="Get it on Google Play" width="646" height="250"
-               class="store-badge" loading="eager">
+               class="store-badge" loading="eager" fetchpriority="high">
         </a>
       </div>
     </div>
@@ -446,10 +459,11 @@
           <span aria-current="page">Achieva Financial</span>
         </nav>
 
-        <article class="summary-box" aria-label="Offer summary">
+        <!-- FIX obs — <section> instead of <article> for contextual summary -->
+        <section class="summary-box" aria-label="Offer summary">
           <h2>Quick summary of the sign-up bonus</h2>
           <p>The <strong>Achieva Financial Petal Code V381566198</strong>, valid in 2026, unlocks a $25 CAD sign-up bonus. To qualify, a new customer must copy this code, download the mobile app, enter it during registration, make an initial deposit of at least $250 CAD, and maintain that balance for a minimum of 30 consecutive days.</p>
-        </article>
+        </section>
         <p class="last-updated">Last updated: <time datetime="2026-06-06" id="last-updated-date">June 6, 2026</time></p>
 
         <section id="how-to-use">
@@ -587,14 +601,16 @@
           <p>Keep Petal Code <strong>V381566198</strong> handy and download the Achieva app to open your account.</p>
           <div class="cta-code-row">
             <span class="cta-code-pill">V381566198</span>
-            <button class="cta-copy-btn copy-btn" data-copy="V381566198" data-target="copyStatusCta" data-label="Copy code">Copy code</button>
+            <!-- FIX #2 — single class .cta-copy-btn -->
+            <button class="cta-copy-btn" data-copy="V381566198" data-target="copyStatusCta" data-label="Copy code">Copy code</button>
           </div>
           <span class="copy-status" id="copyStatusCta" role="status" aria-atomic="true" aria-live="polite"></span>
         </div>
 
-        <article class="glossary-box" aria-label="Alternative search terms">
+        <!-- FIX obs — <div> instead of <article> -->
+        <div class="glossary-box">
           <strong>Semantic search variants:</strong> The promotional identifier <code>V381566198</code> is also searched as: <em>Achieva Petal Code</em>, <em>Achieva Financial referral code</em>, <em>Achieva referral code Canada</em>, <em>Achieva Financial promo code 2026</em>, <em>Cambrian Credit Union sign-up bonus</em>, or <em>Achieva savings account invite code</em>.
-        </article>
+        </div>
 
         <aside class="transparency">
           <strong>Transparency:</strong> If you open an account through the Achieva app using Petal Code <code>V381566198</code>, we each receive a $25 referral bonus. For current interest rates or legal terms, visit the official <a href="https://www.achieva.mb.ca" target="_blank" rel="noopener noreferrer">Achieva Financial website</a>.
@@ -617,7 +633,6 @@
     </div>
   </footer>
 
-  <!-- STICKY CTA MOBILE -->
   <div class="sticky-cta" role="complementary" aria-label="Copy code and download the app">
     <span class="sticky-cta-code">V381566198</span>
     <div class="sticky-store-links">
@@ -635,58 +650,59 @@
   <span id="stickyStatus" role="status" aria-live="polite" style="position:absolute; left:-9999px;"></span>
 
   <script>
-    /* ── COPY ── */
+    /* FIX #1 — color-mix() replaced by fixed rgba (Safari iOS < 16.4 compat) */
     async function copyText(text, button, statusId) {
-      const status = document.getElementById(statusId);
+      var status = document.getElementById(statusId);
       try {
         await navigator.clipboard.writeText(text);
         button.textContent = 'Copied ✓';
-        button.style.background = 'color-mix(in srgb, var(--accent) 15%, transparent)';
+        button.style.background = 'rgba(16,122,71,0.15)';
         if (status) status.textContent = 'Code copied!';
-        setTimeout(() => {
+        setTimeout(function() {
           button.textContent = button.dataset.label || 'Copy code';
           button.style.background = '';
           if (status) status.textContent = '';
         }, 2000);
-      } catch (err) {
+      } catch(err) {
         if (status) status.textContent = 'Could not copy automatically.';
       }
     }
-    document.querySelectorAll('[data-copy]').forEach(btn => {
-      btn.addEventListener('click', () =>
-        copyText(btn.dataset.copy, btn, btn.dataset.target)
-      );
+    document.querySelectorAll('[data-copy]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        copyText(btn.dataset.copy, btn, btn.dataset.target);
+      });
     });
 
-    /* ── THEME ── */
-    const themeToggle = document.getElementById('theme-toggle');
-    const root = document.documentElement;
-
+    /* THEME */
+    var themeToggle = document.getElementById('theme-toggle');
+    var root = document.documentElement;
     function setThemeUI(isDark) {
       themeToggle.textContent = isDark ? '☀️' : '🌙';
       themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
       themeToggle.setAttribute('aria-label', isDark ? 'Disable dark mode' : 'Enable dark mode');
     }
-
     setThemeUI(root.getAttribute('data-theme') === 'dark');
-
-    themeToggle.addEventListener('click', () => {
-      const isDark = root.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        root.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-      } else {
-        root.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      }
+    themeToggle.addEventListener('click', function() {
+      var isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) { root.removeAttribute('data-theme'); localStorage.setItem('theme', 'light'); }
+      else { root.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); }
       setThemeUI(!isDark);
     });
 
-    /* ── FOOTER DATE ── */
+    /* FOOTER DATE */
     document.getElementById('footer-date').textContent =
       new Date().toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
+
+    /* FIX #3 — sticky CTA scroll trigger */
+    (function() {
+      var cta = document.querySelector('.sticky-cta');
+      if (!cta) return;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) cta.classList.add('visible');
+        else cta.classList.remove('visible');
+      }, { passive: true });
+    })();
   </script>
 
 </body>
 </html>
-
