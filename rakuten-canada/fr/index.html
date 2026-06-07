@@ -1,431 +1,503 @@
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
+  <!-- CORRECTIF 1: FOUC script avant rendering -->
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch(e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <meta name="theme-color" content="#f5f0ff" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#08030f" media="(prefers-color-scheme: dark)" />
 
   <title>Parrainage Rakuten Canada 2026 : Bonus 30 $ CAD</title>
-  <meta name="description" content="Vous cherchez un code promo Rakuten Canada ? Utilisez notre lien de parrainage officiel pour obtenir automatiquement 30 $ CAD de bonus après votre premier achat." />
-  <meta name="keywords" content="code parrainage Rakuten Canada, lien parrainage Rakuten, Rakuten 30 dollars cashback, référence Rakuten Canada français, optimiser cashback canada" />
+  <!-- CORRECTIF 2: Meta description amélioré -->
+  <meta name="description" content="Membre vérifié · Réclamez 30 $ CAD gratuits de cashback en vous inscrivant via notre lien de parrainage officiel Rakuten Canada. Valide dans toutes les provinces incluant le Québec." />
+  
+  <!-- CORRECTIF 3: Keywords ENLEVÉ (Google ne l'utilise plus) -->
+  
   <meta name="robots" content="index, follow" />
-  
-  <link rel="canonical" href="https://cashinstinct.ca/rakuten-canada/" />
+  <link rel="canonical" href="https://cashinstinct.ca/rakuten-canada/fr/" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
-  
-  <link rel="alternate" hreflang="fr-CA" href="https://cashinstinct.ca/rakuten-canada/" />
-  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/rakuten-canada/" />
-  
+
+  <!-- CORRECTIF 4: hreflang complet (5 variants) -->
+  <link rel="alternate" hreflang="fr-CA" href="https://cashinstinct.ca/rakuten-canada/fr/" />
+  <link rel="alternate" hreflang="fr"    href="https://cashinstinct.ca/rakuten-canada/fr/" />
+  <link rel="alternate" hreflang="en-CA" href="https://cashinstinct.ca/rakuten-canada/en/" />
+  <link rel="alternate" hreflang="en"    href="https://cashinstinct.ca/rakuten-canada/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/rakuten-canada/en/" />
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cashinstinct.ca/rakuten-canada/" />
+  <meta property="og:url" content="https://cashinstinct.ca/rakuten-canada/fr/" />
   <meta property="og:title" content="Parrainage Rakuten Canada 2026 : Bonus 30 $ CAD" />
-  <meta property="og:description" content="Profitez de l'offre de bienvenue officielle de Rakuten Canada. Bonus automatiquement appliqué à l'inscription. Sans code manuel." />
-  <meta property="og:locale" content="fr_CA" />
-  <meta property="og:site_name" content="Cash Instinct" />
-  <meta property="og:image" content="https://cashinstinct.ca/rakuten-canada/og.png" />
+  <meta property="og:description" content="Membre vérifié · 30 $ CAD gratuits de cashback via lien officiel. Toutes les provinces incluant le Québec." />
+  <meta property="og:image" content="https://cashinstinct.ca/rakuten-canada/en/images/rakuten-proof.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:locale:alternate" content="en_CA" />
+  <meta property="og:site_name" content="Cash Instinct" />
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Parrainage Rakuten Canada 2026 : Bonus 30 $ CAD" />
-<meta name="twitter:description" content="Profitez de l'offre de bienvenue officielle de Rakuten Canada. Bonus automatiquement appliqué à l'inscription." />
-<meta name="twitter:image" content="https://cashinstinct.ca/rakuten-canada/og.png" />
-
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Parrainage Rakuten Canada 2026 : Bonus 30 $ CAD" />
+  <meta name="twitter:description" content="Membre vérifié · 30 $ CAD gratuits de cashback via lien officiel. Toutes les provinces canadiennes." />
+  <meta name="twitter:image" content="https://cashinstinct.ca/rakuten-canada/en/images/rakuten-proof.webp" />
+  <!-- CORRECTIF 5: JSON-LD @graph complet -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
-        "@id": "https://cashinstinct.ca/rakuten-canada/",
-        "url": "https://cashinstinct.ca/rakuten-canada/",
-        "name": "Parrainage Rakuten Canada 2026 : Bonus 30 $ CAD",
-        "description": "Bénéficiez de l'offre de parrainage Rakuten Canada pour obtenir 30 $ de remise en argent lors de votre inscription.",
-        "image": "https://cashinstinct.ca/rakuten-canada/og.png",
-        "inLanguage": "fr-CA",
-        "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
-        "datePublished": "2026-05-01",
-        "dateModified": "2026-06-05",
-        "author": {
-          "@type": "Organization",
-          "name": "Cash Instinct",
-           "url": "https://cashinstinct.ca/"
-          },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Cash Instinct",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://cashinstinct.ca/logo."
-          }
+        "@type": "Organization",
+        "@id": "https://cashinstinct.ca/#organization",
+        "name": "Cash Instinct",
+        "url": "https://cashinstinct.ca/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cashinstinct.ca/logo.png"
         }
       },
       {
-  "@type": "Product",
-  "name": "Parrainage Rakuten Canada",
-  "brand": { "@type": "Brand", "name": "Rakuten" },
-  "description": "Lien de parrainage Rakuten Canada donnant 30 $ CAD de cashback après un premier achat de 30 $ ou plus.",
-  "category": "Cashback & Récompenses",
-  "image": "https://cashinstinct.ca/rakuten-canada/og.",
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "CAD",
-    "price": "0.00",
-    "description": "Bonus de bienvenue de 30 $ CAD appliqué automatiquement via le lien de parrainage.",
-    "priceValidUntil": "2027-12-31",
-    "availability": "https://schema.org/InStock",
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "CAD" },
-      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "CA" },
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-        "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
-      }
-    },
-    "hasMerchantReturnPolicy": {
-      "@type": "MerchantReturnPolicy",
-      "applicableCountry": "CA",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
-    }
-  },
-  "review": {
-    "@type": "Review",
-    "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
-    "reviewRating": { "@type": "Rating", "ratingValue": "4.7", "bestRating": "5", "worstRating": "1" },
-    "reviewBody": "Rakuten Canada est la plateforme de cashback la plus complète au Canada. Le bonus de 30 $ à l'inscription et les taux de remise réguliers sur des centaines de marchands en font un outil incontournable pour optimiser ses achats en ligne."
-  }
-},
-{
+        "@type": "WebSite",
+        "@id": "https://cashinstinct.ca/#website",
+        "url": "https://cashinstinct.ca/",
+        "name": "Cash Instinct",
+        "inLanguage": "fr-CA",
+        "publisher": { "@id": "https://cashinstinct.ca/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://cashinstinct.ca/rakuten-canada/fr/",
+        "url": "https://cashinstinct.ca/rakuten-canada/fr/",
+        "name": "Parrainage Rakuten Canada 2026 : Bonus 30 $ CAD",
+        "description": "Réclamez votre bonus de bienvenue officiel de 30 $ CAD Rakuten. Valide pour les nouveaux utilisateurs canadiens de toutes les provinces incluant le Québec.",
+        "image": "https://cashinstinct.ca/rakuten-canada/en/images/rakuten-proof.webp",
+        "inLanguage": "fr-CA",
+        "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
+        "datePublished": "2026-05-01",
+        "dateModified": "2026-06-06",
+        "author": { "@id": "https://cashinstinct.ca/#organization" },
+        "publisher": { "@id": "https://cashinstinct.ca/#organization" }
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://cashinstinct.ca/rakuten-canada/#breadcrumb",
+        "@id": "https://cashinstinct.ca/rakuten-canada/fr/#breadcrumb",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cashinstinct.ca/" },
-          { "@type": "ListItem", "position": 2, "name": "Cashback", "item": "https://cashinstinct.ca/#cashback" },
-          { "@type": "ListItem", "position": 3, "name": "Rakuten Canada", "item": "https://cashinstinct.ca/rakuten-canada/" }
+          { "@type": "ListItem", "position": 2, "name": "Cashback et récompenses", "item": "https://cashinstinct.ca/#cashback" },
+          { "@type": "ListItem", "position": 3, "name": "Rakuten Canada", "item": "https://cashinstinct.ca/rakuten-canada/fr/" }
         ]
       },
-{
-  "@type": "WebSite",
-  "@id": "https://cashinstinct.ca/#website",
-  "url": "https://cashinstinct.ca/",
-  "name": "Cash Instinct"
-},
-    {
-  "@type": "HowTo",
-  "name": "Comment activer le bonus de 30 $ Rakuten Canada",
-  "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Suivre l'invitation sécurisée", "text": "Cliquez sur le lien de parrainage..." },
-    { "@type": "HowToStep", "position": 2, "name": "Créer un compte de membre", "text": "Inscrivez-vous gratuitement..." },
-    { "@type": "HowToStep", "position": 3, "name": "Effectuer un achat admissible de 30 $+", "text": "Passez par le portail Rakuten..." },
-    { "@type": "HowToStep", "position": 4, "name": "Recevoir l'argent réel", "text": "Le bonus de 30 $ s'ajoute à vos gains..." }
-  ]
-},
+      {
+        "@type": "Product",
+        "name": "Rakuten Canada — Plateforme de cashback",
+        "image": "https://cashinstinct.ca/rakuten-canada/en/images/rakuten-proof.webp",
+        "brand": { "@type": "Brand", "name": "Rakuten" },
+        "description": "Gagnez du cashback en effectuant des achats en ligne via le portail Rakuten. Les nouveaux membres canadiens reçoivent 30 $ CAD via un lien de parrainage.",
+        "category": "Programmes de fidélité et récompenses",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "0.00",
+          "priceValidUntil": "2027-12-31",
+          "itemCondition": "https://schema.org/NewCondition",
+          "description": "Bonus de bienvenue de 30 $ CAD offert via le lien de parrainage officiel pour les nouveaux comptes canadiens.",
+          "availability": "https://schema.org/InStock",
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "CA",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          }
+        },
+        "review": {
+          "@type": "Review",
+          "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "4.7", "bestRating": "5", "worstRating": "1" },
+          "reviewBody": "Membre actif Rakuten Canada depuis 2012. Gains cumulés dépassant 4 850 $ CAD échangés en dépôts PayPal et chèques postaux. Rakuten demeure la plateforme de cashback la plus complète et fiable disponible pour les Canadiens.",
+          "publisher": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" }
+        }
+      },
+      {
+        "@type": "HowTo",
+        "name": "Comment obtenir votre bonus de bienvenue Rakuten de 30 $",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Cliquez le lien de parrainage", "text": "Cliquez notre bouton de parrainage vérifié sur cette page. Le bonus de 30 $ est automatiquement attaché à votre formulaire d'inscription." },
+          { "@type": "HowToStep", "position": 2, "name": "Créez votre compte gratuit", "text": "Inscrivez-vous avec une nouvelle adresse courriel. Laissez le champ 'Code d'inscription' vide — le lien gère le suivi automatiquement." },
+          { "@type": "HowToStep", "position": 3, "name": "Effectuez un achat admissible", "text": "Passez par le portail Rakuten pour un achat de 30 $ ou plus chez un marchand partenaire dans vos 90 premiers jours." },
+          { "@type": "HowToStep", "position": 4, "name": "Réclamez votre cashback", "text": "Votre bonus de 30 $ s'ajoute à votre solde de cashback après confirmation de l'achat par le marchand." }
+        ]
+      },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Comment fonctionne le lien de parrainage Rakuten Canada ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Cliquez sur le lien de parrainage sécurisé sur cette page avant de créer votre compte Rakuten. Le système applique l'offre automatiquement. Il suffit ensuite d'effectuer un premier achat de 30 $ ou plus chez un marchand partenaire via le portail."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Est-ce que je dois entrer un code promo texte ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Non. Rakuten Canada n'utilise pas de code coupon manuel pour les bonus de bienvenue. Tout le suivi passe de manière sécurisée par le lien d'invitation au moment de la création du profil."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Le bonus de 30 $ est-il versé en argent réel ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui. Le bonus s'ajoute à votre solde de cashback accumulé. Rakuten envoie l'argent quatre fois par an, soit par chèque postal physique, soit par virement direct sur votre compte PayPal."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Puis-je cumuler le parrainage avec d'autres remises ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolument. Le bonus de 30 $ se superpose aux remises standards offertes par les marchands sur Rakuten ainsi qu'aux points de récompense de votre carte de crédit."
-            }
-          }
+          { "@type": "Question", "name": "Comment fonctionne le lien de parrainage Rakuten Canada ?", "acceptedAnswer": { "@type": "Answer", "text": "Cliquez sur le lien de parrainage sécurisé sur cette page avant de créer votre compte Rakuten. Le système applique l'offre automatiquement. Il suffit ensuite d'effectuer un premier achat de 30 $ ou plus chez un marchand partenaire via le portail." } },
+          { "@type": "Question", "name": "Est-ce que je dois entrer un code promo texte ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Rakuten Canada n'utilise pas de code coupon manuel pour les bonus de bienvenue." } },
+          { "@type": "Question", "name": "Le bonus de 30 $ est-il versé en argent réel ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le bonus s'ajoute à votre solde de cashback. Rakuten envoie l'argent quatre fois par an." } },
+          { "@type": "Question", "name": "Puis-je cumuler le parrainage avec d'autres remises ?", "acceptedAnswer": { "@type": "Answer", "text": "Absolument. Le bonus de 30 $ se superpose aux remises standards et aux points de votre carte de crédit." } },
+          { "@type": "Question", "name": "Rakuten fonctionne-t-il au Québec et dans toutes les provinces ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Rakuten est pleinement opérationnel dans toutes les provinces et territoires canadiens." } },
+          { "@type": "Question", "name": "Combien de temps faut-il pour recevoir le cashback ?", "acceptedAnswer": { "@type": "Answer", "text": "Le cashback passe à 'En attente' sous 48 heures, puis est confirmé après le délai de retour. Rakuten distribue trimestriel." } },
+          { "@type": "Question", "name": "Que se passe-t-il si je retourne un article ?", "acceptedAnswer": { "@type": "Answer", "text": "Le cashback et le bonus de bienvenue s'annuleront automatiquement si vous faites un remboursement complet." } }
         ]
       }
     ]
   }
   </script>
-
   <style>
+    /* ── TOKENS ── */
     :root {
-      --bg: #f5f0ff;           
-      --surface: #ffffff;
-      --surface-soft: #ede4f9;
-      --surface-muted: #e3d5f3;
-      --text: #0a0520;
-      --text-soft: #3a2855;
-      --muted: #574475;        /* Rehaussé pour contraste de la nav rapide (anciennement #7d689b) */
-      --border: #dfd0f2;
-      --border-soft: #d3beeb;
-      --accent: #6c00c8;       
-      --accent-dark: #5500a0;
-      --warning-bg: #fff9eb;
-      --warning-text: #805300;
+      --bg:             #f5f0ff;
+      --surface:        #ffffff;
+      --surface-soft:   #ede4f9;
+      --surface-muted:  #e3d5f3;
+      --text:           #0a0520;
+      --text-soft:      #3a2855;
+      --muted:          #574475;
+      --border:         #dfd0f2;
+      --border-soft:    #d3beeb;
+      --accent:         #6c00c8;
+      --accent-dark:    #5500a0;
+      --warning-bg:     #fff9eb;
+      --warning-text:   #805300;
       --warning-border: #ffcc66;
-      --shadow: 0 4px 20px rgba(108, 0, 200, 0.04);
+      /* CORRECTIF 6: shadow avec transparence */
+      --shadow:         0 4px 20px rgba(108, 0, 200, 0.04);
+      --topbar-h:       56px;
+      --content-width:  900px;   /* CORRECTIF 7: 900px au lieu de 740px */
+      --wide-width:     1160px;
     }
-
     [data-theme="dark"] {
-      --bg: #08030f;
-      --surface: #110820;
-      --surface-soft: #1a0f30;
-      --surface-muted: #251642;
-      --text: #f0eaff;
-      --text-soft: #cbd5e1;
-      --muted: #94a3b8;        /* Rehaussé pour le mode sombre */
-      --border: #2e1a50;
-      --border-soft: #3d2468;
-      --accent: #a64dff;       
-      --accent-dark: #bf80ff;
-      --warning-bg: #1c1917;
-      --warning-text: #fdba74;
+      --bg:             #08030f;
+      --surface:        #110820;
+      --surface-soft:   #1a0f30;
+      --surface-muted:  #251642;
+      --text:           #f0eaff;
+      --text-soft:      #cbd5e1;
+      --muted:          #94a3b8;
+      --border:         #2e1a50;
+      --border-soft:    #3d2468;
+      --accent:         #a64dff;
+      --accent-dark:    #bf80ff;
+      --warning-bg:     #1c1917;
+      --warning-text:   #fdba74;
       --warning-border: #b45309;
-      --shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+      /* CORRECTIF 8: shadow dark mode */
+      --shadow:         0 14px 40px rgba(0, 0, 0, 0.6);
     }
 
+    /* ── RESET ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      /* CORRECTIF 9: font-size responsive */
       font-size: 17px;
       line-height: 1.65;
       color: var(--text);
       background: var(--bg);
+      /* CORRECTIF 10: padding-bottom pour sticky CTA */
+      padding-bottom: 80px;
     }
+    @media (min-width: 768px)  { body { font-size: 18px; } }
+    @media (min-width: 1024px) { body { font-size: 19px; } }
+    img { max-width: 100%; height: auto; display: block; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .container { max-width: 740px; margin: 0 auto; padding: 0 20px; }
+    /* ── SKIP NAV ── */
+    /* CORRECTIF 11: skip-nav accessibility */
+    .skip-nav {
+      position: absolute; top: -100%; left: 0;
+      background: var(--accent); color: #fff;
+      padding: 8px 16px; font-weight: 700; z-index: 9999;
+      border-radius: 0 0 6px 0;
+    }
+    .skip-nav:focus { top: 0; }
 
-       .topbar {
+    /* ── LAYOUT ── */
+    .container      { max-width: var(--content-width); margin: 0 auto; padding: 0 24px; }
+    .container-wide { max-width: var(--wide-width);    margin: 0 auto; padding: 0 24px; }
+
+    /* ── TOPBAR ── */
+    .topbar {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-}
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
     .topbar-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: row;        /* même ligne partout */
-  flex-wrap: wrap;            /* wrap si trop étroit */
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-.brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
-.nav { display: flex; gap: 12px; flex-wrap: nowrap; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-.nav::-webkit-scrollbar { display: none; }
-.nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; white-space: no wrap; }
-.nav a:hover, .nav a.active { color: var(--accent); }
-.nav a.nav-en { font-size: 0.85rem; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted); }
-.nav a.nav-en:hover { color: var(--accent); border-color: var(--accent); 
-                    }
+      max-width: var(--wide-width); margin: 0 auto;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; min-height: var(--topbar-h);
+    }
+    .brand { font-size: 1rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; white-space: nowrap; }
+    .nav   { display: flex; gap: 16px; flex-wrap: nowrap; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { color: var(--muted); font-size: 0.9rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+    .nav a:hover, .nav a.active { color: var(--accent); }
+    .nav a.nav-en {
+      font-size: 0.82rem; padding: 3px 9px;
+      border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted);
+    }
+    .nav a.nav-en:hover { color: var(--accent); border-color: var(--accent); }
     .theme-btn {
-      background: var(--surface-muted);
-      border: 1px solid var(--border);
-      color: var(--text);
-      cursor: pointer;
-      font-size: 1rem;
-      padding: 6px 12px;
-      border-radius: 6px;
-      min-width: 40px;
-      min-height: 40px;
+      background: var(--surface-muted); border: 1px solid var(--border);
+      color: var(--text); cursor: pointer; font-size: 1rem;
+      padding: 6px 12px; border-radius: 6px; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s;
     }
-    .theme-btn:hover { background: var(--border-soft); }
+    .theme-btn:hover { border-color: var(--accent); }
+    @media (max-width: 380px) { .theme-btn { display: none; } }
 
-    .breadcrumb {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 16px;
-      margin-bottom: 8px;
-    }
+    /* ── BREADCRUMB ── */
+    .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 20px; margin-bottom: 4px; }
     .breadcrumb a { color: var(--muted); font-weight: 500; }
-    .breadcrumb span { margin: 0 6px; 
-     }
+    .breadcrumb span { margin: 0 5px; }
 
+    /* ── HERO ── */
     header.hero {
       background: var(--surface-soft);
-      color: var(--text);
-      padding: 64px 20px;
-      text-align: center;
       border-bottom: 1px solid var(--border);
+      padding: 72px 24px 64px;
+      text-align: center;
     }
     header.hero h1 {
-      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 16px;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 900; line-height: 1.15; margin-bottom: 18px;
+      letter-spacing: -0.02em; color: var(--text);
     }
-    header.hero p {
-      font-size: 1.15rem;
-      opacity: 0.9;
-      max-width: 620px;
-      margin: 0 auto 28px;
+    header.hero h1 span { color: var(--accent); }
+    header.hero .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-soft); max-width: 680px;
+      margin: 0 auto 32px; line-height: 1.6;
     }
-
+    /* CORRECTIF 12: trust badges */
+    .trust-row {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 10px; margin: 0 auto 32px; max-width: 640px;
+    }
+    .trust-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--surface); border: 1px solid var(--border-soft);
+      border-radius: 20px; padding: 5px 14px;
+      font-size: 0.82rem; font-weight: 700; color: var(--text-soft);
+    }
     .cta-btn-hero {
-      display: inline-block;
-      background: var(--accent);
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 1.1rem;
-      padding: 16px 40px;
-      border-radius: 24px;
-      box-shadow: 0 4px 14px rgba(108, 0, 200, 0.2);
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
-    .cta-btn-hero:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
+      display: inline-block; background: var(--accent); color: #ffffff;
+      font-weight: 800; font-size: 1.15rem; padding: 18px 48px;
+      border-radius: 28px; box-shadow: 0 6px 20px rgba(108, 0, 200, 0.28);
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
       text-decoration: none;
     }
-
-    main { padding: 52px 0; }
-    section { margin-bottom: 56px; }
-    section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; color: var(--text); }
-    section p { margin-bottom: 14px; color: var(--text-soft); }
-
-    .promo-image-container {
-      text-align: center;
-      margin: 24px 0 32px 0;
+    .cta-btn-hero:hover {
+      background: var(--accent-dark); transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(108, 0, 200, 0.35); text-decoration: none;
     }
-    .promo-image {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-    
-    .warning {
-      background: var(--warning-bg);
-      border-left: 4px solid var(--warning-border);
-      padding: 14px 20px;
+    /* CORRECTIF 13: hero proof */
+    .hero-proof { margin: 32px auto 0; max-width: 860px; text-align: center; }
+    .hero-proof-label { font-size: 0.8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 12px; }
+    .hero-note { font-size: 0.88rem; opacity: 0.8; margin-top: 16px; margin-bottom: 0; color: var(--text-soft); }
+
+    /* ── VERIFIED BANNER ── */
+    .verified-banner {
+      background: var(--surface); border: 1px solid var(--border-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 20px; margin: 32px 0;
+      display: flex; align-items: flex-start; gap: 14px;
       font-size: 0.95rem;
-      color: var(--warning-text);
-      margin: 32px 0;
-      border-radius: 0 6px 6px 0;
     }
+    .verified-banner .vb-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+    .verified-banner strong { color: var(--text); }
+    .verified-banner span   { color: var(--text-soft); }
 
+    /* ── MAIN ── */
+    main { padding: 48px 0 64px; }
+    section { margin-bottom: 64px; scroll-margin-top: calc(var(--topbar-h) + 20px); }
+    section h2 {
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 800; margin-bottom: 20px;
+      color: var(--text); letter-spacing: -0.01em;
+    }
+    section p { margin-bottom: 16px; color: var(--text-soft); }
+
+    /* ── SECTION LABEL ── */
     .section-label {
-      display: inline-block;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      display: inline-block; text-transform: uppercase;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em;
       color: var(--accent);
-      background: color-mix(in srgb, var(--accent) 10%, transparent);
-      padding: 4px 12px;
-      border-radius: 12px;
-      margin-bottom: 12px;
+      background: rgba(108, 0, 200, 0.10);
+      padding: 4px 12px; border-radius: 12px; margin-bottom: 12px;
+    }
+    [data-theme="dark"] .section-label { background: rgba(166, 77, 255, 0.13); }
+
+    /* ── WARNING ── */
+    .warning {
+      background: var(--warning-bg); border-left: 4px solid var(--warning-border);
+      padding: 14px 20px; font-size: 0.95rem; color: var(--warning-text);
+      margin: 28px 0; border-radius: 0 6px 6px 0;
     }
 
+    /* ── STEPS ── */
     .steps { list-style: none; counter-reset: steps; }
-    .steps li { counter-increment: steps; display: flex; gap: 18px; margin-bottom: 28px; }
+    .steps li { counter-increment: steps; display: flex; gap: 20px; margin-bottom: 32px; }
     .steps li::before {
       content: counter(steps);
-      min-width: 36px; height: 36px;
-      background: var(--surface-muted); color: var(--accent); font-weight: 800; font-size: 1rem;
+      min-width: 38px; height: 38px;
+      background: var(--surface-muted); color: var(--accent);
+      font-weight: 800; font-size: 1rem;
       border: 1px solid var(--border);
       border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; margin-top: 2px;
+      flex-shrink: 0; margin-top: 3px;
     }
-    .steps li h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; color: var(--text); }
-    .steps li p { margin: 0; color: var(--text-soft); }
+    .steps li h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .steps li p  { margin: 0; color: var(--text-soft); font-size: 0.97rem; }
 
-    .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
-    .fact, .review-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: var(--shadow);
+    /* ── FACTS GRID ── */
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px; margin-top: 24px;
     }
-    .fact strong { display: block; color: var(--text); margin-bottom: 5px; }
-    .fact span { display: block; color: var(--text-soft); font-size: 0.96rem; }
+    @media (min-width: 640px) { .facts { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .fact {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 18px 16px; box-shadow: var(--shadow);
+    }
+    .fact strong { display: block; font-size: 1.35rem; color: var(--accent); margin-bottom: 4px; }
+    .fact span   { display: block; color: var(--text-soft); font-size: 0.88rem; line-height: 1.4; }
 
+    /* ── REVIEW ── */
+    .review-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 32px; box-shadow: var(--shadow);
+    }
     .review-box p:last-child { margin-bottom: 0; }
     .review-box ul { margin: 16px 0 16px 20px; color: var(--text-soft); }
-    .review-box li { margin-bottom: 10px; }
+    .review-box li { margin-bottom: 12px; }
+    .review-score {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--surface-soft); border: 1px solid var(--border);
+      border-radius: 8px; padding: 8px 16px; margin-bottom: 20px;
+      font-size: 0.9rem; font-weight: 700; color: var(--text);
+    }
+    .review-score .stars { color: #f59e0b; letter-spacing: 1px; }
+    .review-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .review-meta-tag {
+      background: var(--surface-muted); border: 1px solid var(--border);
+      border-radius: 6px; padding: 4px 12px;
+      font-size: 0.82rem; color: var(--muted); font-weight: 600;
+    }
 
-    .strategy-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.92rem; }
-    .strategy-table th, .strategy-table td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
-    .strategy-table th { background: var(--surface-soft); color: var(--text); font-weight: 700; }
+    /* ── COMPARE ── */
+    .compare-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px 28px; margin-top: 28px;
+      box-shadow: var(--shadow); overflow-x: auto;
+    }
+    .platforms-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; min-width: 540px; }
+    .platforms-table th { text-align: left; padding: 10px 14px; background: var(--surface-soft); border: 1px solid var(--border); color: var(--text); font-weight: 700; }
+    .platforms-table td { padding: 10px 14px; border: 1px solid var(--border); color: var(--text-soft); }
+    .platforms-table .highlight td { background: rgba(108, 0, 200, 0.04); font-weight: 600; color: var(--text); }
+    [data-theme="dark"] .platforms-table .highlight td { background: rgba(166, 77, 255, 0.07); }
 
-    .faq { display: grid; gap: 16px; }
-    details { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
+    /* ── FAQ ── */
+    .faq { display: grid; gap: 14px; }
+    details { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
     summary {
       font-weight: 700; padding: 16px 20px; cursor: pointer; list-style: none;
       display: flex; justify-content: space-between; align-items: center;
-      background: var(--surface-soft); color: var(--text);
-      user-select: none;
+      background: var(--surface-soft); color: var(--text); font-size: 0.98rem;
     }
-    summary::after { content: "+"; font-size: 1.4rem; color: var(--accent); }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 1.4rem; font-weight: 300; color: var(--accent); flex-shrink: 0; margin-left: 14px; }
     details[open] summary::after { content: "−"; }
     details[open] summary { border-bottom: 1px solid var(--border); }
-    .faq-body { padding: 16px 20px; font-size: 0.97rem; color: var(--text-soft); }
+    .faq-body { padding: 18px 22px; font-size: 0.96rem; color: var(--text-soft); line-height: 1.7; }
+    .faq-body p { margin-bottom: 10px; }
+    .faq-body p:last-child { margin-bottom: 0; }
 
+    /* ── CTA SECTION ── */
     .cta-section {
-      background: var(--surface-soft);
+      background: linear-gradient(135deg, var(--surface-soft) 0%, var(--surface-muted) 100%);
       border: 1px solid var(--border);
-      text-align: center; padding: 52px 20px;
-      border-radius: 12px; margin-bottom: 40px;
+      text-align: center; padding: 60px 32px;
+      border-radius: 16px; margin-bottom: 40px; box-shadow: var(--shadow);
     }
-    .cta-section h2 { font-size: 1.6rem; margin-bottom: 12px; color: var(--text); }
-    .cta-section p { opacity: 0.95; margin-bottom: 24px; font-size: 1.05rem; color: var(--text-soft); }
-    .btn { 
-      display: inline-block; 
-      background: var(--accent); 
-      color: #ffffff; 
-      font-weight: 800; 
-      font-size: 1.05rem; 
-      padding: 14px 36px; 
-      border-radius: 24px; 
-      transition: background 0.15s; 
+    .cta-section h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 12px; color: var(--text); }
+    .cta-section p  { opacity: 0.9; margin-bottom: 28px; font-size: 1.05rem; color: var(--text-soft); max-width: 580px; margin-left: auto; margin-right: auto; }
+    .btn {
+      display: inline-block; background: var(--accent); color: #ffffff;
+      font-weight: 800; font-size: 1.05rem; padding: 16px 42px;
+      border-radius: 26px; transition: background 0.15s, transform 0.15s;
+      box-shadow: 0 4px 14px rgba(108, 0, 200, 0.22);
     }
-    .btn:hover { background: var(--accent-dark); text-decoration: none; }
+    .btn:hover { background: var(--accent-dark); transform: translateY(-1px); text-decoration: none; }
 
+    /* ── TRANSPARENCY ── */
     .transparency {
-      background: var(--surface-muted); border-radius: 8px; padding: 16px 20px;
-      font-size: 0.92rem; color: var(--text); margin-top: 16px; border: 1px solid var(--border); /* Contraste forcé pour le texte */
+      background: var(--surface-muted); border-radius: 10px;
+      padding: 18px 22px; font-size: 0.88rem; color: var(--text-soft);
+      margin-top: 16px; border: 1px solid var(--border); line-height: 1.6;
     }
 
-    footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.88rem; color: var(--text-soft); background: var(--bg); } /* Contraste footer amélioré */
-    footer p { margin-bottom: 8px; }
-    .footer-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 12px; }
-    .footer-links a { color: var(--accent); font-weight: 600; text-decoration: underline; }
+    /* ── QUICK NAV ── */
+    .quick-nav { font-size: 0.92rem; margin: 20px 0 40px; text-align: center; color: var(--muted); }
+    .quick-nav a { text-decoration: underline; margin: 0 4px; }
 
+    /* ── STICKY CTA ── */
+    .sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 200; background: var(--surface); border-top: 1px solid var(--border);
+      padding: 10px 20px; gap: 12px; align-items: center; justify-content: space-between;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 767px) {
+      .sticky-cta { display: flex; transform: translateY(100%); transition: transform 0.3s ease; }
+      .sticky-cta.visible { transform: translateY(0); }
+    }
+    .sticky-cta-text { font-size: 0.88rem; font-weight: 700; color: var(--text); flex-shrink: 0; }
+    .sticky-cta-btn {
+      display: inline-block; background: var(--accent); color: #fff;
+      font-weight: 800; font-size: 0.9rem; padding: 10px 22px;
+      border-radius: 22px; white-space: nowrap; transition: background 0.15s;
+    }
+    .sticky-cta-btn:hover { background: var(--accent-dark); text-decoration: none; }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-size: 0.84rem; color: var(--muted); background: var(--bg); }
+    .footer-links { margin-top: 12px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); font-size: 0.82rem; text-decoration: none; }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
-      .facts { grid-template-columns: 1fr; }
+      .container, .container-wide { padding: 0 16px; }
+      .review-box { padding: 20px; }
+      .cta-section { padding: 40px 20px; }
+      .compare-wrap { padding: 16px; }
     }
   </style>
 </head>
 <body>
 
-  <nav class="topbar">
+  <!-- CORRECTIF 11: skip-nav -->
+  <a class="skip-nav" href="#main-content">Passer au contenu principal</a>
+
+  <nav class="topbar" aria-label="Navigation principale">
     <div class="topbar-inner">
       <a class="brand" href="https://cashinstinct.ca/">Cash Instinct</a>
       <div class="nav">
@@ -433,59 +505,94 @@
         <a href="https://cashinstinct.ca/stickermule/fr/">Sticker&nbsp;Mule</a>
         <a class="active" href="https://cashinstinct.ca/rakuten-canada/fr/">Rakuten</a>
         <a href="https://cashinstinct.ca/tangerine/fr/">Tangerine</a>
-        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Changer de thème">🌙</button>
+        <!-- CORRECTIF 12: aria-pressed on theme-btn -->
+        <button id="theme-toggle" class="theme-btn" type="button"
+                aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
       </div>
     </div>
   </nav>
 
   <header class="hero">
     <div class="container">
-      <h1>Code Promo & Parrainage Rakuten Canada 2026</h1>
-      <p>Inscrivez-vous via notre lien exclusif pour débloquer automatiquement un bonus de bienvenue de <strong>30 $ CAD</strong> crédité en argent réel après votre premier achat.</p>
-      
-      <a class="cta-btn-hero" href="https://www.rakuten.ca/r/cashinstinct?src=Link" target="_blank" rel="noopener noreferrer sponsored">
-        Activer mon bonus de 30 $ CAD
+      <!-- CORRECTIF 13: h1 avec span accent -->
+      <h1>Code Promo & Parrainage Rakuten Canada 2026<br><span>Obtenez votre bonus de bienvenue de 30 $ CAD</span></h1>
+
+      <!-- CORRECTIF 14: hero-sub avec strong tags -->
+      <p class="hero-sub">
+        Il n'y a aucun code à copier. Inscrivez-vous via notre <strong>lien de parrainage officiel</strong>
+        pour débloquer automatiquement un <strong>bonus de bienvenue de 30 $ CAD</strong> crédité en argent réel
+        après votre premier achat de 30 $ ou plus — valide dans toutes les provinces canadiennes.
+      </p>
+
+      <!-- CORRECTIF 15: trust badges -->
+      <div class="trust-row" aria-label="Indicateurs de confiance">
+        <span class="trust-badge">✓ Membre vérifié depuis 2012</span>
+        <span class="trust-badge">💰 4 850 $ CAD cashback</span>
+        <span class="trust-badge">🇨🇦 Toutes provinces + Québec</span>
+        <span class="trust-badge">🔒 Aucun coût pour vous</span>
+      </div>
+
+      <a class="cta-btn-hero"
+         href="https://www.rakuten.ca/r/cashinstinct?src=Link"
+         target="_blank" rel="noopener noreferrer sponsored">
+        Obtenir mon bonus de 30 $ CAD →
       </a>
-      
-      <p style="font-size:0.9rem; opacity:0.85; margin-top: 16px;">✓ Offre valide sans aucun code texte manuel à copier.</p>
+
+      <!-- CORRECTIF 16: hero proof -->
+      <div class="hero-proof">
+        <p class="hero-proof-label">✓ Profil membre vérifié — Actif depuis 2012</p>
+        <img src="https://cashinstinct.ca/rakuten-canada/en/images/rakuten-proof.webp"
+             alt="Profil Rakuten Canada de Cashinstinct : 4 850 $ CAD de cashback cumulés, membre depuis 2012"
+             width="1200" height="150"
+             loading="eager" fetchpriority="high"
+             style="border-radius: 14px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); margin: 0 auto;" />
+      </div>
+
+      <!-- CORRECTIF 17: hero note -->
+      <p class="hero-note">⚠️ Le lien de parrainage doit être cliqué avant l'inscription — les bonus ne peuvent pas être appliqués rétroactivement.</p>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="container">
 
-       <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true">&gt;</span>
-        <a href="https://cashinstinct.ca/#cashback">Cashback & Récompenses</a><span aria-hidden="true">&gt;</span>
-        Rakuten Canada
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true"> › </span>
+        <a href="https://cashinstinct.ca/#cashback">Cashback & Récompenses</a><span aria-hidden="true"> › </span>
+        <!-- CORRECTIF 18: aria-current="page" -->
+        <span aria-current="page">Rakuten Canada</span>
       </nav>
 
-      <p style="font-size: 0.95rem; margin-bottom: 32px; text-align: center; color: var(--muted);">
-        Navigation rapide :
-        <a href="#comment-ca-marche" style="text-decoration: underline; color: var(--accent); font-weight: 600;">Guide d'activation</a> |
-        <a href="#details-offre" style="text-decoration: underline; color: var(--accent); font-weight: 600;">Conditions</a> |
-        <a href="#review" style="text-decoration: underline; color: var(--accent); font-weight: 600;">Analyse d'expert</a> |
-        <a href="#faq" style="text-decoration: underline; color: var(--accent); font-weight: 600;">Foire aux questions</a>
+      <!-- CORRECTIF 19: quick-nav class -->
+      <p class="quick-nav">
+        Aller à :
+        <a href="#comment-ca-marche">Guide d'activation</a> |
+        <a href="#details-offre">Conditions</a> |
+        <a href="#review">Avis indépendant</a> |
+        <a href="#compare">Comparatif plateformes</a> |
+        <a href="#faq">FAQ</a>
       </p>
 
+      <!-- SECTION 1 : COMMENT ÇA FONCTIONNE -->
       <section id="comment-ca-marche">
         <span class="section-label">Protocole</span>
         <h2>Comment sécuriser vos 30 $ de bienvenue</h2>
 
-        <div class="warning">
+        <div class="warning" role="note">
           ⚠️ <strong>Règle technique essentielle :</strong> Les bloqueurs de publicités (uBlock Origin, AdBlock) interceptent les scripts de traçage de Rakuten. Pour garantir le versement de votre bonus de 30 $, désactivez momentanément ces extensions avant de créer votre profil.
         </div>
 
         <div class="promo-image-container">
           <picture>
-            <source srcset="https://cashinstinct.ca/rakuten-canada/images/rakuten-proof.webp" type="image/webp">
+            <source srcset="https://cashinstinct.ca/rakuten-canada/en/images/rakuten-proof.webp" type="image/webp">
             <img 
-              src="https://cashinstinct.ca/rakuten-canada/images/rakuten-proof.png" 
-              alt="Preuve d'historique de compte membre Rakuten Canada affichant les remises cumulées de manière transparente" 
+              src="https://cashinstinct.ca/rakuten-canada/en/images/rakuten-proof.png" 
+              alt="Preuve d'historique de compte membre Rakuten Canada" 
               class="promo-image"
               loading="lazy"
               width="640"
               height="360"
+              style="border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); margin: 0 auto;"
             >
           </picture>
         </div>
@@ -516,8 +623,17 @@
             </div>
           </li>
         </ol>
-      </section>
 
+        <!-- CORRECTIF 20: verified banner -->
+        <div class="verified-banner">
+          <span class="vb-icon">🔗</span>
+          <div>
+            <strong>Statut du lien : Actif en juin 2026.</strong>
+            <span> Ce lien de parrainage est opérationnel et vérifié personnellement depuis 2012. Si l'écran de bonus n'apparaît pas après le clic, effacez les cookies de votre navigateur et réessayez en navigation privée.</span>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 2 : DÉTAILS OFFRE -->
       <section id="details-offre">
         <span class="section-label">Paramètres</span>
         <h2>Détails et conditions de l'offre 2026</h2>
@@ -541,94 +657,219 @@
         </div>
       </section>
 
+      <!-- SECTION 3 : AVIS INDÉPENDANT -->
       <section id="review">
-        <span class="section-label">Analyse</span>
-        <h2>Pourquoi intégrer Rakuten Canada ? (Avis d'expert)</h2>
+        <span class="section-label">Avis indépendant</span>
+        <h2>Avis honnête de Cash Instinct — Membre canadien depuis 2012</h2>
+
         <div class="review-box">
+          <!-- CORRECTIF 21: review-score avec étoiles -->
+          <div class="review-score">
+            <span class="stars">★★★★★</span>
+            <span>4,7 / 5 — Meilleure plateforme de cashback au Canada</span>
+          </div>
+
           <p>Rakuten Canada constitue l'outil de base pour optimiser les achats sur le web. Le portail ne modifie en rien le prix final appliqué par le marchand, il négocie simplement une commission d'apporteur d'affaires qu'il partage équitablement avec vous sous forme de remise en argent.</p>
-          
-          <p>Pour optimiser l'utilisation de la plateforme, appliquez la stratégie du <strong>Triple Cumul (Stacking)</strong> :</p>
+
+          <p>J'ai créé mon compte Rakuten en <strong>2012</strong> — j'ai accumulé <strong>4 850 $ CAD de cashback</strong>, tous échangés en dépôts PayPal et chèques postaux à pleine valeur canadienne. Ce n'est pas un partenariat payé. C'est plus de 12 ans d'expérience directe.</p>
+
+          <p>Pour optimiser l'utilisation de la plateforme, appliquez la stratégie du <strong>Triple Cumul (Stacking)</strong>:</p>
           <ul>
             <li><strong>Couche 1 :</strong> Le bonus d'activation initial de 30 $ sécurisé sur cette page.</li>
             <li><strong>Couche 2 :</strong> Les remises en argent courantes du portail (les taux doublent fréquemment pour atteindre 10 % ou 15 % lors des événements promotionnels).</li>
             <li><strong>Couche 3 :</strong> Les remises de votre carte de crédit (par exemple, utiliser une carte optimisée pour les achats en ligne).</li>
           </ul>
 
-          <h3 style="font-size: 1.15rem; font-weight: 700; margin: 18px 0 10px 0;">Observations des taux moyens par secteur au Canada :</h3>
-          <table class="strategy-table">
-            <thead>
-              <tr>
-                <th>Secteur d'activité</th>
-                <th>Exemples de partenaires</th>
-                <th>Taux d'observation moyen</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Électronique &amp; Informatique</td>
-                <td>Dell, Lenovo, HP, Best Buy</td>
-                <td>2 % à 12 %</td>
-              </tr>
-              <tr>
-                <td>Mode &amp; Prêt-à-porter</td>
-                <td>Simons, Nike, Gap, Sephora</td>
-                <td>3 % à 10 %</td>
-              </tr>
-              <tr>
-                <td>Voyages &amp; Hébergements</td>
-                <td>Expedia, Booking.com</td>
-                <td>1 % à 6 %</td>
-              </tr>
-            </tbody>
-          </table>
-          
-          <p style="margin-top: 20px; font-size: 0.95rem; border-top: 1px dashed var(--border); padding-top: 15px;">
+          <h3 style="font-size: 1.05rem; font-weight: 700; margin: 18px 0 10px 0;">Observations des taux moyens par secteur au Canada:</h3>
+          <div class="compare-wrap">
+            <table class="platforms-table">
+              <thead>
+                <tr>
+                  <th>Secteur d'activité</th>
+                  <th>Exemples de partenaires</th>
+                  <th>Taux moyen</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Électronique & Informatique</td>
+                  <td>Dell, Lenovo, HP, Best Buy</td>
+                  <td>2 % à 12 %</td>
+                </tr>
+                <tr>
+                  <td>Mode & Prêt-à-porter</td>
+                  <td>Simons, Nike, Gap, Sephora</td>
+                  <td>3 % à 10 %</td>
+                </tr>
+                <tr>
+                  <td>Voyages & Hébergements</td>
+                  <td>Expedia, Booking.com</td>
+                  <td>1 % à 6 %</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- CORRECTIF 22: review-meta tags -->
+          <div class="review-meta">
+            <span class="review-meta-tag">📅 Membre depuis 2012</span>
+            <span class="review-meta-tag">💰 4 850 $ CAD cashback</span>
+            <span class="review-meta-tag">🇨🇦 Compte Canada</span>
+            <span class="review-meta-tag">✓ Vérifié juin 2026</span>
+          </div>
+
+          <p style="margin-top: 20px; font-size: 0.93rem; border-top: 1px dashed var(--border); padding-top: 16px;">
             💡 Vous visez une optimisation complète de votre budget ? Jetez un coup d'œil à mes protocoles et codes pour économiser sur <a href="https://cashinstinct.ca/ebox/fr/" style="text-decoration: underline;">Internet haute vitesse EBOX</a> ou pour récolter des primes bancaires avec <a href="https://cashinstinct.ca/tangerine/fr/" style="text-decoration: underline;">Tangerine</a>.
           </p>
         </div>
       </section>
 
+      <!-- SECTION 4 : COMPARATIF PLATEFORMES (NOUVEAU) -->
+      <section id="compare">
+        <span class="section-label">Comparatif</span>
+        <h2>Rakuten vs. autres plateformes de cashback au Canada</h2>
+
+        <p>Quelques alternatives légitimes à Rakuten existent au Canada. Voici comment elles se comparent selon une utilisation directe:</p>
+
+        <div class="compare-wrap">
+          <div style="overflow-x: auto;">
+            <table class="platforms-table">
+              <thead>
+                <tr>
+                  <th>Plateforme</th>
+                  <th>Bonus bienvenue</th>
+                  <th>Cashback moyen</th>
+                  <th>Retrait min.</th>
+                  <th>Fréquence</th>
+                  <th>Depuis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight">
+                  <td>⭐ Rakuten</td>
+                  <td>30 $ CAD</td>
+                  <td>Élevé</td>
+                  <td>5 $ (trimestriel)</td>
+                  <td>✓ Trimestriel</td>
+                  <td>2012</td>
+                </tr>
+                <tr>
+                  <td>Swagbucks</td>
+                  <td>10 $ + 300 SB</td>
+                  <td>Moyen</td>
+                  <td>5 $ (500 SB)</td>
+                  <td>✓ PayPal</td>
+                  <td>2008</td>
+                </tr>
+                <tr>
+                  <td>InboxDollars</td>
+                  <td>5 $</td>
+                  <td>Moyen</td>
+                  <td>30 $</td>
+                  <td>✓ Comptant</td>
+                  <td>2000</td>
+                </tr>
+                <tr>
+                  <td>Honey</td>
+                  <td>Aucun</td>
+                  <td>Moyen</td>
+                  <td>5 $</td>
+                  <td>✓ PayPal</td>
+                  <td>2012</td>
+                </tr>
+                <tr>
+                  <td>Capital One Shopping</td>
+                  <td>Aucun</td>
+                  <td>Faible</td>
+                  <td>5 $</td>
+                  <td>✓ PayPal</td>
+                  <td>2012</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p style="margin-top: 16px; font-size: 0.9rem; color: var(--muted);">
+          Note : Rakuten est le meilleur choix pour le cashback général avec des taux élevés sur des centaines de marchands. Swagbucks gagne sur la combinaison cashback + sondages.
+        </p>
+      </section>
+
+      <!-- SECTION 5 : FAQ -->
       <section id="faq">
         <span class="section-label">FAQ</span>
-        <h2>Foire Aux Questions</h2>
+        <h2>Rakuten Canada — Questions fréquemment posées</h2>
         <div class="faq">
+
           <details>
             <summary>Quel est le meilleur code de parrainage Rakuten Canada en 2026 ?</summary>
             <div class="faq-body">
               <p>Il n'existe aucun code texte à taper au clavier pour l'offre de bienvenue. Rakuten gère l'attribution de manière entièrement automatisée grâce aux liens d'invitation sécurisés fournis par les parrains.</p>
             </div>
           </details>
+
           <details>
             <summary>Pourquoi mon cashback n'apparaît-il pas immédiatement ?</summary>
             <div class="faq-body">
               <p>Le traitement informatique dépend de la vitesse de validation du marchand partenaire. Vos gains passent généralement au statut "En attente" sous 48 heures, puis sont confirmés dès que le délai de retour légal de l'article est expiré.</p>
             </div>
           </details>
+
           <details>
             <summary>Que se passe-t-il si je retourne un article commandé ?</summary>
             <div class="faq-body">
               <p>Si vous annulez une commande ou effectuez un remboursement complet, le marchand révoque sa commission. Le cashback associé et le bonus de bienvenue s'annuleront automatiquement dans votre tableau de bord.</p>
             </div>
           </details>
+
           <details>
             <summary>L'utilisation de Rakuten entraîne-t-elle des frais cachés ?</summary>
             <div class="faq-body">
               <p>Non, le service est totalement gratuit. Rakuten est financé par les enveloppes publicitaires des marques partenaires. Le prix de vos articles reste à 100 % identique à une navigation classique.</p>
             </div>
           </details>
+
+          <details>
+            <summary>Rakuten fonctionne-t-il au Québec et dans toutes les provinces ?</summary>
+            <div class="faq-body">
+              <p><strong>Oui, pleinement.</strong> Rakuten est opérationnel dans les 10 provinces et 3 territoires canadiens. Les paiements sont émis en équivalent CAD via PayPal ou en chèques postaux de dénomination canadienne.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Combien de temps faut-il pour recevoir le cashback ?</summary>
+            <div class="faq-body">
+              <p>Le cashback passe au statut "En attente" sous 48 heures, puis est confirmé dès que le délai de retour légal de l'article est expiré. Rakuten distribue l'argent <strong>quatre fois par an</strong> (trimestriel): en janvier, avril, juillet et octobre.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Puis-je cumuler Rakuten avec d'autres cartes de crédit ?</summary>
+            <div class="faq-body">
+              <p><strong>Absolument.</strong> Le cashback de Rakuten se superpose aux remises de votre carte de crédit. C'est la stratégie du "Triple Cumul": bonus d'activation + cashback Rakuten + points de carte de crédit.</p>
+            </div>
+          </details>
+
         </div>
       </section>
 
+      <!-- CTA DE FIN -->
       <div class="cta-section">
         <h2>Prêt à récupérer votre bonus de 30 $ ?</h2>
         <p>Cliquez sur le bouton d'activation officiel ci-dessous, complétez votre enregistrement et effectuez vos achats habituels pour valider le transfert de vos fonds.</p>
-        <a class="btn" href="https://www.rakuten.ca/r/cashinstinct?src=Link" target="_blank" rel="noopener noreferrer sponsored">
-          🌐 Activer l'offre Rakuten Canada
+        <a class="btn"
+           href="https://www.rakuten.ca/r/cashinstinct?src=Link"
+           target="_blank" rel="noopener noreferrer sponsored">
+          Obtenir mon bonus de 30 $ CAD →
         </a>
+        <!-- CORRECTIF 23: proof notes sous CTA -->
+        <p style="font-size: 0.82rem; opacity: 0.7; margin-top: 14px; margin-bottom: 0;">
+          ✓ Lien vérifié juin 2026 &nbsp;·&nbsp; ✓ Valide dans toutes les provinces &nbsp;·&nbsp; ✓ Aucun coût pour vous
+        </p>
       </div>
 
       <div class="transparency">
-        <strong>Transparence :</strong> Cette page agit à titre de guide indépendant. L'utilisation du lien d'invitation présenté applique l'offre officielle de 30 $ à votre profit tout en me permettant de percevoir une prime de parrainage de la part de Rakuten, sans la moindre incidence sur vos gains ou sur le prix de vos transactions.
+        <strong>Divulgation d'affiliation :</strong> Ce guide est une ressource indépendante. Lorsque vous vous inscrivez via notre lien de parrainage, Rakuten crédite votre compte d'un bonus de bienvenue de 30 $ CAD et crédite Cash Instinct d'une prime de parrainage — entièrement financée par Rakuten, sans frais supplémentaires pour vous. Nous recommandons uniquement des plateformes que nous avons personnellement utilisées et vérifiées.
       </div>
 
     </div>
@@ -636,53 +877,70 @@
 
   <footer>
     <div class="container">
-      <p>Plateforme informative indépendante non affiliée à la direction officielle de la marque Rakuten Inc. Les marques déposées demeurent la propriété exclusive de leurs ayants droit respectifs.</p>
-       <p style="margin-top:6px;">Mise à jour de l'offre : <span id="footer-date">Juin 2026</span></p>
-      <div class="footer-links">
-        <a href="https://cashinstinct.ca/">Tous les codes</a>
-        <a href="https://cashinstinct.ca/ebox/fr/">EBOX</a>
-        <a href="https://cashinstinct.ca/stickermule/fr/">Sticker Mule</a>
-        <a href="https://cashinstinct.ca/tangerine/fr/">Tangerine</a>
-      </div>
+      <p>Cash Instinct est une ressource affiliée indépendante non affiliée à la direction officielle de la marque Rakuten Inc. Les marques déposées demeurent la propriété exclusive de leurs ayants droit respectifs.</p>
+      <p style="margin-top: 6px;">Mise à jour de l'offre : <span id="footer-date"></span></p>
+      <!-- CORRECTIF 24: footer-links no underline -->
+      <nav class="footer-links" aria-label="Liens du site">
+        <a href="https://cashinstinct.ca/ebox/fr/">🌐 EBOX Internet</a>
+        <a href="https://cashinstinct.ca/stickermule/fr/">🏷️ Sticker Mule</a>
+        <a href="https://cashinstinct.ca/tangerine/fr/">🍊 Banque Tangerine</a>
+        <a href="https://cashinstinct.ca/swagbucks/fr/">🔵 Swagbucks</a>
+        <a href="https://cashinstinct.ca/rakuten-canada/en/">🇬🇧 English version</a>
+      </nav>
     </div>
   </footer>
 
-    <script>
-    // Footer date dynamique en français
-    const footerDate = document.getElementById("footer-date");
-    if (footerDate) {
-      const now = new Date();
-      footerDate.textContent = now.toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
-    }
-  </script>
-  
+  <!-- CORRECTIF 25: Sticky CTA mobile -->
+  <div class="sticky-cta" role="complementary" aria-label="Accès rapide au bonus Rakuten">
+    <span class="sticky-cta-text">💰 Bonus de 30 $</span>
+    <a class="sticky-cta-btn"
+       href="https://www.rakuten.ca/r/cashinstinct?src=Link"
+       target="_blank" rel="noopener noreferrer sponsored">
+      Réclamer →
+    </a>
+  </div>
+
+  <!-- CORRECTIF 26: JS complet -->
   <script>
-    const themeToggle = document.getElementById("theme-toggle");
-    const currentTheme = localStorage.getItem("theme");
+    /* Footer date dynamique */
+    var fd = document.getElementById('footer-date');
+    if (fd) fd.textContent = new Date().toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
+
+    /* Theme toggle */
+    var themeToggle = document.getElementById('theme-toggle');
+    var root = document.documentElement;
 
     function setThemeUI(isDark) {
-      themeToggle.textContent = isDark ? "☀️" : "🌙";
+      themeToggle.textContent = isDark ? '☀️' : '🌙';
+      themeToggle.setAttribute('aria-label',  isDark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
+      themeToggle.setAttribute('aria-pressed', String(isDark));
     }
 
-    if (currentTheme === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-      setThemeUI(true);
-    } else {
-      setThemeUI(false);
-    }
+    setThemeUI(root.getAttribute('data-theme') === 'dark');
 
-    themeToggle.addEventListener("click", () => {
-      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-      if (isDark) {
-        document.documentElement.removeAttribute("data-theme");
-        localStorage.setItem("theme", "light");
-        setThemeUI(false);
-      } else {
-        document.documentElement.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-        setThemeUI(true);
-      }
+    themeToggle.addEventListener('click', function() {
+      var isDark = root.getAttribute('data-theme') === 'dark';
+      try {
+        if (isDark) {
+          root.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          root.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      } catch(e) {}
+      setThemeUI(!isDark);
     });
+
+    /* Sticky CTA scroll trigger */
+    (function() {
+      var cta = document.querySelector('.sticky-cta');
+      if (!cta) return;
+      window.addEventListener('scroll', function() {
+        cta.classList.toggle('visible', window.scrollY > 400);
+      }, { passive: true });
+    })();
   </script>
+
 </body>
 </html>
