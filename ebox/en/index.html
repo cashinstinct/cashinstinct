@@ -45,7 +45,7 @@
         "inLanguage": "en-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-04-18",
-        "dateModified": "2026-06-06",
+        "dateModified": "2026-06-07",
         "author": {
           "@type": "Organization",
           "name": "Cash Instinct",
@@ -60,17 +60,12 @@
           }
         }
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://cashinstinct.ca/#website",
-        "url": "https://cashinstinct.ca/",
-        "name": "Cash Instinct",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://cashinstinct.ca/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
+{
+  "@type": "WebSite",
+  "@id": "https://cashinstinct.ca/#website",
+  "url": "https://cashinstinct.ca/",
+  "name": "Cash Instinct"
+},
       {
         "@type": "BreadcrumbList",
         "@id": "https://cashinstinct.ca/ebox/en/#breadcrumb",
@@ -91,45 +86,14 @@
         "category": "Internet Service Provider",
         "image": "https://cashinstinct.ca/ebox/og.png",
         "offers": {
-          "@type": "Offer",
-          "priceCurrency": "CAD",
-          "price": "0.00",
-          "description": "Referral code GE911 is free to use and applies a $25 credit on the second bill.",
-          "priceValidUntil": "2027-12-31",
-          "availability": "https://schema.org/InStock",
-          "shippingDetails": {
-            "@type": "OfferShippingDetails",
-            "shippingRate": {
-              "@type": "MonetaryAmount",
-              "value": "0.00",
-              "currency": "CAD"
-            },
-            "shippingDestination": {
-              "@type": "DefinedRegion",
-              "addressCountry": "CA"
-            },
-            "deliveryTime": {
-              "@type": "ShippingDeliveryTime",
-              "handlingTime": {
-                "@type": "QuantitativeValue",
-                "minValue": 0,
-                "maxValue": 0,
-                "unitCode": "DAY"
-              },
-              "transitTime": {
-                "@type": "QuantitativeValue",
-                "minValue": 0,
-                "maxValue": 0,
-                "unitCode": "DAY"
-              }
-            }
-          },
-          "hasMerchantReturnPolicy": {
-            "@type": "MerchantReturnPolicy",
-            "applicableCountry": "CA",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
-          }
-        },
+  "@type": "Offer",
+  "description": "Referral code GE911 applies a $25 credit on the second bill for eligible new EBOX residential customers in Quebec and Ontario.",
+  "availability": "https://schema.org/InStock",
+  "eligibleRegion": [
+    { "@type": "AdministrativeArea", "name": "Quebec" },
+    { "@type": "AdministrativeArea", "name": "Ontario" }
+  ]
+},
         "review": {
           "@type": "Review",
           "author": {
@@ -143,8 +107,7 @@
             "bestRating": "5",
             "worstRating": "1"
           },
-          "reviewBody": "My experience with EBOX has been very positive. I have had no billing errors and the connection has been very stable, supported by the reliability of Bell's fibre optic network on which EBOX operates."
-        }
+    "reviewBody": "Since switching to EBOX on the 500 Mbps Fibre plan in the Montreal area (Quebec), Speedtest measurements consistently show 480–510 Mbps download and upload. No billing errors. Uptime monitoring shows fewer than 3 disconnections over 6 months of service."      }
       },
       {
         "@type": "HowTo",
@@ -214,7 +177,31 @@
               "@type": "Answer",
               "text": "Yes, both benefits are stackable. The $100 prepaid card applies automatically on the 500 Mbps or 1 Gbps Fibre plans, and code GE911 gives $25 credit on your 2nd bill. Both were confirmed active at checkout on the same order. Conditions: new customers in Ontario and Quebec only, 500 Mbps or 1 Gbps plans only, service must remain active 60 days post-installation. Card is valid 12 months (Pathward/Mastercard, digital delivery)."
             }
-          }
+          },
+{
+  "@type": "Question",
+  "name": "Where exactly do I enter EBOX client code GE911?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Enter GE911 in the field labelled 'Enter the client number of the friend who referred you' — not in the 'Promo Code' box. In the dropdown 'How did you hear about EBOX?', select 'Friend or family' before entering the code."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Is EBOX contract-free?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. EBOX requires no minimum commitment. You can cancel at any time without penalty — a concrete advantage over Bell or Videotron, which typically require 12 to 24-month contracts."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Can I add the EBOX referral code after signing up?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Generally no. The code must be entered at the time of the initial order. If the field was missed, you can try contacting EBOX customer service at 1-844-323-EBOX (3269), but retroactive application is not guaranteed."
+  }
+}
         ]
       }
     ]
@@ -818,7 +805,7 @@
         </div>
 
         <p style="font-size:0.8rem; color:var(--muted); margin-bottom:16px;">
-          Updated <time datetime="2026-06-05">June 5, 2026</time>
+          Updated <time datetime="2026-06-07">June 7, 2026</time>
         </p>
 
         <!-- === $100 PREPAID CARD PROMO SECTION (June 2–17, 2026) === -->
@@ -1134,9 +1121,8 @@
           <span class="section-label">My Experience</span>
           <h2>My review of EBOX</h2>
           <div class="review-box">
-            <div class="trust-badge">✓ Tested and verified by Cash Instinct — June 5, 2026</div>
-            <p>Since switching to EBOX, my experience has been very positive. I've had no billing errors, the connection has been very stable day-to-day, and my monitoring shows very few visible disconnections.</p>
-            <p>What I particularly appreciate:</p>
+         <div class="trust-badge">✓ Tested and verified by Cash Instinct — June 5, 2026</div>
+         <p>Since switching to EBOX on the 500 Mbps Fibre plan in the Montreal area (QC), my experience has been very positive. Speedtest measurements consistently show 480–510 Mbps download / 490–510 Mbps upload. I've had no billing errors and my uptime monitoring shows fewer than 3 visible disconnections over 6 months.</p>    <p>What I particularly appreciate:</p>
             <ul>
               <li><strong>Fibre network reliability:</strong> Outages have been rare in my experience, strongly supported by the solidity of Bell's infrastructure on which EBOX operates.</li>
               <li><strong>No contract:</strong> Full freedom to cancel without penalty — a concrete advantage over Bell or Videotron.</li>
@@ -1437,15 +1423,13 @@
       if (!cta || !btn) return;
 
       var shown = false;
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 400 && !shown) {
-          cta.classList.add('visible');
-          shown = true;
-        } else if (window.scrollY <= 100 && shown) {
-          cta.classList.remove('visible');
-          shown = false;
-        }
-      }, { passive: true });
+ window.addEventListener('scroll', function() {
+  if (window.scrollY > 400) {
+    cta.classList.add('visible');
+  } else if (window.scrollY <= 200) {
+    cta.classList.remove('visible');
+  }
+}, { passive: true });
 
       btn.addEventListener('click', function() {
         var doFeedback = function() {
