@@ -46,7 +46,7 @@
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-04-18",
-        "dateModified": "2026-06-05",
+        "dateModified": "2026-06-07",
         "author": {
           "@type": "Organization",
           "name": "Cash Instinct",
@@ -58,17 +58,12 @@
           "logo": { "@type": "ImageObject", "url": "https://cashinstinct.ca/logo.png" }
         }
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://cashinstinct.ca/#website",
-        "url": "https://cashinstinct.ca/",
-        "name": "Cash Instinct",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://cashinstinct.ca/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
+     {
+  "@type": "WebSite",
+  "@id": "https://cashinstinct.ca/#website",
+  "url": "https://cashinstinct.ca/",
+  "name": "Cash Instinct"
+},
       {
         "@type": "BreadcrumbList",
         "@id": "https://cashinstinct.ca/ebox/fr/#breadcrumb",
@@ -85,29 +80,17 @@
         "description": "Service Internet résidentiel EBOX au Québec et en Ontario avec offre de parrainage donnant 25 $ de crédit sur la 2e facture pour un nouveau client admissible avec le numéro de client GE911.",
         "category": "Internet Service Provider",
         "image": "https://cashinstinct.ca/ebox/og.png",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "CAD",
-          "price": "0.00",
-          "description": "Le code de parrainage GE911 est gratuit à utiliser et applique un crédit de 25 $ sur la deuxième facture.",
-          "priceValidUntil": "2027-12-31",
-          "availability": "https://schema.org/InStock",
-          "shippingDetails": {
-            "@type": "OfferShippingDetails",
-            "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "CAD" },
-            "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "CA" },
-            "deliveryTime": {
-              "@type": "ShippingDeliveryTime",
-              "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-              "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
-            }
-          },
-          "hasMerchantReturnPolicy": {
-            "@type": "MerchantReturnPolicy",
-            "applicableCountry": "CA",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
-          }
-        },
+     "offers": {
+  "@type": "Offer",
+  "description": "Referral code GE911 applies a $25 credit on the second bill for eligible new EBOX residential customers in Quebec and Ontario.",
+  "price": "0",
+  "priceCurrency": "CAD",
+  "availability": "https://schema.org/InStock",
+  "eligibleRegion": [
+    { "@type": "AdministrativeArea", "name": "Quebec" },
+    { "@type": "AdministrativeArea", "name": "Ontario" }
+  ]
+},
         "review": {
           "@type": "Review",
           "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
@@ -540,7 +523,7 @@
 </div>
 
         <p style="font-size:0.8rem; color:var(--muted); margin-bottom:16px;">
-        Mis à jour le <time datetime="2026-06-05">5 juin 2026</time>
+        Mis à jour le <time datetime="2026-06-07">7 juin 2026</time>
         </p>
 
         <!-- === SECTION PROMO $100 CARTE PRÉPAYÉE EBOX (2 juin – 17 juin 2026) === -->
@@ -1177,9 +1160,12 @@ parrainage est terminée depuis le 31 mai 2026 — le crédit standard revient �
       if (!cta || !btn) return;
       var shown = false;
       window.addEventListener('scroll', function() {
-        if (window.scrollY > 400 && !shown) { cta.classList.add('visible'); shown = true; }
-        else if (window.scrollY <= 100 && shown) { cta.classList.remove('visible'); shown = false; }
-      }, { passive: true });
+  if (window.scrollY > 400) {
+    cta.classList.add('visible');
+  } else if (window.scrollY <= 200) {
+    cta.classList.remove('visible');
+  }
+}, { passive: true });
       btn.addEventListener('click', function() {
         var doFeedback = function() {
           btn.textContent = 'Copié !'; btn.classList.add('copied');
