@@ -82,8 +82,8 @@
         "image": "https://cashinstinct.ca/ebox/og.png",
      "offers": {
   "@type": "Offer",
-   "description": "Le code de parrainage GE911 donne 25 $ de crédit sur la 2e facture pour les nouveaux clients résidentiels EBOX admissibles au Québec et en Ontario."
-   "price": "0",
+   "description": "Le code de parrainage GE911 donne 25 $ de crédit sur la 2e facture pour les nouveaux clients résidentiels EBOX admissibles au Québec et en Ontario.",
+  "price": "0",
   "priceCurrency": "CAD",
   "availability": "https://schema.org/InStock",
   "eligibleRegion": [
@@ -894,7 +894,8 @@ parrainage est terminée depuis le 31 mai 2026 — le crédit standard revient �
           <h2>Mon avis sur EBOX</h2>
           <div class="review-box">
            <div class="trust-badge">✓ Testé et vérifié par Cash Instinct — 5 juin 2026</div>
-            <p>Depuis mon passage chez EBOX sur le forfait Fibre 500 Mbps dans la région de Montréal (Québec), les mesures Speedtest affichent régulièrement entre 480 et 510 Mbps en téléchargement et en téléversement. Aucune erreur de facturation. Mon suivi de disponibilité relève moins de 3 déconnexions sur 6 mois de service.       <p>Ce que j'apprécie particulièrement :</p>
+            <p>Depuis mon passage chez EBOX sur le forfait Fibre 500 Mbps dans la région de Montréal (Québec), les mesures Speedtest affichent régulièrement entre 480 et 510 Mbps en téléchargement et en téléversement. Aucune erreur de facturation. Mon suivi de disponibilité relève moins de 3 déconnexions sur 6 mois de service.</p>
+            <p>Ce que j'apprécie particulièrement :</p>
             <ul>
               <li><strong>Fiabilité du réseau fibre :</strong> Les interruptions ont été rares dans mon cas, fortement appuyées par la solidité de l'infrastructure Bell sur laquelle EBOX opère.</li>
               <li><strong>Aucun contrat :</strong> Liberté totale d'annuler sans pénalité — un avantage concret par rapport à Bell ou Vidéotron.</li>
@@ -1158,22 +1159,22 @@ parrainage est terminée depuis le 31 mai 2026 — le crédit standard revient �
  
     /* Vidéo facade */
     (function() {
-      
-      if (!facade) return;
-      function launch() {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube-nocookie.com/embed/dUFRORlBJYA?autoplay=1&playsinline=1';
-        iframe.title = 'Tutoriel Code Client EBOX GE911';
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        iframe.setAttribute('allowfullscreen', '');
-        iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
-        facade.innerHTML = '';
-        facade.appendChild(iframe);
-        facade.style.cursor = 'default';
-      }
-      facade.addEventListener('click', launch);
-      facade.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); launch(); } });
-    })();
+  var facade = document.getElementById('ebox-video-wrapper');
+  if (!facade) return;
+  function launch() {
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/dUFRORlBJYA?autoplay=1&playsinline=1';
+    iframe.title = 'Tutoriel Code Client EBOX GE911';
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
+    facade.innerHTML = '';
+    facade.appendChild(iframe);
+    facade.style.cursor = 'default';
+  }
+  facade.addEventListener('click', launch);
+  facade.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); launch(); } });
+})();
  
     /* Sticky scroll + copy avec fallback */
     (function() {
