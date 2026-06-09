@@ -340,7 +340,7 @@
 }
     /* ── MAIN ── */
     main { padding: 42px 0 52px; }
-    section { margin-bottom: 56px; scroll-margin-top: 72px; }
+    section { scroll-margin-top: calc(var(--topbar-h, 56px) + 16px); }
     section h2 { font-size: 1.55rem; font-weight: 800; margin-bottom: 20px; color: var(--text); }
     section p { margin-bottom: 14px; color: var(--text-soft); }
 
@@ -648,6 +648,16 @@
         Tangerine Clé Orange
       </nav>
 
+      <nav aria-label="Navigation interne" style="font-size: 0.95rem; margin-bottom: 32px; text-align: center; color: var(--muted);">
+  Navigation rapide :
+  <a href="#cumul" style="text-decoration: underline;">Deux primes</a> ·
+  <a href="#comment-utiliser" style="text-decoration: underline;">Guide d'activation</a> ·
+  <a href="#details" style="text-decoration: underline;">Informations</a> ·
+  <a href="#avis" style="text-decoration: underline;">Mon avis</a> ·
+  <a href="#glossaire" style="text-decoration: underline;">Glossaire</a> ·
+  <a href="#faq" style="text-decoration: underline;">FAQ</a>
+</nav>
+
       <div class="ai-summary">
         La <strong>Clé Orange Tangerine active en 2026</strong> est <strong>14130944S1</strong>. Elle donne <strong>50&nbsp;$ à l'inscription</strong> (dépôt de 250&nbsp;$ maintenu 60 jours). En parallèle, la <strong>prime de dépôt de paie de 250&nbsp;$</strong> s'active sans code additionnel — les deux programmes sont <strong>cumulables pour un total de 300&nbsp;$</strong>.
         <br><br>
@@ -655,7 +665,7 @@
       </div>
 
       <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;">
-        Mis à jour le <time datetime="2026-06-09">9 juin 2026</time>
+        Mis à jour le <time id="updated-date" datetime="2026-06-09">9 juin 2026</time>
       </p>
 
       <!-- === SECTION CUMUL === -->
@@ -1053,6 +1063,15 @@
       img.insertAdjacentElement('afterend', p);
     });
   });
+(function() {
+  var el = document.getElementById('updated-date');
+  if (!el) return;
+  var now = new Date();
+  var iso = now.toISOString().split('T')[0]; // "2026-06-09"
+  var label = now.toLocaleDateString('fr-CA', { day: 'numeric', month: 'long', year: 'numeric' });
+  el.setAttribute('datetime', iso);
+  el.textContent = label;
+})();
 
   // Theme toggle
   const toggle = document.getElementById('theme-toggle');
