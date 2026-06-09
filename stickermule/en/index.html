@@ -397,10 +397,44 @@
       margin: 28px auto 0; width: 100%; max-width: 560px;
     }
     .hero-methods > div { width: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
-    @media (min-width: 768px) {
-      .hero-methods { flex-direction: row; max-width: 1100px; gap: 32px; align-items: stretch; }
-      .hero-methods > div { flex: 1; }
-    }
+  @media (min-width: 768px) {
+  /* Aligne les deux cartes côte à côte proprement */
+  .hero-methods {
+    flex-direction: row;
+    max-width: 1000px; /* Plus compact pour éviter l'effet étiré */
+    margin: 40px auto 0;
+    gap: 32px;
+    align-items: stretch; /* Force les deux cartes à avoir la même hauteur */
+  }
+
+  /* Force le contenu à occuper l'espace et pousse les images au fond */
+  .hero-methods > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 32px 24px !important;
+  }
+
+  /* Évite que le bouton de la méthode 1 prenne toute la largeur de l'écran */
+  .cta-btn-hero.dynamic-link {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  /* Pousse les deux images de preuve vers le bas pour qu'elles soient sur la même ligne */
+  .hero-methods img, 
+  .hero-methods a.dynamic-link:has(img) {
+    margin-top: auto !important;
+  }
+
+  /* Ajoute un espacement sous la micro-note pour détacher l'image */
+  .hero-methods .micro-note {
+    margin-bottom: 24px;
+  }
+}
     .hero-methods p { color: var(--text-soft); font-size: 0.85rem; margin-top: 8px; text-align: center; }
 
 
@@ -585,14 +619,15 @@
   .sticky-mobile-cta .s-btn { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.4); color: #fff; font-weight: 800; font-size: 0.9rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
   .sticky-mobile-cta .s-btn.copied { background: #fff; color: var(--accent); }
 }
-    .micro-note {
-    font-size: 0.75rem;
-    color: #9ca3af; /* Gris estompé */
-    margin-top: 8px;
-    display: block;
-    text-align: center;
+  .micro-note {
+  font-size: 0.76rem;
+  color: var(--muted); /* Utilise la variable de ton thème */
+  margin-top: 6px;
+  display: block;
+  text-align: center;
+  font-weight: 500;
 }
-
+ 
   </style>
 </head>
 <body>
@@ -1333,13 +1368,18 @@
   </script>
 
   <script>
-// Remplacer le script copy-btn par :
 document.getElementById('copy-btn').addEventListener('click', function() {
   var text = 'CASHINSTINCT';
+  var btn = document.getElementById('copy-btn');
   var status = document.getElementById('copyStatusHero');
+  
   navigator.clipboard.writeText(text).then(function() {
-    document.getElementById('copy-btn').textContent = 'Copied !';
-    setTimeout(function() { document.getElementById('copy-btn').textContent = 'Copy'; }, 2000);
+    btn.textContent = 'Copied !';
+    if (status) status.textContent = 'Code copied to clipboard successfully.';
+    setTimeout(function() { 
+      btn.textContent = 'Copy'; 
+      if (status) status.textContent = '';
+    }, 2000);
   }).catch(function() {
     var ta = document.createElement('textarea');
     ta.value = text;
@@ -1347,10 +1387,14 @@ document.getElementById('copy-btn').addEventListener('click', function() {
     document.body.appendChild(ta); ta.select();
     try {
       document.execCommand('copy');
-      document.getElementById('copy-btn').textContent = 'Copied !';
-      setTimeout(function() { document.getElementById('copy-btn').textContent = 'Copy'; }, 2000);
+      btn.textContent = 'Copied !';
+      if (status) status.textContent = 'Code copied to clipboard successfully.';
+      setTimeout(function() { 
+        btn.textContent = 'Copy'; 
+        if (status) status.textContent = '';
+      }, 2000);
     } catch(e) {
-      if (status) status.textContent = 'Copiez manuellement : CASHINSTINCT';
+      if (status) status.textContent = 'Please copy manually: CASHINSTINCT';
     }
     document.body.removeChild(ta);
   });
