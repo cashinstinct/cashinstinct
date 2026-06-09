@@ -368,7 +368,18 @@
 
     main { padding: 52px 0; }
     section { margin-bottom: 56px; scroll-margin-top: calc(var(--topbar-h) + 16px); }
-    section h2 { font-size: 1.85rem; font-weight: 800; margin-bottom: 20px; color: var(--text); }
+    section h2 { 
+  font-size: 1.85rem; 
+  font-weight: 800; 
+  margin-bottom: 22px; 
+  color: var(--text); 
+  letter-spacing: -0.02em;
+  
+  /* AJOUT : Aligne parfaitement le titre avec les étapes centrées */
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
     section p { margin-bottom: 14px; color: var(--text-soft); }
 
    .warning {
