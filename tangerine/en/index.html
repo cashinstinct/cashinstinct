@@ -38,17 +38,12 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://cashinstinct.ca/#website",
-        "url": "https://cashinstinct.ca/",
-        "name": "Cash Instinct",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://cashinstinct.ca/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
+{
+  "@type": "WebSite",
+  "@id": "https://cashinstinct.ca/#website",
+  "url": "https://cashinstinct.ca/",
+  "name": "Cash Instinct"
+},
       {
         "@type": "WebPage",
         "@id": "https://cashinstinct.ca/tangerine/en/",
@@ -561,7 +556,7 @@
 
 <a href="#main-content" style="position:absolute;left:-9999px;top:4px;z-index:9999;padding:8px 16px;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Skip to main content</a>
 
-<nav class="topbar">
+<nav class="topbar" aria-label="Main navigation">
   <div class="topbar-inner">
     <a class="brand" href="https://cashinstinct.ca/en/">Cash Instinct</a>
     <div class="nav">
@@ -630,8 +625,8 @@
 
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="https://cashinstinct.ca/en/">Home</a><span>&gt;</span>
-        <a href="https://cashinstinct.ca/en/#finances">Online Banking</a><span>&gt;</span>
-        Tangerine Orange Key
+        <a href="https://cashinstinct.ca/en/#finances">Online Banking</a><span aria-hidden="true"> › </span>
+        <span aria-current="page">Tangerine Orange Key</span>
       </nav>
 
       <div class="ai-summary">
@@ -999,9 +994,8 @@
 <footer>
   <div class="container">
     <p>This site is not officially affiliated with Tangerine or Scotiabank. All trademarks belong to their respective owners.</p>
-    <p style="margin-top:6px;">Tangerine Orange Key: <code>14130944S1</code> — Updated: <span id="footer-date">June 2026</span></p>
+    <p style="margin-top:6px;">Tangerine Orange Key: <code>14130944S1</code> — Updated: <time id="footer-date" datetime="2026-06-09">June 2026</time></p>
   </div>
-
 <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
   <a href="https://cashinstinct.ca/en/">Home</a><span aria-hidden="true"> · </span>
   <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a><span aria-hidden="true"> · </span>
