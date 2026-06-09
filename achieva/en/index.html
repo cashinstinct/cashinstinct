@@ -77,8 +77,8 @@
         "@type": "BreadcrumbList",
         "@id": "https://cashinstinct.ca/achieva/en/#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home",              "item": "https://cashinstinct.ca/" },
-          { "@type": "ListItem", "position": 2, "name": "Banking & Finance", "item": "https://cashinstinct.ca/#finances" },
+          { "@type": "ListItem", "position": 1, "name": "Home",              "item": "https://cashinstinct.ca/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Banking & Finance", "item": "https://cashinstinct.ca/en/#finances" },
           { "@type": "ListItem", "position": 3, "name": "Achieva Financial", "item": "https://cashinstinct.ca/achieva/en/" }
         ]
       },
@@ -274,6 +274,7 @@
       color: var(--text); background: var(--bg);
       padding-bottom: 72px;
     }
+    @media (max-width: 767px) { body { padding-bottom: 72px; } }
     @media (min-width: 768px) { body { font-size: 19px; } }
 
     a { color: var(--accent); text-decoration: none; font-weight: 600; }
@@ -380,12 +381,14 @@
     .summary-box {
       background: var(--surface-soft);
       border: 1px solid var(--border);
-      border-left: 4px solid var(--accent);
+      border-top: 3px solid var(--accent); 
       border-radius: 0 10px 10px 0;
       padding: 20px 24px; margin-bottom: 12px;
     }
-    .summary-box h2 { font-size: 1.15rem; margin-bottom: 8px; }
-
+    .summary-box h2 {
+  font-size: clamp(1.15rem, 2vw, 1.3rem);
+  margin-bottom: 8px;
+}
     .glossary-box { background: var(--surface-muted); border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; color: var(--text-soft); margin-top: 24px; }
     .warning { background: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 14px 20px; font-size: 0.95rem; color: var(--warning-text); margin: 32px 0; border-radius: 0 6px 6px 0; }
 
@@ -533,13 +536,13 @@
       <div class="prose">
 
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="https://cashinstinct.ca/">Home</a><span aria-hidden="true"> › </span>
-          <a href="https://cashinstinct.ca/#finances">Banking &amp; Finance</a><span aria-hidden="true"> › </span>
+          <a href="https://cashinstinct.ca/en/">Home</a><span aria-hidden="true"> › </span>
+          <a href="https://cashinstinct.ca/en/#finances">Banking &amp; Finance</a><span aria-hidden="true"> › </span>
           <span aria-current="page">Achieva Financial</span>
         </nav>
 
-        <section class="summary-box" aria-label="Offer summary">
-          <h2>Quick summary of the Achieva referral code &amp; bonus</h2>
+        <section class="summary-box" aria-labelledby="summary-heading">
+         <h2 id="summary-heading">Quick summary of the Achieva referral code &amp; bonus</h2>
           <p>The <strong>Achieva Financial Petal Code (Referral Code) V381566198</strong>, valid in 2026, unlocks a $25 CAD sign-up bonus. To qualify, a new customer must copy this promo code, download the mobile app, enter it during registration, make an initial deposit of at least $250 CAD, and maintain that balance for a minimum of one full month. Note: anyone who has held an Achieva account in the past 12 months is not eligible.</p>
         </section>
         <p class="last-updated">Last updated: <time datetime="2026-06-09" id="last-updated-date">June 9, 2026</time></p>
@@ -816,8 +819,9 @@
   <footer>
     <div class="footer-inner">
       <p>This page is an independent reference platform. It is not officially operated by Achieva Financial or Cambrian Credit Union.</p>
-      <p style="margin-top:6px;">Achieva Petal Code: <code>V381566198</code> — Data current as of: <span id="footer-date"></span></p>
+      <p style="margin-top:6px;">Achieva Petal Code: <code>V381566198</code> — Data current as of: <time id="footer-date" datetime="2026-06-09">June 2026</time></p>
       <div class="footer-links">
+        <a href="https://cashinstinct.ca/en/">Home</a>      
         <a href="https://cashinstinct.ca/hp-instant-ink/en/">🖨️ HP Instant Ink</a>
         <a href="https://cashinstinct.ca/tangerine/en/">🍊 Tangerine Promo</a>
         <a href="https://cashinstinct.ca/ebox/en/">🌐 EBOX Code</a>
@@ -826,7 +830,7 @@
     </div>
   </footer>
 
-<div class="sticky-cta" id="sticky-cta" aria-label="Quick access to referral code">
+<div class="sticky-cta" id="sticky-cta" role="region" aria-label="Quick access to referral code">
 
   <!-- Code + bouton Copy côte à côte -->
   <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
@@ -859,21 +863,38 @@
 
   <script>
     async function copyText(text, button, statusId) {
-      var status = document.getElementById(statusId);
-      try {
-        await navigator.clipboard.writeText(text);
-        button.textContent = 'Copied ✓';
-        button.style.background = 'rgba(16,122,71,0.15)';
-        if (status) status.textContent = 'Code copied!';
-        setTimeout(function() {
-          button.textContent = button.dataset.label || 'Copy code';
-          button.style.background = '';
-          if (status) status.textContent = '';
-        }, 2000);
-      } catch(err) {
-        if (status) status.textContent = 'Could not copy automatically.';
-      }
+  var status = document.getElementById(statusId);
+  var orig = button.dataset.label || 'Copy code';
+  function doFeedback() {
+    button.textContent = 'Copied ✓';
+    button.style.background = 'rgba(16,122,71,0.15)';
+    if (status) status.textContent = 'Code copied!';
+    setTimeout(function() {
+      button.textContent = orig;
+      button.style.background = '';
+      if (status) status.textContent = '';
+    }, 2000);
+  }
+  try {
+    await navigator.clipboard.writeText(text);
+    doFeedback();
+  } catch(err) {
+    // Fallback iOS Safari / anciens navigateurs
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      doFeedback();
+    } catch(e2) {
+      if (status) status.textContent = 'Could not copy automatically.';
     }
+    document.body.removeChild(ta);
+  }
+}
+
     document.querySelectorAll('[data-copy]').forEach(function(btn) {
       btn.addEventListener('click', function() {
         copyText(btn.dataset.copy, btn, btn.dataset.target);
