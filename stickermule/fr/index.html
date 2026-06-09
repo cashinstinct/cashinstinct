@@ -476,6 +476,27 @@
       .facts { grid-template-columns: 1fr; }
     }
     @media (max-width: 380px) { .theme-btn { display: none; } }
+       }
+    /* ── STICKY CTA MOBILE ── */
+.sticky-mobile-cta { display: none; }
+@media (max-width: 640px) {
+  body { padding-bottom: 80px; }
+  .sticky-mobile-cta {
+    display: flex;
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--accent); color: #fff;
+    padding: 12px 20px; z-index: 200;
+    justify-content: space-between; align-items: center;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .sticky-mobile-cta.visible { transform: translateY(0); }
+  .sticky-mobile-cta .s-code { font-family: "Courier New", Courier, monospace; font-weight: 900; font-size: 1.1rem; letter-spacing: 0.06em; }
+  .sticky-mobile-cta .s-label { font-size: 0.75rem; opacity: 0.85; }
+  .sticky-mobile-cta .s-btn { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.4); color: #fff; font-weight: 800; font-size: 0.9rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
+  .sticky-mobile-cta .s-btn.copied { background: #fff; color: var(--accent); }
+}
   </style>
 </head>
 <body>
@@ -929,6 +950,20 @@
     </div>
   </main>
 
+  <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="Code parrainage Sticker Mule">
+  <div>
+    <div class="s-code">CASHINSTINCT</div>
+    <div class="s-label">Code parrainage Sticker Mule</div>
+  </div>
+  <button class="s-btn" id="sticky-copy-btn" type="button">Copier</button>
+  <a href="https://www.stickermule.com/ca/unlock?ref_id=6042474701"
+     target="_blank" rel="noopener noreferrer"
+     style="background:var(--text);color:var(--surface);border-radius:6px;padding:8px 12px;font-weight:800;font-size:0.88rem;text-decoration:none;white-space:nowrap;flex-shrink:0;">
+    Activer ↗
+  </a>
+</div>
+
+  
   <footer>
     <div class="container">
       <p>Site indépendant non affilié officiellement à la marque Sticker Mule. Les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
@@ -1005,6 +1040,47 @@
       }).catch(err => console.error("Erreur copie :", err));
     });
   </script>
+
+  <script>
+  (function() {
+  var cta = document.getElementById('sticky-cta');
+  var btn = document.getElementById('sticky-copy-btn');
+  if (!cta || !btn) return;
+
+  var shown = false;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400 && !shown) { cta.classList.add('visible'); shown = true; }
+    else if (window.scrollY <= 100 && shown) { cta.classList.remove('visible'); shown = false; }
+  }, { passive: true });
+
+  // Masquer quand le CTA final est visible
+  var ctaSection = document.querySelector('.cta-section');
+  if (ctaSection) {
+    new IntersectionObserver(function(entries) {
+      cta.style.opacity = entries[0].isIntersecting ? '0' : '1';
+      cta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+    }).observe(ctaSection);
+  }
+
+  // Copier avec fallback Safari
+  btn.addEventListener('click', function() {
+    var text = 'CASHINSTINCT';
+    navigator.clipboard.writeText(text).then(function() {
+      btn.textContent = 'Copié !'; btn.classList.add('copied');
+      setTimeout(function() { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 2000);
+    }).catch(function() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); btn.textContent = 'Copié !'; btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 2000);
+      } catch(e) {}
+      document.body.removeChild(ta);
+    });
+  });
+})();
+ </script>
 
 </body>
 </html>
