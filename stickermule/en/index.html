@@ -560,21 +560,43 @@
     .faq-body ul { margin: 8px 0 0 20px; }
     .faq-body ul li { margin-bottom: 6px; }
 
-    .compare-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-    .compare-table th {
-      text-align: left; padding: 10px 12px;
-      background: var(--surface-soft); border: 1px solid var(--border);
-      color: var(--text); font-weight: 700;
-    }
-    .compare-table td { padding: 10px 12px; border: 1px solid var(--border); color: var(--text-soft); }
+.table-container {
+  background: var(--surface); 
+  border: 1px solid var(--border);
+  border-radius: 12px; 
+  padding: 24px; /* Plus d'espace autour du tableau */
+  box-shadow: var(--shadow);
+  overflow-x: auto; 
+  margin-top: 24px;
+  max-width: 760px; /* Aligné sur notre grille parfaite */
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.compare-table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  font-size: 1.05rem; /* Augmente la taille du texte global du tableau */
+}
+
+.compare-table th {
+  text-align: left; 
+  padding: 14px 16px; /* Plus de hauteur et d'espace pour les titres de colonnes */
+  background: var(--surface-soft); 
+  border: 1px solid var(--border);
+  color: var(--text); 
+  font-weight: 700;
+}
+
+.compare-table td { 
+  padding: 14px 16px; /* Plus d'espace pour chaque cellule (respiration visuelle) */
+  border: 1px solid var(--border); 
+  color: var(--text-soft); 
+}
     .compare-table .yes { color: #2a7a2a; font-weight: 700; }
     .compare-table .no  { color: #b03a1a; font-weight: 700; }
 
-    .table-container {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 20px 24px; box-shadow: var(--shadow);
-      overflow-x: auto; margin-top: 24px;
-    }
 
     .lang-notice { font-size: 0.92rem; color: var(--text-soft); background: var(--surface-soft); border: 1px solid var(--border-soft); border-radius: 8px; padding: 12px 16px; margin-bottom: 40px; }
 
