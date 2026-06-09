@@ -31,8 +31,7 @@
   <meta property="og:image"            content="https://cashinstinct.ca/stickermule/og.png" />
   <meta property="og:image:width"      content="1200" />
   <meta property="og:image:height"     content="630" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:type"       content="image/png" />
 
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Sticker Mule Coupon Code & Referral Code 2026" />
@@ -84,9 +83,8 @@
         "image": "https://cashinstinct.ca/stickermule/og.png",
         "brand": { "@type": "Brand", "name": "Sticker Mule" },
         "description": "Custom stickers, labels, magnets, apparel, and packaging. 19 sticker types including die cut, kiss cut, holographic, clear, and window clings. Free worldwide shipping. $10 USD referral credit for new users via code CASHINSTINCT. Unlimited 10% commission program: earn on referral purchases and sales for 1 year.",
-        "category": "Custom Printing Services",
-        },
-        "offers": {
+         "category": "Custom Printing Services",
+          "offers": {
           "@type": "Offer",
           "priceCurrency": "USD",
           "price": "0.00",
@@ -714,6 +712,7 @@
         <section id="coupon-code">
           <span class="section-label">Coupon Code</span>
           <h2>Sticker Mule Coupon Code vs. Referral Code — What Actually Works in 2026</h2>
+          <h3>Why standard Sticker Mule coupon codes don't work</h3>
           <p>If you landed here searching for a <strong>Sticker Mule coupon code</strong> or a <strong>stickermule promo code</strong> to paste at checkout: there is no public coupon field at checkout. Sticker Mule removed standard promo box entry years ago. Any codes circulating on third-party coupon aggregator sites are either expired, invalid, or simply do not apply to new accounts.</p>
           <p>What <em>does</em> work is a <strong>referral code</strong> — but only at account registration, not at checkout. Code <code>CASHINSTINCT</code> goes in the <strong>"Add referral code"</strong> field on the sign-up form. Once linked to your new account, the credit applies automatically at checkout on any qualifying order.</p>
           <div class="warning">
@@ -1193,8 +1192,8 @@ document.getElementById('copy-btn').addEventListener('click', function() {
   var text = 'CASHINSTINCT';
   var status = document.getElementById('copyStatusHero');
   navigator.clipboard.writeText(text).then(function() {
-    document.getElementById('copy-btn').textContent = 'Copié !';
-    setTimeout(function() { document.getElementById('copy-btn').textContent = 'Copier'; }, 2000);
+    document.getElementById('copy-btn').textContent = 'Copied !';
+    setTimeout(function() { document.getElementById('copy-btn').textContent = 'Copy'; }, 2000);
   }).catch(function() {
     var ta = document.createElement('textarea');
     ta.value = text;
@@ -1202,8 +1201,8 @@ document.getElementById('copy-btn').addEventListener('click', function() {
     document.body.appendChild(ta); ta.select();
     try {
       document.execCommand('copy');
-      document.getElementById('copy-btn').textContent = 'Copié !';
-      setTimeout(function() { document.getElementById('copy-btn').textContent = 'Copier'; }, 2000);
+      document.getElementById('copy-btn').textContent = 'Copied !';
+      setTimeout(function() { document.getElementById('copy-btn').textContent = 'Copy'; }, 2000);
     } catch(e) {
       if (status) status.textContent = 'Copiez manuellement : CASHINSTINCT';
     }
@@ -1255,15 +1254,15 @@ document.getElementById('copy-btn').addEventListener('click', function() {
   btn.addEventListener('click', function() {
     var text = 'CASHINSTINCT';
     navigator.clipboard.writeText(text).then(function() {
-      btn.textContent = 'Copié !'; btn.classList.add('copied');
-      setTimeout(function() { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 2000);
+      btn.textContent = 'Copied !'; btn.classList.add('copied');
+      setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
     }).catch(function() {
       var ta = document.createElement('textarea');
       ta.value = text;
       ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); btn.textContent = 'Copié !'; btn.classList.add('copied');
-        setTimeout(function() { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 2000);
+      try { document.execCommand('copy'); btn.textContent = 'Copied !'; btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
       } catch(e) {}
       document.body.removeChild(ta);
     });
