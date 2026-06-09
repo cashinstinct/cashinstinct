@@ -159,13 +159,13 @@
             "name": "Can I open an Achieva Financial account if I live outside Manitoba?",
             "acceptedAnswer": { "@type": "Answer", "text": "Yes. Achieva Financial accepts residents from all Canadian provinces and territories. You simply need a smartphone (iOS or Android) to download the app and complete registration." }
           },
-          {
-            "@type": "Question",
-            "name": "What is the Achieva Financial interest rate in 2026?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "As of June 2026, Achieva Financial pays 1.80% on non-registered daily savings accounts and 1.95% on registered accounts (TFSA, RRSP, RRIF). GIC rates range from 3.60% for a 1-year term to 4.05% for a 5-year term, with a minimum deposit of $1,000. Rates are variable and subject to change without notice."
-            }
+ {
+  "@type": "Question",
+  "name": "What is the Achieva Financial interest rate in 2026?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "As of June 2026, Achieva Financial pays 1.80% on non-registered daily savings accounts and 1.95% on registered accounts (TFSA, RRSP, RRIF). GIC rates: 1-year at 3.60%, 2-year at 3.65%, 3-year at 3.70%, 4-year at 3.75%, and 5-year at 4.05% (minimum $1,000, non-redeemable). Rates are variable and subject to change without notice."
+  }
           },
           {
             "@type": "Question",
@@ -449,12 +449,13 @@
     .footer-links { margin-top: 10px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
     .footer-links a { color: var(--muted); font-size: 0.82rem; }
 
-    .sticky-cta {
-      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-      background: var(--surface); border-top: 1px solid var(--border);
-      padding: 10px 16px; gap: 8px; align-items: center; justify-content: space-between;
-      box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
-    }
+  .sticky-cta {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  background: var(--surface); border-top: 1px solid var(--border);
+  padding: 10px 16px; gap: 10px; align-items: center;
+  justify-content: space-between; /* code à gauche, stores à droite */
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+}
     @media (max-width: 767px) {
       .sticky-cta {
         display: flex;
@@ -826,21 +827,36 @@
     </div>
   </footer>
 
-  <div class="sticky-cta" role="complementary" aria-label="Copy code and download the app">
+<div class="sticky-cta" id="sticky-cta" aria-label="Quick access to referral code">
+
+  <!-- Code + bouton Copy côte à côte -->
+  <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
     <span class="sticky-cta-code">V381566198</span>
-    <div class="sticky-store-links">
-      <a href="https://apps.apple.com/ca/app/achievamobile/id911123831"
-         target="_blank" rel="noopener noreferrer" aria-label="Apple App Store">
-        🍎 App Store
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=com.achieva.android&hl=en_CA"
-         target="_blank" rel="noopener noreferrer" aria-label="Google Play">
-        ▶ Google Play
-      </a>
-    </div>
-    <button class="sticky-cta-btn" data-copy="V381566198" data-target="stickyStatus" data-label="Copy">Copy</button>
+    <button class="sticky-cta-btn" data-copy="V381566198"
+            data-target="stickyCopyStatus" data-label="Copy"
+            aria-label="Copy referral code V381566198">
+      Copy
+    </button>
   </div>
-  <span id="stickyStatus" role="status" aria-live="polite" style="position:absolute; left:-9999px;"></span>
+
+  <!-- Liens app stores -->
+  <div class="sticky-store-links">
+    <a href="https://apps.apple.com/ca/app/achievamobile/id911123831"
+       target="_blank" rel="noopener noreferrer" aria-label="App Store">
+      🍎 App Store
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.achieva.android&hl=en_CA"
+       target="_blank" rel="noopener noreferrer" aria-label="Google Play">
+      ▶ Google Play
+    </a>
+  </div>
+
+  <span id="stickyCopyStatus" role="status" aria-atomic="true" aria-live="polite"
+        style="position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+               overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
+  </span>
+</div>
+
 
   <script>
     async function copyText(text, button, statusId) {
