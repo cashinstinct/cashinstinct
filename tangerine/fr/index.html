@@ -665,7 +665,7 @@
       </div>
 
       <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;">
-        Mis à jour le <time id="updated-date" datetime="2026-06-09">9 juin 2026</time>
+        Mis à jour le <time datetime="2026-06-09">9 juin 2026</time>
       </p>
 
       <!-- === SECTION CUMUL === -->
@@ -1063,15 +1063,6 @@
       img.insertAdjacentElement('afterend', p);
     });
   });
-(function() {
-  var el = document.getElementById('updated-date');
-  if (!el) return;
-  var now = new Date();
-  var iso = now.toISOString().split('T')[0]; // "2026-06-09"
-  var label = now.toLocaleDateString('fr-CA', { day: 'numeric', month: 'long', year: 'numeric' });
-  el.setAttribute('datetime', iso);
-  el.textContent = label;
-})();
 
   // Theme toggle
   const toggle = document.getElementById('theme-toggle');
