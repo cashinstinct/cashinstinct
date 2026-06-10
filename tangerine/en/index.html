@@ -823,63 +823,6 @@
   <button onclick="calcGain()" style="margin-top:1rem;padding:.75rem 1.5rem;background:var(--accent);color:#fff;border:none;border-radius:6px;font-weight:800;cursor:pointer;width:100%;">Calculate</button>
   <div id="c-result" style="margin-top:1rem;font-size:1.05rem;line-height:1.8;min-height:2.5rem;"></div>
 </div>
-
-<script>
-(function() {
-  var sel = document.getElementById('c-epargne');
-  var wrap = document.getElementById('c-epargne-wrap');
-
-  function toggleEpargne() {
-    wrap.style.display = sel.value === '1' ? 'block' : 'none';
-  }
-
-  toggleEpargne();
-  sel.addEventListener('change', toggleEpargne);
-})();
-
-function calcGain() {
-  var d = +document.getElementById('c-depot').value;
-  var p = +document.getElementById('c-paie').value;
-  var epargne = document.getElementById('c-epargne').value === '1';
-  var em = epargne ? (+document.getElementById('c-epargne-montant').value || 0) : 0;
-  var errEl = document.getElementById('c-depot-err');
-
-  if (d < 250) {
-    errEl.style.display = 'block';
-    document.getElementById('c-result').innerHTML = '';
-    return;
-  }
-  errEl.style.display = 'none';
-
-  var total = 0, lines = [];
-
-  total += 50;
-  lines.push('✅ Orange Key bonus — <strong>$50</strong>');
-
-  if (p >= 200) {
-    total += 250;
-    lines.push('✅ Payroll deposit ≥$200/month × 2 months — <strong>$250</strong>');
-  } else if (p > 0) {
-    lines.push('⚠️ Pay $' + p + '/month — need ≥$200 for 2 consecutive months (bonus not unlocked)');
-  }
-
-  lines.push('ℹ️ Chequing account: no interest (0%)');
-
-  var interetEpargne = 0;
-  if (epargne && em > 0) {
-    interetEpargne = em * 0.046 * (5 / 12);
-    lines.push('💰 Savings promo 4.6% on $' + em + ' × 5 months: <strong>$' + interetEpargne.toFixed(2) + '</strong>');
-  }
-
-  var grandTotal = total + interetEpargne;
-  document.getElementById('c-result').innerHTML =
-    lines.join('<br>') +
-    '<hr style="margin:.75rem 0;border-color:var(--border);">' +
-    '<strong style="font-size:1.15rem;">Estimated total ≈ $' + grandTotal.toFixed(2) + '</strong>' +
-    '<p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">No fees ($0). Promo rate subject to change — verify current conditions at tangerine.ca. Payroll bonus = direct deposit from employer, pension, EI, or CPP.</p>';
-}
-</script>
-
  <!-- gain-calculator end -->
         
         <h3 style="font-size: 1.15rem; font-weight: 800; margin: 28px 0 16px; color: var(--text);">Getting both — step-by-step order</h3>
@@ -1083,11 +1026,6 @@ function calcGain() {
   </div>
 </section>
 
-    <p class="lang-notice">
-          🇫🇷 <strong>Cette page est aussi disponible en français :</strong>
-          <a href="https://cashinstinct.ca/tangerine/fr/">Clé Orange Tangerine 2026 — 50 $ CAD ↗</a>
-        </p>
-
       <section id="glossary" aria-label="Tangerine Orange Key Glossary">
   <span class="section-label">Glossary</span>
   <h2>Tangerine Orange Key — Key Terms &amp; SEO Glossary</h2>
@@ -1186,6 +1124,11 @@ function calcGain() {
         </div>
       </section>
 
+    <p class="lang-notice">
+          🇫🇷 <strong>Cette page est aussi disponible en français :</strong>
+          <a href="https://cashinstinct.ca/tangerine/fr/">Clé Orange Tangerine 2026 — 50 $ CAD ↗</a>
+        </p>
+      
       <!-- === CTA === -->
       <div class="cta-section">
         <h2>Ready to open your&nbsp;account?</h2>
@@ -1244,6 +1187,63 @@ function calcGain() {
     new Date().toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
 </script>
 
+    <!-- gain-calculator script -->
+<script>
+(function() {
+  var sel = document.getElementById('c-epargne');
+  var wrap = document.getElementById('c-epargne-wrap');
+
+  function toggleEpargne() {
+    wrap.style.display = sel.value === '1' ? 'block' : 'none';
+  }
+
+  toggleEpargne();
+  sel.addEventListener('change', toggleEpargne);
+})();
+
+function calcGain() {
+  var d = +document.getElementById('c-depot').value;
+  var p = +document.getElementById('c-paie').value;
+  var epargne = document.getElementById('c-epargne').value === '1';
+  var em = epargne ? (+document.getElementById('c-epargne-montant').value || 0) : 0;
+  var errEl = document.getElementById('c-depot-err');
+
+  if (d < 250) {
+    errEl.style.display = 'block';
+    document.getElementById('c-result').innerHTML = '';
+    return;
+  }
+  errEl.style.display = 'none';
+
+  var total = 0, lines = [];
+
+  total += 50;
+  lines.push('✅ Orange Key bonus — <strong>$50</strong>');
+
+  if (p >= 200) {
+    total += 250;
+    lines.push('✅ Payroll deposit ≥$200/month × 2 months — <strong>$250</strong>');
+  } else if (p > 0) {
+    lines.push('⚠️ Pay $' + p + '/month — need ≥$200 for 2 consecutive months (bonus not unlocked)');
+  }
+
+  lines.push('ℹ️ Chequing account: no interest (0%)');
+
+  var interetEpargne = 0;
+  if (epargne && em > 0) {
+    interetEpargne = em * 0.046 * (5 / 12);
+    lines.push('💰 Savings promo 4.6% on $' + em + ' × 5 months: <strong>$' + interetEpargne.toFixed(2) + '</strong>');
+  }
+
+  var grandTotal = total + interetEpargne;
+  document.getElementById('c-result').innerHTML =
+    lines.join('<br>') +
+    '<hr style="margin:.75rem 0;border-color:var(--border);">' +
+    '<strong style="font-size:1.15rem;">Estimated total ≈ $' + grandTotal.toFixed(2) + '</strong>' +
+    '<p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">No fees ($0). Promo rate subject to change — verify current conditions at tangerine.ca. Payroll bonus = direct deposit from employer, pension, EI, or CPP.</p>';
+}
+</script>
+  
 <script>
   async function copyText(text, button, statusId) {
     const status = document.getElementById(statusId);
@@ -1275,16 +1275,6 @@ function calcGain() {
 </script>
 
 <script>
-  document.querySelectorAll('img[data-fallback]').forEach(img => {
-    img.addEventListener('error', () => {
-      img.style.display = 'none';
-      var p = document.createElement('p');
-      p.style.cssText = 'color:var(--muted);font-size:0.85rem;text-align:center;padding:12px;';
-      p.textContent = 'Screenshot temporarily unavailable.';
-      img.insertAdjacentElement('afterend', p);
-    });
-  });
-
   const toggle = document.getElementById('theme-toggle');
   function setThemeUI(isDark) {
     toggle.textContent = isDark ? '☀️' : '🌙';
