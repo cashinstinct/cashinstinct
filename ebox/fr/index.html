@@ -311,7 +311,84 @@
     
     .hero-methods a img { transition: opacity 0.15s ease; }
     .hero-methods a:hover img { opacity: 0.9; }
+     
+     /* ── BLOC CUMUL (IDÉE CLONÉE DE TANGERINE) ── */
+    .cumul-box {
+      background: rgba(176, 49, 45, 0.05);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 32px auto;
+      max-width: 760px;
+    }
+    .cumul-box h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cumul-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 8px;
+      align-items: center;
+      text-align: center;
+    }
+    .cumul-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 12px;
+    }
+    .cumul-item .amount {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent);
+      display: block;
+    }
+    .cumul-item .label {
+      font-size: .95rem;
+      color: var(--text-soft);
+      display: block;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
     
+    /* Style spécifique pour la case Total Vert */
+    .cumul-total {
+      border: 2px solid #1a7a3c !important;
+    }
+    [data-theme="dark"] .cumul-total {
+      border-color: #4ade80 !important;
+    }
+    .cumul-total .amount {
+      color: #1a7a3c;
+    }
+    [data-theme="dark"] .cumul-total .amount {
+      color: #4ade80;
+    }
+    .cumul-total .label {
+      color: #1a7a3c;
+      font-weight: 700;
+    }
+    [data-theme="dark"] .cumul-total .label {
+      color: #4ade80;
+    }
+    
+    .cumul-sep {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--muted);
+    }
+    .cumul-note {
+      font-size: .85rem;
+      color: var(--text-soft);
+      margin-top: 16px;
+      line-height: 1.5;
+    }
     /* Bloc d'avertissement et encadrés */
     .section-label { display: inline-block; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; color: #962521; background: rgba(176, 49, 45, 0.08); padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; }
     [data-theme="dark"] .section-label { color: #ef4444; background: rgba(239, 68, 68, 0.15); }
@@ -334,7 +411,7 @@
     .french-block { background: var(--surface-muted); border: 1px solid var(--border-soft); border-radius: 12px; padding: 20px; margin: 40px 0; }
     .french-block h2 { font-size: 1.2rem; margin-bottom: 10px; color: var(--text); }
     .french-block p { font-size: 0.95rem; margin-bottom: 0; }
-
+   
     /* Blocs de grille d'informations (Facts & Reviews) */
     .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
     .fact, .review-box { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
@@ -471,14 +548,32 @@
       .facts { grid-template-columns: 1fr; }
       body { padding-bottom: 80px; }
       
-      /* Barre basse persistante */
-      .sticky-mobile-cta {
-        display: flex; position: fixed; bottom: 0; left: 0; right: 0;
-        background: var(--accent); color: #fff; padding: 10px 16px; z-index: 200;
-        justify-content: space-between; align-items: center; gap: 10px;
-        box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
-        transform: translateY(100%); transition: transform 0.3s ease;
+      /* Ajustement responsive pour la boîte de cumul */
+      .cumul-row { 
+        grid-template-columns: 1fr !important; 
+        gap: 12px !important; 
       }
+      .cumul-sep { 
+        display: none !important; 
+      }
+      
+      /* Barre basse persistante mobile (doit rester dans la media query) */
+      .sticky-mobile-cta {
+        display: flex; 
+        position: fixed; 
+        bottom: 0; left: 0; right: 0;
+        background: var(--accent); 
+        color: #fff; 
+        padding: 10px 16px; 
+        z-index: 200;
+        justify-content: space-between; 
+        align-items: center; 
+        gap: 10px;
+        box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
+        transform: translateY(100%); 
+        transition: transform 0.3s ease;
+      }
+    }
       .sticky-mobile-cta.visible { transform: translateY(0); }
       .sticky-mobile-cta .s-left { display: flex; flex-direction: column; gap: 2px; }
       .sticky-mobile-cta .s-code { font-family: "Courier New", Courier, monospace; font-weight: 900; font-size: 1.1rem; letter-spacing: 0.06em; line-height: 1.1; }
@@ -527,6 +622,15 @@
 
   <header class="hero">
     <div class="container">
+    <div style="display:flex;justify-content:center;margin-bottom:28px;">
+      <div class="cumul-badge" style="display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 6px; background: rgba(0,0,0,.25); border: 2px solid rgba(255,255,255,.6); border-radius: 40px; padding: 10px 16px; font-size: 0.9rem; font-weight: 800; color: #fff; max-width: calc(100% - 32px); box-sizing: border-box;">
+        <span style="white-space:nowrap;">🌐&nbsp;25&nbsp;$</span>
+        <span class="plus" style="opacity: .8; font-size: .9em; margin: 0 2px;">+</span>
+        <span style="white-space:nowrap;">💳&nbsp;100&nbsp;$</span>
+        <span class="plus" style="opacity: .8; font-size: .9em; margin: 0 2px;">=</span>
+        <span class="total-pill" style="background: #fff; color: var(--accent); border-radius: 20px; padding: 4px 14px; font-size: .95rem; font-weight: 900; white-space: nowrap;">🎁&nbsp;125&nbsp;$ max</span>
+      </div>
+    </div>
       <!-- MODIFICATION : H1 → "jusqu'à 125 $" -->
       <h1>Code EBOX GE911 — jusqu'à 125 $ de rabais en 2026</h1>
       <p>Cumulez le <strong>code de parrainage GE911</strong> (25 $ sur la 2e facture) et la <strong>carte Mastercard prépayée de 100 $</strong> lors de votre inscription EBOX.</p>
@@ -617,7 +721,17 @@
         <br><br>
   🎁 <strong>Promo Vente Éclair en cours jusqu'au 17 juin 2026 :</strong> les nouveaux clients qui s'abonnent au forfait Fibre <strong>500&nbsp;Mbit/s ou 1&nbsp;Gbit/s</strong> reçoivent en plus une <strong>carte Mastercard prépayée de 100 $</strong> (livraison numérique après 60 jours de service). Cette promotion est <strong>combinable avec le code GE911</strong> — total : <strong>jusqu'à 125 $ d'avantages</strong>.  Sans contrat, modem inclus.
 </div>
-
+         <nav aria-label="Navigation interne" style="font-size: 0.95rem; margin-top: -12px; margin-bottom: 32px; text-align: center; color: var(--muted);">
+          Navigation rapide :
+          <a href="#promo-100" style="text-decoration: underline;">Deux avantages</a> ·
+          <a href="#comment-utiliser" style="text-decoration: underline;">Guide d'activation</a> ·
+          <a href="#tutoriel-video" style="text-decoration: underline;">Tutoriel Vidéo</a> ·
+          <a href="#comparaison" style="text-decoration: underline;">EBOX vs Bell vs Vidéotron</a> ·
+          <a href="#review" style="text-decoration: underline;">Mon avis</a> ·
+          <a href="#glossaire" style="text-decoration: underline;">Glossaire</a> ·
+          <a href="#faq" style="text-decoration: underline;">FAQ</a>
+        </nav>
+        
         <p style="font-size:0.8rem; color:var(--muted); margin-bottom:16px;">
         Mis à jour le <time datetime="2026-06-09">9 juin 2026</time>
         </p>
@@ -627,8 +741,30 @@
   <span class="section-label">🎁 Promotion Vente Éclair</span>
   <h2>Promo EBOX : carte Mastercard prépayée de 100 $ (jusqu'au 17 juin 2026)</h2>
 
-  <div class="ai-summary">
-    Les nouveaux clients EBOX qui s'abonnent à un forfait <strong>Fibre 500&nbsp;Mbit/s ou 1&nbsp;Gbit/s</strong> avant le <strong>17 juin 2026</strong> reçoivent une <strong>carte Mastercard prépayée de 100 $</strong> par voie numérique, après 60 jours de service actif. Cette promotion est <strong>combinable avec le code de parrainage GE911</strong> — les deux ont été confirmés actifs lors d'une même commande.
+  <div class="cumul-box">
+    <h3>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="color:var(--accent);"><polyline points="20 6 9 17 4 12"/></svg>
+      Ces deux avantages sont distincts et 100 % cumulables
+    </h3>
+    <div class="cumul-row">
+      <div class="cumul-item">
+        <span class="amount">25 $</span>
+        <span class="label">Crédit de parrainage<br><strong>Code GE911</strong><br>sur la 2e facture</span>
+      </div>
+      <span class="cumul-sep" aria-hidden="true">+</span>
+      <div class="cumul-item">
+        <span class="amount">100 $</span>
+        <span class="label">Promo Vente Éclair<br><strong>Aucun code requis</strong><br>forfait 500M ou 1G</span>
+      </div>
+      <span class="cumul-sep" aria-hidden="true">=</span>
+      <div class="cumul-item cumul-total">
+        <span class="amount">125 $</span>
+        <span class="label">Économies totales<br>cumulées</span>
+      </div>
+    </div>
+    <p class="cumul-note">
+      💡 <strong>Pourquoi les deux sont cumulables :</strong> La carte prépayée de 100 $ s'applique automatiquement par le système selon le forfait Fibre sélectionné lors de votre commande, ce qui laisse la case de parrainage entièrement libre pour inscrire le code de votre ami <code>GE911</code>.
+    </p>
   </div>
 
   <div class="warning">
@@ -1005,7 +1141,46 @@
             </p>
           </div>
         </section>
-
+  
+        <section id="glossaire" aria-label="Glossaire numéro de client EBOX">
+          <span class="section-label">Glossaire</span>
+          <h2>Termes associés au parrainage EBOX</h2>
+          <p>Le système de parrainage d'EBOX utilise différents termes sur le Web. Voici un récapitulatif pour vous aider à vous y retrouver :</p>
+          
+          <div class="seo-table-wrap">
+            <table class="seo-table" aria-label="Glossaire des termes de référence EBOX">
+              <thead>
+                <tr>
+                  <th>Terme recherché</th>
+                  <th>Signification &amp; Application</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Numéro de client EBOX</td>
+                  <td>L'identifiant officiel requis pour valider un parrainage. Sur cette page, le numéro à utiliser est <strong>GE911</strong>.</td>
+                </tr>
+                <tr>
+                  <td>GE911</td>
+                  <td>Le code de parrainage permanent et testé en 2026. Il garantit votre crédit de 25 $ sur la 2e facture.</td>
+                </tr>
+                <tr>
+                  <td>Code Promo EBOX</td>
+                  <td>Champ distinct en haut du formulaire, réservé aux offres marketing d'EBOX. N'y entrez pas GE911, sinon le crédit sera refusé.</td>
+                </tr>
+                <tr>
+                  <td>Code de parrainage / Référence</td>
+                  <td>Expressions courantes utilisées sur les forums pour désigner le numéro de client d'un ami.</td>
+                </tr>
+                <tr>
+                  <td>Fibre résidentielle (FTTH)</td>
+                  <td>Technologie par câble optique direct utilisée par EBOX (via le réseau de Bell) pour livrer les forfaits 500 Mbps et 1 Gbps.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+  
         <section id="faq" aria-label="Foire aux questions">
           <span class="section-label">Questions fréquentes</span>
           <h2>Foire aux questions</h2>
