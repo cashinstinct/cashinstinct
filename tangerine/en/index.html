@@ -707,10 +707,10 @@
     </p>
     <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener noreferrer" style="display: block;">
       <picture>
-        <source srcset="https://cashinstinct.ca/tangerine/images/Champ-entrez-cle-orange-Tangerine.webp" type="image/webp">
-        <img src="https://cashinstinct.ca/tangerine/images/Champ-entrez-cle-orange-Tangerine.png"
-             alt="Formulaire d'inscription Tangerine — champ Clé Orange"
-             width="520" height="150" loading="eager" fetchpriority="high"
+        <source srcset="https://cashinstinct.ca/tangerine/images/Enter-Orange-Key-field.webp" type="image/webp">
+        <img src="https://cashinstinct.ca/tangerine/images/Enter-Orange-Key-field.png"
+             alt="Tangerine Signup Profile setup Enter Orange Key field"
+             loading="eager" fetchpriority="high"
              style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto; display: block;" />
       </picture>
     </a>
@@ -787,6 +787,37 @@
             💡 <strong>Why both are stackable:</strong> the $250 bonus activates through your banking behaviour (payroll direct deposit), without going through the Orange Key field — which remains free for <code>14130944S1</code> at sign-up. Two completely separate mechanisms on Tangerine's side.
           </p>
         </div>
+
+        <!-- After the stacking box -->
+<div id="gain-calculator" style="margin:2rem 0;padding:1.5rem;background:var(--surface-soft);border:1px solid var(--border);border-radius:12px;">
+  <h3 style="margin-top:0;font-size:1.1rem;">🧮 Your estimated net gain</h3>
+  <div style="display:grid;gap:1rem;max-width:400px;">
+    <label>Initial deposit ($) <input type="number" id="c-depot" value="250" min="250" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
+    <label>Monthly net pay ($) <input type="number" id="c-paie" value="0" min="0" placeholder="0 = no payroll transfer" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
+    <label>Months held <input type="number" id="c-mois" value="3" min="2" max="12" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
+  </div>
+  <button onclick="calcGain()" style="margin-top:1rem;padding:.75rem 1.5rem;background:var(--accent);color:#fff;border:none;border-radius:6px;font-weight:800;cursor:pointer;width:100%;">Calculate</button>
+  <div id="c-result" style="margin-top:1rem;font-size:1.05rem;line-height:1.8;min-height:2.5rem;"></div>
+</div>
+
+<script>
+function calcGain() {
+  const d=+document.getElementById('c-depot').value;
+  const p=+document.getElementById('c-paie').value;
+  const m=+document.getElementById('c-mois').value;
+  let total=0, lines=[];
+  if(d>=250){total+=50; lines.push('✅ Orange Key bonus ($50)');}
+  if(p>=200 && m>=2){total+=250; lines.push('✅ Payroll deposit bonus $200/month × 2 months ($250)');}
+  else if(p>0){lines.push(`⚠️ Pay $${p}/month — need ≥$200 for 2 consecutive months`);}
+  const interet=d*0.03*(m/12);
+  document.getElementById('c-result').innerHTML = `
+    <strong>Bonuses: $${total}</strong><br>${lines.join('<br>')}<br>
+    💰 Interest ~3% on $${d} × ${m} months: <strong>$${interet.toFixed(2)}</strong><br>
+    <hr style="margin:.5rem 0;border-color:var(--border);">
+    <strong>Total ≈ $${(total+interet).toFixed(2)}</strong>
+    <p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">No fees ($0). Variable rate. Payroll bonus = direct deposit from employer, pension, EI, or CPP.</p>`;
+}
+</script>
 
         <h3 style="font-size: 1.15rem; font-weight: 800; margin: 28px 0 16px; color: var(--text);">Getting both — step-by-step order</h3>
 
@@ -903,10 +934,9 @@
         <div class="yt-short-wrapper" id="yt-facade" role="button" tabindex="0"
              aria-label="Play the Tangerine Orange Key tutorial video">
           <img id="yt-thumb"
-               src="https://img.youtube.com/vi/ZjDvFV42qbM/maxdefault.jpg"
+               src="https://cashinstinct.ca/tangerine/images/tangerine-orange-key-14130944S1.jpeg"
                alt="Tangerine Orange Key 14130944S1 tutorial — click to play"
-               loading="lazy" width="480" height="360"
-               onerror="this.src='https://i.ytimg.com/vi/ZjDvFV42qbM/maxdefault.jpg'" />
+               loading="lazy" />
           <div class="yt-play-btn" aria-hidden="true"></div>
         </div>
         <p style="font-size:0.85rem;text-align:center;margin-top:8px;color:var(--muted);">
