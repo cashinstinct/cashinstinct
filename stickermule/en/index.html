@@ -262,536 +262,224 @@
   }
 </script>
   <style>
+    /* 1. VARIABLES & THÈMES */
     :root {
-      --bg: #faf6f0;
+      --bg: #ffffff;
       --surface: #ffffff;
-      --surface-soft: #f4eee4;
-      --surface-muted: #efe6d9;
-      --text: #1a110b;
-      --text-soft: #4a3728;
-      --muted: #655345;
-      --border: #e6dbcc;
-      --border-soft: #dcd0be;
-      --accent: #c4431d;
-      --accent-dark: #b03a1a;
-      --warning-bg: #fff9eb;
-      --warning-text: #805300;
-      --warning-border: #ffcc66;
-      --shadow: 0 4px 20px rgba(74, 35, 6, 0.04);
+      --surface-soft: #fffdf9; /* Teinte douce Sticker Mule */
+      --surface-muted: #fcf8f2;
+      --text: #0f172a;
+      --text-soft: #334155;
+      --muted: #64748b;
+      --border: #f0e2d3;
+      --border-soft: #cbd5e1;
+      --accent: #ffaa00; /* Jaune/Orange Sticker Mule */
+      --accent-dark: #b0312d;
+      --warning-bg: #fffbeb;
+      --warning-text: #92400e;
+      --warning-border: #f59e0b;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
       --topbar-h: 56px;
     }
+
     [data-theme="dark"] {
-      --bg: #0b0f17;
-      --surface: #131a26;
-      --surface-soft: #1a2333;
-      --surface-muted: #222f44;
-      --text: #f1f5f9;
-      --text-soft: #cbd5e1;
-      --muted: #94a3b8;
-      --border: #1e293b;
-      --border-soft: #334155;
-      --accent: #ff6b35;
-      --accent-dark: #e0531f;
-      --warning-bg: #1c1917;
-      --warning-text: #fdba74;
-      --warning-border: #b45309;
-      --shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+      --bg: #0f131a;
+      --surface: #161c24;
+      --surface-soft: #1b2430;
+      --surface-muted: #1a2029;
+      --text: #f4f7fb;
+      --text-soft: #d5dbe5;
+      --muted: #aeb7c4;
+      --border: #2a3442;
+      --border-soft: #2f3b4d;
+      --accent: #ffaa00;
+      --accent-dark: #60a5fa;
+      --warning-bg: #2a2111;
+      --warning-text: #ffd98f;
+      --warning-border: #f59e0b;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
     }
 
+    /* 2. RESET & STYLES DE BASE */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 18px; line-height: 1.65;
-      color: var(--text); background: var(--bg);
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
     }
+    
     img { max-width: 100%; height: auto; display: block; }
-    a { color: var(--accent); text-decoration: none; }
+    a { color: var(--accent-dark); text-decoration: none; font-weight: 600; }
     a:hover { text-decoration: underline; }
-    @media (min-width: 768px) { body { font-size: 21px; } }
-
-    .skip-nav {
-      position: absolute; top: -100%; left: 0;
-      background: var(--accent); color: #fff;
-      padding: 8px 16px; font-weight: 700;
-      z-index: 9999; border-radius: 0 0 6px 0;
+    
+    code {
+      font-family: "Courier New", Courier, monospace;
+      background: var(--surface-soft);
+      color: var(--text); 
+      padding: 2px 8px; 
+      border-radius: 4px;
+      font-size: 0.97em; 
+      font-weight: 700; 
+      border: 1px solid var(--border);
     }
-    .skip-nav:focus { top: 0; }
 
+    /* 3. STRUCTURE DE PAGE (LAYOUT) */
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    .prose { max-width: 800px; margin: 0 auto; }
+    main { padding: 42px 0 52px; }
+    section { margin-bottom: 56px; }
+    section[id] { scroll-margin-top: 72px; }
 
+    /* Navigation Haute (Topbar) */
     .topbar {
-      background: var(--surface); border-bottom: 1px solid var(--border);
-      position: sticky; top: 0; z-index: 100;
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
     }
     .topbar-inner {
-      max-width: 1100px; margin: 0 auto; padding: 10px 20px;
-      display: flex; flex-direction: row; flex-wrap: wrap;
-      align-items: center; justify-content: space-between; gap: 8px;
-      min-height: var(--topbar-h);
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
     }
-   .brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; white-space: nowrap; }
+    .brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+    
     .nav { display: flex; gap: 12px; flex-wrap: nowrap; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     .nav::-webkit-scrollbar { display: none; }
     .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
-    .nav a:hover, .nav a.active { color: var(--accent); }
+    .nav a:hover, .nav a.active { color: var(--accent-dark); }
     .nav a.nav-fr { font-size: 0.85rem; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted); }
-    .nav a.nav-fr:hover { color: var(--accent); border-color: var(--accent); }
-
-    .theme-btn {
-      background: var(--surface-muted); border: 1px solid var(--border);
-      color: var(--text); cursor: pointer; font-size: 1rem;
-      padding: 6px 12px; border-radius: 6px; flex-shrink: 0;
-    }
-    .theme-btn:hover { background: var(--border-soft); }
-
-    .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 16px; margin-bottom: 8px; }
+    .nav a.nav-fr:hover { color: var(--accent-dark); border-color: var(--accent-dark); }
+    
+    .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 16px; margin-bottom: 16px; }
     .breadcrumb a { color: var(--muted); font-weight: 500; }
-    .breadcrumb span { margin: 0 4px; }
+    .breadcrumb span { margin: 0 6px; }
 
+    /* En-tête de page (Hero Section) */
     header.hero {
-      background: var(--surface-soft); color: var(--text);
-      padding: 64px 20px; text-align: center; border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, #7a1d1a 0%, var(--accent-dark) 100%);
+      color: #fff;
+      padding: 64px 20px;
+      text-align: center;
     }
     header.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
-    header.hero p { font-size: 1.15rem; opacity: 0.9; max-width: 620px; margin: 0 auto 28px; }
+    header.hero p { font-size: 1.15rem; opacity: 0.95; max-width: 620px; margin: 0 auto 28px; color: #fff; }
 
-    .cta-btn-hero {
-      display: inline-block; background: var(--accent); color: #ffffff;
-      font-weight: 800; font-size: 1.1rem; padding: 16px 40px;
-      border-radius: 24px; box-shadow: 0 4px 14px rgba(207,78,40,0.2);
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
-    .cta-btn-hero:hover { background: var(--accent-dark); transform: translateY(-1px); text-decoration: none; }
-
-    main { padding: 52px 0; }
-    section { margin-bottom: 56px; scroll-margin-top: calc(var(--topbar-h) + 16px); }
-    section h2 { 
-  font-size: 1.85rem; 
-  font-weight: 800; 
-  margin-bottom: 22px; 
-  color: var(--text); 
-  letter-spacing: -0.02em;
-  
-  /* AJOUT : Aligne parfaitement le titre avec les étapes centrées */
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-    section p { margin-bottom: 14px; color: var(--text-soft); }
-
-   .warning {
-  background: var(--warning-bg); 
-  border-left: 4px solid var(--warning-border);
-  padding: 18px 24px; /* Plus d'espace interne */
-  font-size: 1.05rem;  /* Était 0.95rem */
-  color: var(--warning-text);
-  margin: 32px 0; 
-  border-radius: 0 6px 6px 0;
-}
-
-    .trust-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--surface-soft); border: 1px solid var(--border-soft);
-      border-radius: 6px; padding: 6px 14px; font-size: 0.85rem;
-      color: var(--muted); margin-top: 24px;
-    }
-
-    .section-label {
-      display: inline-block; text-transform: uppercase;
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
-      color: #a63212; background: rgba(207,78,40,0.1);
-      padding: 4px 12px; border-radius: 12px; margin-bottom: 12px;
-    }
-    [data-theme="dark"] .section-label { color: #ff8458; background: rgba(255,107,53,0.15); }
-
-    .hero-methods {
-      display: flex; flex-direction: column; gap: 20px;
-      margin: 28px auto 0; width: 100%; max-width: 560px;
-    }
-    .hero-methods > div { width: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
-  @media (min-width: 768px) {
-  /* Aligne les deux cartes côte à côte proprement */
-  .hero-methods {
-    flex-direction: row;
-    max-width: 1000px; /* Plus compact pour éviter l'effet étiré */
-    margin: 40px auto 0;
-    gap: 32px;
-    align-items: stretch; /* Force les deux cartes à avoir la même hauteur */
-  }
-
-  /* Force le contenu à occuper l'espace et pousse les images au fond */
-  .hero-methods > div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 32px 24px !important;
-  }
-
-   /* Donne de la prestance au bouton Méthode 1 sur Desktop */
-  .cta-btn-hero.dynamic-link {
-    max-width: 340px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    font-size: 1.15rem !important; /* Texte plus grand */
-    font-weight: 800 !important;   /* Texte plus gras */
-    padding: 16px 24px !important; /* Bouton plus épais */
-    letter-spacing: -0.01em;
-  }
-
-  /* Pousse les deux images de preuve vers le bas pour qu'elles soient sur la même ligne */
-  .hero-methods img, 
-  .hero-methods a.dynamic-link:has(img) {
-    margin-top: auto !important;
-  }
-
-  /* Ajoute un espacement sous la micro-note pour détacher l'image */
-  .hero-methods .micro-note {
-    margin-bottom: 24px;
-  }
-}
-    .hero-methods p { color: var(--text-soft); font-size: 0.85rem; margin-top: 8px; text-align: center; }
-
-
-   .steps { 
-  list-style: none; 
-  counter-reset: steps; 
-  max-width: 760px;
-  margin: 24px auto 0;
-  }
-    .steps li { counter-increment: steps; display: flex; gap: 18px; margin-bottom: 28px; }
-    .steps li::before {
-  content: counter(steps);
-  min-width: 44px; /* Était 36px */
-  height: 44px;    /* Était 36px */
-  background: var(--surface-muted); 
-  color: var(--accent); 
-  font-weight: 800; 
-  font-size: 1.15rem; /* Était 1rem */
-  border: 1px solid var(--border); 
-  border-radius: 50%;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  flex-shrink: 0; 
-  margin-top: 2px;
-}
-
-.steps li h3 { 
-  font-size: 1.3rem; /* Était 1.1rem */
-  font-weight: 700; 
-  margin-bottom: 6px; 
-  color: var(--text); 
-}
-    .steps li p { margin: 0; color: var(--text-soft); }
-
-    code {
-      font-family: "Courier New", Courier, monospace;
-      background: var(--surface-muted); color: var(--text);
-      padding: 2px 6px; border-radius: 4px; font-size: 0.92em; font-weight: 700;
-    }
-
-    .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
-    .fact {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px; box-shadow: var(--shadow);
-    }
-    .fact strong { display: block; color: var(--text); margin-bottom: 5px; }
-    .fact span { display: block; color: var(--text-soft); font-size: 0.96rem; }
-
-    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 20px; }
-    @media (min-width: 640px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
-    .stat-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px 12px; text-align: center; box-shadow: var(--shadow);
-    }
-    .stat-card .stat-value { font-size: 1.6rem; font-weight: 900; color: var(--accent); line-height: 1.1; }
-    .stat-card .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
-
-    .commission-box {
-  background: var(--surface); 
-  border: 2px solid var(--accent);
-  border-radius: 12px; 
-  padding: 24px; 
-  margin-top: 24px; 
-  box-shadow: var(--shadow);
-}
-
-.commission-box h3 { 
-  font-size: 1.25rem; /* Légèrement augmenté pour suivre la nouvelle échelle */
-  font-weight: 800; 
-  margin-bottom: 16px; 
-  color: var(--text); 
-}
-
-.commission-methods { 
-  display: grid; 
-  gap: 12px; 
-  margin-top: 16px; 
-}
-
-@media (min-width: 640px) { 
-  .commission-methods { grid-template-columns: repeat(3, 1fr); } 
-}
-
-.commission-method {
-  background: var(--surface-soft); 
-  border: 1px solid var(--border-soft);
-  border-radius: 8px; 
-  padding: 16px 14px !important; /* Version propre unique */
-  font-size: 1rem !important; 
-  line-height: 1.4 !important; 
-}
-
-.commission-method strong {
-  display: block;
-  font-size: 1.1rem !important; 
-  margin-bottom: 8px !important; 
-}
-
-.commission-method span {
-  font-size: 0.95rem !important;
-  color: var(--text-soft);
-}
-
-.commission-method .cm-icon { 
-  font-size: 1.4rem; 
-  margin-bottom: 6px; 
-  display: block; /* Évite les comportements inline bizarres */
-}
-
-    .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px; }
-    @media (min-width: 640px) { .products-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (min-width: 900px) { .products-grid { grid-template-columns: repeat(4, 1fr); } }
-    .product-chip {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 8px; padding: 10px 12px; font-size: 0.88rem;
-      color: var(--text-soft); display: flex; align-items: center; gap: 8px;
-    }
-    .product-chip .chip-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-
-    .review-box {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 20px 24px; box-shadow: var(--shadow);
-    }
-    .review-box p:last-child { margin-bottom: 0; }
-    .review-box ul { margin: 16px 0 16px 20px; color: var(--text-soft); }
-    .review-box li { margin-bottom: 10px; }
-
-    .faq { display: grid; gap: 16px; }
-    details { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
-    summary {
-      font-weight: 700; padding: 16px 20px; cursor: pointer; list-style: none;
-      display: flex; justify-content: space-between; align-items: center;
-      background: var(--surface-soft); color: var(--text);
-    }
-    summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; font-size: 1.4rem; color: var(--accent); }
-    details[open] summary::after { content: "−"; }
-    details[open] summary { border-bottom: 1px solid var(--border); }
-    .faq-body { padding: 16px 20px; font-size: 0.97rem; color: var(--text-soft); }
-    .faq-body ul { margin: 8px 0 0 20px; }
-    .faq-body ul li { margin-bottom: 6px; }
-
-.table-container {
-  background: var(--surface); 
-  border: 1px solid var(--border);
-  border-radius: 12px; 
-  padding: 24px; /* Plus d'espace autour du tableau */
-  box-shadow: var(--shadow);
-  overflow-x: auto; 
-  margin-top: 24px;
-  max-width: 760px; /* Aligné sur notre grille parfaite */
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-.compare-table { 
-  width: 100%; 
-  border-collapse: collapse; 
-  font-size: 1.05rem; /* Augmente la taille du texte global du tableau */
-}
-    .compare-table td:first-child {
-  white-space: nowrap;
-}
-
-.compare-table th {
-  text-align: left; 
-  padding: 14px 16px; /* Plus de hauteur et d'espace pour les titres de colonnes */
-  background: var(--surface-soft); 
-  border: 1px solid var(--border);
-  color: var(--text); 
-  font-weight: 700;
-}
-
-.compare-table td { 
-  padding: 14px 16px; /* Plus d'espace pour chaque cellule (respiration visuelle) */
-  border: 1px solid var(--border); 
-  color: var(--text-soft); 
-}
-    .compare-table .yes { color: #2a7a2a; font-weight: 700; }
-    .compare-table .no  { color: #b03a1a; font-weight: 700; }
-
-
-    .lang-notice { font-size: 0.92rem; color: var(--text-soft); background: var(--surface-soft); border: 1px solid var(--border-soft); border-radius: 8px; padding: 12px 16px; margin-bottom: 40px; }
-
-    .cta-section {
-      background: var(--surface-soft); border: 1px solid var(--border);
-      text-align: center; padding: 52px 20px;
-      border-radius: 12px; margin-bottom: 40px;
-    }
-    .cta-section h2 { font-size: 1.6rem; margin-bottom: 12px; color: var(--text); }
-    .cta-section p { opacity: 0.95; margin-bottom: 24px; font-size: 1.05rem; color: var(--text-soft); }
-    .btn {
-      display: inline-block; background: var(--accent); color: #ffffff;
-      font-weight: 800; font-size: 1.05rem; padding: 14px 36px;
-      border-radius: 24px; transition: background 0.15s;
-    }
-    .btn:hover { background: var(--accent-dark); text-decoration: none; }
-
-    .transparency {
-      background: var(--surface-muted); border-radius: 8px; padding: 16px 20px;
-      font-size: 0.9rem; color: var(--text-soft); margin-top: 16px; border: 1px solid var(--border);
-    }
-/* Centre et ajuste tous les blocs majeurs du contenu sur Desktop */
-.commission-box, 
-.table-container, 
-.review-box, 
-.faq {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-    .yt-lite {
-      background-color: #000; position: relative; display: block;
-      max-width: 315px; margin: 24px auto; border-radius: 12px;
-      overflow: hidden; border: 1px solid var(--border);
-      aspect-ratio: 9 / 16; cursor: pointer;
-    }
-    .yt-lite::before {
-      content: ''; display: block; position: absolute; inset: 0;
-      background-image: url('https://img.youtube.com/vi/SAaPDiqfLJk/maxresdefault.jpg');
-      background-size: cover; background-position: center;
-    }
-    .yt-lite .play-btn {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 68px; height: 48px; background: #ff0000;
-      border-radius: 12px; display: flex; align-items: center; justify-content: center;
-    }
-    .yt-lite .play-btn::after {
-      content: ''; border-style: solid;
-      border-width: 11px 0 11px 22px;
-      border-color: transparent transparent transparent #fff;
-      margin-left: 4px;
-    }
-    .yt-lite iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-
+    /* Pied de page (Footer) */
     footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
 
-    @media (max-width: 640px) {
-      .topbar-inner { align-items: flex-start; }
+    /* 4. COMPOSANTS RÉUTILISABLES & BLOCS SPÉCIAUX */
+    .theme-btn { background: var(--surface-muted); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 1rem; padding: 6px 12px; border-radius: 6px; transition: background 0.15s; display: inline-flex; align-items: center; justify-content: center; }
+    .theme-btn:hover { background: var(--border-soft); }
+    
+    .copy-btn, .cta-copy-btn { appearance: none; border: 0; cursor: pointer; font-weight: 800; border-radius: 6px; transition: background 0.15s ease, color 0.15s ease; }
+    .copy-btn { background: var(--surface-muted); border-left: 1px solid var(--border); color: var(--accent-dark); font-size: 0.95rem; padding: 0 20px; white-space: nowrap; }
+    
+    .section-label { display: inline-block; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; color: var(--accent-dark); background: rgba(176, 49, 45, 0.08); padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; }
+
+    .ai-summary { background: var(--surface-soft); border: 1px solid var(--border); border-left: 4px solid var(--accent-dark); padding: 20px; border-radius: 8px; margin-bottom: 32px; font-size: 1.05rem; color: var(--text); line-height: 1.6; }
+    .warning { background: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 18px 24px; font-size: 1.05rem; color: var(--warning-text); margin: 32px 0; border-radius: 0 6px 6px 0; }
+    
+    .field-exact { background: var(--surface-muted); border: 1px solid var(--border-soft); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 14px 20px; margin: 20px 0; font-size: 0.95rem; color: var(--text-soft); }
+    
+    /* Système de tableaux génériques */
+    .seo-table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
+    .seo-table { width: 100%; border-collapse: collapse; font-size: 1.05rem; background: var(--surface); text-align: left; }
+    .seo-table th, .seo-table td { border-bottom: 1px solid var(--border); padding: 14px 16px; }
+    .seo-table th { background: var(--surface-muted); color: var(--text); font-weight: 700; }
+    .seo-table tr:last-child th, .seo-table tr:last-child td { border-bottom: none; }
+
+    /* Conteneur des 3 colonnes de parrainage */
+    .hero-methods { display: flex; flex-direction: column; gap: 20px; margin: 28px auto 0; width: 100%; max-width: 560px; }
+    .hero-methods > div { width: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
+
+    /* Liste d'étapes ordonnées */
+    .steps { list-style: none; counter-reset: steps; }
+    .steps li { counter-increment: steps; display: flex; gap: 18px; margin-bottom: 28px; }
+    .steps li::before {
+      content: counter(steps);
+      min-width: 36px; height: 36px;
+      background: var(--accent-dark); color: #fff; font-weight: 800; font-size: 1rem;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* Boîte Orange Spécifique Programme de Commission Sticker Mule */
+    .commission-box {
+      background: rgba(255, 170, 0, 0.05);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 32px auto;
+    }
+    .commission-box h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 16px; }
+
+    /* 5. GRILLE PREMIUM CENTRALISÉE DESKTOP (Écrans >= 768px) */
+    @media (min-width: 768px) {
+      body { font-size: 21px; }
+      .prose { max-width: 800px; margin: 0 auto; }
+      
+      section h2 { 
+        font-size: 1.85rem; 
+        font-weight: 800; 
+        margin-bottom: 22px; 
+        color: var(--text); 
+        letter-spacing: -0.02em;
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      section p { margin-bottom: 18px; color: var(--text-soft); }
+
+      .hero-methods { flex-direction: row; max-width: 1000px; margin: 40px auto 0; gap: 32px; align-items: stretch; }
+      .hero-methods > div { flex: 1; padding: 32px 24px !important; }
+
+      .warning, .field-exact, .ai-summary, .seo-table-wrap, .commission-box, .faq {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+
+      .steps { max-width: 760px; margin: 24px auto 0; }
+      .steps li::before { min-width: 44px; height: 44px; font-size: 1.15rem; }
+      .steps li h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    }
+
+    /* 6. RESPONSIVE COMPACT & INTERFACE MOBILE (Écrans < 768px) */
+    @media (max-width: 767px) {
       .nav a { font-size: 0.82rem; }
       .nav { gap: 8px; }
       header.hero { padding: 28px 20px 36px; }
-      .facts { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 380px) { .theme-btn { display: none; } 
-    }
-    @media (max-width: 480px) {
-      .hero-methods > div { padding: 20px 16px !important; height: auto !important; min-height: min-content !important; }
-      .hero-methods a, .hero-methods img { margin-top: 0 !important; margin-bottom: 12px !important; }
-      .hero-methods p:last-child { margin-bottom: 4px !important; }
-    }
-    /* ── STICKY CTA MOBILE ── */
-.sticky-mobile-cta { display: none; }
-@media (max-width: 640px) {
-  body { padding-bottom: 80px; }
-  .sticky-mobile-cta {
-    display: flex;
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: var(--accent); color: #fff;
-    padding: 12px 20px; z-index: 200;
-    justify-content: space-between; align-items: center;
-    box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-  }
-  .sticky-mobile-cta.visible { transform: translateY(0); }
-  .sticky-mobile-cta .s-code { font-family: "Courier New", Courier, monospace; font-weight: 900; font-size: 1.1rem; letter-spacing: 0.06em; }
-  .sticky-mobile-cta .s-label { font-size: 0.75rem; opacity: 0.85; }
-  .sticky-mobile-cta .s-btn { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.4); color: #fff; font-weight: 800; font-size: 0.9rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
-  .sticky-mobile-cta .s-btn.copied { background: #fff; color: var(--accent); }
-}
-  .micro-note {
-  font-size: 0.76rem;
-  color: var(--text-soft); /* Plus contrasté et lisible */
-  margin-top: 6px;
-  display: block;
-  text-align: center;
-  font-weight: 500;
-}
-    /* ── OPTIMISATION ET ÉQUILIBRE MOBILE (Écrans < 768px) ── */
-@media (max-width: 767px) {
-  
-  /* 1. Ajustement global des tableaux sur mobile */
-  .compare-table {
-    font-size: 0.88rem !important; /* Texte légèrement plus compact pour mobile */
-  }
+      
+      /* Verrouillage strict de la largeur des tableaux pour éviter l'effet étiré */
+      .seo-table { font-size: 0.88rem !important; }
+      .seo-table th, .seo-table td { padding: 10px 8px !important; }
+      
+      /* Fix colonnes "Quick Comparison" sur mobile */
+      #coupon-code .seo-table th:nth-child(1), #coupon-code .seo-table td:nth-child(1) { width: 35% !important; }
+      #coupon-code .seo-table th:nth-child(2), #coupon-code .seo-table td:nth-child(2) { width: 45% !important; }
+      #coupon-code .seo-table th:nth-child(3), #coupon-code .seo-table td:nth-child(3) { width: 20% !important; text-align: center; }
 
-  .compare-table th, 
-  .compare-table td {
-    padding: 10px 8px !important; /* Réduit le rembourrage pour gagner de l'espace horizontal */
-  }
+      /* Fix colonnes "International Credit" sur mobile */
+      #global-rates .seo-table th:nth-child(1), #global-rates .seo-table td:nth-child(1) { width: 30% !important; white-space: normal !important; }
+      #global-rates .seo-table th:nth-child(2), #global-rates .seo-table td:nth-child(2) { width: 20% !important; }
+      #global-rates .seo-table th:nth-child(3), #global-rates .seo-table td:nth-child(3) { width: 25% !important; }
+      #global-rates .seo-table th:nth-child(4), #global-rates .seo-table td:nth-child(4) { width: 25% !important; }
 
-  /* 2. Fix pour le tableau "Quick Comparison" */
-  /* On force la colonne 1 à ne prendre que la place nécessaire, laissant de l'air aux autres */
-  #coupon-code .compare-table th:nth-child(1),
-  #coupon-code .compare-table td:nth-child(1) {
-    width: 35% !important; 
-  }
-  #coupon-code .compare-table th:nth-child(2),
-  #coupon-code .compare-table td:nth-child(2) {
-    width: 45% !important;
-  }
-  #coupon-code .compare-table th:nth-child(3),
-  #coupon-code .compare-table td:nth-child(3) {
-    width: 20% !important;
-    text-align: center;
-  }
-
-  /* 3. Fix pour le tableau "International Credit" */
-  /* On empêche la colonne "Region" de manger tout l'espace */
-  #global-rates .compare-table th:nth-child(1),
-  #global-rates .compare-table td:nth-child(1) {
-    width: 30% !important;
-    white-space: normal !important; /* Permet un retour à la ligne propre sur mobile (ex: United \n Kingdom) */
-  }
-  #global-rates .compare-table th:nth-child(2),
-  #global-rates .compare-table td:nth-child(2) {
-    width: 20% !important;
-  }
-  #global-rates .compare-table th:nth-child(3),
-  #global-rates .compare-table td:nth-child(3) {
-    width: 25% !important;
-  }
-  #global-rates .compare-table th:nth-child(4),
-  #global-rates .compare-table td:nth-child(4) {
-    width: 25% !important;
-  }
-  
-  /* On retire le blocage du retour à la ligne forcé pour le mobile uniquement */
-  .compare-table td:first-child {
-    white-space: normal !important;
-  }
-}
- 
+      .seo-table td:first-child { white-space: normal !important; }
+    }
   </style>
 </head>
 <body>
