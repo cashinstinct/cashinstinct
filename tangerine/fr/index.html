@@ -823,13 +823,29 @@
           </p>
         </div>
 
-        <!-- Dans ton markdown/HTML, après la box cumul -->
+        <!-- calculatrice gain -->
 <div id="gain-calculator" style="margin:2rem 0;padding:1.5rem;background:var(--surface-soft);border:1px solid var(--border);border-radius:12px;">
   <h3 style="margin-top:0;font-size:1.1rem;">🧮 Ton gain net estimé</h3>
   <div style="display:grid;gap:1rem;max-width:400px;">
-    <label>Dépôt initial ($) <input type="number" id="c-depot" value="250" min="250" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
-    <label>Paie mensuelle nette ($) <input type="number" id="c-paie" value="0" min="0" placeholder="0 = pas de transfert paie" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
-    <label>Mois de maintien <input type="number" id="c-mois" value="3" min="2" max="12" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
+    <label>Dépôt initial ($)
+      <input type="number" id="c-depot" value="250" min="0"
+        style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
+      <span id="c-depot-err" style="color:#c0392b;font-size:.85rem;display:none;">⚠️ Dépôt minimum de 250$ requis pour la prime Clé Orange.</span>
+    </label>
+    <label>Compte épargne ? (taux promo 4,6% × 5 mois)
+      <select id="c-epargne" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
+        <option value="0">Non — compte chèques uniquement</option>
+        <option value="1">Oui — j'ouvre aussi un compte épargne</option>
+      </select>
+    </label>
+    <label>Montant dans le compte épargne ($)
+      <input type="number" id="c-epargne-montant" value="1000" min="0"
+        style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
+    </label>
+    <label>Paie mensuelle nette ($)
+      <input type="number" id="c-paie" value="0" min="0" placeholder="0 = pas de transfert paie"
+        style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
+    </label>
   </div>
   <button onclick="calcGain()" style="margin-top:1rem;padding:.75rem 1.5rem;background:var(--accent);color:#fff;border:none;border-radius:6px;font-weight:800;cursor:pointer;width:100%;">Calculer</button>
   <div id="c-result" style="margin-top:1rem;font-size:1.05rem;line-height:1.8;min-height:2.5rem;"></div>
@@ -837,22 +853,53 @@
 
 <script>
 function calcGain() {
-  const d=+document.getElementById('c-depot').value;
-  const p=+document.getElementById('c-paie').value;
-  const m=+document.getElementById('c-mois').value;
-  let total=0, lines=[];
-  if(d>=250){total+=50; lines.push('✅ Prime Clé Orange (50$)');}
-  if(p>=200 && m>=2){total+=250; lines.push('✅ Prime paie 200$/mois × 2 mois (250$)');}
-  else if(p>0){lines.push(`⚠️ Paie ${p}$/mois — il faut ≥200$ pendant 2 mois consécutifs`);}
-  const interet=d*0.03*(m/12);
+  const d = +document.getElementById('c-depot').value;
+  const p = +document.getElementById('c-paie').value;
+  const epargne = +document.getElementById('c-epargne').value;
+  const em = +document.getElementById('c-epargne-montant').value;
+  const errEl = document.getElementById('c-depot-err');
+
+  // Validation dépôt
+  if (d < 250) {
+    errEl.style.display = 'block';
+    document.getElementById('c-result').innerHTML = '';
+    return;
+  }
+  errEl.style.display = 'none';
+
+  let total = 0, lines = [];
+
+  // Prime Clé Orange
+  total += 50;
+  lines.push('✅ Prime Clé Orange — <strong>50$</strong>');
+
+  // Prime paie directe
+  if (p >= 200) {
+    total += 250;
+    lines.push('✅ Prime paie ≥200$/mois × 2 mois — <strong>250$</strong>');
+  } else if (p > 0) {
+    lines.push(`⚠️ Paie ${p}$/mois — il faut ≥200$ pendant 2 mois consécutifs (prime non débloquée)`);
+  }
+
+  // Intérêts compte chèques (taux de base ~0%)
+  lines.push('ℹ️ Compte chèques : pas d\'intérêts (0%)');
+
+  // Intérêts compte épargne promo 4,6% × 5 mois
+  let interetEpargne = 0;
+  if (epargne && em > 0) {
+    interetEpargne = em * 0.046 * (5 / 12);
+    lines.push(`💰 Épargne promo 4,6% sur ${em}$ × 5 mois : <strong>${interetEpargne.toFixed(2)}$</strong>`);
+  }
+
+  const grandTotal = total + interetEpargne;
   document.getElementById('c-result').innerHTML = `
-    <strong>Primes : ${total}$</strong><br>${lines.join('<br>')}<br>
-    💰 Intérêts ~3% sur ${d}$ × ${m} mois : <strong>${interet.toFixed(2)}$</strong><br>
-    <hr style="margin:.5rem 0;border-color:var(--border);">
-    <strong>Total ≈ ${(total+interet).toFixed(2)}$</strong>
-    <p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">Hors frais (0$). Taux variable. Prime paie = dépôt direct salaire/pension/RE/RPC.</p>`;
+    ${lines.join('<br>')}
+    <hr style="margin:.75rem 0;border-color:var(--border);">
+    <strong style="font-size:1.15rem;">Total estimé ≈ ${grandTotal.toFixed(2)}$</strong>
+    <p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">Frais : 0$. Taux promo variable — vérifier les conditions actuelles sur tangerine.ca. Prime paie = dépôt direct salaire/pension/AE/RPC.</p>`;
 }
 </script>
+ <!-- fin de la calculatrice de gain -->
 
         <h3 style="font-size: 1.15rem; font-weight: 800; margin: 28px 0 16px; color: var(--text);">Obtenir les deux — ordre des étapes</h3>
 
