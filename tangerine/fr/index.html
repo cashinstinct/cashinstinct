@@ -165,7 +165,10 @@
   }
   </script>
 
-  <style>
+ <style>
+    /* ============================================================
+       1. DESIGN TOKENS — variables CSS light/dark
+    ============================================================ */
     :root {
       --bg: #ffffff;
       --surface: #ffffff;
@@ -201,16 +204,41 @@
       --shadow: 0 14px 40px rgba(0,0,0,0.35);
     }
 
+    /* ============================================================
+       2. RESET & BASE
+    ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.65; color: var(--text); background: var(--bg); }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
     img { max-width: 100%; height: auto; display: block; }
     a { color: var(--accent); text-decoration: none; font-weight: 600; }
     a:hover { text-decoration: underline; }
+    code {
+      font-family: "Courier New", Courier, monospace;
+      background: var(--surface-soft);
+      color: var(--accent-dark);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.97em;
+      font-weight: 700;
+      border: 1px solid var(--border);
+    }
+
+    /* ============================================================
+       3. LAYOUT HELPERS
+    ============================================================ */
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
     .prose { max-width: 900px; margin: 0 auto; }
 
-    /* ── TOPBAR ── */
+    /* ============================================================
+       4. TOPBAR
+    ============================================================ */
     .topbar {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -245,18 +273,49 @@
     }
     .theme-btn:hover { background: var(--border-soft); }
 
-    /* ── HERO ── */
+    /* ============================================================
+       5. HERO
+    ============================================================ */
     header.hero {
       background: linear-gradient(135deg, var(--accent) 0%, #e05500 100%);
       color: #fff;
       padding: 56px 20px 48px;
       text-align: center;
-      overflow: hidden; /* ← empêche tout débordement enfant */
+      overflow: hidden;
     }
     header.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
     header.hero p { font-size: 1.15rem; opacity: 0.95; max-width: 620px; margin: 0 auto 28px; color: #fff; }
 
-    /* Badge cumul */
+    /* Badge cumul hero */
+    .cumul-badge {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(0,0,0,.25);
+      border: 2px solid rgba(255,255,255,.6);
+      border-radius: 40px;
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 28px;
+      max-width: calc(100% - 32px);
+      box-sizing: border-box;
+    }
+    .cumul-badge .plus { opacity: .8; font-size: .9em; margin: 0 2px; }
+    .cumul-badge .total-pill {
+      background: #fff;
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: .95rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    /* Hero badge (variante pill simple) */
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -271,6 +330,7 @@
       margin-bottom: 28px;
     }
 
+    /* Hero methods (cartes étape 1/2) */
     .hero-methods {
       display: flex;
       flex-direction: column;
@@ -288,93 +348,62 @@
     }
     .hero-methods p { color: var(--text-soft) !important; font-size: 0.85rem; margin-top: 8px; text-align: center; }
     [data-theme="dark"] .hero-methods p { color: var(--text-soft) !important; }
-    @media (min-width: 768px) {
-      .hero-methods { flex-direction: row; max-width: 1100px; gap: 32px; align-items: stretch; }
-      .hero-methods > div { flex: 1; }  
-      body { font-size: 21px; } /* Augmenté à 21px pour une lecture premium */
-      .prose { max-width: 800px; margin: 0 auto; }
-      
-      section h2 { 
-        font-size: 1.85rem; 
-        font-weight: 800; 
-        margin-bottom: 22px; 
-        color: var(--text); 
-        letter-spacing: -0.02em;
-        max-width: 760px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      section p { margin-bottom: 18px; color: var(--text-soft); }
 
-      .hero-methods { flex-direction: row; max-width: 1000px; margin: 40px auto 0; gap: 32px; align-items: stretch; }
-      .hero-methods > div { flex: 1; padding: 32px 24px !important; }
-
-      /* Axe central verrouillé à 760px max pour préserver le confort visuel */
-      .warning, .field-exact, .ai-summary, .seo-table-wrap, .cumul-box, .faq, .review-box {
-        max-width: 760px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-      }
-
-      .steps { max-width: 760px; margin: 24px auto 0; }
-      .steps li::before { min-width: 44px; height: 44px; font-size: 1.15rem; }
-      .steps li h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    /* ============================================================
+       6. COPY WIDGET
+    ============================================================ */
+    .input-copy-group {
+      display: flex;
+      flex-direction: column;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      padding: 4px;
+      gap: 4px;
     }
-      
+    .copy-btn, .cta-copy-btn {
+      appearance: none; -webkit-appearance: none; border: 0; cursor: pointer;
+      font-weight: 800; border-radius: 6px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .copy-btn {
+      background: var(--text); color: var(--surface);
+      font-size: 0.95rem; padding: 0 20px;
+      white-space: nowrap; min-height: 48px;
+    }
+    .cta-copy-btn {
+      background: rgba(255,255,255,0.18); color: #fff;
+      padding: 10px 14px; font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .cta-copy-btn.copied { background: #fff; color: var(--accent); }
+    .copy-status {
+      display: block; min-height: 1.2em; font-size: 0.85rem;
+      text-align: center; margin-top: 6px;
     }
 
-  /* ── COPY ── */
-.input-copy-group {
-  display: flex;
-  flex-direction: column;
-  background: var(--surface-soft);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  padding: 4px;
-  gap: 4px;
-}
-@media (min-width: 480px) {
-  .input-copy-group { flex-direction: row; gap: 0; }
-}
-
-.copy-btn, .cta-copy-btn {
-  appearance: none; -webkit-appearance: none; border: 0; cursor: pointer;
-  font-weight: 800; border-radius: 6px;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-.copy-btn {
-  background: var(--text); color: var(--surface);
-  font-size: 0.95rem; padding: 0 20px;
-  white-space: nowrap; min-height: 48px;
-}
-/* Mobile : bouton pleine largeur SOUS le code */
-@media (max-width: 479px) {
-  .copy-btn {
-    width: 100%;
-    padding: 14px 20px;
-    font-size: 1rem;
-    border-radius: 6px;
-    min-height: 52px;
-  }
-}
-.cta-copy-btn {
-  background: rgba(255,255,255,0.18); color: #fff;
-  padding: 10px 14px; font-size: 0.95rem;
-  border: 1px solid rgba(255,255,255,0.4);
-}
-.cta-copy-btn.copied { background: #fff; color: var(--accent); }
-.copy-status {
-  display: block; min-height: 1.2em; font-size: 0.85rem;
-  text-align: center; margin-top: 6px;
-}
-    /* ── MAIN ── */
+    /* ============================================================
+       7. MAIN & SECTIONS
+    ============================================================ */
     main { padding: 42px 0 52px; }
     section { scroll-margin-top: calc(var(--topbar-h, 56px) + 16px); }
     section h2 { font-size: 1.55rem; font-weight: 800; margin-bottom: 20px; color: var(--text); }
     section p { margin-bottom: 14px; color: var(--text-soft); }
 
+    .section-label {
+      display: inline-block; text-transform: uppercase; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.12em; color: #b84a00;
+      background: rgba(255,102,0,0.08); padding: 4px 12px;
+      border-radius: 12px; margin-bottom: 12px;
+    }
+    [data-theme="dark"] .section-label { color: #ff9a52; background: rgba(255,122,26,0.15); }
+
+    /* ============================================================
+       8. CONTENT BLOCKS
+    ============================================================ */
+
+    /* AI summary */
     .ai-summary {
       background: var(--surface-soft);
       border: 1px solid var(--border);
@@ -385,82 +414,7 @@
     }
     .ai-summary strong { color: var(--text); font-weight: 800; }
 
-    /* ── CUMUL BADGE (hero) ── */
-   .cumul-badge {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;           /* ← wrap au lieu de nowrap */
-  justify-content: center;   /* ← centrage si wrap */
-  gap: 6px;
-  background: rgba(0,0,0,.25);
-  border: 2px solid rgba(255,255,255,.6);
-  border-radius: 40px;
-  padding: 10px 16px;
-  font-size: 0.9rem;         /* ← légèrement réduit */
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 28px;
-  max-width: calc(100% - 32px); /* ← respecte le padding du container */
-  box-sizing: border-box;
-  /* white-space: nowrap; ← supprimé */
-}
-    .cumul-badge .plus { opacity: .8; font-size: .9em; margin: 0 2px; }
-    .cumul-badge .total-pill {
-      background: #fff;
-      color: var(--accent);
-      border-radius: 20px;
-      padding: 4px 14px;
-      font-size: .95rem;
-      font-weight: 900;
-      white-space: nowrap;
-    }
-
-    /* ── CUMUL BOX + ROW ── */
-    .cumul-box {
-      background: rgba(255,102,0,0.06);
-      border: 2px solid var(--accent);
-      border-radius: 12px;
-      padding: 24px 28px;
-      margin: 32px 0;
-    }
-    [data-theme="dark"] .cumul-box { background: rgba(255,122,26,0.08); }
-    .cumul-box h3 {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--accent);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .cumul-row {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr auto 1fr;
-      gap: 8px;
-      align-items: center;
-      text-align: center;
-    }
-    @media (max-width: 600px) {
-      .cumul-row { grid-template-columns: 1fr; gap: 12px; }
-      .cumul-sep { display: none; }
-    }
-    .cumul-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px 12px;
-    }
-    .cumul-item .amount { font-size: 1.6rem; font-weight: 900; color: var(--accent); display: block; }
-    .cumul-item .label { font-size: .95rem; color: var(--text-soft); display: block; margin-top: 6px; line-height: 1.5; }
-    .cumul-total { border-color: #1a7a3c !important; }
-    [data-theme="dark"] .cumul-total { border-color: #4ade80 !important; }
-    .cumul-total .amount { color: #1a7a3c; }
-    [data-theme="dark"] .cumul-total .amount { color: #4ade80; }
-    .cumul-total .label { color: #1a7a3c; font-weight: 700; }
-    [data-theme="dark"] .cumul-total .label { color: #4ade80; }
-    .cumul-sep { font-size: 1.6rem; font-weight: 900; color: var(--muted); }
-    .cumul-note { font-size: .85rem; color: var(--text-soft); margin-top: 16px; }
-
+    /* Warning */
     .warning {
       background: var(--warning-bg);
       border-left: 4px solid var(--warning-border);
@@ -469,6 +423,7 @@
       border-radius: 0 6px 6px 0;
     }
 
+    /* Field exact */
     .field-exact {
       background: var(--surface-muted);
       border: 1px solid var(--border-soft);
@@ -479,14 +434,63 @@
     }
     .field-exact strong { color: var(--text); display: block; margin-bottom: 6px; }
 
-    .section-label {
-      display: inline-block; text-transform: uppercase; font-size: 0.75rem;
-      font-weight: 700; letter-spacing: 0.12em; color: #b84a00;
-      background: rgba(255,102,0,0.08); padding: 4px 12px;
-      border-radius: 12px; margin-bottom: 12px;
-    }
-    [data-theme="dark"] .section-label { color: #ff9a52; background: rgba(255,122,26,0.15); }
+    /* Breadcrumb */
+    .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 16px; margin-bottom: 16px; }
+    .breadcrumb a { color: var(--muted); font-weight: 500; }
+    .breadcrumb span { margin: 0 6px; }
 
+    /* Lang notice */
+    .lang-notice {
+      font-size: 0.92rem; color: var(--text-soft);
+      background: var(--surface-soft); border: 1px solid var(--border-soft);
+      border-radius: 8px; padding: 12px 16px; margin-bottom: 40px;
+    }
+
+    /* Transparency */
+    .transparency {
+      background: var(--surface-muted); border-radius: 8px;
+      padding: 16px 20px; font-size: 0.9rem;
+      color: var(--text-soft); margin-top: 16px; border: 1px solid var(--border);
+    }
+
+    /* ============================================================
+       9. CUMUL BOX
+    ============================================================ */
+    .cumul-box {
+      background: rgba(255,102,0,0.06);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+    [data-theme="dark"] .cumul-box { background: rgba(255,122,26,0.08); }
+    .cumul-box h3 {
+      font-size: 1.15rem; font-weight: 800; color: var(--accent);
+      margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+    }
+    .cumul-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 8px; align-items: center; text-align: center;
+    }
+    .cumul-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 16px 12px;
+    }
+    .cumul-item .amount { font-size: 1.6rem; font-weight: 900; color: var(--accent); display: block; }
+    .cumul-item .label { font-size: .95rem; color: var(--text-soft); display: block; margin-top: 6px; line-height: 1.5; }
+    .cumul-sep { font-size: 1.6rem; font-weight: 900; color: var(--muted); }
+    .cumul-total { border-color: #1a7a3c !important; }
+    [data-theme="dark"] .cumul-total { border-color: #4ade80 !important; }
+    .cumul-total .amount { color: #1a7a3c; }
+    [data-theme="dark"] .cumul-total .amount { color: #4ade80; }
+    .cumul-total .label { color: #1a7a3c; font-weight: 700; }
+    [data-theme="dark"] .cumul-total .label { color: #4ade80; }
+    .cumul-note { font-size: .85rem; color: var(--text-soft); margin-top: 16px; }
+
+    /* ============================================================
+       10. STEPS
+    ============================================================ */
     .steps { list-style: none; counter-reset: steps; }
     .steps li { counter-increment: steps; display: flex; gap: 18px; margin-bottom: 28px; }
     .steps li::before {
@@ -498,39 +502,58 @@
     .steps li h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; color: var(--text); }
     .steps li p { margin: 0; color: var(--text-soft); }
 
-    code { font-family: "Courier New", Courier, monospace; background: var(--surface-soft); color: var(--accent-dark); padding: 2px 8px; border-radius: 4px; font-size: 0.97em; font-weight: 700; border: 1px solid var(--border); }
-
+    /* ============================================================
+       11. TABLE
+    ============================================================ */
     .seo-table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
     .seo-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; background: var(--surface); text-align: left; }
-    @media (max-width: 640px) { .seo-table th, .seo-table td { padding: 8px 10px; font-size: 0.82rem; } }
     .seo-table th, .seo-table td { border-bottom: 1px solid var(--border); padding: 12px 16px; }
     .seo-table th { background: var(--surface-muted); color: var(--text); font-weight: 700; }
     .seo-table tr:last-child th, .seo-table tr:last-child td { border-bottom: none; }
     .seo-table td:first-child { font-weight: 600; color: var(--text); }
 
+    /* ============================================================
+       12. FACTS GRID
+    ============================================================ */
     .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
     .fact { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
     .facts strong { display: block; color: var(--text); margin-bottom: 5px; }
     .fact span { display: block; color: var(--text-soft); font-size: 0.96rem; }
 
+    /* ============================================================
+       13. REVIEW BOX
+    ============================================================ */
     .review-box { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
     .review-box p:last-child { margin-bottom: 0; }
     .review-box ul { margin: 16px 0 16px 20px; color: var(--text-soft); }
     .review-box li { margin-bottom: 10px; }
-    .trust-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 700; color: var(--accent); background: rgba(255,102,0,0.08); padding: 6px 12px; border-radius: 12px; margin-bottom: 16px; }
+    .trust-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; font-weight: 700; color: var(--accent);
+      background: rgba(255,102,0,0.08); padding: 6px 12px;
+      border-radius: 12px; margin-bottom: 16px;
+    }
     [data-theme="dark"] .trust-badge { background: rgba(255,122,26,0.15); }
 
+    /* ============================================================
+       14. FAQ
+    ============================================================ */
     .faq { display: grid; gap: 16px; }
     details { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); }
-    summary { font-weight: 700; padding: 16px 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; background: var(--surface-soft); color: var(--text); }
+    summary {
+      font-weight: 700; padding: 16px 20px; cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--surface-soft); color: var(--text);
+    }
     summary::-webkit-details-marker { display: none; }
     summary::after { content: "+"; font-size: 1.4rem; font-weight: 300; color: var(--accent); flex-shrink: 0; margin-left: 12px; }
     details[open] summary::after { content: "−"; }
     details[open] summary { border-bottom: 1px solid var(--border); }
     .faq-body { padding: 16px 20px; font-size: 0.97rem; color: var(--text-soft); background: var(--surface); }
 
-    .lang-notice { font-size: 0.92rem; color: var(--text-soft); background: var(--surface-soft); border: 1px solid var(--border-soft); border-radius: 8px; padding: 12px 16px; margin-bottom: 40px; }
-
+    /* ============================================================
+       15. CTA SECTION
+    ============================================================ */
     .cta-section {
       background: linear-gradient(135deg, var(--accent) 0%, #e05500 100%);
       color: #fff; text-align: center; padding: 52px 20px;
@@ -543,7 +566,9 @@
     .cta-code-row { margin-top: 16px; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
     .cta-code-pill { display: inline-block; background: rgba(255,255,255,0.97); color: var(--accent); font-family: "Courier New", Courier, monospace; font-weight: 900; letter-spacing: 0.04em; padding: 10px 14px; border-radius: 8px; }
 
-    /* Vidéo short */
+    /* ============================================================
+       16. VIDEO
+    ============================================================ */
     .yt-short-wrapper {
       position: relative; width: 315px; max-width: 100%; height: 560px;
       overflow: hidden; border-radius: 12px; border: 1px solid var(--border);
@@ -558,21 +583,35 @@
     .yt-play-btn::after { content: ''; border-style: solid; border-width: 11px 0 11px 22px; border-color: transparent transparent transparent #fff; margin-left: 4px; }
     .yt-short-wrapper:hover .yt-play-btn { background: #cc0000; }
 
-    .transparency { background: var(--surface-muted); border-radius: 8px; padding: 16px 20px; font-size: 0.9rem; color: var(--text-soft); margin-top: 16px; border: 1px solid var(--border); }
-
+    /* ============================================================
+       17. FOOTER
+    ============================================================ */
     footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
 
-    .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 16px; margin-bottom: 16px; }
-    .breadcrumb a { color: var(--muted); font-weight: 500; }
-    .breadcrumb span { margin: 0 6px; }
-
-    /* ── STICKY CTA MOBILE ── */
+    /* ============================================================
+       18. STICKY CTA MOBILE
+    ============================================================ */
     .sticky-mobile-cta { display: none; }
+
+    /* ============================================================
+       19. RESPONSIVE — mobile (max 640px)
+    ============================================================ */
+    @media (max-width: 479px) {
+      .copy-btn {
+        width: 100%; padding: 14px 20px; font-size: 1rem;
+        border-radius: 6px; min-height: 52px;
+      }
+    }
+    @media (max-width: 600px) {
+      .cumul-row { grid-template-columns: 1fr; gap: 12px; }
+      .cumul-sep { display: none; }
+    }
     @media (max-width: 640px) {
       .topbar-inner { padding: 10px 20px; }
       .nav { gap: 8px; }
       .nav a { font-size: 0.82rem; }
       .facts { grid-template-columns: 1fr; }
+      .seo-table th, .seo-table td { padding: 8px 10px; font-size: 0.82rem; }
       header.hero { padding: 28px 20px 36px; }
       body { padding-bottom: 80px; }
       .sticky-mobile-cta {
@@ -591,8 +630,41 @@
       .sticky-mobile-cta .s-btn { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.4); color: #fff; font-weight: 800; font-size: 0.9rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
       .sticky-mobile-cta .s-btn.copied { background: #fff; color: var(--accent); }
     }
-    @media (min-width: 768px) { body { font-size: 19px; } }
+
+    /* ============================================================
+       20. RESPONSIVE — desktop (min 480px / 768px / 1024px)
+    ============================================================ */
+    @media (min-width: 480px) {
+      .input-copy-group { flex-direction: row; gap: 0; }
+    }
+    @media (min-width: 768px) {
+      body { font-size: 19px; }
+      .prose { max-width: 800px; margin: 0 auto; }
+
+      section h2 {
+        font-size: 1.85rem; font-weight: 800; margin-bottom: 22px;
+        color: var(--text); letter-spacing: -0.02em;
+        max-width: 760px; margin-left: auto; margin-right: auto;
+      }
+      section p { margin-bottom: 18px; color: var(--text-soft); }
+
+      .hero-methods { flex-direction: row; max-width: 1000px; margin: 40px auto 0; gap: 32px; align-items: stretch; }
+      .hero-methods > div { flex: 1; padding: 32px 24px !important; }
+
+      /* Axe central verrouillé à 760px */
+      .warning, .field-exact, .ai-summary, .seo-table-wrap, .cumul-box, .faq, .review-box {
+        max-width: 760px; margin-left: auto; margin-right: auto; width: 100%;
+      }
+
+      .steps { max-width: 760px; margin: 24px auto 0; }
+      .steps li::before { min-width: 44px; height: 44px; font-size: 1.15rem; }
+      .steps li h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+      }
+    @media (min-width: 1024px) {
+      body { font-size: 21px; }
+    }
   </style>
+
 
   <script>
     try {
@@ -637,7 +709,7 @@
       <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 20px;">
-            ① Étape 1 — Copier la Clé Orange
+          Étape 1 — Copier la Clé Orange
           </p>
           <div class="input-copy-group" style="display: flex; flex-direction: column; background: transparent; border: none; gap: 10px; margin-bottom: 12px; padding: 0;">
             <input type="text" value="14130944S1" readonly aria-readonly="true" aria-label="Clé Orange Tangerine"
@@ -652,23 +724,25 @@
         </p>
       </div>
 
-      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 20px;">
-            ② Étape 2 — Entrer dans le formulaire Tangerine
-          </p>
-          <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener noreferrer" style="display: block;">
-            <img src="https://cashinstinct.ca/tangerine/images/Champ-entrez-cle-orange-Tangerine.webp"
-                 alt="Formulaire d'inscription Tangerine — champ Clé Orange"
-                 width="520" height="150" loading="eager" fetchpriority="high"
-                 data-fallback="true"
-                 style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto; display: block;" />
-          </a>
-        </div>
-        <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px; color: var(--text-soft);">
-          <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 700;">Ouvrir le formulaire officiel Tangerine</a>
-        </p>
-      </div>
+     <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
+  <div>
+    <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 20px;">
+      Étape 2 — Coller dans le formulaire Tangerine
+    </p>
+    <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener noreferrer" style="display: block;">
+      <picture>
+        <source srcset="https://cashinstinct.ca/tangerine/images/Champ-entrez-cle-orange-Tangerine.webp" type="image/webp">
+        <img src="https://cashinstinct.ca/tangerine/images/Champ-entrez-cle-orange-Tangerine.png"
+             alt="Formulaire d'inscription Tangerine — champ Clé Orange"
+             width="520" height="150" loading="eager" fetchpriority="high"
+             style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto; display: block;" />
+      </picture>
+    </a>
+  </div>
+  <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px; color: var(--text-soft);">
+    <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 700;">Ouvrir le formulaire officiel Tangerine</a>
+  </p>
+</div>
       
     </div>
 
@@ -680,11 +754,21 @@
   <div class="container">
     <div class="prose">
 
-      <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="https://cashinstinct.ca/">Accueil</a><span>&gt;</span>
-        <a href="https://cashinstinct.ca/#finances">Banques en ligne</a><span>&gt;</span>
-        Tangerine Clé Orange
-      </nav>
+     <nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <ol style="list-style: none; display: flex; flex-wrap: wrap; padding: 0; margin: 0;">
+    <li style="display: flex; align-items: center;">
+      <a href="https://cashinstinct.ca/">Accueil</a>
+      <span style="margin: 0 8px; color: var(--muted);" aria-hidden="true">&gt;</span>
+    </li>
+    <li style="display: flex; align-items: center;">
+      <a href="https://cashinstinct.ca/#finances">Banques en ligne</a>
+      <span style="margin: 0 8px; color: var(--muted);" aria-hidden="true">&gt;</span>
+    </li>
+    <li style="display: flex; align-items: center; color: var(--text-soft);" aria-current="page">
+      Tangerine Clé Orange
+    </li>
+  </ol>
+</nav>
 
       <nav aria-label="Navigation interne" style="font-size: 0.95rem; margin-bottom: 32px; text-align: center; color: var(--muted);">
   Navigation rapide :
