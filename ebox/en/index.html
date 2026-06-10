@@ -867,6 +867,52 @@
           </div>
         </section>
 
+                <section id="video-tutorial" aria-label="EBOX Video Tutorial">
+          <span class="section-label">Video Guide</span>
+          <h2>Video tutorial (In French)</h2>
+          <p>Watch this quick screen recording showing exactly where to find and fill the referral field during checkout.</p>
+          
+          <div class="video-container">
+            <div id="ebox-video-wrapper">
+              <img src="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_EN.webp" alt="EBOX Referral Code GE911 Tutorial" class="video-thumbnail">
+              <div class="play-button-yt"></div>
+            </div>
+          </div>
+          <script>
+    /* ── YouTube Video Wrapper (FR video on EN page) ── */
+    (function() {
+      var facade = document.getElementById('ebox-video-wrapper');
+      if (!facade) return;
+      
+      function launchVideo() {
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/dUFRORlBJYA?autoplay=1&playsinline=1';
+        iframe.title = 'EBOX Client Code GE911 Tutorial (French audio)';
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;';
+        
+        facade.innerHTML = '';
+        facade.appendChild(iframe);
+        
+        var container = document.querySelector('.video-container');
+        if (container) container.style.cursor = 'default';
+      }
+      
+      facade.addEventListener('click', launchVideo);
+      facade.addEventListener('keydown', function(e) { 
+        if (e.key === 'Enter' || e.key === ' ') { 
+          e.preventDefault(); 
+          launchVideo(); 
+        } 
+      });
+    })();
+  </script>
+          <div class="transparency">
+            <strong>Visual Reminder:</strong> Even though the video guide is in French, the interface layout is identical on the English site. Do not use the "Promo Code" box at the top. Enter <code>GE911</code> in the section labeled <strong>"Code — $25 for you and your friends!"</strong>.
+          </div>
+        </section>
+        
         <section id="eligibility" aria-label="Eligibility criteria">
           <span class="section-label">Conditions</span>
           <h2>Who can use the EBOX referral code?</h2>
