@@ -835,7 +835,7 @@
     </label>
 
     <label>Compte épargne ? (taux promo 4,6% × 5 mois)
-      <select id="c-epargne" onchange="toggleEpargne()"
+      <select id="c-epargne"
         style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
         <option value="0">Non — compte chèques uniquement</option>
         <option value="1">Oui — j'ouvre aussi un compte épargne</option>
@@ -844,7 +844,7 @@
 
     <div id="c-epargne-wrap" style="display:none;">
       <label>Montant dans le compte épargne ($)
-        <input type="number" id="c-epargne-montant" value="1000" min="0"
+        <input type="number" id="c-epargne-montant" value="" min="0" placeholder="ex : 1000"
           style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
       </label>
     </div>
@@ -860,17 +860,25 @@
 </div>
 
 <script>
-function toggleEpargne() {
-  const oui = document.getElementById('c-epargne').value === '1';
-  document.getElementById('c-epargne-wrap').style.display = oui ? 'block' : 'none';
-}
+(function() {
+  var sel = document.getElementById('c-epargne');
+  var wrap = document.getElementById('c-epargne-wrap');
+
+  function toggleEpargne() {
+    wrap.style.display = sel.value === '1' ? 'block' : 'none';
+  }
+
+  // Init immédiat + écoute changements
+  toggleEpargne();
+  sel.addEventListener('change', toggleEpargne);
+})();
 
 function calcGain() {
-  const d = +document.getElementById('c-depot').value;
-  const p = +document.getElementById('c-paie').value;
-  const epargne = document.getElementById('c-epargne').value === '1';
-  const em = epargne ? +document.getElementById('c-epargne-montant').value : 0;
-  const errEl = document.getElementById('c-depot-err');
+  var d = +document.getElementById('c-depot').value;
+  var p = +document.getElementById('c-paie').value;
+  var epargne = document.getElementById('c-epargne').value === '1';
+  var em = epargne ? (+document.getElementById('c-epargne-montant').value || 0) : 0;
+  var errEl = document.getElementById('c-depot-err');
 
   if (d < 250) {
     errEl.style.display = 'block';
@@ -879,7 +887,7 @@ function calcGain() {
   }
   errEl.style.display = 'none';
 
-  let total = 0, lines = [];
+  var total = 0, lines = [];
 
   total += 50;
   lines.push('✅ Prime Clé Orange — <strong>50$</strong>');
@@ -888,23 +896,23 @@ function calcGain() {
     total += 250;
     lines.push('✅ Prime paie ≥200$/mois × 2 mois — <strong>250$</strong>');
   } else if (p > 0) {
-    lines.push(`⚠️ Paie ${p}$/mois — il faut ≥200$ pendant 2 mois consécutifs (prime non débloquée)`);
+    lines.push('⚠️ Paie ' + p + '$/mois — il faut ≥200$ pendant 2 mois consécutifs (prime non débloquée)');
   }
 
   lines.push('ℹ️ Compte chèques : pas d\'intérêts (0%)');
 
-  let interetEpargne = 0;
+  var interetEpargne = 0;
   if (epargne && em > 0) {
     interetEpargne = em * 0.046 * (5 / 12);
-    lines.push(`💰 Épargne promo 4,6% sur ${em}$ × 5 mois : <strong>${interetEpargne.toFixed(2)}$</strong>`);
+    lines.push('💰 Épargne promo 4,6% sur ' + em + '$ × 5 mois : <strong>' + interetEpargne.toFixed(2) + '$</strong>');
   }
 
-  const grandTotal = total + interetEpargne;
-  document.getElementById('c-result').innerHTML = `
-    ${lines.join('<br>')}
-    <hr style="margin:.75rem 0;border-color:var(--border);">
-    <strong style="font-size:1.15rem;">Total estimé ≈ ${grandTotal.toFixed(2)}$</strong>
-    <p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">Frais : 0$. Taux promo variable — vérifier les conditions actuelles sur tangerine.ca. Prime paie = dépôt direct salaire/pension/AE/RPC.</p>`;
+  var grandTotal = total + interetEpargne;
+  document.getElementById('c-result').innerHTML =
+    lines.join('<br>') +
+    '<hr style="margin:.75rem 0;border-color:var(--border);">' +
+    '<strong style="font-size:1.15rem;">Total estimé ≈ ' + grandTotal.toFixed(2) + '$</strong>' +
+    '<p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">Frais : 0$. Taux promo variable — vérifier les conditions actuelles sur tangerine.ca. Prime paie = dépôt direct salaire/pension/AE/RPC.</p>';
 }
 </script>
  <!-- fin de la calculatrice de gain -->
