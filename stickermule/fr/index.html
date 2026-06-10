@@ -277,7 +277,7 @@
       --border: #2a3442;
       --border-soft: #2f3b4d;
       --accent: #ffaa00;
-      --accent-dark: #60a5fa;
+      --accent-dark: #e05a35;
       --warning-bg: #2a2111;
       --warning-text: #ffd98f;
       --warning-border: #f59e0b;
@@ -316,7 +316,8 @@
     main { padding: 42px 0 52px; }
     section { margin-bottom: 56px; }
     section[id] { scroll-margin-top: 72px; }
-
+    section p { margin-bottom: 14px; color: var(--text-soft); }
+      
     /* Navigation Haute (Topbar) */
     .topbar {
       background: var(--surface);
@@ -337,7 +338,7 @@
       justify-content: space-between;
       gap: 8px;
     }
-    .brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+    .brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; white-space: nowrap; }
     
     .nav { display: flex; gap: 12px; flex-wrap: nowrap; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     .nav::-webkit-scrollbar { display: none; }
@@ -359,7 +360,8 @@
     }
     header.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
     header.hero p { font-size: 1.15rem; opacity: 0.95; max-width: 620px; margin: 0 auto 28px; color: #fff; }
-
+    .hero-methods p { color: var(--text-soft); font-size: 0.85rem; margin-top: 8px; text-align: center; }
+      
     /* Pied de page (Footer) */
     footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
 
