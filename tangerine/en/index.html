@@ -788,13 +788,29 @@
           </p>
         </div>
 
-        <!-- After the stacking box -->
+         <!-- gain-calculator -->
 <div id="gain-calculator" style="margin:2rem 0;padding:1.5rem;background:var(--surface-soft);border:1px solid var(--border);border-radius:12px;">
   <h3 style="margin-top:0;font-size:1.1rem;">🧮 Your estimated net gain</h3>
   <div style="display:grid;gap:1rem;max-width:400px;">
-    <label>Initial deposit ($) <input type="number" id="c-depot" value="250" min="250" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
-    <label>Monthly net pay ($) <input type="number" id="c-paie" value="0" min="0" placeholder="0 = no payroll transfer" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
-    <label>Months held <input type="number" id="c-mois" value="3" min="2" max="12" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
+    <label>Initial deposit ($)
+      <input type="number" id="c-depot" value="250" min="0"
+        style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
+      <span id="c-depot-err" style="color:#c0392b;font-size:.85rem;display:none;">⚠️ Minimum $250 deposit required to unlock the Orange Key bonus.</span>
+    </label>
+    <label>Opening a savings account? (promo rate 4.6% × 5 months)
+      <select id="c-epargne" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
+        <option value="0">No — chequing account only</option>
+        <option value="1">Yes — I'm also opening a savings account</option>
+      </select>
+    </label>
+    <label>Amount in savings account ($)
+      <input type="number" id="c-epargne-montant" value="1000" min="0"
+        style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
+    </label>
+    <label>Monthly net pay ($)
+      <input type="number" id="c-paie" value="0" min="0" placeholder="0 = no payroll transfer"
+        style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
+    </label>
   </div>
   <button onclick="calcGain()" style="margin-top:1rem;padding:.75rem 1.5rem;background:var(--accent);color:#fff;border:none;border-radius:6px;font-weight:800;cursor:pointer;width:100%;">Calculate</button>
   <div id="c-result" style="margin-top:1rem;font-size:1.05rem;line-height:1.8;min-height:2.5rem;"></div>
@@ -802,23 +818,49 @@
 
 <script>
 function calcGain() {
-  const d=+document.getElementById('c-depot').value;
-  const p=+document.getElementById('c-paie').value;
-  const m=+document.getElementById('c-mois').value;
-  let total=0, lines=[];
-  if(d>=250){total+=50; lines.push('✅ Orange Key bonus ($50)');}
-  if(p>=200 && m>=2){total+=250; lines.push('✅ Payroll deposit bonus $200/month × 2 months ($250)');}
-  else if(p>0){lines.push(`⚠️ Pay $${p}/month — need ≥$200 for 2 consecutive months`);}
-  const interet=d*0.03*(m/12);
+  const d = +document.getElementById('c-depot').value;
+  const p = +document.getElementById('c-paie').value;
+  const epargne = +document.getElementById('c-epargne').value;
+  const em = +document.getElementById('c-epargne-montant').value;
+  const errEl = document.getElementById('c-depot-err');
+
+  if (d < 250) {
+    errEl.style.display = 'block';
+    document.getElementById('c-result').innerHTML = '';
+    return;
+  }
+  errEl.style.display = 'none';
+
+  let total = 0, lines = [];
+
+  total += 50;
+  lines.push('✅ Orange Key bonus — <strong>$50</strong>');
+
+  if (p >= 200) {
+    total += 250;
+    lines.push('✅ Payroll deposit ≥$200/month × 2 months — <strong>$250</strong>');
+  } else if (p > 0) {
+    lines.push(`⚠️ Pay $${p}/month — need ≥$200 for 2 consecutive months (bonus not unlocked)`);
+  }
+
+  lines.push('ℹ️ Chequing account: no interest (0%)');
+
+  let interetEpargne = 0;
+  if (epargne && em > 0) {
+    interetEpargne = em * 0.046 * (5 / 12);
+    lines.push(`💰 Savings promo 4.6% on $${em} × 5 months: <strong>$${interetEpargne.toFixed(2)}</strong>`);
+  }
+
+  const grandTotal = total + interetEpargne;
   document.getElementById('c-result').innerHTML = `
-    <strong>Bonuses: $${total}</strong><br>${lines.join('<br>')}<br>
-    💰 Interest ~3% on $${d} × ${m} months: <strong>$${interet.toFixed(2)}</strong><br>
-    <hr style="margin:.5rem 0;border-color:var(--border);">
-    <strong>Total ≈ $${(total+interet).toFixed(2)}</strong>
-    <p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">No fees ($0). Variable rate. Payroll bonus = direct deposit from employer, pension, EI, or CPP.</p>`;
+    ${lines.join('<br>')}
+    <hr style="margin:.75rem 0;border-color:var(--border);">
+    <strong style="font-size:1.15rem;">Estimated total ≈ $${grandTotal.toFixed(2)}</strong>
+    <p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">No fees ($0). Promo rate subject to change — verify current conditions at tangerine.ca. Payroll bonus = direct deposit from employer, pension, EI, or CPP.</p>`;
 }
 </script>
-
+ <!-- gain-calculator end -->
+        
         <h3 style="font-size: 1.15rem; font-weight: 800; margin: 28px 0 16px; color: var(--text);">Getting both — step-by-step order</h3>
 
         <ol class="steps">
