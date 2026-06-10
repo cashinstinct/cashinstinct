@@ -15,7 +15,7 @@
   <link rel="alternate" hreflang="en"       href="https://cashinstinct.ca/en/" />
   <link rel="alternate" hreflang="fr-CA"    href="https://cashinstinct.ca/" />
   <link rel="alternate" hreflang="fr"       href="https://cashinstinct.ca/" />
-  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/" />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -590,14 +590,21 @@
   </div>
 
   <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const root = document.documentElement;
-
     function setThemeUI(isDark) {
-      themeToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-      themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-      themeToggle.setAttribute('aria-label', isDark ? 'Disable dark mode' : 'Enable dark mode');
-    }
+  themeToggle.textContent = isDark ? "☀️" : "🌙";
+  themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+}
+
+const themeToggle = document.getElementById("theme-toggle");
+const currentTheme = localStorage.getItem("theme");
+
+if (currentTheme === "dark") {
+  document.documentElement.setAttribute("data-theme", "dark");
+  setThemeUI(true);
+} else {
+  setThemeUI(false);
+}
 
     setThemeUI(root.getAttribute('data-theme') === 'dark');
 
