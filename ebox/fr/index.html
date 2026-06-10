@@ -649,11 +649,12 @@
         </div>
       </div>
 
-      <div class="hero-methods">
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="hero-methods">
+        
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 20px;">
-              Étape 1 — Copier le code client EBOX
+              ① Étape 1 — Copier le code client EBOX
             </p>
             
             <div class="input-copy-group" style="display: flex; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; padding: 4px; margin-bottom: 12px;">
@@ -669,24 +670,26 @@
           </p>
         </div>
 
-        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow);">
-          <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px;">
-            Étape 2 — Validation du système EBOX
-          </p>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 20px;">
+              ② Étape 2 — Validation du système EBOX
+            </p>
+            
+            <a href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener noreferrer" style="display: block;">
+              <picture>
+                <source srcset="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_FR.webp" type="image/webp">
+                <img src="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_FR.png"
+                     alt="Champ d'inscription EBOX affichant le code de parrainage client GE911 validé par le système"
+                     loading="eager"
+                     fetchpriority="high"
+                     data-fallback="true"
+                     style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto; display: block;" />
+              </picture>
+            </a>
+          </div>
           
-          <a href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener noreferrer" style="display: block; margin-top: auto;">
-            <picture>
-              <source srcset="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_FR.webp" type="image/webp">
-              <img src="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_FR.png"
-                   alt="Champ d'inscription EBOX affichant le code de parrainage client GE911 validé par le système"
-                   loading="eager"
-                   fetchpriority="high"
-                   data-fallback="true"
-                   style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto; display: block;" />
-            </picture>
-          </a>
-          
-          <p style="font-size: 0.85rem; margin-top: 8px; text-align: center;">
+          <p style="font-size: 0.85rem; margin-top: 20px; text-align: center;">
             <a href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 700;">Ouvrez le site officiel d'EBOX</a> et entrez-le dans le champ illustré. 
           </p>
         </div>
@@ -1354,7 +1357,7 @@
     });
  
   function setThemeUI(isDark) {
-  themeToggle.textContent = isDark ? '☀️ Mode Clair' : '🌙 Mode Sombre';
+  themeToggle.textContent = isDark ? '☀️' : '🌙';
   themeToggle.setAttribute('aria-label', isDark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
   themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
 }
