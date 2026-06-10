@@ -701,28 +701,30 @@
         </div>
       </div>
 
-      <div class="hero-methods">
+     <div class="hero-methods">
 
-        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow);">
-          <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 12px;">
-            ① Step 1 — Copy the EBOX client code
-          </p>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 20px;">
+              Step 1 — Copy the EBOX client code
+            </p>
 
-          <div class="input-copy-group" style="display: flex; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: auto; margin-bottom: auto; padding: 4px;">
-            <input type="text" value="GE911" id="promo-code" readonly aria-readonly="true" aria-label="EBOX client number" style="flex: 1; border: none; padding: 12px 16px; font-family: monospace; font-size: 1.1rem; font-weight: 700; color: var(--text); background: transparent; text-align: center;" />
-            <button class="copy-btn" data-copy="GE911" data-target="copyStatusHero" type="button"
-              style="background: var(--text); color: var(--surface); border: none; border-radius: 6px; font-weight: 700; padding: 0 20px; cursor: pointer; font-size: 0.95rem; white-space: nowrap; -webkit-appearance: none;">Copy code</button>
+            <div class="input-copy-group" style="display: flex; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; padding: 4px; margin-bottom: 12px;">
+              <input type="text" value="GE911" id="promo-code" readonly aria-readonly="true" aria-label="EBOX client number" style="flex: 1; border: none; padding: 12px 16px; font-family: monospace; font-size: 1.1rem; font-weight: 700; color: var(--text); background: transparent; text-align: center;" />
+              <button class="copy-btn" data-copy="GE911" data-target="copyStatusHero" type="button"
+                style="background: var(--text); color: var(--surface); border: none; border-radius: 6px; font-weight: 700; padding: 0 20px; cursor: pointer; font-size: 0.95rem; white-space: nowrap; -webkit-appearance: none;">Copy code</button>
+            </div>
+            <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
           </div>
-          <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
 
-          <p style="font-size: 0.85rem; margin-top: auto; text-align: center;">
+          <p style="font-size: 0.85rem; text-align: center; margin-top: 20px;">
             Save the code to paste it in the "Code — $25 for you and your friends!" section.
           </p>
         </div>
 
         <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow);">
           <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px;">
-            ② Step 2 — EBOX system validation
+            Step 2 — Paste in the EBOX sign-up form
           </p>
 
           <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer" style="display: block; margin-top: auto;">
