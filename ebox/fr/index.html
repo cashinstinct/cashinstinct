@@ -1313,7 +1313,7 @@
     if (footerDate) footerDate.textContent = new Date().toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
   </script>
  
-  <script>/
+  <script>
     window.legacyCopy = function(text) {
       try {
         var ta = document.createElement('textarea');
@@ -1430,37 +1430,6 @@ themeToggle.addEventListener('click', () => {
         img.insertAdjacentElement('afterend', p);
       });
     });
- 
-    (function() {
-      var toggle = document.getElementById('theme-toggle');
-      if (!toggle) return;
-      toggle.setAttribute('aria-pressed', document.documentElement.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
-    })();
- 
-    /* Vidéo facade */
-    (function() {
-      var facade = document.getElementById('ebox-video-wrapper');
-      if (!facade) return;
-      function launchVideo() {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube-nocookie.com/embed/dUFRORlBJYA?autoplay=1&playsinline=1';
-        iframe.title = 'Tutoriel Code Client EBOX GE911';
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        iframe.setAttribute('allowfullscreen', '');
-        iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;';
-        facade.innerHTML = '';
-        facade.appendChild(iframe);
-        var container = document.querySelector('.video-container');
-        if (container) container.style.cursor = 'default';
-      }
-      facade.addEventListener('click', launchVideo);
-      facade.addEventListener('keydown', function(e) { 
-        if (e.key === 'Enter' || e.key === ' ') { 
-          e.preventDefault(); 
-          launchVideo(); 
-        } 
-      });
-    })();
  
     /* Sticky scroll + copy avec fallback */
     (function() {
