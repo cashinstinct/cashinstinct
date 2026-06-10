@@ -823,6 +823,37 @@
           </p>
         </div>
 
+        <!-- Dans ton markdown/HTML, après la box cumul -->
+<div id="gain-calculator" style="margin:2rem 0;padding:1.5rem;background:var(--surface-soft);border:1px solid var(--border);border-radius:12px;">
+  <h3 style="margin-top:0;font-size:1.1rem;">🧮 Ton gain net estimé</h3>
+  <div style="display:grid;gap:1rem;max-width:400px;">
+    <label>Dépôt initial ($) <input type="number" id="c-depot" value="250" min="250" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
+    <label>Paie mensuelle nette ($) <input type="number" id="c-paie" value="0" min="0" placeholder="0 = pas de transfert paie" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
+    <label>Mois de maintien <input type="number" id="c-mois" value="3" min="2" max="12" style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);"></label>
+  </div>
+  <button onclick="calcGain()" style="margin-top:1rem;padding:.75rem 1.5rem;background:var(--accent);color:#fff;border:none;border-radius:6px;font-weight:800;cursor:pointer;width:100%;">Calculer</button>
+  <div id="c-result" style="margin-top:1rem;font-size:1.05rem;line-height:1.8;min-height:2.5rem;"></div>
+</div>
+
+<script>
+function calcGain() {
+  const d=+document.getElementById('c-depot').value;
+  const p=+document.getElementById('c-paie').value;
+  const m=+document.getElementById('c-mois').value;
+  let total=0, lines=[];
+  if(d>=250){total+=50; lines.push('✅ Prime Clé Orange (50$)');}
+  if(p>=200 && m>=2){total+=250; lines.push('✅ Prime paie 200$/mois × 2 mois (250$)');}
+  else if(p>0){lines.push(`⚠️ Paie ${p}$/mois — il faut ≥200$ pendant 2 mois consécutifs`);}
+  const interet=d*0.03*(m/12);
+  document.getElementById('c-result').innerHTML = `
+    <strong>Primes : ${total}$</strong><br>${lines.join('<br>')}<br>
+    💰 Intérêts ~3% sur ${d}$ × ${m} mois : <strong>${interet.toFixed(2)}$</strong><br>
+    <hr style="margin:.5rem 0;border-color:var(--border);">
+    <strong>Total ≈ ${(total+interet).toFixed(2)}$</strong>
+    <p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">Hors frais (0$). Taux variable. Prime paie = dépôt direct salaire/pension/RE/RPC.</p>`;
+}
+</script>
+
         <h3 style="font-size: 1.15rem; font-weight: 800; margin: 28px 0 16px; color: var(--text);">Obtenir les deux — ordre des étapes</h3>
 
         <ol class="steps">
@@ -938,10 +969,9 @@
         <div class="yt-short-wrapper" id="yt-facade" role="button" tabindex="0"
              aria-label="Lancer la vidéo tutoriel Clé Orange Tangerine">
           <img id="yt-thumb"
-               src="https://img.youtube.com/vi/ZjDvFV42qbM/hqdefault.jpg"
+               src="https://cashinstinct.ca/tangerine/images/tangerine-cle-orange-14130944S1.jpeg"
                alt="Tutoriel Clé Orange Tangerine 14130944S1 — cliquez pour lancer"
-               loading="lazy" width="480" height="360"
-               onerror="this.src='https://i.ytimg.com/vi/ZjDvFV42qbM/hqdefault.jpg'" />
+               loading="lazy" />
           <div class="yt-play-btn" aria-hidden="true"></div>
         </div>
         <p style="font-size:0.85rem;text-align:center;margin-top:8px;color:var(--muted);">
