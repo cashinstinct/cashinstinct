@@ -219,7 +219,7 @@
   }
   </script>
 
-     <style>
+  <style>
     /* 1. VARIABLES & THÈMES */
     :root {
       --bg: #ffffff;
@@ -317,8 +317,8 @@
     .nav::-webkit-scrollbar { display: none; }
     .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
     .nav a:hover, .nav a.active { color: var(--accent); }
-    .nav a.nav-en { font-size: 0.85rem; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted); }
-    .nav a.nav-en:hover { color: var(--accent); border-color: var(--accent); }
+    .nav a.nav-fr { font-size: 0.85rem; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted); }
+    .nav a.nav-fr:hover { color: var(--accent); border-color: var(--accent); }
     
     .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 16px; margin-bottom: 16px; }
     .breadcrumb a { color: var(--muted); font-weight: 500; }
@@ -357,6 +357,84 @@
     
     .hero-methods a img { transition: opacity 0.15s ease; }
     .hero-methods a:hover img { opacity: 0.9; }
+
+    /* ── BLOC CUMUL (IDÉE CLONÉE DE TANGERINE) ── */
+    .cumul-box {
+      background: rgba(176, 49, 45, 0.05);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 32px auto;
+      max-width: 760px;
+    }
+    .cumul-box h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cumul-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 8px;
+      align-items: center;
+      text-align: center;
+    }
+    .cumul-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 12px;
+    }
+    .cumul-item .amount {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent);
+      display: block;
+    }
+    .cumul-item .label {
+      font-size: .95rem;
+      color: var(--text-soft);
+      display: block;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+    
+    /* Style spécifique pour la case Total Vert */
+    .cumul-total {
+      border: 2px solid #1a7a3c !important;
+    }
+    [data-theme="dark"] .cumul-total {
+      border-color: #4ade80 !important;
+    }
+    .cumul-total .amount {
+      color: #1a7a3c;
+    }
+    [data-theme="dark"] .cumul-total .amount {
+      color: #4ade80;
+    }
+    .cumul-total .label {
+      color: #1a7a3c;
+      font-weight: 700;
+    }
+    [data-theme="dark"] .cumul-total .label {
+      color: #4ade80;
+    }
+    
+    .cumul-sep {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--muted);
+    }
+    .cumul-note {
+      font-size: .85rem;
+      color: var(--text-soft);
+      margin-top: 16px;
+      line-height: 1.5;
+    }
     
     /* Bloc d'avertissement et encadrés */
     .section-label { display: inline-block; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; color: #962521; background: rgba(176, 49, 45, 0.08); padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; }
@@ -517,13 +595,30 @@
       .facts { grid-template-columns: 1fr; }
       body { padding-bottom: 80px; }
       
-      /* Barre basse persistante */
+      /* Ajustement responsive pour la boîte de cumul */
+      .cumul-row { 
+        grid-template-columns: 1fr !important; 
+        gap: 12px !important; 
+      }
+      .cumul-sep { 
+        display: none !important; 
+      }
+      
+      /* Barre basse persistante mobile (doit rester dans la media query) */
       .sticky-mobile-cta {
-        display: flex; position: fixed; bottom: 0; left: 0; right: 0;
-        background: var(--accent); color: #fff; padding: 10px 16px; z-index: 200;
-        justify-content: space-between; align-items: center; gap: 10px;
+        display: flex; 
+        position: fixed; 
+        bottom: 0; left: 0; right: 0;
+        background: var(--accent); 
+        color: #fff; 
+        padding: 10px 16px; 
+        z-index: 200;
+        justify-content: space-between; 
+        align-items: center; 
+        gap: 10px;
         box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
-        transform: translateY(100%); transition: transform 0.3s ease;
+        transform: translateY(100%); 
+        transition: transform 0.3s ease;
       }
       .sticky-mobile-cta.visible { transform: translateY(0); }
       .sticky-mobile-cta .s-left { display: flex; flex-direction: column; gap: 2px; }
@@ -579,6 +674,15 @@
 
   <header class="hero">
     <div class="container">
+      <div style="display:flex;justify-content:center;margin-bottom:28px;">
+        <div class="cumul-badge" style="display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 6px; background: rgba(0,0,0,.25); border: 2px solid rgba(255,255,255,.6); border-radius: 40px; padding: 10px 16px; font-size: 0.9rem; font-weight: 800; color: #fff; max-width: calc(100% - 32px); box-sizing: border-box;">
+          <span style="white-space:nowrap;">🌐&nbsp;$25</span>
+          <span class="plus" style="opacity: .8; font-size: .9em; margin: 0 2px;">+</span>
+          <span style="white-space:nowrap;">💳&nbsp;$100</span>
+          <span class="plus" style="opacity: .8; font-size: .9em; margin: 0 2px;">=</span>
+          <span class="total-pill" style="background: #fff; color: var(--accent); border-radius: 20px; padding: 4px 14px; font-size: .95rem; font-weight: 900; white-space: nowrap;">🎁&nbsp;$125 max</span>
+        </div>
+      </div>
       <h1>EBOX Referral Code GE911 — up to $125 off in 2026</h1>
       <p>Stack the <strong>referral code GE911</strong> ($25 on your 2nd bill) with the <strong>$100 prepaid Mastercard</strong> when you sign up with EBOX.</p>
 
@@ -664,17 +768,49 @@
           🎁 <strong>Flash Sale promo until June 17, 2026:</strong> new customers who subscribe to the <strong>500 Mbps or 1 Gbps Fibre</strong> plan also receive a <strong>$100 prepaid Mastercard</strong> (digital delivery after 60 days of active service). This promotion is <strong>stackable with code GE911</strong> — total: <strong>up to $125 in savings</strong>. No contract, modem included.
         </div>
 
+        <nav aria-label="Internal navigation" style="font-size: 0.95rem; margin-top: -12px; margin-bottom: 32px; text-align: center; color: var(--muted);">
+          Quick navigation:
+          <a href="#promo-100" style="text-decoration: underline;">Two Advantages</a> ·
+          <a href="#how-to-use" style="text-decoration: underline;">Activation Guide</a> ·
+          <a href="#video-tutorial" style="text-decoration: underline;">Video Tutorial</a> ·
+          <a href="#comparison" style="text-decoration: underline;">EBOX vs Bell vs Videotron</a> ·
+          <a href="#review" style="text-decoration: underline;">My Experience</a> ·
+          <a href="#glossary" style="text-decoration: underline;">Glossary</a> ·
+          <a href="#faq" style="text-decoration: underline;">FAQ</a>
+        </nav>
+
         <p style="font-size:0.8rem; color:var(--muted); margin-bottom:16px;">
           Updated <time datetime="2026-06-09">June 9, 2026</time>
         </p>
 
-        <!-- === $100 PREPAID CARD PROMO SECTION (June 2–17, 2026) === -->
         <section id="promo-100" aria-label="EBOX $100 prepaid card promotion">
           <span class="section-label">🎁 Flash Sale Promo</span>
           <h2>EBOX Flash Sale Promo: $100 Prepaid Mastercard (until June 17, 2026)</h2>
 
-          <div class="ai-summary">
-            New EBOX customers who subscribe to a <strong>500 Mbps or 1 Gbps Fibre</strong> plan until <strong>June 17, 2026</strong> receive a <strong>$100 prepaid Mastercard</strong> digitally, after 60 days of active service. This promotion is <strong>stackable with referral code GE911</strong> — both were confirmed active at checkout on the same order.
+          <div class="cumul-box">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="color:var(--accent);"><polyline points="20 6 9 17 4 12"/></svg>
+              These two perks are separate and 100% stackable
+            </h3>
+            <div class="cumul-row">
+              <div class="cumul-item">
+                <span class="amount">$25</span>
+                <span class="label">Referral Credit<br><strong>Code GE911</strong><br>on your 2nd bill</span>
+              </div>
+              <span class="cumul-sep" aria-hidden="true">+</span>
+              <div class="cumul-item">
+                <span class="amount">$100</span>
+                <span class="label">Flash Sale Promo<br><strong>No code needed</strong><br>500M or 1G Fibre</span>
+              </div>
+              <span class="cumul-sep" aria-hidden="true">=</span>
+              <div class="cumul-item cumul-total">
+                <span class="amount">$125</span>
+                <span class="label">Total Maximum<br>Savings</span>
+              </div>
+            </div>
+            <p class="cumul-note">
+              💡 <strong>Why they are stackable:</strong> The $100 prepaid card triggers automatically based on the eligible Fibre plan you select on screen, leaving the referral field fully available to type in your friend's code <code>GE911</code>.
+            </p>
           </div>
 
           <div class="warning">
@@ -765,8 +901,6 @@
             <strong>Note:</strong> The combination of the $100 promo + code GE911 was confirmed active at checkout (500 Mbps or 1 Gbps Fibre plans, $100 promo displayed + GE911 validated on the same order). Always verify current terms on the official site <a href="https://www.ebox.ca/" target="_blank" rel="noopener noreferrer">ebox.ca</a> before ordering.
           </div>
         </section>
-        <!-- === END $100 PROMO SECTION === -->
-
         <section id="how-to-use" aria-label="Usage instructions">
           <span class="section-label">Quick Tutorial</span>
           <h2>How to use client code GE911</h2>
@@ -867,7 +1001,7 @@
           </div>
         </section>
 
-                <section id="video-tutorial" aria-label="EBOX Video Tutorial">
+        <section id="video-tutorial" aria-label="EBOX Video Tutorial">
           <span class="section-label">Video Guide</span>
           <h2>Video tutorial (In French)</h2>
           <p>Watch this quick screen recording showing exactly where to find and fill the referral field during checkout.</p>
@@ -879,35 +1013,35 @@
             </div>
           </div>
           <script>
-    /* ── YouTube Video Wrapper (FR video on EN page) ── */
-    (function() {
-      var facade = document.getElementById('ebox-video-wrapper');
-      if (!facade) return;
-      
-      function launchVideo() {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube-nocookie.com/embed/dUFRORlBJYA?autoplay=1&playsinline=1';
-        iframe.title = 'EBOX Client Code GE911 Tutorial (French audio)';
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        iframe.setAttribute('allowfullscreen', '');
-        iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;';
-        
-        facade.innerHTML = '';
-        facade.appendChild(iframe);
-        
-        var container = document.querySelector('.video-container');
-        if (container) container.style.cursor = 'default';
-      }
-      
-      facade.addEventListener('click', launchVideo);
-      facade.addEventListener('keydown', function(e) { 
-        if (e.key === 'Enter' || e.key === ' ') { 
-          e.preventDefault(); 
-          launchVideo(); 
-        } 
-      });
-    })();
-  </script>
+            /* ── YouTube Video Wrapper (FR video on EN page) ── */
+            (function() {
+              var facade = document.getElementById('ebox-video-wrapper');
+              if (!facade) return;
+              
+              function launchVideo() {
+                var iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube-nocookie.com/embed/dUFRORlBJYA?autoplay=1&playsinline=1';
+                iframe.title = 'EBOX Client Code GE911 Tutorial (French audio)';
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;';
+                
+                facade.innerHTML = '';
+                facade.appendChild(iframe);
+                
+                var container = document.querySelector('.video-container');
+                if (container) container.style.cursor = 'default';
+              }
+              
+              facade.addEventListener('click', launchVideo);
+              facade.addEventListener('keydown', function(e) { 
+                if (e.key === 'Enter' || e.key === ' ') { 
+                  e.preventDefault(); 
+                  launchVideo(); 
+                } 
+              });
+            })();
+          </script>
           <div class="transparency">
             <strong>Visual Reminder:</strong> Even though the video guide is in French, the interface layout is identical on the English site. Do not use the "Promo Code" box at the top. Enter <code>GE911</code> in the section labeled <strong>"Code — $25 for you and your friends!"</strong>.
           </div>
@@ -1039,6 +1173,45 @@
             <p style="margin-top: 20px; font-size: 0.95rem; border-top: 1px dashed var(--border); padding-top: 15px;">
               💡 Optimizing your household expenses? Also check out my guides and codes for <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a>, your accounts with <a href="https://cashinstinct.ca/tangerine/en/">Tangerine</a>, or your printer ink with <a href="https://cashinstinct.ca/hp-instant-ink/">HP Instant Ink</a>.
             </p>
+          </div>
+        </section>
+
+        <section id="glossary" aria-label="EBOX client number glossary">
+          <span class="section-label">Glossary</span>
+          <h2>Terms associated with EBOX referral model</h2>
+          <p>The EBOX referral ecosystem uses various marketing keywords across the web. Here is a clear summary to help you navigate checkout safely:</p>
+          
+          <div class="seo-table-wrap">
+            <table class="seo-table" aria-label="Glossary of EBOX referral keywords">
+              <thead>
+                <tr>
+                  <th>Searched Keyword</th>
+                  <th>Meaning &amp; Setup Context</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>EBOX Client Number</td>
+                  <td>The official account ID required to activate user rewards. On this platform, the verified code is <strong>GE911</strong>.</td>
+                </tr>
+                <tr>
+                  <td>GE911</td>
+                  <td>The permanent, tested referral code active for 2026. Secures an automatic $25 credit on your second invoice.</td>
+                </tr>
+                <tr>
+                  <td>EBOX Promo Code</td>
+                  <td>A distinct container located at the very top of checkout, reserved exclusively for targeted corporate events. Do not submit GE911 here.</td>
+                </tr>
+                <tr>
+                  <td>EBOX Referral Code / Reference</td>
+                  <td>Common forum slang phrases used by shoppers when looking for an active user identification string.</td>
+                </tr>
+                <tr>
+                  <td>Residential Fibre (FTTH)</td>
+                  <td>Direct optical connection architecture utilized by EBOX (via Bell's physical infrastructure) to unlock 500 Mbps and 1 Gbps performance tiers.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
@@ -1310,7 +1483,7 @@
     </div>
     <div class="s-actions">
       <button class="s-btn" id="sticky-copy-btn" type="button">Copy</button>
-      <a class="s-btn s-open-btn" href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer" aria-label="Open EBOX.ca">Open ↗</a>
+      <a class="s-btn s-open-btn" href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer" aria-label="Open ebox.ca">Open ↗</a>
     </div>
   </div>
 
@@ -1329,28 +1502,49 @@
     (function() {
       var toggle = document.getElementById('theme-toggle');
       if (!toggle) return;
-      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      toggle.setAttribute('aria-pressed', document.documentElement.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
     })();
 
+    /* Video facade click */
+    (function() {
+      var facade = document.getElementById('ebox-video-wrapper');
+      if (!facade) return;
+      function launchVideo() {
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/dUFRORlBJYA?autoplay=1&playsinline=1';
+        iframe.title = 'EBOX Client Code GE911 Tutorial';
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;';
+        facade.innerHTML = '';
+        facade.appendChild(iframe);
+        var container = document.querySelector('.video-container');
+        if (container) container.style.cursor = 'default';
+      }
+      facade.addEventListener('click', launchVideo);
+      facade.addEventListener('keydown', function(e) { 
+        if (e.key === 'Enter' || e.key === ' ') { 
+          e.preventDefault(); 
+          launchVideo(); 
+        } 
+      });
+    })();
+
+    /* Sticky scroll + copy with fallback */
     (function() {
       var cta = document.getElementById('sticky-cta');
       var btn = document.getElementById('sticky-copy-btn');
       if (!cta || !btn) return;
-
-      var shown = false;
- window.addEventListener('scroll', function() {
-  if (window.scrollY > 400) {
-    cta.classList.add('visible');
-  } else if (window.scrollY <= 200) {
-    cta.classList.remove('visible');
-  }
-}, { passive: true });
-
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          cta.classList.add('visible');
+        } else if (window.scrollY <= 200) {
+          cta.classList.remove('visible');
+        }
+      }, { passive: true });
       btn.addEventListener('click', function() {
         var doFeedback = function() {
-          btn.textContent = 'Copied!';
-          btn.classList.add('copied');
+          btn.textContent = 'Copied!'; btn.classList.add('copied');
           setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
         };
         var doFail = function() { btn.textContent = 'GE911'; };
