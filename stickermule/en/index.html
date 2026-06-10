@@ -737,6 +737,60 @@
   text-align: center;
   font-weight: 500;
 }
+    /* ── OPTIMISATION ET ÉQUILIBRE MOBILE (Écrans < 768px) ── */
+@media (max-width: 767px) {
+  
+  /* 1. Ajustement global des tableaux sur mobile */
+  .compare-table {
+    font-size: 0.88rem !important; /* Texte légèrement plus compact pour mobile */
+  }
+
+  .compare-table th, 
+  .compare-table td {
+    padding: 10px 8px !important; /* Réduit le rembourrage pour gagner de l'espace horizontal */
+  }
+
+  /* 2. Fix pour le tableau "Quick Comparison" */
+  /* On force la colonne 1 à ne prendre que la place nécessaire, laissant de l'air aux autres */
+  #coupon-code .compare-table th:nth-child(1),
+  #coupon-code .compare-table td:nth-child(1) {
+    width: 35% !important; 
+  }
+  #coupon-code .compare-table th:nth-child(2),
+  #coupon-code .compare-table td:nth-child(2) {
+    width: 45% !important;
+  }
+  #coupon-code .compare-table th:nth-child(3),
+  #coupon-code .compare-table td:nth-child(3) {
+    width: 20% !important;
+    text-align: center;
+  }
+
+  /* 3. Fix pour le tableau "International Credit" */
+  /* On empêche la colonne "Region" de manger tout l'espace */
+  #global-rates .compare-table th:nth-child(1),
+  #global-rates .compare-table td:nth-child(1) {
+    width: 30% !important;
+    white-space: normal !important; /* Permet un retour à la ligne propre sur mobile (ex: United \n Kingdom) */
+  }
+  #global-rates .compare-table th:nth-child(2),
+  #global-rates .compare-table td:nth-child(2) {
+    width: 20% !important;
+  }
+  #global-rates .compare-table th:nth-child(3),
+  #global-rates .compare-table td:nth-child(3) {
+    width: 25% !important;
+  }
+  #global-rates .compare-table th:nth-child(4),
+  #global-rates .compare-table td:nth-child(4) {
+    width: 25% !important;
+  }
+  
+  /* On retire le blocage du retour à la ligne forcé pour le mobile uniquement */
+  .compare-table td:first-child {
+    white-space: normal !important;
+  }
+}
  
   </style>
 </head>
