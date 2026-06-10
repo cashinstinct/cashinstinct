@@ -513,19 +513,56 @@
     .stat-card .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
 
     .commission-box {
-      background: var(--surface); border: 2px solid var(--accent);
-      border-radius: 12px; padding: 24px; margin-top: 24px; box-shadow: var(--shadow);
-    }
-    .commission-box h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 16px; color: var(--text); }
-    .commission-methods { display: grid; gap: 12px; margin-top: 16px; }
-    @media (min-width: 640px) { .commission-methods { grid-template-columns: repeat(3, 1fr); } }
-    .commission-method {
-      background: var(--surface-soft); border: 1px solid var(--border-soft);
-      border-radius: 8px; padding: 14px 16px;
-    }
-    .commission-method .cm-icon { font-size: 1.4rem; margin-bottom: 6px; }
-    .commission-method strong { display: block; font-size: 0.95rem; color: var(--text); margin-bottom: 4px; }
-    .commission-method span { font-size: 0.85rem; color: var(--text-soft); }
+  background: var(--surface); 
+  border: 2px solid var(--accent);
+  border-radius: 12px; 
+  padding: 24px; 
+  margin-top: 24px; 
+  box-shadow: var(--shadow);
+}
+
+.commission-box h3 { 
+  font-size: 1.25rem; /* Légèrement augmenté pour suivre la nouvelle échelle */
+  font-weight: 800; 
+  margin-bottom: 16px; 
+  color: var(--text); 
+}
+
+.commission-methods { 
+  display: grid; 
+  gap: 12px; 
+  margin-top: 16px; 
+}
+
+@media (min-width: 640px) { 
+  .commission-methods { grid-template-columns: repeat(3, 1fr); } 
+}
+
+.commission-method {
+  background: var(--surface-soft); 
+  border: 1px solid var(--border-soft);
+  border-radius: 8px; 
+  padding: 16px 14px !important; /* Version propre unique */
+  font-size: 1rem !important; 
+  line-height: 1.4 !important; 
+}
+
+.commission-method strong {
+  display: block;
+  font-size: 1.1rem !important; 
+  margin-bottom: 8px !important; 
+}
+
+.commission-method span {
+  font-size: 0.95rem !important;
+  color: var(--text-soft);
+}
+
+.commission-method .cm-icon { 
+  font-size: 1.4rem; 
+  margin-bottom: 6px; 
+  display: block; /* Évite les comportements inline bizarres */
+}
 
     .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px; }
     @media (min-width: 640px) { .products-grid { grid-template-columns: repeat(3, 1fr); } }
