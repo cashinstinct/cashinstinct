@@ -10,17 +10,14 @@
   <meta name="description" content="Cashinstinct regroupe les meilleurs codes de parrainage validés au Québec et au Canada : EBOX Internet, Sticker Mule, HP Instant Ink, Tangerine, Rakuten, Swagbucks et Achieva." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/" />
-
-  <!-- FIX #3 : hreflang complet FR + EN préparé -->
   <link rel="alternate" hreflang="fr-CA"    href="https://cashinstinct.ca/" />
   <link rel="alternate" hreflang="fr"       href="https://cashinstinct.ca/" />
   <link rel="alternate" hreflang="en-CA"    href="https://cashinstinct.ca/en/" />
   <link rel="alternate" hreflang="en"       href="https://cashinstinct.ca/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/" />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- FIX #2 + #24 : og:image et twitter:image ajoutés -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://cashinstinct.ca/" />
   <meta property="og:title"       content="Cashinstinct — Codes de Parrainage Canada 2026" />
@@ -50,7 +47,6 @@
     }
   </script>
 
-  <!-- FIX #1 + #12 : JSON-LD fusionné, dateCreated → datePublished, CollectionPage unique avec mainEntity -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -286,7 +282,6 @@
 }
 
 
-    /* FIX #6 : scroll-margin-top sur [id] au lieu de .section-label */
     [id] { scroll-margin-top: 80px; }
 
     .section-label {
@@ -299,8 +294,6 @@
       display: block;
     }
 
-    /* FIX #9 : .link-card sur div, pas article */
-    /* FIX #23 : height: 100% pour alignement bas */
     .link-card {
       background: var(--surface);
       border: 1px solid var(--line);
@@ -397,7 +390,6 @@
       padding-top: 24px;
     }
     footer p + p { margin-top: 6px; }
-    /* FIX #15 : position:relative et z-index inutiles retirés du footer a */
     footer a { color: var(--blue-contrast); text-decoration: none; font-weight: 600; }
     footer a:hover { text-decoration: underline; }
 
@@ -421,7 +413,6 @@
 </head>
 <body>
 
-  <!-- FIX #14 : skip nav -->
   <a class="skip-nav" href="#main-content">Passer au contenu principal</a>
 
   <div class="wrapper">
@@ -441,11 +432,9 @@
              aria-label="Chaîne YouTube Cash Instinct (ouvre dans un nouvel onglet)">
             ▶️ YouTube
           </a>
-          <!-- Lien vers version EN préparé -->
           <a href="https://cashinstinct.ca/en/" class="lang-btn" aria-label="English version">
             English ↗
           </a>
-          <!-- FIX #7 : aria-label mis à jour dynamiquement via JS -->
           <button id="theme-toggle" class="theme-btn" type="button" aria-pressed="false">🌙 Mode Sombre</button>
         </div>
       </div>
@@ -472,11 +461,9 @@
               </h3>
               <span class="link-tag">Internet résidentiel</span>
             </div>
-            <!-- FIX #17 : phrase complète avec ponctuation -->
             <p class="link-desc">
               Obtenez <strong>25 $ de crédit</strong> sur votre deuxième facture EBOX avec le code client <strong>GE911</strong>.
             </p>
-            <!-- FIX #18 : lien dans link-meta cohérent avec les autres cards -->
             <div class="link-meta">
               Détails, conditions et capture d'écran de la promo sur la page dédiée.
             </div>
@@ -618,29 +605,33 @@
   </div>
 
   <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const root = document.documentElement;
+function setThemeUI(isDark) {
+  themeToggle.textContent = isDark ? '☀️ Mode Clair' : '🌙 Mode Sombre';
+  themeToggle.setAttribute('aria-label', isDark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
+  themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+}
 
-    /* FIX #7 : aria-label + aria-pressed mis à jour dynamiquement */
-    function setThemeUI(isDark) {
-      themeToggle.textContent = isDark ? '☀️ Mode Clair' : '🌙 Mode Sombre';
-      themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-      themeToggle.setAttribute('aria-label', isDark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
-    }
+const themeToggle = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme');
 
-    setThemeUI(root.getAttribute('data-theme') === 'dark');
+if (currentTheme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  setThemeUI(true);
+} else {
+  setThemeUI(false);
+}
 
-    themeToggle.addEventListener('click', () => {
-      const isDark = root.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        root.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-      } else {
-        root.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      }
-      setThemeUI(!isDark);
-    });
+themeToggle.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  }
+  setThemeUI(!isDark);
+});
   </script>
 
 </body>
