@@ -1313,9 +1313,8 @@
     if (footerDate) footerDate.textContent = new Date().toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
   </script>
  
-  <script>
-    /* ── PATCH : legacyCopy + copyText avec fallback Safari ── */
-    function legacyCopy(text) {
+  <script>/
+    window.legacyCopy = function(text) {
       try {
         var ta = document.createElement('textarea');
         ta.value = text;
@@ -1353,19 +1352,33 @@
       button.addEventListener("click", () => copyText(button.getAttribute("data-copy"), button, button.getAttribute("data-target")));
     });
  
-    const themeToggle = document.getElementById("theme-toggle");
-    const currentTheme = localStorage.getItem("theme");
-    function setThemeUI(isDark) {
-      themeToggle.textContent = isDark ? "☀️" : "🌙";
-      themeToggle.setAttribute("aria-label", isDark ? "Activer le mode clair" : "Activer le mode sombre");
-      themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-    }
-    if (currentTheme === "dark") { document.documentElement.setAttribute("data-theme", "dark"); setThemeUI(true); } else { setThemeUI(false); }
-    themeToggle.addEventListener("click", () => {
-      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-      if (isDark) { document.documentElement.removeAttribute("data-theme"); localStorage.setItem("theme", "light"); setThemeUI(false); }
-      else { document.documentElement.setAttribute("data-theme", "dark"); localStorage.setItem("theme", "dark"); setThemeUI(true); }
-    });
+  function setThemeUI(isDark) {
+  themeToggle.textContent = isDark ? '☀️ Mode Clair' : '🌙 Mode Sombre';
+  themeToggle.setAttribute('aria-label', isDark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
+  themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+}
+
+const themeToggle = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  setThemeUI(true);
+} else {
+  setThemeUI(false);
+}
+
+themeToggle.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  }
+  setThemeUI(!isDark);
+});
   </script>
  
   <script>
