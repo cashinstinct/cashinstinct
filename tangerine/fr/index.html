@@ -858,63 +858,6 @@
   <button onclick="calcGain()" style="margin-top:1rem;padding:.75rem 1.5rem;background:var(--accent);color:#fff;border:none;border-radius:6px;font-weight:800;cursor:pointer;width:100%;">Calculer</button>
   <div id="c-result" style="margin-top:1rem;font-size:1.05rem;line-height:1.8;min-height:2.5rem;"></div>
 </div>
-
-<script>
-(function() {
-  var sel = document.getElementById('c-epargne');
-  var wrap = document.getElementById('c-epargne-wrap');
-
-  function toggleEpargne() {
-    wrap.style.display = sel.value === '1' ? 'block' : 'none';
-  }
-
-  // Init immédiat + écoute changements
-  toggleEpargne();
-  sel.addEventListener('change', toggleEpargne);
-})();
-
-function calcGain() {
-  var d = +document.getElementById('c-depot').value;
-  var p = +document.getElementById('c-paie').value;
-  var epargne = document.getElementById('c-epargne').value === '1';
-  var em = epargne ? (+document.getElementById('c-epargne-montant').value || 0) : 0;
-  var errEl = document.getElementById('c-depot-err');
-
-  if (d < 250) {
-    errEl.style.display = 'block';
-    document.getElementById('c-result').innerHTML = '';
-    return;
-  }
-  errEl.style.display = 'none';
-
-  var total = 0, lines = [];
-
-  total += 50;
-  lines.push('✅ Prime Clé Orange — <strong>50$</strong>');
-
-  if (p >= 200) {
-    total += 250;
-    lines.push('✅ Prime paie ≥200$/mois × 2 mois — <strong>250$</strong>');
-  } else if (p > 0) {
-    lines.push('⚠️ Paie ' + p + '$/mois — il faut ≥200$ pendant 2 mois consécutifs (prime non débloquée)');
-  }
-
-  lines.push('ℹ️ Compte chèques : pas d\'intérêts (0%)');
-
-  var interetEpargne = 0;
-  if (epargne && em > 0) {
-    interetEpargne = em * 0.046 * (5 / 12);
-    lines.push('💰 Épargne promo 4,6% sur ' + em + '$ × 5 mois : <strong>' + interetEpargne.toFixed(2) + '$</strong>');
-  }
-
-  var grandTotal = total + interetEpargne;
-  document.getElementById('c-result').innerHTML =
-    lines.join('<br>') +
-    '<hr style="margin:.75rem 0;border-color:var(--border);">' +
-    '<strong style="font-size:1.15rem;">Total estimé ≈ ' + grandTotal.toFixed(2) + '$</strong>' +
-    '<p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">Frais : 0$. Taux promo variable — vérifier les conditions actuelles sur tangerine.ca. Prime paie = dépôt direct salaire/pension/AE/RPC.</p>';
-}
-</script>
  <!-- fin de la calculatrice de gain -->
 
         <h3 style="font-size: 1.15rem; font-weight: 800; margin: 28px 0 16px; color: var(--text);">Obtenir les deux — ordre des étapes</h3>
@@ -1118,11 +1061,7 @@ function calcGain() {
     💡 Vous optimisez vos dépenses ? Consultez aussi mes guides pour <a href="https://cashinstinct.ca/ebox/fr/">EBOX</a> (jusqu'à 125 $ de rabais internet) et <a href="https://cashinstinct.ca/stickermule/fr/">Sticker Mule</a>.
   </p>
 </div>
-
-          <p class="lang-notice">
-          🇬🇧 <strong>This page is also available in English:</strong>
-          <a href="https://cashinstinct.ca/tangerine/en/">Tangerine Orange Key 14130944S1 - $50 (2026) ↗</a>
-        </p>
+  </section>
 
  <section id="glossaire" aria-label="Glossaire Clé Orange Tangerine">
   <span class="section-label">Glossaire</span>
@@ -1222,6 +1161,11 @@ function calcGain() {
         </div>
       </section>
 
+       <p class="lang-notice">
+          🇬🇧 <strong>This page is also available in English:</strong>
+          <a href="https://cashinstinct.ca/tangerine/en/">Tangerine Orange Key 14130944S1 - $50 (2026) ↗</a>
+        </p>
+      
       <!-- === CTA === -->
       <div class="cta-section">
         <h2>Prêt à ouvrir votre&nbsp;compte&nbsp;?</h2>
@@ -1281,6 +1225,64 @@ function calcGain() {
     new Date().toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
 </script>
 
+      <!-- script calculatrice gain -->
+<script>
+(function() {
+  var sel = document.getElementById('c-epargne');
+  var wrap = document.getElementById('c-epargne-wrap');
+
+  function toggleEpargne() {
+    wrap.style.display = sel.value === '1' ? 'block' : 'none';
+  }
+
+  // Init immédiat + écoute changements
+  toggleEpargne();
+  sel.addEventListener('change', toggleEpargne);
+})();
+
+function calcGain() {
+  var d = +document.getElementById('c-depot').value;
+  var p = +document.getElementById('c-paie').value;
+  var epargne = document.getElementById('c-epargne').value === '1';
+  var em = epargne ? (+document.getElementById('c-epargne-montant').value || 0) : 0;
+  var errEl = document.getElementById('c-depot-err');
+
+  if (d < 250) {
+    errEl.style.display = 'block';
+    document.getElementById('c-result').innerHTML = '';
+    return;
+  }
+  errEl.style.display = 'none';
+
+  var total = 0, lines = [];
+
+  total += 50;
+  lines.push('✅ Prime Clé Orange — <strong>50$</strong>');
+
+  if (p >= 200) {
+    total += 250;
+    lines.push('✅ Prime paie ≥200$/mois × 2 mois — <strong>250$</strong>');
+  } else if (p > 0) {
+    lines.push('⚠️ Paie ' + p + '$/mois — il faut ≥200$ pendant 2 mois consécutifs (prime non débloquée)');
+  }
+
+  lines.push('ℹ️ Compte chèques : pas d\'intérêts (0%)');
+
+  var interetEpargne = 0;
+  if (epargne && em > 0) {
+    interetEpargne = em * 0.046 * (5 / 12);
+    lines.push('💰 Épargne promo 4,6% sur ' + em + '$ × 5 mois : <strong>' + interetEpargne.toFixed(2) + '$</strong>');
+  }
+
+  var grandTotal = total + interetEpargne;
+  document.getElementById('c-result').innerHTML =
+    lines.join('<br>') +
+    '<hr style="margin:.75rem 0;border-color:var(--border);">' +
+    '<strong style="font-size:1.15rem;">Total estimé ≈ ' + grandTotal.toFixed(2) + '$</strong>' +
+    '<p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">Frais : 0$. Taux promo variable — vérifier les conditions actuelles sur tangerine.ca. Prime paie = dépôt direct salaire/pension/AE/RPC.</p>';
+}
+</script>
+  
 <script>
   async function copyText(text, button, statusId) {
     const status = document.getElementById(statusId);
@@ -1313,17 +1315,6 @@ function calcGain() {
 </script>
 
 <script>
-  // onerror handler centralisé
-  document.querySelectorAll('img[data-fallback]').forEach(img => {
-    img.addEventListener('error', () => {
-      img.style.display = 'none';
-      var p = document.createElement('p');
-      p.style.cssText = 'color:var(--muted);font-size:0.85rem;text-align:center;padding:12px;';
-      p.textContent = 'Capture d\'écran temporairement indisponible.';
-      img.insertAdjacentElement('afterend', p);
-    });
-  });
-
   // Theme toggle
   const toggle = document.getElementById('theme-toggle');
   function setThemeUI(isDark) {
