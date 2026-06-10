@@ -245,7 +245,7 @@
     }
   </script>
 
-    <style>
+   <style>
     /* 1. VARIABLES & THÈMES */
     :root {
       --bg: #ffffff;
@@ -377,12 +377,12 @@
     
     .field-exact { background: var(--surface-muted); border: 1px solid var(--border-soft); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 14px 20px; margin: 20px 0; font-size: 0.95rem; color: var(--text-soft); }
     
-    /* Système de tableaux génériques */
+    /* Structure des Tableaux */
     .seo-table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
-    .seo-table { width: 100%; border-collapse: collapse; font-size: 1.05rem; background: var(--surface); text-align: left; }
-    .seo-table th, .seo-table td { border-bottom: 1px solid var(--border); padding: 14px 16px; }
-    .seo-table th { background: var(--surface-muted); color: var(--text); font-weight: 700; }
-    .seo-table tr:last-child th, .seo-table tr:last-child td { border-bottom: none; }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 1.05rem; background: var(--surface); text-align: left; }
+    .compare-table th, .compare-table td { border-bottom: 1px solid var(--border); padding: 14px 16px; }
+    .compare-table th { background: var(--surface-muted); color: var(--text); font-weight: 700; }
+    .compare-table tr:last-child th, .compare-table tr:last-child td { border-bottom: none; }
 
     /* Conteneur des 3 colonnes de parrainage */
     .hero-methods { display: flex; flex-direction: column; gap: 20px; margin: 28px auto 0; width: 100%; max-width: 560px; }
@@ -447,22 +447,21 @@
       .nav { gap: 8px; }
       header.hero { padding: 28px 20px 36px; }
       
-      /* Verrouillage strict de la largeur des tableaux pour éviter l'effet étiré */
-      .seo-table { font-size: 0.88rem !important; }
-      .seo-table th, .seo-table td { padding: 10px 8px !important; }
+      .compare-table { font-size: 0.88rem !important; }
+      .compare-table th, .compare-table td { padding: 10px 8px !important; }
       
       /* Fix colonnes "Quick Comparison" sur mobile */
-      #coupon-code .seo-table th:nth-child(1), #coupon-code .seo-table td:nth-child(1) { width: 35% !important; }
-      #coupon-code .seo-table th:nth-child(2), #coupon-code .seo-table td:nth-child(2) { width: 45% !important; }
-      #coupon-code .seo-table th:nth-child(3), #coupon-code .seo-table td:nth-child(3) { width: 20% !important; text-align: center; }
+      #coupon-code .compare-table th:nth-child(1), #coupon-code .compare-table td:nth-child(1) { width: 35% !important; }
+      #coupon-code .compare-table th:nth-child(2), #coupon-code .compare-table td:nth-child(2) { width: 45% !important; }
+      #coupon-code .compare-table th:nth-child(3), #coupon-code .compare-table td:nth-child(3) { width: 20% !important; text-align: center; }
 
       /* Fix colonnes "International Credit" sur mobile */
-      #global-rates .seo-table th:nth-child(1), #global-rates .seo-table td:nth-child(1) { width: 30% !important; white-space: normal !important; }
-      #global-rates .seo-table th:nth-child(2), #global-rates .seo-table td:nth-child(2) { width: 20% !important; }
-      #global-rates .seo-table th:nth-child(3), #global-rates .seo-table td:nth-child(3) { width: 25% !important; }
-      #global-rates .seo-table th:nth-child(4), #global-rates .seo-table td:nth-child(4) { width: 25% !important; }
+      #global-rates .compare-table th:nth-child(1), #global-rates .compare-table td:nth-child(1) { width: 30% !important; white-space: normal !important; }
+      #global-rates .compare-table th:nth-child(2), #global-rates .compare-table td:nth-child(2) { width: 20% !important; }
+      #global-rates .compare-table th:nth-child(3), #global-rates .compare-table td:nth-child(3) { width: 25% !important; }
+      #global-rates .compare-table th:nth-child(4), #global-rates .compare-table td:nth-child(4) { width: 25% !important; }
 
-      .seo-table td:first-child { white-space: normal !important; }
+      .compare-table td:first-child { white-space: normal !important; }
     }
   </style>
   
