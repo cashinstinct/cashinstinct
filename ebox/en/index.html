@@ -1124,7 +1124,7 @@
           </div>
 
           <p style="font-size: 0.85rem; color: var(--muted); margin-top: 8px;">
-            Approximate prices — June 2026. Check each provider's website for your address.
+            Approximate prices — <span id="trust-badge-date"></span></div>. Check each provider's website for your address.
           </p>
 
           <div class="ai-summary" style="margin-top: 28px;">
@@ -1174,7 +1174,7 @@
           <span class="section-label">My Experience</span>
           <h2>My review of EBOX</h2>
           <div class="review-box">
-         <div class="trust-badge">✓ Tested and verified by Cash Instinct — June 5, 2026</div>
+         <div class="trust-badge">✓ Tested and verified by Cash Instinct — <span id="trust-badge-date"></span></div>
          <p>Since switching to EBOX on the 500 Mbps Fibre plan in the Montreal area (QC), my experience has been very positive. Speedtest measurements consistently show 480–510 Mbps download / 490–510 Mbps upload. I've had no billing errors and my uptime monitoring shows fewer than 3 visible disconnections over 6 months.</p>    <p>What I particularly appreciate:</p>
             <ul>
               <li><strong>Fibre network reliability:</strong> Outages have been rare in my experience, strongly supported by the solidity of Bell's infrastructure on which EBOX operates.</li>
@@ -1363,12 +1363,18 @@
 </div>
   </footer>
 
-  <script>
-    const footerDate = document.getElementById("footer-date");
+
+<script>
+   const footerDate = document.getElementById("footer-date");
     if (footerDate) {
       footerDate.textContent = new Date().toLocaleDateString("en-CA", { month: "long", year: "numeric" });
     }
-  </script>
+    const trustDate = document.getElementById('trust-badge-date');
+if (trustDate) {
+  trustDate.textContent = new Date().toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
+}
+</script>
+
 
   <script>
     window.legacyCopy = function(text) {
