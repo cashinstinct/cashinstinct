@@ -758,7 +758,7 @@
        <div class="ai-summary">
         The <strong>Tangerine Orange Key active in 2026</strong> is <strong>14130944S1</strong>. It grants a <strong>$50 welcome bonus</strong> (with a $250 balance maintained for 60 days). Meanwhile, the <strong>$250 payroll deposit bonus</strong> triggers automatically without any extra code — both offers are <strong>stackable for a total of $300</strong>.
         <br><br>
-        📈 <strong>A head start on your savings:</strong> also enjoy a promotional interest rate of <strong>4.60% for up to 5 months</strong> on your Savings, TFSA, and RRSP accounts to kickstart your financial goals.
+        📈 <strong>A head start on your savings:</strong> also enjoy a promotional interest rate of <strong>4.50% for up to 5 months</strong> on your Savings, TFSA, and RRSP accounts to kickstart your financial goals.
         <br><br>
         🔑 The Orange Key must be entered in the <em>"Enter an Orange Key"</em> field during the <strong>very first step</strong> of the enrollment process — not at checkout, and not after the account is created.
       </div>
@@ -809,7 +809,7 @@
       <span id="c-depot-err" style="color:#c0392b;font-size:.85rem;display:none;">⚠️ Minimum $250 deposit required to unlock the Orange Key bonus.</span>
     </label>
 
-    <label>Savings account? (promo rate 4.6% × 5 months)
+    <label>Savings account? (promo rate 4.5% × 5 months)
       <select id="c-epargne"
         style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
         <option value="0">No — chequing account only</option>
@@ -832,6 +832,11 @@
   </div>
   <button onclick="calcGain()" style="margin-top:1rem;padding:.75rem 1.5rem;background:var(--accent);color:#fff;border:none;border-radius:6px;font-weight:800;cursor:pointer;width:100%;">Calculate</button>
   <div id="c-result" style="margin-top:1rem;font-size:1.05rem;line-height:1.8;min-height:2.5rem;"></div>
+  <p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">
+  No fees ($0). Promo rate 4.50% valid for the first 5 months, up to $1,000,000 per account type. 
+  Variable rate subject to change — verify current conditions at tangerine.ca. 
+  Payroll bonus = direct deposit from employer, pension, EI, or CPP.
+</p>
 </div>
  <!-- gain-calculator end -->
         
@@ -886,7 +891,7 @@
               </tr>
               <tr>
                 <td>Savings Interest Rate</td>
-                <td><strong>4.60%</strong></td>
+                <td><strong>4.50%</strong></td>
                 <td>On Savings, TFSA, and RRSP accounts for the first 5 months</td>
               </tr>
             </tbody>
@@ -1241,8 +1246,8 @@ function calcGain() {
 
   var interetEpargne = 0;
   if (epargne && em > 0) {
-    interetEpargne = em * 0.046 * (5 / 12);
-    lines.push('💰 Savings promo 4.6% on $' + em + ' × 5 months: <strong>$' + interetEpargne.toFixed(2) + '</strong>');
+    interetEpargne = em * 0.045 * (5 / 12);
+    lines.push('💰 Savings promo 4.5% on $' + em + ' × 5 months: <strong>$' + interetEpargne.toFixed(2) + '</strong>');
   }
 
   var grandTotal = total + interetEpargne;
