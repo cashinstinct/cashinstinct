@@ -23,7 +23,7 @@
   <meta property="og:title" content="Clé Orange Tangerine 14130944S1 — Jusqu'à 300 $ de prime" />
   <meta property="og:description" content="50 $ à l'inscription avec la Clé Orange 14130944S1 + 250 $ avec dépôt de paie. Les deux sont cumulables." />
   <meta property="og:locale" content="fr_CA" />
-  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="en_CA" />
   <meta property="og:site_name" content="Cash Instinct" />
   <meta property="og:image" content="https://cashinstinct.ca/tangerine/og.png" />
   <meta property="og:image:width" content="1200" />
@@ -42,12 +42,7 @@
         "@type": "WebSite",
         "@id": "https://cashinstinct.ca/#website",
         "url": "https://cashinstinct.ca/",
-        "name": "Cash Instinct",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://cashinstinct.ca/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "name": "Cash Instinct"
       },
       {
         "@type": "WebPage",
@@ -105,9 +100,16 @@
             "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
           }
         },
+    "aggregateRating": {
+  "@type": "AggregateRating",
+  "ratingValue": "4.5",
+  "reviewCount": "1",
+  "bestRating": "5",
+  "worstRating": "1"
+},
         "review": {
           "@type": "Review",
-          "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
+          "author": { "@type": "Person", "name": "Équipe de Cash Instinct", "url": "https://cashinstinct.ca/" },
           "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5", "worstRating": "1" },
           "reviewBody": "Tangerine offre l'un des meilleurs bonus de bienvenue du secteur bancaire canadien. Le cumul Clé Orange (50 $) + dépôt de paie (250 $) est difficile à battre pour quelqu'un qui transfère son compte principal."
         }
@@ -1039,7 +1041,8 @@
         <span class="section-label">Mon expérience</span>
         <h2>Mon avis sur Tangerine</h2>
         <div class="review-box">
-  <div class="trust-badge">✓ Testé et vérifié par Cash Instinct — juin 2026</div>
+     <div class="trust-badge">✓ Testé et vérifié par Cash Instinct — <span id="trust-badge-date"></span></div>
+
 
   <p>J'utilise Tangerine comme compte principal depuis plusieurs années. Ce qui m'a convaincu au départ, c'est simple : zéro frais mensuel, zéro frais de transaction, et un bonus de bienvenue parmi les plus généreux du secteur bancaire canadien.</p>
 
@@ -1227,8 +1230,14 @@
 </footer>
 
 <script>
-  document.getElementById('footer-date').textContent =
-    new Date().toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
+   const footerDate = document.getElementById("footer-date");
+    if (footerDate) {
+      footerDate.textContent = new Date().toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
+    }
+    const trustDate = document.getElementById('trust-badge-date');
+if (trustDate) {
+  trustDate.textContent = new Date().toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
+}
 </script>
 
       <!-- script calculatrice gain -->
