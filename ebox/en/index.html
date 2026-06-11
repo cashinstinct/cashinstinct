@@ -5,10 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#b0312d" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f131a" />
-  <title>EBOX Referral Code GE911: EBOX Client Number + $100 Promo until June 17, 2026</title>
 
-  <meta name="description" content="Looking for an EBOX referral code, EBOX promo code, or EBOX client number? Use GE911 to get a $25 credit on your 2nd bill, plus the $100 promo until June 17, 2026 for eligible customers.">
+  <!-- FIX #6: Title unifié <60 chars, cohérent avec og:title -->
+  <title>EBOX Code GE911 — Up to $125 Off (Referral + Promo)</title>
+
+  <!-- FIX #7: Meta description raccourcie <160 chars -->
+  <meta name="description" content="Use EBOX referral code GE911 for a $25 credit on your 2nd bill. Stack it with the $100 prepaid Mastercard promo until June 17, 2026. No contract, modem included.">
+
   <meta name="robots" content="index, follow" />
+
+  <!-- FIX #8: meta author -->
+  <meta name="author" content="Cash Instinct" />
+
   <link rel="canonical" href="https://cashinstinct.ca/ebox/en/" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 
@@ -20,7 +28,8 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashinstinct.ca/ebox/en/" />
-  <meta property="og:title" content="EBOX Referral Code GE911: up to $125 off until June 17, 2026">
+  <!-- FIX #6: og:title aligné avec le <title> -->
+  <meta property="og:title" content="EBOX Code GE911 — Up to $125 Off (Referral + Promo)">
   <meta property="og:description" content="Get a $25 credit with code GE911 and, until June 17, 2026, a $100 prepaid Mastercard for eligible new EBOX customers.">
   <meta property="og:locale" content="en_CA" />
   <meta property="og:locale:alternate" content="fr_CA" />
@@ -31,7 +40,8 @@
   <meta property="og:image:type" content="image/png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EBOX Referral Code GE911: up to $125 off until June 17, 2026">
+  <!-- FIX #6: twitter:title aligné -->
+  <meta name="twitter:title" content="EBOX Code GE911 — Up to $125 Off (Referral + Promo)">
   <meta name="twitter:description" content="EBOX client code GE911: $25 credit on your 2nd bill, plus a $100 prepaid Mastercard until June 17, 2026 for eligible new customers.">
   <meta name="twitter:image" content="https://cashinstinct.ca/ebox/og.png" />
 
@@ -352,7 +362,7 @@
     .hero-methods a img { transition: opacity 0.15s ease; }
     .hero-methods a:hover img { opacity: 0.9; }
 
-    /* ── BLOC CUMUL (IDÉE CLONÉE DE TANGERINE) ── */
+    /* ── BLOC CUMUL ── */
     .cumul-box {
       background: rgba(176, 49, 45, 0.05);
       border: 2px solid var(--accent);
@@ -397,7 +407,6 @@
       line-height: 1.4;
     }
     
-    /* Style spécifique pour la case Total Vert */
     .cumul-total {
       border: 2px solid #1a7a3c !important;
     }
@@ -471,6 +480,7 @@
     summary::after { content: "+"; font-size: 1.4rem; font-weight: 300; color: var(--accent); flex-shrink: 0; margin-left: 12px; }
     details[open] summary::after { content: "−"; }
     details[open] summary { border-bottom: 1px solid var(--border); }
+    /* FIX #11: faq-body styles for accessibility */
     .faq-body { padding: 16px 20px; font-size: 0.97rem; color: var(--text-soft); background: var(--surface); }
 
     /* Sections de conversion (CTA d'appel à l'action) */
@@ -494,26 +504,28 @@
     .seo-table tr:last-child th, .seo-table tr:last-child td { border-bottom: none; }
     .seo-table td:first-child { font-weight: 600; color: var(--text); }
 
-    /* Intégration Façade Vidéo YouTube (16:9 Responsive) */
+    /* FIX #10: Video container — accessible au clavier */
     .video-container { position: relative; width: 100%; max-width: 760px; margin: 25px auto; cursor: pointer; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); transition: transform 0.2s ease, box-shadow 0.2s ease; }
     #ebox-video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; background-color: #000; }
+    /* FIX #10: focus visible sur le wrapper vidéo */
+    #ebox-video-wrapper:focus { outline: 3px solid #fff; outline-offset: 2px; }
+    #ebox-video-wrapper:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
     .video-thumbnail { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: filter 0.3s ease; }
     .play-button-yt { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 48px; background-color: #FF0000; border-radius: 14px; z-index: 2; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); transition: background-color 0.3s ease, transform 0.3s ease; }
     .play-button-yt::before { content: ''; display: block; width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 18px; border-color: transparent transparent transparent #FFFFFF; margin-left: 4px; }
     
-    /* Animations visuelles de la vidéo au survol */
     .video-container:hover { transform: scale(1.01); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
     .video-container:hover .video-thumbnail { filter: brightness(0.85); }
     .video-container:hover .play-button-yt { background-color: #CC0000; transform: translate(-50%, -50%) scale(1.08); }
     .video-container:active { transform: scale(0.99); }
 
-    /* Configuration des cartes du Hero par défaut (Mobile) */
+    /* Hero cards */
     .hero-methods { display: flex; flex-direction: column; gap: 20px; margin: 28px auto 0; width: 100%; max-width: 560px; }
     .hero-methods > div { width: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
-    .hero-methods p { color: var(--text-soft) !important; font-size: 0.85rem; margin-top: 8px; text-align: center; }
-    [data-theme="dark"] .hero-methods p { color: var(--text-soft) !important; }
+    /* FIX #16: suppression du !important sur la couleur dark — géré via variable CSS */
+    .hero-methods p { color: var(--text-soft); font-size: 0.85rem; margin-top: 8px; text-align: center; }
 
-    /* Liste d'étapes (Steps) par défaut (Mobile) */
+    /* Liste d'étapes */
     .steps { list-style: none; counter-reset: steps; }
     .steps li { counter-increment: steps; display: flex; gap: 18px; margin-bottom: 28px; }
     .steps li::before {
@@ -526,7 +538,7 @@
     .steps li h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; color: var(--text); }
     .steps li p { margin: 0; color: var(--text-soft); }
 
-    /* 5. GRILLE PREMIUM CENTRALISÉE DESKTOP (Écrans >= 768px) */
+    /* 5. GRILLE PREMIUM CENTRALISÉE DESKTOP */
     @media (min-width: 768px) {
       .prose { max-width: 800px; margin: 0 auto; }
       
@@ -542,7 +554,6 @@
       }
       section p { margin-bottom: 18px; color: var(--text-soft); }
 
-      /* Ajustement du tableau de bord (Hero Cards) */
       .hero-methods {
         flex-direction: row;
         max-width: 1000px;
@@ -560,7 +571,6 @@
       .input-copy-group { max-width: 320px; margin-left: auto; margin-right: auto; width: 100%; }
       .hero-methods img, .hero-methods a:has(img) { margin-top: auto !important; }
 
-      /* Alignement sur l'axe central verrouillé à 760px */
       .warning, .field-exact, .ai-summary, .seo-table-wrap, .review-box, .faq, .video-container, .transparency {
         max-width: 760px;
         margin-left: auto;
@@ -568,13 +578,12 @@
         width: 100%;
       }
 
-      /* Refonte du système d'étapes (1-2-3-4) */
       .steps { max-width: 760px; margin: 24px auto 0; }
       .steps li::before { min-width: 44px; height: 44px; font-size: 1.15rem; }
       .steps li h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; color: var(--text); }
     }
 
-    /* 6. RESPONSIVE COMPACT & INTERFACE MOBILE (Écrans < 768px) */
+    /* 6. RESPONSIVE COMPACT & INTERFACE MOBILE */
     @media (max-width: 767px) {
       .nav a { font-size: 0.82rem; }
       .nav { gap: 8px; }
@@ -589,16 +598,19 @@
       .facts { grid-template-columns: 1fr; }
       body { padding-bottom: 80px; }
       
-      /* Ajustement responsive pour la boîte de cumul */
+      /* FIX #13: cumul-sep visible en mobile avec texte inline entre items */
       .cumul-row { 
-        grid-template-columns: 1fr !important; 
-        gap: 12px !important; 
+        grid-template-columns: 1fr;
+        gap: 0;
       }
-      .cumul-sep { 
-        display: none !important; 
+      .cumul-sep {
+        display: block;
+        font-size: 1.2rem;
+        padding: 4px 0;
+        text-align: center;
       }
-      
-      /* Barre basse persistante mobile (doit rester dans la media query) */
+
+      /* Barre basse persistante mobile */
       .sticky-mobile-cta {
         display: flex; 
         position: fixed; 
@@ -624,6 +636,33 @@
       .sticky-mobile-cta .s-link { background: var(--text); color: var(--surface); border-radius: 6px; padding: 8px 12px; font-weight: 800; font-size: 0.88rem; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
     }
 
+    /* FIX #14: sticky CTA étendu jusqu'à 1024px */
+    @media (min-width: 641px) and (max-width: 1024px) {
+      body { padding-bottom: 80px; }
+      .sticky-mobile-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        background: var(--accent);
+        color: #fff;
+        padding: 10px 20px;
+        z-index: 200;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+      .sticky-mobile-cta.visible { transform: translateY(0); }
+      .sticky-mobile-cta .s-left { display: flex; flex-direction: row; align-items: center; gap: 10px; }
+      .sticky-mobile-cta .s-code { font-family: "Courier New", Courier, monospace; font-weight: 900; font-size: 1.1rem; letter-spacing: 0.06em; }
+      .sticky-mobile-cta .s-label { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.8); text-transform: uppercase; }
+      .sticky-mobile-cta .s-actions { display: flex; gap: 10px; align-items: center; }
+      .sticky-mobile-cta .s-btn { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.4); color: #fff; font-weight: 800; font-size: 0.9rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; }
+      .sticky-mobile-cta .s-btn.copied { background: #fff; color: var(--accent); }
+    }
+
     @media (max-width: 480px) {
       .input-copy-group { flex-direction: column; background: transparent !important; border: none !important; gap: 8px; padding: 0 !important; }
       .input-copy-group input[type="text"] { background: var(--surface-soft) !important; border: 1px solid var(--border) !important; border-radius: 8px !important; width: 100% !important; }
@@ -638,14 +677,12 @@
     href="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_EN.webp"
     type="image/webp" fetchpriority="high" />
 
+  <!-- Applique le thème avant le render pour éviter le flash -->
   <script>
     try {
-      let theme = localStorage.getItem('theme');
-      if (!theme) {
-        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      document.documentElement.setAttribute('data-theme', theme);
-    } catch (e) {
+      var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    } catch(e) {
       document.documentElement.setAttribute('data-theme', 'light');
     }
   </script>
@@ -697,50 +734,53 @@
 
         <div class="hero-methods">
 
-              <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 20px;">
-              Step 1 — Copy the EBOX client code
-            </p>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 20px;">
+                Step 1 — Copy the EBOX client code
+              </p>
 
-            <div class="input-copy-group" style="display: flex; flex-direction: column; background: transparent; border: none; gap: 10px; margin-bottom: 12px; padding: 0;">
-              <input type="text" value="GE911" id="promo-code" readonly aria-readonly="true" aria-label="EBOX client number" style="width: 100%; border: 1px solid var(--border); background: var(--surface-soft); padding: 12px 16px; font-family: monospace; font-size: 1.2rem; font-weight: 700; color: var(--text); text-align: center; border-radius: 8px;" />
-              <button class="copy-btn" data-copy="GE911" data-target="copyStatusHero" type="button"
-                style="width: 100%; background: var(--text); color: var(--surface); border: none; border-radius: 8px; font-weight: 700; padding: 12px 20px; cursor: pointer; font-size: 1rem; white-space: nowrap; -webkit-appearance: none;">Copy code</button>
+              <div class="input-copy-group" style="display: flex; flex-direction: column; background: transparent; border: none; gap: 10px; margin-bottom: 12px; padding: 0;">
+                <input type="text" value="GE911" id="promo-code" readonly aria-readonly="true" aria-label="EBOX client number" style="width: 100%; border: 1px solid var(--border); background: var(--surface-soft); padding: 12px 16px; font-family: monospace; font-size: 1.2rem; font-weight: 700; color: var(--text); text-align: center; border-radius: 8px;" />
+                <button class="copy-btn" data-copy="GE911" data-target="copyStatusHero" type="button"
+                  style="width: 100%; background: var(--text); color: var(--surface); border: none; border-radius: 8px; font-weight: 700; padding: 12px 20px; cursor: pointer; font-size: 1rem; white-space: nowrap; -webkit-appearance: none;">Copy code</button>
+              </div>
+              <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
             </div>
-            <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
-          </div>
 
-         <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px; color: var(--text-soft);">
-  Save the code to paste it in the "Code — $25 for you and your friends!" section.
-</p>
-        </div>
-
-        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 20px;">
-              Step 2 — Paste in the EBOX sign-up form
+            <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px;">
+              Save the code to paste it in the "Code — $25 for you and your friends!" section.
             </p>
-
-            <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer" style="display: block;">
-              <picture>
-                <source srcset="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_EN.webp" type="image/webp">
-                <img src="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_EN.png"
-                     alt="EBOX sign-up form showing referral client code GE911 validated by the system"
-                     loading="eager"
-                     fetchpriority="high"
-                     data-fallback="true"
-                     style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto; display: block;" />
-              </picture>
-            </a>
           </div>
 
-          <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px; color: var(--text-soft);">
-  <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 700;">Go to the official EBOX website</a> and enter it in the field shown above.
-</p>
-        </div>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 20px;">
+                Step 2 — Paste in the EBOX sign-up form
+              </p>
 
-      </div>
+              <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer" style="display: block;">
+                <picture>
+                  <source srcset="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_EN.webp" type="image/webp">
+                  <!-- FIX #12: ajout de width/height pour éviter le CLS -->
+                  <img src="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_EN.png"
+                       alt="EBOX sign-up form showing referral client code GE911 validated by the system"
+                       width="707"
+                       height="480"
+                       loading="eager"
+                       fetchpriority="high"
+                       data-fallback="true"
+                       style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto; display: block;" />
+                </picture>
+              </a>
+            </div>
+
+            <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px;">
+              <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 700;">Go to the official EBOX website</a> and enter it in the field shown above.
+            </p>
+          </div>
+
+        </div>
     </div>
   </header>
 
@@ -748,21 +788,21 @@
     <div class="container">
       <div class="prose">
 
-             <nav class="breadcrumb" aria-label="Breadcrumb">
-  <ol style="list-style: none; display: flex; flex-wrap: wrap; padding: 0; margin: 0;">
-    <li style="display: flex; align-items: center;">
-      <a href="https://cashinstinct.ca/en/">Home</a>
-      <span style="margin: 0 8px; color: var(--muted);" aria-hidden="true">&gt;</span>
-    </li>
-    <li style="display: flex; align-items: center;">
-      <a href="https://cashinstinct.ca/en/#internet">Internet</a>
-      <span style="margin: 0 8px; color: var(--muted);" aria-hidden="true">&gt;</span>
-    </li>
-    <li style="display: flex; align-items: center; color: var(--text-soft);" aria-current="page">
-      EBOX
-    </li>
-  </ol>
-  </nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol style="list-style: none; display: flex; flex-wrap: wrap; padding: 0; margin: 0;">
+            <li style="display: flex; align-items: center;">
+              <a href="https://cashinstinct.ca/en/">Home</a>
+              <span style="margin: 0 8px; color: var(--muted);" aria-hidden="true">&gt;</span>
+            </li>
+            <li style="display: flex; align-items: center;">
+              <a href="https://cashinstinct.ca/en/#internet">Internet</a>
+              <span style="margin: 0 8px; color: var(--muted);" aria-hidden="true">&gt;</span>
+            </li>
+            <li style="display: flex; align-items: center; color: var(--text-soft);" aria-current="page">
+              EBOX
+            </li>
+          </ol>
+        </nav>
 
         <div class="post-promo-notice" id="post-promo-block">
           ℹ️ <strong>The $100 promotion has now ended.</strong> Referral code <strong>GE911</strong> is still active and always gives <strong>$25 credit</strong> on your 2nd EBOX bill. No expiry — it's a permanent program.
@@ -804,6 +844,7 @@
                 <span class="amount">$25</span>
                 <span class="label">Referral Credit<br><strong>Code GE911</strong><br>on your 2nd bill</span>
               </div>
+              <!-- FIX #13: cumul-sep visible en mobile (display:block dans la media query) -->
               <span class="cumul-sep" aria-hidden="true">+</span>
               <div class="cumul-item">
                 <span class="amount">$100</span>
@@ -908,6 +949,7 @@
             <strong>Note:</strong> The combination of the $100 promo + code GE911 was confirmed active at checkout (500 Mbps or 1 Gbps Fibre plans, $100 promo displayed + GE911 validated on the same order). Always verify current terms on the official site <a href="https://www.ebox.ca/" target="_blank" rel="noopener noreferrer">ebox.ca</a> before ordering.
           </div>
         </section>
+
         <section id="how-to-use" aria-label="Usage instructions">
           <span class="section-label">Quick Tutorial</span>
           <h2>How to use client code GE911</h2>
@@ -968,18 +1010,18 @@
             The "Promo Code" box at the top of the form is reserved for EBOX marketing campaigns. GE911 will not work there — no credit will be applied.
           </div>
 
-  <div>
-  <picture>
-    <source srcset="https://cashinstinct.ca/ebox/images/case-ebox-ge911_EN.webp" type="image/webp">
-    <img src="https://cashinstinct.ca/ebox/images/case-ebox-ge911_EN.png"
-         alt="Where to input EBOX referral code GE911"
-         width="707"
-         height="961"
-         loading="eager"
-         data-fallback="true"
-         style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
-  </picture>
-</div>
+          <div>
+            <picture>
+              <source srcset="https://cashinstinct.ca/ebox/images/case-ebox-ge911_EN.webp" type="image/webp">
+              <img src="https://cashinstinct.ca/ebox/images/case-ebox-ge911_EN.png"
+                   alt="Where to input EBOX referral code GE911"
+                   width="707"
+                   height="961"
+                   loading="eager"
+                   data-fallback="true"
+                   style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
+            </picture>
+          </div>
           
           <div class="seo-table-wrap" style="margin-top: 8px;">
             <table class="seo-table" aria-label="Why the EBOX code is not working — common causes">
@@ -1014,13 +1056,16 @@
           <p>Watch this quick screen recording showing exactly where to find and fill the referral field during checkout.</p>
           
           <div class="video-container">
-            <div id="ebox-video-wrapper">
-              <img src="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_EN.webp" alt="EBOX Referral Code GE911 Tutorial" class="video-thumbnail">
-              <div class="play-button-yt"></div>
+            <!-- FIX #10: tabindex="0" + role="button" pour accessibilité clavier -->
+            <div id="ebox-video-wrapper"
+                 tabindex="0"
+                 role="button"
+                 aria-label="Play EBOX GE911 tutorial video">
+              <img src="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_EN.webp" alt="EBOX Referral Code GE911 Tutorial — click to play" class="video-thumbnail">
+              <div class="play-button-yt" aria-hidden="true"></div>
             </div>
           </div>
           <script>
-            /* ── YouTube Video Wrapper (FR video on EN page) ── */
             (function() {
               var facade = document.getElementById('ebox-video-wrapper');
               if (!facade) return;
@@ -1035,6 +1080,8 @@
                 
                 facade.innerHTML = '';
                 facade.appendChild(iframe);
+                facade.removeAttribute('tabindex');
+                facade.removeAttribute('role');
                 
                 var container = document.querySelector('.video-container');
                 if (container) container.style.cursor = 'default';
@@ -1168,8 +1215,9 @@
           <span class="section-label">My Experience</span>
           <h2>My review of EBOX</h2>
           <div class="review-box">
-         <div class="trust-badge">✓ Tested and verified by Cash Instinct — <span id="trust-badge-date"></span></div>
-         <p>Since switching to EBOX on the 500 Mbps Fibre plan in the Montreal area (QC), my experience has been very positive. Speedtest measurements consistently show 480–510 Mbps download / 490–510 Mbps upload. I've had no billing errors and my uptime monitoring shows fewer than 3 visible disconnections over 6 months.</p>    <p>What I particularly appreciate:</p>
+            <div class="trust-badge">✓ Tested and verified by Cash Instinct — <span id="trust-badge-date"></span></div>
+            <p>Since switching to EBOX on the 500 Mbps Fibre plan in the Montreal area (QC), my experience has been very positive. Speedtest measurements consistently show 480–510 Mbps download / 490–510 Mbps upload. I've had no billing errors and my uptime monitoring shows fewer than 3 visible disconnections over 6 months.</p>
+            <p>What I particularly appreciate:</p>
             <ul>
               <li><strong>Fibre network reliability:</strong> Outages have been rare in my experience, strongly supported by the solidity of Bell's infrastructure on which EBOX operates.</li>
               <li><strong>No contract:</strong> Full freedom to cancel without penalty — a concrete advantage over Bell or Videotron.</li>
@@ -1178,7 +1226,7 @@
             </ul>
             <p>If you're looking for a simple, reliable Internet provider that's easy to recommend to people around you, EBOX is an option I find genuinely solid based on my own experience.</p>
             <p style="margin-top: 20px; font-size: 0.95rem; border-top: 1px dashed var(--border); padding-top: 15px;">
-              💡 Optimizing your household expenses? Also check out my guides and codes for <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a>, your accounts with <a href="https://cashinstinct.ca/tangerine/en/">Tangerine</a>, or your printer ink with <a href="https://cashinstinct.ca/hp-instant-ink/">HP Instant Ink</a>.
+              💡 Optimizing your household expenses? Also check out my guides and codes for <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a>, your accounts with <a href="https://cashinstinct.ca/tangerine/en/">Tangerine</a>, or your printer ink with <a href="https://cashinstinct.ca/hp-instant-ink/en/">HP Instant Ink</a>.
             </p>
           </div>
         </section>
@@ -1222,68 +1270,69 @@
           </div>
         </section>
 
+        <!-- FIX #11: chaque faq-body a un id lié au summary via aria-labelledby -->
         <section id="faq" aria-label="Frequently asked questions">
           <span class="section-label">FAQ</span>
           <h2>Frequently Asked Questions</h2>
           <div class="faq">
             <details>
-              <summary>What is the EBOX client code to use in 2026?</summary>
-              <div class="faq-body">
+              <summary id="faq-q1">What is the EBOX client code to use in 2026?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q1">
                 <p>The client number to use is <strong>GE911</strong>. It gives a $25 credit on the 2nd bill for any eligible new subscriber.</p>
               </div>
             </details>
             <details>
-              <summary>Does EBOX client code GE911 still work?</summary>
-              <div class="faq-body">
+              <summary id="faq-q2">Does EBOX client code GE911 still work?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q2">
                 <p>Yes, code GE911 is 100% valid and tested in 2026. This page is regularly updated to guarantee it automatically applies the $25 discount available in the EBOX system.</p>
               </div>
             </details>
             <details>
-              <summary>Why is EBOX code GE911 not working?</summary>
-              <div class="faq-body">
+              <summary id="faq-q3">Why is EBOX code GE911 not working?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q3">
                 <p>Cause #1 in 90% of cases: the code was entered in the <strong>"Promo Code"</strong> box instead of the <strong>"Code — $25 for you and your friends!"</strong> field. These two fields are distinct — only the second one activates the referral credit.</p>
                 <p>Other common causes: code entered after the order was completed (EBOX does not credit retroactively), existing account at the same address, or a typo in GE911.</p>
               </div>
             </details>
             <details>
-              <summary>Is there an EBOX promotion until June 17, 2026?</summary>
-              <div class="faq-body">
+              <summary id="faq-q4">Is there an EBOX promotion until June 17, 2026?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q4">
                 <p>Yes. From June 2 to <strong>June 17, 2026</strong>, new customers who subscribe to the <strong>500 Mbps or 1 Gbps Fibre</strong> plan receive a <strong>$100 prepaid Mastercard</strong> digitally, after 60 days of active service. This promotion is stackable with referral code <code>GE911</code>.</p>
               </div>
             </details>
             <details>
-              <summary>Can you stack the $100 promo and referral code GE911?</summary>
-              <div class="faq-body">
+              <summary id="faq-q5">Can you stack the $100 promo and referral code GE911?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q5">
                 <p>Yes, both benefits are stackable. The $100 prepaid card applies automatically on 500 Mbps or 1 Gbps Fibre plans, and code <code>GE911</code> gives <strong>$25 credit</strong> on the 2nd bill. Both were confirmed active at checkout on the same order.</p>
               </div>
             </details>
             <details>
-              <summary>Where exactly do I enter EBOX client code GE911?</summary>
-              <div class="faq-body">
+              <summary id="faq-q6">Where exactly do I enter EBOX client code GE911?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q6">
                 <p>Enter GE911 in the <strong>"Enter the client number of the friend who referred you"</strong> field displayed during sign-up — not in the "Promo Code" box. In the dropdown "How did you hear about EBOX?", you can select <strong>"Friend or family"</strong> before entering the code.</p>
               </div>
             </details>
             <details>
-              <summary>Is EBOX contract-free?</summary>
-              <div class="faq-body">
+              <summary id="faq-q7">Is EBOX contract-free?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q7">
                 <p>Yes. EBOX does not require any minimum commitment. You can cancel at any time, without penalty. This is a concrete advantage over Bell or Videotron, which may require 12 to 24-month commitments.</p>
               </div>
             </details>
             <details>
-              <summary>Can I add the EBOX referral code after signing up?</summary>
-              <div class="faq-body">
+              <summary id="faq-q8">Can I add the EBOX referral code after signing up?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q8">
                 <p>Generally, no. It must be added at the time of the initial order for the system to validate the referral. If the field was not available during your sign-up, you can try contacting EBOX customer service at 1-844-323-EBOX (3269).</p>
               </div>
             </details>
             <details>
-              <summary>Was the EBOX discount $50 before?</summary>
-              <div class="faq-body">
+              <summary id="faq-q9">Was the EBOX discount $50 before?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q9">
                 <p>Yes, EBOX temporarily offered a $50 promotional credit. Since <strong>June 2026</strong>, the standard referral discount has returned to $25 with code GE911. Unlike old forum posts, this page gives you the exact amount currently in effect.</p>
               </div>
             </details>
             <details>
-              <summary>What is the difference between an EBOX promo code and this client code?</summary>
-              <div class="faq-body">
+              <summary id="faq-q10">What is the difference between an EBOX promo code and this client code?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q10">
                 <p>These are two separate fields during sign-up. Here's how not to confuse them:</p>
                 <div class="seo-table-wrap">
                   <table class="seo-table">
@@ -1343,34 +1392,38 @@
   <footer>
     <div class="container">
       <p>This site is not officially affiliated with EBOX. Trademarks belong to their respective owners.</p>
-      <p style="margin-top:6px;">EBOX client code: <code>GE911</code> — Updated: <time datetime="2026-06-11">June 2026</time></p>
+      <!-- FIX #1: utilise l'id footer-date que le JS attend -->
+      <p style="margin-top:6px;">EBOX client code: <code>GE911</code> — Updated: <span id="footer-date"></span></p>
     </div>
 
-     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
-  <a href="https://cashinstinct.ca/en/">Home</a><span aria-hidden="true"> · </span>
-  <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a><span aria-hidden="true"> · </span>
-  <a href="https://cashinstinct.ca/hp-instant-ink/en/">HP Instant Ink</a><span aria-hidden="true"> · </span>
-  <a href="https://cashinstinct.ca/tangerine/en/">Tangerine Bank</a><span aria-hidden="true"> · </span>
-  <a href="https://cashinstinct.ca/achieva/en/">Achieva Financial</a><span aria-hidden="true"> · </span>
-  <a href="https://cashinstinct.ca/rakuten-canada/en/">Rakuten Canada</a><span aria-hidden="true"> · </span>
-  <a href="https://cashinstinct.ca/swagbucks/en/">Swagbucks</a>
-</div>
+    <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
+      <a href="https://cashinstinct.ca/en/">Home</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/hp-instant-ink/en/">HP Instant Ink</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/tangerine/en/">Tangerine Bank</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/achieva/en/">Achieva Financial</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/rakuten-canada/en/">Rakuten Canada</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/swagbucks/en/">Swagbucks</a>
+    </div>
   </footer>
 
-
-<script>
-   const footerDate = document.getElementById("footer-date");
+  <!-- SCRIPTS -->
+  <script>
+    /* ── FIX #1: footer-date dynamique ── */
+    var footerDate = document.getElementById('footer-date');
     if (footerDate) {
-      footerDate.textContent = new Date().toLocaleDateString("en-CA", { month: "long", year: "numeric" });
+      footerDate.textContent = new Date().toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
     }
-    const trustDate = document.getElementById('trust-badge-date');
-if (trustDate) {
-  trustDate.textContent = new Date().toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
-}
-</script>
 
+    /* ── trust badge date ── */
+    var trustDate = document.getElementById('trust-badge-date');
+    if (trustDate) {
+      trustDate.textContent = new Date().toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
+    }
+  </script>
 
   <script>
+    /* ── Copie dans le presse-papier ── */
     window.legacyCopy = function(text) {
       try {
         var ta = document.createElement('textarea');
@@ -1382,26 +1435,25 @@ if (trustDate) {
         document.body.removeChild(ta);
         return ok;
       } catch(e) { return false; }
-    }
+    };
+
     function copyText(text, button, statusId) {
-      const status = document.getElementById(statusId);
-      const originalText = button.textContent;
-      const doFeedback = () => {
-        button.textContent = "Copied!";
-        button.classList.add("copied");
-        button.style.background = "";
-        button.style.color = "";
-        if (status) status.textContent = "";
-        setTimeout(() => {
+      var status = document.getElementById(statusId);
+      var originalText = button.textContent;
+      var doFeedback = function() {
+        button.textContent = 'Copied!';
+        button.classList.add('copied');
+        if (status) status.textContent = '';
+        setTimeout(function() {
           button.textContent = originalText;
-          button.classList.remove("copied");
+          button.classList.remove('copied');
         }, 2000);
       };
-      const doFail = () => {
-        if (status) status.textContent = "Unable to copy automatically.";
+      var doFail = function() {
+        if (status) status.textContent = 'Unable to copy automatically.';
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(doFeedback).catch(() => {
+        navigator.clipboard.writeText(text).then(doFeedback).catch(function() {
           legacyCopy(text) ? doFeedback() : doFail();
         });
       } else {
@@ -1409,121 +1461,99 @@ if (trustDate) {
       }
     }
 
-    document.querySelectorAll("[data-copy]").forEach((button) => {
-      button.addEventListener("click", () => {
-        copyText(button.getAttribute("data-copy"), button, button.getAttribute("data-target"));
+    document.querySelectorAll('[data-copy]').forEach(function(button) {
+      button.addEventListener('click', function() {
+        copyText(button.getAttribute('data-copy'), button, button.getAttribute('data-target'));
       });
-    });
-
-    function setThemeUI(isDark) {
-  themeToggle.textContent = isDark ? "☀️" : "🌙";
-  themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-  themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-}
-
-const themeToggle = document.getElementById("theme-toggle");
-const currentTheme = localStorage.getItem("theme");
-
-if (currentTheme === "dark") {
-  document.documentElement.setAttribute("data-theme", "dark");
-  setThemeUI(true);
-} else {
-  setThemeUI(false);
-}
-
-    themeToggle.addEventListener("click", () => {
-      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-
-      if (isDark) {
-        document.documentElement.removeAttribute("data-theme");
-        localStorage.setItem("theme", "light");
-        setThemeUI(false);
-      } else {
-        document.documentElement.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-        setThemeUI(true);
-      }
     });
   </script>
 
   <script>
+    /* ── FIX #2 & #3: thème — bloc unique, sans duplication ni IIFE aria-pressed redondante ── */
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      function isDark() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+      }
+
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️' : '🌙';
+        toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+
+      /* Initialise l'UI selon le thème déjà appliqué par le <head> */
+      applyUI(isDark());
+
+      toggle.addEventListener('click', function() {
+        var dark = isDark();
+        if (dark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        applyUI(!dark);
+      });
+    })();
+  </script>
+
+  <script>
+    /* ── Countdown promo ── */
     (function() {
       var PROMO_END = new Date('2026-06-17T23:59:59-04:00');
-
-      var cdDays  = document.getElementById('cd-days');
-      var cdHours = document.getElementById('cd-hours');
-      var cdMins  = document.getElementById('cd-mins');
-      var cdSecs  = document.getElementById('cd-secs');
-      var cdBar   = document.getElementById('countdown-bar');
+      var cdDays    = document.getElementById('cd-days');
+      var cdHours   = document.getElementById('cd-hours');
+      var cdMins    = document.getElementById('cd-mins');
+      var cdSecs    = document.getElementById('cd-secs');
+      var cdBar     = document.getElementById('countdown-bar');
       var heroExpired    = document.getElementById('hero-expired-notice');
       var postPromoBlock = document.getElementById('post-promo-block');
 
       function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
       function tick() {
-        var now  = new Date();
-        var diff = PROMO_END - now;
-
+        var diff = PROMO_END - new Date();
         if (diff <= 0) {
           if (cdBar)          cdBar.style.display = 'none';
           if (heroExpired)    heroExpired.style.display = 'block';
           if (postPromoBlock) postPromoBlock.style.display = 'block';
           return;
         }
-
-        var totalSecs = Math.floor(diff / 1000);
-        var days  = Math.floor(totalSecs / 86400);
-        var hours = Math.floor((totalSecs % 86400) / 3600);
-        var mins  = Math.floor((totalSecs % 3600) / 60);
-        var secs  = totalSecs % 60;
-
-        if (cdDays)  cdDays.textContent  = pad(days);
-        if (cdHours) cdHours.textContent = pad(hours);
-        if (cdMins)  cdMins.textContent  = pad(mins);
-        if (cdSecs)  cdSecs.textContent  = pad(secs);
-
+        var s = Math.floor(diff / 1000);
+        if (cdDays)  cdDays.textContent  = pad(Math.floor(s / 86400));
+        if (cdHours) cdHours.textContent = pad(Math.floor((s % 86400) / 3600));
+        if (cdMins)  cdMins.textContent  = pad(Math.floor((s % 3600) / 60));
+        if (cdSecs)  cdSecs.textContent  = pad(s % 60);
         setTimeout(tick, 1000);
       }
-
       tick();
     })();
   </script>
 
-  <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="EBOX code to copy">
-    <div class="s-left">
-      <span class="s-code">GE911</span>
-      <span class="s-label">EBOX referral code</span>
-    </div>
-    <div class="s-actions">
-      <button class="s-btn" id="sticky-copy-btn" type="button">Copy</button>
-      <a class="s-btn s-open-btn" href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer" aria-label="Open ebox.ca">Open ↗</a>
-    </div>
-  </div>
-
+  <!-- Fallback images -->
   <script>
     document.querySelectorAll('img[data-fallback]').forEach(function(img) {
       img.addEventListener('error', function() {
         img.style.display = 'none';
         var fallback = document.createElement('p');
-        fallback.className = 'img-fallback';
         fallback.style.cssText = 'color:var(--muted);font-size:0.85rem;text-align:center;padding:12px;';
         fallback.textContent = 'Screenshot temporarily unavailable.';
         img.insertAdjacentElement('afterend', fallback);
       });
     });
+  </script>
 
-    (function() {
-      var toggle = document.getElementById('theme-toggle');
-      if (!toggle) return;
-      toggle.setAttribute('aria-pressed', document.documentElement.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
-    })();
-
-
-    /* Sticky scroll + copy with fallback */
+  <!-- Sticky CTA scroll -->
+  <script>
     (function() {
       var cta = document.getElementById('sticky-cta');
       var btn = document.getElementById('sticky-copy-btn');
       if (!cta || !btn) return;
+
       window.addEventListener('scroll', function() {
         if (window.scrollY > 400) {
           cta.classList.add('visible');
@@ -1531,9 +1561,11 @@ if (currentTheme === "dark") {
           cta.classList.remove('visible');
         }
       }, { passive: true });
+
       btn.addEventListener('click', function() {
         var doFeedback = function() {
-          btn.textContent = 'Copied!'; btn.classList.add('copied');
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
           setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
         };
         var doFail = function() { btn.textContent = 'GE911'; };
@@ -1547,6 +1579,17 @@ if (currentTheme === "dark") {
       });
     })();
   </script>
+
+  <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="EBOX code to copy">
+    <div class="s-left">
+      <span class="s-code">GE911</span>
+      <span class="s-label">EBOX referral code</span>
+    </div>
+    <div class="s-actions">
+      <button class="s-btn" id="sticky-copy-btn" type="button">Copy</button>
+      <a class="s-btn s-open-btn" href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer" aria-label="Open ebox.ca">Open ↗</a>
+    </div>
+  </div>
 
 </body>
 </html>
