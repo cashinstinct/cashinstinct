@@ -53,7 +53,7 @@
         "inLanguage": "en-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-05-01",
-        "dateModified": "2026-06-10",
+        "dateModified": "2026-06-11",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
         "publisher": {
           "@type": "Organization",
@@ -109,48 +109,103 @@
 },
         "review": {
           "@type": "Review",
-          "author": { "@type": "person", "name": "Cash Instinct Team", "url": "https://cashinstinct.ca/" },
+          "author": { "@type": "Person", "name": "Cash Instinct Team", "url": "https://cashinstinct.ca/" },
           "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5", "worstRating": "1" },
           "reviewBody": "Tangerine offers one of the best welcome bonuses in Canadian banking. The combination of the Orange Key ($50) + direct deposit ($250) is hard to beat for anyone switching their primary account."
         }
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is Orange Key 14130944S1 stackable with the $250 bonus?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Orange Key ($50) and the direct deposit bonus ($250) are two separate, stackable programs. Code 14130944S1 is entered at sign-up; the $250 bonus then activates automatically once the direct deposit conditions are met." }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does it take to receive the $50 Tangerine bonus?",
-            "acceptedAnswer": { "@type": "Answer", "text": "After maintaining a $250 balance for 60 consecutive days, Tangerine credits the $50 bonus within the following 30 days. Estimated total timeline: approximately 3 months after sign-up." }
-          },
-          {
-            "@type": "Question",
-            "name": "Where do I enter the Tangerine Orange Key?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Orange Key 14130944S1 must be entered at the first step of the Tangerine sign-up form, in the 'Enter an Orange Key' field. It cannot be added after the account has been created." }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I get the $250 Tangerine bonus?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No code required. After opening your account with the Orange Key, redirect your payroll direct deposit to your Tangerine Chequing Account (minimum $200/month). Maintain two consecutive deposits within 60 days of opening. The $250 bonus is paid out automatically the following month." }
-          },
-          {
-            "@type": "Question",
-            "name": "Is Tangerine available in Quebec?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tangerine offers all of its services in Quebec, with a fully bilingual mobile app and customer service available in French." }
-          },
-          {
-            "@type": "Question",
-            "name": "What are the Tangerine banking codes for direct deposit?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Institution number: 614. Transit number: 00152. Your personal account number is available in the Tangerine mobile app." }
-          }
-        ]
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Orange Key 14130944S1 stackable with the $250 bonus?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Both bonuses are independent and stackable. The Orange Key is an acquisition bonus activated by code 14130944S1 at sign-up. The $250 bonus is a banking behaviour bonus activated by direct deposit — no code is required for that one." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where exactly do I enter the Orange Key?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In the \"Enter an Orange Key\" field at the first step of the Tangerine sign-up form — before choosing your account type, before entering personal information, before payment. It is the very first screen of the sign-up process." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to receive the $50 bonus?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Approximately 3 months in total: 30 days to make the initial deposit, 60 days to maintain the $250 balance, then 30 days for Tangerine to credit the bonus. The payout is automatic — no action required." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I activate the $250 direct deposit bonus?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No code required. After opening your account with the Orange Key, redirect your payroll direct deposit to Tangerine (institution 614, transit 00152, minimum $200/month). The first deposit must arrive within 60 days of opening. After two consecutive deposits, Tangerine pays out the $250 automatically the following month." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Tangerine available in Quebec?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tangerine offers its full banking services in Quebec. The mobile app, website, and customer service are fully available in French." }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the Tangerine banking codes for direct deposit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Institution number: 614. Transit number: 00152. Your personal account number is accessible in the Tangerine mobile app, under your account details." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a Tangerine Orange Key?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The Orange Key is Tangerine's official term for its referral code. Entering 14130944S1 in the designated field activates the $50 welcome bonus. It is the equivalent of a promo code at other banks, but specific to Tangerine's referral system." }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to use Tangerine Orange Key 14130944S1",
+      "description": "Steps to activate Orange Key 14130944S1 and receive the $50 welcome bonus at Tangerine sign-up.",
+      "totalTime": "PT10M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Open your account with Orange Key 14130944S1",
+          "text": "At the first step of the form, enter 14130944S1 in the \"Enter an Orange Key\" field. Choose a no-fee chequing account.",
+          "url": "https://cashinstinct.ca/tangerine/en/#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Deposit $250 within the first 30 days",
+          "text": "Transfer $250 and keep that balance for 60 consecutive days. Tangerine credits the $50 within the following 30 days.",
+          "url": "https://cashinstinct.ca/tangerine/en/#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Redirect your payroll deposit",
+          "text": "Provide your employer with the Tangerine banking details: institution 614, transit 00152. The first deposit must arrive within 60 days of account opening.",
+          "url": "https://cashinstinct.ca/tangerine/en/#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Maintain two consecutive payroll deposits",
+          "text": "After two months of direct deposits, Tangerine automatically pays out the $250 the following month.",
+          "url": "https://cashinstinct.ca/tangerine/en/#step-4"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Tangerine Orange Key 14130944S1 Tutorial",
+      "description": "Video showing where to enter the Tangerine Orange Key during sign-up to receive the $50 bonus.",
+      "thumbnailUrl": "https://img.youtube.com/vi/ZjDvFV42qbM/maxresdefault.jpg",
+      "uploadDate": "2026-05-27T00:00:00+00:00",
+      "contentUrl": "https://www.youtube.com/shorts/ZjDvFV42qbM",
+      "embedUrl": "https://www.youtube.com/embed/ZjDvFV42qbM",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cash Instinct",
+        "logo": { "@type": "ImageObject", "url": "https://cashinstinct.ca/logo.png" }
       }
-    ]
-  }
+    }
+  ]
+}
   </script>
 
  <style>
@@ -771,7 +826,7 @@
       </div>
 
       <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;">
-        Updated <time datetime="2026-06-10">June 10, 2026</time>
+        Updated <time datetime="2026-06-11">June 11, 2026</time>
       </p>
 
       <!-- === STACKING SECTION === -->
@@ -850,7 +905,7 @@
         <h3 style="font-size: 1.15rem; font-weight: 800; margin: 28px 0 16px; color: var(--text);">Getting both — step-by-step order</h3>
 
         <ol class="steps">
-          <li id="step-1">>
+          <li id="step-1">
             <div>
               <h3>Open your account with Orange Key <code>14130944S1</code></h3>
               <p>At the first step of the form, enter <code>14130944S1</code> in the <strong>"Enter an Orange Key"</strong> field. Choose a no-fee chequing account.</p>
@@ -1190,7 +1245,7 @@
 <footer>
   <div class="container">
     <p>This site is not officially affiliated with Tangerine or Scotiabank. All trademarks belong to their respective owners.</p>
-    <p style="margin-top:6px;">Tangerine Orange Key: <code>14130944S1</code> — Updated: <time id="footer-date" datetime="2026-06-10">June 2026</time></p>
+    <p style="margin-top:6px;">Tangerine Orange Key: <code>14130944S1</code> — Updated: <time id="footer-date" datetime="2026-06-11">June 2026</time></p>
   </div>
 <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
   <a href="https://cashinstinct.ca/en/">Home</a><span aria-hidden="true"> · </span>
