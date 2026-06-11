@@ -119,7 +119,14 @@
             "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
           }
         },
-        "review": {
+        "aggregateRating": {
+  "@type": "AggregateRating",
+  "ratingValue": "4.6",
+  "reviewCount": "1",
+  "bestRating": "5",
+  "worstRating": "1"
+},
+    "review": {
           "@type": "Review",
           "author": { "@type": "Person", "name": "l'équipe Cash Instinct", "url": "https://cashinstinct.ca/" },
           "reviewRating": { "@type": "Rating", "ratingValue": "4.6", "bestRating": "5", "worstRating": "1" },
@@ -128,20 +135,75 @@
         }
       },
       {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Comment obtenir le mois gratuit avec le code SVdn7 ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Vous devez inscrire la clé de parrainage SVdn7 à l'étape de facturation sur le formulaire d'ouverture de compte sur le site d'HP, juste avant de confirmer la formule retenue." }
-          },
-          {
-            "@type": "Question",
-            "name": "Le service est-il disponible pour les imprimantes laser ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Oui, HP Instant Ink propose des plans spécifiques pour les cartouches de toner dédiées aux imprimantes laser." }
-          }
-        ]
-      },
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment obtenir le mois gratuit avec le code SVdn7 ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Vous devez inscrire la clé de parrainage SVdn7 à l'étape de facturation sur le formulaire d'ouverture de compte sur le site d'HP, juste avant de confirmer la formule retenue. Le système créditera un solde compensatoire équivalent à un cycle de facturation complet." }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce que le code fonctionne si j'ai déjà des mois gratuits inclus à l'achat ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui — c'est le principe du cumul. Si votre imprimante neuve vient avec 6 mois gratuits d'HP+, saisir le code SVdn7 lors de l'enregistrement ajoutera un 7e mois gratuit à la suite des autres." }
+    },
+    {
+      "@type": "Question",
+      "name": "Le service est-il disponible pour les imprimantes laser ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui, HP Instant Ink propose des plans spécifiques pour les cartouches de toner dédiées aux imprimantes laser. L'envoi automatisé s'effectue avant que les réservoirs ne soient vides." }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on annuler l'abonnement facilement ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui, le service est sans engagement de durée. Vous pouvez modifier votre forfait à la hausse ou à la baisse en tout temps depuis votre profil, ou suspendre l'abonnement si vous n'avez plus besoin d'encre automatisée." }
+    },
+    {
+      "@type": "Question",
+      "name": "Les cartouches d'encre fournies nous appartiennent-elles ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Non. Les cartouches Instant Ink restent la propriété exclusive d'HP. Si vous résiliez, ces cartouches cessent de fonctionner électroniquement et doivent être retournées à HP via l'enveloppe de recyclage fournie." }
+    },
+    {
+      "@type": "Question",
+      "name": "Une connexion Wi-Fi permanente est-elle obligatoire ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Votre imprimante doit rester connectée à Internet via votre réseau Wi-Fi résidentiel pour que les serveurs HP puissent suivre le niveau d'encre et déclencher les envois automatiques." }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment fonctionne le report des pages non utilisées ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Les pages non utilisées sont automatiquement reportées sur le mois suivant. Le solde maximal reportable dépend de votre forfait, généralement jusqu'à deux ou trois fois votre quota mensuel." }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'arrive-t-il en cas de dépassement du forfait mensuel ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "HP applique de légers frais pour un bloc de pages supplémentaires (par exemple, 1,25 $ pour un bloc de 10 à 50 pages selon le forfait). Tout se gère automatiquement sur la facture suivante." }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce que l'impression de photos couleur consomme plus de forfait ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Non. Une page est une page. Qu'il s'agisse d'une ligne de texte ou d'une photo haute définition, cela compte exactement pour 1 page sur votre forfait." }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on modifier son forfait à la hausse ou à la baisse en cours de route ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Vous pouvez changer de forfait à tout moment depuis votre tableau de bord. Un changement à la hausse peut s'appliquer immédiatement, tandis qu'un changement à la baisse prend effet à la prochaine période de facturation." }
+    },
+    {
+      "@type": "Question",
+      "name": "Le code de parrainage SVdn7 fonctionne-t-il pour HP Instant Ink en France et en Europe ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le lien et le code SVdn7 sont universels. HP adapte automatiquement la valeur du mois gratuit et la devise locale selon la région géographique détectée lors de l'inscription." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la différence entre un code promotionnel HP et un code de parrainage ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Les codes promos HP sont des mots-clés temporaires liés à des événements marketing. Le code de parrainage SVdn7 est un identifiant permanent qui applique une offre d'essai garantie d'un mois gratuit sans risque d'expiration." }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce que le code promo TaxTime26 de Bureau en Gros est encore valide ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Non. Le code TaxTime26 est officiellement expiré depuis le 31 mars 2026. Utilisez plutôt le code de parrainage permanent SVdn7 pour éviter une erreur de validation." }
+    }
+  ]
+},
     {
   "@type": "HowTo",
   "name": "Comment activer le code de parrainage SVdn7 sur HP Instant Ink",
@@ -483,6 +545,7 @@
   <a href="#plans" style="text-decoration: underline;">Tarification</a> ·
   <a href="#features" style="text-decoration: underline;">En bref</a> ·
   <a href="#review" style="text-decoration: underline;">Avis personnel</a> ·
+  <a href="#glossaire" style="text-decoration: underline;">Glossaire</a> ·
   <a href="#faq" style="text-decoration: underline;">FAQ</a>
 </nav>
 
@@ -571,6 +634,54 @@
           </div>
         </section>
 
+        <section id="glossaire" aria-label="Glossaire HP Instant Ink">
+  <span class="section-label">Glossaire</span>
+  <h2>HP Instant Ink — Termes clés & Glossaire SEO</h2>
+  <p>Les termes liés à HP Instant Ink varient selon les sources. Voici un récapitulatif pour vous aider à trouver le bon champ lors de votre inscription.</p>
+
+  <div style="overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border);">
+    <table class="compare-table" aria-label="Glossaire HP Instant Ink">
+      <thead>
+        <tr><th>Terme / Intention de recherche</th><th>Signification & Application</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Code de parrainage / Clé de parrainage</td>
+          <td>Terme officiel HP pour un code émis par un membre. Le code actif à saisir est <strong>SVdn7</strong>. Aussi recherché comme "code ami HP Instant Ink" ou "code invitation HP encre".</td>
+        </tr>
+        <tr>
+          <td>SVdn7</td>
+          <td>Code de parrainage actif en 2026 — débloque 1 mois gratuit sur n'importe quel forfait HP Instant Ink lors de l'inscription.</td>
+        </tr>
+        <tr>
+          <td>Code Promo HP Instant Ink</td>
+          <td>Codes marketing temporaires liés aux campagnes HP (ex. TaxTime26). Ces codes expirent après quelques semaines. SVdn7 est un code de parrainage permanent — les deux peuvent apparaître sur le même formulaire d'inscription.</td>
+        </tr>
+        <tr>
+          <td>Cumul (Stacking)</td>
+          <td>Appliquer SVdn7 en plus des mois gratuits déjà inclus avec une nouvelle imprimante (ex. offre HP+). Le mois de parrainage s'ajoute à la suite de la période d'essai existante.</td>
+        </tr>
+        <tr>
+          <td>HP Instant Ink vs HP+</td>
+          <td>HP Instant Ink est le service d'abonnement d'encre (livraison automatique de cartouches). HP+ est un écosystème d'impression (impression cloud, garantie étendue). Ce sont deux programmes distincts — une imprimante peut inclure les deux.</td>
+        </tr>
+        <tr>
+          <td>Report de pages</td>
+          <td>Pages non utilisées de votre quota mensuel qui sont automatiquement reportées au cycle suivant. Le maximum reportable est généralement 2 à 3 fois votre quota mensuel selon le forfait.</td>
+        </tr>
+        <tr>
+          <td>Propriété des cartouches</td>
+          <td>Les cartouches HP Instant Ink restent la propriété d'HP. Elles cessent de fonctionner si l'abonnement est résilié et doivent être retournées via l'enveloppe de recyclage prépayée fournie.</td>
+        </tr>
+        <tr>
+          <td>try.hpinstantink.com/SVdn7</td>
+          <td>URL de parrainage direct qui applique automatiquement le code SVdn7 — aucune saisie manuelle nécessaire à l'étape de facturation.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+        
         <section id="faq">
           <span class="section-label">FAQ</span>
           <h2>Questions Fréquentes — HP Instant Ink Canada</h2>
