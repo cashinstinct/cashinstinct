@@ -783,7 +783,7 @@
        <div class="ai-summary">
         La <strong>Clé Orange Tangerine active en 2026</strong> est <strong>14130944S1</strong>. Elle donne <strong>50&nbsp;$ à l'inscription</strong> (dépôt de 250&nbsp;$ maintenu 60 jours). En parallèle, la <strong>prime de dépôt de paie de 250&nbsp;$</strong> s'active sans code additionnel — les deux programmes sont <strong>cumulables pour un total de 300&nbsp;$</strong>.
         <br><br>
-        📈 <strong>Un coup de pouce pour l'épargne :</strong> profitez également d'un taux d'intérêt promotionnel de <strong>4,60&nbsp;% pendant un maximum de 5&nbsp;mois</strong> sur vos comptes d'Épargne courants, CÉLI et RÉR pour commencer du bon pied.
+        📈 <strong>Un coup de pouce pour l'épargne :</strong> profitez également d'un taux d'intérêt promotionnel de <strong>4,50&nbsp;% pendant un maximum de 5&nbsp;mois</strong> sur vos comptes d'Épargne courants, CÉLI et RÉR pour commencer du bon pied.
         <br><br>
         🔑 La Clé Orange doit être saisie dans le champ <em>« Entrez une Clé Orange »</em> à la <strong>première étape</strong> du formulaire d'inscription — pas à l'étape paiement, pas après la création du compte.
       </div>
@@ -834,7 +834,7 @@
       <span id="c-depot-err" style="color:#c0392b;font-size:.85rem;display:none;">⚠️ Dépôt minimum de 250$ requis pour la prime Clé Orange.</span>
     </label>
 
-    <label>Compte épargne ? (taux promo 4,6% × 5 mois)
+    <label>Compte épargne ? (taux promo 4,5% × 5 mois)
       <select id="c-epargne"
         style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
         <option value="0">Non — compte chèques uniquement</option>
@@ -857,6 +857,12 @@
   </div>
   <button onclick="calcGain()" style="margin-top:1rem;padding:.75rem 1.5rem;background:var(--accent);color:#fff;border:none;border-radius:6px;font-weight:800;cursor:pointer;width:100%;">Calculer</button>
   <div id="c-result" style="margin-top:1rem;font-size:1.05rem;line-height:1.8;min-height:2.5rem;"></div>
+  <p style="font-size:.8rem;color:var(--muted);margin:.5rem 0 0;">
+  Frais : 0$. Taux promo 4,50% valide pour les 5 premiers mois, jusqu'à 1 000 000$ par type de compte. 
+  Taux variable — taux promo sujet à changement : vérifier les conditions actuelles sur tangerine.ca. 
+  Prime paie = dépôt direct salaire/pension/AE/RPC.
+</p>
+
 </div>
  <!-- fin de la calculatrice de gain -->
 
@@ -911,7 +917,7 @@
               </tr>
               <tr>
                 <td>Taux d'intérêt Épargne</td>
-                <td><strong>4,60&nbsp;%</strong></td>
+                <td><strong>4,50&nbsp;%</strong></td>
                 <td>Sur les comptes Épargne, CÉLI et RÉR pendant les 5&nbsp;premiers mois</td>
               </tr>
             </tbody>
@@ -1270,8 +1276,8 @@ function calcGain() {
 
   var interetEpargne = 0;
   if (epargne && em > 0) {
-    interetEpargne = em * 0.046 * (5 / 12);
-    lines.push('💰 Épargne promo 4,6% sur ' + em + '$ × 5 mois : <strong>' + interetEpargne.toFixed(2) + '$</strong>');
+    interetEpargne = em * 0.045 * (5 / 12);
+    lines.push('💰 Épargne promo 4,5% sur ' + em + '$ × 5 mois : <strong>' + interetEpargne.toFixed(2) + '$</strong>');
   }
 
   var grandTotal = total + interetEpargne;
