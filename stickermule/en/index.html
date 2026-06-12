@@ -564,7 +564,7 @@
     .faq-body ul { margin: 8px 0 0 20px; }
     .faq-body ul li { margin-bottom: 6px; }
 
-    /* YouTube lazy embed */
+     /* YouTube lazy embed unifié EN/FR */
     .yt-lite {
       background-color: #000; position: relative; display: block;
       max-width: 315px; margin: 24px auto; border-radius: 12px;
@@ -573,14 +573,15 @@
     }
     .yt-lite::before {
       content: ''; display: block; position: absolute; inset: 0;
-      background-image: url('https://img.youtube.com/vi/SAaPDiqfLJk/maxresdefault.jpg');
       background-size: cover; background-position: center;
+      opacity: 0.7;
     }
     .yt-lite .play-btn {
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       width: 68px; height: 48px; background: #ff0000;
       border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      z-index: 2;
     }
     .yt-lite .play-btn::after {
       content: ''; border-style: solid;
@@ -588,7 +589,7 @@
       border-color: transparent transparent transparent #fff;
       margin-left: 4px;
     }
-    .yt-lite iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .yt-lite iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; z-index: 3; }
 
     /* Sticky CTA mobile */
     .sticky-mobile-cta { display: none; }
@@ -732,11 +733,15 @@
                 style="width: 100%; background: var(--text); color: var(--surface); border: none; border-radius: 8px; font-weight: 700; padding: 12px 20px; cursor: pointer; font-size: 1rem; white-space: nowrap; -webkit-appearance: none;">Copy</button>
             </div>
             <span id="copyStatusHero" role="status" aria-atomic="true" aria-live="polite" style="display: block; min-height: 1.2em; font-size: 0.85rem; color: var(--accent); text-align: center; margin-top: 4px;"></span>
-            
-            <img src="https://cashinstinct.ca/stickermule/en/images/Stickermule-proof-Referral-code-CASHINSTINCT.png"
-                 alt="Sticker Mule signup form showing active CASHINSTINCT referral code with green checkmark"
-                 width="280" height="358"
-                 style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; max-width: 280px; height: auto; margin: 0 auto;" />
+
+                        <picture>
+              <source srcset="images/Stickermule-proof-Referral-code-CASHINSTINCT.webp" type="image/webp">
+              <img src="images/Stickermule-proof-Referral-code-CASHINSTINCT.png"
+                   alt="Sticker Mule signup form showing active CASHINSTINCT referral code with green checkmark"
+                   width="280" height="358"
+                   loading="lazy"
+                   style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
+            </picture>
           </div>
           <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px; color: var(--text-soft);">
             The registration field showing code CASHINSTINCT successfully verified with a green checkmark.
@@ -817,7 +822,7 @@
           </div>
           <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-top: 24px; box-shadow: var(--shadow);">
             <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 14px; color: var(--text);">Quick Comparison</h3>
-            <table class="compare-table">
+            <table class="compare-table" aria-label="Comparing expired promo codes and Stickermule referral">
               <thead>
                 <tr><th>Method</th><th>Where to Enter</th><th>Does It Work?</th></tr>
               </thead>
@@ -935,7 +940,7 @@
           <h2>International Credit by Region (USD, CAD, EUR, GBP)</h2>
           <p>Sticker Mule operates worldwide with free shipping on stickers. The referral credit converts to your local currency at checkout. Official fixed amounts:</p>
           <div class="table-container">
-            <table class="compare-table">
+            <table class="compare-table" aria-label="International Referral Credit and Minimum Purchase by Region and Currency">
               <thead>
                 <tr><th>Region</th><th>Currency</th><th>Official Credit</th><th>Min. Cart</th></tr>
               </thead>
@@ -1342,28 +1347,29 @@
   </footer>
 
   <script>
-    // Footer + trust badge date dynamique
-    const now = new Date();
-    const footerDate = document.getElementById("footer-date");
+      // ── DATES DYNAMIQUES + JSON-LD dateModified AUTOMATIQUE ──
+  (function() {
+    var now = new Date();
+    var footerDate = document.getElementById("footer-date");
     if (footerDate) {
-      footerDate.textContent = now.toLocaleDateString("en-CA", { month: "long", year: "numeric" });
+      footerDate.textContent = now.toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
-    const trustDate = document.getElementById("trust-date");
-    if (trustDate) {
-      trustDate.textContent = now.toLocaleDateString("en-CA", { month: "long", day: "numeric", year: "numeric" });
-      trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-    }
     try {
-  const today = now.toISOString().slice(0, 10);
-  const ldJson = document.querySelector('script[type="application/ld+json"]');
-  if (ldJson) {
-    const data = JSON.parse(ldJson.textContent);
-    const webpage = data["@graph"].find(n => n["@type"] === "WebPage");
-    if (webpage) webpage.dateModified = today;
-    ldJson.textContent = JSON.stringify(data);
-  }
-} catch(e) {}
+      var today = now.toISOString().slice(0, 10);
+      var ldJson = document.querySelector('script[type="application/ld+json"]');
+      if (ldJson) {
+        var data = JSON.parse(ldJson.textContent);
+        if (data && data["@graph"]) {
+          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
+          if (webpage) {
+            webpage.dateModified = today;
+            ldJson.textContent = JSON.stringify(data);
+          }
+        }
+      }
+    } catch(e) {}
+  })();
   </script>
 
   <script>
