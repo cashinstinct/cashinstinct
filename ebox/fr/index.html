@@ -648,6 +648,7 @@
           </div>
           <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px;">
             Sauvegardez l'identifiant pour le coller dans la section « Code — 25 $ pour toi et tes amis ! ».
+            GE911 est un code client permanent. Valide, peu importe votre date d'installation.
           </p>
         </div>
 
@@ -669,6 +670,9 @@
                      data-fallback="true"
                      style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto; display: block;" />
               </picture>
+                  <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px;">
+            Lorsque vous collerez GE911, le système affichera instantanément une coche verte de confirmation. Vous ne pouvez pas vous tromper.
+          </p>
             </a>
           </div>
           <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px;">
@@ -1021,7 +1025,7 @@
                   <th>Critère</th>
                   <th>EBOX + code client GE911</th>
                   <th>Bell Fibe</th>
-                  <th>Vidéotron</th>
+                  <th>Videotron</th>
                 </tr>
               </thead>
               <tbody>
@@ -1051,7 +1055,7 @@
                 </tr>
                 <tr>
                   <td>Rabais nouveau client</td>
-                  <td><strong>25 $ (GE911) + 100 $ carte prépayée<br><small style="font-weight:400;font-size:0.82rem;">jusqu'au 17 juin 2026</small></strong></td>
+                 <td><strong>25 $ <button class="copy-btn-micro" data-copy="GE911" style="padding:2px 6px; font-size:0.75rem;">Copier GE911</button> + 100 $ carte prépayée</strong></td>
                   <td>Aucun équivalent</td>
                   <td>Promo variable</td>
                 </tr>
@@ -1339,7 +1343,7 @@
       var status = document.getElementById(statusId);
       var originalText = button.textContent;
       var doFeedback = function() {
-        button.textContent = 'Copié !';
+        button.textContent = 'Copié ! À coller à la section Informations personnelles';
         button.classList.add('copied');
         if (status) status.textContent = '';
         setTimeout(function() {
