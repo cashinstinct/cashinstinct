@@ -1443,12 +1443,12 @@
         return ok;
       } catch(e) { return false; }
     };
-
+    
     function copyText(text, button, statusId) {
       var status = document.getElementById(statusId);
       var originalText = button.textContent;
       var doFeedback = function() {
-        button.textContent = 'Copied!;
+        button.textContent = 'Copied!';
         button.classList.add('copied');
         if (status) status.textContent = '';
         setTimeout(function() {
