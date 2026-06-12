@@ -1196,13 +1196,17 @@
   </script>
 
   <script>
-  // ── DATES DYNAMIQUES + JSON-LD dateModified AUTOMATIQUE en fr-CA format date en francais ──
+  // ── DATES DYNAMIQUES + JSON-LD dateModified AUTOMATIQUE en fr-CA ──
   (function() {
     var now = new Date();
     var footerDate = document.getElementById("footer-date");
     if (footerDate) {
       footerDate.textContent = now.toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+    }
+    var trustDate = document.getElementById('trust-badge-date');
+    if (trustDate) {
+      trustDate.textContent = now.toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
     }
     try {
       var today = now.toISOString().slice(0, 10);
@@ -1219,7 +1223,7 @@
       }
     } catch(e) {}
   })();
-  </script>
+</script>
 
   <script>
     // ── STICKY CTA ──
