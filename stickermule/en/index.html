@@ -1345,14 +1345,18 @@
 
   </footer>
 
-  <script>
-      // ── DATES DYNAMIQUES + JSON-LD dateModified AUTOMATIQUE en en-CA ──
+<script>
+  // ── DATES DYNAMIQUES + JSON-LD dateModified AUTOMATIQUE en en-CA ──
   (function() {
     var now = new Date();
     var footerDate = document.getElementById("footer-date");
     if (footerDate) {
       footerDate.textContent = now.toLocaleDateString("en-CA", { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+    }
+    var trustDate = document.getElementById('trust-badge-date');
+    if (trustDate) {
+      trustDate.textContent = now.toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
     }
     try {
       var today = now.toISOString().slice(0, 10);
@@ -1369,7 +1373,7 @@
       }
     } catch(e) {}
   })();
-  </script>
+</script>
 
   <script>
     // Geo-routing étendu — CA, UK, AU, MX, FR, global
