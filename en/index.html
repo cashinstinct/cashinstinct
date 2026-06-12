@@ -630,7 +630,8 @@
   })();
 </script>
 
-<script>
+// Script de theme light-dark texte en anglais
+  <script>
   (function() {
     var toggle = document.getElementById('theme-toggle');
     if (!toggle) return;
@@ -640,7 +641,7 @@
     }
 
     function applyUI(dark) {
-      toggle.textContent = dark ? '☀️ Mode Clair' : '🌙 Mode Sombre';
+      toggle.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
       toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
       toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
     }
