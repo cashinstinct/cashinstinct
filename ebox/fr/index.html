@@ -216,24 +216,24 @@
           }
         ]
       },
-      {
-        "@type": "VideoObject",
-        "@id": "https://cashinstinct.ca/ebox/fr/#video",
-        "name": "Tutoriel Code Client EBOX GE911",
-        "description": "Enregistrement d'écran montrant exactement où entrer le code de parrainage GE911 lors du checkout EBOX.",
-        "thumbnailUrl": "https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_FR.webp",
-        "uploadDate": "2026-06-01T00:00:00+00:00",
-        "contentUrl": "https://www.youtube.com/watch?v=dUFRORlBJYA",
-        "embedUrl": "https://www.youtube.com/embed/dUFRORlBJYA",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Cash Instinct",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://cashinstinct.ca/logo.png"
-          }
+          {
+      "@type": "VideoObject",
+      "@id": "https://cashinstinct.ca/ebox/fr/#video",
+      "name": "Tutoriel Code Client EBOX GE911",
+      "description": "Enregistrement d'écran montrant exactement où entrer le code de parrainage GE911 lors du checkout EBOX.",
+      "thumbnailUrl": "https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_FR.webp",
+      "uploadDate": "2026-06-01T00:00:00+00:00",
+      "contentUrl": "https://www.youtube.com/watch?v=dUFRORlBJYA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/dUFRORlBJYA",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cash Instinct",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cashinstinct.ca/logo.png"
         }
       }
+    }
     ]
   }
   </script>
@@ -1433,7 +1433,6 @@
   </footer>
 
   <!-- SCRIPTS -->
-  <script>
    <script>
   // ── DATES DYNAMIQUES + JSON-LD dateModified AUTOMATIQUE en fr-CA ──
   (function() {
@@ -1445,7 +1444,7 @@
     }
     var trustDate = document.getElementById('trust-badge-date');
     if (trustDate) {
-      trustDate.textContent = now.toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
+      trustDate.textContent = now.toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
     }
     try {
       var today = now.toISOString().slice(0, 10);
@@ -1463,7 +1462,6 @@
     } catch(e) {}
   })();
 </script>
-  </script>
 
   <script>
     /* ── Copie dans le presse-papier ── */
