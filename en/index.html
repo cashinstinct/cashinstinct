@@ -36,18 +36,15 @@
   <meta name="twitter:description" content="Exclusive welcome bonuses and referral offers valid across Quebec and Canada." />
   <meta name="twitter:image"       content="https://cashinstinct.ca/og.png" />
 
-  <script>
+   <script>
     try {
-      let theme = localStorage.getItem('theme');
-      if (!theme) {
-        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      document.documentElement.setAttribute('data-theme', theme);
-    } catch (e) {
+      var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    } catch(e) {
       document.documentElement.setAttribute('data-theme', 'light');
     }
   </script>
-
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -567,7 +564,7 @@
     </main>
 
     <footer>
-      <p>© 2026 Cashinstinct — Personal selection of referral codes for Canada.</p>
+      <p>© 2026 Cashinstinct — Personal selection of referral codes for Canada. Last update : <span id="footer-date"></span>.</p>
       <p>
         Links are affiliate-based: you get the benefit (discount, free month, cashback or bonus),
         and I receive a referral reward in return.
@@ -588,38 +585,79 @@
       </div>
     </footer>
   </div>
+<script>
+  (function() {
+    var now = new Date();
+    var lang = document.documentElement.lang || "fr-CA";
+    
+    // 1. Format Court (ex: "Juin 2026")
+    var footerDate = document.getElementById("footer-date");
+    if (footerDate) {
+      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
+      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+    }
+    
+    // 2. Format Long localisé (ex: "12 juin 2026")
+    var trustDate = document.getElementById("trust-date");
+    if (trustDate) {
+      var options = lang.startsWith("fr") 
+        ? { day: "numeric", month: "long", year: "numeric" }
+        : { month: "long", day: "numeric", year: "numeric" };
+      
+      trustDate.textContent = now.toLocaleDateString(lang, options);
+      if (trustDate.tagName === "TIME") {
+        trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+      }
+    }
 
-  <script>
-    function setThemeUI(isDark) {
-  themeToggle.textContent = isDark ? "☀️" : "🌙";
-  themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-  themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-}
+    // 3. Mise à jour automatique du JSON-LD dateModified (Compatible WebPage & CollectionPage)
+    try {
+      var today = now.toISOString().slice(0, 10);
+      var ldJson = document.querySelector('script[type="application/ld+json"]');
+      if (ldJson) {
+        var data = JSON.parse(ldJson.textContent);
+        if (data && data["@graph"]) {
+          var pageNode = data["@graph"].find(function(n) { 
+            return n["@type"] === "WebPage" || n["@type"] === "CollectionPage"; 
+          });
+          if (pageNode) {
+            pageNode.dateModified = today;
+            ldJson.textContent = JSON.stringify(data);
+          }
+        }
+      }
+    } catch(e) {}
+  })();
+</script>
 
-const themeToggle = document.getElementById("theme-toggle");
-const currentTheme = localStorage.getItem("theme");
+<script>
+  (function() {
+    var toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
 
-if (currentTheme === "dark") {
-  document.documentElement.setAttribute("data-theme", "dark");
-  setThemeUI(true);
-} else {
-  setThemeUI(false);
-}
+    function isDark() {
+      return document.documentElement.getAttribute('data-theme') === 'dark';
+    }
 
-    setThemeUI(root.getAttribute('data-theme') === 'dark');
+    function applyUI(dark) {
+      toggle.textContent = dark ? '☀️ Mode Clair' : '🌙 Mode Sombre';
+      toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    }
 
-    themeToggle.addEventListener('click', () => {
-      const isDark = root.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        root.removeAttribute('data-theme');
+    // Synchronisation immédiate avec l'état réel du document
+    applyUI(isDark());
+
+    toggle.addEventListener('click', function() {
+      var dark = isDark();
+      if (dark) {
+        document.documentElement.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
       } else {
-        root.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
       }
-      setThemeUI(!isDark);
+      applyUI(!dark);
     });
-  </script>
-
-</body>
-</html>
+  })();
+</script>
