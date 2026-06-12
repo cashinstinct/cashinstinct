@@ -1434,15 +1434,35 @@
 
   <!-- SCRIPTS -->
   <script>
-    /* ── Dates dynamiques ── */
-    var footerDate = document.getElementById('footer-date');
+   <script>
+  // ── DATES DYNAMIQUES + JSON-LD dateModified AUTOMATIQUE en fr-CA ──
+  (function() {
+    var now = new Date();
+    var footerDate = document.getElementById("footer-date");
     if (footerDate) {
-      footerDate.textContent = new Date().toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
+      footerDate.textContent = now.toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
+      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
     var trustDate = document.getElementById('trust-badge-date');
     if (trustDate) {
-      trustDate.textContent = new Date().toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
+      trustDate.textContent = now.toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
     }
+    try {
+      var today = now.toISOString().slice(0, 10);
+      var ldJson = document.querySelector('script[type="application/ld+json"]');
+      if (ldJson) {
+        var data = JSON.parse(ldJson.textContent);
+        if (data && data["@graph"]) {
+          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
+          if (webpage) {
+            webpage.dateModified = today;
+            ldJson.textContent = JSON.stringify(data);
+          }
+        }
+      }
+    } catch(e) {}
+  })();
+</script>
   </script>
 
   <script>
