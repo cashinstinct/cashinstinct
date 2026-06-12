@@ -545,7 +545,7 @@
     .faq-body ul { margin: 8px 0 0 20px; }
     .faq-body ul li { margin-bottom: 6px; }
 
-    /* YouTube lazy embed */
+       /* YouTube lazy embed unifié EN/FR */
     .yt-lite {
       background-color: #000; position: relative; display: block;
       max-width: 315px; margin: 24px auto; border-radius: 12px;
@@ -554,14 +554,15 @@
     }
     .yt-lite::before {
       content: ''; display: block; position: absolute; inset: 0;
-      background-image: url('https://img.youtube.com/vi/SAaPDiqfLJk/maxresdefault.jpg');
       background-size: cover; background-position: center;
+      opacity: 0.7;
     }
     .yt-lite .play-btn {
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       width: 68px; height: 48px; background: #ff0000;
       border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      z-index: 2;
     }
     .yt-lite .play-btn::after {
       content: ''; border-style: solid;
@@ -569,7 +570,7 @@
       border-color: transparent transparent transparent #fff;
       margin-left: 4px;
     }
-    .yt-lite iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .yt-lite iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; z-index: 3; }
 
     /* Sticky CTA mobile */
     .sticky-mobile-cta { display: none; }
@@ -711,10 +712,14 @@
             </div>
             <span id="copyStatusHero" role="status" aria-atomic="true" aria-live="polite" style="display: block; min-height: 1.2em; font-size: 0.85rem; color: var(--accent); text-align: center; margin-top: 4px;"></span>
             
-            <img src="images/Code-de-parrainage-Stickermule-preuve-FR.png"
-                 alt="Champ code de parrainage Sticker Mule affichant CASHINSTINCT validé avec une coche verte"
-                 width="1758" height="738"
-                 style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
+                      <picture>
+              <source srcset="images/Code-de-parrainage-Stickermule-preuve-FR.webp" type="image/webp">
+              <img src="images/Code-de-parrainage-Stickermule-preuve-FR.png"
+                   alt="Champ code de parrainage Sticker Mule affichant CASHINSTINCT validé avec une coche verte"
+                   width="1758" height="738"
+                   loading="lazy"
+                   style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
+            </picture>
           </div>
           <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px; color: var(--text-soft);">
             Le champ d'inscription Sticker Mule affichant le code CASHINSTINCT validé avec une coche verte.
@@ -793,16 +798,16 @@
           </div>
           <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-top: 24px; box-shadow: var(--shadow);">
             <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 14px; color: var(--text);">Comparatif des méthodes</h3>
-            <table class="compare-table">
-              <thead>
-                <tr><th>Méthode</th><th>Où l'appliquer</th><th>Fonctionne ?</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Code promo générique au paiement</td><td>Page de checkout / panier</td><td class="no">✗ Non</td></tr>
-                <tr><td>Lien de parrainage (auto-appliqué)</td><td>Cliquer avant de s'inscrire</td><td class="yes">✓ Oui</td></tr>
-                <tr><td>Code de parrainage <code>CASHINSTINCT</code></td><td>Formulaire d'inscription</td><td class="yes">✓ Oui</td></tr>
-              </tbody>
-            </table>
+<table class="compare-table" aria-label="Comparaison d'efficacité entre les codes promos obsolètes et le parrainage Sticker Mule">
+  <thead>
+    <tr><th>Méthode</th><th>Où l'appliquer</th><th>Fonctionne ?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Code promo générique au paiement</td><td>Page de checkout / panier</td><td class="no">✗ Non</td></tr>
+    <tr><td>Lien de parrainage (auto-appliqué)</td><td>Cliquer avant de s'inscrire</td><td class="yes">✓ Oui</td></tr>
+    <tr><td>Code de parrainage <code>CASHINSTINCT</code></td><td>Formulaire d'inscription</td><td class="yes">✓ Oui</td></tr>
+  </tbody>
+</table>
           </div>
         </section>
 
@@ -885,18 +890,18 @@
           <h2>Crédit de parrainage par région (CAD, EUR, GBP, USD)</h2>
           <p>Sticker Mule opère à l'échelle mondiale avec livraison gratuite partout. Le crédit de parrainage est converti dans votre devise locale au moment du paiement. Montants officiels fixes :</p>
           <div class="table-container">
-            <table class="compare-table">
-              <thead>
-                <tr><th>Région</th><th>Devise</th><th>Crédit officiel</th><th>Panier minimum</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>🇺🇸 États-Unis</td><td>USD ($)</td><td class="yes">$10,00 USD</td><td>$30,00 USD</td></tr>
-                <tr><td>🇨🇦 Canada</td><td>CAD ($)</td><td class="yes">$12,50 CAD</td><td>$38,00 CAD</td></tr>
-                <tr><td>🇪🇺 Europe</td><td>EUR (€)</td><td class="yes">9,00 €</td><td>27,00 €</td></tr>
-                <tr><td>🇬🇧 Royaume-Uni</td><td>GBP (£)</td><td class="yes">£8,00</td><td>£25,00</td></tr>
-                <tr><td>🌐 Autres pays</td><td>Devise locale</td><td>Converti au taux du panier</td><td>Équivalent de $30 USD</td></tr>
-              </tbody>
-            </table>
+            <table class="compare-table" aria-label="Valeur du crédit de parrainage et seuil de panier minimum requis par région et devise">
+  <thead>
+    <tr><th>Région</th><th>Devise</th><th>Crédit officiel</th><th>Panier minimum</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>🇺🇸 États-Unis</td><td>USD ($)</td><td class="yes">$10,00 USD</td><td>$30,00 USD</td></tr>
+    <tr><td>🇨🇦 Canada</td><td>CAD ($)</td><td class="yes">$12,50 CAD</td><td>$38,00 CAD</td></tr>
+    <tr><td>🇪🇺 Europe</td><td>EUR (€)</td><td class="yes">9,00 €</td><td>27,00 €</td></tr>
+    <tr><td>🇬🇧 Royaume-Uni</td><td>GBP (£)</td><td class="yes">£8,00</td><td>£25,00</td></tr>
+    <tr><td>🌐 Autres pays</td><td>Devise locale</td><td>Converti au taux du panier</td><td>Équivalent de $30 USD</td></tr>
+  </tbody>
+</table>
           </div>
         </section>
 
@@ -987,63 +992,63 @@
           </div>
         </section>
 
-        <section id="faq">
+                <section id="faq">
           <span class="section-label">FAQ</span>
           <h2>Questions fréquentes sur le code StickerMule</h2>
           <div class="faq">
 
             <details>
-              <summary>Quel est le meilleur code de parrainage StickerMule en 2026 ?</summary>
-              <div class="faq-body">
+              <summary id="faq-q1">Quel est le meilleur code de parrainage StickerMule en 2026 ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q1">
                 <p>Le meilleur code actif est <code>CASHINSTINCT</code>. Passer par le lien d'invitation automatisé injecte directement la valeur de l'offre (12,50 $ CAD / 9 €) pour votre première commande d'au moins 38 $ CAD / 27 €, évitant toute erreur de frappe sur le formulaire.</p>
               </div>
             </details>
 
             <details>
-              <summary>Est-ce qu'il y a un coupon Stickermule qui fonctionne au checkout ?</summary>
-              <div class="faq-body">
+              <summary id="faq-q2">Est-ce qu'il y a un coupon Stickermule qui fonctionne au checkout ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q2">
                 <p>Non, aucun code de réduction ne s'applique dans le panier d'achat final StickerMule. Le site bloque ces saisies. L'unique solution fonctionnelle pour obtenir un rabais de bienvenue est de passer par un lien de parrainage ou d'insérer <code>CASHINSTINCT</code> à la création du compte.</p>
               </div>
             </details>
 
             <details>
-              <summary>Pourquoi mon code promo trouvé sur internet ne fonctionne pas ?</summary>
-              <div class="faq-body">
-                <p>Les codes textes génériques sur les sites d'agrégateurs sont presque toujours invalides ou expirés — Sticker Mule a bloqué les champs de coupon au checkout il y a plusieurs années. Utiliser un code de parrainage à l'inscription est l'unique méthode garantie.</p>
+              <summary id="faq-q3">Pourquoi mon code promo trouvé sur internet ne fonctionne pas ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q3">
+                <p>Les codes textes génériques sur les sites d'agrégateurs sont presque toujours invalides ou expirés — Sticker Mule a bloqué les champs de coupon au checkout il y a plusieurs années. Utiliser un code de parrainage à l'inscription évitera d'activer une erreur.</p>
               </div>
             </details>
 
             <details>
-              <summary>Peut-on combiner le crédit avec les deals hebdomadaires Sticker Mule ?</summary>
-              <div class="faq-body">
+              <summary id="faq-q4">Peut-on combine le crédit avec les deals hebdomadaires Sticker Mule ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q4">
                 <p>Oui. Le crédit est rattaché à votre profil et s'applique sur n'importe quel produit, y compris les offres flash hebdomadaires, tant que le total du panier atteint le minimum de 38 $ CAD / 27 €. Consultez <a href="https://www.stickermule.com/ca/deals" target="_blank" rel="noopener noreferrer">stickermule.com/ca/deals</a> pour le deal de la semaine.</p>
               </div>
             </details>
 
             <details>
-              <summary>Sticker Mule livre-t-il au Canada et en France / Belgique ?</summary>
-              <div class="faq-body">
+              <summary id="faq-q5">Sticker Mule livre-t-il au Canada et en France / Belgique ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q5">
                 <p>Oui. Sticker Mule offre la livraison gratuite partout dans le monde — Canada, France, Belgique, Suisse et tous les autres pays. Le crédit de parrainage s'adapte automatiquement à votre devise locale (12,50 $ CAD pour le Canada, 9 € pour l'Europe).</p>
               </div>
             </details>
 
             <details>
-              <summary>Quelle est la commande minimum chez Sticker Mule ?</summary>
-              <div class="faq-body">
+              <summary id="faq-q6">Quelle est la commande minimum chez Sticker Mule ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q6">
                 <p>La quantité minimale est de <strong>10 unités par design</strong> pour les échantillons d'autocollants. Pour des quantités entre 10 et 50 unités, vous pouvez entrer n'importe quel multiple de 10 via l'option de quantité personnalisée sur la page produit. Au-delà de 50, toutes les quantités sont disponibles.</p>
               </div>
             </details>
 
             <details>
-              <summary>Les autocollants Sticker Mule sont-ils résistants aux intempéries ?</summary>
-              <div class="faq-body">
+              <summary id="faq-q7">Les autocollants Sticker Mule sont-ils résistants aux intempéries ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q7">
                 <p>Oui. La plupart des autocollants Sticker Mule sont imprimés sur vinyle premium avec un adhésif permanent et un laminate protecteur résistant au vent, à la pluie, aux rayons UV et au lave-vaisselle. <strong>Exception :</strong> les transfer stickers, vinyl lettering, window clings et front adhesive stickers ne comportent pas de laminate — ils ne sont pas conçus pour une exposition prolongée ou le lave-vaisselle.</p>
               </div>
             </details>
 
             <details>
-              <summary>Comment fonctionne le programme de commissions Sticker Mule ?</summary>
-              <div class="faq-body">
+              <summary id="faq-q8">Comment fonctionne le programme de commissions Sticker Mule ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q8">
                 <p>Le programme de commissions Sticker Mule permet de gagner <strong>10% sur tous les achats et ventes de vos filleuls pendant 1 an</strong>, sans limite de parrainages. Trois méthodes pour obtenir des filleuls :</p>
                 <ul>
                   <li><strong>Lien de parrainage :</strong> Donnez 12,50 $ CAD de crédit au nouveau client. Quand il achète, il devient votre filleul.</li>
@@ -1055,22 +1060,22 @@
             </details>
 
             <details>
-              <summary>Quels types d'autocollants propose Sticker Mule au Canada ?</summary>
-              <div class="faq-body">
+              <summary id="faq-q9">Quels types d'autocollants propose Sticker Mule au Canada ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q9">
                 <p>Sticker Mule Canada propose 19 types d'autocollants : die cut, round, rectangle, square, oval, bumper stickers, sticker sheets, kiss cut, rounded corner, clear stickers, transfer stickers, vinyl lettering, window clings, front adhesive stickers, holographic stickers, glitter stickers, fabric stickers, economy stickers, et sticker packs. Le die cut sticker est le #1 toutes catégories avec plus de 6,3 millions de commandes sur la plateforme.</p>
               </div>
             </details>
 
             <details>
-              <summary>L'invitation a-t-elle une date d'expiration ?</summary>
-              <div class="faq-body">
+              <summary id="faq-q10">L'invitation a-t-elle une date d'expiration ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q10">
                 <p>Non. Le programme de parrainage CASHINSTINCT est actif et surveillé en continu tout au long de l'année 2026. Le code est valide tant que Sticker Mule maintient son programme de parrainage — soit indéfiniment selon les conditions actuelles.</p>
               </div>
             </details>
 
           </div>
         </section>
-
+        
         <div class="cta-section">
           <h2>Prêt à lancer vos impressions personnalisées ?</h2>
           <p>Cliquez ci-dessous pour ouvrir Sticker Mule. Le rabais sera appliqué directement sur votre première facture dès que le panier minimum sera atteint.</p>
@@ -1191,7 +1196,8 @@
   </script>
 
   <script>
-    // ── DATES DYNAMIQUES + JSON-LD dateModified ──
+  // ── DATES DYNAMIQUES + JSON-LD dateModified AUTOMATIQUE ──
+  (function() {
     var now = new Date();
     var footerDate = document.getElementById("footer-date");
     if (footerDate) {
@@ -1203,11 +1209,16 @@
       var ldJson = document.querySelector('script[type="application/ld+json"]');
       if (ldJson) {
         var data = JSON.parse(ldJson.textContent);
-        var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
-        if (webpage) webpage.dateModified = today;
-        ldJson.textContent = JSON.stringify(data);
+        if (data && data["@graph"]) {
+          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
+          if (webpage) {
+            webpage.dateModified = today;
+            ldJson.textContent = JSON.stringify(data);
+          }
+        }
       }
     } catch(e) {}
+  })();
   </script>
 
   <script>
