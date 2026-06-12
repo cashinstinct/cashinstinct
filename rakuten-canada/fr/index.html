@@ -46,8 +46,7 @@
   <meta name="twitter:description" content="Membre vérifié · 30 $ CAD gratuits de cashback via lien officiel. Toutes les provinces canadiennes." />
   <meta name="twitter:image"       content="https://cashinstinct.ca/og.png" />
 
-  <!-- FIX #9 : HowTo avec totalTime -->
-  <script type="application/ld+json">
+   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
@@ -71,13 +70,13 @@
         "@id": "https://cashinstinct.ca/rakuten-canada/fr/",
         "url": "https://cashinstinct.ca/rakuten-canada/fr/",
         "name": "Parrainage Rakuten Canada 2026 : Bonus 30 $ CAD",
-        "description": "Réclamez votre bonus de bienvenue officiel de 30 $ CAD Rakuten. Valide pour les nouveaux utilisateurs canadiens de toutes les provinces incluant le Québec.",
+        "description": "Membre vérifié · Réclamez 30 $ CAD gratuits de cashback en vous inscrivant via notre lien de parrainage officiel Rakuten Canada. Valide dans toutes les provinces incluant le Québec.",
         "image": "https://cashinstinct.ca/og.png",
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-06-10",
         "dateModified": "2026-06-12",
-        "author":    { "@id": "https://cashinstinct.ca/#organization" },
+        "author": { "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@id": "https://cashinstinct.ca/#organization" }
       },
       {
@@ -91,6 +90,7 @@
       },
       {
         "@type": "Product",
+        "@id": "https://cashinstinct.ca/rakuten-canada/fr/#product",
         "name": "Rakuten Canada — Plateforme de cashback",
         "image": "https://cashinstinct.ca/og.png",
         "brand": { "@type": "Brand", "name": "Rakuten" },
@@ -99,7 +99,7 @@
         "offers": {
           "@type": "Offer",
           "priceCurrency": "CAD",
-          "price": "0.00",
+          "price": "30.00",
           "priceValidUntil": "2027-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "description": "Bonus de bienvenue de 30 $ CAD offert via le lien de parrainage officiel pour les nouveaux comptes canadiens.",
@@ -120,17 +120,20 @@
       },
       {
         "@type": "HowTo",
+        "@id": "https://cashinstinct.ca/rakuten-canada/fr/#howto",
         "name": "Comment obtenir votre bonus de bienvenue Rakuten de 30 $",
+        "description": "Guide étape par étape pour réclamer votre bonus de 30 $ CAD sur Rakuten Canada via notre lien de parrainage.",
         "totalTime": "PT10M",
         "step": [
-          { "@type": "HowToStep", "position": 1, "name": "Cliquez le lien de parrainage", "text": "Cliquez notre bouton de parrainage vérifié sur cette page. Le bonus de 30 $ est automatiquement attaché à votre formulaire d'inscription." },
-          { "@type": "HowToStep", "position": 2, "name": "Créez votre compte gratuit",    "text": "Inscrivez-vous avec une nouvelle adresse courriel. Laissez le champ 'Code d'inscription' vide — le lien gère le suivi automatiquement." },
-          { "@type": "HowToStep", "position": 3, "name": "Effectuez un achat admissible", "text": "Passez par le portail Rakuten pour un achat de 30 $ ou plus chez un marchand partenaire dans vos 90 premiers jours." },
-          { "@type": "HowToStep", "position": 4, "name": "Réclamez votre cashback",       "text": "Votre bonus de 30 $ s'ajoute à votre solde de cashback après confirmation de l'achat par le marchand." }
+          { "@type": "HowToStep", "position": 1, "name": "Cliquez le lien de parrainage", "text": "Cliquez notre bouton de parrainage vérifié sur cette page. Le bonus de 30 $ est automatiquement attaché à votre formulaire d'inscription.", "url": "https://cashinstinct.ca/rakuten-canada/fr/#step-1" },
+          { "@type": "HowToStep", "position": 2, "name": "Créez votre compte gratuit",    "text": "Inscrivez-vous avec une nouvelle adresse courriel. Laissez le champ 'Code d'inscription' vide — le lien gère le suivi automatiquement.", "url": "https://cashinstinct.ca/rakuten-canada/fr/#step-2" },
+          { "@type": "HowToStep", "position": 3, "name": "Effectuez un achat admissible", "text": "Passez par le portail Rakuten pour un achat de 30 $ ou plus chez un marchand partenaire dans vos 90 premiers jours.", "url": "https://cashinstinct.ca/rakuten-canada/fr/#step-3" },
+          { "@type": "HowToStep", "position": 4, "name": "Réclamez votre cashback",       "text": "Votre bonus de 30 $ s'ajoute à votre solde de cashback après confirmation de l'achat par le marchand.", "url": "https://cashinstinct.ca/rakuten-canada/fr/#step-4" }
         ]
       },
       {
         "@type": "FAQPage",
+        "@id": "https://cashinstinct.ca/rakuten-canada/fr/#faq",
         "mainEntity": [
           { "@type": "Question", "name": "Comment fonctionne le lien de parrainage Rakuten Canada ?",    "acceptedAnswer": { "@type": "Answer", "text": "Cliquez sur le lien de parrainage sécurisé sur cette page avant de créer votre compte Rakuten. Le système applique l'offre automatiquement. Il suffit ensuite d'effectuer un premier achat de 30 $ ou plus chez un marchand partenaire via le portail." } },
           { "@type": "Question", "name": "Est-ce que je dois entrer un code promo texte ?",              "acceptedAnswer": { "@type": "Answer", "text": "Non. Rakuten Canada n'utilise pas de code coupon manuel pour les bonus de bienvenue." } },
@@ -144,7 +147,7 @@
     ]
   }
   </script>
-
+  
   <style>
     /* ── TOKENS ── */
     :root {
@@ -634,25 +637,25 @@
         </div>
 
         <ol class="steps">
-          <li>
+          <li id="step-1">
             <div>
               <h3>Suivre l'invitation sécurisée</h3>
               <p>Cliquez sur le lien de parrainage de cette page. La session d'attribution s'active de manière transparente en arrière-plan sans action manuelle.</p>
             </div>
           </li>
-          <li>
+          <li id="step-2">
             <div>
               <h3>Créer un compte de membre</h3>
               <p>Inscrivez-vous gratuitement avec une adresse de courriel valide. Aucun frais d'adhésion ni engagement n'est exigé.</p>
             </div>
           </li>
-          <li>
+         <li id="step-3">
             <div>
               <h3>Effectuer un achat admissible de 30 $+</h3>
               <p>Dans les 90 jours suivant l'adhésion, passez par le portail Rakuten pour effectuer un achat totalisant un minimum de 30 $ avant taxes et livraison chez l'un des marchands partenaires.</p>
             </div>
           </li>
-          <li>
+          <li id="step-4">
             <div>
               <h3>Recevoir l'argent réel</h3>
               <p>Une fois l'achat confirmé par le marchand, le bonus de 30 $ s'ajoute à vos gains de cashback standard pour le prochain cycle de paiement trimestriel.</p>
