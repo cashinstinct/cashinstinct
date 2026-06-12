@@ -218,8 +218,8 @@
       "description": "Screen recording showing where to enter referral code GE911 during EBOX checkout.",
       "thumbnailUrl": "https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_EN.webp",
       "uploadDate": "2026-06-01T00:00:00+00:00",
-      "contentUrl": "https://www.youtube.com/watch?v=dUFRORlBJYA",
-      "embedUrl": "https://www.youtube.com/embed/dUFRORlBJYA",
+      "contentUrl": "https://www.youtube.com/embed/dUFRORlBJYA",
+       "embedUrl": "https://www.youtube.com/embed/dUFRORlBJYA",
       "publisher": {
         "@type": "Organization",
         "name": "Cash Instinct",
@@ -366,6 +366,34 @@
     .copy-btn, .cta-copy-btn { appearance: none; border: 0; cursor: pointer; font-weight: 800; border-radius: 6px; transition: background 0.15s ease, color 0.15s ease; }
     .copy-btn { background: var(--surface-muted); border-left: 1px solid var(--border); color: var(--accent); font-size: 0.95rem; padding: 0 20px; white-space: nowrap; }
     .input-copy-group button.copy-btn { background: var(--text); color: var(--surface); -webkit-appearance: none; }
+
+    .copy-btn-micro {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 4px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface-muted);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.copy-btn-micro:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.copy-btn-micro.copied {
+  background: #1a7a3c !important;
+  color: #ffffff !important;
+  border-color: #1a7a3c !important;
+}
     
     .hero-methods a img { transition: opacity 0.15s ease; }
     .hero-methods a:hover img { opacity: 0.9; }
@@ -1162,12 +1190,12 @@
                   <td>Rental ~$12/month</td>
                   <td>Rental ~$10/month</td>
                 </tr>
-                <tr>
-                  <td>New customer discount</td>
-                  <td><strong>$25 <button class="copy-btn-micro" data-copy="GE911" data-target="copyStatusCta" style="padding:2px 6px; font-size:0.75rem; border-radius:4px; border:1px solid var(--border-soft); background:var(--surface-muted); color:var(--text); cursor:pointer;">Copy GE911</button> + $100 prepaid card</strong></td>      
-                  <td>No equivalent</td>
-                  <td>Variable promo</td>
-                </tr>
+             <tr>
+  <td>New customer discount</td>
+  <td><strong>$25 <button class="copy-btn-micro" data-copy="GE911" data-target="copyStatusTable" type="button">Copy GE911</button> + $100 prepaid card</strong></td>      
+  <td>No equivalent</td>
+  <td>Variable promo</td>
+</tr>
                 <tr>
                   <td>Physical network</td>
                   <td>Bell FTTH</td>
@@ -1175,12 +1203,15 @@
                   <td>Videotron coax cable</td>
                 </tr>
               </tbody>
-            </table>
-          </div>
+</table>
+</div>
+<div style="min-height: 1.5em; margin-top: 4px; text-align: center;">
+  <span id="copyStatusTable" style="font-size: 0.85rem; font-weight: 700; color: #1a7a3c;" role="status" aria-atomic="true" aria-live="polite"></span>
+</div>
 
-          <p style="font-size: 0.85rem; color: var(--muted); margin-top: 8px;">
-            Approximate prices. Check each provider's website for your address.
-          </p>
+<p style="font-size: 0.85rem; color: var(--muted); margin-top: 8px;">
+  Approximate prices. Check each provider's website for your address.
+</p>
 
           <div class="ai-summary" style="margin-top: 28px;">
             💰 <strong>Real-world savings example — switching from Bell to EBOX</strong><br><br>
