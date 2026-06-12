@@ -24,8 +24,7 @@
 
 ## Structure du dépôt
 
-Ce repo (`cashinstinct.github.io`) héberge la **page d'accueil du hub** et le sitemap centralisé.  
-Chaque offre est un repo GitHub Pages indépendant avec sa propre landing page.
+Ce repo (`cashinstinct`) héberge le **hub** 
 
 ```
 cashinstinct.ca/
@@ -42,7 +41,7 @@ cashinstinct.ca/
 Les liens sont affiliés ou de parrainage : vous obtenez l'avantage (rabais, mois gratuit ou bonus),
 et j'obtiens une récompense en retour — sans coût additionnel pour vous.
 
-Si une offre n'est plus valide ou si vous avez une question, ouvrez une [issue](https://github.com/cashinstinct/cashinstinct.github.io/issues).
+Si une offre n'est plus valide ou si vous avez une question, ouvrez une [issue](https://github.com/cashinstinct/cashinstinct/issues).
 
 ---
 
