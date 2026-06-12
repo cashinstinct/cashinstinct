@@ -926,76 +926,123 @@
   </span>
 </div>
 
-    <script>
-    async function copyText(text, button, statusId) {
-  var status = document.getElementById(statusId);
-  var orig = button.dataset.label || 'Copy code';
-  function doFeedback() {
-    button.textContent = 'Copied ✓';
-    button.style.background = 'rgba(16,122,71,0.15)';
-    if (status) status.textContent = 'Code copied!';
-    setTimeout(function() {
-      button.textContent = orig;
-      button.style.background = '';
-      if (status) status.textContent = '';
-    }, 2000);
-  }
-  try {
-    await navigator.clipboard.writeText(text);
-    doFeedback();
-  } catch(err) {
-    // Fallback iOS Safari / anciens navigateurs
-    var ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
-    document.body.appendChild(ta);
-    ta.select();
+      <script>
+  // ── DATES DYNAMIQUES + JSON-LD dateModified AUTOMATIQUE en fr-CA ──
+  (function() {
+    var now = new Date();
+    
+    // Mises à jour des dates dans l'interface (fr-CA)
+    var footerDate = document.getElementById("footer-date");
+    if (footerDate) {
+      footerDate.textContent = now.toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
+      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+    }
+    var trustDate = document.getElementById('trust-date');
+    if (trustDate) {
+      trustDate.textContent = now.toLocaleDateString('en-CA', { month: 'long', year: 'numeric', day: 'numeric' });
+      trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+    }
+    var trustBadgeDate = document.getElementById('trust-badge-date');
+    if (trustBadgeDate) {
+      trustBadgeDate.textContent = now.toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
+    }
+
+    // Automatisation de la date de modification dans le JSON-LD
     try {
-      document.execCommand('copy');
+      var today = now.toISOString().slice(0, 10);
+      var ldJson = document.querySelector('script[type="application/ld+json"]');
+      if (ldJson) {
+        var data = JSON.parse(ldJson.textContent);
+        if (data && data["@graph"]) {
+          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
+          if (webpage) {
+            webpage.dateModified = today;
+            ldJson.textContent = JSON.stringify(data);
+          }
+        }
+      }
+    } catch(e) {}
+  })();
+</script>
+
+<script>
+  /* ── MODULE DE COPIE UNIFIÉ AVEC FEEDBACK ── */
+  async function copyText(text, button, statusId) {
+    var status = document.getElementById(statusId);
+    var orig = button.dataset.label || 'Copy code';
+    function doFeedback() {
+      button.textContent = 'Copied ✓';
+      button.style.background = 'rgba(16,122,71,0.15)';
+      if (status) status.textContent = 'Code copied!';
+      setTimeout(function() {
+        button.textContent = orig;
+        button.style.background = '';
+        if (status) status.textContent = '';
+      }, 2000);
+    }
+    try {
+      await navigator.clipboard.writeText(text);
       doFeedback();
-    } catch(e2) {
-      if (status) status.textContent = 'Could not copy automatically.';
+    } catch(err) {
+      // Fallback iOS Safari / anciennes versions de navigateurs mobile
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        doFeedback();
+      } catch(e2) {
+        if (status) status.textContent = 'Could not copy automatically.';
+      }
+      document.body.removeChild(ta);
     }
-    document.body.removeChild(ta);
   }
-}
 
-    document.querySelectorAll('[data-copy]').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        copyText(btn.dataset.copy, btn, btn.dataset.target);
-      });
+  document.querySelectorAll('[data-copy]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      copyText(btn.dataset.copy, btn, btn.dataset.target);
     });
+  });
 
-    /* THEME */
-    var themeToggle = document.getElementById('theme-toggle');
-    var root = document.documentElement;
-    function setThemeUI(isDark) {
-      themeToggle.textContent = isDark ? '☀️' : '🌙';
-      themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-      themeToggle.setAttribute('aria-label', isDark ? 'Disable dark mode' : 'Enable dark mode');
+  /* ── CONTRÔLE DU THÈME SANS FLASH ── */
+  var themeToggle = document.getElementById('theme-toggle');
+  var root = document.documentElement;
+  function setThemeUI(isDark) {
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
+    themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    themeToggle.setAttribute('aria-label', isDark ? 'Disable dark mode' : 'Enable dark mode');
+  }
+  setThemeUI(root.getAttribute('data-theme') === 'dark');
+  themeToggle.addEventListener('click', function() {
+    var isDark = root.getAttribute('data-theme') === 'dark';
+    if (isDark) { root.removeAttribute('data-theme'); localStorage.setItem('theme', 'light'); }
+    else { root.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); }
+    setThemeUI(!isDark);
+  });
+
+  /* ── BARRE CTA PERSISTANTE MOBILE (SCROLL & INTERSECTION) ── */
+  (function() {
+    var cta = document.querySelector('.sticky-cta');
+    var btn = document.getElementById('sticky-copy-btn');
+    if (!cta) return;
+
+    var shown = false;
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400 && !shown) { cta.classList.add('visible'); shown = true; }
+      else if (window.scrollY <= 100 && shown) { cta.classList.remove('visible'); shown = false; }
+    }, { passive: true });
+
+    var ctaSection = document.querySelector('.cta-section');
+    if (ctaSection) {
+      new IntersectionObserver(function(entries) {
+        cta.style.opacity = entries[0].isIntersecting ? '0' : '1';
+        cta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+      }).observe(ctaSection);
     }
-    setThemeUI(root.getAttribute('data-theme') === 'dark');
-    themeToggle.addEventListener('click', function() {
-      var isDark = root.getAttribute('data-theme') === 'dark';
-      if (isDark) { root.removeAttribute('data-theme'); localStorage.setItem('theme', 'light'); }
-      else { root.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); }
-      setThemeUI(!isDark);
-    });
-
-    /* FOOTER DATE fr-CA */
-    document.getElementById('footer-date').textContent =
-      new Date().toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
-
-    /* STICKY CTA */
-    (function() {
-      var cta = document.querySelector('.sticky-cta');
-      if (!cta) return;
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 400) cta.classList.add('visible');
-        else cta.classList.remove('visible');
-      }, { passive: true });
-    })();
-  </script>
+  })();
+</script>
   
 </body>
 </html>
