@@ -811,7 +811,7 @@
                 Step 2 — Paste in the Personal Information section
               </p>
 
-              <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer" style="display: block;">
+              <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer" style="display: block;">
                 <picture>
                   <source srcset="https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_EN.webp" type="image/webp">
                   <!-- FIX #12: ajout de width/height pour éviter le CLS -->
@@ -831,7 +831,7 @@
             </div>
 
             <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px;">
-              <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 700;">Go to the official EBOX website</a> and enter it in the field shown above.
+              <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer" style="text-decoration: underline; font-weight: 700;">Go to the official EBOX website</a> and enter it in the field shown above.
             </p>
           </div>
 
@@ -1002,7 +1002,7 @@
           </div>
 
           <div class="transparency" style="margin-top: 24px;">
-            <strong>Note:</strong> The combination of the $100 promo + code GE911 was confirmed active at checkout (500 Mbps or 1 Gbps Fibre plans, $100 promo displayed + GE911 validated on the same order). Always verify current terms on the official site <a href="https://www.ebox.ca/" target="_blank" rel="noopener noreferrer">ebox.ca</a> before ordering.
+            <strong>Note:</strong> The combination of the $100 promo + code GE911 was confirmed active at checkout (500 Mbps or 1 Gbps Fibre plans, $100 promo displayed + GE911 validated on the same order). Always verify current terms on the official site <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> before ordering.
           </div>
         </section>
 
@@ -1073,7 +1073,7 @@
                    alt="Where to input EBOX referral code GE911"
                    width="707"
                    height="961"
-                   loading="eager"
+                   loading="lazy"
                    data-fallback="true"
                    style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
             </picture>
@@ -1396,7 +1396,7 @@
               <div class="faq-body" role="region" aria-labelledby="faq-q10">
                 <p>These are two separate fields during sign-up. Here's how not to confuse them:</p>
                 <div class="seo-table-wrap">
-                  <table class="seo-table">
+                  <table class="seo-table" aria-label="Comparative table between a permanent client code and an EBOX promo code">
                     <thead>
                       <tr>
                         <th>Feature</th>
@@ -1438,7 +1438,7 @@
         <div class="cta-section">
           <h2>Ready to order your Internet service?</h2>
           <p>Click below, choose your Internet plan, and simply enter code <strong>GE911</strong> in the Personal Information section: <em>"Code — $25 for you and your friends!"</em> during sign-up to activate your $25 discount.</p>
-          <a class="btn" href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener noreferrer">
+          <a class="btn" href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer">
             🌐 Go to the EBOX website
           </a>
           <div class="cta-code-row">
@@ -1660,16 +1660,17 @@
     })();
   </script>
 
-  <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="EBOX code to copy">
+    <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="EBOX code to copy">
     <div class="s-left">
       <span class="s-code">GE911</span>
       <span class="s-label">EBOX referral code</span>
     </div>
     <div class="s-actions">
-      <button class="s-btn" id="sticky-copy-btn" type="button">Copy</button>
+      <button class="s-btn" id="sticky-copy-btn" type="button" data-copy="GE911" data-target="stickyCopyStatus" data-label="Copy">Copy</button>
       <a class="s-btn s-open-btn" href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer" aria-label="Open ebox.ca">Open ↗</a>
     </div>
+    <span id="stickyCopyStatus" role="status" aria-atomic="true" aria-live="polite" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"></span>
   </div>
-
+  
 </body>
 </html>
