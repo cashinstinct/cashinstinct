@@ -605,7 +605,7 @@
          <h2 id="summary-heading">Quick summary of the Achieva referral code &amp; bonus</h2>
           <p>The <strong>Achieva Financial Petal Code (Referral Code) V381566198</strong>, valid in 2026, unlocks a $25 CAD sign-up bonus. To qualify, a new customer must copy this promo code, download the mobile app, enter it during registration, make an initial deposit of at least $250 CAD, and maintain that balance for a minimum of one full month. Note: anyone who has held an Achieva account in the past 12 months is not eligible.</p>
         </section>
-        <p class="last-updated">Last updated: <time datetime="2026-06-12" id="last-updated-date">June 12, 2026</time></p>
+        <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-06-12">June 12, 2026</time></p>
 
         <section id="how-to-use">
           <span class="section-label">Mobile Protocol</span>
@@ -683,7 +683,7 @@
           <p>Achieva offers two types of savings products: a variable <strong>Daily Interest Savings Account</strong> and fixed-rate <strong>Guaranteed Investment Certificates (GICs)</strong>. Interest on savings accounts is <strong>calculated daily on your closing balance and paid monthly</strong>. All deposits are guaranteed without limit by the DGCM.</p>
 
           <div class="table-wrap">
-            <table>
+            <table aria-label="Achieva Financial interest rates for savings accounts and fixed-term GICs">
               <thead>
                 <tr><th>Account type</th><th>Interest rate</th><th>Notes</th></tr>
               </thead>
@@ -712,7 +712,7 @@
           <span class="section-label">Specifications</span>
           <h2>Achieva account at a glance</h2>
           <div class="table-wrap">
-            <table>
+            <table aria-label="Achieva Financial account specifications and service features at a glance">
               <thead>
                 <tr><th>Feature</th><th>Details</th></tr>
               </thead>
@@ -751,7 +751,7 @@
           <a href="https://cashinstinct.ca/achieva/fr/">Code Petal Achieva V381566198 — Bonus de 25 $ (2026) ↗</a>
         </p>
 
-                <section id="faq" aria-label="Frequently asked questions about Achieva Financial">
+                 <section id="faq" aria-label="Frequently asked questions about Achieva Financial">
           <span class="section-label">Referral Program</span>
           <h2>Common questions about the Achieva referral code</h2>
 
@@ -920,29 +920,33 @@
   </span>
 </div>
 
-
-   <script>
-  // ── DATES DYNAMIQUES + JSON-LD dateModified AUTOMATIQUE en en-CA ──
+<script>
+  // ── SCRIPT UNIVERSEL : DATES DYNAMIQUES & JSON-LD dateModified ──
   (function() {
     var now = new Date();
+    var lang = document.documentElement.lang || "en-CA";
     
-    // Mises à jour des dates dans l'interface (en-CA)
+    // 1. Format Court (ex: "Juin 2026" / "June 2026")
     var footerDate = document.getElementById("footer-date");
     if (footerDate) {
-      footerDate.textContent = now.toLocaleDateString("en-CA", { month: "long", year: "numeric" });
+      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
-    var trustDate = document.getElementById('trust-date');
+    
+    // 2. Format Long localisé (ex: "12 juin 2026" / "June 12, 2026")
+    var trustDate = document.getElementById("trust-date");
     if (trustDate) {
-      trustDate.textContent = now.toLocaleDateString('en-CA', { month: 'long', year: 'numeric', day: 'numeric' });
-      trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-    }
-    var trustBadgeDate = document.getElementById('trust-badge-date');
-    if (trustBadgeDate) {
-      trustBadgeDate.textContent = now.toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
+      var options = lang.startsWith("fr") 
+        ? { day: "numeric", month: "long", year: "numeric" }
+        : { month: "long", day: "numeric", year: "numeric" };
+      
+      trustDate.textContent = now.toLocaleDateString(lang, options);
+      if (trustDate.tagName === "TIME") {
+        trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+      }
     }
 
-    // Automatisation de la date de modification dans le JSON-LD
+    // 3. Mise à jour automatique du JSON-LD dateModified
     try {
       var today = now.toISOString().slice(0, 10);
       var ldJson = document.querySelector('script[type="application/ld+json"]');
