@@ -925,7 +925,36 @@
                overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
   </span>
 </div>
-
+<script>
+  // ── DATES DYNAMIQUES + JSON-LD dateModified AUTOMATIQUE en fr-CA ──
+  (function() {
+    var now = new Date();
+    var footerDate = document.getElementById("footer-date");
+    if (footerDate) {
+      footerDate.textContent = now.toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
+      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+    }
+    var trustDate = document.getElementById('trust-badge-date');
+    if (trustDate) {
+      trustDate.textContent = now.toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
+    }
+    try {
+      var today = now.toISOString().slice(0, 10);
+      var ldJson = document.querySelector('script[type="application/ld+json"]');
+      if (ldJson) {
+        var data = JSON.parse(ldJson.textContent);
+        if (data && data["@graph"]) {
+          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
+          if (webpage) {
+            webpage.dateModified = today;
+            ldJson.textContent = JSON.stringify(data);
+          }
+        }
+      }
+    } catch(e) {}
+  })();
+</script>
+  
   <script>
     async function copyText(text, button, statusId) {
   var status = document.getElementById(statusId);
