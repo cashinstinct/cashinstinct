@@ -219,7 +219,7 @@
       "thumbnailUrl": "https://cashinstinct.ca/ebox/images/validation-code-ebox-ge911_FR.webp",
       "uploadDate": "2026-06-01T00:00:00+00:00",
       "contentUrl": "https://www.youtube.com/watch?v=dUFRORlBJYA",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/dUFRORlBJYA",
+       "embedUrl": "https://www.youtube.com/embed/dUFRORlBJYA",
       "publisher": {
         "@type": "Organization",
         "name": "Cash Instinct",
@@ -369,6 +369,35 @@
     .copy-btn { background: var(--surface-muted); border-left: 1px solid var(--border); color: var(--accent); font-size: 0.95rem; padding: 0 20px; white-space: nowrap; }
     .input-copy-group button.copy-btn { background: var(--text); color: var(--surface); -webkit-appearance: none; }
 
+    
+    .copy-btn-micro {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 4px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface-muted);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.copy-btn-micro:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.copy-btn-micro.copied {
+  background: #1a7a3c !important;
+  color: #ffffff !important;
+  border-color: #1a7a3c !important;
+}
+    
     .hero-methods a img { transition: opacity 0.15s ease; }
     .hero-methods a:hover img { opacity: 0.9; }
 
@@ -1147,7 +1176,7 @@
                 </tr>
                 <tr>
                   <td>Rabais nouveau client</td>
-                  <td><strong>25 $ <button class="copy-btn-micro" data-copy="GE911" data-target="copyStatusCta" style="padding:2px 6px; font-size:0.75rem; border-radius:4px; border:1px solid var(--border-soft); background:var(--surface-muted); color:var(--text); cursor:pointer;">Copier GE911</button> + 100 $ carte prépayée</strong></td>
+             <    td><strong>25 $ <button class="copy-btn-micro" data-copy="GE911" data-target="copyStatusTable" type="button">Copier GE911</button> + 100 $ carte prépayée</strong></td>      
                   <td>Aucun équivalent</td>
                   <td>Promo variable</td>
                 </tr>
