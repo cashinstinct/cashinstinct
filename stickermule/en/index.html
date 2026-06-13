@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+  <!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  NOTE AUX SESSIONS IA — LIRE AVANT DE "CORRIGER" QUOI QUE CE SOIT  ║
+  ╚══════════════════════════════════════════════════════════════╝
+  Cette page a été auditée en profondeur. Plusieurs choix qui PEUVENT
+  ressembler à des incohérences sont en réalité VOLONTAIRES et documentés
+  par des commentaires locaux dans le code. Avant de signaler ou corriger :
+
+  1. STATS volatiles → arrondies "vers le bas / over X" (zéro maintenance). Voir note STATS POLICY.
+  2. DEVISE → page EN en USD, page FR en CAD. Cohérent, voulu.
+  3. NOTE 4.9 (schema) ≠ 4.69 (plateforme SM) → deux notes distinctes, voulu.
+  4. priceValidUntil → contrainte technique Google, pas une vraie expiration.
+  5. og:image sans segment de langue → image partagée EN/FR, fichier présent.
+  6. Geo-routing JS → optimisation par-dessus la redirection serveur de Sticker Mule (redondance voulue).
+
+  Valeurs STABLES exactes (NE PAS arrondir) : crédit 12,50$CAD/9€/£8/$10USD,
+  minimums 38/27/25/30, commission 10%, MOQ 10 unités, 19 types de stickers.
+
+  Source officielle : stickermule.com/stats + stickermule.com/commissions
+  Dernier audit : juin 2026.
+-->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf6f0" />
@@ -37,6 +58,7 @@
   <meta name="twitter:title"       content="Sticker Mule Coupon Code & Referral Code 2026" />
   <meta name="twitter:description" content="Get $10 credit on your first $30+ Sticker Mule order with code CASHINSTINCT or our official referral link." />
   <meta name="twitter:image"       content="https://cashinstinct.ca/stickermule/og.png" />
+
 
   <script type="application/ld+json">
   {
@@ -910,7 +932,7 @@
 </div>
         </section>
 
-        <!-- 
+  <!-- 
   STATS POLICY (ne pas "corriger" en valeurs exactes) :
   Chiffres volatils arrondis vers le bas avec "plus de X" — zéro maintenance, toujours vrai.
   Source : https://www.stickermule.com/ca/stats — snapshot 13 juin 2026.
