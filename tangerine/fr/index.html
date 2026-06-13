@@ -631,6 +631,10 @@
       box-shadow: var(--shadow); margin: 24px auto; cursor: pointer; background: #000; display: block;
     }
     .yt-short-wrapper img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+   .yt-short-wrapper:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
     .yt-play-btn {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
       width: 68px; height: 48px; background: #ff0000; border-radius: 12px;
@@ -790,7 +794,7 @@
     <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 20px;">
       Étape 2 — Coller dans le formulaire Tangerine
     </p>
-    <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener noreferrer" style="display: block;">
+    <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener sponsored noreferrer" style="display: block;">
       <picture>
         <source srcset="https://cashinstinct.ca/tangerine/images/Champ-entrez-cle-orange-Tangerine.webp" type="image/webp">
         <img src="https://cashinstinct.ca/tangerine/images/Champ-entrez-cle-orange-Tangerine.png"
@@ -801,7 +805,7 @@
     </a>
   </div>
   <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px; color: var(--text-soft);">
-    <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 700;">Ouvrir le formulaire officiel Tangerine</a>
+    <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener sponsored noreferrer style="text-decoration: underline; font-weight: 700;">Ouvrir le formulaire officiel Tangerine</a>
   </p>
 </div>
       
@@ -1039,7 +1043,7 @@
           <li>
             <div>
               <h3>Allez sur Tangerine.ca</h3>
-              <p>Rendez-vous sur <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener noreferrer">tangerine.ca</a> et cliquez sur <strong>« Ouvrir un compte »</strong>.</p>
+              <p>Rendez-vous sur <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener sponsored noreferrer">tangerine.ca</a> et cliquez sur <strong>« Ouvrir un compte »</strong>.</p>
             </div>
           </li>
           <li>
@@ -1135,7 +1139,7 @@
         <span class="section-label">Mon expérience</span>
         <h2>Mon avis sur Tangerine</h2>
         <div class="review-box">
-     <div class="trust-badge">✓ Testé et vérifié par Cash Instinct — <span id="trust-badge-date"></span></div>
+     <div class="trust-badge">✓ Vérifié par Cash Instinct</div>
 
 
   <p>J'utilise Tangerine comme compte principal depuis plusieurs années. Ce qui m'a convaincu au départ, c'est simple : zéro frais mensuel, zéro frais de transaction, et un bonus de bienvenue parmi les plus généreux du secteur bancaire canadien.</p>
@@ -1273,7 +1277,7 @@
       <div class="cta-section">
         <h2>Prêt à ouvrir votre&nbsp;compte&nbsp;?</h2>
         <p>Entrez la Clé Orange <strong>14130944S1</strong> à la première étape de votre inscription et recevez jusqu'à <strong>300&nbsp;$ de prime</strong> en combinant les deux programmes.</p>
-        <a class="btn" href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener noreferrer">
+        <a class="btn" href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener sponsored noreferrer">
           🍊 Ouvrir un compte Tangerine
         </a>
         <div class="cta-code-row">
@@ -1299,7 +1303,7 @@
   </div>
   <button class="s-btn" id="sticky-copy-btn" type="button">Copier</button>
   <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner"
-     target="_blank" rel="noopener noreferrer"
+     target="_blank" rel="noopener sponsored noreferrer"
      style="background:var(--text);color:var(--surface);border-radius:6px;padding:8px 12px;font-weight:800;font-size:0.88rem;text-decoration:none;white-space:nowrap;flex-shrink:0;">
     Ouvrir ↗
   </a>
@@ -1430,7 +1434,7 @@ function calcGain() {
     const status = document.getElementById(statusId);
     const orig = button.textContent;
     const doFeedback = () => {
-      button.textContent = 'Copié !';
+      button.textContent = 'Copié ✓';
       button.classList.add('copied');
       if (status) status.textContent = '';
       setTimeout(() => { button.textContent = orig; button.classList.remove('copied'); }, 2000);
