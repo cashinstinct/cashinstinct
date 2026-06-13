@@ -130,28 +130,28 @@
             "position": 1,
             "name": "Choisissez votre méthode d'activation",
             "text": "Cliquez sur le bouton d'invitation vérifié pour appliquer le rabais automatiquement, OU copiez le code CASHINSTINCT pour l'insérer dans le formulaire d'inscription.",
-            "url": "https://cashinstinct.ca/stickermule/fr/#step-1"
+            "url": "https://cashinstinct.ca/stickermule/fr/#howto-step-1"
           },
           {
             "@type": "HowToStep",
             "position": 2,
             "name": "Créez un nouveau compte",
             "text": "Enregistrez-vous avec une adresse courriel inédite. Si vous vous inscrivez manuellement, cliquez sur « Ajouter un code de parrainage » et entrez CASHINSTINCT.",
-            "url": "https://cashinstinct.ca/stickermule/fr/#step-2"
+            "url": "https://cashinstinct.ca/stickermule/fr/#howto-step-2"
           },
           {
             "@type": "HowToStep",
             "position": 3,
             "name": "Ajoutez des articles au panier",
             "text": "Sélectionnez vos autocollants ou produits. Assurez-vous que votre sous-total atteint au moins 38 $ CAD / 27 €. La commande minimum est de 10 unités par design.",
-            "url": "https://cashinstinct.ca/stickermule/fr/#step-3"
+            "url": "https://cashinstinct.ca/stickermule/fr/#howto-step-3"
           },
           {
             "@type": "HowToStep",
             "position": 4,
             "name": "Profitez de votre crédit",
             "text": "La réduction de 12,50 $ CAD ou 9 € est déduite automatiquement. Aucun code supplémentaire requis. La livraison est gratuite dans le monde extérieur.",
-            "url": "https://cashinstinct.ca/stickermule/fr/#step-4"
+            "url": "https://cashinstinct.ca/stickermule/fr/#howto-step-4"
           }
         ]
       },
@@ -573,9 +573,9 @@
     }
     .yt-lite iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; z-index: 3; }
 
-    /* Sticky CTA mobile */
+    /* Sticky CTA mobile incluant tablettes */
     .sticky-mobile-cta { display: none; }
-    @media (max-width: 640px) {
+    @media (max-width: 1024px) {
       body { padding-bottom: 80px; }
       .sticky-mobile-cta {
         display: flex; position: fixed; bottom: 0; left: 0; right: 0;
@@ -688,10 +688,13 @@
               Activer mon crédit de bienvenue
             </a>
             <a class="dynamic-link" href="https://www.stickermule.com/ca/unlock?ref_id=6042474701" target="_blank" rel="noopener sponsored noreferrer" style="display: block; transition: opacity 0.15s ease;">
-              <img src="images/stickermule-12.50CAD-credit-confirmation.webp"
+           <picture>
+            <source srcset="https://cashinstinct.ca/stickermule/en/images/stickermule-12.50CAD-credit-confirmation.webp" type="image/webp">
+                      <img src="https://cashinstinct.ca/stickermule/fr/images/stickermule-12.50CAD-credit-confirmation.png"
                    alt="Page de confirmation Sticker Mule affichant le crédit de 12,50 $ CAD débloqué via le lien de parrainage Cashinstinct"
                    width="2298" height="208" fetchpriority="high"
                    style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
+            </picture>
             </a>
           </div>
           <p style="font-size: 0.85rem; margin-top: 20px; text-align: center;">
@@ -712,15 +715,17 @@
                 style="width: 100%; background: var(--text); color: var(--surface); border: none; border-radius: 8px; font-weight: 700; padding: 12px 20px; cursor: pointer; font-size: 1rem; white-space: nowrap; -webkit-appearance: none;">Copier</button>
             </div>
             <span id="copyStatusHero" role="status" aria-atomic="true" aria-live="polite" style="display: block; min-height: 1.2em; font-size: 0.85rem; color: var(--accent); text-align: center; margin-top: 4px;"></span>
-            
-                      <picture>
-              <source srcset="images/Code-de-parrainage-Stickermule-preuve-FR.webp" type="image/webp">
-              <img src="images/Code-de-parrainage-Stickermule-preuve-FR.png"
-                   alt="Champ code de parrainage Sticker Mule affichant CASHINSTINCT validé avec une coche verte"
-                   width="1758" height="738"
-                   loading="lazy"
-                   style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
-            </picture>
+
+              <a class="dynamic-link" href="https://www.stickermule.com/unlock?ref_id=6042474701" target="_blank" rel="noopener sponsored noreferrer" style="display: block; transition: opacity 0.15s ease;">
+  <picture>
+    <source srcset="https://cashinstinct.ca/stickermule/fr/images/Code-de-parrainage-Stickermule-preuve-FR.webp" type="image/webp">
+    <img src="https://cashinstinct.ca/stickermule/fr/images/Code-de-parrainage-Stickermule-preuve-FR.png"
+         alt="Champ code de parrainage Sticker Mule affichant CASHINSTINCT validé avec une coche verte"
+         width="1758" height="738"
+         loading="lazy"
+         style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
+  </picture>
+</a>
           </div>
           <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px; color: var(--text-soft);">
             Le champ d'inscription Sticker Mule affichant le code CASHINSTINCT validé avec une coche verte.
@@ -774,25 +779,25 @@
             ⚠️ <strong>Étape cruciale :</strong> Beaucoup d'utilisateurs cherchent un <em>code promo Sticker Mule</em> textuel au moment du paiement, mais les champs de coupon au checkout public sont désactivés. Vous devez utiliser un lien d'invitation ou entrer un code <strong>pendant l'inscription</strong> pour débloquer le crédit.
           </div>
           <ol class="steps">
-            <li id="step-1">
+            <li id="howto-step-1">
               <div>
                 <h3>Choisissez votre méthode d'activation</h3>
                 <p>Cliquez sur notre bouton d'invitation vérifié pour appliquer le rabais de 12,50 $ / 9 € automatiquement, OU copiez le code manuel <code>CASHINSTINCT</code> pour l'insérer dans le formulaire d'inscription.</p>
               </div>
             </li>
-            <li id="step-2">
+            <li id="howto-step-2">
               <div>
                 <h3>Créez un nouveau compte</h3>
                 <p>Enregistrez-vous avec une adresse courriel inédite. Si vous vous inscrivez manuellement, cliquez sur <strong>« Ajouter un code de parrainage »</strong> juste au-dessus du bouton de soumission et entrez <code>CASHINSTINCT</code>.</p>
               </div>
             </li>
-            <li id="step-3">
+            <li id="howto-step-3">
               <div>
                 <h3>Ajoutez des articles au panier</h3>
                 <p>Sélectionnez vos autocollants personnalisés, étiquettes, magnets, designs ou emballages. Assurez-vous que votre sous-total atteint au moins <strong>38 $ CAD / 27 €</strong>. La commande minimum est de <strong>10 unités par design</strong>.</p>
               </div>
             </li>
-            <li id="step-4">
+            <li id="howto-step-4">
               <div>
                 <h3>Profitez de votre crédit</h3>
                 <p>La réduction de 12,50 $ CAD ou 9 € est déduite automatiquement au moment de finaliser la facture. Aucun code supplémentaire requis — la livraison est <strong>gratuite dans le monde entier</strong>.</p>
@@ -944,19 +949,19 @@
           <h2>Comment combiner votre crédit avec les deals hebdomadaires Sticker Mule</h2>
           <p>Sticker Mule propose chaque semaine une <strong>promotion flash rotative</strong> sur un produit différent — parfois 10 autocollants pour 1 $, parfois 50 magnets à prix réduit, ou d'autres offres du même type. Les nouveaux clients se demandent souvent si le crédit de bienvenue peut s'additionner. La réponse est oui, à condition que votre panier atteigne le seuil de 38 $ CAD / 27 € après l'application du deal. Consultez <a href="https://www.stickermule.com/ca/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/ca/deals</a> pour l'offre en cours.</p>
           <ol class="steps" style="margin-top: 20px;">
-            <li>
+            <li id="stack-step-1">
               <div>
                 <h3>Activez votre crédit de parrainage d'abord</h3>
                 <p>Inscrivez-vous via le lien ou avec le code <code>CASHINSTINCT</code> pour verrouiller le rabais de 12,50 $ / 9 € sur votre nouveau profil avant de configurer vos designs.</p>
               </div>
             </li>
-            <li>
+            <li id="stack-step-2">
               <div>
                 <h3>Vérifiez le deal de la semaine</h3>
                 <p>Rendez-vous sur <a href="https://www.stickermule.com/ca/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/ca/deals</a> pour voir le produit en promotion cette semaine. Ajoutez-le à votre commande principale pour franchir le cap des 38 $ CAD / 27 €.</p>
               </div>
             </li>
-            <li>
+            <li id="stack-step-3">
               <div>
                 <h3>Vérifiez la réduction finale</h3>
                 <p>Le crédit apparaît automatiquement dans le résumé des coûts. Pas besoin de chercher un coupon tiers, l'infrastructure reconnaît votre éligibilité.</p>
