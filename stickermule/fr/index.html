@@ -140,7 +140,7 @@
           "@type": "Review",
           "author": { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization", "name": "Cash Instinct" },
           "reviewRating": { "@type": "Rating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1" },
-          "reviewBody": "Utilisateur actif de Sticker Mule depuis 2022, parrain depuis la même année avec le code CASHINSTINCT. Qualité d'impression constante sur tous les formats, BAT gratuit et illimité, livraison rapide partout au Canada. La plateforme affiche plus de 16 millions de commandes et une note de 4,69/5 sur plus de 365 000 avis — des chiffres qui parlent d'eux-mêmes.",
+          "reviewBody": "Utilisateur actif de Sticker Mule depuis 2022, parrain depuis la même année avec le code CASHINSTINCT. Qualité d'impression constante sur tous les formats, BAT gratuit et illimité, livraison rapide partout au Canada. La note officielle de la plateforme Sticker Mule est de 4,69/5 sur plus de 360 000 avis, pour plus de 16 millions de commandes traitées — des chiffres qui parlent d’eux-mêmes.",
           "publisher": { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization", "name": "Cash Instinct" }
         }
       },
@@ -255,7 +255,7 @@
             "name": "Quels types d'autocollants propose Sticker Mule au Canada ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sticker Mule Canada propose 19 types d'autocollants : die cut, round, rectangle, square, oval, bumper stickers, sticker sheets, kiss cut, rounded corner, clear stickers, transfer stickers, vinyl lettering, window clings, front adhesive stickers, holographic stickers, glitter stickers, fabric stickers, economy stickers, et sticker packs. Le die cut sticker est le #1 toutes catégories avec plus de 6,37 millions de commandes."
+              "text": "Sticker Mule Canada propose 19 types d'autocollants : die cut, round, rectangle, square, oval, bumper stickers, sticker sheets, kiss cut, rounded corner, clear stickers, transfer stickers, vinyl lettering, window clings, front adhesive stickers, holographic stickers, glitter stickers, fabric stickers, economy stickers, et sticker packs. Le die cut sticker est le #1 toutes catégories avec plus de 6,3 millions de commandes."
             }
           },
           {
@@ -875,8 +875,8 @@
           <span class="section-label">Programme Affilié</span>
           <h2>Programme de commissions Sticker Mule — gagner 10% illimité</h2>
           <p>Au-delà du crédit de bienvenue pour les nouveaux clients, Sticker Mule propose un programme de commissions cash pour les parrains. C'est l'un des programmes d'affiliation les plus directs du marché de l'impression personnalisée : <strong>10% sur tous les achats et ventes de vos filleuls pendant 1 an, sans limite de parrainages.</strong></p>
-
-          /* Chiffre plus de 195 000$ est en $CAD (13 juin 2026) arrondi, provient directement de Stickermule, montr sur https://www.stickermule.com/ca/commissions */
+                                                                                                                                                                                                                                                                                                                                                                   
+            <!-- Chiffre "plus de 195 000$" en CAD (relevé 13 juin 2026), arrondi vers le bas, source: stickermule.com/ca/commissions -->
           <div class="commission-box">
             <h3>💸 Plus de 195 000 $ CAD versés en commissions sur la plateforme</h3>
             <p style="color: var(--text-soft); margin-bottom: 16px; font-size: 0.97rem;">Trois mécanismes pour obtenir des filleuls et déclencher vos 10% de commission :</p>
@@ -1402,7 +1402,22 @@
   </script>
 
   <script>
-  // ── SCRIPT UNIVERSEL : DATES DYNAMIQUES & JSON-LD dateModified ──
+  <!--
+  SCRIPT UNIVERSEL (dates + JSON-LD dateModified) — DESIGN VOLONTAIRE, ne pas "corriger" :
+  Ce script est IDENTIQUE sur les pages EN et FR. C'est voulu : un seul script partagé,
+  zéro duplication, maintenu à un seul endroit. Il s'adapte automatiquement à la langue
+  en lisant document.documentElement.lang (le lang="" du <html>).
+
+  - Le fallback "en-CA" dans `var lang = ... || "en-CA"` est du code défensif mort :
+    il ne s'exécute JAMAIS car <html lang> est toujours présent. Ne pas le changer
+    en "fr-CA" page par page — ça casserait l'universalité sans aucun effet réel.
+  - lang.startsWith("fr") gère le format de date FR (jour mois année) vs EN (mois jour année).
+  - Le patch dateModified réécrit la date du JSON-LD WebPage au chargement = toujours frais,
+    zéro maintenance manuelle.
+
+  Bref : ce bloc se copie tel quel d'une langue à l'autre. C'est sa raison d'être.
+-->
+
   (function() {
     var now = new Date();
     var lang = document.documentElement.lang || "en-CA";
