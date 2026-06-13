@@ -508,7 +508,7 @@
           <div class="input-copy-group" style="display: flex; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: auto; margin-bottom: auto; padding: 4px;">
             <input type="text" value="SVdn7" id="promo-code" readonly aria-readonly="true" aria-label="Code de parrainage HP Instant Ink" style="flex: 1; border: none; padding: 12px 16px; font-family: monospace; font-size: 1.05rem; font-weight: 700; color: var(--text); background: transparent; text-align: center;" />
             <!-- ✅ data-copy / data-target (système unifié) -->
-            <button class="copy-btn" data-copy="SVdn7" data-target="copyStatusHero" type="button">Copier</button>
+            <button class="s-copy-btn" id="sticky-copy-btn" data-copy="SVdn7" type="button">Copier</button>
           </div>
           <!-- ✅ display:none retiré pour accessibilité lecteurs d'écran -->
          <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
@@ -876,24 +876,17 @@
   </script>
   
 
-  <script>
-    (function() {
-      var cta = document.getElementById('sticky-cta');
-      var btn = document.getElementById('sticky-copy-btn');
-      if (!cta || !btn) return;
-      var shown = false;
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 400 && !shown) { cta.classList.add('visible'); shown = true; }
-        else if (window.scrollY <= 100 && shown) { cta.classList.remove('visible'); shown = false; }
-      }, { passive: true });
-      btn.addEventListener('click', function() {
-        navigator.clipboard.writeText('SVdn7').then(() => {
-          btn.textContent = 'Copié !'; btn.classList.add('copied');
-          setTimeout(() => { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 2000);
-        }).catch(() => { btn.textContent = 'SVdn7'; });
-      });
-    })();
-  </script>
+ <script>
+  (function() {
+    var cta = document.getElementById('sticky-cta');
+    if (!cta) return;
+    var shown = false;
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400 && !shown) { cta.classList.add('visible'); shown = true; }
+      else if (window.scrollY <= 100 && shown) { cta.classList.remove('visible'); shown = false; }
+    }, { passive: true });
+  })();
+</script>
 
 </body>
 </html>
