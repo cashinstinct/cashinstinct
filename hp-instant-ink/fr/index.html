@@ -216,28 +216,28 @@
             "position": 1,
             "name": "Lancez l'application HP Smart",
             "text": "Configurez votre nouvelle imprimante via l'application HP Smart ou rendez-vous directement sur le portail web officiel d'HP Instant Ink.",
-            "url": "https://cashinstinct.ca/hp-instant-ink/fr/#step-1"
+            "url": "https://cashinstinct.ca/hp-instant-ink/fr/#howto-step-1"
           },
           {
             "@type": "HowToStep",
             "position": 2,
             "name": "Sélectionnez votre forfait mensuel",
             "text": "Choisissez le volume de pages qui correspond à vos besoins réels (de 10 à 700 pages par mois). Tous les forfaits sont admissibles à l'essai gratuit.",
-            "url": "https://cashinstinct.ca/hp-instant-ink/fr/#step-2"
+            "url": "https://cashinstinct.ca/hp-instant-ink/fr/#howto-step-2"
           },
           {
             "@type": "HowToStep",
             "position": 3,
             "name": "Entrez le code SVdn7 au paiement",
             "text": "À l'étape de facturation, cliquez sur « Ajouter un code de parrainage ou promotionnel » et collez le code SVdn7.",
-            "url": "https://cashinstinct.ca/hp-instant-ink/fr/#step-3"
+            "url": "https://cashinstinct.ca/hp-instant-ink/fr/#howto-step-3"
           },
           {
             "@type": "HowToStep",
             "position": 4,
             "name": "Valisez la réduction",
             "text": "Le système HP applique immédiatement un crédit équivalent à 1 mois gratuit supplémentaire sur votre tableau de bord.",
-            "url": "https://cashinstinct.ca/hp-instant-ink/fr/#step-4"
+            "url": "https://cashinstinct.ca/hp-instant-ink/fr/#howto-step-4"
           }
         ]
       }
@@ -245,7 +245,8 @@
   }
   </script>
 
-  <style>
+ <!-- [CSS unchanged —  English version= French version] -->
+ <style>
     :root {
       --bg: #f4f9f9;
       --surface: #ffffff;
@@ -305,7 +306,7 @@
     .breadcrumb a { color: var(--muted); font-weight: 500; }
     .breadcrumb span { margin: 0 6px; }
     
-    header.hero { background: var(--surface-soft); color: var(--text); padding: 64px 20px; text-align: center; border-bottom: 1px solid var(--border); overflow: hidden; }
+    header.hero { background: var(--surface-soft); color: var(--text); padding: 64px 20px; text-align: center; border-bottom: 1px solid var(--border); }
     header.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.01em; text-wrap: pretty; }
     header.hero h1 span { color: var(--accent); }
     header.hero p { font-size: 1.15rem; opacity: 0.9; max-width: 620px; margin: 0 auto 28px; }
@@ -339,7 +340,7 @@
     .section-label { display: inline-block; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; color: var(--accent-dark); background: rgba(5, 131, 115, 0.12); padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; }
     [data-theme="dark"] .section-label { color: var(--accent); background: rgba(13, 179, 158, 0.15); }
 
-    .ai-summary {
+   .ai-summary {
   background: var(--surface-soft);
   border: 1px solid var(--border);
   border-left: 4px solid var(--accent);
@@ -348,7 +349,7 @@
   color: var(--text); line-height: 1.6;
 }
 .ai-summary strong { color: var(--text); font-weight: 800; }
-    
+   
     .steps { list-style: none; counter-reset: steps; }
     .steps li { counter-increment: steps; display: flex; gap: 18px; margin-bottom: 28px; }
     .steps li::before { content: counter(steps); min-width: 36px; height: 36px; background: var(--surface-muted); color: var(--accent); font-weight: 800; font-size: 1rem; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
@@ -357,6 +358,7 @@
 
     code { font-family: "Courier New", Courier, monospace; background: var(--surface-soft); color: var(--text); padding: 2px 6px; border-radius: 4px; font-size: 0.92em; font-weight: 700; border: 1px solid var(--border); }
 
+    .last-updated { font-size: 0.8rem; color: var(--muted); margin-top: 12px; margin-bottom: 24px; font-style: italic; }
     .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
     .fact, .review-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; box-shadow: var(--shadow); }
     .fact strong { display: block; color: var(--text); margin-bottom: 5px; }
@@ -365,8 +367,7 @@
     .review-box ul { margin: 16px 0 16px 20px; color: var(--text-soft); }
     .review-box li { margin-bottom: 10px; }
     blockquote { border-left: 4px solid var(--border-soft); margin: 20px 0; padding-left: 16px; font-style: italic; color: var(--muted); }
-
-    .trust-badge {
+.trust-badge {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 0.85rem; font-weight: 700; color: var(--accent);
   background: rgba(5, 131, 115, 0.08); padding: 6px 12px;
@@ -401,11 +402,11 @@
     .copy-btn { color: #14322e; background: var(--surface-muted); border: none; border-left: 1px solid var(--border); font-weight: 700; padding: 0 20px; cursor: pointer; font-size: 0.95rem; transition: background 0.15s, color 0.15s; white-space: nowrap; }
     [data-theme="dark"] .copy-btn { color: var(--accent); background: var(--surface-muted); }
     .copy-btn.copied { background: var(--accent) !important; color: #fff !important; }
-    .copy-status { display: block; min-height: 1.2em; font-size: 0.85rem; text-align: center; margin-top: 6px; }
-
-/* ── STICKY CTA MOBILE ── */
+     .copy-status { display: block; min-height: 1.2em; font-size: 0.85rem; text-align: center; margin-top: 6px; }
+   
+   /* ── STICKY CTA MOBILE avec tablettes ── */
 .sticky-mobile-cta { display: none; }
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   body { padding-bottom: 80px; }
   .sticky-mobile-cta {
     display: flex;
@@ -450,6 +451,8 @@
   }
 }
   </style>
+
+  
 </head>
 <body>
 
@@ -558,9 +561,7 @@
   🔑 Le code <strong>SVdn7</strong> doit être saisi dans le champ <em>« Ajouter un code de parrainage ou promotionnel »</em> à <strong>l'étape de facturation</strong> — pas après la création du compte. Si votre imprimante neuve inclut déjà des mois gratuits, le code s'ajoute à la suite.
 </div>
         
-        <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;">
- Mis à jour le <time datetime="2026-06-12">12 juin 2026</time>
-</p>
+<p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Mis à jour le <time datetime="2026-06-12">12 juin 2026</time></p>
       
         <section id="how-it-works">
           <span class="section-label">Tutoriel Rapide</span>
@@ -569,10 +570,10 @@
             ⚠️ <strong>Astuce de cumul (Stacking) :</strong> Si vous venez d'acheter une imprimante neuve incluant déjà des mois gratuits (comme l'offre HP+), vous pouvez ajouter le code <code>SVdn7</code> <strong>lors de votre inscription</strong>. Il s'appliquera <strong>à la suite</strong> pour vous donner un mois supplémentaire gratuit directement après votre période d'essai initiale !
           </div>
           <ol class="steps">
-            <li id="step-1"><div><h3>Lancez l'application HP Smart</h3><p>Configurez votre nouvelle imprimante via l'application ou rendez-vous directement sur le portail web officiel d'HP Instant Ink.</p></div></li>
-            <li id="step-2"><div><h3>Sélectionnez votre forfait mensuel</h3><p>Choisissez le volume de pages qui correspond à vos besoins réels (de 10 à 700 pages par mois). Tous les forfaits sont admissibles à l'essai gratuit.</p></div></li>
-            <li id="step-3"><div><h3>Entrez le code SVdn7 au paiement</h3><p>À l'étape de facturation (lors du choix du forfait), cliquez sur <strong>« Ajouter un code de parrainage ou promotionnel »</strong> et collez le code <code>SVdn7</code>.</p></div></li>
-            <li id="step-4"><div><h3>Validez la réduction</h3><p>Le système HP va immédiatement appliquer une ligne de crédit équivalente à <strong>1 mois gratuit supplémentaire</strong> sur votre tableau de bord.</p></div></li>
+            <li id="howto-step-1"><div><h3>Lancez l'application HP Smart</h3><p>Configurez votre nouvelle imprimante via l'application ou rendez-vous directement sur le portail web officiel d'HP Instant Ink.</p></div></li>
+            <li id="howto-step-2"><div><h3>Sélectionnez votre forfait mensuel</h3><p>Choisissez le volume de pages qui correspond à vos besoins réels (de 10 à 700 pages par mois). Tous les forfaits sont admissibles à l'essai gratuit.</p></div></li>
+            <li id="howto-step-3"><div><h3>Entrez le code SVdn7 au paiement</h3><p>À l'étape de facturation (lors du choix du forfait), cliquez sur <strong>« Ajouter un code de parrainage ou promotionnel »</strong> et collez le code <code>SVdn7</code>.</p></div></li>
+            <li id="howto-step-4"><div><h3>Validez la réduction</h3><p>Le système HP va immédiatement appliquer une ligne de crédit équivalente à <strong>1 mois gratuit supplémentaire</strong> sur votre tableau de bord.</p></div></li>
           </ol>
         </section>
 
@@ -749,69 +750,131 @@
 </div>
   </footer>
 
-  <script>
-    const footerDate = document.getElementById("footer-date");
+  
+  <!-- SCRIPTS -->
+   <script>
+  // ── SCRIPT UNIVERSEL : DATES DYNAMIQUES & JSON-LD dateModified ──
+  (function() {
+    var now = new Date();
+    var lang = document.documentElement.lang || "en-CA";
+    
+    // 1. Format Court (ex: "Juin 2026" / "June 2026")
+    var footerDate = document.getElementById("footer-date");
     if (footerDate) {
-      footerDate.textContent = new Date().toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
+      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
+      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
-    const trustDate = document.getElementById('trust-badge-date');
-if (trustDate) {
-  trustDate.textContent = new Date().toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
-}
-  </script>
-
-  <script>
-    async function copyText(text, button, statusId) {
-      const status = document.getElementById(statusId);
-      const orig = button.textContent;
-      const doFeedback = () => {
-        button.textContent = 'Copié !';
-        button.classList.add('copied');
-        setTimeout(() => { button.textContent = orig; button.classList.remove('copied'); }, 2000);
-      };
-      try {
-        await navigator.clipboard.writeText(text);
-        doFeedback();
-      } catch(e) {
-        const ta = document.createElement('textarea');
-        ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
-        document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); doFeedback(); } catch(e2) {
-          if (status) status.textContent = 'Impossible de copier automatiquement.';
-        }
-        document.body.removeChild(ta);
+    
+    // 2. Format Long localisé (ex: "12 juin 2026" / "June 12, 2026")
+    var trustDate = document.getElementById("trust-date");
+    if (trustDate) {
+      var options = lang.startsWith("fr") 
+        ? { day: "numeric", month: "long", year: "numeric" }
+        : { month: "long", day: "numeric", year: "numeric" };
+      
+      trustDate.textContent = now.toLocaleDateString(lang, options);
+      if (trustDate.tagName === "TIME") {
+        trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
       }
     }
-    document.querySelectorAll('[data-copy]').forEach(btn => {
-      btn.addEventListener('click', () => copyText(btn.dataset.copy, btn, btn.dataset.target));
-    });
-  </script>
+
+    // 3. Mise à jour automatique du JSON-LD dateModified
+    try {
+      var today = now.toISOString().slice(0, 10);
+      var ldJson = document.querySelector('script[type="application/ld+json"]');
+      if (ldJson) {
+        var data = JSON.parse(ldJson.textContent);
+        if (data && data["@graph"]) {
+          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
+          if (webpage) {
+            webpage.dateModified = today;
+            ldJson.textContent = JSON.stringify(data);
+          }
+        }
+      }
+    } catch(e) {}
+  })();
+</script>
 
   <script>
-    document.querySelectorAll('img[data-fallback]').forEach(img => {
-      img.addEventListener('error', () => {
-        img.style.display = 'none';
-        var p = document.createElement('p');
-        p.style.cssText = 'color:var(--muted);font-size:0.85rem;text-align:center;padding:12px;';
-        p.textContent = 'Capture d\'écran temporairement indisponible.';
-        img.insertAdjacentElement('afterend', p);
+    /* ── Copie dans le presse-papier ── */
+    window.legacyCopy = function(text) {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none;';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        return ok;
+      } catch(e) { return false; }
+    };
+    
+    function copyText(text, button, statusId) {
+      var status = document.getElementById(statusId);
+      var originalText = button.textContent;
+      var doFeedback = function() {
+        button.textContent = 'Copied!';
+        button.classList.add('copied');
+        if (status) status.textContent = '';
+        setTimeout(function() {
+          button.textContent = originalText;
+          button.classList.remove('copied');
+        }, 2000);
+      };
+      var doFail = function() {
+        if (status) status.textContent = 'Unable to copy automatically.';
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(doFeedback).catch(function() {
+          legacyCopy(text) ? doFeedback() : doFail();
+        });
+      } else {
+        legacyCopy(text) ? doFeedback() : doFail();
+      }
+    }
+
+    document.querySelectorAll('[data-copy]').forEach(function(button) {
+      button.addEventListener('click', function() {
+        copyText(button.getAttribute('data-copy'), button, button.getAttribute('data-target'));
       });
     });
-
-    const toggle = document.getElementById('theme-toggle');
-    function setThemeUI(isDark) {
-      toggle.textContent = isDark ? '☀️' : '🌙';
-      toggle.setAttribute('aria-label', isDark ? 'Activer le mode clair' : 'Activer le mode sombre');
-      toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-    }
-    setThemeUI(document.documentElement.getAttribute('data-theme') === 'dark');
-    toggle.addEventListener('click', () => {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      localStorage.setItem('theme', isDark ? 'light' : 'dark');
-      setThemeUI(!isDark);
-    });
   </script>
+
+ <script>
+    /* ── FIX #2 & #3: thème — bloc unique, sans duplication ni IIFE aria-pressed redondante ── */
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      function isDark() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+      }
+
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️' : '🌙';
+        toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+
+      /* Initialise l'UI selon le thème déjà appliqué par le <head> */
+      applyUI(isDark());
+
+      toggle.addEventListener('click', function() {
+        var dark = isDark();
+        if (dark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        applyUI(!dark);
+      });
+    })();
+  </script>
+  
 
   <script>
     (function() {
