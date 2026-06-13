@@ -253,28 +253,28 @@
             "position": 1,
             "name": "Launch the HP Smart app",
             "text": "Set up your new printer through the app, or go directly to the official HP Instant Ink web portal.",
-            "url": "https://cashinstinct.ca/hp-instant-ink/en/#step-1"
+            "url": "https://cashinstinct.ca/hp-instant-ink/en/#howto-step-1"
           },
           {
             "@type": "HowToStep",
             "position": 2,
             "name": "Select your monthly plan",
             "text": "Choose the page volume that matches your actual needs (from 10 to 700 pages per month). All plans are eligible for the free trial.",
-            "url": "https://cashinstinct.ca/hp-instant-ink/en/#step-2"
+            "url": "https://cashinstinct.ca/hp-instant-ink/en/#howto-step-2"
           },
           {
             "@type": "HowToStep",
             "position": 3,
             "name": "Enter code SVdn7 at checkout",
             "text": "At the billing step, click \"Add a referral or promotional code\" and paste code SVdn7.",
-            "url": "https://cashinstinct.ca/hp-instant-ink/en/#step-3"
+            "url": "https://cashinstinct.ca/hp-instant-ink/en/#howto-step-3"
           },
           {
             "@type": "HowToStep",
             "position": 4,
             "name": "Confirm the discount",
             "text": "The HP system will immediately apply a credit equivalent to 1 additional free month on your dashboard.",
-            "url": "https://cashinstinct.ca/hp-instant-ink/en/#step-4"
+            "url": "https://cashinstinct.ca/hp-instant-ink/en/#howto-step-4"
           }
         ]
       }
@@ -282,7 +282,7 @@
   }
   </script>
 
-  <!-- [CSS unchanged — copy exactly from the French version] -->
+  <!-- [CSS unchanged —  English version= French version] -->
  <style>
     :root {
       --bg: #f4f9f9;
@@ -395,6 +395,7 @@
 
     code { font-family: "Courier New", Courier, monospace; background: var(--surface-soft); color: var(--text); padding: 2px 6px; border-radius: 4px; font-size: 0.92em; font-weight: 700; border: 1px solid var(--border); }
 
+    .last-updated { font-size: 0.8rem; color: var(--muted); margin-top: 12px; margin-bottom: 24px; font-style: italic; }
     .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
     .fact, .review-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; box-shadow: var(--shadow); }
     .fact strong { display: block; color: var(--text); margin-bottom: 5px; }
@@ -440,9 +441,9 @@
     .copy-btn.copied { background: var(--accent) !important; color: #fff !important; }
      .copy-status { display: block; min-height: 1.2em; font-size: 0.85rem; text-align: center; margin-top: 6px; }
    
-   /* ── STICKY CTA MOBILE ── */
+   /* ── STICKY CTA MOBILE avec tablettes ── */
 .sticky-mobile-cta { display: none; }
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   body { padding-bottom: 80px; }
   .sticky-mobile-cta {
     display: flex;
@@ -597,10 +598,8 @@
   🔑 Code <strong>SVdn7</strong> must be entered in the <em>"Add a referral or promotional code"</em> field at the <strong>billing step</strong> — not at checkout, and not after the account is created. If you already have free months included with a new printer, the code stacks on top.
 </div>
       
-      <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;">
-  Updated <time datetime="2026-06-12">June 12, 2026</time>
-</p>
-
+  <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Updated <time datetime="2026-06-12">June 12, 2026</time></p>
+      
       <section id="how-it-works">
         <span class="section-label">Quick Tutorial</span>
         <h2>How to Activate the HP Free Ink Offer</h2>
@@ -610,25 +609,25 @@
         </div>
 
         <ol class="steps">
-          <li id="step-1">
+          <li id="howto-step-1">
             <div>
               <h3>Launch the HP Smart app</h3>
               <p>Set up your new printer through the app, or go directly to the official HP Instant Ink web portal.</p>
             </div>
           </li>
-         <li id="step-2">
+         <li id="howto-step-2">
             <div>
               <h3>Select your monthly plan</h3>
               <p>Choose the page volume that matches your actual needs (from 10 to 700 pages per month). All plans are eligible for the free trial.</p>
             </div>
           </li>
-          <li id="step-3">
+          <li id="howto-step-3">
             <div>
               <h3>Enter code SVdn7 at checkout</h3>
               <p>At the billing step (when choosing your plan), click <strong>"Add a referral or promotional code"</strong> and paste code <code>SVdn7</code>.</p>
             </div>
           </li>
-         <li id="step-4">
+         <li id="howto-step-4">
             <div>
               <h3>Confirm the discount</h3>
               <p>The HP system will immediately apply a credit line equivalent to <strong>1 additional free month</strong> on your dashboard.</p>
@@ -644,7 +643,7 @@
 
         <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-top: 24px; box-shadow: var(--shadow);">
           <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 14px; color: var(--text);">Eligible page volumes</h3>
-          <table class="compare-table">
+          <table class="compare-table" aria-label="Eligible HP Instant Ink page volumes">
             <thead>
               <tr>
                 <th>Plan</th>
@@ -781,91 +780,85 @@
   </div>
 </section>
       
-      <section id="faq">
+            <section id="faq">
         <span class="section-label">FAQ</span>
         <h2>Frequently Asked Questions — HP Instant Ink</h2>
         <div class="faq">
           <details>
-            <summary>How do I get the free month with code SVdn7?</summary>
-            <div class="faq-body">
+            <summary id="faq-q1">How do I get the free month with code SVdn7?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q1">
               <p>Enter referral code <code>SVdn7</code> at the billing step of the HP account sign-up form, just before confirming your chosen plan. The system will then credit a compensatory balance equivalent to one full billing cycle.</p>
             </div>
           </details>
           <details>
-            <summary>Does the code work if I already have free months included with my printer purchase?</summary>
-            <div class="faq-body">
+            <summary id="faq-q2">Does the code work if I already have free months included with my printer purchase?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q2">
               <p><strong>Yes, absolutely — that's the stacking principle.</strong> If your new printer comes with 6 free months of HP+, entering code <code>SVdn7</code> during registration will add a 7th free month right after the others.</p>
             </div>
           </details>
           <details>
-            <summary>Is the service available for laser printers?</summary>
-            <div class="faq-body">
+            <summary id="faq-q3">Is the service available for laser printers?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q3">
               <p>Yes, HP Instant Ink offers specific plans for <strong>toner</strong> cartridges used in laser printers. The logic remains the same: automatic replenishment happens before the reservoirs are empty.</p>
             </div>
           </details>
           <details>
-            <summary>Can I cancel the subscription easily?</summary>
-            <div class="faq-body">
+            <summary id="faq-q4">Can I cancel the subscription easily?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q4">
               <p>Yes, the service has no fixed-term commitment. You can upgrade or downgrade your plan at any time from your profile, or pause the subscription if you no longer need automated ink.</p>
             </div>
           </details>
           <details>
-            <summary>Do we own the ink cartridges provided?</summary>
-            <div class="faq-body">
+            <summary id="faq-q5">Do we own the ink cartridges provided?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q5">
               <p>No. Instant Ink cartridges remain the exclusive property of HP. They are loaned as part of your subscription. If you cancel the service, these specific cartridges stop working electronically and must be returned to HP via the provided recycling envelope.</p>
             </div>
           </details>
           <details>
-            <summary>Is a permanent Wi-Fi connection required?</summary>
-            <div class="faq-body">
+            <summary id="faq-q6">Is a permanent Wi-Fi connection required?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q6">
               <p>Yes. For the service to work, your printer must remain connected to the Internet via your home Wi-Fi network. This is what allows HP's servers to algorithmically track the number of pages printed and remaining ink level in order to trigger automatic shipments.</p>
             </div>
           </details>
           <details>
-            <summary>How does the rollover of unused pages work?</summary>
-            <div class="faq-body">
+            <summary id="faq-q7">How does the rollover of unused pages work?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q7">
               <p>If you print fewer pages than your monthly plan quota, the remaining pages are not lost. They automatically roll over to the following month. The maximum rollover balance depends on your plan (generally up to two or three times your monthly quota).</p>
             </div>
           </details>
           <details>
-            <summary>What happens if I exceed my monthly plan?</summary>
-            <div class="faq-body">
+            <summary id="faq-q8">What happens if I exceed my monthly plan?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q8">
               <p>If you exceed your monthly page quota (and have no rolled-over pages in reserve), HP applies a small charge for an additional page block (for example, $1.25 for a block of 10 to 50 pages depending on the plan). Everything is handled automatically on your next invoice.</p>
             </div>
           </details>
           <details>
-            <summary>Does printing colour photos use more of my plan?</summary>
-            <div class="faq-body">
+            <summary id="faq-q9">Does printing colour photos use more of my plan?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q9">
               <p>No — and that is HP Instant Ink's main advantage. <strong>A page is a page.</strong> Whether you print a single line of black and white text or a full-colour high-definition photo on letter-size paper, it counts as exactly 1 page against your plan.</p>
             </div>
           </details>
           <details>
-            <summary>Can I change my plan up or down mid-subscription?</summary>
-            <div class="faq-body">
+            <summary id="faq-q10">Can I change my plan up or down mid-subscription?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q10">
               <p>Yes, the service is fully flexible. You can change your plan at any time from your online dashboard. An upgrade may apply immediately or at the next cycle, while a downgrade will take effect at your next billing period.</p>
             </div>
           </details>
           <details>
-            <summary>Does referral code SVdn7 work for HP Instant Ink in France and Europe?</summary>
-            <div class="faq-body">
+            <summary id="faq-q11">Does referral code SVdn7 work for HP Instant Ink in France and Europe?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q11">
               <p>Yes. The referral link and code <code>SVdn7</code> are universal. HP's system automatically adapts the free month value and local currency (Euros) based on the geographic region detected during printer registration.</p>
             </div>
           </details>
           <details>
-            <summary>What is the difference between an HP promotional code and a referral code?</summary>
-            <div class="faq-body">
-              <p>HP promo codes are temporary advertising keywords tied to marketing events. A referral code (here <code>SVdn7</code>) is a permanent member identifier that applies a guaranteed one-free-month trial offer with no risk of expiration.</p>
-            </div>
-          </details>
-          <details>
-            <summary>What is the difference between an HP promotional code and a referral code?</summary>
-            <div class="faq-body">
+            <summary id="faq-q12">What is the difference between an HP promotional code and a referral code?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q12">
               <p>HP promo codes are temporary advertising keywords tied to marketing events — they expire after a few weeks. A referral code (here <code>SVdn7</code>) is a permanent member identifier that applies a guaranteed one-free-month trial offer with no risk of expiration. Both may appear on the same sign-up form.</p>
             </div>
           </details>
           <details>
-            <summary>Is the Staples TaxTime26 promo code still valid?</summary>
-            <div class="faq-body">
+            <summary id="faq-q13">Is the Staples TaxTime26 promo code still valid?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q13">
               <p>No. The promotional code <code>TaxTime26</code> distributed by Staples / Bureau en Gros officially <strong>expired on March 31, 2026</strong>. Temporary coupon waves like this only last a few weeks. To get your free ink month without risking a validation error, use the permanent referral code <code>SVdn7</code> instead.</p>
             </div>
           </details>
@@ -918,69 +911,130 @@
 </div>
 </footer>
 
-<script>
-  const footerDate = document.getElementById("footer-date");
-  if (footerDate) {
-    footerDate.textContent = new Date().toLocaleDateString("en-CA", { month: "long", year: "numeric" });
-  }
-  const trustDate = document.getElementById('trust-badge-date');
-if (trustDate) {
-  trustDate.textContent = new Date().toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
-}
-</script>
-
-<script>
-  async function copyText(text, button, statusId) {
-    const status = document.getElementById(statusId);
-    const orig = button.textContent;
-    const doFeedback = () => {
-      button.textContent = 'Copied!';
-      button.classList.add('copied');
-      setTimeout(() => { button.textContent = orig; button.classList.remove('copied'); }, 2000);
-    };
-    try {
-      await navigator.clipboard.writeText(text);
-      doFeedback();
-    } catch(e) {
-      const ta = document.createElement('textarea');
-      ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
-      document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); doFeedback(); } catch(e2) {
-        if (status) status.textContent = 'Unable to copy automatically.';
-      }
-      document.body.removeChild(ta);
+  <!-- SCRIPTS -->
+   <script>
+  // ── SCRIPT UNIVERSEL : DATES DYNAMIQUES & JSON-LD dateModified ──
+  (function() {
+    var now = new Date();
+    var lang = document.documentElement.lang || "en-CA";
+    
+    // 1. Format Court (ex: "Juin 2026" / "June 2026")
+    var footerDate = document.getElementById("footer-date");
+    if (footerDate) {
+      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
+      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
-  }
-  document.querySelectorAll('[data-copy]').forEach(btn => {
-    btn.addEventListener('click', () => copyText(btn.dataset.copy, btn, btn.dataset.target));
-  });
+    
+    // 2. Format Long localisé (ex: "12 juin 2026" / "June 12, 2026")
+    var trustDate = document.getElementById("trust-date");
+    if (trustDate) {
+      var options = lang.startsWith("fr") 
+        ? { day: "numeric", month: "long", year: "numeric" }
+        : { month: "long", day: "numeric", year: "numeric" };
+      
+      trustDate.textContent = now.toLocaleDateString(lang, options);
+      if (trustDate.tagName === "TIME") {
+        trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+      }
+    }
+
+    // 3. Mise à jour automatique du JSON-LD dateModified
+    try {
+      var today = now.toISOString().slice(0, 10);
+      var ldJson = document.querySelector('script[type="application/ld+json"]');
+      if (ldJson) {
+        var data = JSON.parse(ldJson.textContent);
+        if (data && data["@graph"]) {
+          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
+          if (webpage) {
+            webpage.dateModified = today;
+            ldJson.textContent = JSON.stringify(data);
+          }
+        }
+      }
+    } catch(e) {}
+  })();
 </script>
 
-<script>
-  document.querySelectorAll('img[data-fallback]').forEach(img => {
-    img.addEventListener('error', () => {
-      img.style.display = 'none';
-      var p = document.createElement('p');
-      p.style.cssText = 'color:var(--muted);font-size:0.85rem;text-align:center;padding:12px;';
-      p.textContent = 'Screenshot temporarily unavailable.';
-      img.insertAdjacentElement('afterend', p);
+  <script>
+    /* ── Copie dans le presse-papier ── */
+    window.legacyCopy = function(text) {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none;';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        return ok;
+      } catch(e) { return false; }
+    };
+    
+    function copyText(text, button, statusId) {
+      var status = document.getElementById(statusId);
+      var originalText = button.textContent;
+      var doFeedback = function() {
+        button.textContent = 'Copied!';
+        button.classList.add('copied');
+        if (status) status.textContent = '';
+        setTimeout(function() {
+          button.textContent = originalText;
+          button.classList.remove('copied');
+        }, 2000);
+      };
+      var doFail = function() {
+        if (status) status.textContent = 'Unable to copy automatically.';
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(doFeedback).catch(function() {
+          legacyCopy(text) ? doFeedback() : doFail();
+        });
+      } else {
+        legacyCopy(text) ? doFeedback() : doFail();
+      }
+    }
+
+    document.querySelectorAll('[data-copy]').forEach(function(button) {
+      button.addEventListener('click', function() {
+        copyText(button.getAttribute('data-copy'), button, button.getAttribute('data-target'));
+      });
     });
-  });
+  </script>
 
-  const toggle = document.getElementById('theme-toggle');
-  function setThemeUI(isDark) {
-    toggle.textContent = isDark ? '☀️' : '🌙';
-    toggle.setAttribute('aria-label', isDark ? 'Enable light mode' : 'Enable dark mode');
-    toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-  }
-  setThemeUI(document.documentElement.getAttribute('data-theme') === 'dark');
-  toggle.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-    setThemeUI(!isDark);
-  });
-</script>
+ <script>
+    /* ── FIX #2 & #3: thème — bloc unique, sans duplication ni IIFE aria-pressed redondante ── */
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      function isDark() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+      }
+
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️' : '🌙';
+        toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+
+      /* Initialise l'UI selon le thème déjà appliqué par le <head> */
+      applyUI(isDark());
+
+      toggle.addEventListener('click', function() {
+        var dark = isDark();
+        if (dark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        applyUI(!dark);
+      });
+    })();
+  </script>
+  
 
 <script>
   (function() {
