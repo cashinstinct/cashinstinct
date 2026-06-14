@@ -738,19 +738,19 @@
 <body>
   <a href="#main-content" style="position:absolute;left:-9999px;top:4px;z-index:9999;padding:8px 16px;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Skip to main content</a>
 
-  <nav class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="https://cashinstinct.ca/en/">Cash Instinct</a>
-      <div class="nav">
-        <a class="active" href="https://cashinstinct.ca/ebox/en/">EBOX</a>
-        <a href="https://cashinstinct.ca/stickermule/en/">Sticker&nbsp;Mule</a>
-        <a href="https://cashinstinct.ca/tangerine/en/">Tangerine</a>
-        <a href="https://cashinstinct.ca/hp-instant-ink/en/">HP&nbsp;Ink</a>
-        <a href="https://cashinstinct.ca/ebox/fr/" class="nav-fr" aria-label="Voir cette page en français">Français&nbsp;↗</a>
-        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
-      </div>
+  <nav class="topbar" aria-label="Main navigation">
+  <div class="topbar-inner">
+    <a class="brand" href="https://cashinstinct.ca/en/">Cash Instinct</a>
+    <div class="nav">
+      <a class="active" href="https://cashinstinct.ca/ebox/en/" aria-label="EBOX">EBOX</a>
+      <a href="https://cashinstinct.ca/stickermule/en/" aria-label="Sticker Mule">Sticker&nbsp;Mule</a>
+      <a href="https://cashinstinct.ca/tangerine/en/" aria-label="Tangerine Bank">Tangerine</a>
+      <a href="https://cashinstinct.ca/hp-instant-ink/en/" aria-label="HP Instant Ink">HP&nbsp;Ink</a>
+      <a class="nav-fr" href="https://cashinstinct.ca/ebox/fr/" hreflang="fr" lang="fr" aria-label="Voir cette page en français">Français&nbsp;↗</a>
+      <button id="theme-toggle" class="theme-btn" type="button" aria-label="Enable dark mode" aria-pressed="false">🌙</button>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <header class="hero">
     <div class="container">
