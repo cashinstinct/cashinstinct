@@ -222,7 +222,7 @@
           {
             "@type": "Question",
             "name": "What happens if I exceed my monthly plan?",
-            "acceptedAnswer": { "@type": "Answer", "text": "If you exceed your monthly page quota and have no rolled-over pages in reserve, HP applies a small charge for an additional page block (for example, $1.25 for a block of 10 to 50 pages depending on the plan). Everything is handled automatically on your next invoice." }
+            "acceptedAnswer": { "@type": "Answer", "text": "If you exceed your monthly page quota (and have no rolled-over pages in reserve), HP charges a small fee for each additional set of pages. The exact amount depends on your plan and appears automatically on your next invoice — there is nothing to manage manually. If you regularly print more than your plan allows, upgrading to a higher tier is usually cheaper than paying overage fees." }
           },
           {
             "@type": "Question",
@@ -700,43 +700,48 @@
         <span class="section-label">Pricing</span>
         <h2>Flexible HP Instant Ink Plans (Ink)</h2>
         <p>HP structures its pricing based on the number of pages printed per month, regardless of how much ink is used. Base rates in Canadian dollars (CAD) typically start around CAD $2.29 /month for very low-volume ink users.</p>
-
+<p style="font-size: 0.9rem; color: var(--muted); font-style: italic; margin-bottom: 12px;">
+  Pricing in effect June 2026 (subject to change by HP):
+</p>
         <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-top: 24px; box-shadow: var(--shadow);">
           <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 14px; color: var(--text);">Eligible page volumes</h3>
           <table class="compare-table" aria-label="Eligible HP Instant Ink page volumes">
             <thead>
-              <tr>
-                <th>Plan</th>
-                <th>Monthly volume</th>
-                <th>Benefit of code SVdn7</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Occasional</td>
-                <td>10 pages / month</td>
-                <td class="yes">1st month 100% free</td>
-              </tr>
-              <tr>
-                <td>Moderate</td>
-                <td>50 pages / month</td>
-                <td class="yes">1st month 100% free</td>
-              </tr>
-              <tr>
-                <td>Frequent</td>
-                <td>100 pages / month</td>
-                <td class="yes">1st month 100% free</td>
-              </tr>
-              <tr>
-                <td>Professional</td>
-                <td>300 to 700 pages / month</td>
-                <td class="yes">1st month 100% free</td>
-              </tr>
-            </tbody>
-          </table>
+    <tr><th>Plan</th><th>Pages / month</th><th>Monthly price</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Light printing</td><td>10 pages</td><td>$2.29</td></tr>
+    <tr><td>Occasional printing</td><td>50 pages</td><td>$7.49</td></tr>
+    <tr><td>Moderate printing</td><td>100 pages</td><td>$9.99</td></tr>
+    <tr><td>Frequent printing</td><td>300 pages</td><td>$18.99</td></tr>
+    <tr><td>Business printing</td><td>700 pages</td><td>$36.99</td></tr>
+  </tbody>
+</table>
           <p style="font-size: 0.85rem; margin-top: 12px; color: var(--muted); text-align: center;">Exact pricing structures change frequently — visit the official HP checkout table to confirm current rates.</p>
         </div>
+        <div class="warning" id="pricing-update-notice">
+  <p style="margin: 0 0 8px;"><strong>📅 Pricing update — effective July 13, 2026:</strong> HP is revising its Instant Ink plan lineup in Canada. The new tiers and monthly prices (in Canadian dollars) will be as follows:</p>
+  <table aria-label="New HP Instant Ink Canada plans effective July 13, 2026" style="width:100%; border-collapse:collapse; margin:8px 0;">
+    <thead>
+      <tr><th style="text-align:left; padding:4px 8px;">Monthly plan</th><th style="text-align:right; padding:4px 8px;">Monthly price</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding:4px 8px;">10 pages</td><td style="text-align:right; padding:4px 8px;">$2.49</td></tr>
+      <tr><td style="padding:4px 8px;">25 pages</td><td style="text-align:right; padding:4px 8px;">$4.99</td></tr>
+      <tr><td style="padding:4px 8px;">50 pages</td><td style="text-align:right; padding:4px 8px;">$7.99</td></tr>
+      <tr><td style="padding:4px 8px;">100 pages</td><td style="text-align:right; padding:4px 8px;">$10.99</td></tr>
+      <tr><td style="padding:4px 8px;">300 pages</td><td style="text-align:right; padding:4px 8px;">$20.49</td></tr>
+      <tr><td style="padding:4px 8px;">500 pages</td><td style="text-align:right; padding:4px 8px;">$29.99</td></tr>
+      <tr><td style="padding:4px 8px;">700 pages</td><td style="text-align:right; padding:4px 8px;">$37.99</td></tr>
+      <tr><td style="padding:4px 8px;">1500 pages</td><td style="text-align:right; padding:4px 8px;">$72.99</td></tr>
+      <tr><td style="padding:4px 8px;">Additional page set</td><td style="text-align:right; padding:4px 8px;">$2.59</td></tr>
+    </tbody>
+  </table>
+  <p style="margin: 8px 0 0; font-size: 0.85rem;">Referral code <code>SVdn7</code> (1 free month) remains valid on all plans after this update.</p>
+  <!-- UPDATE NOTE: On July 13, 2026, this block becomes the current pricing. Action: remove "effective July 13" → replace with "Current pricing", and fix any "10 to 700 pages" mention elsewhere on the page → "10 to 1500 pages". -->
+</div>
       </section>
+      
 <section id="eligible-printers">
   <span class="section-label">Compatibility</span>
   <h2>HP Instant Ink Eligible Printers in Canada (2026)</h2>
@@ -966,7 +971,7 @@
           <details>
             <summary id="faq-q10">What happens if I exceed my monthly plan?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q10">
-              <p>If you exceed your monthly page quota (and have no rolled-over pages in reserve), HP applies a small charge for an additional page block (for example, $1.25 for a block of 10 to 50 pages depending on the plan). Everything is handled automatically on your next invoice.</p>
+              <p>If you exceed your monthly page quota (and have no rolled-over pages in reserve), HP charges a small fee for each additional set of pages. The exact amount depends on your plan and appears automatically on your next invoice — there is nothing to manage manually. If you regularly print more than your plan allows, upgrading to a higher tier is usually cheaper than paying overage fees.</p>     
             </div>
           </details>
           <details>
