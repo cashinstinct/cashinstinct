@@ -53,7 +53,7 @@
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-06-01",
-        "dateModified": "2026-06-12",
+        "dateModified": "2026-06-14",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
         "publisher": {
           "@type": "Organization",
@@ -873,7 +873,7 @@
         🔑 La Clé Orange doit être saisie dans le champ <em>« Entrez une Clé Orange »</em> à la <strong>première étape</strong> du formulaire d'inscription — pas à l'étape paiement, pas après la création du compte.
       </div>
 
-      <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-06-12">12 juin 2026</time></p>
+      <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-06-14">14 juin 2026</time></p>
 
       <!-- === SECTION CUMUL === -->
       <section id="primes-cumulables" aria-label="Deux primes cumulables">
@@ -1058,6 +1058,13 @@
           <strong>🔍 Quel champ exactement ?</strong>
           À la première étape du formulaire, repérer le champ libellé <em>« Entrez une Clé Orange »</em>. C'est le seul champ qui active la prime de parrainage. Ne pas confondre avec d'éventuelles cases de codes promotionnels affichées plus loin.
         </div>
+
+        <!--
+          NOTE INTERNE — Ces 5 étapes décrivent UNIQUEMENT la prime Clé Orange (50 $).
+          Elles NE sont PAS référencées par le JSON-LD HowTo.
+          Le schéma HowTo pointe vers les ancres #cumul-step-1..4 (le parcours de cumul 300 $).
+          Garder ces deux sections distinctes — ne pas fusionner les ancres ni câbler ces IDs d'étapes dans le schéma.
+        -->
 
         <ol class="steps">
           <li id="step-1">
@@ -1332,7 +1339,7 @@
 <footer>
   <div class="container">
     <p>Site non affilié officiellement à Tangerine ou à la Banque Scotia. Les marques appartiennent à leurs propriétaires respectifs.</p>
-    <p style="margin-top:6px;">Clé Orange Tangerine : <code>14130944S1</code> — Mis à jour : <time id="footer-date" datetime="2026-06-12">Juin 2026</time></p>
+    <p style="margin-top:6px;">Clé Orange Tangerine : <code>14130944S1</code> — Mis à jour : <time id="footer-date" datetime="2026-06-14">Juin 2026</time></p>
   </div>
   
    <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
