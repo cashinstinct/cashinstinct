@@ -17,7 +17,7 @@
   6. Geo-routing JS → optimisation par-dessus la redirection serveur de Sticker Mule (redondance voulue).
 
   Valeurs STABLES exactes (NE PAS arrondir) : crédit 12,50$CAD/9€/£8/$10USD,
-  minimums 38/27/25/30, commission 10%, MOQ 10 unités, 19 types de stickers.
+  minimums 38/27/30/30, commission 10%, MOQ 10 unités, 19 types de stickers.
 
   Source officielle : stickermule.com/stats + stickermule.com/commissions
   Dernier audit : juin 2026.
@@ -907,7 +907,7 @@
   STATS POLICY (ne pas "corriger" en valeurs exactes) :
   Chiffres volatils arrondis vers le bas avec "plus de X" — zéro maintenance, toujours vrai.
   Source : https://www.stickermule.com/ca/stats — snapshot 13 juin 2026.
-  Valeurs STABLES (crédit 12,50$/9€/£8/$10, min 38/27/25/30, 10% commission, MOQ 10) = exactes, ne pas arrondir.
+  Valeurs STABLES (crédit 12,50$/9€/£8/$10, min 38/27/30/30, 10% commission, MOQ 10) = exactes, ne pas arrondir.
    -->
         <section id="platform-stats">
           <span class="section-label">Crédibilité</span>
@@ -952,6 +952,19 @@
           <p style="margin-top: 12px;">En plus des autocollants : <strong>étiquettes personnalisées</strong>, magnets, boutons, emballages, vêtements et acryliques. Minimum de commande : <strong>10 unités par design</strong>. Des quantités personnalisées (multiples de 10) sont disponibles entre 10 et 50 unités.</p>
         </section>
 
+           <!--
+  MINIMUMS — VÉRIFIÉS À LA SOURCE OFFICIELLE, NE PAS "CORRIGER" PAR CONVERSION DE DEVISE :
+  Les minimums ne suivent PAS un ratio de change. Chaque région outre les US (Default) a son seuil fixe plateforme.
+  CAD 38 / EUR 27 / GBP 30 / USD 30. Le £30 n'est PAS une typo — c'est le vrai minimum UK,
+  même s'il ne "matche" pas le ratio des autres devises.
+  Source par pays (le slug "30-minimum" reste identique partout, seul le /pays/ change) 
+  (Note : le slug "30-minimum" reflète le seuil USD ; le montant affiché sur chaque page régionale est le vrai minimum local.) :
+  https://www.stickermule.com/ca/support/faq/ordering/why-is-there-a-30-minimum-order-size-when-using-store-credit
+  https://www.stickermule.com/fr/support/faq/ordering/why-is-there-a-30-minimum-order-size-when-using-store-credit
+  https://www.stickermule.com/uk/support/faq/ordering/why-is-there-a-30-minimum-order-size-when-using-store-credit
+  https://www.stickermule.com/support/faq/ordering/why-is-there-a-30-minimum-order-size-when-using-store-credit
+        Vérifié juin 2026.
+-->
         <section id="global-rates">
           <span class="section-label">Valeur Mondiale</span>
           <h2>Crédit de parrainage par région (CAD, EUR, GBP, USD)</h2>
@@ -965,7 +978,7 @@
     <tr><td>🇺🇸 États-Unis</td><td>USD ($)</td><td class="yes">$10,00 USD</td><td>$30,00 USD</td></tr>
     <tr><td>🇨🇦 Canada</td><td>CAD ($)</td><td class="yes">$12,50 CAD</td><td>$38,00 CAD</td></tr>
     <tr><td>🇪🇺 Europe</td><td>EUR (€)</td><td class="yes">9,00 €</td><td>27,00 €</td></tr>
-    <tr><td>🇬🇧 Royaume-Uni</td><td>GBP (£)</td><td class="yes">£8,00</td><td>£25,00</td></tr>
+    <tr><td>🇬🇧 Royaume-Uni</td><td>GBP (£)</td><td class="yes">£8,00</td><td>£30,00</td></tr>
     <tr><td>🌐 Autres pays</td><td>Devise locale</td><td>Converti au taux du panier</td><td>Équivalent de $30 USD</td></tr>
   </tbody>
 </table>
