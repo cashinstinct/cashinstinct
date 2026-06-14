@@ -181,7 +181,7 @@
           {
             "@type": "Question",
             "name": "Qu'arrive-t-il en cas de dépassement du forfait mensuel ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "HP applique de petits frais pour un bloc de pages supplémentaire (par exemple, 1,25 $ pour un bloc de 10 à 50 pages selon le forfait). Tout est géré automatiquement sur votre prochaine facture." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Si vous dépassez votre quota de pages mensuel (et qu'il ne vous reste aucune page reportée en réserve), HP facture un petit montant pour chaque tranche de pages supplémentaires. Le montant exact dépend de votre forfait et apparaît automatiquement sur votre prochaine facture — rien à gérer manuellement. Si vous imprimez régulièrement plus que votre forfait le permet, passer à un palier supérieur revient généralement moins cher que de payer des frais de dépassement." }
     },
           {
             "@type": "Question",
@@ -624,19 +624,47 @@
           <span class="section-label">Tarification</span>
           <h2>Forfaits flexibles HP Instant Ink (Encre)</h2>
           <p>HP sépare ses structures de prix en fonction du nombre de pages imprimées mensuellement, peu importe la quantité d'encre utilisée. Les tarifs de base en dollars canadiens (CAD) débutent généralement autour de 2,29 $ CAD par mois pour les très petits utilisateurs d'encre.</p>
+          <p style="font-size: 0.9rem; color: var(--muted); font-style: italic; margin-bottom: 12px;">
+  Tarifs en vigueur en juin 2026 (sujets à révision par HP) :
+</p>
           <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-top: 24px; box-shadow: var(--shadow);">
             <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 14px; color: var(--text);">Volume de pages admissibles</h3>
             <table class="compare-table" aria-label="Volume de pages admissibles HP Instant Ink">
-              <thead><tr><th>Forfait</th><th>Volume mensuel</th><th>Avantage du code SVdn7</th></tr></thead>
-              <tbody>
-                <tr><td>Occasionnel</td><td>10 pages / mois</td><td class="yes">1er mois 100% gratuit</td></tr>
-                <tr><td>Modéré</td><td>50 pages / mois</td><td class="yes">1er mois 100% gratuit</td></tr>
-                <tr><td>Fréquent</td><td>100 pages / mois</td><td class="yes">1er mois 100% gratuit</td></tr>
-                <tr><td>Professionnel</td><td>300 à 700 pages / mois</td><td class="yes">1er mois 100% gratuit</td></tr>
-              </tbody>
-            </table>
+             <thead>
+    <tr><th>Forfait</th><th>Pages / mois</th><th>Prix mensuel</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Impression légère</td><td>10 pages</td><td>2,29 $</td></tr>
+    <tr><td>Impression occasionnelle</td><td>50 pages</td><td>7,49 $</td></tr>
+    <tr><td>Impression modérée</td><td>100 pages</td><td>9,99 $</td></tr>
+    <tr><td>Impression fréquente</td><td>300 pages</td><td>18,99 $</td></tr>
+    <tr><td>Usage professionnel</td><td>700 pages</td><td>36,99 $</td></tr>
+  </tbody>
+</table>
             <p style="font-size: 0.85rem; margin-top: 12px; color: var(--muted); text-align: center;">Les structures de prix exactes évoluant fréquemment, visitez le tableau officiel de HP au checkout pour valider les tarifs en vigueur.</p>
           </div>
+
+          <div class="warning" id="pricing-update-notice">
+  <p style="margin: 0 0 8px;"><strong>📅 Mise à jour des tarifs — en vigueur le 13 juillet 2026 :</strong> HP révise sa grille de forfaits Instant Ink au Canada. Les nouveaux paliers et prix mensuels (en dollars canadiens) seront les suivants :</p>
+  <table aria-label="Nouveaux forfaits HP Instant Ink Canada au 13 juillet 2026" style="width:100%; border-collapse:collapse; margin:8px 0;">
+    <thead>
+      <tr><th style="text-align:left; padding:4px 8px;">Forfait mensuel</th><th style="text-align:right; padding:4px 8px;">Prix mensuel</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding:4px 8px;">10 pages</td><td style="text-align:right; padding:4px 8px;">2,49 $</td></tr>
+      <tr><td style="padding:4px 8px;">25 pages</td><td style="text-align:right; padding:4px 8px;">4,99 $</td></tr>
+      <tr><td style="padding:4px 8px;">50 pages</td><td style="text-align:right; padding:4px 8px;">7,99 $</td></tr>
+      <tr><td style="padding:4px 8px;">100 pages</td><td style="text-align:right; padding:4px 8px;">10,99 $</td></tr>
+      <tr><td style="padding:4px 8px;">300 pages</td><td style="text-align:right; padding:4px 8px;">20,49 $</td></tr>
+      <tr><td style="padding:4px 8px;">500 pages</td><td style="text-align:right; padding:4px 8px;">29,99 $</td></tr>
+      <tr><td style="padding:4px 8px;">700 pages</td><td style="text-align:right; padding:4px 8px;">37,99 $</td></tr>
+      <tr><td style="padding:4px 8px;">1500 pages</td><td style="text-align:right; padding:4px 8px;">72,99 $</td></tr>
+      <tr><td style="padding:4px 8px;">Lot de pages supplémentaires</td><td style="text-align:right; padding:4px 8px;">2,59 $</td></tr>
+    </tbody>
+  </table>
+  <p style="margin: 8px 0 0; font-size: 0.85rem;">Le code de parrainage <code>SVdn7</code> (1 mois gratuit) reste valide sur tous les forfaits après cette mise à jour.</p>
+  <!-- NOTE MAJ : le 13 juillet 2026, ce bloc devient la grille courante. Action : retirer la phrase "en vigueur le 13 juillet" → remplacer par "Tarifs actuels", et corriger toute mention "de 10 à 700 pages" ailleurs sur la page → "de 10 à 1500 pages". -->
+</div>
         </section>
 
         <section id="eligible-printers">
@@ -827,8 +855,7 @@
             <details>
               <summary id="faq-q8">Qu'arrive-t-il en cas de dépassement du forfait mensuel ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q8">
-                <p>Si vous dépassez votre quota de pages mensuel (et que vous n'avez plus de pages reportées en banque), HP applique de légers frais pour un bloc de pages supplémentaires (par exemple, 1,25 $ pour un bloc de 10 à 50 pages selon le forfait). Tout se gère automatiquement sur la facture suivante.</p>
-              </div>
+              <p>Si vous dépassez votre quota de pages mensuel (et qu'il ne vous reste aucune page reportée en réserve), HP facture un petit montant pour chaque tranche de pages supplémentaires. Le montant exact dépend de votre forfait et apparaît automatiquement sur votre prochaine facture — rien à gérer manuellement. Si vous imprimez régulièrement plus que votre forfait le permet, passer à un palier supérieur revient généralement moins cher que de payer des frais de dépassement.</p>       </div>
             </details>
             <details>
               <summary id="faq-q9">Est-ce que l'impression de photos couleur consomme plus de forfait ?</summary>
