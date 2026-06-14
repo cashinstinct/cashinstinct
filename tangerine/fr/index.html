@@ -122,7 +122,7 @@
           {
             "@type": "Question",
             "name": "La Clé Orange 14130944S1 est-elle cumulable avec la prime de 250 $ ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Oui. La Clé Orange (50 $) et la prime de dépôt de paie (250 $) sont deux programmes distincts et cumulables. Le code 14130944S1 s'entre à l'inscription ; la prime de 250 $ s'active ensuite automatiquement dès que les conditions de dépôt de paie sont remplies." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Oui. La Clé Orange (50 $) et la prime de dépôt de paie (250 $) sont deux programmes distincts et cumulables. Le code 14130944S1 se saisit à l'inscription ; la prime de 250 $ s'active ensuite automatiquement dès que les conditions de dépôt de paie sont remplies." }
           },
           {
             "@type": "Question",
@@ -137,7 +137,7 @@
           {
             "@type": "Question",
             "name": "Comment activer la prime de dépôt de paie de 250 $ ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Aucun code requis. Après avoir ouvert votre compte avec la Clé Orange, redirigez votre dépôt de paie direct vers Tangerine (institution 614, transit 00152, minimum 200 $/mois). Après deux dépôts consécutifs dans les 60 jours suivant l'ouverture, Tangerine verse les 250 $ automatiquement le mois suivant." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Aucun code requis. Après avoir ouvert votre compte avec la Clé Orange, redirigez votre dépôt de paie direct vers Tangerine (institution 614, transit 00152, minimum 200 $/mois). Le premier dépôt doit arriver dans les 60 jours suivant l'ouverture. Après des dépôts de paie pendant deux mois consécutifs, Tangerine verse les 250 $ automatiquement le mois suivant dans votre compte-chèques." }
           },
           {
             "@type": "Question",
@@ -152,7 +152,7 @@
           {
             "@type": "Question",
             "name": "Qu'est-ce qu'une Clé Orange Tangerine ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "La Clé Orange est le terme officiel de Tangerine pour son code de parrainage. Entrer 14130944S1 dans le champ prévu active la prime de bienvenue de 50 $. C'est l'équivalent d'un code promo chez d'autres banques, mais specific au système de parrainage Tangerine." }
+            "acceptedAnswer": { "@type": "Answer", "text": "La Clé Orange est le terme officiel de Tangerine pour son code de parrainage. Entrer 14130944S1 dans le champ prévu active la prime de bienvenue de 50 $. C'est l'équivalent d'un code promo chez d'autres banques, mais spécifique au système de parrainage Tangerine." }
           }
         ]
       },
@@ -168,28 +168,28 @@
             "position": 1,
             "name": "Ouvrir le compte avec la Clé Orange 14130944S1",
             "text": "À la première étape du formulaire, saisir 14130944S1 dans le champ « Entrez une Clé Orange ». Choisir un compte-chèques sans frais.",
-            "url": "https://cashinstinct.ca/tangerine/fr/#howto-step-1"
+            "url": "https://cashinstinct.ca/tangerine/fr/#cumul-step-1"
           },
           {
             "@type": "HowToStep",
             "position": 2,
             "name": "Déposer 250 $ dans les 30 jours",
             "text": "Effectuer un virement de 250 $ et maintenir ce solde pendant 60 jours consécutifs. Tangerine crédite les 50 $ dans les 30 jours suivants.",
-            "url": "https://cashinstinct.ca/tangerine/fr/#howto-step-2"
+            "url": "https://cashinstinct.ca/tangerine/fr/#cumul-step-2"
           },
           {
             "@type": "HowToStep",
             "position": 3,
             "name": "Rediriger votre dépôt de paie",
             "text": "Donner à votre employeur les coordonnées Tangerine : institution 614, transit 00152. Le premier dépôt doit arriver dans les 60 jours suivant l'ouverture.",
-            "url": "https://cashinstinct.ca/tangerine/fr/#howto-step-3"
+            "url": "https://cashinstinct.ca/tangerine/fr/#cumul-step-3"
           },
           {
             "@type": "HowToStep",
             "position": 4,
-            "name": "Maintenir deux dépôts de paie consécutifs",
-            "text": "Après deux mois de dépôts directs, Tangerine verse automatiquement les 250 $ le mois suivant.",
-            "url": "https://cashinstinct.ca/tangerine/fr/#howto-step-4"
+            "name": "Maintenir dépôts de paie pendant deux mois consécutifs",
+            "text": "Après des dépôts de paie pendant deux mois consécutifs, Tangerine verse les 250 $ automatiquement le mois suivant dans votre compte-chèques.",
+            "url": "https://cashinstinct.ca/tangerine/fr/#cumul-step-4"
           }
         ]
       },
@@ -816,6 +816,26 @@
 </header>
 
 <main id="main-content">
+
+  <!--
+  ════════════════════════════════════════════════════════════
+  NOTE INTERNE — TANGERINE : 2 PRIMES DISTINCTES (ne pas confondre)
+  ════════════════════════════════════════════════════════════
+  (a) Clé Orange / Invitez un ami = 50 $
+      → condition : solde ≥ 250 $ maintenu 60 jours consécutifs
+      → AUCUN seuil de paie. Versée sous 30 j après exigences remplies.
+      → source : tangerine.ca/fr/offres/invitez-un-ami
+
+  (b) Promo compte-chèques = 250 $
+      → condition : dépôt de paie (code ACP) ≥ 200 $/mois × 2 mois consécutifs
+      → 1er dépôt sous 60 j de l'ouverture. Versée le mois suivant.
+      → source : tangerine.ca/fr/offres/compte-cheques-promotion
+
+  ⚠ Les seuils 250 $ (solde) et 200 $/mois (paie) sont CORRECTS et
+    NON contradictoires — ils concernent deux programmes différents.
+  ════════════════════════════════════════════════════════════
+-->
+  
   <div class="container">
     <div class="prose">
 
@@ -953,7 +973,7 @@
           <li id="cumul-step-4">
             <div>
               <h3>Maintenir deux dépôts de paie consécutifs</h3>
-              <p>Après deux mois de dépôts directs, Tangerine verse automatiquement les <strong>250&nbsp;$</strong> le mois suivant.</p>
+              <p>Après des dépôts de paie pendant deux mois consécutifs, Tangerine verse les 250 $ automatiquement le mois suivant dans votre compte-chèques.</p>
             </div>
           </li>
         </ol>
@@ -1040,31 +1060,31 @@
         </div>
 
         <ol class="steps">
-          <li id="howto-step-1">
+          <li id="step-1">
             <div>
               <h3>Allez sur Tangerine.ca</h3>
            <p>Rendez-vous sur <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner" target="_blank" rel="noopener sponsored noreferrer">tangerine.ca</a> et cliquez sur <strong>« Ouvrir un compte »</strong>.</p>
             </div>
           </li>
-          <li id="howto-step-2">
+          <li id="step-2">
             <div>
               <h3>Entrez <code>14130944S1</code> dans le champ « Entrez une Clé Orange »</h3>
               <p>C'est la <strong>première étape</strong> du formulaire. Saisir le code avant de continuer. Le système confirme instantanément si le code est valide.</p>
             </div>
           </li>
-          <li id="howto-step-3">
+          <li id="step-3">
             <div>
               <h3>Choisissez un compte-chèques sans frais</h3>
               <p>Le compte-chèques est le plus avantageux — transactions illimitées, Interac gratuit, et éligible aux deux primes.</p>
             </div>
           </li>
-          <li id="howto-step-4">
+          <li id="step-4">
             <div>
               <h3>Complétez votre profil et vérifiez le résumé</h3>
               <p>Assurez-vous que la prime de 50&nbsp;$ apparaît dans le récapitulatif avant de confirmer la demande.</p>
             </div>
           </li>
-          <li>
+          <li id="step-5">
             <div>
               <h3>Déposez 250&nbsp;$ dans les 30 premiers jours</h3>
               <p>Maintenez ce solde pendant <strong>60 jours consécutifs</strong>. La prime de 50&nbsp;$ est créditée dans les 30 jours suivants.</p>
@@ -1238,13 +1258,13 @@
           <details>
             <summary id="faq-q3">Combien de temps pour recevoir la prime de 50&nbsp;$&nbsp;?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q3">
-              <p>Environ 3&nbsp;mois au total : 30&nbsp;jours pour effectuer le dépôt initial, 60&nbsp;jours de maintien du solde à 250&nbsp;$, puis 30 jours pour que Tangerine crédite la prime. Le versement est automatique — aucune démarche requise.</p>
+              <p>Prime Clé Orange (50 $) : Environ 3&nbsp;mois au total : 30&nbsp;jours pour effectuer le dépôt initial, 60&nbsp;jours de maintien du solde à 250&nbsp;$, puis 30 jours pour que Tangerine crédite la prime. Le versement est automatique — aucune démarche requise.</p>
             </div>
           </details>
           <details>
             <summary id="faq-q4">Comment activer la prime de dépôt de paie de 250&nbsp;$&nbsp;?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q4">
-              <p>Aucun code requis. Après avoir ouvert votre compte avec la Clé Orange, redirigez votre dépôt de paie direct vers Tangerine (institution <strong>614</strong>, transit <strong>00152</strong>, minimum 200 $/mois). Le premier dépôt doit arriver dans les 60 jours suivant l'ouverture. Après deux dépôts consécutifs, Tangerine verse les 250 $ automatiquement le mois suivant.</p>
+              <p>Prime dépôt de paie (250 $) : Aucun code requis. Après avoir ouvert votre compte avec la Clé Orange, redirigez votre dépôt de paie direct vers Tangerine (institution <strong>614</strong>, transit <strong>00152</strong>, minimum 200 $/mois de déoôt direct). Le premier dépôt doit arriver dans les 60 jours suivant l'ouverture. Après des dépôts de paie pendant deux mois consécutifs, Tangerine verse les 250 $ automatiquement le mois suivant dans votre compte-chèques.</p>
             </div>
           </details>
           <details>
