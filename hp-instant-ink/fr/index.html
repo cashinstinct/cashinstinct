@@ -512,7 +512,7 @@
           <div class="input-copy-group" style="display: flex; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: auto; margin-bottom: auto; padding: 4px;">
             <input type="text" value="SVdn7" id="promo-code" readonly aria-readonly="true" aria-label="Code de parrainage HP Instant Ink" style="flex: 1; border: none; padding: 12px 16px; font-family: monospace; font-size: 1.05rem; font-weight: 700; color: var(--text); background: transparent; text-align: center;" />
             <!-- ✅ data-copy / data-target (système unifié) -->
-            <button class="copy-btn" data-copy="SVdn7" data-target="copyStatusHero" type="button">Copier</button>
+            <button class="copy-btn" data-copy="SVdn7" data-label="Copier" data-target="copyStatusHero" type="button">Copier</button>
           </div>
           <!-- ✅ display:none retiré pour accessibilité lecteurs d'écran -->
          <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
@@ -911,12 +911,13 @@
       <div class="s-code">SVdn7</div>
       <div class="s-label">Code parrain HP Instant Ink</div>
     </div>
-    <button class="s-copy-btn" id="sticky-copy-btn" data-copy="SVdn7" type="button">Copier</button>
- <a href="https://try.hpinstantink.com/SVdn7"
-   target="_blank" rel="noopener sponsored noreferrer"
-   class="s-activate-btn">
-  Activer ↗
-</a>
+    <button class="s-copy-btn" id="sticky-copy-btn" data-copy="SVdn7" data-target="stickyCopyStatus" data-label="Copier" type="button">Copier</button>
+    <span id="stickyCopyStatus" role="status" aria-atomic="true" aria-live="polite" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"></span>
+    <a href="https://try.hpinstantink.com/SVdn7"
+       target="_blank" rel="noopener sponsored noreferrer"
+       class="s-activate-btn">
+      Activer ↗
+    </a>
   </div>
 
   <footer>
@@ -937,98 +938,121 @@
 
   
   <!-- SCRIPTS -->
-   <script>
-  // ── SCRIPT UNIVERSEL : DATES DYNAMIQUES & JSON-LD dateModified ──
+ <script>
+  // ── MODULE DE COPIE UNIFIÉ — source de vérité unique via data-copy / data-target ──
   (function() {
-    var now = new Date();
-    var lang = document.documentElement.lang || "en-CA";
-    
-    // 1. Format Court (ex: "Juin 2026" / "June 2026")
-    var footerDate = document.getElementById("footer-date");
-    if (footerDate) {
-      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
-      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-    }
-    
-    // 2. Format Long localisé (ex: "12 juin 2026" / "June 12, 2026")
-    var trustDate = document.getElementById("trust-date");
-    if (trustDate) {
-      var options = lang.startsWith("fr") 
-        ? { day: "numeric", month: "long", year: "numeric" }
-        : { month: "long", day: "numeric", year: "numeric" };
-      
-      trustDate.textContent = now.toLocaleDateString(lang, options);
-      if (trustDate.tagName === "TIME") {
-        trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-      }
+    var DONE_LABEL = "Copié ✓";   // FR — espace insécable géré par le ✓
+    var STATUS_MSG = "Code copié dans le presse-papiers.";
+
+    function feedback(btn, status) {
+      var original = btn.getAttribute("data-label") || btn.textContent;
+      btn.textContent = DONE_LABEL;
+      btn.classList.add("copied");
+      if (status) status.textContent = STATUS_MSG;
+      setTimeout(function() {
+        btn.textContent = original;
+        btn.classList.remove("copied");
+        if (status) status.textContent = "";
+      }, 2000);
     }
 
-    // 3. Mise à jour automatique du JSON-LD dateModified
-    try {
-      var today = now.toISOString().slice(0, 10);
-      var ldJson = document.querySelector('script[type="application/ld+json"]');
-      if (ldJson) {
-        var data = JSON.parse(ldJson.textContent);
-        if (data && data["@graph"]) {
-          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
-          if (webpage) {
-            webpage.dateModified = today;
-            ldJson.textContent = JSON.stringify(data);
-          }
-        }
-      }
-    } catch(e) {}
-  })();
-</script>
-
-  <script>
-    /* ── Copie dans le presse-papier script en français Copié ✓── */
-    window.legacyCopy = function(text) {
-      try {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none;';
-        document.body.appendChild(ta);
-        ta.focus(); ta.select();
-        var ok = document.execCommand('copy');
-        document.body.removeChild(ta);
-        return ok;
-      } catch(e) { return false; }
-    };
-    
-    function copyText(text, button, statusId) {
-      var status = document.getElementById(statusId);
-      var originalText = button.textContent;
-      var doFeedback = function() {
-        button.textContent = 'Copié ✓';
-        button.classList.add('copied');
-        if (status) status.textContent = '';
-        setTimeout(function() {
-          button.textContent = originalText;
-          button.classList.remove('copied');
-        }, 2000);
-      };
-      var doFail = function() {
-        if (status) status.textContent = 'Unable to copy automatically.';
-      };
+    function copyText(text, btn, status) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(doFeedback).catch(function() {
-          legacyCopy(text) ? doFeedback() : doFail();
+        navigator.clipboard.writeText(text).then(function() {
+          feedback(btn, status);
+        }).catch(function() {
+          legacyCopy(text, btn, status);
         });
       } else {
-        legacyCopy(text) ? doFeedback() : doFail();
+        legacyCopy(text, btn, status);
       }
     }
 
-    document.querySelectorAll('[data-copy]').forEach(function(button) {
-      button.addEventListener('click', function() {
-        copyText(button.getAttribute('data-copy'), button, button.getAttribute('data-target'));
+    function legacyCopy(text, btn, status) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.cssText = "position:fixed;opacity:0;pointer-events:none;";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        feedback(btn, status);
+      } catch(e) {
+        if (status) status.textContent = "Copiez manuellement : " + text;
+      }
+      document.body.removeChild(ta);
+    }
+
+    // Délégation : scanne tous les éléments [data-copy] (hero + sticky CTA)
+    document.querySelectorAll("[data-copy]").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var text = btn.getAttribute("data-copy");
+        var targetId = btn.getAttribute("data-target");
+        var status = targetId ? document.getElementById(targetId) : null;
+        copyText(text, btn, status);
       });
     });
+  })();
   </script>
 
- <script>
-    /* ── Theme avex texte javascript Traduit le aria-label en français── */
+<script>
+  // ── MODULE DE COPIE UNIFIÉ — source de vérité unique via data-copy / data-target ──
+  (function() {
+    var DONE_LABEL = "Copié ✓";
+    var STATUS_MSG = "Code copié dans le presse-papiers.";
+
+    function feedback(btn, status) {
+      var original = btn.getAttribute("data-label") || btn.textContent;
+      btn.textContent = DONE_LABEL;
+      btn.classList.add("copied");
+      if (status) status.textContent = STATUS_MSG;
+      setTimeout(function() {
+        btn.textContent = original;
+        btn.classList.remove("copied");
+        if (status) status.textContent = "";
+      }, 2000);
+    }
+
+    function copyText(text, btn, status) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          feedback(btn, status);
+        }).catch(function() {
+          legacyCopy(text, btn, status);
+        });
+      } else {
+        legacyCopy(text, btn, status);
+      }
+    }
+
+    function legacyCopy(text, btn, status) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.cssText = "position:fixed;opacity:0;pointer-events:none;";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        feedback(btn, status);
+      } catch(e) {
+        if (status) status.textContent = "Copiez manuellement : " + text;
+      }
+      document.body.removeChild(ta);
+    }
+
+    document.querySelectorAll("[data-copy]").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var text = btn.getAttribute("data-copy");
+        var targetId = btn.getAttribute("data-target");
+        var status = targetId ? document.getElementById(targetId) : null;
+        copyText(text, btn, status);
+      });
+    });
+  })();
+  </script>
+
+   <script>
+    /* ── thème — bloc unique avec texte FR ── */
     (function() {
       var toggle = document.getElementById('theme-toggle');
       if (!toggle) return;
@@ -1039,7 +1063,7 @@
 
       function applyUI(dark) {
         toggle.textContent = dark ? '☀️' : '🌙';
-        toggle.setAttribute('aria-label', dark ? 'Activer le mode clair' : 'Activer le mode sombre');
+        toggle.setAttribute('aria-label', dark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
         toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
       }
       /* Initialise l'UI selon le thème déjà appliqué par le <head> */
@@ -1058,20 +1082,31 @@
       });
     })();
   </script>
+
   
+   <!-- Sticky CTA scroll -->
+    <script>
+    (function() {
+      var cta = document.getElementById('sticky-cta');
+      if (!cta) return;
 
- <script>
-       /* ── CTA simple pour le scroll── */
-  (function() {
-    var cta = document.getElementById('sticky-cta');
-    if (!cta) return;
-    var shown = false;
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 400 && !shown) { cta.classList.add('visible'); shown = true; }
-      else if (window.scrollY <= 100 && shown) { cta.classList.remove('visible'); shown = false; }
-    }, { passive: true });
-  })();
-</script>
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          cta.classList.add('visible');
+        } else if (window.scrollY <= 200) {
+          cta.classList.remove('visible');
+        }
+      }, { passive: true });
 
+      // Masquer quand le CTA final est visible (aligné sur Sticker Mule)
+      var ctaSection = document.querySelector('.cta-section');
+      if (ctaSection) {
+        new IntersectionObserver(function(entries) {
+          cta.style.opacity = entries[0].isIntersecting ? '0' : '1';
+          cta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+        }).observe(ctaSection);
+      }
+    })();
+  </script>
 </body>
 </html>
