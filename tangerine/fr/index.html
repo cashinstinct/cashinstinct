@@ -780,7 +780,7 @@
           <div class="input-copy-group" style="display: flex; flex-direction: column; background: transparent; border: none; gap: 10px; margin-bottom: 12px; padding: 0;">
             <input type="text" value="14130944S1" readonly aria-readonly="true" aria-label="Clé Orange Tangerine"
               style="width: 100%; border: 1px solid var(--border); background: var(--surface-soft); padding: 12px 16px; font-family: monospace; font-size: 1.1rem; font-weight: 700; color: var(--text); text-align: center; border-radius: 8px;" />
-            <button class="copy-btn" data-copy="14130944S1" data-target="copyStatusHero" type="button"
+            <button class="copy-btn" data-copy="14130944S1" data-label="Copier la clé" data-target="copyStatusHero" type="button"
               style="width: 100%; background: var(--text); color: var(--surface); border: none; border-radius: 8px; font-weight: 700; padding: 12px 20px; cursor: pointer; font-size: 1rem; white-space: nowrap; -webkit-appearance: none;">Copier la clé</button>
           </div>
           <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
@@ -1145,11 +1145,11 @@
             <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
               <span style="background: var(--surface-muted); border: 1px solid var(--border-soft); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">
                 Institution : <code>614</code> 
-                <button data-copy="614" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copier</button>
+                <button data-copy="614" data-label="Copier" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copier</button>
               </span>
               <span style="background: var(--surface-muted); border: 1px solid var(--border-soft); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">
                 Transit : <code>00152</code> 
-                <button data-copy="00152" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copier</button>
+                <button data-copy="00152" data-label="Copier" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copier</button>
               </span>
             </div>
           </div>
@@ -1309,7 +1309,7 @@
         </a>
         <div class="cta-code-row">
           <span class="cta-code-pill">14130944S1</span>
-          <button class="cta-copy-btn" data-copy="14130944S1" data-target="copyStatusCta" type="button">Copier la clé</button>
+          <button class="cta-copy-btn" data-copy="14130944S1" data-label="Copier la clé" data-target="copyStatusCta" type="button">Copier la clé</button>
         </div>
         <span class="copy-status" id="copyStatusCta" role="status" aria-atomic="true" aria-live="polite"></span>
       </div>
@@ -1328,7 +1328,7 @@
     <div class="s-code">14130944S1</div>
     <div class="s-label">Clé Orange Tangerine</div>
   </div>
-  <button class="s-btn" id="sticky-copy-btn" type="button">Copier</button>
+  <button class="s-btn" id="sticky-copy-btn" data-label="Copier" type="button">Copier</button>
   <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=fr_CA&id=hp-banner"
      target="_blank" rel="noopener sponsored noreferrer"
      style="background:var(--text);color:var(--surface);border-radius:6px;padding:8px 12px;font-weight:800;font-size:0.88rem;text-decoration:none;white-space:nowrap;flex-shrink:0;">
@@ -1457,86 +1457,95 @@ function calcGain() {
 </script>
   
 <script>
-  async function copyText(text, button, statusId) {
-    const status = document.getElementById(statusId);
-    const orig = button.textContent;
-    const doFeedback = () => {
-      button.textContent = 'Copié ✓';
-      button.classList.add('copied');
-      if (status) status.textContent = '';
-      setTimeout(() => { button.textContent = orig; button.classList.remove('copied'); }, 2000);
-    };
-    try {
-      await navigator.clipboard.writeText(text);
-      doFeedback();
-    } catch(e) {
-      // Fallback textarea pour Safari/iOS restrictif
-      const ta = document.createElement('textarea');
+  // ── MODULE DE COPIE UNIFIÉ — source de vérité unique via data-copy / data-target ──
+  (function() {
+    var DONE_LABEL = "Copié ✓";   // FR — espace insécable géré par le ✓
+    var STATUS_MSG = "Code copié dans le presse-papiers.";
+
+    function feedback(btn, status) {
+      var original = btn.getAttribute("data-label") || btn.textContent;
+      btn.textContent = DONE_LABEL;
+      btn.classList.add("copied");
+      if (status) status.textContent = STATUS_MSG;
+      setTimeout(function() {
+        btn.textContent = original;
+        btn.classList.remove("copied");
+        if (status) status.textContent = "";
+      }, 2000);
+    }
+
+    function copyText(text, btn, status) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          feedback(btn, status);
+        }).catch(function() {
+          legacyCopy(text, btn, status);
+        });
+      } else {
+        legacyCopy(text, btn, status);
+      }
+    }
+
+    function legacyCopy(text, btn, status) {
+      var ta = document.createElement("textarea");
       ta.value = text;
-      ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+      ta.style.cssText = "position:fixed;opacity:0;pointer-events:none;";
       document.body.appendChild(ta);
       ta.select();
-      try { document.execCommand('copy'); doFeedback(); } catch(e2) {
-        if (status) status.textContent = 'Impossible de copier automatiquement.';
+      try {
+        document.execCommand("copy");
+        feedback(btn, status);
+      } catch(e) {
+        if (status) status.textContent = "Copiez manuellement : " + text;
       }
       document.body.removeChild(ta);
     }
-  }
-  document.querySelectorAll('[data-copy]').forEach(btn => {
-    btn.addEventListener('click', () => copyText(btn.dataset.copy, btn, btn.dataset.target));
-  });
-</script>
 
-<script>
-  // Theme toggle
-  const toggle = document.getElementById('theme-toggle');
-  function setThemeUI(isDark) {
-    toggle.textContent = isDark ? '☀️' : '🌙';
-    toggle.setAttribute('aria-label', isDark ? 'Activer le mode clair' : 'Activer le mode sombre');
-    toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-  }
-  setThemeUI(document.documentElement.getAttribute('data-theme') === 'dark');
-  toggle.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-    }
-    setThemeUI(!isDark);
-  });
-
-  // Sticky CTA mobile
-  (function() {
-  var cta = document.getElementById('sticky-cta');
-  var btn = document.getElementById('sticky-copy-btn');
-  if (!cta || !btn) return;
-
-  // Afficher/masquer selon le scroll
-  var shown = false;
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 400 && !shown) { cta.classList.add('visible'); shown = true; }
-    else if (window.scrollY <= 100 && shown) { cta.classList.remove('visible'); shown = false; }
-  }, { passive: true });
-
-  // Masquer quand le CTA final est visible
-  var ctaSection = document.querySelector('.cta-section');
-  if (ctaSection) {
-    var observer = new IntersectionObserver(function(entries) {
-      cta.style.opacity = entries[0].isIntersecting ? '0' : '1';
-      cta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+    // Délégation : scanne tous les éléments [data-copy] (hero + sticky CTA)
+    document.querySelectorAll("[data-copy]").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var text = btn.getAttribute("data-copy");
+        var targetId = btn.getAttribute("data-target");
+        var status = targetId ? document.getElementById(targetId) : null;
+        copyText(text, btn, status);
+      });
     });
-    observer.observe(ctaSection);
-  }
+  })();
+  </script>
+  
 
-  // Bouton copier avec fallback iOS Safari
-  btn.addEventListener('click', function() {
-    copyText('14130944S1', btn, null);
-  });
-})();
-</script>
+  <script>
+    /* ── thème — bloc unique avec texte FR ── */
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      function isDark() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+      }
+
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️' : '🌙';
+        toggle.setAttribute('aria-label', dark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+
+      /* Initialise l'UI selon le thème déjà appliqué par le <head> */
+      applyUI(isDark());
+
+      toggle.addEventListener('click', function() {
+        var dark = isDark();
+        if (dark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        applyUI(!dark);
+      });
+    })();
+  </script>
 
   <script>
     // Vidéo YouTube — facade click propre, compatible iOS Safari
@@ -1560,6 +1569,31 @@ function calcGain() {
       facade.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); launchVideo(); }
       });
+    })();
+  </script>
+
+   <!-- Sticky CTA scroll -->
+    <script>
+    (function() {
+      var cta = document.getElementById('sticky-cta');
+      if (!cta) return;
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          cta.classList.add('visible');
+        } else if (window.scrollY <= 200) {
+          cta.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      // Masquer quand le CTA final est visible (aligné sur Sticker Mule)
+      var ctaSection = document.querySelector('.cta-section');
+      if (ctaSection) {
+        new IntersectionObserver(function(entries) {
+          cta.style.opacity = entries[0].isIntersecting ? '0' : '1';
+          cta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+        }).observe(ctaSection);
+      }
     })();
   </script>
 
