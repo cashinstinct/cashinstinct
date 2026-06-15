@@ -1416,7 +1416,7 @@
   <footer>
     <div class="container">
       <p>Site non affilié officiellement à EBOX. Les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
-      <p style="margin-top:6px;">Code client EBOX : <code>GE911</code> — Mis à jour : <span id="footer-date"></span></p>
+      <p style="margin-top:6px;">Code client EBOX : <code>GE911</code> — Mis à jour : <time id="footer-date" datetime="2026-06-14">juin 2026</time></p>
     </div>
 
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
@@ -1475,11 +1475,12 @@
   })();
 </script>
 
-   <script>
+  
+<script>
   // ── MODULE DE COPIE UNIFIÉ — source de vérité unique via data-copy / data-target ──
   (function() {
-    var DONE_LABEL = "Copied!";
-    var STATUS_MSG = "Code copied to clipboard successfully.";
+    var DONE_LABEL = "Copié ✓";   // FR — espace insécable géré par le ✓
+    var STATUS_MSG = "Code copié dans le presse-papiers.";
 
     function feedback(btn, status) {
       var original = btn.getAttribute("data-label") || btn.textContent;
@@ -1515,11 +1516,12 @@
         document.execCommand("copy");
         feedback(btn, status);
       } catch(e) {
-        if (status) status.textContent = "Please copy manually: " + text;
+        if (status) status.textContent = "Copiez manuellement : " + text;
       }
       document.body.removeChild(ta);
     }
 
+    // Délégation : scanne tous les éléments [data-copy] (hero + sticky CTA)
     document.querySelectorAll("[data-copy]").forEach(function(btn) {
       btn.addEventListener("click", function() {
         var text = btn.getAttribute("data-copy");
