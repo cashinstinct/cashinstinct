@@ -1139,19 +1139,20 @@
             <strong>Fiabilité</strong>
             <span>Filiale de la Banque Scotia. Dépôts protégés par la SADC.</span>
           </div>
-          
+
           <div class="fact">
             <strong>Codes bancaires (dépôt de paie)</strong>
             <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
-              <span style="background: var(--surface-muted); border: 1px solid var(--border-soft); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">
-                Institution : <code>614</code> 
-                <button data-copy="614" data-label="Copier" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copier</button>
+                <span style="background: var(--surface-muted); border: 1px solid var(--border-soft); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--text);">
+                Institution: <code>614</code> 
+                <button data-copy="614" data-target="copyStatusBank" data-label="Copier" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copier</button>
               </span>
-              <span style="background: var(--surface-muted); border: 1px solid var(--border-soft); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">
-                Transit : <code>00152</code> 
-                <button data-copy="00152" data-label="Copier" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copier</button>
+              <span style="background: var(--surface-muted); border: 1px solid var(--border-soft); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--text);">
+                Transit: <code>00152</code> 
+                <button data-copy="00152" data-target="copyStatusBank" data-label="Copier" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copier</button>
               </span>
-            </div>
+               <span id="copyStatusBank" role="status" aria-atomic="true" aria-live="polite" class="copy-status" style="flex-basis:100%"></span>
+              </div>
           </div>
 
           <div class="fact">
