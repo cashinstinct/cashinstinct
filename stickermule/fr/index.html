@@ -1388,38 +1388,61 @@
     </div>
   </footer>
 
-  <script>
-    // ── COPY UNIFIÉ ──
-    async function copyText(text, button, statusId) {
-      var status = document.getElementById(statusId);
-      var orig = button.dataset.label || 'Copier';
-      function doFeedback() {
-        button.textContent = 'Copié ✓';
-        if (status) status.textContent = 'Code copié !';
-        setTimeout(function() {
-          button.textContent = orig;
-          if (status) status.textContent = '';
-        }, 2000);
-      }
-      try {
-        await navigator.clipboard.writeText(text);
-        doFeedback();
-      } catch(err) {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand('copy'); doFeedback(); }
-        catch(e2) { if (status) status.textContent = 'Copiez manuellement : ' + text; }
-        document.body.removeChild(ta);
+<script>
+  // ── MODULE DE COPIE UNIFIÉ — source de vérité unique via data-copy / data-target ──
+  (function() {
+    var DONE_LABEL = "Copié ✓";   // FR — espace insécable géré par le ✓
+    var STATUS_MSG = "Code copié dans le presse-papiers.";
+
+    function feedback(btn, status) {
+      var original = btn.getAttribute("data-label") || btn.textContent;
+      btn.textContent = DONE_LABEL;
+      btn.classList.add("copied");
+      if (status) status.textContent = STATUS_MSG;
+      setTimeout(function() {
+        btn.textContent = original;
+        btn.classList.remove("copied");
+        if (status) status.textContent = "";
+      }, 2000);
+    }
+
+    function copyText(text, btn, status) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          feedback(btn, status);
+        }).catch(function() {
+          legacyCopy(text, btn, status);
+        });
+      } else {
+        legacyCopy(text, btn, status);
       }
     }
-    document.querySelectorAll('[data-copy]').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        copyText(btn.dataset.copy, btn, btn.dataset.target);
+
+    function legacyCopy(text, btn, status) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.cssText = "position:fixed;opacity:0;pointer-events:none;";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        feedback(btn, status);
+      } catch(e) {
+        if (status) status.textContent = "Copiez manuellement : " + text;
+      }
+      document.body.removeChild(ta);
+    }
+
+    // Délégation : scanne tous les éléments [data-copy] (hero + sticky CTA)
+    document.querySelectorAll("[data-copy]").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var text = btn.getAttribute("data-copy");
+        var targetId = btn.getAttribute("data-target");
+        var status = targetId ? document.getElementById(targetId) : null;
+        copyText(text, btn, status);
       });
     });
+  })();
   </script>
 
   <script>
