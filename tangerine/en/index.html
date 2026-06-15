@@ -869,7 +869,7 @@
       </div>
 
       <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;">
-        Updated <time datetime="2026-06-14">June 12, 2026</time>
+          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-06-14">June 14, 2026</time></p>
       </p>
 
       <!-- === STACKING SECTION === -->
@@ -1361,6 +1361,7 @@
 <footer>
   <div class="container">
     <p>This site is not officially affiliated with Tangerine or Scotiabank. All trademarks belong to their respective owners.</p>
+    
     <p style="margin-top:6px;">Tangerine Orange Key: <code>14130944S1</code> — Updated: <time id="footer-date" datetime="2026-06-14">June 2026</time></p>
   </div>
 <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
@@ -1476,85 +1477,120 @@ function calcGain() {
 }
 </script>
   
-<script>
-  async function copyText(text, button, statusId) {
-    const status = document.getElementById(statusId);
-    const orig = button.textContent;
-    const doFeedback = () => {
-      button.textContent = 'Copied ✓';
-      button.classList.add('copied');
-      if (status) status.textContent = '';
-      setTimeout(() => { button.textContent = orig; button.classList.remove('copied'); }, 2000);
-    };
-    try {
-      await navigator.clipboard.writeText(text);
-      doFeedback();
-    } catch(e) {
-      const ta = document.createElement('textarea');
+
+  <script>
+  // ── MODULE DE COPIE UNIFIÉ — source de vérité unique via data-copy / data-target ──
+  (function() {
+    var DONE_LABEL = "Copied!";
+    var STATUS_MSG = "Code copied to clipboard successfully.";
+
+    function feedback(btn, status) {
+      var original = btn.getAttribute("data-label") || btn.textContent;
+      btn.textContent = DONE_LABEL;
+      btn.classList.add("copied");
+      if (status) status.textContent = STATUS_MSG;
+      setTimeout(function() {
+        btn.textContent = original;
+        btn.classList.remove("copied");
+        if (status) status.textContent = "";
+      }, 2000);
+    }
+
+    function copyText(text, btn, status) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          feedback(btn, status);
+        }).catch(function() {
+          legacyCopy(text, btn, status);
+        });
+      } else {
+        legacyCopy(text, btn, status);
+      }
+    }
+
+    function legacyCopy(text, btn, status) {
+      var ta = document.createElement("textarea");
       ta.value = text;
-      ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+      ta.style.cssText = "position:fixed;opacity:0;pointer-events:none;";
       document.body.appendChild(ta);
       ta.select();
-      try { document.execCommand('copy'); doFeedback(); } catch(e2) {
-        if (status) status.textContent = 'Unable to copy automatically.';
+      try {
+        document.execCommand("copy");
+        feedback(btn, status);
+      } catch(e) {
+        if (status) status.textContent = "Please copy manually: " + text;
       }
       document.body.removeChild(ta);
     }
-  }
-  document.querySelectorAll('[data-copy]').forEach(btn => {
-    btn.addEventListener('click', () => copyText(btn.dataset.copy, btn, btn.dataset.target));
-  });
-</script>
 
-<script>
-  const toggle = document.getElementById('theme-toggle');
-  function setThemeUI(isDark) {
-    toggle.textContent = isDark ? '☀️' : '🌙';
-    toggle.setAttribute('aria-label', isDark ? 'Enable light mode' : 'Enable dark mode');
-    toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-  }
-  setThemeUI(document.documentElement.getAttribute('data-theme') === 'dark');
-  toggle.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-    }
-    setThemeUI(!isDark);
-  });
-
-  (function() {
-  var cta = document.getElementById('sticky-cta');
-  var btn = document.getElementById('sticky-copy-btn');
-  if (!cta || !btn) return;
-
-  // Afficher/masquer selon le scroll
-  var shown = false;
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 400 && !shown) { cta.classList.add('visible'); shown = true; }
-    else if (window.scrollY <= 100 && shown) { cta.classList.remove('visible'); shown = false; }
-  }, { passive: true });
-
-  // Masquer quand le CTA final est visible
-  var ctaSection = document.querySelector('.cta-section');
-  if (ctaSection) {
-    var observer = new IntersectionObserver(function(entries) {
-      cta.style.opacity = entries[0].isIntersecting ? '0' : '1';
-      cta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+    document.querySelectorAll("[data-copy]").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var text = btn.getAttribute("data-copy");
+        var targetId = btn.getAttribute("data-target");
+        var status = targetId ? document.getElementById(targetId) : null;
+        copyText(text, btn, status);
+      });
     });
-    observer.observe(ctaSection);
-  }
+  })();
+  </script>
 
-  // Bouton copier avec fallback iOS Safari
-  btn.addEventListener('click', function() {
-    copyText('14130944S1', btn, null);
-  });
-})();
-</script>
 
+
+  <script>
+    /* ── thème — bloc unique ── */
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+      function isDark() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+      }
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️' : '🌙';
+        toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+      applyUI(isDark());
+      toggle.addEventListener('click', function() {
+        var dark = isDark();
+        if (dark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        applyUI(!dark);
+      });
+    })();
+  </script>
+
+
+  <script>
+ <!-- Sticky CTA scroll -->
+    <script>
+    (function() {
+      var cta = document.getElementById('sticky-cta');
+      if (!cta) return;
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          cta.classList.add('visible');
+        } else if (window.scrollY <= 200) {
+          cta.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      // Masquer quand le CTA final est visible (aligné sur Sticker Mule et Ebox)
+      var ctaSection = document.querySelector('.cta-section');
+      if (ctaSection) {
+        new IntersectionObserver(function(entries) {
+          cta.style.opacity = entries[0].isIntersecting ? '0' : '1';
+          cta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+        }).observe(ctaSection);
+      }
+    })();
+  </script>
+  
 <script>
   (function() {
     var facade = document.getElementById('yt-facade');
