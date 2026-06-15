@@ -553,7 +553,7 @@
 
         <div class="input-copy-group" style="display: flex; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: auto; margin-bottom: auto; padding: 4px;">
           <input type="text" value="SVdn7" readonly aria-readonly="true" aria-label="HP Instant Ink referral code" style="flex: 1; border: none; padding: 12px 16px; font-family: monospace; font-size: 1.05rem; font-weight: 700; color: var(--text); background: transparent; text-align: center;" />
-           <button class="copy-btn" data-copy="SVdn7" data-target="copyStatusHero" type="button">Copy</button>
+           <button class="copy-btn" data-copy="SVdn7" data-label="Copy" data-target="copyStatusHero" type="button">Copy</button>
         </div>
         <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
 
@@ -1028,8 +1028,9 @@
     <div class="s-code">SVdn7</div>
     <div class="s-label">HP Instant Ink Friend Code</div>
   </div>
-  <button class="s-copy-btn" id="sticky-copy-btn" data-copy="SVdn7" type="button">Copy</button>
- <a href="https://try.hpinstantink.com/SVdn7"
+<button class="s-copy-btn" id="sticky-copy-btn" data-copy="SVdn7" data-label="Copy" data-target="stickyCopyStatus" type="button">Copy</button>
+    <span id="stickyCopyStatus" role="status" aria-atomic="true" aria-live="polite" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"></span>
+    <a href="https://try.hpinstantink.com/SVdn7"
    target="_blank" rel="noopener sponsored noreferrer"
    class="s-activate-btn">
   Activate ↗
@@ -1053,7 +1054,7 @@
 </footer>
 
   <!-- SCRIPTS -->
-   <script>
+    <script>
   // ── SCRIPT UNIVERSEL : DATES DYNAMIQUES & JSON-LD dateModified ──
   (function() {
     var now = new Date();
@@ -1098,70 +1099,75 @@
 </script>
 
   <script>
-    /* ── Copie dans le presse-papier ── */
-    window.legacyCopy = function(text) {
-      try {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none;';
-        document.body.appendChild(ta);
-        ta.focus(); ta.select();
-        var ok = document.execCommand('copy');
-        document.body.removeChild(ta);
-        return ok;
-      } catch(e) { return false; }
-    };
-    
-    function copyText(text, button, statusId) {
-      var status = document.getElementById(statusId);
-      var originalText = button.textContent;
-      var doFeedback = function() {
-        button.textContent = 'Copied!';
-        button.classList.add('copied');
-        if (status) status.textContent = '';
-        setTimeout(function() {
-          button.textContent = originalText;
-          button.classList.remove('copied');
-        }, 2000);
-      };
-      var doFail = function() {
-        if (status) status.textContent = 'Unable to copy automatically.';
-      };
+  // ── MODULE DE COPIE UNIFIÉ — texte page en anglais - source de vérité unique via data-copy / data-target ──
+  (function() {
+    var DONE_LABEL = "Copied!";
+    var STATUS_MSG = "Code copied to clipboard successfully.";
+
+    function feedback(btn, status) {
+      var original = btn.getAttribute("data-label") || btn.textContent;
+      btn.textContent = DONE_LABEL;
+      btn.classList.add("copied");
+      if (status) status.textContent = STATUS_MSG;
+      setTimeout(function() {
+        btn.textContent = original;
+        btn.classList.remove("copied");
+        if (status) status.textContent = "";
+      }, 2000);
+    }
+
+    function copyText(text, btn, status) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(doFeedback).catch(function() {
-          legacyCopy(text) ? doFeedback() : doFail();
+        navigator.clipboard.writeText(text).then(function() {
+          feedback(btn, status);
+        }).catch(function() {
+          legacyCopy(text, btn, status);
         });
       } else {
-        legacyCopy(text) ? doFeedback() : doFail();
+        legacyCopy(text, btn, status);
       }
     }
 
-    document.querySelectorAll('[data-copy]').forEach(function(button) {
-      button.addEventListener('click', function() {
-        copyText(button.getAttribute('data-copy'), button, button.getAttribute('data-target'));
+    function legacyCopy(text, btn, status) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.cssText = "position:fixed;opacity:0;pointer-events:none;";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        feedback(btn, status);
+      } catch(e) {
+        if (status) status.textContent = "Please copy manually: " + text;
+      }
+      document.body.removeChild(ta);
+    }
+
+    document.querySelectorAll("[data-copy]").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var text = btn.getAttribute("data-copy");
+        var targetId = btn.getAttribute("data-target");
+        var status = targetId ? document.getElementById(targetId) : null;
+        copyText(text, btn, status);
       });
     });
+  })();
   </script>
 
- <script>
-    /* ── FIX #2 & #3: thème — bloc unique, sans duplication ni IIFE aria-pressed redondante ── */
+  <script>
+    /* ── thème — bloc unique ── */
     (function() {
       var toggle = document.getElementById('theme-toggle');
       if (!toggle) return;
-
       function isDark() {
         return document.documentElement.getAttribute('data-theme') === 'dark';
       }
-
       function applyUI(dark) {
         toggle.textContent = dark ? '☀️' : '🌙';
         toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
         toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
       }
-
-      /* Initialise l'UI selon le thème déjà appliqué par le <head> */
       applyUI(isDark());
-
       toggle.addEventListener('click', function() {
         var dark = isDark();
         if (dark) {
@@ -1175,20 +1181,32 @@
       });
     })();
   </script>
-  
 
-<script>
-  (function() {
-    var cta = document.getElementById('sticky-cta');
-    if (!cta) return;
-    var shown = false;
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 400 && !shown) { cta.classList.add('visible'); shown = true; }
-      else if (window.scrollY <= 100 && shown) { cta.classList.remove('visible'); shown = false; }
-    }, { passive: true });
-  })();
-</script>
-  
+
+ <!-- Sticky CTA scroll -->
+    <script>
+    (function() {
+      var cta = document.getElementById('sticky-cta');
+      if (!cta) return;
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          cta.classList.add('visible');
+        } else if (window.scrollY <= 200) {
+          cta.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      // Masquer quand le CTA final est visible (aligné sur Sticker Mule et Ebox)
+      var ctaSection = document.querySelector('.cta-section');
+      if (ctaSection) {
+        new IntersectionObserver(function(entries) {
+          cta.style.opacity = entries[0].isIntersecting ? '0' : '1';
+          cta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+        }).observe(ctaSection);
+      }
+    })();
+  </script>
 </body>
 </html>
 
