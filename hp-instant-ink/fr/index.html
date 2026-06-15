@@ -409,52 +409,60 @@
     .copy-btn.copied { background: var(--accent) !important; color: #fff !important; }
      .copy-status { display: block; min-height: 1.2em; font-size: 0.85rem; text-align: center; margin-top: 6px; }
    
-   /* ── STICKY CTA MOBILE avec tablettes ── */
-.sticky-mobile-cta { display: none; }
-@media (max-width: 1024px) {
-  body { padding-bottom: 80px; }
-  .sticky-mobile-cta {
-    display: flex;
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: var(--accent); color: #fff;
-    padding: 10px 16px; z-index: 200;
-    justify-content: space-between; align-items: center; gap: 8px;
-    box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
-    transform: translateY(100%); transition: transform 0.3s ease;
-  }
-  .sticky-mobile-cta.visible { transform: translateY(0); }
-  .sticky-mobile-cta .s-code {
-    font-family: "Courier New", Courier, monospace;
-    font-weight: 900; font-size: 1rem; letter-spacing: 0.06em;
-  }
-  .sticky-mobile-cta .s-label { font-size: 0.72rem; opacity: 0.85; }
+ /* ── STICKY CTA MOBILE (+ tablettes ≤1024px) ── */
+    .sticky-mobile-cta { display: none; }
 
-  /* ← les deux boutons ont exactement le même gabarit */
-  .sticky-mobile-cta .s-copy-btn,
-  .sticky-mobile-cta .s-activate-btn {
-    flex-shrink: 0;
-    padding: 10px 14px;
-    border-radius: 6px;
-    font-weight: 800;
-    font-size: 0.88rem;
-    white-space: nowrap;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .sticky-mobile-cta .s-copy-btn {
-    background: rgba(255,255,255,0.18);
-    border: 1px solid rgba(255,255,255,0.4);
-    color: #fff;
-  }
-  .sticky-mobile-cta .s-copy-btn.copied {
-    background: #fff; color: var(--accent);
-  }
-  .sticky-mobile-cta .s-activate-btn {
-    background: rgba(0,0,0,0.25);
-    border: none;
-    color: #fff;
-  }
-}
+    @media (max-width: 1024px) {
+      body { padding-bottom: 80px; }
+
+      .sticky-mobile-cta {
+        display: flex;
+        position: fixed; bottom: 0; left: 0; right: 0;
+        z-index: 200;
+        justify-content: space-between; align-items: center; gap: 8px;
+        padding: 10px 16px;
+        background: var(--accent); color: #fff;
+        box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+      .sticky-mobile-cta.visible { transform: translateY(0); }
+
+      .sticky-mobile-cta .s-code {
+        font-family: "Courier New", Courier, monospace;
+        font-weight: 900; font-size: 1rem; letter-spacing: 0.06em;
+      }
+      .sticky-mobile-cta .s-label { font-size: 0.72rem; opacity: 0.85; }
+
+      /* Boutons copy + activate : gabarit commun */
+      .sticky-mobile-cta .s-copy-btn,
+      .sticky-mobile-cta .s-activate-btn {
+        flex-shrink: 0;
+        padding: 10px 14px;
+        border-radius: 6px;
+        font-weight: 800; font-size: 0.88rem;
+        white-space: nowrap; text-decoration: none; cursor: pointer;
+      }
+
+      /* Bouton copier */
+      .sticky-mobile-cta .s-copy-btn {
+        min-width: 90px; text-align: center;
+        background: rgba(255,255,255,0.18);
+        border: 1px solid rgba(255,255,255,0.4);
+        color: #fff;
+      }
+      .sticky-mobile-cta .s-copy-btn.copied {
+        background: #fff; color: var(--accent);
+      }
+
+      /* Bouton activer */
+      .sticky-mobile-cta .s-activate-btn {
+        background: rgba(0,0,0,0.25);
+        border: none;
+        color: #fff;
+      }
+    }
+
   </style>
 
   
@@ -817,11 +825,13 @@
                 <p><strong>Oui, tout à fait ! C'est le principe du cumul (stacking).</strong> Si votre imprimante neuve vient avec 6 mois gratuits d'HP+, saisir le code <code>SVdn7</code> lors de l'enregistrement ajoutera un 7e mois gratuit à la suite des autres.</p>
               </div>
             </details>
-      <summary id="faq-q3">Le service est-il disponible pour les imprimantes laser (toner) ?</summary>
-<div class="faq-body" role="region" aria-labelledby="faq-q3">
-  <p><strong>Plus pour les nouveaux clients.</strong> HP a cessé les nouveaux abonnements Instant Ink toner : les séries LaserJet 100/200 et LaserJet Pro 3000/4000 ne peuvent plus être inscrites. Cela ne touche que les nouvelles inscriptions — les abonnés toner actuels conservent leur forfait. Pour les nouvelles inscriptions, le code <code>SVdn7</code> s'applique uniquement aux <strong>forfaits encre</strong> (DeskJet, Envy, OfficeJet, Tango).</p>
-</div>
-                     <details>
+           <details>
+              <summary id="faq-q3">Le service est-il disponible pour les imprimantes laser (toner) ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q3">
+                <p><strong>Plus pour les nouveaux clients.</strong> HP a cessé les nouveaux abonnements Instant Ink toner : les séries LaserJet 100/200 et LaserJet Pro 3000/4000 ne peuvent plus être inscrites. Cela ne touche que les nouvelles inscriptions — les abonnés toner actuels conservent leur forfait. Pour les nouvelles inscriptions, le code <code>SVdn7</code> s'applique uniquement aux <strong>forfaits encre</strong> (DeskJet, Envy, OfficeJet, Tango).</p>
+              </div>
+            </details>
+        <details>
   <summary id="faq-q3b">Quelles imprimantes HP sont admissibles à Instant Ink au Canada ?</summary>
   <div class="faq-body" role="region" aria-labelledby="faq-q3b">
     <p>La plupart des imprimantes à <strong>jet d'encre</strong> HP de moins de 5 ans dotées d'une connexion Wi-Fi sont admissibles. Cela inclut les séries <strong>DeskJet, DeskJet Plus, Envy, Envy Photo, Envy Pro, OfficeJet, OfficeJet Pro et Tango</strong>. Exclues : les modèles HP Ink Advantage (XL uniquement) et les imprimantes laser à toner (plus d'inscription). Confirmez votre modèle exact sur l'outil de compatibilité officiel d'HP — ou consultez notre <a href="#eligible-printers">section imprimantes admissibles</a> ci-dessus.</p>
@@ -984,62 +994,6 @@
     }
 
     // Délégation : scanne tous les éléments [data-copy] (hero + sticky CTA)
-    document.querySelectorAll("[data-copy]").forEach(function(btn) {
-      btn.addEventListener("click", function() {
-        var text = btn.getAttribute("data-copy");
-        var targetId = btn.getAttribute("data-target");
-        var status = targetId ? document.getElementById(targetId) : null;
-        copyText(text, btn, status);
-      });
-    });
-  })();
-  </script>
-
-<script>
-  // ── MODULE DE COPIE UNIFIÉ — source de vérité unique via data-copy / data-target ──
-  (function() {
-    var DONE_LABEL = "Copié ✓";
-    var STATUS_MSG = "Code copié dans le presse-papiers.";
-
-    function feedback(btn, status) {
-      var original = btn.getAttribute("data-label") || btn.textContent;
-      btn.textContent = DONE_LABEL;
-      btn.classList.add("copied");
-      if (status) status.textContent = STATUS_MSG;
-      setTimeout(function() {
-        btn.textContent = original;
-        btn.classList.remove("copied");
-        if (status) status.textContent = "";
-      }, 2000);
-    }
-
-    function copyText(text, btn, status) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function() {
-          feedback(btn, status);
-        }).catch(function() {
-          legacyCopy(text, btn, status);
-        });
-      } else {
-        legacyCopy(text, btn, status);
-      }
-    }
-
-    function legacyCopy(text, btn, status) {
-      var ta = document.createElement("textarea");
-      ta.value = text;
-      ta.style.cssText = "position:fixed;opacity:0;pointer-events:none;";
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand("copy");
-        feedback(btn, status);
-      } catch(e) {
-        if (status) status.textContent = "Copiez manuellement : " + text;
-      }
-      document.body.removeChild(ta);
-    }
-
     document.querySelectorAll("[data-copy]").forEach(function(btn) {
       btn.addEventListener("click", function() {
         var text = btn.getAttribute("data-copy");
