@@ -1662,6 +1662,7 @@
     const load = () => {
       const id = el.id.replace("yt-", "");
       const iframe = document.createElement("iframe");
+      iframe.title = el.getAttribute("aria-label") || "Sticker Mule referral video";
       iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`;
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       iframe.allowFullscreen = true;
