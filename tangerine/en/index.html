@@ -778,7 +778,7 @@
         <div class="input-copy-group">
           <input type="text" value="14130944S1" readonly aria-readonly="true" aria-label="Tangerine Orange Key"
             style="flex: 1; border: none; padding: 12px 16px; font-family: monospace; font-size: 1.1rem; font-weight: 700; color: var(--text); background: transparent; text-align: center;" />
-          <button class="copy-btn" data-copy="14130944S1" data-target="copyStatusHero" type="button"
+          <button class="copy-btn" data-copy="14130944S1" data-label="Copy" data-target="copyStatusHero" type="button"
             style="-webkit-appearance: none; padding: 0 20px; font-size: 1rem; min-height: 48px;">Copy</button>
         </div>
         <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
@@ -1125,7 +1125,7 @@
         </ol>
       </section>
 
-      <!-- === VIDEO === -->
+      <!-- === VIDEO : VideoObject ↔ vidéo réelle (ZjDvFV42qbM)=== -->
       <section id="video" aria-label="Tangerine Orange Key video tutorial">
         <span class="section-label">Video</span>
         <h2>Video — Tangerine Orange Key 14130944S1</h2>
@@ -1167,15 +1167,16 @@
             <div class="fact">
             <strong>Banking Codes (Payroll Deposit)</strong>
             <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
-              <span style="background: var(--surface-muted); border: 1px solid var(--border-soft); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--text);">
+                <span style="background: var(--surface-muted); border: 1px solid var(--border-soft); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--text);">
                 Institution: <code>614</code> 
-                <button data-copy="614" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copy</button>
+                <button data-copy="614" data-target="copyStatusBank" data-label="Copy" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copy</button>
               </span>
               <span style="background: var(--surface-muted); border: 1px solid var(--border-soft); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--text);">
                 Transit: <code>00152</code> 
-                <button data-copy="00152" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copy</button>
+                <button data-copy="00152" data-target="copyStatusBank" data-label="Copy" type="button" style="background:none; border:none; color:var(--accent); cursor:pointer; font-weight:800; margin-left:6px; padding:0;">Copy</button>
               </span>
-            </div>
+               <span id="copyStatusBank" role="status" aria-atomic="true" aria-live="polite" class="copy-status" style="flex-basis:100%"></span>
+              </div>
           </div>
           <div class="fact">
             <strong>Availability</strong>
@@ -1331,7 +1332,7 @@
         </a>
         <div class="cta-code-row">
           <span class="cta-code-pill">14130944S1</span>
-          <button class="cta-copy-btn" data-copy="14130944S1" data-target="copyStatusCta" type="button">Copy key</button>
+          <button class="cta-copy-btn" data-copy="14130944S1" data-label="Copy key" data-target="copyStatusCta" data-label="Copy key" type="button">Copy key</button>
         </div>
         <span class="copy-status" id="copyStatusCta" role="status" aria-atomic="true" aria-live="polite"></span>
       </div>
@@ -1350,7 +1351,7 @@
     <div class="s-code">14130944S1</div>
     <div class="s-label">Tangerine Orange Key</div>
   </div>
-  <button class="s-btn" id="sticky-copy-btn" type="button">Copy</button>
+  <button class="s-btn" id="sticky-copy-btn" data-label="Copy" type="button">Copy</button>
   <a href="https://www.tangerine.ca/app/#/visitor-enroll/profile-setup?products=4000&locale=en_CA&id=hp-banner"
      target="_blank" rel="noopener sponsored noreferrer"
      style="background:var(--text);color:var(--surface);border-radius:6px;padding:8px 12px;font-weight:800;font-size:0.88rem;text-decoration:none;white-space:nowrap;flex-shrink:0;">
