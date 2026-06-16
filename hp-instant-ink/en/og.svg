@@ -1,16 +1,37 @@
 <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#0052cc" />
-  
-  <g fill="white" font-family="sans-serif" text-anchor="middle">
-    <text x="600" y="170" font-size="110" font-weight="900" letter-spacing="-0.02em">HP Instant Ink</text>
-    
-    <text x="600" y="270" font-size="65" font-weight="700" fill-opacity="0.9" letter-spacing="0.05em">REFER A FRIEND CODE</text>
-    
-    <g transform="translate(600, 400)">
-      <rect x="-300" y="-75" width="600" height="140" rx="15" fill="white" />
-      <text x="0" y="25" font-size="115" font-weight="900" fill="#0052cc" letter-spacing="0.05em">SVdn7</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a6fe0"/>
+      <stop offset="100%" stop-color="#0047b3"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="14" height="630" fill="#ffffff" fill-opacity="0.25"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle" fill="white">
+
+    <!-- pré-titre discret -->
+    <text x="600" y="92" font-size="34" font-weight="700" fill-opacity="0.85" letter-spacing="0.20em">AUTOMATIC INK DELIVERY</text>
+
+    <!-- titre principal -->
+    <text x="600" y="185" font-size="92" font-weight="900" letter-spacing="-0.01em">HP INSTANT INK</text>
+
+    <!-- sous-titre -->
+    <text x="600" y="250" font-size="48" font-weight="700" fill-opacity="0.92" letter-spacing="0.10em">REFER-A-FRIEND CODE</text>
+
+    <!-- code dans capsule blanche avec ombre -->
+    <g transform="translate(600, 405)" filter="url(#shadow)">
+      <rect x="-260" y="-72" width="520" height="144" rx="22" fill="#ffffff"/>
+      <text x="0" y="26" font-size="110" font-weight="900" fill="#0052cc" letter-spacing="0.04em">SVdn7</text>
     </g>
-    
-    <text x="600" y="565" font-size="85" font-weight="800" letter-spacing="-0.01em">FREE MONTH</text>
+
+    <!-- crédit en bandeau accent -->
+    <g transform="translate(600, 558)">
+      <rect x="-230" y="-50" width="460" height="94" rx="47" fill="#ffffff" fill-opacity="0.16"/>
+      <text x="0" y="26" font-size="62" font-weight="900" letter-spacing="0.02em">1 FREE MONTH</text>
+    </g>
+
   </g>
 </svg>
