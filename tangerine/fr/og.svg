@@ -18,13 +18,15 @@
 
     <text x="600" y="250" font-size="48" font-weight="700" fill-opacity="0.92" letter-spacing="0.08em">CLÉ ORANGE (PARRAINAGE)</text>
 
+    <!-- code : capsule élargie 760, centrée -->
     <g transform="translate(600, 405)" filter="url(#shadow)">
-      <rect x="-320" y="-72" width="640" height="144" rx="22" fill="#ffffff"/>
+      <rect x="-380" y="-72" width="760" height="144" rx="22" fill="#ffffff"/>
       <text x="0" y="26" font-size="100" font-weight="900" fill="#ed6a00" letter-spacing="0.04em">14130944S1</text>
     </g>
 
+    <!-- prime : bandeau élargi 600, centré -->
     <g transform="translate(600, 558)">
-      <rect x="-260" y="-50" width="520" height="94" rx="47" fill="#ffffff" fill-opacity="0.16"/>
+      <rect x="-300" y="-50" width="600" height="94" rx="47" fill="#ffffff" fill-opacity="0.16"/>
       <text x="0" y="26" font-size="60" font-weight="900" letter-spacing="0.02em">Prime de 50 $ CAD</text>
     </g>
 
