@@ -29,9 +29,10 @@
 
     <!-- crédit en bandeau accent -->
     <g transform="translate(600, 558)">
-      <rect x="-230" y="-50" width="460" height="94" rx="47" fill="#ffffff" fill-opacity="0.16"/>
-      <text x="0" y="26" font-size="62" font-weight="900" letter-spacing="0.02em">1 FREE MONTH</text>
-    </g>
+  <rect x="-290" y="-50" width="580" height="94" rx="47" fill="#ffffff" fill-opacity="0.16"/>
+  <text x="0" y="26" font-size="62" font-weight="900" letter-spacing="0.02em">1 FREE MONTH</text>
+</g>
+
 
   </g>
 </svg>
