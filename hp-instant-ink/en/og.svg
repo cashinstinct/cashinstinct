@@ -1,0 +1,16 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0052cc" />
+  
+  <g fill="white" font-family="sans-serif" text-anchor="middle">
+    <text x="600" y="170" font-size="110" font-weight="900" letter-spacing="-0.02em">HP Instant Ink</text>
+    
+    <text x="600" y="270" font-size="65" font-weight="700" fill-opacity="0.9" letter-spacing="0.05em">CODE DE PARRAINAGE</text>
+    
+    <g transform="translate(600, 400)">
+      <rect x="-300" y="-75" width="600" height="140" rx="15" fill="white" />
+      <text x="0" y="25" font-size="115" font-weight="900" fill="#0052cc" letter-spacing="0.05em">SVdn7</text>
+    </g>
+    
+    <text x="600" y="565" font-size="85" font-weight="800" letter-spacing="-0.01em">1 MOIS GRATUIT</text>
+  </g>
+</svg>
