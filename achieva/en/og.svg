@@ -12,33 +12,18 @@
   <rect x="0" y="0" width="14" height="630" fill="#1a2e12" fill-opacity="0.20"/>
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle" fill="#14210d">
 
-    <!-- fleur Achieva (8 pétales) -->
-    <g transform="translate(600, 92)">
-      <g fill="#14210d">
-        <circle cx="0" cy="-32" r="11"/>
-        <circle cx="23" cy="-23" r="11"/>
-        <circle cx="32" cy="0" r="11"/>
-        <circle cx="23" cy="23" r="11"/>
-        <circle cx="0" cy="32" r="11"/>
-        <circle cx="-23" cy="23" r="11"/>
-        <circle cx="-32" cy="0" r="11"/>
-        <circle cx="-23" cy="-23" r="11"/>
-      </g>
-      <circle cx="0" cy="0" r="13" fill="#b4d94a" stroke="#14210d" stroke-width="3"/>
-    </g>
+    <text x="600" y="170" font-size="92" font-weight="900" letter-spacing="-0.01em">ACHIEVA FINANCIAL</text>
 
-    <text x="600" y="200" font-size="88" font-weight="900" letter-spacing="-0.01em">ACHIEVA FINANCIAL</text>
-
-    <text x="600" y="265" font-size="46" font-weight="700" fill-opacity="0.80" letter-spacing="0.08em">PETAL CODE (REFERRAL)</text>
+    <text x="600" y="240" font-size="48" font-weight="700" fill-opacity="0.80" letter-spacing="0.08em">PETAL CODE (REFERRAL)</text>
 
     <!-- code dans capsule blanche avec ombre -->
-    <g transform="translate(600, 415)" filter="url(#shadow)">
+    <g transform="translate(600, 400)" filter="url(#shadow)">
       <rect x="-360" y="-72" width="720" height="144" rx="22" fill="#ffffff"/>
       <text x="0" y="26" font-size="100" font-weight="900" fill="#7aa017" letter-spacing="0.04em">V381566198</text>
     </g>
 
     <!-- bonus en bandeau accent foncé -->
-    <g transform="translate(600, 558)">
+    <g transform="translate(600, 555)">
       <rect x="-200" y="-50" width="400" height="94" rx="47" fill="#14210d" fill-opacity="0.85"/>
       <text x="0" y="26" font-size="60" font-weight="900" fill="#ffffff" letter-spacing="0.02em">$25 BONUS</text>
     </g>
