@@ -138,7 +138,7 @@
           "priceValidUntil": "2027-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "description": "Account opening is completely free via the Achieva mobile app. Using Petal Code V381566198 at sign-up automatically generates a $25 CAD welcome bonus.",
-          "availability": "LimitedAvailability",
+          "availability": "https://schema.org/LimitedAvailability",
           "hasMerchantReturnPolicy": {
             "@type": "MerchantReturnPolicy",
             "applicableCountry": "CA",
@@ -499,7 +499,7 @@
   border-radius: 8px;
   padding: 12px 16px;
   margin: 16px auto;        /* auto = centrage horizontal */
-  max-width: 1100px;         /* aligne sur ta largeur .prose */
+  max-width: 100%; /* S'aligne et se limite proprement aux 760px de .prose */
   font-size: 0.95rem;
   box-sizing: border-box;
 }
