@@ -1,3 +1,36 @@
+<!--
+═══════════════════════════════════════════════════════════════
+  NOTE DOSSIER — PROGRAMME PARRAINAGE ACHIEVA EN PAUSE
+═══════════════════════════════════════════════════════════════
+  Statut : Achieva a suspendu son programme de parrainage pour
+           "améliorations". Retour annoncé : été 2026.
+  Source : https://www.achieva.mb.ca/referral-program-2026
+  Date du constat : 2026-06-17
+  Montant/structure au retour = INCONNUS (ne rien promettre).
+
+  ── MODIFS DE PAUSE APPLIQUÉES SUR CETTE PAGE ──
+  [x] Bandeau .notice-warning ajouté dans .prose, après breadcrumb
+  [x] H1 : mention "(programme en pause)"
+  [x] .summary-box : "(en pause)" ajouté après "25 $ CAD"
+  [ ] JSON-LD Offer availability → À CHANGER : InStock vers
+      LimitedAvailability (sinon snippet "offre dispo" persiste)
+
+  ── LAISSÉ INCHANGÉ VOLONTAIREMENT (réauditer à l'été) ──
+  - OG image : garde "25 $" (re-render seulement si montant change)
+  - Code V381566198 : laissé (peut être invalidé/remplacé au retour)
+  - FAQ + étapes + taux : factuels, redeviennent exacts à la reprise
+
+  ── À FAIRE À LA RELANCE (été 2026) ──
+  - Vérifier nouveau programme sur achieva.mb.ca/referral-program
+  - Retirer ce bandeau + mentions "(en pause)" (H1, summary-box)
+  - Remettre Offer availability → InStock
+  - Re-render OG si montant changé
+  - MAJ post Reddit r/CanadaReferralShare
+  - Resoumettre URL en réindexation GSC
+
+  Miroir EN : /achieva/en/ (appliquer les mêmes modifs)
+═══════════════════════════════════════════════════════════════
+-->
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
@@ -105,7 +138,7 @@
           "priceValidUntil": "2027-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "description": "L'ouverture de compte est entièrement gratuite via l'application mobile Achieva. L'utilisation du Petal Code V381566198 à l'inscription génère automatiquement une prime de 25 $ CAD.",
-          "availability": "https://schema.org/InStock",
+          "availability": "LimitedAvailability",
           "hasMerchantReturnPolicy": {
             "@type": "MerchantReturnPolicy",
             "applicableCountry": "CA",
