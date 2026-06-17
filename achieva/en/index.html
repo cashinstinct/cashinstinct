@@ -457,8 +457,10 @@
   color: var(--warning-text);
   border-radius: 8px;
   padding: 12px 16px;
-  margin: 0 0 20px;
+  margin: 16px auto;        /* auto = centrage horizontal */
+  max-width: 1100px;         /* aligne sur ta largeur .prose */
   font-size: 0.95rem;
+  box-sizing: border-box;
 }
     .section-label {
       display: inline-block; text-transform: uppercase;
@@ -601,19 +603,23 @@
   </header>
 
   <main id="main-content">
-    <div class="notice notice-warning" role="status" aria-label="Program status">
-  <strong>⏸️ Program paused:</strong> Achieva's referral bonus is on hold for improvements and returns Summer 2026. You can still open an account now — the $25 bonus will apply once the program resumes.
-</div>
     
     <div class="container">
+      
       <div class="prose">
 
+          
+        
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="https://cashinstinct.ca/en/">Home</a><span aria-hidden="true"> › </span>
           <a href="https://cashinstinct.ca/en/#finances">Banking &amp; Finance</a><span aria-hidden="true"> › </span>
           <span aria-current="page">Achieva Financial</span>
         </nav>
 
+            <div class="notice notice-warning" role="status" aria-label="Program status">
+  <strong>⏸️ Program paused:</strong> Achieva's referral bonus is on hold for improvements and returns Summer 2026. You can still open an account now — the $25 bonus will apply once the program resumes.
+</div>
+        
         <section class="summary-box" aria-labelledby="summary-heading">
          <h2 id="summary-heading">Quick summary of the Achieva referral code &amp; bonus</h2>
           <p>The <strong>Achieva Financial Petal Code (Referral Code) V381566198</strong>, valid in 2026, unlocks a $25 CAD sign-up bonus. To qualify, a new customer must copy this promo code, download the mobile app, enter it during registration, make an initial deposit of at least $250 CAD, and maintain that balance for a minimum of one full month. Note: anyone who has held an Achieva account in the past 12 months is not eligible.</p>
