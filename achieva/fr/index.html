@@ -454,8 +454,10 @@
   color: var(--warning-text);
   border-radius: 8px;
   padding: 12px 16px;
-  margin: 0 0 20px;
+  margin: 16px auto;        /* auto = centrage horizontal */
+  max-width: 1100px;         /* aligne sur ta largeur .prose */
   font-size: 0.95rem;
+  box-sizing: border-box;
 }
     .section-label {
       display: inline-block; text-transform: uppercase;
@@ -598,9 +600,6 @@
   </header>
 
   <main id="main-content">
-    <div class="notice notice-warning" role="status" aria-label="Statut du programme">
-  <strong>⏸️ Programme en pause :</strong> le bonus de parrainage Achieva est suspendu pour améliorations et revient à l'été 2026. Vous pouvez quand même ouvrir un compte dès maintenant — le bonus de 25 $ s'appliquera dès la reprise.
-</div>
     
     <div class="container">
       <div class="prose">
@@ -611,6 +610,10 @@
           <span aria-current="page">Achieva Financial</span>
         </nav>
 
+         <div class="notice notice-warning" role="status" aria-label="Statut du programme">
+  <strong>⏸️ Programme en pause :</strong> le bonus de parrainage Achieva est suspendu pour améliorations et revient à l'été 2026. Vous pouvez quand même ouvrir un compte dès maintenant — le bonus de 25 $ s'appliquera dès la reprise.
+</div>
+        
         <section class="summary-box" aria-labelledby="summary-heading">
          <h2 id="summary-heading">Résumé rapide — code de parrainage et prime d'inscription</h2>
           <p>Le <strong>Petal Code Achieva Financial V381566198</strong>, valide en 2026, permet d'obtenir une prime d'inscription de 25 $ CAD. Pour être admissible, le nouveau client doit copier ce code, télécharger l'application mobile, l'insérer lors de l'inscription, effectuer un dépôt initial d'au moins 250 $ CAD et conserver ce solde pendant au moins un mois complet. À noter : toute personne ayant détenu un compte Achieva au cours des 12 derniers mois n'est pas admissible.</p>
