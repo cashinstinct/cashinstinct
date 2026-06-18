@@ -32,8 +32,10 @@
      conservé et réutilisable.
   4. Resynchroniser : meta description / og / twitter / JSON-LD WebPage +
      FAQ JSON-LD ↔ FAQ HTML visible (les deux DOIVENT correspondre, 11 = 11).
-  5. Mettre à jour dateModified (JSON-LD) ; footer-date et trust-date sont
-     auto-générés par JS, ne pas les coder en dur.
+  5. Mettre à jour dateModified EN DUR dans le JSON-LD (head) au moment du push.
+     Le JS ne touche plus au JSON-LD (corrigé juin 2026 : l'injection client-side
+     était invisible aux crawlers en passe brute). Les <time> footer-date et
+     trust-date restent auto-générés par JS — affichage visuel uniquement.
 
   VALIDATION OBLIGATOIRE AVANT PUSH (par exécution, jamais à l'œil)
   • Parser le JSON-LD (json.loads) — une trailing comma casse tout le graphe.
@@ -142,10 +144,16 @@
       "image": "https://cashinstinct.ca/ebox/en/og.png",
       "offers": {
         "@type": "Offer",
-        "description": "Referral code GE911 applies a $25 credit on the second bill for eligible new EBOX residential customers in Quebec and Ontario.",
-        "price": "25.00",
+        "name": "EBOX referral credit (code GE911)",
+        "description": "Using referral code GE911 at sign-up applies a $25 credit on the second bill for eligible new EBOX residential customers in Quebec and Ontario. Plans start at no upfront cost (no installation fee, modem included); monthly Internet pricing is set by EBOX and varies by plan.",
+        "price": "0",
         "priceCurrency": "CAD",
-        "priceValidUntil": "2027-12-31",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "0",
+          "priceCurrency": "CAD",
+          "description": "No upfront cost to subscribe with code GE911. The $25 referral credit is applied on the second bill. Monthly plan pricing is set by EBOX."
+        },
         "availability": "https://schema.org/InStock",
         "eligibleRegion": [
           { "@type": "AdministrativeArea", "name": "Quebec" },
@@ -1488,19 +1496,22 @@
   
   <!-- SCRIPTS -->
 <script>
-  // ── SCRIPT UNIVERSEL : DATES DYNAMIQUES & JSON-LD dateModified ──
+  // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
+  // Met à jour les <time> visibles (footer-date, trust-date) à la date du jour.
+  // NE TOUCHE PAS au JSON-LD : dateModified est codé EN DUR dans le <head> et
+  // ne doit refléter QUE la vraie dernière modification (à mettre à jour au push).
   (function() {
     var now = new Date();
     var lang = document.documentElement.lang || "en-CA";
     
-    // 1. Format Court (ex: "Juin 2026" / "June 2026")
+    // 1. Format court (ex: "June 2026" / "juin 2026")
     var footerDate = document.getElementById("footer-date");
     if (footerDate) {
       footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
     
-    // 2. Format Long localisé (ex: "12 juin 2026" / "June 12, 2026")
+    // 2. Format long localisé (ex: "June 18, 2026" / "18 juin 2026")
     var trustDate = document.getElementById("trust-date");
     if (trustDate) {
       var options = lang.startsWith("fr") 
@@ -1512,22 +1523,6 @@
         trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
       }
     }
-
-    // 3. Mise à jour automatique du JSON-LD dateModified
-    try {
-      var today = now.toISOString().slice(0, 10);
-      var ldJson = document.querySelector('script[type="application/ld+json"]');
-      if (ldJson) {
-        var data = JSON.parse(ldJson.textContent);
-        if (data && data["@graph"]) {
-          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
-          if (webpage) {
-            webpage.dateModified = today;
-            ldJson.textContent = JSON.stringify(data);
-          }
-        }
-      }
-    } catch(e) {}
   })();
 </script>
 
