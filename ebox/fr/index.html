@@ -1,4 +1,59 @@
 <!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  CASHINSTINCT.CA — EBOX — PAGE FR (Québec)              état : PROMO ACTIVE
+  Dernière refonte : 18 juin 2026
+───────────────────────────────────────────────────────────────────────────────
+  POUR LA PROCHAINE IA QUI ÉDITE CETTE PAGE — lire avant de toucher :
+
+  CONTEXTE / RAISONNEMENT
+  • Cette page FR cible le QUÉBEC (liens d'inscription vers v-fibre/fr-qc ;
+    préfixe v-fibre = QC, r-fibre = ON).
+  • Le code de parrainage GE911 = 25 $ de crédit sur la 2e facture. Programme
+    PERMANENT, valide QC + ON. Ne pas le dater, ne pas le confondre avec une promo.
+  • PROMO ACTUELLEMENT ACTIVE (≠ page EN qui est dormante) :
+    Internet Fibre 1 Gbit/s à 55 $/mois (rabais 10 $ sur le tarif régulier 65 $),
+    nouveaux clients QC seulement, du 18 juin au 2 JUILLET 2026, NON jumelable.
+    → Date confirmée par le support EBOX (chat). Le bandeau du site EBOX affichait
+      « 26 juin » par erreur ; la note légale et le support disent 2 juillet.
+  • Les promos EBOX changent souvent et sont en général NON jumelables entre elles.
+    NE JAMAIS promettre un cumul (ex. « 25 $ + promo = X ») sans confirmation EBOX.
+    Présenter GE911 comme un avantage DISTINCT du rabais de prix.
+  • La promo diffère selon la province : au QC c'est 1 Gbit/s à 55 $, en Ontario
+    c'est 500 Mbit/s à 55 $ (deal moins intéressant). Ne pas mélanger.
+
+  QUAND LA PROMO ACTUELLE EXPIRE (après le 2 juillet 2026)
+  • Le compte à rebours (script countdown, bas de page) bascule seul : il cache
+    la barre et affiche le bloc post-promo + la note « promo terminée ».
+  • Si AUCUNE nouvelle promo : repasser la page en evergreen — retirer du visible
+    le countdown, la section promo datée, et neutraliser GE911 comme seul avantage
+    permanent (s'inspirer de la page EN, qui est déjà en mode evergreen/dormant).
+  • Si NOUVELLE promo : mettre à jour PROMO_END (script countdown), les montants,
+    forfaits, dates et région partout (hero, résumé, section promo, FAQ, metas).
+
+  CHIFFRES À RESYNCHRONISER LORS D'UN CHANGEMENT DE PROMO
+  • PROMO_END dans le script countdown (bas de page) — date de fin RÉELLE.
+    En cas de divergence bandeau vs note légale EBOX, demander au support.
+  • Hero, résumé, section promo, admissibilité, comparatif, details, FAQ visible.
+  • JSON-LD : FAQ JSON-LD ↔ FAQ HTML doivent correspondre (compter, doit être égal).
+  • dateModified : codé EN DUR dans le head, à mettre à jour au push (le JS n'y
+    touche plus — corrigé juin 2026 car l'injection client-side était invisible
+    aux crawlers en passe brute). Les <time> footer/trust restent auto-JS (visuel).
+  • JSON-LD Product/Offer : NE PAS y mettre le prix du forfait (55/65 $). C'est un
+    crédit de parrainage, pas un prix de produit. price = "0" + priceSpecification
+    explicite (sinon Google affiche un faux « Prix : X $ » → Price Mismatch).
+
+  VALIDATION OBLIGATOIRE AVANT PUSH (par exécution, jamais à l'œil)
+  • Parser le JSON-LD (json.loads) — une virgule en trop casse tout le graphe.
+  • Compter : nb FAQ HTML == nb mainEntity FAQPage ; chaque summary a son
+    aria-labelledby ; aucun id dupliqué ; balises script ouvrantes == fermantes.
+  • Boutons de copie : chaque data-copy a un data-target pointant un span existant.
+  • Sticky CTA : le conteneur sticky-cta doit précéder son script d'init.
+
+  NE PAS « unifier » le lecteur vidéo (classe video-container) avec celui de
+  Sticker Mule (classe yt-lite) — implémentation volontairement séparée.
+═══════════════════════════════════════════════════════════════════════════════
+-->
 <html lang="fr-CA">
 <head>
   <meta charset="UTF-8" />
@@ -89,10 +144,16 @@
       "image": "https://cashinstinct.ca/ebox/fr/og.png",
       "offers": {
         "@type": "Offer",
-        "description": "Le code parrain GE911 applique un crédit de 25 $ sur la deuxième facture pour les nouveaux clients résidentiels d'EBOX admissibles au Québec et en Ontario.",
-        "price": "25.00",
+        "name": "Crédit de parrainage EBOX (code GE911)",
+        "description": "L'utilisation du code parrain GE911 à l'inscription applique un crédit de 25 $ sur la deuxième facture pour les nouveaux clients résidentiels d'EBOX admissibles au Québec et en Ontario. Aucun coût initial (installation à 0 $, modem inclus); le tarif mensuel Internet est fixé par EBOX et varie selon le forfait.",
+        "price": "0",
         "priceCurrency": "CAD",
-        "priceValidUntil": "2027-12-31",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "0",
+          "priceCurrency": "CAD",
+          "description": "Aucun coût initial pour s'abonner avec le code GE911. Le crédit de parrainage de 25 $ est appliqué sur la deuxième facture. Le tarif mensuel du forfait est fixé par EBOX."
+        },
         "availability": "https://schema.org/InStock",
         "eligibleRegion": [
           { "@type": "AdministrativeArea", "name": "Quebec" },
@@ -1421,19 +1482,22 @@
 
   <!-- SCRIPTS -->
    <script>
-  // ── SCRIPT UNIVERSEL : DATES DYNAMIQUES & JSON-LD dateModified ──
+  // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
+  // Met à jour les <time> visibles (footer-date, trust-date) à la date du jour.
+  // NE TOUCHE PAS au JSON-LD : dateModified est codé EN DUR dans le <head> et
+  // ne doit refléter QUE la vraie dernière modification (à mettre à jour au push).
   (function() {
     var now = new Date();
-    var lang = document.documentElement.lang || "en-CA";
+    var lang = document.documentElement.lang || "fr-CA";
     
-    // 1. Format Court (ex: "Juin 2026" / "June 2026")
+    // 1. Format court (ex: "juin 2026")
     var footerDate = document.getElementById("footer-date");
     if (footerDate) {
       footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
     
-    // 2. Format Long localisé (ex: "12 juin 2026" / "June 12, 2026")
+    // 2. Format long localisé (ex: "18 juin 2026")
     var trustDate = document.getElementById("trust-date");
     if (trustDate) {
       var options = lang.startsWith("fr") 
@@ -1445,22 +1509,6 @@
         trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
       }
     }
-
-    // 3. Mise à jour automatique du JSON-LD dateModified
-    try {
-      var today = now.toISOString().slice(0, 10);
-      var ldJson = document.querySelector('script[type="application/ld+json"]');
-      if (ldJson) {
-        var data = JSON.parse(ldJson.textContent);
-        if (data && data["@graph"]) {
-          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
-          if (webpage) {
-            webpage.dateModified = today;
-            ldJson.textContent = JSON.stringify(data);
-          }
-        }
-      }
-    } catch(e) {}
   })();
 </script>
 
