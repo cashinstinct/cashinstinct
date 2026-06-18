@@ -41,6 +41,17 @@
     crédit de parrainage, pas un prix de produit. price = "0" + priceSpecification
     explicite (sinon Google affiche un faux « Prix : X $ » → Price Mismatch).
 
+   ESPACES INSÉCABLES (coupures mobile FR)
+  • Coller chiffre + unité/symbole/mois avec &nbsp; dans le TEXTE VISIBLE :
+    55&nbsp;$/mois · 1&nbsp;Gbit/s · 25&nbsp;$ · 26&nbsp;juin · 500&nbsp;Mbit/s
+    → empêche le « 1 » de tomber seul en bout de ligne sur mobile.
+  • JAMAIS de &nbsp; dans : le JSON-LD (Google lit la valeur brute → afficherait
+    « 55&nbsp;$ » littéralement), les attributs (aria-label, alt, content,
+    datetime → un lecteur d'écran lit le code), le CSS, le JS.
+  • Pour une expression de 3+ mots à garder soudée, préférer
+    <span style="white-space: nowrap;">…</span> plutôt que des &nbsp; en série.
+  • Règle courte : &nbsp; = entre 2 éléments (nombre + unité) dans le visible seulement.
+
   VALIDATION OBLIGATOIRE AVANT PUSH (par exécution, jamais à l'œil)
   • Parser le JSON-LD (json.loads) — une virgule en trop casse tout le graphe.
   • Compter : nb FAQ HTML == nb mainEntity FAQPage ; chaque summary a son
@@ -60,7 +71,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f131a" />
 
   <!-- title unifié <60 chars, cohérent avec og:title -->
-  <title>Code EBOX GE911 — 25 $ de crédit + promo 1 Gbit/s 55 $ (2026)</title>
+  <title>Code EBOX GE911 — 25&nbsp;$ de crédit + promo 1&nbsp;Gbit/s 55&nbsp;$ (2026)</title>
 
   <!-- meta description <160 chars -->
   <meta name="description" content="Utilisez le code EBOX GE911 pour 25 $ de crédit sur la 2e facture. Promo Internet Fibre 1 Gbit/s à 55 $/mois au Québec jusqu'au 26 juin 2026. Sans contrat, modem inclus.">
@@ -231,7 +242,7 @@
         {
           "@type": "Question",
           "name": "Y a-t-il une promotion EBOX en juin 2026 ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Oui. Du 18 juin au 26 juin 2026, les nouveaux clients au Québec qui s'abonnent au forfait Internet Fibre 1 Gbit/s profitent d'un prix promotionnel de 55&nbsp;$/mois, soit 10&nbsp;$ de rabais sur le prix régulier de 65&nbsp;$/mois. Offre réservée aux nouveaux clients au Québec, non jumelable à d'autres offres ou promotions." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui. Du 18 juin au 26 juin 2026, les nouveaux clients au Québec qui s'abonnent au forfait Internet Fibre 1 Gbit/s profitent d'un prix promotionnel de 55 $/mois, soit 10 $ de rabais sur le prix régulier de 65 $/mois. Offre réservée aux nouveaux clients au Québec, non jumelable à d'autres offres ou promotions." }
         },
         {
           "@type": "Question",
@@ -770,17 +781,17 @@
     <div class="container">
       <div style="display:flex;justify-content:center;margin-bottom:28px;">
         <div class="cumul-badge" style="display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 6px; background: rgba(0,0,0,.25); border: 2px solid rgba(255,255,255,.6); border-radius: 40px; padding: 10px 16px; font-size: 0.9rem; font-weight: 800; color: #fff; max-width: calc(100% - 32px); box-sizing: border-box;">
-          <span style="white-space:nowrap;">⚡ Fibre 1 Gbit/s</span>
+          <span style="white-space:nowrap;">⚡ Fibre 1&nbsp;Gbit/s</span>
           <span class="plus" style="opacity: .8; font-size: .9em; margin: 0 2px;">→</span>
-          <span class="total-pill" style="background: #fff; color: var(--accent); border-radius: 20px; padding: 4px 14px; font-size: .95rem; font-weight: 900; white-space: nowrap;">🎁 55 $/mois</span>
+          <span class="total-pill" style="background: #fff; color: var(--accent); border-radius: 20px; padding: 4px 14px; font-size: .95rem; font-weight: 900; white-space: nowrap;">🎁 55&nbsp;$/mois</span>
         </div>
       </div>
-      <h1>Code EBOX GE911 — 25 $ de crédit en 2026</h1>
-      <p>Entrez le <strong>code de parrainage GE911</strong> à votre inscription pour <strong>25 $ de crédit</strong> sur votre 2e facture. Profitez aussi de la promo <strong>Internet Fibre 1&nbsp;Gbit/s à <span style="white-space: nowrap;">55 $/mois</span></strong> au Québec.</p>
+      <h1>Code EBOX GE911 — 25&nbsp;$ de crédit en 2026</h1>
+      <p>Entrez le <strong>code de parrainage GE911</strong> à votre inscription pour <strong>25&nbsp;$ de crédit</strong> sur votre 2e facture. Profitez aussi de la promo <strong>Internet Fibre 1&nbsp;Gbit/s à <span style="white-space: nowrap;">55&nbsp;$/mois</span></strong> au Québec.</p>
 
       <div id="countdown-wrapper">
         <div class="countdown-bar" id="countdown-bar">
-          <span class="countdown-label">⏳ Promo 1 Gbit/s 55 $ expire dans</span>
+          <span class="countdown-label">⏳ Promo 1&nbsp;Gbit/s 55&nbsp;$ expire dans</span>
           <div class="countdown-units">
             <div class="countdown-unit"><span class="val" id="cd-days">--</span><span class="lbl">jours</span></div>
             <div class="countdown-unit"><span class="val" id="cd-hours">--</span><span class="lbl">heures</span></div>
@@ -789,7 +800,7 @@
           </div>
         </div>
         <div class="promo-expired-notice" id="hero-expired-notice">
-          ✅ La promo 1 Gbit/s à 55 $ est terminée — le code <strong>GE911</strong> reste actif et donne toujours <strong>25 $ de crédit</strong> sur votre 2e facture.
+          ✅ La promo 1&nbsp;Gbit/s à 55&nbsp;$ est terminée — le code <strong>GE911</strong> reste actif et donne toujours <strong>25&nbsp;$ de crédit</strong> sur votre 2e facture.
         </div>
       </div>
 
@@ -809,7 +820,7 @@
           </div>
 
           <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px; color: var(--text-soft);">
-            Sauvegardez l'identifiant pour le coller dans la section <span style="white-space: nowrap;">« Informations</span> personnelles » : <span style="white-space: nowrap;">« Code</span> — 25 $ pour toi et tes <span style="white-space: nowrap;">amis ! ».</span>
+            Sauvegardez l'identifiant pour le coller dans la section <span style="white-space: nowrap;">« Informations</span> personnelles » : <span style="white-space: nowrap;">« Code</span> — 25&nbsp;$ pour toi et tes <span style="white-space: nowrap;">amis ! ».</span>
           </p>
           
           <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 16px; color: var(--text-soft);">
@@ -871,7 +882,7 @@
         </nav>
 
         <div class="post-promo-notice" id="post-promo-block">
-          ℹ️ <strong>La promo 1&nbsp;Gbit/s à 55 $ est maintenant terminée.</strong> Le code de parrainage <strong>GE911</strong> reste actif et donne toujours <strong>25 $ de crédit</strong> sur votre 2e facture EBOX. Aucune date limite — c'est un programme permanent.
+          ℹ️ <strong>La promo 1&nbsp;Gbit/s à 55&nbsp;$ est maintenant terminée.</strong> Le code de parrainage <strong>GE911</strong> reste actif et donne toujours <strong>25&nbsp;$ de crédit</strong> sur votre 2e facture EBOX. Aucune date limite — c'est un programme permanent.
         </div>
 
         <nav aria-label="Navigation interne" style="font-size: 0.95rem; margin-top: -12px; margin-bottom: 32px; text-align: center; color: var(--muted);">
@@ -889,21 +900,21 @@
           <section class="summary-box" aria-labelledby="summary-heading">
           <h2 id="summary-heading">Sommaire du programme de référence EBOX</h2>
           <div class="ai-summary">
-          Le numéro de client EBOX actif en juin 2026 est <strong>GE911</strong>. Ce code de parrainage permanent offre un crédit de <strong>25 $ applicable automatiquement sur la deuxième facture</strong> de tout nouvel abonné résidentiel. Il doit obligatoirement être saisi dans la section Informations personnelles : <em>« Code — 25 $ pour toi et tes amis ! »</em> lors de la commande initiale en ligne ou par téléphone au 1-844-323-EBOX (3269).
+          Le numéro de client EBOX actif en juin 2026 est <strong>GE911</strong>. Ce code de parrainage permanent offre un crédit de <strong>25&nbsp;$ applicable automatiquement sur la deuxième facture</strong> de tout nouvel abonné résidentiel. Il doit obligatoirement être saisi dans la section Informations personnelles : <em>« Code — 25&nbsp;$ pour toi et tes amis ! »</em> lors de la commande initiale en ligne ou par téléphone au 1-844-323-EBOX (3269).
           Beaucoup de gens cherchent « code EBOX », «&nbsp;EBOX promo code&nbsp;» ou «&nbsp;EBOX referral code&nbsp;» ; dans le formulaire, le champ officiel s'appelle « numéro de client EBOX de l'ami qui te réfère ».
           <br><br>
-          🎁 <strong>Promo en cours jusqu'au 26 juin 2026 :</strong> les nouveaux clients <strong>au Québec</strong> qui s'abonnent au forfait Internet Fibre <strong>1&nbsp;Gbit/s</strong> profitent d'un prix promotionnel de <strong>55 $/mois</strong> (rabais de 10&nbsp;$ sur le prix régulier de 65 $/mois). Cette promotion est <strong>non jumelable</strong> à d'autres offres. Le code GE911 demeure un avantage distinct et permanent. Sans contrat, modem inclus.
+          🎁 <strong>Promo en cours jusqu'au 26&nbsp;juin 2026 :</strong> les nouveaux clients <strong>au Québec</strong> qui s'abonnent au forfait Internet Fibre <strong>1&nbsp;Gbit/s</strong> profitent d'un prix promotionnel de <strong>55&nbsp;$/mois</strong> (rabais de 10&nbsp;$ sur le prix régulier de 65&nbsp;$/mois). Cette promotion est <strong>non jumelable</strong> à d'autres offres. Le code GE911 demeure un avantage distinct et permanent. Sans contrat, modem inclus.
         </div>
-          <p class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-06-18">18 juin 2026</time></p>
+          <p class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-06-18">18&nbsp;juin 2026</time></p>
         </section>
   
 
         <section id="promo-100" aria-label="Promotion EBOX Internet Fibre 1 Gbit/s à 55 $">
           <span class="section-label">🎁 Promotion — chute de prix</span>
-          <h2>Promo EBOX : Internet Fibre 1&nbsp;Gbit/s à 55 $/mois au Québec (jusqu'au 26&nbsp;juin 2026)</h2>
+          <h2>Promo EBOX : Internet Fibre 1&nbsp;Gbit/s à 55&nbsp;$/mois au Québec (jusqu'au 26&nbsp;juin 2026)</h2>
 
           <div class="warning">
-            ⏰ <strong>Date limite :</strong> La promotion débute le 18 juin et se termine le <strong>26 juin 2026</strong>. Elle s'applique au forfait Internet Fibre <strong>1&nbsp;Gbit/s</strong>, pour les <strong>nouveaux clients au Québec</strong> uniquement. Offre <strong>non jumelable</strong> à d'autres offres ou promotions.
+            ⏰ <strong>Date limite :</strong> La promotion débute le 18&nbsp;juin et se termine le <strong>26&nbsp;juin 2026</strong>. Elle s'applique au forfait Internet Fibre <strong>1&nbsp;Gbit/s</strong>, pour les <strong>nouveaux clients au Québec</strong> uniquement. Offre <strong>non jumelable</strong> à d'autres offres ou promotions.
           </div>
 
           <div class="facts" style="margin-top: 24px;">
@@ -913,11 +924,11 @@
             </div>
             <div class="fact">
               <strong>💵 Prix promo</strong>
-              <span>55 $/mois, soit 10&nbsp;$ de rabais sur le prix régulier de 65&nbsp;$/mois.</span>
+              <span>55&nbsp;$/mois, soit 10&nbsp;$ de rabais sur le prix régulier de 65&nbsp;$/mois.</span>
             </div>
             <div class="fact">
               <strong>📅 Période de validité</strong>
-              <span>Du 18 juin au 26&nbsp;juin 2026.</span>
+              <span>Du 18&nbsp;juin au 26&nbsp;juin 2026.</span>
             </div>
             <div class="fact">
               <strong>📍 Région admissible</strong>
@@ -939,7 +950,7 @@
               Deux avantages distincts à connaître
             </h3>
             <p class="cumul-note" style="margin-top: 0;">
-              💡 <strong>À ne pas confondre.</strong> La promo <strong>1&nbsp;Gbit/s à 55&nbsp;$/mois</strong> est une réduction de prix temporaire, automatique sur le forfait admissible, et <strong>non jumelable</strong> à d'autres promotions. Le <strong>code de parrainage GE911</strong> est un programme distinct et permanent : il donne <strong>25 $ de crédit</strong> sur votre 2e facture. Vérifiez auprès d'EBOX les conditions applicables à votre commande.
+              💡 <strong>À ne pas confondre.</strong> La promo <strong>1&nbsp;Gbit/s à 55&nbsp;$/mois</strong> est une réduction de prix temporaire, automatique sur le forfait admissible, et <strong>non jumelable</strong> à d'autres promotions. Le <strong>code de parrainage GE911</strong> est un programme distinct et permanent : il donne <strong>25&nbsp;$ de crédit</strong> sur votre 2e facture. Vérifiez auprès d'EBOX les conditions applicables à votre commande.
             </p>
           </div>
 
@@ -948,19 +959,19 @@
           <ol class="steps">
             <li id="promo-step-1">
               <div>
-                <h3>Allez sur ebox.ca et choisissez le forfait Fibre 1 Gbit/s</h3>
-                <p>Le prix promotionnel de 55 $/mois s'applique automatiquement sur le forfait 1&nbsp;Gbit/s pour les nouveaux clients admissibles au Québec, là où la technologie le permet.</p>
+                <h3>Allez sur ebox.ca et choisissez le forfait Fibre 1&nbsp;Gbit/s</h3>
+                <p>Le prix promotionnel de 55&nbsp;$/mois s'applique automatiquement sur le forfait 1&nbsp;Gbit/s pour les nouveaux clients admissibles au Québec, là où la technologie le permet.</p>
               </div>
             </li>
             <li id="promo-step-2">
               <div>
                 <h3>Entrez le code client GE911</h3>
-                <p>Au moment de remplir le formulaire de commande, repérez spécifiquement la section Informations personnelles : <strong>« Code — 25 $ pour toi et tes amis ! »</strong> et saisissez <code>GE911</code> dans le champ « Inscrire le numéro de client EBOX de l'ami qui te réfère ». Attention à ne pas le confondre avec la case pour les codes promos généraux.</p>
+                <p>Au moment de remplir le formulaire de commande, repérez spécifiquement la section Informations personnelles : <strong>« Code — 25&nbsp;$ pour toi et tes amis ! »</strong> et saisissez <code>GE911</code> dans le champ « Inscrire le numéro de client EBOX de l'ami qui te réfère ». Attention à ne pas le confondre avec la case pour les codes promos généraux.</p>
               </div>
             </li>
             <li id="promo-step-3">
               <div>
-                <h3>Finalisez votre commande avant le 26 juin 2026</h3>
+                <h3>Finalisez votre commande avant le 26&nbsp;juin 2026</h3>
                 <p>Le prix promotionnel s'affiche au récapitulatif de commande. La promo étant non jumelable, vérifiez sur la commande quelles offres s'appliquent à votre situation.</p>
               </div>
             </li>
@@ -977,13 +988,13 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Promo prix 1 Gbit/s</td>
-                  <td><strong>55 $/mois</strong> (rab. 10&nbsp;$)</td>
-                  <td>Nouveaux clients QC, du 18 au 26 juin 2026</td>
+                  <td>Promo prix 1&nbsp;Gbit/s</td>
+                  <td><strong>55&nbsp;$/mois</strong> (rab. 10&nbsp;$)</td>
+                  <td>Nouveaux clients QC, du 18 au 26&nbsp;juin 2026</td>
                 </tr>
                 <tr>
                   <td>Code de parrainage GE911</td>
-                  <td><strong>25 $ de crédit</strong></td>
+                  <td><strong>25&nbsp;$ de crédit</strong></td>
                   <td>Appliqué sur la 2e&nbsp;facture (programme permanent)</td>
                 </tr>
               </tbody>
@@ -1033,8 +1044,8 @@
             </li>
             <li id="howto-step-4">
               <div>
-                <h3>Obtenez 25 $ de rabais</h3>
-                <p>Complétez votre abonnement. Le&nbsp;crédit de 25 $ sera appliqué automatiquement sur votre <strong>deuxième facture</strong>.</p>
+                <h3>Obtenez 25&nbsp;$ de rabais</h3>
+                <p>Complétez votre abonnement. Le&nbsp;crédit de 25&nbsp;$ sera appliqué automatiquement sur votre <strong>deuxième facture</strong>.</p>
               </div>
             </li>
           </ol>
@@ -1047,7 +1058,7 @@
 
           <div class="field-exact">
             <strong>✅ Bonne section — c'est ici qu'il faut entrer GE911</strong>
-            Libellé exact : <em>« Code — 25 $ pour toi et tes amis ! »</em><br>
+            Libellé exact : <em>« Code — 25&nbsp;$ pour toi et tes amis ! »</em><br>
             Emplacement : page Informations personnelles.
           </div>
 
@@ -1146,7 +1157,7 @@
           </script>
 
           <div class="transparency">
-            <strong>Rappel visuel :</strong> Comme le montre la vidéo, ne confondez pas avec le champ « Code Promo » (en haut). Le code <code>GE911</code> doit être inscrit dans la section Informations personnelles : <strong>«&nbsp;Code — 25&nbsp;$ pour toi et tes amis&nbsp;!&nbsp;»</strong> pour activer le crédit de 25 $.
+            <strong>Rappel visuel :</strong> Comme le montre la vidéo, ne confondez pas avec le champ « Code Promo » (en haut). Le code <code>GE911</code> doit être inscrit dans la section Informations personnelles : <strong>«&nbsp;Code — 25&nbsp;$ pour toi et tes amis&nbsp;!&nbsp;»</strong> pour activer le crédit de 25&nbsp;$.
           </div>
         </section>
 
@@ -1154,7 +1165,7 @@
           <span class="section-label">Conditions</span>
           <h2>Qui peut utiliser le code de parrainage EBOX ?</h2>
           <p>Le numéro de client <code>GE911</code> s'adresse à tout <strong>nouveau client résidentiel</strong> qui s'abonne à un forfait Internet EBOX au Québec et en Ontario. Pour éviter les abus, le code de parrainage ne peut pas être utilisé pour plusieurs abonnements actifs rattachés à une même adresse physique.</p>
-          <p>🔄 <strong>Anciens clients EBOX :</strong> Si vous avez déjà détenu un compte par le passé, vous êtes toujours admissible au crédit de 25 $ <strong>uniquement si votre historique de compte est fermé depuis plus de 12 mois (un an)</strong>, et que vous procédez à une nouvelle inscription complète plutôt qu'à une réactivation d'anciens identifiants.</p>
+          <p>🔄 <strong>Anciens clients EBOX :</strong> Si vous avez déjà détenu un compte par le passé, vous êtes toujours admissible au crédit de 25&nbsp;$ <strong>uniquement si votre historique de compte est fermé depuis plus de 12 mois (un an)</strong>, et que vous procédez à une nouvelle inscription complète plutôt qu'à une réactivation d'anciens identifiants.</p>
           <p>🎁 <strong>Promo en cours :</strong> Les nouveaux clients <strong>au Québec</strong> qui s'abonnent au forfait Fibre <strong>1&nbsp;Gbit/s</strong> d'ici le 26&nbsp;juin 2026 profitent d'un prix promotionnel de <strong>55&nbsp;$/mois</strong> (rabais de 10&nbsp;$). Cette promotion de prix est non jumelable à d'autres offres ; le crédit de parrainage GE911 est un avantage distinct.</p
         </section>
 
@@ -1176,15 +1187,15 @@
               <tbody>
                 <tr>
                   <td>~500 Mbps</td>
-                  <td><strong>~55 $/mois</strong></td>
-                  <td>~75 $/mois</td>
-                  <td>~75 $/mois</td>
+                  <td><strong>~55&nbsp;$/mois</strong></td>
+                  <td>~75&nbsp;$/mois</td>
+                  <td>~75&nbsp;$/mois</td>
                 </tr>
                 <tr>
                   <td>~1 Gbps</td>
-                  <td><strong>~55 $/mois (promo)</strong></td>
-                  <td>~85 $/mois</td>
-                  <td>~75 $/mois</td>
+                  <td><strong>~55&nbsp;$/mois (promo)</strong></td>
+                  <td>~85&nbsp;$/mois</td>
+                  <td>~75&nbsp;$/mois</td>
                 </tr>
                 <tr>
                   <td>Contrat</td>
@@ -1195,12 +1206,12 @@
                 <tr>
                   <td>Équipement</td>
                   <td><strong>Modem + routeur inclus</strong></td>
-                  <td>Location ~12 $/mois</td>
-                  <td>Location ~10 $/mois</td>
+                  <td>Location ~12&nbsp;$/mois</td>
+                  <td>Location ~10&nbsp;$/mois</td>
                 </tr>
                 <tr>
                   <td>Rabais nouveau client</td>
-                  <td><strong>25 $ <button class="copy-btn-micro" data-copy="GE911" data-label="Copier GE911" data-target="copyStatusTable" type="button">Copier GE911</button> + promo 1 Gbit/s à 55 $/mois (QC)</strong></td>      
+                  <td><strong>25&nbsp;$ <button class="copy-btn-micro" data-copy="GE911" data-label="Copier GE911" data-target="copyStatusTable" type="button">Copier GE911</button> + promo 1&nbsp;Gbit/s à 55&nbsp;$/mois (QC)</strong></td>      
                   <td>Aucun équivalent</td>
                   <td>Promo variable</td>
                 </tr>
@@ -1224,9 +1235,9 @@
 
           <div class="ai-summary" style="margin-top: 28px;">
             💰 <strong>Exemple d'économie réelle — passer de Bell à EBOX</strong><br><br>
-            Bell 500 Mbps : <strong>~75 $/mois</strong><br>
-            EBOX 500 Mbps avec code client GE911 : <strong>~55 $/mois</strong><br><br>
-            Différence : <strong>20 $/mois → 240 $ économisés par année</strong>, plus 25 $ de crédit GE911 sur la 2e facture, sans changer de réseau physique, sans contrat.
+            Bell 500 Mbps : <strong>~75&nbsp;$/mois</strong><br>
+            EBOX 500 Mbps avec code client GE911 : <strong>~55&nbsp;$/mois</strong><br><br>
+            Différence : <strong>20&nbsp;$/mois → 240&nbsp;$ économisés par année</strong>, plus 25&nbsp;$ de crédit GE911 sur la 2e facture, sans changer de réseau physique, sans contrat.
           </div>
         </section>
         
@@ -1243,8 +1254,8 @@
               <span>Le code de référence GE911 est permanent et actif en 2026.</span>
             </div>
             <div class="fact">
-              <strong>🎁 Promo 1 Gbit/s (jusqu'au 26 juin)</strong>
-              <span>Forfait Fibre 1 Gbit/s à 55 $/mois pour les nouveaux clients au Québec. Non jumelable.</span>
+              <strong>🎁 Promo 1&nbsp;Gbit/s (jusqu'au 26&nbsp;juin)</strong>
+              <span>Forfait Fibre 1&nbsp;Gbit/s à 55&nbsp;$/mois pour les nouveaux clients au Québec. Non jumelable.</span>
             </div>
             <div class="fact">
               <strong>Sans contrat</strong>
@@ -1260,7 +1271,7 @@
             </div>
             <div class="fact">
               <strong>Fonctionnement</strong>
-              <span>Vous obtenez 25 $ de crédit, et la personne qui vous réfère reçoit aussi un crédit.</span>
+              <span>Vous obtenez 25&nbsp;$ de crédit, et la personne qui vous réfère reçoit aussi un crédit.</span>
             </div>
           </div>
         </section>
@@ -1304,7 +1315,7 @@
                 </tr>
                 <tr>
                   <td>GE911</td>
-                  <td>Le code de parrainage permanent et testé en 2026. Il garantit votre crédit de 25 $ sur la 2e facture.</td>
+                  <td>Le code de parrainage permanent et testé en 2026. Il garantit votre crédit de 25&nbsp;$ sur la 2e facture.</td>
                 </tr>
                 <tr>
                   <td>Code Promo EBOX</td>
@@ -1331,32 +1342,32 @@
             <details>
               <summary id="faq-q1">Quel est le code client EBOX à utiliser en 2026 ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q1">
-                <p>Le code client (numéro de client) à utiliser est <strong>GE911</strong>. Il donne 25 $ de crédit sur la 2e facture pour tout nouvel abonné admissible.</p>
+                <p>Le code client (numéro de client) à utiliser est <strong>GE911</strong>. Il donne 25&nbsp;$ de crédit sur la 2e facture pour tout nouvel abonné admissible.</p>
               </div>
             </details>
             <details>
               <summary id="faq-q2">Le code client EBOX GE911 fonctionne-t-il encore ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q2">
-                <p>Oui, le code GE911 est 100 % valide et testé en 2026. Cette page est mise à jour régulièrement pour garantir qu'il applique automatiquement le rabais de 25 $ disponible sur le système d'EBOX.</p>
+                <p>Oui, le code GE911 est 100 % valide et testé en 2026. Cette page est mise à jour régulièrement pour garantir qu'il applique automatiquement le rabais de 25&nbsp;$ disponible sur le système d'EBOX.</p>
               </div>
             </details>
              <details>
               <summary id="faq-q3">Pourquoi le code EBOX GE911 ne fonctionne-t-il pas ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q3">
-                <p>Cause numéro 1 dans 90 % des cas : le code a été entré dans la case <strong>« Code Promo »</strong> au lieu du champ de parrainage officiel <strong>« Code — 25 $ pour toi et tes amis ! »</strong>. Ces deux zones sont indépendantes — seul le second champ valide le code client GE911.</p>
+                <p>Cause numéro 1 dans 90 % des cas : le code a été entré dans la case <strong>« Code Promo »</strong> au lieu du champ de parrainage officiel <strong>« Code — 25&nbsp;$ pour toi et tes amis ! »</strong>. Ces deux zones sont indépendantes — seul le second champ valide le code client GE911.</p>
                 <p>D'autres raisons mineures incluent l'application du code sur une adresse disposant déjà d'un raccordement actif, ou la tentative de parrainage sur une simple réactivation de compte fermé il y a moins de 12 mois.</p>
               </div>
             </details>
             <details>
               <summary id="faq-q4">Y a-t-il une promotion EBOX en juin 2026 ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q4">
-                <p>Oui. Du 18 juin au <strong>26 juin 2026</strong>, les nouveaux clients <strong>au Québec</strong> qui s'abonnent au forfait Internet Fibre <strong>1 Gbit/s</strong> profitent d'un prix promotionnel de <strong>55 $/mois</strong>, soit 10&nbsp;$ de rabais sur le prix régulier de 65 $/mois. Offre réservée aux nouveaux clients au Québec, <strong>non jumelable</strong> à d'autres offres ou promotions.</p>
+                <p>Oui. Du 18&nbsp;juin au <strong>26&nbsp;juin 2026</strong>, les nouveaux clients <strong>au Québec</strong> qui s'abonnent au forfait Internet Fibre <strong>1&nbsp;Gbit/s</strong> profitent d'un prix promotionnel de <strong>55&nbsp;$/mois</strong>, soit 10&nbsp;$ de rabais sur le prix régulier de 65&nbsp;$/mois. Offre réservée aux nouveaux clients au Québec, <strong>non jumelable</strong> à d'autres offres ou promotions.</p>
               </div>
             </details>
             <details>
-              <summary id="faq-q5">La promo 1 Gbit/s à 55 $ est-elle cumulable avec le code GE911 ?</summary>
+              <summary id="faq-q5">La promo 1&nbsp;Gbit/s à 55&nbsp;$ est-elle cumulable avec le code GE911 ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q5">
-                <p>La promotion 1 Gbit/s à 55 $/mois est <strong>non jumelable</strong> à d'autres offres ou promotions. Le code <code>GE911</code> est un avantage distinct : c'est un code client permanent qui donne <strong>25 $ de crédit</strong> sur la 2e facture des nouveaux abonnés résidentiels admissibles. Vérifiez auprès d'EBOX les conditions applicables à votre commande.</p>
+                <p>La promotion 1&nbsp;Gbit/s à 55&nbsp;$/mois est <strong>non jumelable</strong> à d'autres offres ou promotions. Le code <code>GE911</code> est un avantage distinct : c'est un code client permanent qui donne <strong>25&nbsp;$ de crédit</strong> sur la 2e facture des nouveaux abonnés résidentiels admissibles. Vérifiez auprès d'EBOX les conditions applicables à votre commande.</p>
               </div>
             </details>
             <details>
@@ -1379,9 +1390,9 @@
               </div>
             </details>
             <details>
-              <summary id="faq-q9">Le rabais EBOX était-il de 50 $ avant ?</summary>
+              <summary id="faq-q9">Le rabais EBOX était-il de 50&nbsp;$ avant ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q9">
-                <p>Oui, EBOX offrait temporairement un crédit de 50 $ en promotion. Depuis <strong>juin 2026</strong>, le rabais de parrainage standard est revenu à 25 $ avec le code GE911. Contrairement à de vieux posts sur les forums, cette page vous donne le montant exact actuellement en vigueur.</p>
+                <p>Oui, EBOX offrait temporairement un crédit de 50&nbsp;$ en promotion. Depuis <strong>juin 2026</strong>, le rabais de parrainage standard est revenu à 25&nbsp;$ avec le code GE911. Contrairement à de vieux posts sur les forums, cette page vous donne le montant exact actuellement en vigueur.</p>
               </div>
             </details>
             <details>
@@ -1405,7 +1416,7 @@
                       </tr>
                       <tr>
                         <td>Avantage</td>
-                        <td>Crédit de 25 $ sur la facture</td>
+                        <td>Crédit de 25&nbsp;$ sur la facture</td>
                         <td>Rabais ciblés (installation, etc.)</td>
                       </tr>
                       <tr>
@@ -1416,13 +1427,13 @@
                     </tbody>
                   </table>
                 </div>
-                <p>Pendant le formulaire de commande, veillez à bien inscrire <code>GE911</code> dans la bonne section, sans quoi le système ne pourra pas valider vos 25 $ de crédit.</p>
+                <p>Pendant le formulaire de commande, veillez à bien inscrire <code>GE911</code> dans la bonne section, sans quoi le système ne pourra pas valider vos 25&nbsp;$ de crédit.</p>
               </div>
             </details>
              <details>
               <summary id="faq-q11">J'ai déjà été client EBOX. Puis-je utiliser un code de parrainage à nouveau ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q11">
-                <p><strong>Oui, c'est possible.</strong> EBOX autorise l'application du crédit de 25 $ pour les anciens abonnés à la condition que le précédent service ait été résilié depuis <strong>plus de 12 mois consécutifs</strong>. Vous devez également effectuer un parcours d'inscription standard complet au lieu de réactiver votre ancien profil.</p>
+                <p><strong>Oui, c'est possible.</strong> EBOX autorise l'application du crédit de 25&nbsp;$ pour les anciens abonnés à la condition que le précédent service ait été résilié depuis <strong>plus de 12 mois consécutifs</strong>. Vous devez également effectuer un parcours d'inscription standard complet au lieu de réactiver votre ancien profil.</p>
               </div>
             </details>
           </div>
@@ -1430,7 +1441,7 @@
 
         <div class="cta-section">
           <h2>Prêt à commander votre accès Internet ?</h2>
-          <p>Cliquez ci-dessous, choisissez votre forfait Internet et entrez simplement le code <strong>GE911</strong> dans la section Informations personnelles: <em>« Code — 25 $ pour toi et tes amis ! »</em> pendant votre inscription pour activer votre rabais de 25 $.</p>
+          <p>Cliquez ci-dessous, choisissez votre forfait Internet et entrez simplement le code <strong>GE911</strong> dans la section Informations personnelles: <em>« Code — 25&nbsp;$ pour toi et tes amis ! »</em> pendant votre inscription pour activer votre rabais de 25&nbsp;$.</p>
           <a class="btn" href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer">
             🌐 Aller sur le site d'EBOX
           </a>
@@ -1442,7 +1453,7 @@
         </div>
 
         <div class="transparency">
-          <strong>Transparence :</strong> cette page est une ressource indépendante. En utilisant le code <code>GE911</code>, vous obtenez 25 $ de crédit, et je reçois également un crédit sur ma facture en guise de remerciement. Vérifiez toujours les conditions en vigueur directement sur le site d'EBOX.
+          <strong>Transparence :</strong> cette page est une ressource indépendante. En utilisant le code <code>GE911</code>, vous obtenez 25&nbsp;$ de crédit, et je reçois également un crédit sur ma facture en guise de remerciement. Vérifiez toujours les conditions en vigueur directement sur le site d'EBOX.
         </div>
 
       </div>
