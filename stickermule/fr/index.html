@@ -1387,6 +1387,8 @@
     </div>
   </footer>
 
+
+  
 <script>
   // ── MODULE DE COPIE UNIFIÉ — source de vérité unique via data-copy / data-target ──
   (function() {
@@ -1473,22 +1475,39 @@
     document.querySelectorAll(".dynamic-link").forEach(function(link) { link.href = targetUrl; });
   </script>
 
-  <script>
-    // ── THEME TOGGLE ──
-    var themeToggle = document.getElementById("theme-toggle");
-    function setThemeUI(isDark) {
-      themeToggle.textContent = isDark ? "☀️" : "🌙";
-      themeToggle.setAttribute("aria-label", isDark ? "Activer le mode lumineux" : "Activer le mode sombre");
-      themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-    }
-    setThemeUI(document.documentElement.getAttribute('data-theme') === 'dark');
-    themeToggle.addEventListener("click", function() {
-      var isDark = document.documentElement.getAttribute("data-theme") === "dark";
-      if (isDark) { document.documentElement.removeAttribute("data-theme"); localStorage.setItem("theme", "light"); }
-      else { document.documentElement.setAttribute("data-theme", "dark"); localStorage.setItem("theme", "dark"); }
-      setThemeUI(!isDark);
-    });
+   <script>
+    /* ── thème — bloc unique avec texte FR ── */
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      function isDark() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+      }
+
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️' : '🌙';
+        toggle.setAttribute('aria-label', dark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+
+      /* Initialise l'UI selon le thème déjà appliqué par le <head> */
+      applyUI(isDark());
+
+      toggle.addEventListener('click', function() {
+        var dark = isDark();
+        if (dark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        applyUI(!dark);
+      });
+    })();
   </script>
+
 
  
   <!--
@@ -1506,20 +1525,23 @@
 
   Bref : ce bloc se copie tel quel d'une langue à l'autre. C'est sa raison d'être.
 -->
- <script>
-  // ── DATE UNIFIÉ ──
+   <script>
+  // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
+  // Met à jour les <time> visibles (footer-date, trust-date) à la date du jour.
+  // NE TOUCHE PAS au JSON-LD : dateModified est codé EN DUR dans le <head> et
+  // ne doit refléter QUE la vraie dernière modification (à mettre à jour au push).
   (function() {
     var now = new Date();
-    var lang = document.documentElement.lang || "en-CA";
+    var lang = document.documentElement.lang || "fr-CA";
     
-    // 1. Format Court (ex: "Juin 2026" / "June 2026")
+    // 1. Format court (ex: "juin 2026")
     var footerDate = document.getElementById("footer-date");
     if (footerDate) {
       footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
     
-    // 2. Format Long localisé (ex: "12 juin 2026" / "June 12, 2026")
+    // 2. Format long localisé (ex: "18 juin 2026")
     var trustDate = document.getElementById("trust-date");
     if (trustDate) {
       var options = lang.startsWith("fr") 
@@ -1531,24 +1553,9 @@
         trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
       }
     }
-
-    // 3. Mise à jour automatique du JSON-LD dateModified
-    try {
-      var today = now.toISOString().slice(0, 10);
-      var ldJson = document.querySelector('script[type="application/ld+json"]');
-      if (ldJson) {
-        var data = JSON.parse(ldJson.textContent);
-        if (data && data["@graph"]) {
-          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
-          if (webpage) {
-            webpage.dateModified = today;
-            ldJson.textContent = JSON.stringify(data);
-          }
-        }
-      }
-    } catch(e) {}
   })();
 </script>
+
   
   <script>
     // ── STICKY CTA ──
