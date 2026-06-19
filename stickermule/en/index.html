@@ -90,7 +90,7 @@
         "image": "https://cashinstinct.ca/stickermule/en/og.png",
         "inLanguage": "en-US",
         "datePublished": "2026-06-01",
-        "dateModified": "2026-06-15",
+        "dateModified": "2026-06-19",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "author":    { "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@id": "https://cashinstinct.ca/#organization" }
@@ -834,7 +834,7 @@
             <br><br>
             ✨ <strong>Bonus:</strong> This <strong>Stickermule promo</strong> stacks perfectly with rotating weekly flash deals and includes <strong>free worldwide shipping</strong> on custom stickers.
           </div>
-          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-06-15">June 14, 2026</time></p>
+          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-06-19">June 19, 2026</time></p>
         </section>
         
         <section id="how-it-works">
@@ -1494,7 +1494,7 @@
   <footer>
     <div class="container">
       <p>This website is an independent resource and is not officially affiliated with Sticker Mule. All trademarks belong to their respective owners.</p>
-      <p style="margin-top:6px;">Last updated: <time id="footer-date" datetime="2026-06-15">June 2026</time></p>
+      <p style="margin-top:6px;">Last updated: <time id="footer-date" datetime="2026-06-19">June 2026</time></p>
     </div>
 
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
@@ -1510,19 +1510,22 @@
   </footer>
 
 <script>
-  // ── SCRIPT UNIVERSEL : DATES DYNAMIQUES & JSON-LD dateModified ──
+  // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
+  // Met à jour les <time> visibles (footer-date, trust-date) à la date du jour.
+  // NE TOUCHE PAS au JSON-LD : dateModified est codé EN DUR dans le <head> et
+  // ne doit refléter QUE la vraie dernière modification (à mettre à jour au push).
   (function() {
     var now = new Date();
-    var lang = document.documentElement.lang || "en-US";
+    var lang = document.documentElement.lang || "en-CA";
     
-    // 1. Format Court (ex: "Juin 2026" / "June 2026")
+    // 1. Format court (ex: "June 2026" / "juin 2026")
     var footerDate = document.getElementById("footer-date");
     if (footerDate) {
       footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
     
-    // 2. Format Long localisé (ex: "12 juin 2026" / "June 12, 2026")
+    // 2. Format long localisé (ex: "June 18, 2026" / "18 juin 2026")
     var trustDate = document.getElementById("trust-date");
     if (trustDate) {
       var options = lang.startsWith("fr") 
@@ -1534,22 +1537,6 @@
         trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
       }
     }
-
-    // 3. Mise à jour automatique du JSON-LD dateModified
-    try {
-      var today = now.toISOString().slice(0, 10);
-      var ldJson = document.querySelector('script[type="application/ld+json"]');
-      if (ldJson) {
-        var data = JSON.parse(ldJson.textContent);
-        if (data && data["@graph"]) {
-          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
-          if (webpage) {
-            webpage.dateModified = today;
-            ldJson.textContent = JSON.stringify(data);
-          }
-        }
-      }
-    } catch(e) {}
   })();
 </script>
 
@@ -1578,25 +1565,34 @@
     document.querySelectorAll(".dynamic-link").forEach(link => { link.href = targetUrl; });
   </script>
 
-  <script>
-    // Theme toggle avec localStorage
-    const themeToggle = document.getElementById("theme-toggle");
-    function setThemeUI(isDark) {
-      themeToggle.textContent = isDark ? "☀️" : "🌙";
-      themeToggle.setAttribute("aria-label", isDark ? "Activate light mode" : "Activate dark mode");
-      themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-    }
-    const saved = localStorage.getItem("theme");
-    let isDark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (isDark) document.documentElement.setAttribute("data-theme", "dark");
-    setThemeUI(isDark);
-    themeToggle.addEventListener("click", () => {
-      isDark = !isDark;
-      isDark ? document.documentElement.setAttribute("data-theme", "dark") : document.documentElement.removeAttribute("data-theme");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-      setThemeUI(isDark);
-    });
+<script>
+    /* ── thème — bloc unique ── */
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+      function isDark() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+      }
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️' : '🌙';
+        toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+      applyUI(isDark());
+      toggle.addEventListener('click', function() {
+        var dark = isDark();
+        if (dark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        applyUI(!dark);
+      });
+    })();
   </script>
+
 
   <script>
   // ── MODULE DE COPIE UNIFIÉ — source de vérité unique via data-copy / data-target ──
