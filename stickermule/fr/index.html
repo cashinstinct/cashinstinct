@@ -1508,23 +1508,6 @@
     })();
   </script>
 
-
- 
-  <!--
-  SCRIPT UNIVERSEL (dates + JSON-LD dateModified) — DESIGN VOLONTAIRE, ne pas "corriger" :
-  Ce script est IDENTIQUE sur les pages EN et FR. C'est voulu : un seul script partagé,
-  zéro duplication, maintenu à un seul endroit. Il s'adapte automatiquement à la langue
-  en lisant document.documentElement.lang (le lang="" du <html>).
-
-  - Le fallback "en-CA" dans `var lang = ... || "en-CA"` est du code défensif mort :
-    il ne s'exécute JAMAIS car <html lang> est toujours présent. Ne pas le changer
-    en "fr-CA" page par page — ça casserait l'universalité sans aucun effet réel.
-  - lang.startsWith("fr") gère le format de date FR (jour mois année) vs EN (mois jour année).
-  - Le patch dateModified réécrit la date du JSON-LD WebPage au chargement = toujours frais,
-    zéro maintenance manuelle.
-
-  Bref : ce bloc se copie tel quel d'une langue à l'autre. C'est sa raison d'être.
--->
    <script>
   // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
   // Met à jour les <time> visibles (footer-date, trust-date) à la date du jour.
