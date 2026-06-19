@@ -1509,11 +1509,10 @@
 
   </footer>
 
-    <!--
-  DATES — script porté tel quel depuis la page EBOX (EN→EN, FR→FR).
-  Le JS gère le format selon document.documentElement.lang à l'exécution :
-  fr → "19 juin 2026", en → "June 19, 2026". Même logique, pas de variante par langue.
-   -->
+  <!--
+  DATES — script pour pages EN.
+  Le JS formate selon document.documentElement.lang à l'exécution → "June 19, 2026".
+-->
 <script>
   // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
   // Met à jour les <time> visibles (footer-date, trust-date) à la date du jour.
@@ -1523,14 +1522,14 @@
     var now = new Date();
     var lang = document.documentElement.lang || "en-CA";
     
-    // 1. Format court (ex: "June 2026" / "juin 2026")
+    // 1. Format court (ex: "June 2026")
     var footerDate = document.getElementById("footer-date");
     if (footerDate) {
       footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
     
-    // 2. Format long localisé (ex: "June 18, 2026" / "18 juin 2026")
+    // 2. Format long localisé (ex: "June 18, 2026")
     var trustDate = document.getElementById("trust-date");
     if (trustDate) {
       var options = lang.startsWith("fr") 
