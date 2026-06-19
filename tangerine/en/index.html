@@ -53,7 +53,7 @@
         "inLanguage": "en-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-05-01",
-        "dateModified": "2026-06-16",
+        "dateModified": "2026-06-19",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
         "publisher": {
           "@type": "Organization",
@@ -869,7 +869,7 @@
       </div>
 
       <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;">
-          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-06-16">June 16, 2026</time></p>
+          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-06-19">June 19, 2026</time></p>
       </p>
 
       <!-- === STACKING SECTION === -->
@@ -1364,7 +1364,7 @@
   <div class="container">
     <p>This site is not officially affiliated with Tangerine or Scotiabank. All trademarks belong to their respective owners.</p>
     
-    <p style="margin-top:6px;">Tangerine Orange Key: <code>14130944S1</code> — Updated: <time id="footer-date" datetime="2026-06-16">June 2026</time></p>
+    <p style="margin-top:6px;">Tangerine Orange Key: <code>14130944S1</code> — Updated: <time id="footer-date" datetime="2026-06-19">June 2026</time></p>
   </div>
 <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
   <a href="https://cashinstinct.ca/en/">Home</a><span aria-hidden="true"> · </span>
@@ -1378,20 +1378,28 @@
 
 </footer>
 
-  <script>
-  // ── SCRIPT UNIVERSEL : DATES DYNAMIQUES & JSON-LD dateModified ──
+   <!--
+  DATES — script pour pages EN
+  Le JS gère le format selon document.documentElement.lang à l'exécution :
+  fr → "19 juin 2026", en → "June 19, 2026". Même logique, pas de variante par langue.
+   -->
+<script>
+  // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
+  // Met à jour les <time> visibles (footer-date, trust-date) à la date du jour.
+  // NE TOUCHE PAS au JSON-LD : dateModified est codé EN DUR dans le <head> et
+  // ne doit refléter QUE la vraie dernière modification (à mettre à jour au push).
   (function() {
     var now = new Date();
     var lang = document.documentElement.lang || "en-CA";
     
-    // 1. Format Court (ex: "Juin 2026" / "June 2026")
+    // 1. Format court (ex: "June 2026" / "juin 2026")
     var footerDate = document.getElementById("footer-date");
     if (footerDate) {
       footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
     
-    // 2. Format Long localisé (ex: "12 juin 2026" / "June 12, 2026")
+    // 2. Format long localisé (ex: "June 18, 2026" / "18 juin 2026")
     var trustDate = document.getElementById("trust-date");
     if (trustDate) {
       var options = lang.startsWith("fr") 
@@ -1403,22 +1411,6 @@
         trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
       }
     }
-
-    // 3. Mise à jour automatique du JSON-LD dateModified
-    try {
-      var today = now.toISOString().slice(0, 10);
-      var ldJson = document.querySelector('script[type="application/ld+json"]');
-      if (ldJson) {
-        var data = JSON.parse(ldJson.textContent);
-        if (data && data["@graph"]) {
-          var webpage = data["@graph"].find(function(n) { return n["@type"] === "WebPage"; });
-          if (webpage) {
-            webpage.dateModified = today;
-            ldJson.textContent = JSON.stringify(data);
-          }
-        }
-      }
-    } catch(e) {}
   })();
 </script>
 
