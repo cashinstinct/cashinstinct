@@ -114,7 +114,7 @@
       "inLanguage": "en-CA",
       "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
       "datePublished": "2026-06-02",
-      "dateModified": "2026-06-18",
+      "dateModified": "2026-06-19",
       "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
       "publisher": {
         "@type": "Organization",
@@ -948,7 +948,7 @@
           <br><br>
           ℹ️ <strong>About promotions:</strong> EBOX regularly runs limited-time offers (prepaid cards, Fibre price drops) for new customers in Quebec and Ontario. These change over time and may not be combinable with other offers. Code GE911 is a separate, permanent program that gives <strong>$25 credit</strong> on your 2nd bill. Check <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> for the current promotion. No contract, modem included.
         </div>
-          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-06-14">June 14, 2026</time></p>
+          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-06-19">June 19, 2026</time></p>
         </section>
 
         <section id="promo-100" aria-label="How the EBOX GE911 referral works">
@@ -1479,7 +1479,7 @@
     <div class="container">
       <p>This site is not officially affiliated with EBOX. Trademarks belong to their respective owners.</p>
       <!-- utilise l'id footer-date que le JS attend -->
-      <p style="margin-top:6px;">EBOX client code: <code>GE911</code> — Updated: <time id="footer-date" datetime="2026-06-14">June 2026</time></p>
+      <p style="margin-top:6px;">EBOX client code: <code>GE911</code> — Updated: <time id="footer-date" datetime="2026-06-19">June 2026</time></p>
     </div>
 
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
@@ -1495,6 +1495,12 @@
 
   
   <!-- SCRIPTS -->
+  <!--
+  DATES — script pour pages EN
+  Le JS gère le format selon document.documentElement.lang à l'exécution :
+  fr → "19 juin 2026", en → "June 19, 2026". Même logique, pas de variante par langue.
+   -->
+   <script>
 <script>
   // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
   // Met à jour les <time> visibles (footer-date, trust-date) à la date du jour.
