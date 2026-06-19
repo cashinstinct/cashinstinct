@@ -956,8 +956,7 @@
   <!-- SCRIPTS -->
     <!--
   DATES — script pour pages FR
-  Le JS gère le format selon document.documentElement.lang à l'exécution :
-  fr → "19 juin 2026", en → "June 19, 2026". Même logique, pas de variante par langue.
+  Le JS gère le format selon document.documentElement.lang à l'exécution : "19 juin 2026".
    -->
     <script>
   // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
@@ -975,7 +974,7 @@
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
     
-    // 2. Format long localisé (ex: "18 juin 2026")
+    // 2. Format long localisé (ex: "19 juin 2026")
     var trustDate = document.getElementById("trust-date");
     if (trustDate) {
       var options = lang.startsWith("fr") 
