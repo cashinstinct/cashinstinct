@@ -74,7 +74,7 @@
         "inLanguage": "en-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-06-10",
-        "dateModified": "2026-06-14",
+        "dateModified": "2026-06-19",
         "author":    { "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@id": "https://cashinstinct.ca/#organization" }
       },
@@ -900,32 +900,154 @@
     </a>
   </div>
 
+  
+  <!-- SCRIPTS -->
+    <!--
+  DATES — script pour pages EN
+  Le JS gère le format selon document.documentElement.lang à l'exécution : "June 19, 2026". 
+   -->
+<script>
+  // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
+  // Met à jour les <time> visibles (footer-date, trust-date) à la date du jour.
+  // NE TOUCHE PAS au JSON-LD : dateModified est codé EN DUR dans le <head> et
+  // ne doit refléter QUE la vraie dernière modification (à mettre à jour au push).
+  (function() {
+    var now = new Date();
+    var lang = document.documentElement.lang || "en-CA";
+    
+    // 1. Format court (ex: "June 2026")
+    var footerDate = document.getElementById("footer-date");
+    if (footerDate) {
+      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
+      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+    }
+    
+    // 2. Format long localisé (ex: "June 18, 2026")
+    var trustDate = document.getElementById("trust-date");
+    if (trustDate) {
+      var options = lang.startsWith("fr") 
+        ? { day: "numeric", month: "long", year: "numeric" }
+        : { month: "long", day: "numeric", year: "numeric" };
+      
+      trustDate.textContent = now.toLocaleDateString(lang, options);
+      if (trustDate.tagName === "TIME") {
+        trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+      }
+    }
+  })();
+</script>
+
   <script>
-    /* Footer date */
-    var fd = document.getElementById('footer-date');
-    if (fd) fd.textContent = new Date().toLocaleDateString('en-CA', { month: 'long', year: 'numeric' });
+  // ── MODULE DE COPIE UNIFIÉ — texte page en anglais - source de vérité unique via data-copy / data-target ──
+  (function() {
+    var DONE_LABEL = "Copied!";
+    var STATUS_MSG = "Code copied to clipboard successfully.";
 
-    /* Theme toggle */
-    var themeToggle = document.getElementById('theme-toggle');
-    var root = document.documentElement;
-
-    function setThemeUI(isDark) {
-      themeToggle.textContent = isDark ? '☀️' : '🌙';
-      themeToggle.setAttribute('aria-label',   isDark ? 'Disable dark mode' : 'Enable dark mode');
-      themeToggle.setAttribute('aria-pressed', String(isDark));
+    function feedback(btn, status) {
+      var original = btn.getAttribute("data-label") || btn.textContent;
+      btn.textContent = DONE_LABEL;
+      btn.classList.add("copied");
+      if (status) status.textContent = STATUS_MSG;
+      setTimeout(function() {
+        btn.textContent = original;
+        btn.classList.remove("copied");
+        if (status) status.textContent = "";
+      }, 2000);
     }
 
-    setThemeUI(root.getAttribute('data-theme') === 'dark');
+    function copyText(text, btn, status) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          feedback(btn, status);
+        }).catch(function() {
+          legacyCopy(text, btn, status);
+        });
+      } else {
+        legacyCopy(text, btn, status);
+      }
+    }
 
-    themeToggle.addEventListener('click', function() {
-      var isDark = root.getAttribute('data-theme') === 'dark';
+    function legacyCopy(text, btn, status) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.cssText = "position:fixed;opacity:0;pointer-events:none;";
+      document.body.appendChild(ta);
+      ta.select();
       try {
-        if (isDark) { root.removeAttribute('data-theme'); localStorage.setItem('theme', 'light'); }
-        else        { root.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); }
-      } catch(e) {}
-      setThemeUI(!isDark);
-    });
+        document.execCommand("copy");
+        feedback(btn, status);
+      } catch(e) {
+        if (status) status.textContent = "Please copy manually: " + text;
+      }
+      document.body.removeChild(ta);
+    }
 
+    document.querySelectorAll("[data-copy]").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var text = btn.getAttribute("data-copy");
+        var targetId = btn.getAttribute("data-target");
+        var status = targetId ? document.getElementById(targetId) : null;
+        copyText(text, btn, status);
+      });
+    });
+  })();
+  </script>
+
+  <script>
+    /* ── thème — bloc unique ── */
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+      function isDark() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+      }
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️' : '🌙';
+        toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+      applyUI(isDark());
+      toggle.addEventListener('click', function() {
+        var dark = isDark();
+        if (dark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        applyUI(!dark);
+      });
+    })();
+  </script>
+
+
+ <!-- Sticky CTA scroll -->
+    <script>
+    (function() {
+      var cta = document.getElementById('sticky-cta');
+      if (!cta) return;
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          cta.classList.add('visible');
+        } else if (window.scrollY <= 200) {
+          cta.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      // Masquer quand le CTA final est visible (aligné sur Sticker Mule et Ebox)
+      var ctaSection = document.querySelector('.cta-section');
+      if (ctaSection) {
+        new IntersectionObserver(function(entries) {
+          cta.style.opacity = entries[0].isIntersecting ? '0' : '1';
+          cta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+        }).observe(ctaSection);
+      }
+    })();
+  </script>
+
+     <script>
     /* Fallback image handler */
     document.querySelectorAll('img[data-fallback]').forEach(function(img) {
       img.addEventListener('error', function() {
@@ -936,15 +1058,6 @@
         img.insertAdjacentElement('afterend', p);
       });
     });
-
-    /* Sticky CTA scroll trigger */
-    (function() {
-      var cta = document.querySelector('.sticky-cta');
-      if (!cta) return;
-      window.addEventListener('scroll', function() {
-        cta.classList.toggle('visible', window.scrollY > 400);
-      }, { passive: true });
-    })();
   </script>
 
 </body>
