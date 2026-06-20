@@ -1,4 +1,60 @@
 <!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════
+  MAINTENANCE NOTE — HP Instant Ink EN — last major rev: 2026-06-19
+═══════════════════════════════════════════════════════════════════
+  STRUCTURE (deux parcours — décision clé)
+  • Parcours A (lien, recommandé) : HowTo JSON-LD le décrit. Le code
+    s'applique AUTO via try.hpinstantink.com/SVdn7 — preuve = image
+    "Congratulations, 1 free month" dans le hero (hp-link-proof-en.webp).
+  • Parcours B (saisie manuelle) : section #where-to-redeem, HTML VISIBLE
+    SEULEMENT, NON wiré au schema (volontaire, comme Orange Key chez
+    Tangerine). 2 captures : billing-field + code-applied.
+  • Le HowTo ne décrit QU'UN parcours (le lien) — ne jamais y remettre
+    la saisie manuelle, Google n'aime pas les HowTo ambigus.
+
+  ALIGNEMENT SCHEMA↔HTML (vérifier à chaque édition)
+  • FAQ : 15 questions schema = 15 <summary> HTML. ids faq-q1→q15
+    séquentiels, chacun avec son aria-labelledby. NE PAS ajouter une
+    question d'un côté sans l'autre.
+  • Compter <div> ouvrants = fermants AVANT push (un </div> orphelin
+    s'était glissé dans le hero — comptage machine, jamais à l'œil).
+
+  WORDING (décision : aligné sur HP, pas survendu)
+  • INTERDITS : "universal", "guaranteed", "works everywhere", "only
+    permanent method", "100% active". Remplacés par daté/testable +
+    "participating countries". Ne pas les réintroduire.
+  • "permanent" OK seulement pour : Wi-Fi, opposition code membre vs promo.
+  • Strings HP officiels à garder verbatim : "Enter promo or PIN code",
+    "Special Offer Applied", "Refer a Friend — 1 month", "1 Redeemed
+    month + credits".
+
+  IMAGES (/en/images/, .webp servi, .png = archive locale)
+  • hp-link-proof-en.webp 1100×533 (hero, fetchpriority=high)
+  • hp-manual-billing-field-en.webp 1085×689 (lazy)
+  • hp-manual-code-applied-en.webp 1206×1270 (lazy)
+  • width/height = dimensions RÉELLES (anti-CLS). Si tu recrop, refais
+    `sips -g pixelWidth -g pixelHeight` et mets à jour.
+
+  TYPO — espaces insécables (&nbsp;) — VISIBLE SEULEMENT
+  • Appliqué : nombre+pages/month/free, dates "Month DD".
+  • EN : PAS de &nbsp; avant $ ($2.29 déjà collé). C'est voulu (≠ FR).
+  • JAMAIS de &nbsp; dans JSON-LD, attributs (alt/aria/content/datetime/
+    href/style), CSS, JS. Vérifié = 0.
+
+  À SURVEILLER / PROCHAINE ITÉRATION
+  • 13 JUILLET 2026 : le bloc #pricing-update-notice devient la grille
+    courante. Action : retirer "effective July 13" → "Current pricing",
+    et corriger "10 to 700 pages" → "10 to 1500 pages" partout.
+  • dateModified est HARDCODÉ (script dynamique retiré) → le mettre à
+    jour À LA MAIN à chaque déploiement.
+  • #glossary : CSS table-layout fixed (38%/62%) pour mobile iPhone.
+  • x-default → /en/ : VOULU (programme à défaut anglophone). Ne pas
+    "corriger" vers /fr/.
+  • SVdn7 : ~82 occurrences (dont moitié = URLs affiliées, non
+    pénalisables). Densité OK pour page mono-sujet — ne pas sur-réagir.
+═══════════════════════════════════════════════════════════════════
+-->
 <html lang="en-CA">
 <head>
   <meta charset="UTF-8" />
@@ -571,7 +627,7 @@
         </a>
 
         <p style="font-size: 0.85rem; margin-top: 8px; text-align: center;">
-          The confirmation HP shows after opening the link: <strong>"You have 1 free month of HP Instant Ink"</strong> — applied automatically, nothing to type.
+          The confirmation HP shows after opening the link: <strong>"You have 1&nbsp;free month of HP Instant Ink"</strong> — applied automatically, nothing to type.
         </p>
       </div>
 
@@ -602,7 +658,7 @@
 
 <div class="container" style="margin-top: 16px;">
   <div class="transparency">
-    <strong>Transparency:</strong> This is an independent guide that uses referral tracking. When you sign up via the link or enter code <code>SVdn7</code>, you get 1 free month — and HP credits me 1 free month too, at no extra cost to you. Full disclosure at the bottom of this page.
+    <strong>Transparency:</strong> This is an independent guide that uses referral tracking. When you sign up via the link or enter code <code>SVdn7</code>, you get 1&nbsp;free month — and HP credits me 1&nbsp;free month too, at no extra cost to you. Full disclosure at the bottom of this page.
   </div>
 </div>
 
@@ -643,21 +699,21 @@
 
 
       <div class="ai-summary">
-  The <strong>HP Instant Ink referral code</strong> (also called the <strong>HP Instant Ink friend code</strong>) active in 2026 is <strong>SVdn7</strong>. It grants a <strong>1 free month</strong> on any plan — from 10 to 700 pages per month.
+  The <strong>HP Instant Ink referral code</strong> (also called the <strong>HP Instant Ink friend code</strong>) active in 2026 is <strong>SVdn7</strong>. It grants a <strong>1&nbsp;free month</strong> on any plan — from 10 to 700&nbsp;pages per month.
       <br><br>
   📦 <strong>How it works:</strong> your connected printer automatically reports ink levels to HP's servers. New cartridges are shipped before you run out — you pay per page printed, not per ink volume used.
   <br><br>
-  🔑 The easiest path is the <strong>referral link</strong>: it pre-applies <code>SVdn7</code> and the credit shows up on its own at the <strong>billing step</strong> as <em>"Refer a Friend — 1 month"</em>. Signing up without the link? Type <code>SVdn7</code> yourself in the <em>"Enter promo or PIN code"</em> field at billing. If you already have free months included with a new printer, the code stacks on top.
+  🔑 The easiest path is the <strong>referral link</strong>: it pre-applies <code>SVdn7</code> and the credit shows up on its own at the <strong>billing step</strong> as <em>"Refer a Friend — 1&nbsp;month"</em>. Signing up without the link? Type <code>SVdn7</code> yourself in the <em>"Enter promo or PIN code"</em> field at billing. If you already have free months included with a new printer, the code stacks on top.
 </div>
       
-  <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Updated <time id="trust-date" datetime="2026-06-19">June 19, 2026</time></p>
+  <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Updated <time id="trust-date" datetime="2026-06-19">June&nbsp;19, 2026</time></p>
 
       <!-- ── NOUVELLE SECTION : Disponibilité Canada (cible requête n°1 "is hp instant ink available in canada" + grappe redeem) ── -->
       <section id="available-canada">
         <span class="section-label">Canada Availability</span>
         <h2>Is HP Instant Ink Available in Canada?</h2>
 
-        <p><strong>Yes.</strong> HP Instant Ink is fully available across Canada, in every province and territory, and is billed in Canadian dollars. The program works the same way it does in the United States: your connected HP inkjet printer reports its ink levels to HP, and replacement cartridges ship to your Canadian address before you run out. Referral code <code>SVdn7</code> is valid for new Canadian sign-ups and adds <strong>1 free month</strong> on any plan.</p>
+        <p><strong>Yes.</strong> HP Instant Ink is fully available across Canada, in every province and territory, and is billed in Canadian dollars. The program works the same way it does in the United States: your connected HP inkjet printer reports its ink levels to HP, and replacement cartridges ship to your Canadian address before you run out. Referral code <code>SVdn7</code> is valid for new Canadian sign-ups and adds <strong>1&nbsp;free month</strong> on any plan.</p>
 
         <div class="warning">
           🇨🇦 <strong>Canada-specific note:</strong> the enrollment portal is <strong>hpinstantink.com</strong> (there is no separate <em>.ca</em> sign-up site). Choosing Canada as your country sets pricing in CAD and ships from Canadian fulfilment. Code <code>SVdn7</code> works regardless of province.
@@ -676,7 +732,7 @@
   <span class="section-label">Other Countries</span>
   <h2>Does the HP Instant Ink Friend Code Work Outside Canada?</h2>
 
-  <p><strong>Yes — in participating countries.</strong> Code <code>SVdn7</code> is a member referral code, not a country-specific coupon. The same code applies a <strong>1 free month</strong> trial for new sign-ups in Canada, the <strong>United States</strong>, the <strong>United Kingdom</strong> and across <strong>Europe</strong> (including France) — anywhere HP Instant Ink and its refer-a-friend program are offered. HP's system reads the country you select during printer registration and sets the free-month value in your local currency automatically.</p>
+  <p><strong>Yes — in participating countries.</strong> Code <code>SVdn7</code> is a member referral code, not a country-specific coupon. The same code applies a <strong>1&nbsp;free month</strong> trial for new sign-ups in Canada, the <strong>United States</strong>, the <strong>United Kingdom</strong> and across <strong>Europe</strong> (including France) — anywhere HP Instant Ink and its refer-a-friend program are offered. HP's system reads the country you select during printer registration and sets the free-month value in your local currency automatically.</p>
 
   <div class="warning">
     🌍 <strong>How the region is detected:</strong> the currency and local offer (CAD, USD, GBP or EUR) are set by the country you select when registering your printer on <strong>hpinstantink.com</strong> — not by the code itself. You enter the same <code>SVdn7</code> wherever you live, as long as Instant Ink operates there. HP notes that refer-a-friend availability and terms can vary by country and date, so check the local terms during sign-up.
@@ -690,7 +746,7 @@
         <h2>How to Activate the HP Free Ink Offer (Referral Link)</h2>
 
         <div class="warning" style="background: rgba(5,131,115,0.06); border-left-color: var(--accent); color: var(--text-soft);">
-          ✅ <strong>Last verified:</strong> tested in Canada on <strong>June 19, 2026</strong> — opening the link <code>try.hpinstantink.com/SVdn7</code> on a new sign-up showed the credit already applied at the billing step (<em>"Refer a Friend — 1 month"</em>), with the promo field left empty. No code to type.
+          ✅ <strong>Last verified:</strong> tested in Canada on <strong>June&nbsp;19, 2026</strong> — opening the link <code>try.hpinstantink.com/SVdn7</code> on a new sign-up showed the credit already applied at the billing step (<em>"Refer a Friend — 1&nbsp;month"</em>), with the promo field left empty. No code to type.
         </div>
 
         <div class="warning">
@@ -713,13 +769,13 @@
           <li id="howto-step-3">
             <div>
               <h3>Choose your plan and add shipping</h3>
-              <p>Pick the page volume that matches your needs (from 10 to 700 pages per month). All plans are eligible for the free trial. Then add your shipping address so HP knows where to send your ink.</p>
+              <p>Pick the page volume that matches your needs (from 10 to 700&nbsp;pages per month). All plans are eligible for the free trial. Then add your shipping address so HP knows where to send your ink.</p>
             </div>
           </li>
          <li id="howto-step-4">
             <div>
               <h3>Confirm — the free month is already credited</h3>
-              <p>At the billing step, the credit appears automatically under <strong>"Breakdown of credits"</strong> as <em>"Refer a Friend — 1 month"</em>. Confirm to finish; the free month is applied to your account.</p>
+              <p>At the billing step, the credit appears automatically under <strong>"Breakdown of credits"</strong> as <em>"Refer a Friend — 1&nbsp;month"</em>. Confirm to finish; the free month is applied to your account.</p>
             </div>
           </li>
         </ol>
@@ -744,7 +800,7 @@
              style="border-radius:8px; border:1px solid var(--border-soft); box-shadow:var(--shadow); width:100%; max-width:420px; height:auto; display:block; margin:12px auto;" />
 
         <h3 style="font-size: 1.1rem; font-weight: 800; margin: 20px 0 12px; color: var(--text);">Step 2 — Paste SVdn7 and apply</h3>
-        <p>Type <code>SVdn7</code> in the <em>"Enter promo or PIN code"</em> field and tap <strong>Apply</strong>. A green <strong>"Special Offer Applied"</strong> confirmation appears, and the breakdown shows <em>"Refer a Friend — 1 month"</em>.</p>
+        <p>Type <code>SVdn7</code> in the <em>"Enter promo or PIN code"</em> field and tap <strong>Apply</strong>. A green <strong>"Special Offer Applied"</strong> confirmation appears, and the breakdown shows <em>"Refer a Friend — 1&nbsp;month"</em>.</p>
         <img src="https://cashinstinct.ca/hp-instant-ink/en/images/hp-manual-code-applied-en.webp"
              alt="HP Instant Ink Special Offers box with code SVdn7 entered and a green Special Offer Applied message, Refer a Friend 1 month shown in the credit breakdown"
              width="1206" height="1270" loading="lazy"
@@ -760,7 +816,7 @@
 
         <p>The HP Instant Ink <strong>friend code</strong> <code>SVdn7</code> is part of HP's official refer-a-friend program.</p>
 
-        <p>There is no limit on how many people you can invite, and the free month applies on any plan, from the 10-page tier up to 700 pages. As a new customer, either open the <a href="#how-it-works">referral link</a> (code auto-applied) or enter code <code>SVdn7</code> yourself at the billing step — the same field described in the <a href="#where-to-redeem">manual entry section</a> above.</p>
+        <p>There is no limit on how many people you can invite, and the free month applies on any plan, from the 10-page tier up to 700&nbsp;pages. As a new customer, either open the <a href="#how-it-works">referral link</a> (code auto-applied) or enter code <code>SVdn7</code> yourself at the billing step — the same field described in the <a href="#where-to-redeem">manual entry section</a> above.</p>
 
         <div class="warning">
           💡 <strong>Member code vs in-store card:</strong> a referral code like <code>SVdn7</code> is a member code entered (or auto-applied) during online sign-up. It is not the same as a prepaid Instant Ink card bought in a store, which carries a one-time PIN. Only the member code grants the refer-a-friend invite benefit.
@@ -772,7 +828,7 @@
         <h2>Flexible HP Instant Ink Plans (Ink)</h2>
         <p>HP structures its pricing based on the number of pages printed per month, regardless of how much ink is used. Base rates in Canadian dollars (CAD) typically start around CAD $2.29 /month for very low-volume ink users.</p>
 <p style="font-size: 0.9rem; color: var(--muted); font-style: italic; margin-bottom: 12px;">
-  Pricing in effect June 2026 (subject to change by HP):
+  Pricing in effect June&nbsp;2026 (subject to change by HP):
 </p>
         <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-top: 24px; box-shadow: var(--shadow);">
           <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 14px; color: var(--text);">Eligible page volumes</h3>
@@ -781,35 +837,35 @@
     <tr><th>Plan</th><th>Pages / month</th><th>Monthly price</th></tr>
   </thead>
   <tbody>
-    <tr><td>Light printing</td><td>10 pages</td><td>$2.29</td></tr>
-    <tr><td>Occasional printing</td><td>50 pages</td><td>$7.49</td></tr>
-    <tr><td>Moderate printing</td><td>100 pages</td><td>$9.99</td></tr>
-    <tr><td>Frequent printing</td><td>300 pages</td><td>$18.99</td></tr>
-    <tr><td>Business printing</td><td>700 pages</td><td>$36.99</td></tr>
+    <tr><td>Light printing</td><td>10&nbsp;pages</td><td>$2.29</td></tr>
+    <tr><td>Occasional printing</td><td>50&nbsp;pages</td><td>$7.49</td></tr>
+    <tr><td>Moderate printing</td><td>100&nbsp;pages</td><td>$9.99</td></tr>
+    <tr><td>Frequent printing</td><td>300&nbsp;pages</td><td>$18.99</td></tr>
+    <tr><td>Business printing</td><td>700&nbsp;pages</td><td>$36.99</td></tr>
   </tbody>
 </table>
           <p style="font-size: 0.85rem; margin-top: 12px; color: var(--muted); text-align: center;">Exact pricing structures change frequently — visit the official HP checkout table to confirm current rates.</p>
         </div>
         <div class="warning" id="pricing-update-notice">
-  <p style="margin: 0 0 8px;"><strong>📅 Pricing update — effective July 13, 2026:</strong> HP is revising its Instant Ink plan lineup in Canada. The new tiers and monthly prices (in Canadian dollars) will be as follows:</p>
+  <p style="margin: 0 0 8px;"><strong>📅 Pricing update — effective July&nbsp;13, 2026:</strong> HP is revising its Instant Ink plan lineup in Canada. The new tiers and monthly prices (in Canadian dollars) will be as follows:</p>
   <table aria-label="New HP Instant Ink Canada plans effective July 13, 2026" style="width:100%; border-collapse:collapse; margin:8px 0;">
     <thead>
       <tr><th style="text-align:left; padding:4px 8px;">Monthly plan</th><th style="text-align:right; padding:4px 8px;">Monthly price</th></tr>
     </thead>
     <tbody>
-      <tr><td style="padding:4px 8px;">10 pages</td><td style="text-align:right; padding:4px 8px;">$2.49</td></tr>
-      <tr><td style="padding:4px 8px;">25 pages</td><td style="text-align:right; padding:4px 8px;">$4.99</td></tr>
-      <tr><td style="padding:4px 8px;">50 pages</td><td style="text-align:right; padding:4px 8px;">$7.99</td></tr>
-      <tr><td style="padding:4px 8px;">100 pages</td><td style="text-align:right; padding:4px 8px;">$10.99</td></tr>
-      <tr><td style="padding:4px 8px;">300 pages</td><td style="text-align:right; padding:4px 8px;">$20.49</td></tr>
-      <tr><td style="padding:4px 8px;">500 pages</td><td style="text-align:right; padding:4px 8px;">$29.99</td></tr>
-      <tr><td style="padding:4px 8px;">700 pages</td><td style="text-align:right; padding:4px 8px;">$37.99</td></tr>
-      <tr><td style="padding:4px 8px;">1500 pages</td><td style="text-align:right; padding:4px 8px;">$72.99</td></tr>
+      <tr><td style="padding:4px 8px;">10&nbsp;pages</td><td style="text-align:right; padding:4px 8px;">$2.49</td></tr>
+      <tr><td style="padding:4px 8px;">25&nbsp;pages</td><td style="text-align:right; padding:4px 8px;">$4.99</td></tr>
+      <tr><td style="padding:4px 8px;">50&nbsp;pages</td><td style="text-align:right; padding:4px 8px;">$7.99</td></tr>
+      <tr><td style="padding:4px 8px;">100&nbsp;pages</td><td style="text-align:right; padding:4px 8px;">$10.99</td></tr>
+      <tr><td style="padding:4px 8px;">300&nbsp;pages</td><td style="text-align:right; padding:4px 8px;">$20.49</td></tr>
+      <tr><td style="padding:4px 8px;">500&nbsp;pages</td><td style="text-align:right; padding:4px 8px;">$29.99</td></tr>
+      <tr><td style="padding:4px 8px;">700&nbsp;pages</td><td style="text-align:right; padding:4px 8px;">$37.99</td></tr>
+      <tr><td style="padding:4px 8px;">1500&nbsp;pages</td><td style="text-align:right; padding:4px 8px;">$72.99</td></tr>
       <tr><td style="padding:4px 8px;">Additional page set</td><td style="text-align:right; padding:4px 8px;">$2.59</td></tr>
     </tbody>
   </table>
-  <p style="margin: 8px 0 0; font-size: 0.85rem;">Referral code <code>SVdn7</code> (1 free month) remains valid on all plans after this update.</p>
-  <!-- UPDATE NOTE: On July 13, 2026, this block becomes the current pricing. Action: remove "effective July 13" → replace with "Current pricing", and fix any "10 to 700 pages" mention elsewhere on the page → "10 to 1500 pages". -->
+  <p style="margin: 8px 0 0; font-size: 0.85rem;">Referral code <code>SVdn7</code> (1&nbsp;free month) remains valid on all plans after this update.</p>
+  <!-- UPDATE NOTE: On July&nbsp;13, 2026, this block becomes the current pricing. Action: remove "effective July&nbsp;13" → replace with "Current pricing", and fix any "10 to 700&nbsp;pages" mention elsewhere on the page → "10 to 1500&nbsp;pages". -->
 </div>
       </section>
       
@@ -880,7 +936,7 @@
         <p>The referral system using code <code>SVdn7</code> is the most reliable way to add a free month of ink to your billing: it isn't tied to a short marketing window, and it applies automatically through the link or when entered at the billing step. HP notes that refer-a-friend terms can vary by country and date, so always confirm the offer shown during your own sign-up.</p>
 
         <blockquote cite="https://cashinstinct.ca/hp-instant-ink/en/">
-          <p>"Several sites still mention the promotional code TaxTime26 for discounts on HP Instant Ink. The promotional offer tied to this code ended on March 31, 2026. If you try entering this code at checkout, HP's system will display a coupon expired error. To avoid blocking your sign-up, use the referral key SVdn7, which was still active when we last tested it in Canada in June 2026." — Cash Instinct</p>
+          <p>"Several sites still mention the promotional code TaxTime26 for discounts on HP Instant Ink. The promotional offer tied to this code ended on March&nbsp;31, 2026. If you try entering this code at checkout, HP's system will display a coupon expired error. To avoid blocking your sign-up, use the referral key SVdn7, which was still active when we last tested it in Canada in June&nbsp;2026." — Cash Instinct</p>
         </blockquote>
       </section>
 
@@ -942,7 +998,7 @@
         </tr>
         <tr>
           <td>SVdn7</td>
-          <td>Active referral code for 2026 — unlocks 1 free month on any HP Instant Ink plan at sign-up.</td>
+          <td>Active referral code for 2026 — unlocks 1&nbsp;free month on any HP Instant Ink plan at sign-up.</td>
         </tr>
         <tr>
           <td>HP Instant Ink Promo Code</td>
@@ -988,19 +1044,19 @@
           <details>
   <summary id="faq-q1">Is HP Instant Ink available everywhere in Canada?</summary>
   <div class="faq-body" role="region" aria-labelledby="faq-q1">
-    <p><strong>Yes.</strong> HP Instant Ink is available in every Canadian province and territory, billed in Canadian dollars through <strong>hpinstantink.com</strong> (there is no separate <em>.ca</em> sign-up site). As long as you have an eligible HP inkjet printer with Wi-Fi, referral code <code>SVdn7</code> adds 1 free month regardless of where you live in Canada.</p>
+    <p><strong>Yes.</strong> HP Instant Ink is available in every Canadian province and territory, billed in Canadian dollars through <strong>hpinstantink.com</strong> (there is no separate <em>.ca</em> sign-up site). As long as you have an eligible HP inkjet printer with Wi-Fi, referral code <code>SVdn7</code> adds 1&nbsp;free month regardless of where you live in Canada.</p>
   </div>
 </details>
           <details>
             <summary id="faq-q2">How do I get the free month with code SVdn7?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q2">
-              <p>The simplest way is to open the <a href="https://try.hpinstantink.com/SVdn7" target="_blank" rel="noopener sponsored noreferrer">referral link</a>: the code is pre-applied and the credit shows up automatically at the billing step as <em>"Refer a Friend — 1 month"</em>. If you sign up without the link, enter code <code>SVdn7</code> manually in the <em>"Enter promo or PIN code"</em> field at the billing step, just before confirming your plan.</p>
+              <p>The simplest way is to open the <a href="https://try.hpinstantink.com/SVdn7" target="_blank" rel="noopener sponsored noreferrer">referral link</a>: the code is pre-applied and the credit shows up automatically at the billing step as <em>"Refer a Friend — 1&nbsp;month"</em>. If you sign up without the link, enter code <code>SVdn7</code> manually in the <em>"Enter promo or PIN code"</em> field at the billing step, just before confirming your plan.</p>
             </div>
           </details>
           <details>
             <summary id="faq-q3">Does the code work if I already have free months included with my printer purchase?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q3">
-              <p><strong>Yes — that's the stacking principle.</strong> If your new printer comes with 6 free months of HP+, entering code <code>SVdn7</code> during registration adds a 7th free month right after the others.</p>
+              <p><strong>Yes — that's the stacking principle.</strong> If your new printer comes with 6&nbsp;free months of HP+, entering code <code>SVdn7</code> during registration adds a 7th free month right after the others.</p>
             </div>
           </details>
   <details>
@@ -1048,7 +1104,7 @@
           <details>
             <summary id="faq-q11">Does printing colour photos use more of my plan?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q11">
-              <p>No — and that is HP Instant Ink's main advantage. <strong>A page is a page.</strong> Whether you print a single line of black and white text or a full-colour high-definition photo on letter-size paper, it counts as exactly 1 page against your plan.</p>
+              <p>No — and that is HP Instant Ink's main advantage. <strong>A page is a page.</strong> Whether you print a single line of black and white text or a full-colour high-definition photo on letter-size paper, it counts as exactly 1&nbsp;page against your plan.</p>
             </div>
           </details>
           <details>
@@ -1066,7 +1122,7 @@
           <details>
             <summary id="faq-q14">Is the Staples TaxTime26 promo code still valid?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q14">
-              <p>No. The promotional code <code>TaxTime26</code> distributed by Staples / Bureau en Gros officially <strong>expired on March 31, 2026</strong>. Temporary coupon waves like this only last a few weeks. To get your free ink month without risking a validation error, use the referral code <code>SVdn7</code> instead.</p>
+              <p>No. The promotional code <code>TaxTime26</code> distributed by Staples / Bureau en Gros officially <strong>expired on March&nbsp;31, 2026</strong>. Temporary coupon waves like this only last a few weeks. To get your free ink month without risking a validation error, use the referral code <code>SVdn7</code> instead.</p>
             </div>
           </details>
           <details>
@@ -1087,7 +1143,7 @@
       </div>
 
       <div class="transparency">
-        <strong>Transparency:</strong> This independent guide uses referral tracking. By signing up via the link or entering code <code>SVdn7</code>, you receive 1 free month — and HP credits me 1 free month in return, at no extra cost to you.
+        <strong>Transparency:</strong> This independent guide uses referral tracking. By signing up via the link or entering code <code>SVdn7</code>, you receive 1&nbsp;free month — and HP credits me 1&nbsp;free month in return, at no extra cost to you.
       </div>
 
     </div>
@@ -1112,7 +1168,7 @@
 <footer>
   <div class="container">
     <p>Independent reference site, not officially affiliated with HP or the Instant Ink service. All trademarks belong to their respective owners.</p>
-    <p style="margin-top:6px;">HP Instant Ink Code: <code>SVdn7</code> — Last updated: <time id="footer-date" datetime="2026-06-19">June 2026</time></p>
+    <p style="margin-top:6px;">HP Instant Ink Code: <code>SVdn7</code> — Last updated: <time id="footer-date" datetime="2026-06-19">June&nbsp;2026</time></p>
   </div>
   <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
   <a href="https://cashinstinct.ca/en/">Home</a><span aria-hidden="true"> · </span>
@@ -1128,7 +1184,7 @@
   <!-- SCRIPTS -->
     <!--
   DATES — script pour pages EN
-  Le JS gère le format selon document.documentElement.lang à l'exécution : "June 19, 2026". 
+  Le JS gère le format selon document.documentElement.lang à l'exécution : "June&nbsp;19, 2026". 
    -->
 <script>
   // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
