@@ -438,6 +438,16 @@
     .compare-table .yes { color: #2a7a2a; font-weight: 700; }
     .compare-table .no { color: #b03a1a; font-weight: 700; }
 
+   /* Glossary : contraindre la 1re colonne sur mobile */
+    #glossary .compare-table { table-layout: fixed; }
+    #glossary .compare-table th:first-child,
+    #glossary .compare-table td:first-child { width: 38%; word-break: break-word; }
+    #glossary .compare-table th:last-child,
+    #glossary .compare-table td:last-child { width: 62%; }
+    @media (max-width: 640px) {
+      #glossary .compare-table { font-size: 0.88rem; }
+      #glossary .compare-table th, #glossary .compare-table td { padding: 8px 10px; }
+    }
     .faq { display: grid; gap: 16px; }
     details { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
     summary { font-weight: 700; padding: 16px 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; background: var(--surface-soft); color: var(--text); }
@@ -576,8 +586,11 @@
         </div>
         <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
 
-        <p style="font-size: 0.85rem; margin-top: auto; text-align: center;">
+        <p style="font-size: 0.85rem; margin-top: 16px; text-align: center;">
           If you didn't use the link: copy the code and paste it in the <em>"Enter promo or PIN code"</em> field at the billing step. <a href="#where-to-redeem" style="text-decoration: underline;">See the full manual steps below</a>.
+        </p>
+        <p style="font-size: 0.85rem; margin-top: 12px; text-align: center; color: var(--muted);">
+          Signing up <strong>from your printer screen or the HP Smart app</strong>? Same thing — look for the promo / referral code field at the billing step and paste <strong>SVdn7</strong> there.
         </p>
       </div>
       </div>
