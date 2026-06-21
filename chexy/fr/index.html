@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#6c2bd9" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#1c0e42" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f131a" />
 
   <title>Lien de parrainage Chexy — 20 $ pour payer taxes et factures par carte (2026)</title>
@@ -141,7 +141,7 @@
           {
             "@type": "Question",
             "name": "Quels sont les frais de Chexy ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Le frais de base est de 1,75 % par transaction pour les cartes de crédit canadiennes (Visa, Mastercard et Amex). Le paiement par débit est gratuit. Les frais baissent selon votre statut de parrainage : 1,5 % (Pink, 3 filleuls), 1,0 % (Gold, 5 filleuls), 0,5 % (Elite, 10 filleuls), sur un maximum de 50 000 $ de paiements par année civile." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Le frais de base est de 1,75 % par transaction pour les cartes de crédit canadiennes (Visa, Mastercard et Amex). Le paiement par débit est gratuit. Les frais baissent selon votre statut de parrainage : 1,5 % (Rose / Pink, 3 filleuls), 1,0 % (Or / Gold, 5 filleuls), 0,5 % (Élite / Elite, 10 filleuls), sur un maximum de 50 000 $ de paiements par année civile." }
           },
           {
             "@type": "Question",
@@ -150,8 +150,8 @@
           },
           {
             "@type": "Question",
-            "name": "Comment fonctionne le système de statuts Chexy (Pink, Gold, Elite) ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent : Starter (1+ filleul) donne 20 $ de cashback ; Pink (3+) descend les frais à 1,5 % ; Gold (5+) à 1,0 % ; Elite (10+) à 0,5 %. À partir de Pink, votre récompense passe du cashback aux frais réduits — vous ne cumulez pas les deux. Nouveau pour 2026 : si votre groupe de filleuls complète assez de paiements dans l'année, votre statut est prolongé jusqu'à fin 2027." }
+            "name": "Comment fonctionne le système de statuts Chexy : Rose (Pink), Or (Gold), Élite (Elite) ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent : Starter (1+ filleul) donne 20 $ de cashback ; Rose / Pink (3+) descend les frais à 1,5 % ; Or / Gold (5+) à 1,0 % ; Élite / Elite (10+) à 0,5 %. À partir de Rose, votre récompense passe du cashback aux frais réduits — vous ne cumulez pas les deux. Nouveau pour 2026 : si votre groupe de filleuls complète assez de paiements dans l'année, votre statut est prolongé jusqu'à fin 2027." }
           },
           {
             "@type": "Question",
@@ -238,15 +238,15 @@
     :root {
       --bg: #ffffff;
       --surface: #ffffff;
-      --surface-soft: #faf7ff;
+      --surface-soft: #fdf2fa;
       --surface-muted: #f5f5f5;
       --text: #1a1a1a;
       --text-soft: #444444;
-      --muted: #5d5168;
-      --border: #e7ddf5;
-      --border-soft: #ede4f8;
-      --accent: #6c2bd9;
-      --accent-dark: #5921b8;
+      --muted: #6b4a63;
+      --border: #f3d4e9;
+      --border-soft: #f8e3f1;
+      --accent: #c4248f;
+      --accent-dark: #1c0e42;
       --warning-bg: #fff8e1;
       --warning-text: #7c5800;
       --warning-border: #f59e0b;
@@ -255,15 +255,15 @@
     [data-theme="dark"] {
       --bg: #0f131a;
       --surface: #161c24;
-      --surface-soft: #1c1830;
+      --surface-soft: #241430;
       --surface-muted: #1a2029;
       --text: #f4f7fb;
       --text-soft: #d5dbe5;
-      --muted: #a394b8;
-      --border: #2f2a42;
-      --border-soft: #352f4d;
-      --accent: #9d6bff;
-      --accent-dark: #b48cff;
+      --muted: #b89ab0;
+      --border: #3a2440;
+      --border-soft: #432a4a;
+      --accent: #e24bb5;
+      --accent-dark: #ef7bcb;
       --warning-bg: #2a2111;
       --warning-text: #ffd98f;
       --warning-border: #f59e0b;
@@ -336,7 +336,7 @@
        5. HERO
     ============================================================ */
     header.hero {
-      background: linear-gradient(135deg, var(--accent) 0%, #4a1a9e 100%);
+      background: linear-gradient(135deg, #1c0e42 0%, #e24bb5 100%);
       color: #fff; padding: 56px 20px 48px; text-align: center; overflow: hidden;
     }
     header.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
@@ -585,10 +585,15 @@
         (clients existants), pas à la création de compte. Garder cette distinction nette.
 
   (b) Frais de base = 1,75 % (cartes canadiennes Visa/MC/Amex depuis 31 mars 2026)
-      → baisse par statut : Pink 1,5 % (3 réf), Gold 1,0 % (5 réf), Elite 0,5 % (10 réf)
+      → baisse par statut : Rose/Pink 1,5 % (3 réf), Or/Gold 1,0 % (5 réf), Élite/Elite 0,5 % (10 réf)
       → max 50 000 $ de paiements/an pour la réduction
+      → NOMS OFFICIELS FR (doc Chexy 2026) = Starter / Rose / Or / Élite. L'appli affiche
+        les noms anglais (Pink/Gold/Elite). On affiche "FR (anglais)" pour couvrir les deux
+        intentions de recherche. Ne PAS revenir aux noms anglais seuls.
+      → cartes INTERNATIONALES = base 2,5 % (réduc Rose −0,25 / Or −0,75 / Élite −1,25).
+        VOLONTAIREMENT non affiché : cible = cartes canadiennes. Ne pas ajouter de 2e barème.
 
-  (c) À partir de Pink, la récompense passe du cashback AUX frais réduits.
+  (c) À partir de Rose (Pink), la récompense passe du cashback AUX frais réduits.
       → On NE cumule PAS 20 $ + frais réduits. C'est l'un OU l'autre.
       → Seul Starter touche le 20 $ cashback. Le FILLEUL touche toujours 20 $.
 
@@ -668,9 +673,9 @@
               <select id="c-statut"
                 style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
                 <option value="1.75">Starter — 1,75 % (défaut)</option>
-                <option value="1.5">Pink — 1,5 % (3 filleuls)</option>
-                <option value="1.0">Gold — 1,0 % (5 filleuls)</option>
-                <option value="0.5">Elite — 0,5 % (10 filleuls)</option>
+                <option value="1.5">Rose (Pink) — 1,5 % (3 filleuls)</option>
+                <option value="1.0">Or (Gold) — 1,0 % (5 filleuls)</option>
+                <option value="0.5">Élite (Elite) — 0,5 % (10 filleuls)</option>
               </select>
             </label>
 
@@ -731,8 +736,8 @@
       <!-- === STATUTS & FRAIS === -->
       <section id="statuts" aria-label="Statuts Chexy et frais réduits">
         <span class="section-label">Statuts &amp; frais</span>
-        <h2>Le système de statuts Chexy (Pink, Gold, Elite)</h2>
-        <p>Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent. Important&nbsp;: à partir de <strong>Pink</strong>, votre récompense passe du cashback aux <strong>frais réduits</strong> — vous ne touchez pas les deux. Seul le statut Starter reçoit le 20&nbsp;$. Votre filleul, lui, reçoit toujours 20&nbsp;$.</p>
+        <h2>Le système de statuts Chexy : Rose (Pink), Or (Gold), Élite (Elite)</h2>
+        <p>Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent. Important&nbsp;: à partir de <strong>Rose (Pink)</strong>, votre récompense passe du cashback aux <strong>frais réduits</strong> — vous ne touchez pas les deux. Seul le statut Starter reçoit le 20&nbsp;$. Votre filleul, lui, reçoit toujours 20&nbsp;$.</p>
 
         <div class="cumul-box">
           <h3>
@@ -747,21 +752,21 @@
             <span class="cumul-sep" aria-hidden="true">→</span>
             <div class="cumul-item">
               <span class="amount">1,5&nbsp;%</span>
-              <span class="label">Pink<br><strong>3+ filleuls</strong></span>
+              <span class="label">Rose (Pink)<br><strong>3+ filleuls</strong></span>
             </div>
             <span class="cumul-sep" aria-hidden="true">→</span>
             <div class="cumul-item">
               <span class="amount">1,0&nbsp;%</span>
-              <span class="label">Gold<br><strong>5+ filleuls</strong></span>
+              <span class="label">Or (Gold)<br><strong>5+ filleuls</strong></span>
             </div>
             <span class="cumul-sep" aria-hidden="true">→</span>
             <div class="cumul-item cumul-total">
               <span class="amount">0,5&nbsp;%</span>
-              <span class="label">Elite<br><strong>10+ filleuls</strong></span>
+              <span class="label">Élite (Elite)<br><strong>10+ filleuls</strong></span>
             </div>
           </div>
           <p class="cumul-note">
-            💡 <strong>Nouveau pour 2026&nbsp;:</strong> si votre groupe de filleuls complète assez de paiements dans l'année (15 pour Pink, 50 pour Gold, 250 pour Elite, entre le 1<sup>er</sup> jan et le 31&nbsp;déc 2026), votre statut est prolongé jusqu'au 31&nbsp;décembre 2027. La réduction s'applique sur un maximum de <span style="white-space:nowrap;">50 000&nbsp;$</span> de paiements par année civile.
+            💡 <strong>Nouveau pour 2026&nbsp;:</strong> si votre groupe de filleuls complète assez de paiements dans l'année (15 pour Rose, 50 pour Or, 250 pour Élite, entre le 1<sup>er</sup> jan et le 31&nbsp;déc 2026), votre statut est prolongé jusqu'au 31&nbsp;décembre 2027. La réduction s'applique sur un maximum de <span style="white-space:nowrap;">50 000&nbsp;$</span> de paiements par année civile.
           </p>
         </div>
 
@@ -918,7 +923,7 @@
           <details>
             <summary id="faq-q4">Quels sont les frais de Chexy&nbsp;?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q4">
-              <p>Le frais de base est de 1,75&nbsp;% par transaction pour les cartes de crédit canadiennes (Visa, Mastercard et Amex). Le paiement par débit est gratuit. Les frais baissent selon votre statut de parrainage&nbsp;: 1,5&nbsp;% (Pink, 3 filleuls), 1,0&nbsp;% (Gold, 5 filleuls), 0,5&nbsp;% (Elite, 10 filleuls), sur un maximum de <span style="white-space:nowrap;">50 000&nbsp;$</span> de paiements par année civile.</p>
+              <p>Le frais de base est de 1,75&nbsp;% par transaction pour les cartes de crédit canadiennes (Visa, Mastercard et Amex). Le paiement par débit est gratuit. Les frais baissent selon votre statut de parrainage&nbsp;: 1,5&nbsp;% (Rose / Pink, 3 filleuls), 1,0&nbsp;% (Or / Gold, 5 filleuls), 0,5&nbsp;% (Élite / Elite, 10 filleuls), sur un maximum de <span style="white-space:nowrap;">50 000&nbsp;$</span> de paiements par année civile.</p>
             </div>
           </details>
           <details>
@@ -928,9 +933,9 @@
             </div>
           </details>
           <details>
-            <summary id="faq-q6">Comment fonctionne le système de statuts Chexy (Pink, Gold, Elite)&nbsp;?</summary>
+            <summary id="faq-q6">Comment fonctionne le système de statuts Chexy&nbsp;: Rose (Pink), Or (Gold), Élite (Elite)&nbsp;?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q6">
-              <p>Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent&nbsp;: Starter (1+ filleul) donne 20&nbsp;$ de cashback&nbsp;; Pink (3+) descend les frais à 1,5&nbsp;%&nbsp;; Gold (5+) à 1,0&nbsp;%&nbsp;; Elite (10+) à 0,5&nbsp;%. À partir de Pink, votre récompense passe du cashback aux frais réduits — vous ne cumulez pas les deux. Nouveau pour 2026&nbsp;: si votre groupe de filleuls complète assez de paiements dans l'année, votre statut est prolongé jusqu'à fin 2027.</p>
+              <p>Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent&nbsp;: Starter (1+ filleul) donne 20&nbsp;$ de cashback&nbsp;; Rose / Pink (3+) descend les frais à 1,5&nbsp;%&nbsp;; Or / Gold (5+) à 1,0&nbsp;%&nbsp;; Élite / Elite (10+) à 0,5&nbsp;%. À partir de Rose, votre récompense passe du cashback aux frais réduits — vous ne cumulez pas les deux. Nouveau pour 2026&nbsp;: si votre groupe de filleuls complète assez de paiements dans l'année, votre statut est prolongé jusqu'à fin 2027.</p>
             </div>
           </details>
           <details>
