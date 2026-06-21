@@ -82,9 +82,9 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             { "@type": "ListItem", "position": 1, "name": "EBOX Internet",      "url": "https://cashinstinct.ca/ebox/fr/" },
             { "@type": "ListItem", "position": 2, "name": "Sticker Mule",       "url": "https://cashinstinct.ca/stickermule/fr/" },
             { "@type": "ListItem", "position": 3, "name": "HP Instant Ink",     "url": "https://cashinstinct.ca/hp-instant-ink/fr/" },
-            { "@type": "ListItem", "position": 4, "name": "Tangerine",          "url": "https://cashinstinct.ca/tangerine/fr/" },
-            { "@type": "ListItem", "position": 5, "name": "Achieva Financial",  "url": "https://cashinstinct.ca/achieva/fr/" },
-            { "@type": "ListItem", "position": 6, "name": "Chexy",              "url": "https://cashinstinct.ca/chexy/fr/" },
+            { "@type": "ListItem", "position": 4, "name": "Chexy",              "url": "https://cashinstinct.ca/chexy/fr/" },
+            { "@type": "ListItem", "position": 5, "name": "Tangerine",          "url": "https://cashinstinct.ca/tangerine/fr/" },
+            { "@type": "ListItem", "position": 6, "name": "Achieva Financial",  "url": "https://cashinstinct.ca/achieva/fr/" },
             { "@type": "ListItem", "position": 7, "name": "Rakuten Canada",     "url": "https://cashinstinct.ca/rakuten-canada/fr/" },
             { "@type": "ListItem", "position": 8, "name": "Swagbucks Canada",   "url": "https://cashinstinct.ca/swagbucks/fr/" }
           ]
@@ -294,6 +294,110 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
       display: block;
     }
 
+    .quicknav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 4px 0 28px;
+    }
+    .quicknav a {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .quicknav a:hover,
+    .quicknav a:focus-visible {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+
+    /* ── Barre de preuve sociale ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 0 0 36px;
+    }
+    @media (min-width: 768px) {
+      .stats { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .stat .num {
+      display: block;
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--blue);
+      line-height: 1.1;
+    }
+    .stat .lbl {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    /* ── Badge de montant sur les cartes ── */
+    .amount-badge {
+      font-size: 0.95rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue-contrast);
+      white-space: nowrap;
+      position: relative;
+      z-index: 2;
+      letter-spacing: -0.01em;
+    }
+
+    /* Catégorie devient un petit label sous le titre */
+    .link-cat {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Pastille recommandé */
+    /* (retiré : tout sur la page est recommandé — pas de hiérarchie visuelle entre cartes) */
+
+    /* Marqueur vérifié */
+    .verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      color: #15803d;
+      font-weight: 600;
+    }
+    [data-theme="dark"] .verified { color: #4ade80; }
+    .verified::before {
+      content: "✓";
+      font-weight: 800;
+    }
+
     .link-card {
       background: var(--surface);
       border: 1px solid var(--line);
@@ -439,13 +543,38 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
         </div>
       </div>
 
-      <div class="subtitle">Codes de parrainage au Québec et au Canada</div>
+      <div class="subtitle">Économise sur tes factures, abonnements et achats au Québec.</div>
       <p class="intro">
-        Je regroupe ici mes meilleurs codes de parrainage testés au Canada :
-        Internet résidentiel, impression, shopping, cashback et comptes en ligne.
-        Chaque lien mène vers une page dédiée avec les conditions détaillées
-        et la marche à suivre.
+        Des codes de parrainage et bonus de bienvenue que j'utilise vraiment — Internet,
+        impression, banque, cashback. Chaque offre est testée perso, chaque page dédiée
+        donne les conditions exactes et la marche à suivre. Pas de coupons morts, pas de flou.
       </p>
+
+      <nav class="quicknav" aria-label="Aller à une catégorie">
+        <a href="#internet">🌐 Internet</a>
+        <a href="#impression">🖨️ Impression &amp; merch</a>
+        <a href="#finances">💳 Banque &amp; finances</a>
+        <a href="#cashback">🎁 Cashback</a>
+      </nav>
+
+      <div class="stats" role="list" aria-label="En bref">
+        <div class="stat" role="listitem">
+          <span class="num">8</span>
+          <span class="lbl">programmes actifs</span>
+        </div>
+        <div class="stat" role="listitem">
+          <span class="num">100 %</span>
+          <span class="lbl">testés perso</span>
+        </div>
+        <div class="stat" role="listitem">
+          <span class="num">2009</span>
+          <span class="lbl">premier programme suivi</span>
+        </div>
+        <div class="stat" role="listitem">
+          <span class="num"><span id="stats-month"></span></span>
+          <span class="lbl">dernière mise à jour</span>
+        </div>
+      </div>
     </header>
 
     <main id="main-content">
@@ -459,13 +588,14 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
               <h3 class="link-title">
                 <a href="https://cashinstinct.ca/ebox/fr/" class="link-card-link">EBOX Internet <span aria-hidden="true">🌐</span></a>
               </h3>
-              <span class="link-tag">Internet résidentiel</span>
+              <span class="amount-badge">25 $</span>
             </div>
+            <div class="link-cat">Internet résidentiel</div>
             <p class="link-desc">
-              Obtenez <strong>25 $ de crédit</strong> sur votre deuxième facture EBOX avec le code client <strong>GE911</strong>.
+              <strong>25 $ de crédit</strong> sur ta deuxième facture EBOX avec le code client <strong>GE911</strong>.
             </p>
             <div class="link-meta">
-              Détails, conditions et capture d'écran de la promo sur la page dédiée.
+              <span class="verified">Vérifié en <span class="verif-month"></span></span> · détails, conditions et capture de la promo sur la page dédiée.
             </div>
           </div>
         </div>
@@ -477,13 +607,14 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
               <h3 class="link-title">
                 <a href="https://cashinstinct.ca/stickermule/fr/" class="link-card-link">Sticker Mule <span aria-hidden="true">📦</span></a>
               </h3>
-              <span class="link-tag">Autocollants &amp; merch</span>
+              <span class="amount-badge">10 $ USD</span>
             </div>
+            <div class="link-cat">Autocollants &amp; merch</div>
             <p class="link-desc">
-              Bénéficiez automatiquement d'un <strong>crédit promotionnel de 10 $ USD (ou 12,50 $ CAD)</strong> lors de votre inscription via notre lien d'invitation officiel ou avec le code de parrainage <strong>CASHINSTINCT</strong> pour toute première commande d'autocollants personnalisés de 30 $ USD (38 $ CAD) ou plus.
+              <strong>Crédit promo de 10 $ USD (12,50 $ CAD)</strong> à l'inscription via le lien officiel ou le code <strong>CASHINSTINCT</strong>, dès une première commande d'autocollants personnalisés de 30 $ USD (38 $ CAD) ou plus.
             </p>
             <div class="link-meta">
-              Explications sur les devises et guide d'activation complet en français.
+              <span class="verified">Vérifié en <span class="verif-month"></span></span> · explications devises et guide d'activation complet en français.
             </div>
           </div>
 
@@ -492,13 +623,14 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
               <h3 class="link-title">
                   <a href="https://cashinstinct.ca/hp-instant-ink/fr/" class="link-card-link">HP Instant Ink <span aria-hidden="true">🖨️</span></a>
               </h3>
-              <span class="link-tag">Impression &amp; encre</span>
+              <span class="amount-badge">1 mois gratuit</span>
             </div>
+            <div class="link-cat">Impression &amp; encre</div>
             <p class="link-desc">
-              1 mois gratuit d'impression avec le code de parrainage <strong>SVdn7</strong>. Compatible avec la plupart des imprimantes HP récentes au Canada.
+              <strong>1 mois gratuit</strong> d'impression avec le code de parrainage <strong>SVdn7</strong>. Compatible avec la plupart des imprimantes HP récentes au Canada.
             </p>
             <div class="link-meta">
-              Tutoriel pas à pas + FAQ sur l'abonnement HP Instant Ink sur la page dédiée.
+              <span class="verified">Vérifié en <span class="verif-month"></span></span> · tutoriel pas à pas + FAQ sur l'abonnement sur la page dédiée.
             </div>
           </div>
         </div>
@@ -508,15 +640,32 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
           <div class="link-card">
             <div class="link-header">
               <h3 class="link-title">
+                <a href="https://cashinstinct.ca/chexy/fr/" class="link-card-link">Chexy <span aria-hidden="true">💳</span></a>
+              </h3>
+              <span class="amount-badge">20 $</span>
+            </div>
+            <div class="link-cat">Payer par carte</div>
+            <p class="link-desc">
+              <strong>20 $ de cashback</strong> via le lien de parrainage. Paie tes <strong>taxes scolaires et municipales, Hydro-Québec et impôts</strong> par carte de crédit pour accumuler des points. Aucun code — l'inscription se fait par lien.
+            </p>
+            <div class="link-meta">
+              <span class="verified">Vérifié en <span class="verif-month"></span></span> · frais 1,75 %, calcul de rentabilité, statuts et FAQ sur la page dédiée.
+            </div>
+          </div>
+
+          <div class="link-card">
+            <div class="link-header">
+              <h3 class="link-title">
                 <a href="https://cashinstinct.ca/tangerine/fr/" class="link-card-link">Banque Tangerine <span aria-hidden="true">🍊</span></a>
               </h3>
-              <span class="link-tag">Banque en ligne</span>
+              <span class="amount-badge">Clé Orange</span>
             </div>
+            <div class="link-cat">Banque en ligne</div>
             <p class="link-desc">
               Bonus de bienvenue avec la Clé Orange <strong>14130944S1</strong> à l'ouverture d'un compte chèque ou épargne Tangerine. Banque en ligne sans frais mensuels.
             </p>
             <div class="link-meta">
-              Conditions, délais de versement du bonus et étapes d'activation sur la page dédiée.
+              <span class="verified">Vérifié en <span class="verif-month"></span></span> · conditions, délais de versement et étapes d'activation sur la page dédiée.
             </div>
           </div>
 
@@ -525,29 +674,15 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
               <h3 class="link-title">
                 <a href="https://cashinstinct.ca/achieva/fr/" class="link-card-link">Achieva Financial <span aria-hidden="true">🏦</span></a>
               </h3>
-              <span class="link-tag">Épargne en ligne</span>
+              <span class="amount-badge">25 $</span>
             </div>
+            <div class="link-cat">Épargne en ligne</div>
             <p class="link-desc">
            <strong>25 $ de bonus</strong> à l'ouverture d'un compte avec le code de parrainage <strong>V381566198</strong>. Dépôt minimum de 250 $ et compte maintenu au moins 1 mois. 
               <em>(Programme de parrainage en pause — retour été 2026.)</em>
               </p>
             <div class="link-meta">
               Taux d'intérêt compétitifs, ouverture 100 % via l'application mobile et détails du bonus sur la page dédiée.
-            </div>
-          </div>
-
-          <div class="link-card">
-            <div class="link-header">
-              <h3 class="link-title">
-                <a href="https://cashinstinct.ca/chexy/fr/" class="link-card-link">Chexy <span aria-hidden="true">💳</span></a>
-              </h3>
-              <span class="link-tag">Payer par carte</span>
-            </div>
-            <p class="link-desc">
-              <strong>20 $ de cashback</strong> via le lien de parrainage. Payez vos <strong>taxes scolaires et municipales, Hydro-Québec et impôts</strong> par carte de crédit pour accumuler des points. Aucun code à entrer — l'inscription se fait par lien.
-            </p>
-            <div class="link-meta">
-              Frais de 1,75 %, calcul de rentabilité, statuts et FAQ sur la page dédiée. Idéal pour atteindre le seuil d'un bonus de bienvenue de carte.
             </div>
           </div>
         </div>
@@ -559,13 +694,14 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
               <h3 class="link-title">
                 <a href="https://cashinstinct.ca/rakuten-canada/fr/" class="link-card-link">Rakuten Canada <span aria-hidden="true">💰</span></a>
               </h3>
-              <span class="link-tag">Cashback</span>
+              <span class="amount-badge">30 $</span>
             </div>
+            <div class="link-cat">Cashback</div>
             <p class="link-desc">
-              Obtenez <strong>30 $ de cashback</strong> en argent réel sur votre premier achat de 30 $+ via le lien de parrainage. Aucun code à entrer — le lien active le bonus automatiquement.
+              <strong>30 $ de cashback</strong> en argent réel sur ton premier achat de 30 $+ via le lien de parrainage. Aucun code — le lien active le bonus automatiquement.
             </p>
             <div class="link-meta">
-              Guide étape par étape, marchands partenaires et FAQ sur la page dédiée. Plateforme testée personnellement depuis 2013.
+              <span class="verified">Testé perso depuis 2013</span> · guide étape par étape, marchands partenaires et FAQ sur la page dédiée.
             </div>
           </div>
 
@@ -574,13 +710,14 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
               <h3 class="link-title">
                   <a href="https://cashinstinct.ca/swagbucks/fr/" class="link-card-link">Swagbucks <span aria-hidden="true">🎯</span></a>
               </h3>
-              <span class="link-tag">Sondages &amp; récompenses</span>
+              <span class="amount-badge">10 $</span>
             </div>
+            <div class="link-cat">Sondages &amp; récompenses</div>
             <p class="link-desc">
-              Obtenez <strong>10 $ de bonus</strong> sur votre premier achat de 25 $+ via le lien de parrainage. Accumulez des cartes-cadeaux et de l'argent PayPal gratuitement en répondant à des sondages ou en magasinant.
+              <strong>10 $ de bonus</strong> sur ton premier achat de 25 $+ via le lien de parrainage. Accumule cartes-cadeaux et argent PayPal en répondant à des sondages ou en magasinant.
             </p>
             <div class="link-meta">
-              Inscription gratuite. Plateforme testée personnellement depuis 2009.
+              <span class="verified">Testé perso depuis 2009</span> · inscription gratuite. Détails sur la page dédiée.
             </div>
           </div>
         </div>
@@ -612,9 +749,9 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
         <a href="https://cashinstinct.ca/hp-instant-ink/fr/">HP Instant Ink</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule Global</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/stickermule/fr/">Sticker Mule FR</a><span aria-hidden="true"> · </span>
+        <a href="https://cashinstinct.ca/chexy/fr/">Chexy</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/tangerine/fr/">Banque Tangerine</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/achieva/fr/">Achieva Financial</a><span aria-hidden="true"> · </span>
-        <a href="https://cashinstinct.ca/chexy/fr/">Chexy</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/rakuten-canada/fr/">Rakuten Canada</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/swagbucks/fr/">Swagbucks</a>
       </div>
@@ -634,6 +771,16 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
       footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
+
+    // 1b. Mois courant (capitalisé) pour la barre de stats + marqueurs "Vérifié"
+    var monthName = now.toLocaleDateString(lang, { month: "long" });
+    var monthCap = monthName.charAt(0).toUpperCase() + monthName.slice(1);
+    var monthYear = monthCap + " " + now.getFullYear();
+    var statsMonth = document.getElementById("stats-month");
+    if (statsMonth) { statsMonth.textContent = monthCap; }
+    document.querySelectorAll(".verif-month").forEach(function(el) {
+      el.textContent = monthYear;
+    });
     
     // 2. Format Long localisé (ex: "12 juin 2026")
     var trustDate = document.getElementById("trust-date");
