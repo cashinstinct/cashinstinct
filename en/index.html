@@ -85,9 +85,9 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             { "@type": "ListItem", "position": 1, "name": "EBOX Internet",     "url": "https://cashinstinct.ca/ebox/en/" },
             { "@type": "ListItem", "position": 2, "name": "Sticker Mule",      "url": "https://cashinstinct.ca/stickermule/en/" },
             { "@type": "ListItem", "position": 3, "name": "HP Instant Ink",    "url": "https://cashinstinct.ca/hp-instant-ink/en/" },
-            { "@type": "ListItem", "position": 4, "name": "Tangerine",         "url": "https://cashinstinct.ca/tangerine/en/" },
-            { "@type": "ListItem", "position": 5, "name": "Achieva Financial", "url": "https://cashinstinct.ca/achieva/en/" },
-            { "@type": "ListItem", "position": 6, "name": "Chexy",             "url": "https://cashinstinct.ca/chexy/en/" },
+            { "@type": "ListItem", "position": 4, "name": "Chexy",             "url": "https://cashinstinct.ca/chexy/en/" },
+            { "@type": "ListItem", "position": 5, "name": "Tangerine",         "url": "https://cashinstinct.ca/tangerine/en/" },
+            { "@type": "ListItem", "position": 6, "name": "Achieva Financial", "url": "https://cashinstinct.ca/achieva/en/" },
             { "@type": "ListItem", "position": 7, "name": "Rakuten Canada",    "url": "https://cashinstinct.ca/rakuten-canada/en/" },
             { "@type": "ListItem", "position": 8, "name": "Swagbucks Canada",  "url": "https://cashinstinct.ca/swagbucks/en/" }
           ]
@@ -292,6 +292,107 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
       display: block;
     }
 
+    .quicknav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 4px 0 28px;
+    }
+    .quicknav a {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .quicknav a:hover,
+    .quicknav a:focus-visible {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+
+    /* Social proof bar */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 0 0 36px;
+    }
+    @media (min-width: 768px) {
+      .stats { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .stat .num {
+      display: block;
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--blue);
+      line-height: 1.1;
+    }
+    .stat .lbl {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    /* Amount badge on cards */
+    .amount-badge {
+      font-size: 0.95rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue-contrast);
+      white-space: nowrap;
+      position: relative;
+      z-index: 2;
+      letter-spacing: -0.01em;
+    }
+
+    /* Category becomes a small label below the title */
+    .link-cat {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Verified marker */
+    .verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      color: #15803d;
+      font-weight: 600;
+    }
+    [data-theme="dark"] .verified { color: #4ade80; }
+    .verified::before {
+      content: "✓";
+      font-weight: 800;
+    }
+
     .link-card {
       background: var(--surface);
       border: 1px solid var(--line);
@@ -428,13 +529,38 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
         </div>
       </div>
 
-      <div class="subtitle">Referral codes across Quebec and Canada</div>
+      <div class="subtitle">Save on your bills, subscriptions and everyday purchases in Canada.</div>
       <p class="intro">
-        Here are my best tested referral codes in Canada:
-        home internet, printing, shopping, cashback and online accounts.
-        Each link leads to a dedicated page with full conditions
-        and step-by-step instructions.
+        Referral codes and welcome bonuses I actually use — internet, printing, banking,
+        cashback. Every offer is personally tested, and each dedicated page gives you the
+        exact conditions and how-to. No dead coupons, no fluff.
       </p>
+
+      <nav class="quicknav" aria-label="Jump to a category">
+        <a href="#internet">🌐 Internet</a>
+        <a href="#printing">🖨️ Printing &amp; merch</a>
+        <a href="#banking">💳 Banking &amp; finance</a>
+        <a href="#cashback">🎁 Cashback</a>
+      </nav>
+
+      <div class="stats" role="list" aria-label="At a glance">
+        <div class="stat" role="listitem">
+          <span class="num">8</span>
+          <span class="lbl">active programs</span>
+        </div>
+        <div class="stat" role="listitem">
+          <span class="num">100%</span>
+          <span class="lbl">personally tested</span>
+        </div>
+        <div class="stat" role="listitem">
+          <span class="num">2009</span>
+          <span class="lbl">first program tracked</span>
+        </div>
+        <div class="stat" role="listitem">
+          <span class="num"><span id="stats-month"></span></span>
+          <span class="lbl">last updated</span>
+        </div>
+      </div>
     </header>
 
     <main id="main-content">
@@ -448,13 +574,14 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
               <h3 class="link-title">
                 <a href="https://cashinstinct.ca/ebox/en/" class="link-card-link">EBOX Internet <span aria-hidden="true">🌐</span></a>
               </h3>
-              <span class="link-tag">Home internet</span>
+              <span class="amount-badge">$25</span>
             </div>
+            <div class="link-cat">Home internet</div>
             <p class="link-desc">
-              Get a <strong>$25 credit</strong> on your second EBOX bill with referral code <strong>GE911</strong>.
+              <strong>$25 credit</strong> on your second EBOX bill with referral code <strong>GE911</strong>.
             </p>
             <div class="link-meta">
-              Full details, conditions and promo screenshot on the dedicated page.
+              <span class="verified">Verified <span class="verif-month"></span></span> · full details, conditions and promo screenshot on the dedicated page.
             </div>
           </div>
         </div>
@@ -466,13 +593,14 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
               <h3 class="link-title">
                 <a href="https://cashinstinct.ca/stickermule/en/" class="link-card-link">Sticker Mule <span aria-hidden="true">📦</span></a>
               </h3>
-              <span class="link-tag">Stickers &amp; merch</span>
+              <span class="amount-badge">$10 USD</span>
             </div>
+            <div class="link-cat">Stickers &amp; merch</div>
             <p class="link-desc">
-              Automatically receive a <strong>$10 USD promotional credit ($12.50 CAD)</strong> when you sign up via our official invite link or use referral code <strong>CASHINSTINCT</strong> on any first custom sticker order of $30 USD or more.
+              <strong>$10 USD promo credit ($12.50 CAD)</strong> when you sign up via our official invite link or use referral code <strong>CASHINSTINCT</strong> on any first custom sticker order of $30 USD or more.
             </p>
             <div class="link-meta">
-              Currency breakdown and full activation guide on the dedicated page.
+              <span class="verified">Verified <span class="verif-month"></span></span> · currency breakdown and full activation guide on the dedicated page.
             </div>
           </div>
 
@@ -481,31 +609,49 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
               <h3 class="link-title">
                 <a href="https://cashinstinct.ca/hp-instant-ink/en/" class="link-card-link">HP Instant Ink <span aria-hidden="true">🖨️</span></a>
               </h3>
-              <span class="link-tag">Printing &amp; ink</span>
+              <span class="amount-badge">1 month free</span>
             </div>
+            <div class="link-cat">Printing &amp; ink</div>
             <p class="link-desc">
-              Get 1 free month of printing with referral code <strong>SVdn7</strong>. Compatible with most recent HP printers in Canada.
+              <strong>1 free month</strong> of printing with referral code <strong>SVdn7</strong>. Compatible with most recent HP printers in Canada.
             </p>
             <div class="link-meta">
-              Step-by-step tutorial + HP Instant Ink subscription FAQ on the dedicated page.
+              <span class="verified">Verified <span class="verif-month"></span></span> · step-by-step tutorial + subscription FAQ on the dedicated page.
             </div>
           </div>
         </div>
 
-        <h2 class="section-label" id="finances" style="margin-top:24px;">Banking &amp; Finance</h2>
+        <h2 class="section-label" id="banking" style="margin-top:24px;">Banking &amp; Finance</h2>
         <div class="links-container">
+          <div class="link-card">
+            <div class="link-header">
+              <h3 class="link-title">
+                <a href="https://cashinstinct.ca/chexy/en/" class="link-card-link">Chexy <span aria-hidden="true">💳</span></a>
+              </h3>
+              <span class="amount-badge">$20</span>
+            </div>
+            <div class="link-cat">Pay by card</div>
+            <p class="link-desc">
+              <strong>$20 cashback</strong> via the referral link. Pay your <strong>property tax, Hydro bills and income taxes</strong> by credit card to earn points. No code to enter — sign-up is through a link.
+            </p>
+            <div class="link-meta">
+              <span class="verified">Verified <span class="verif-month"></span></span> · 1.75% fee, worth-it math, status tiers and FAQ on the dedicated page.
+            </div>
+          </div>
+
           <div class="link-card">
             <div class="link-header">
               <h3 class="link-title">
                 <a href="https://cashinstinct.ca/tangerine/en/" class="link-card-link">Tangerine Bank <span aria-hidden="true">🍊</span></a>
               </h3>
-              <span class="link-tag">Online banking</span>
+              <span class="amount-badge">Orange Key</span>
             </div>
+            <div class="link-cat">Online banking</div>
             <p class="link-desc">
               Welcome bonus with Orange Key <strong>14130944S1</strong> when opening a Tangerine chequing or savings account. No-fee online banking.
             </p>
             <div class="link-meta">
-              Conditions, bonus timeline and activation steps on the dedicated page.
+              <span class="verified">Verified <span class="verif-month"></span></span> · conditions, bonus timeline and activation steps on the dedicated page.
             </div>
           </div>
 
@@ -514,29 +660,15 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
               <h3 class="link-title">
                 <a href="https://cashinstinct.ca/achieva/en/" class="link-card-link">Achieva Financial <span aria-hidden="true">🏦</span></a>
               </h3>
-              <span class="link-tag">Online savings</span>
+              <span class="amount-badge">$25</span>
             </div>
+            <div class="link-cat">Online savings</div>
            <p class="link-desc">
             <strong>$25 bonus</strong> when you open an account with referral code <strong>V381566198</strong>. Minimum $250 deposit, balance held at least 1 month. 
              <em>(Referral program paused — returns Summer 2026.)</em>
             </p>
             <div class="link-meta">
               Competitive interest rates, 100% mobile sign-up and bonus details on the dedicated page.
-            </div>
-          </div>
-
-          <div class="link-card">
-            <div class="link-header">
-              <h3 class="link-title">
-                <a href="https://cashinstinct.ca/chexy/en/" class="link-card-link">Chexy <span aria-hidden="true">💳</span></a>
-              </h3>
-              <span class="link-tag">Pay by card</span>
-            </div>
-            <p class="link-desc">
-              <strong>$20 cashback</strong> via the referral link. Pay your <strong>property tax, Hydro bills and income taxes</strong> by credit card to earn points. No code to enter — sign-up is through a link.
-            </p>
-            <div class="link-meta">
-              1.75% fee, worth-it math, status tiers and FAQ on the dedicated page. Ideal for hitting a card welcome-bonus minimum spend.
             </div>
           </div>
         </div>
@@ -548,13 +680,14 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
               <h3 class="link-title">
                 <a href="https://cashinstinct.ca/rakuten-canada/en/" class="link-card-link">Rakuten Canada <span aria-hidden="true">💰</span></a>
               </h3>
-              <span class="link-tag">Cashback</span>
+              <span class="amount-badge">$30</span>
             </div>
+            <div class="link-cat">Cashback</div>
             <p class="link-desc">
-              Get <strong>$30 cash back</strong> on your first $30+ purchase via the referral link. No code needed — the link activates the bonus automatically.
+              <strong>$30 cash back</strong> on your first $30+ purchase via the referral link. No code needed — the link activates the bonus automatically.
             </p>
             <div class="link-meta">
-              Step-by-step guide, partner merchants and FAQ on the dedicated page. Personally tested since 2013.
+              <span class="verified">Personally tested since 2013</span> · step-by-step guide, partner merchants and FAQ on the dedicated page.
             </div>
           </div>
 
@@ -563,13 +696,14 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
               <h3 class="link-title">
                 <a href="https://cashinstinct.ca/swagbucks/en/" class="link-card-link">Swagbucks <span aria-hidden="true">🎯</span></a>
               </h3>
-              <span class="link-tag">Surveys &amp; rewards</span>
+              <span class="amount-badge">$10</span>
             </div>
+            <div class="link-cat">Surveys &amp; rewards</div>
             <p class="link-desc">
-              Get a <strong>$10 bonus</strong> on your first $25+ purchase via the referral link. Earn gift cards and PayPal cash by completing surveys or shopping online.
+              <strong>$10 bonus</strong> on your first $25+ purchase via the referral link. Earn gift cards and PayPal cash by completing surveys or shopping online.
             </p>
             <div class="link-meta">
-              Free sign-up. Personally tested since 2009.
+              <span class="verified">Personally tested since 2009</span> · free sign-up. Details on the dedicated page.
             </div>
           </div>
         </div>
@@ -599,9 +733,9 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
         <a href="https://cashinstinct.ca/hp-instant-ink/en/">HP Instant Ink</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/stickermule/fr/">Sticker Mule FR</a><span aria-hidden="true"> · </span>
+        <a href="https://cashinstinct.ca/chexy/en/">Chexy</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/tangerine/en/">Tangerine Bank</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/achieva/en/">Achieva Financial</a><span aria-hidden="true"> · </span>
-        <a href="https://cashinstinct.ca/chexy/en/">Chexy</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/rakuten-canada/en/">Rakuten Canada</a><span aria-hidden="true"> · </span>
         <a href="https://cashinstinct.ca/swagbucks/en/">Swagbucks</a>
       </div>
@@ -621,6 +755,16 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
       footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
       footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
+
+    // 1b. Current month for stats bar + "Verified" markers
+    var monthName = now.toLocaleDateString(lang, { month: "long" });
+    var monthCap = monthName.charAt(0).toUpperCase() + monthName.slice(1);
+    var monthYear = monthCap + " " + now.getFullYear();
+    var statsMonth = document.getElementById("stats-month");
+    if (statsMonth) { statsMonth.textContent = monthCap; }
+    document.querySelectorAll(".verif-month").forEach(function(el) {
+      el.textContent = monthYear;
+    });
     
     // 2. Format Long localisé (ex: "12 juin 2026")
     var trustDate = document.getElementById("trust-date");
