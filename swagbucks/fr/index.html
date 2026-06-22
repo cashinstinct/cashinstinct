@@ -82,7 +82,7 @@
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-06-01",
-        "dateModified": "2026-06-12",
+        "dateModified": "2026-06-21",
         "author": { "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@id": "https://cashinstinct.ca/#organization" }
       },
@@ -159,18 +159,18 @@
           },
           {
             "@type": "Question",
-            "name": "Swagbucks fonctionne-t-il au Québec et dans toutes les provinces canadiennes ?",
+            "name": "Swagbucks fonctionne-t-il au Québec et dans toutes les provinces ?",
             "acceptedAnswer": { "@type": "Answer", "text": "Oui. Swagbucks est pleinement opérationnel dans toutes les provinces et territoires canadiens, y compris le Québec. Des sondages en français sont disponibles et les récompenses peuvent être échangées en CAD via PayPal ou en cartes-cadeaux Amazon.ca." }
           },
           {
             "@type": "Question",
-            "name": "Pourquoi mon code Swag ne fonctionne pas à l'inscription ?",
+            "name": "Pourquoi mon code Swag affiche-t-il une erreur à l'inscription ?",
             "acceptedAnswer": { "@type": "Answer", "text": "Les codes Swag quotidiens sont des alertes promotionnelles réservées aux membres existants. Ils ne peuvent pas être utilisés dans le champ \"Code d'inscription\" — ils déclenchent une erreur de validation. Pour obtenir un bonus sur nouveau compte, inscrivez-vous via un lien de parrainage." }
           },
           {
             "@type": "Question",
-            "name": "Swagbucks est-il légitime ou une arnaque ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Swagbucks is a legitimate platform owned by Prodege LLC, operating since 2008. Cash Instinct has maintained a verified Canadian account since June 2009 with lifetime earnings of over 26,400 SB redeemed as PayPal cash and gift cards. It is not a scam." }
+            "name": "Swagbucks est-il légitime au Canada ou une arnaque ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Swagbucks est une plateforme légitime détenue par Prodege LLC, en activité depuis 2008. Cash Instinct maintient un compte canadien vérifié depuis juin 2009, avec plus de 26 400 SB cumulés à vie, échangés en argent PayPal et en cartes-cadeaux. Ce n'est pas une arnaque." }
           },
           {
             "@type": "Question",
@@ -179,8 +179,13 @@
           },
           {
             "@type": "Question",
-            "name": "Quels sont les meilleurs moyens de gagner des SB rapidement au Canada ?",
+            "name": "Quels sont les moyens les plus rapides de gagner des SB au Canada ?",
             "acceptedAnswer": { "@type": "Answer", "text": "Par ordre d'efficacité : (1) le portail de remboursement sur achats (2 à 8 % SB sur Amazon.ca, Walmart.ca, BestBuy.ca), (2) les sondages ciblés selon votre profil, (3) la numérisation de reçus d'épicerie. Évitez les vidéos et les installations d'applications — le taux SB/heure est très faible." }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien de temps faut-il pour obtenir le bonus de bienvenue de 10 $ ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Le bonus de 10 $ et la contrepartie de 300 SB sont crédités après votre première activité admissible, généralement dans les jours suivant l'inscription. Vous avez 30 jours après la création du compte pour déclencher l'admissibilité — passé ce délai, le bonus de bienvenue expire." }
           }
         ]
       }
@@ -565,6 +570,7 @@ header.hero h1 {
       <span class="trust-badge">💙 26 418 SB gagnés à vie</span>
       <span class="trust-badge">🇨🇦 Toutes provinces + Québec</span>
       <span class="trust-badge">🔒 Aucun coût pour vous</span>
+      <span class="trust-badge">🗓️ Dernière vérification&nbsp;: <time id="trust-date" datetime="2026-06-21">21 juin 2026</time></span>
     </div>
 
       <div class="hero-proof">
@@ -954,9 +960,33 @@ header.hero h1 {
   <script>
     /* ── Bloc JS unique ── */
 
-    /* Date footer */
-    var fd = document.getElementById('footer-date');
-    if (fd) fd.textContent = new Date().toLocaleDateString('fr-CA', { month: 'long', year: 'numeric' });
+    /* ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ── */
+    /* Met à jour les <time> visibles (footer-date, trust-date) à la date du jour. */
+    /* NE TOUCHE PAS au JSON-LD : dateModified est codé EN DUR dans le <head> et */
+    /* ne doit refléter QUE la vraie dernière modification (à mettre à jour au push). */
+    (function() {
+      var now = new Date();
+      var lang = document.documentElement.lang || "fr-CA";
+
+      /* 1. Format court (ex: "juin 2026") */
+      var footerDate = document.getElementById("footer-date");
+      if (footerDate) {
+        footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
+        footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+      }
+
+      /* 2. Format long localisé (ex: "21 juin 2026") */
+      var trustDate = document.getElementById("trust-date");
+      if (trustDate) {
+        var options = lang.startsWith("fr")
+          ? { day: "numeric", month: "long", year: "numeric" }
+          : { month: "long", day: "numeric", year: "numeric" };
+        trustDate.textContent = now.toLocaleDateString(lang, options);
+        if (trustDate.tagName === "TIME") {
+          trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
+        }
+      }
+    })();
 
     /* Theme toggle */
     var themeToggle = document.getElementById('theme-toggle');
