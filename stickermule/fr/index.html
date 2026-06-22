@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
-    <!--
+ <!--
   ╔══════════════════════════════════════════════════════════════╗
   ║  NOTE AUX SESSIONS IA — LIRE AVANT DE "CORRIGER" QUOI QUE CE SOIT  ║
   ╚══════════════════════════════════════════════════════════════╝
   Cette page a été auditée en profondeur. Plusieurs choix qui PEUVENT
   ressembler à des incohérences sont en réalité VOLONTAIRES et documentés
   par des commentaires locaux dans le code. Avant de signaler ou corriger :
-
   1. STATS volatiles → arrondies "vers le bas / over X" (zéro maintenance). Voir note STATS POLICY.
   2. DEVISE → page EN en USD, page FR en CAD. Cohérent, voulu.
   3. NOTE 4.9 (schema) ≠ 4.69 (plateforme SM) → deux notes distinctes, voulu.
   4. priceValidUntil → contrainte technique Google, pas une vraie expiration.
   5. Geo-routing JS → optimisation par-dessus la redirection serveur de Sticker Mule (redondance voulue).
-
   Valeurs STABLES exactes (NE PAS arrondir) : crédit 12,50$CAD/9€/£8/$10USD,
   minimums 38/27/30/30, commission 10%, MOQ 10 unités, 19 types de stickers.
-
   Source officielle : stickermule.com/stats + stickermule.com/commissions
   Dernier audit : juin 2026.
 -->
 
-  <!--
+<!--
+  ═══ VALIDATION OBLIGATOIRE AVANT PUSH (par EXÉCUTION, jamais à l'œil) ═══
+  1. JSON-LD : parser avec json.loads(). Une trailing comma casse tout le graphe.
+  2. FAQ — ALIGNEMENT STRICT schema ↔ visible (BUG HISTORIQUE sur cette page, corrigé juin 2026) :
+     • nb <summary> visibles == nb mainEntity du FAQPage.
+     • CHAQUE question du schema existe à l'identique en visible (verbatim) et DANS LE MÊME ORDRE.
+       Le schema est le MIROIR du visible, PAS une reformulation.
+     • JAMAIS de question dans le schema absente du visible ("question fantôme" → Google
+       ignore alors TOUT le bloc FAQ). Ni l'inverse. Seul écart toléré : les &nbsp; (visible FR seulement).
+     → Si tu reformules une question visible, reformule SA version schema à l'identique.
+  3. IDs : aucun id dupliqué (dans les VRAIES balises, pas les commentaires). Chaque <summary> a
+     son id ; chaque aria-labelledby pointe un id existant.
+  4. <script> : nb balises ouvrantes == fermantes.
+  5. Boutons copie : chaque data-copy a un data-target pointant un <span> existant ; data-label == texte du bouton.
+-->
+
+<!--
   ESPACES INSÉCABLES (&nbsp;) — RÈGLE v2026, NE PAS "CORRIGER" :
   PAGE FR (celle-ci) : &nbsp; OBLIGATOIRE dans le TEXTE VISIBLE avant $ € % (ex. "12,50&nbsp;$", "9&nbsp;€", "10&nbsp;%")
   et avant la ponctuation double ? ; : ! (ex. "vraiment&nbsp;?"). Typographie québécoise/française.
@@ -33,6 +46,17 @@
   Insécables sémantiques (valeur+unité) gérés aussi par <span style="white-space:nowrap"> — les deux méthodes coexistent.
   Audit : juin 2026.
   -->
+
+<!--
+  ═══ FAITS VERROUILLÉS + DATES ═══
+  • Code de parrainage : CASHINSTINCT (ref_id=6042474701).
+  • Crédits/minimums : voir "Valeurs STABLES exactes" ci-dessus. ⚠ Fixés PAR DEVISE par StickerMule,
+    PAS un taux de change. Recalculer "12,50 CAD = 10 USD × taux" est une ERREUR. NE JAMAIS convertir.
+  • Liens affiliés : rel="noopener sponsored noreferrer" sur CHAQUE lien sortant.
+  • dateModified (JSON-LD) : EN DUR, mis à jour À LA MAIN au push, reflète la VRAIE dernière modif.
+    NE PAS automatiser (un dateModified qui change seul = signal SEO négatif).
+  • footer-date / trust-date (visibles) : auto-générés par JS, affichage seulement.
+-->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf6f0" />
