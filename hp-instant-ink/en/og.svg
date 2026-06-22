@@ -11,8 +11,8 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect x="0" y="0" width="14" height="630" fill="#ffffff" fill-opacity="0.25"/>
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle" fill="white">
-    <!-- pré-titre discret avec ancrage Canada -->
-    <text x="600" y="92" font-size="34" font-weight="700" fill-opacity="0.85" letter-spacing="0.18em">CANADA · AUTOMATIC INK DELIVERY</text>
+    <!-- pré-titre discret -->
+    <text x="600" y="92" font-size="34" font-weight="700" fill-opacity="0.85" letter-spacing="0.20em">AUTOMATIC INK DELIVERY</text>
     <!-- titre principal -->
     <text x="600" y="185" font-size="92" font-weight="900" letter-spacing="-0.01em">HP INSTANT INK</text>
     <!-- sous-titre -->
@@ -24,8 +24,8 @@
     </g>
     <!-- crédit en bandeau accent -->
     <g transform="translate(600, 558)">
-      <rect x="-290" y="-50" width="580" height="94" rx="47" fill="#ffffff" fill-opacity="0.16"/>
-      <text x="0" y="26" font-size="62" font-weight="900" letter-spacing="0.02em">1 FREE MONTH</text>
-    </g>
+  <rect x="-290" y="-50" width="580" height="94" rx="47" fill="#ffffff" fill-opacity="0.16"/>
+  <text x="0" y="26" font-size="62" font-weight="900" letter-spacing="0.02em">1 FREE MONTH</text>
+</g>
   </g>
 </svg>
