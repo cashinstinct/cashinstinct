@@ -1,26 +1,81 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <!--
-  ╔══════════════════════════════════════════════════════════════╗
-  ║  NOTE AUX SESSIONS IA — LIRE AVANT DE "CORRIGER" QUOI QUE CE SOIT  ║
-  ╚══════════════════════════════════════════════════════════════╝
+ <!-- ═══════════════════════════════════════════════════════════════════
+     NOTE DE MAINTENANCE — PAGE STICKERMULE (EN + FR) — lire AVANT toute modif
+     Page prioritaire #1 du site (commission 10% récurrente). Prudence maximale.
+     Dernier audit : juin 2026 · Sources : stickermule.com/stats + /commissions
+═══════════════════════════════════════════════════════════════════════
+
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  STOP — LIRE AVANT DE "CORRIGER" QUOI QUE CE SOIT                   ║
+  ╚══════════════════════════════════════════════════════════════════╝
   Cette page a été auditée en profondeur. Plusieurs choix qui PEUVENT
   ressembler à des incohérences sont en réalité VOLONTAIRES et documentés
   par des commentaires locaux dans le code. Avant de signaler ou corriger :
 
-  1. STATS volatiles → arrondies "vers le bas / over X" (zéro maintenance). Voir note STATS POLICY.
+  1. STATS volatiles → arrondies "vers le bas / over X" (zéro maintenance).
+     Voir la note locale STATS POLICY.
   2. DEVISE → page EN en USD, page FR en CAD. Cohérent, voulu.
   3. NOTE 4.9 (schema) ≠ 4.69 (plateforme SM) → deux notes distinctes, voulu.
-  4. priceValidUntil → contrainte technique Google, pas une vraie expiration.
-  5. Geo-routing JS → optimisation par-dessus la redirection serveur de Sticker Mule (redondance voulue).
+  4. priceValidUntil → contrainte technique Google, PAS une vraie expiration.
+  5. Geo-routing JS → optimisation par-dessus la redirection serveur de
+     Sticker Mule (redondance voulue).
 
-  Valeurs STABLES exactes (NE PAS arrondir) : crédit 12,50$CAD/9€/£8/$10USD,
-  minimums 38/27/30/30, commission 10%, MOQ 10 unités, 19 types de stickers.
+═══════════════════════════════════════════════════════════════════════
 
-  Source officielle : stickermule.com/stats + stickermule.com/commissions
-  Dernier audit : juin 2026.
--->
+  ┌─ VALIDATION OBLIGATOIRE AVANT PUSH (par exécution, jamais à l'œil) ─┐
+
+  1. JSON-LD : parser avec json.loads(). Une trailing comma casse tout le graphe.
+
+  2. FAQ — ALIGNEMENT STRICT schema ↔ visible (bug historique sur cette page) :
+     • nb <summary> visibles == nb mainEntity du FAQPage.
+     • CHAQUE question du schema existe à l'identique en visible (verbatim) et DANS
+       LE MÊME ORDRE. Le schema est le MIROIR du visible, pas une reformulation.
+     • JAMAIS de question dans le schema absente du visible (= "question fantôme" :
+       Google ignore alors tout le bloc FAQ). Ni l'inverse.
+     • Seule différence tolérée : les &nbsp; (présents en visible FR, jamais en schema).
+     → Si tu reformules une question visible, reformule SA version schema à l'identique.
+
+  3. IDs : aucun id dupliqué (vérifier dans les VRAIES balises, pas les commentaires).
+     Chaque <summary> a son id ; chaque aria-labelledby pointe un id existant.
+
+  4. <script> : nb balises ouvrantes == fermantes.
+
+  5. Boutons copie : chaque data-copy a un data-target pointant un <span> existant,
+     et data-label == texte du bouton.
+
+  └────────────────────────────────────────────────────────────────────┘
+
+  ┌─ FAITS STICKERMULE VERROUILLÉS (valeurs STABLES — NE PAS arrondir/convertir) ─┐
+
+  • Code de parrainage : CASHINSTINCT (ref_id=6042474701).
+  • Crédits PLATEFORME-FIXES :  10 $ USD  /  12,50 $ CAD  /  9 €  /  8 £
+  • Minimums de commande FIXES :  30 $ USD  /  38 $ CAD  /  27 €  /  30 £
+    ⚠ Montants fixés PAR DEVISE par StickerMule, PAS un taux de change.
+      Recalculer "12,50 CAD = 10 USD × taux" est une ERREUR : valeurs distinctes.
+      NE JAMAIS convertir une devise vers une autre.
+  • Commission affilié : 10 %, récurrente, 1 an.
+  • MOQ : 10 unités.   • Types de stickers : 19.
+  • Liens affiliés : rel="noopener sponsored noreferrer" sur CHAQUE lien sortant.
+
+  └────────────────────────────────────────────────────────────────────┘
+
+  ┌─ TYPOGRAPHIE — espaces insécables (&nbsp;), selon la LANGUE de CETTE page ─┐
+  • Page FR (lang="fr-CA") : &nbsp; avant  $ € % ? ; : !  dans le VISIBLE seulement.
+  • Page EN (lang="en-CA") : PAS de &nbsp; avant $ (montant collé, ex. $30).
+  • DANS LES DEUX CAS : JAMAIS de &nbsp; dans JSON-LD, attributs (alt/aria/content/
+    datetime/href/style), CSS ou JS. Vérifier = 0.
+  └────────────────────────────────────────────────────────────────────┘
+
+  ┌─ DATES ─┐
+  • dateModified (JSON-LD) : EN DUR, mis à jour À LA MAIN au push, reflète la VRAIE
+    dernière modif. NE PAS automatiser (un dateModified qui change seul = signal SEO -).
+  • footer-date / trust-date (visibles) : auto-générés par JS, affichage seulement.
+  └──────────┘
+═══════════════════════════════════════════════════════════════════ -->
+  
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf6f0" />
