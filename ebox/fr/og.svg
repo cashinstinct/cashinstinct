@@ -33,6 +33,6 @@
     </g>
 
     <!-- footer : réduit à 46px pour rester dans les marges 70px -->
-    <text x="618" y="595" font-size="46" font-weight="800" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.02em">Crédit de 25$</text>
+    <text x="618" y="595" font-size="46" font-weight="800" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.02em">Crédit de 25 $</text>
   </g>
 </svg>
