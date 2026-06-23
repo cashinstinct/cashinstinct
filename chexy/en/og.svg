@@ -4,31 +4,33 @@
       <stop offset="0%" stop-color="#1c0e42"/>
       <stop offset="100%" stop-color="#c4248f"/>
     </linearGradient>
-    <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.28"/>
+    <filter id="cardshadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="20" flood-color="#000000" flood-opacity="0.30"/>
     </filter>
   </defs>
 
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect x="0" y="0" width="16" height="630" fill="#ffffff" fill-opacity="0.30"/>
+  <rect x="0" y="0" width="18" height="630" fill="#ffffff" fill-opacity="0.30"/>
 
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
 
-    <!-- Suréligne -->
-    <text x="616" y="118" font-size="36" font-weight="800" fill="#ffffff" fill-opacity="0.82" letter-spacing="0.16em">PAY RENT, TAXES &amp; BILLS BY CARD</text>
+    <!-- Suréligne — agrandie -->
+    <text x="618" y="108" font-size="42" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.14em">PAY RENT, TAXES &amp; BILLS BY CARD</text>
 
-    <!-- Marque -->
-    <text x="616" y="232" font-size="120" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">CHEXY</text>
-    <text x="616" y="292" font-size="44" font-weight="700" fill="#ffffff" fill-opacity="0.90" letter-spacing="0.10em">REFERRAL LINK</text>
+    <!-- Marque — CHEXY dominant -->
+    <text x="618" y="248" font-size="150" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">CHEXY</text>
 
-    <!-- HÉROS : capsule blanche opaque, $20 en magenta foncé, ultra net en miniature -->
-    <g transform="translate(616, 470)" filter="url(#cardshadow)">
-      <rect x="-340" y="-78" width="680" height="156" rx="78" fill="#ffffff"/>
-      <text x="0" y="30" font-size="92" font-weight="900" fill="#c4248f" letter-spacing="0.01em">GET $20</text>
+    <!-- Sous-marque — plus grosse, remonte pour combler le vide -->
+    <text x="618" y="320" font-size="54" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.10em">REFERRAL LINK</text>
+
+    <!-- HÉROS : capsule blanche opaque, GET $20 magenta, agrandie -->
+    <g transform="translate(618, 460)" filter="url(#cardshadow)">
+      <rect x="-380" y="-86" width="760" height="172" rx="86" fill="#ffffff"/>
+      <text x="0" y="34" font-size="104" font-weight="900" fill="#c4248f" letter-spacing="0.01em">GET $20</text>
     </g>
 
-    <!-- Sous-ligne de soutien -->
-    <text x="616" y="600" font-size="32" font-weight="700" fill="#ffffff" fill-opacity="0.86" letter-spacing="0.02em">on your first payment · earn card points</text>
+    <!-- Sous-ligne bénéfice — agrandie -->
+    <text x="618" y="600" font-size="38" font-weight="700" fill="#ffffff" fill-opacity="0.88" letter-spacing="0.02em">on your first payment · earn card points</text>
 
   </g>
 </svg>
