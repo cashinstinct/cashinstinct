@@ -1,34 +1,35 @@
 <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- gradient Tangerine : 2 stops (coin haut-gauche -> bas-droite) -->
+    <!-- gradient marque Tangerine (orange) : coin haut-gauche -> bas-droite -->
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#ff8a3d"/>
       <stop offset="100%" stop-color="#ed6a00"/>
     </linearGradient>
-    <!-- ombre portée des capsules -->
+    <!-- ombre portée capsules héros -->
     <filter id="cardshadow" x="-25%" y="-25%" width="150%" height="150%">
       <feDropShadow dx="0" dy="10" stdDeviation="20" flood-color="#000000" flood-opacity="0.30"/>
     </filter>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <!-- barre latérale 18px (largeur gabarit v3 — ne pas réduire) -->
+  <!-- barre latérale 18px (gabarit v3) -->
   <rect x="0" y="0" width="18" height="630" fill="#ffffff" fill-opacity="0.30"/>
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
-    <!-- overline : décrit la CONDITION réelle de la Clé Orange (pas le type de comptes) ; "sans dépôt de paie" = différenciateur vs promo chèque 250 $ -->
-    <text x="618" y="92" font-size="37" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.08em">ÉPARGNE · SANS DÉPÔT DE PAIE</text>
-    <!-- marque : 116px (nom long TANGERINE, descendu sous 150) -->
-    <text x="618" y="200" font-size="116" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">TANGERINE</text>
+    <!-- overline : précise compte chèque OU épargne (le 50$ marche pour les deux ; le 250$ promo chèque+paie est séparé, pas dans cette image) -->
+    <text x="618" y="92" font-size="34" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.08em">COMPTE CHÈQUE OU ÉPARGNE</text>
+    <!-- marque : 118px, garder TANGERINE seul (pas "BANQUE") -> déborde des marges 70px à cette taille -->
+    <text x="618" y="200" font-size="118" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">TANGERINE</text>
     <!-- sous-marque -->
-    <text x="618" y="262" font-size="44" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.06em">CLÉ ORANGE (PARRAINAGE)</text>
-    <!-- HÉROS = bénéfice 50 $ : capsule BLANCHE OPAQUE (jamais fill-opacity ; x = -width/2). MONTANT = 50 $ (Clé Orange), PAS 250 $ (promo chèque, autre bonus). Ne pas mélanger. -->
+    <text x="618" y="262" font-size="42" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.06em">CLÉ ORANGE (PARRAINAGE)</text>
+    <!-- CAPSULE 1 (bénéfice) : BLANCHE OPAQUE, jamais fill-opacity ; largeur 700, x = -350 -->
     <g transform="translate(618, 378)" filter="url(#cardshadow)">
-      <rect x="-340" y="-58" width="680" height="116" rx="58" fill="#ffffff"/>
-      <text x="0" y="24" font-size="70" font-weight="900" fill="#ed6a00" letter-spacing="0.01em">PRIME DE 50 $</text>
+      <rect x="-350" y="-58" width="700" height="116" rx="58" fill="#ffffff"/>
+      <text x="0" y="22" font-size="68" font-weight="900" fill="#ed6a00" letter-spacing="0.01em">BONI DE 50 $</text>
     </g>
-    <!-- CODE en 2e capsule, BLANCHE OPAQUE aussi (code = info à copier, doit être lisible en miniature) ; grossi à 76px ; x = -width/2 -->
+    <!-- CAPSULE 2 (code héros) : BLANCHE OPAQUE, même largeur 700 pour alignement ;
+         code 10 car. -> 90px = plafond avant de toucher les bords internes de la capsule -->
     <g transform="translate(618, 530)" filter="url(#cardshadow)">
-      <rect x="-340" y="-62" width="680" height="124" rx="62" fill="#ffffff"/>
-      <text x="0" y="26" font-size="76" font-weight="900" fill="#ed6a00" letter-spacing="0.04em">14130944S1</text>
+      <rect x="-350" y="-58" width="700" height="116" rx="58" fill="#ffffff"/>
+      <text x="0" y="26" font-size="90" font-weight="900" fill="#ed6a00" letter-spacing="0.02em">14130944S1</text>
     </g>
   </g>
 </svg>
