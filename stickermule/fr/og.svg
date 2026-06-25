@@ -1,9 +1,11 @@
 <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- gradient marque StickerMule (orange) -->
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#ff7a1a"/>
       <stop offset="100%" stop-color="#e8410a"/>
     </linearGradient>
+    <!-- ombre portée capsules héros -->
     <filter id="cardshadow" x="-25%" y="-25%" width="150%" height="150%">
       <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.28"/>
     </filter>
@@ -16,20 +18,19 @@
     <text x="618" y="118" font-size="36" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.10em">STICKERS CUSTOM &amp; PLUS</text>
     <!-- marque : 92px, nom long "STICKER MULE" (validé : tient au crop Reddit 7%) -->
     <text x="618" y="226" font-size="92" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">STICKER MULE</text>
-    <!-- sous-marque -->
-    <text x="618" y="284" font-size="42" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.08em">CODE DE PARRAINAGE</text>
-
-    <!-- CAPSULE 1 = BÉNÉFICE (héros, en évidence). Largeur 780px = règle 7. x = -390 -->
+    <!-- sous-marque : 50px (standard gabarit pour marque ~90-118px ; 42px était sous-dimensionné) -->
+    <text x="618" y="288" font-size="50" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.06em">CODE DE PARRAINAGE</text>
+    <!-- CAPSULE 1 = BÉNÉFICE. Largeur 780px = règle 7 (code long en capsule 2). x = -390 ;
+         hauteur 116 / rx 58 = standard gabarit, IDENTIQUE à la capsule 2 -->
     <g transform="translate(618, 388)" filter="url(#cardshadow)">
       <rect x="-390" y="-58" width="780" height="116" rx="58" fill="#ffffff"/>
       <text x="0" y="20" font-size="60" font-weight="900" fill="#e8410a" letter-spacing="0.01em">CRÉDIT 12,50 $ CAD</text>
     </g>
-
-    <!-- CAPSULE 2 = CODE, même largeur 780px, alignée sous la capsule bénéfice -->
-    <g transform="translate(618, 518)" filter="url(#cardshadow)">
-      <rect x="-390" y="-50" width="780" height="100" rx="50" fill="#ffffff"/>
-      <!-- code long (12 car.) -> 64px pour tenir dans 780px sans déborder -->
-      <text x="0" y="20" font-size="64" font-weight="900" fill="#e8410a" letter-spacing="0.01em">CASHINSTINCT</text>
+    <!-- CAPSULE 2 = CODE. Mêmes largeur/hauteur/rx que capsule 1 (780/116/58) pour alignement uniforme ;
+         code long (12 car.) -> 64px pour tenir dans 780px sans déborder -->
+    <g transform="translate(618, 520)" filter="url(#cardshadow)">
+      <rect x="-390" y="-58" width="780" height="116" rx="58" fill="#ffffff"/>
+      <text x="0" y="22" font-size="64" font-weight="900" fill="#e8410a" letter-spacing="0.01em">CASHINSTINCT</text>
     </g>
   </g>
 </svg>
