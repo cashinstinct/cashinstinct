@@ -1,11 +1,9 @@
 <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- gradient de marque EBOX : rouge -->
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#c93b36"/>
       <stop offset="100%" stop-color="#a02824"/>
     </linearGradient>
-    <!-- ombre portée des capsules héros -->
     <filter id="cardshadow" x="-25%" y="-25%" width="150%" height="150%">
       <feDropShadow dx="0" dy="10" stdDeviation="20" flood-color="#000000" flood-opacity="0.30"/>
     </filter>
@@ -14,25 +12,24 @@
   <!-- barre latérale 18px (gabarit v3) -->
   <rect x="0" y="0" width="18" height="630" fill="#ffffff" fill-opacity="0.30"/>
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
-    <!-- hexagone EBOX (logo simplifié) : y=95 pour respirer en haut (marge verticale correcte) -->
-    <g transform="translate(618, 95)">
+    <!-- logo hexagone -->
+    <g transform="translate(618, 75)">
       <path d="M-32 -16 L-32 16 L0 32 L32 16 L32 -16 L0 -32 Z" fill="none" stroke="#ffffff" stroke-width="9" stroke-linejoin="round"/>
       <path d="M-16 -8 L-16 8 L0 16 L16 8 L16 -8 L0 -16 Z" fill="none" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
     </g>
     <!-- marque -->
-    <text x="618" y="205" font-size="108" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">EBOX</text>
-    <!-- sous-marque -->
-    <text x="618" y="266" font-size="42" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.08em">REFERRAL CODE</text>
-    <!-- CAPSULE 1 (bénéfice) : BLANCHE OPAQUE, largeur 700, x = -350 -->
-    <g transform="translate(618, 392)" filter="url(#cardshadow)">
+    <text x="618" y="195" font-size="108" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">EBOX</text>
+    <!-- sous-marque : 70px (au-dessus du standard 54px pour combler le vide vers la capsule) -->
+    <text x="618" y="270" font-size="70" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.06em">REFERRAL CODE</text>
+    <!-- CAPSULE 1 (bénéfice) : BLANCHE OPAQUE, jamais fill-opacity -->
+    <g transform="translate(618, 368)" filter="url(#cardshadow)">
       <rect x="-350" y="-58" width="700" height="116" rx="58" fill="#ffffff"/>
       <text x="0" y="22" font-size="72" font-weight="900" fill="#a02824" letter-spacing="0.01em">$25 CREDIT</text>
     </g>
-    <!-- CAPSULE 2 (code héros) : BLANCHE OPAQUE, même largeur 700 ;
-         code court (5 car.) → texte agrandi à 110px pour bien remplir la capsule -->
-    <g transform="translate(618, 544)" filter="url(#cardshadow)">
+    <!-- CAPSULE 2 (code héros) : BLANCHE OPAQUE ; code court -> 95px pour rester dans la capsule -->
+    <g transform="translate(618, 520)" filter="url(#cardshadow)">
       <rect x="-350" y="-58" width="700" height="116" rx="58" fill="#ffffff"/>
-      <text x="0" y="28" font-size="110" font-weight="900" fill="#a02824" letter-spacing="0.03em">GE911</text>
+      <text x="0" y="26" font-size="95" font-weight="900" fill="#a02824" letter-spacing="0.02em">GE911</text>
     </g>
   </g>
 </svg>
