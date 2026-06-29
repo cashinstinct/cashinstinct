@@ -66,7 +66,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#b0312d" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#bf2222" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f131a" />
 
   <!-- title unifié <60 chars, cohérent avec og:title -->
@@ -311,8 +311,8 @@
       --muted: #64748b;
       --border: #e2e8f0;
       --border-soft: #cbd5e1;
-      --accent: #b0312d;
-      --accent-dark: #1e40af;
+      --accent: #bf2222;
+      --accent-dark: #8a1818;
       --warning-bg: #fffbeb;
       --warning-text: #92400e;
       --warning-border: #f59e0b;
@@ -331,12 +331,15 @@
       --border: #2a3442;
       --border-soft: #2f3b4d;
       --accent: #ef4444;
-      --accent-dark: #60a5fa;
+      --accent-dark: #fca5a5;
       --warning-bg: #2a2111;
       --warning-text: #ffd98f;
       --warning-border: #f59e0b;
       --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
     }
+    [data-theme="dark"] .copy-btn,
+    [data-theme="dark"] main p a,
+    [data-theme="dark"] main li a { color: #f87171; }
 
     /* 2. RESET & STYLES DE BASE */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
