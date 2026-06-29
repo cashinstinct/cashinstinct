@@ -25,13 +25,13 @@
          hauteur 116 / rx 58 = standard gabarit, IDENTIQUE à la capsule 2 -->
     <g transform="translate(618, 388)" filter="url(#cardshadow)">
       <rect x="-390" y="-58" width="780" height="116" rx="58" fill="#ffffff"/>
-      <text x="0" y="22" font-size="76" font-weight="900" fill="#e8410a" letter-spacing="0.01em">$10 USD CREDIT</text>
+      <text x="0" y="22" font-size="76" font-weight="900" fill="#d9410a" letter-spacing="0.01em">$10 USD CREDIT</text>
     </g>
     <!-- CAPSULE 2 = CODE. Mêmes largeur/hauteur/rx que capsule 1 (780/116/58) pour alignement uniforme ;
          code long (12 car.) -> 64px pour tenir dans 780px sans déborder -->
     <g transform="translate(618, 520)" filter="url(#cardshadow)">
       <rect x="-390" y="-58" width="780" height="116" rx="58" fill="#ffffff"/>
-      <text x="0" y="22" font-size="64" font-weight="900" fill="#e8410a" letter-spacing="0.01em">CASHINSTINCT</text>
+      <text x="0" y="22" font-size="64" font-weight="900" fill="#d9410a" letter-spacing="0.01em">CASHINSTINCT</text>
     </g>
   </g>
 </svg>
