@@ -1,10 +1,10 @@
 <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
   <title>StickerMule referral offer - $10 USD credit with code CASHINSTINCT</title>
   <defs>
-    <!-- gradient marque StickerMule (orange) -->
+    <!-- gradient marque StickerMule : ancré sur #F97803 officiel en bas -->
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#ff8c24"/>
-     <stop offset="100%" stop-color="#f97803"/>
+      <stop offset="100%" stop-color="#f97803"/>
     </linearGradient>
     <!-- ombre portée capsules héros -->
     <filter id="cardshadow" x="-25%" y="-25%" width="150%" height="150%">
@@ -12,24 +12,22 @@
     </filter>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <!-- barre latérale 18px (gabarit v3) -->
-  <rect x="0" y="0" width="18" height="630" fill="#ffffff" fill-opacity="0.30"/>
+  <!-- barre latérale 18px (gabarit v3) : opacité 0.45 pour être visible sur fond orange -->
+  <rect x="0" y="0" width="18" height="630" fill="#ffffff" fill-opacity="0.45"/>
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
-    <!-- overline -->
-    <text x="618" y="118" font-size="36" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.10em">CUSTOM STICKERS &amp; MORE</text>
-    <!-- marque : 92px, nom long "STICKER MULE" (validé : tient au crop Reddit 7%) -->
-    <text x="618" y="226" font-size="92" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">STICKER MULE</text>
-    <!-- sous-marque : 50px (standard gabarit pour marque ~90-118px ; 42px était sous-dimensionné) -->
-    <text x="618" y="288" font-size="50" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.07em">REFERRAL CODE</text>
-    <!-- CAPSULE 1 = BÉNÉFICE. Largeur 780px = règle 7 (code long en capsule 2). x = -390 ;
-         hauteur 116 / rx 58 = standard gabarit, IDENTIQUE à la capsule 2 -->
-    <g transform="translate(618, 388)" filter="url(#cardshadow)">
+    <!-- overline : descendu de 118 -> 132 (meilleur centrage vertical du bloc) -->
+    <text x="618" y="132" font-size="36" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.10em">CUSTOM STICKERS &amp; MORE</text>
+    <!-- marque : 84px + letter-spacing -0.02em (marge de sécurité au crop Reddit ; 92px touchait les bords) -->
+    <text x="618" y="238" font-size="84" font-weight="900" fill="#ffffff" letter-spacing="-0.02em">STICKER MULE</text>
+    <!-- sous-marque : 50px, descendue à 300 pour combler le vide sous la marque -->
+    <text x="618" y="300" font-size="50" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.07em">REFERRAL CODE</text>
+    <!-- CAPSULE 1 = BÉNÉFICE. 780/116/58 standard ; descendue 388 -> 408 pour centrer le duo de capsules -->
+    <g transform="translate(618, 408)" filter="url(#cardshadow)">
       <rect x="-390" y="-58" width="780" height="116" rx="58" fill="#ffffff"/>
       <text x="0" y="22" font-size="76" font-weight="900" fill="#d9410a" letter-spacing="0.01em">$10 USD CREDIT</text>
     </g>
-    <!-- CAPSULE 2 = CODE. Mêmes largeur/hauteur/rx que capsule 1 (780/116/58) pour alignement uniforme ;
-         code long (12 car.) -> 64px pour tenir dans 780px sans déborder -->
-    <g transform="translate(618, 520)" filter="url(#cardshadow)">
+    <!-- CAPSULE 2 = CODE. Mêmes dims que capsule 1 (780/116/58) ; descendue 520 -> 540 ; code long -> 64px -->
+    <g transform="translate(618, 540)" filter="url(#cardshadow)">
       <rect x="-390" y="-58" width="780" height="116" rx="58" fill="#ffffff"/>
       <text x="0" y="22" font-size="64" font-weight="900" fill="#d9410a" letter-spacing="0.01em">CASHINSTINCT</text>
     </g>
