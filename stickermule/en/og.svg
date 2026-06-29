@@ -1,10 +1,10 @@
 <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
   <title>StickerMule referral offer - $10 USD credit with code CASHINSTINCT</title>
   <defs>
-    <!-- gradient marque StickerMule : ancré sur #F97803 officiel en bas -->
+    <!-- gradient marque StickerMule (orange saturé : meilleur rendu au downscale Reddit/FB) -->
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ff8c24"/>
-      <stop offset="100%" stop-color="#f97803"/>
+      <stop offset="0%" stop-color="#ff7a1a"/>
+      <stop offset="100%" stop-color="#e8410a"/>
     </linearGradient>
     <!-- ombre portée capsules héros -->
     <filter id="cardshadow" x="-25%" y="-25%" width="150%" height="150%">
