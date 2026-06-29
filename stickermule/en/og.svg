@@ -3,8 +3,8 @@
   <defs>
     <!-- gradient marque StickerMule (orange) -->
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ff7a1a"/>
-      <stop offset="100%" stop-color="#e8410a"/>
+      <stop offset="0%" stop-color="#ff8c24"/>
+     <stop offset="100%" stop-color="#f97803"/>
     </linearGradient>
     <!-- ombre portée capsules héros -->
     <filter id="cardshadow" x="-25%" y="-25%" width="150%" height="150%">
