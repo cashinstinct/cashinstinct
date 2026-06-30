@@ -88,7 +88,7 @@
           "price": "20.00",
           "priceValidUntil": "2027-12-31",
           "availability": "https://schema.org/InStock",
-          "description": "20 $ de crédit Chexy au premier paiement complété dans l'application, en passant par le lien de parrainage exclusif. Bonus bidirectionnel, appliqué sur un paiement (pas un virement).",
+          "description": "20 $ de crédit Chexy au premier paiement complété, en passant par le lien de parrainage exclusif. Bonus bidirectionnel, appliqué sur un paiement (pas un virement).",
           "shippingDetails": {
             "@type": "OfferShippingDetails",
             "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "CAD" },
@@ -126,7 +126,7 @@
           {
             "@type": "Question",
             "name": "Y a-t-il un code de parrainage Chexy, ou faut-il un lien ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Le parrainage Chexy se fait par lien, pas par code : à la création de compte, il n'y a aucun champ pour saisir un code de parrainage. Vous devez vous inscrire via un lien de parrainage pour que les 20 $ soient attribués. Note : Chexy a bien une notion de « code promo », mais elle s'applique à une autre étape — au moment de finaliser un paiement, pour les clients existants — pas à la création du compte. Pour obtenir les 20 $ de bienvenue, passez par le lien de parrainage et complétez votre premier paiement dans l'application." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Le parrainage Chexy se fait par lien, pas par code : à la création de compte, il n'y a aucun champ pour saisir un code de parrainage. Vous devez vous inscrire via un lien de parrainage pour que les 20 $ soient attribués. Note : Chexy a bien une notion de « code promo », mais elle s'applique à une autre étape — au moment de finaliser un paiement, pour les clients existants — pas à la création du compte. Pour obtenir les 20 $ de bienvenue, passez par le lien de parrainage et complétez votre premier paiement." }
           },
           {
             "@type": "Question",
@@ -171,7 +171,7 @@
           {
             "@type": "Question",
             "name": "Comment recevoir le bonus de 20 $ de Chexy ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Téléchargez l'application mobile Chexy, créez un nouveau compte en passant par un lien de parrainage, puis créez et complétez votre premier paiement dans l'application. Une fois le paiement traité avec succès, le bonus de 20 $ est appliqué à votre compte et à celui du parrain. La condition clé : vous inscrire via le lien (il n'y a pas de code à entrer à l'inscription) et compléter le premier paiement dans l'application mobile, pas sur le site web." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Inscrivez-vous via le lien de parrainage (il n'y a pas de code à entrer à l'inscription), puis complétez votre premier paiement. Une fois le paiement traité avec succès, le bonus de 20 $ est appliqué à votre compte et à celui du parrain." }
           },
           {
             "@type": "Question",
@@ -186,7 +186,7 @@
           {
             "@type": "Question",
             "name": "Quand un parrainage Chexy est-il comptabilisé, et le bonus est-il instantané ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Pour obtenir le crédit de parrainage, votre filleul doit compléter un paiement — la simple inscription ne suffit pas. Le paiement est considéré comme complété quand : pour un virement Interac, il a été déposé ; pour un débit préautorisé (PAD), il a été retiré ; pour un Bill Pay, il a été envoyé. Le bonus n'est pas instantané : faire le paiement dans l'application ne le déclenche pas immédiatement, car le paiement reste en cours pendant quelques jours. Par exemple, une carte peut être chargée le 20 juin alors que le paiement n'est envoyé que le 25 juin ; les 20 $ n'apparaissent qu'une fois ce paiement complété. Seuls les parrainages de l'année civile en cours comptent vers votre statut." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Pour obtenir le crédit de parrainage, votre filleul doit compléter un paiement — la simple inscription ne suffit pas. Le paiement est considéré comme complété quand : pour un virement Interac, il a été déposé ; pour un débit préautorisé (PAD), il a été retiré ; pour un Bill Pay, il a été envoyé. Le bonus n'est pas instantané : compléter le paiement ne le déclenche pas immédiatement, car le paiement reste en cours pendant quelques jours. Par exemple, une carte peut être chargée le 20 juin alors que le paiement n'est envoyé que le 25 juin ; les 20 $ (pour vous et votre filleul) n'apparaissent qu'une fois ce paiement complété. Seuls les parrainages de l'année civile en cours comptent vers votre statut." }
           },
           {
             "@type": "Question",
@@ -215,8 +215,8 @@
           {
             "@type": "HowToStep",
             "position": 1,
-            "name": "Télécharger l'application Chexy et s'inscrire via le lien de parrainage",
-            "text": "Téléchargez l'application mobile Chexy et créez un nouveau compte en passant par le lien de parrainage. Il n'y a pas de code à entrer : l'attribution se fait par le lien. Le bonus de 20 $ exige une inscription dans l'application mobile.",
+            "name": "S'inscrire via le lien de parrainage",
+            "text": "Créez un nouveau compte Chexy en passant par le lien de parrainage. Il n'y a pas de code à entrer : l'attribution se fait par le lien.",
             "url": "https://cashinstinct.ca/chexy/fr/#howto-step-1"
           },
           {
@@ -566,11 +566,11 @@
         💳&nbsp;Activer mes 20&nbsp;$ sur Chexy
       </a>
       <p style="font-size:0.92rem; opacity:0.95; margin-top:14px; color:#fff;">
-        Sur ordinateur, le lien ouvre le site&nbsp;; sur mobile, il ouvre l'application Chexy. Aucun code à saisir — le parrainage est rattaché automatiquement.
+        Aucun code à saisir — le parrainage est rattaché automatiquement par le lien.
       </p>
     </div>
 
-    <p style="font-size:0.9rem; opacity:0.9; margin-top: 24px; color: #fff;">⚠️ Le premier paiement doit être complété <strong>dans l'application mobile</strong> pour débloquer les 20&nbsp;$ — de votre côté comme de celui du filleul.</p>
+    <p style="font-size:0.9rem; opacity:0.9; margin-top: 24px; color: #fff;">⚠️ Le bonus de 20&nbsp;$ se débloque une fois le <strong>premier paiement complété</strong> — de votre côté comme de celui du filleul.</p>
   </div>
 </header>
 
@@ -665,7 +665,7 @@
       </nav>
 
       <div class="ai-summary">
-        Le <strong>parrainage Chexy se fait par lien</strong> (il n'y a pas de code à saisir à l'inscription). En vous inscrivant via le lien et en complétant votre premier paiement dans l'application mobile, vous recevez <strong>20&nbsp;$ de crédit Chexy</strong> (et le parrain aussi — bonus bidirectionnel). Ce crédit n'est pas un virement&nbsp;: il s'applique en réduction d'un paiement que vous faites via Chexy.
+        Le <strong>parrainage Chexy se fait par lien</strong> (il n'y a pas de code à saisir à l'inscription). En vous inscrivant via le lien et en complétant votre premier paiement, vous recevez <strong>20&nbsp;$ de crédit Chexy</strong> (et le parrain aussi — bonus bidirectionnel). Ce crédit n'est pas un virement&nbsp;: il s'applique en réduction d'un paiement que vous faites via Chexy.
         <br><br>
         💳 <strong>À quoi sert Chexy&nbsp;:</strong> payer par carte de crédit des dépenses normalement impossibles à régler ainsi — <strong>taxes scolaires et municipales, Hydro-Québec, impôts (ARC et Revenu Québec), loyer, frais de scolarité</strong>. Vous payez par carte, le bénéficiaire reçoit un virement Interac normal. Frais&nbsp;: <strong>1,75&nbsp;%</strong> par transaction.
         <br><br>
@@ -728,7 +728,7 @@
         <h2>Comment payer ses taxes et factures par carte avec Chexy</h2>
 
         <div class="warning">
-          ⚠️ <strong>Règle critique&nbsp;:</strong> pour débloquer le bonus de 20&nbsp;$, inscrivez-vous via le <strong>lien de parrainage</strong> (il n'y a pas de code à entrer à la création du compte) et complétez votre <strong>premier paiement dans l'application mobile</strong>, pas sur le site web.
+          ⚠️ <strong>Règle critique&nbsp;:</strong> pour débloquer le bonus de 20&nbsp;$, inscrivez-vous via le <strong>lien de parrainage</strong> (il n'y a pas de code à entrer à la création du compte) et complétez votre <strong>premier paiement</strong>.
         </div>
 
         <div class="field-exact">
@@ -738,8 +738,8 @@
         <ol class="steps">
           <li id="howto-step-1">
             <div>
-              <h3>Télécharger l'app et s'inscrire via le lien de parrainage</h3>
-              <p>Téléchargez l'application mobile Chexy et créez un nouveau compte en passant par le <strong>lien de parrainage</strong>. Il n'y a pas de code à entrer&nbsp;: l'attribution se fait par le lien. Le bonus de 20&nbsp;$ exige une inscription dans l'application mobile.</p>
+              <h3>S'inscrire via le lien de parrainage</h3>
+              <p>Créez un nouveau compte Chexy en passant par le <strong>lien de parrainage</strong>. Il n'y a pas de code à entrer&nbsp;: l'attribution se fait par le lien.</p>
             </div>
           </li>
           <li id="howto-step-2">
@@ -804,7 +804,7 @@
           <strong>📌 Quand un parrainage est-il comptabilisé&nbsp;?</strong>
           Pour gagner le crédit, votre filleul doit <strong>compléter un paiement</strong> — s'inscrire ne suffit pas. Un paiement est considéré complété quand&nbsp;: le <strong>virement Interac</strong> a été déposé, le <strong>débit préautorisé (PAD)</strong> a été retiré, ou le <strong>Bill Pay</strong> a été envoyé. Seuls les parrainages de l'<strong>année civile en cours</strong> comptent vers votre statut.
           <br><br>
-          ⏳ <strong>Le bonus n'est pas instantané.</strong> Faire le paiement dans l'application ne suffit pas&nbsp;: il faut attendre que le paiement soit réellement <em>complété</em>, ce qui peut prendre quelques jours. Exemple&nbsp;: carte chargée le 20&nbsp;juin, mais paiement envoyé le 25&nbsp;juin — les 20&nbsp;$ (pour vous comme pour votre filleul) n'apparaissent qu'une fois ce paiement complété, pas au moment où la carte est chargée.
+          ⏳ <strong>Le bonus n'est pas instantané.</strong> Soumettre le paiement ne suffit pas&nbsp;: il faut attendre que le paiement soit réellement <em>complété</em>, ce qui peut prendre quelques jours. Exemple&nbsp;: carte chargée le 20&nbsp;juin, mais paiement envoyé le 25&nbsp;juin — les 20&nbsp;$ (pour vous comme pour votre filleul) n'apparaissent qu'une fois ce paiement complété, pas au moment où la carte est chargée.
         </div>
       </section>
 
@@ -877,7 +877,7 @@
             </tbody>
           </table>
         </div>
-        <p style="font-size: 0.85rem; color: var(--muted); margin-top: 8px;">Le répertoire des bénéficiaires est précis et varie&nbsp;: toutes les municipalités ne sont pas disponibles. Confirmez votre bénéficiaire dans l'application avant de planifier un paiement. Information en vigueur en juin&nbsp;2026.</p>
+        <p style="font-size: 0.85rem; color: var(--muted); margin-top: 8px;">Le répertoire des bénéficiaires est précis et varie&nbsp;: toutes les municipalités ne sont pas disponibles. Confirmez votre bénéficiaire dans Chexy avant de planifier un paiement. Information en vigueur en juin&nbsp;2026.</p>
       </section>
 
       <!-- === AVIS === -->
@@ -935,7 +935,7 @@
           <details>
             <summary id="faq-q1">Y a-t-il un code de parrainage Chexy, ou faut-il un lien&nbsp;?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q1">
-              <p>Le parrainage Chexy se fait <strong>par lien, pas par code</strong>&nbsp;: à la création de compte, il n'y a aucun champ pour saisir un code de parrainage. Vous devez vous inscrire via un lien de parrainage pour que les 20&nbsp;$ soient attribués. Note&nbsp;: Chexy a bien une notion de «&nbsp;code promo&nbsp;», mais elle s'applique à une autre étape — au moment de <strong>finaliser un paiement</strong>, pour les clients existants — pas à la création du compte. Pour obtenir les 20&nbsp;$ de bienvenue, passez par le lien de parrainage et complétez votre premier paiement dans l'application.</p>
+              <p>Le parrainage Chexy se fait <strong>par lien, pas par code</strong>&nbsp;: à la création de compte, il n'y a aucun champ pour saisir un code de parrainage. Vous devez vous inscrire via un lien de parrainage pour que les 20&nbsp;$ soient attribués. Note&nbsp;: Chexy a bien une notion de «&nbsp;code promo&nbsp;», mais elle s'applique à une autre étape — au moment de <strong>finaliser un paiement</strong>, pour les clients existants — pas à la création du compte. Pour obtenir les 20&nbsp;$ de bienvenue, passez par le lien de parrainage et complétez votre premier paiement.</p>
             </div>
           </details>
           <details>
@@ -989,7 +989,7 @@
           <details>
             <summary id="faq-q10">Comment recevoir le bonus de 20&nbsp;$ de Chexy&nbsp;?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q10">
-              <p>Téléchargez l'application mobile Chexy, créez un nouveau compte en passant par un <strong>lien de parrainage</strong>, puis créez et complétez votre premier paiement dans l'application. Une fois le paiement traité avec succès, le bonus de 20&nbsp;$ est appliqué à votre compte et à celui du parrain. La condition clé&nbsp;: vous inscrire via le lien (il n'y a pas de code à entrer à l'inscription) et compléter le premier paiement dans l'application mobile, pas sur le site web.</p>
+              <p>Inscrivez-vous via le <strong>lien de parrainage</strong> (il n'y a pas de code à entrer à l'inscription), puis complétez votre premier paiement. Une fois le paiement traité avec succès, le bonus de 20&nbsp;$ est appliqué à votre compte et à celui du parrain.</p>
             </div>
           </details>
           <details>
@@ -1007,7 +1007,7 @@
           <details>
             <summary id="faq-q13">Quand un parrainage Chexy est-il comptabilisé, et le bonus est-il instantané&nbsp;?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q13">
-              <p>Pour obtenir le crédit de parrainage, votre filleul doit <strong>compléter un paiement</strong> — la simple inscription ne suffit pas. Le paiement est considéré comme complété quand&nbsp;: pour un <strong>virement Interac</strong>, il a été déposé&nbsp;; pour un <strong>débit préautorisé (PAD)</strong>, il a été retiré&nbsp;; pour un <strong>Bill Pay</strong>, il a été envoyé. Le bonus n'est <strong>pas instantané</strong>&nbsp;: faire le paiement dans l'application ne le déclenche pas immédiatement, car le paiement reste «&nbsp;en cours&nbsp;» pendant quelques jours. Par exemple, une carte peut être chargée le 20&nbsp;juin alors que le paiement n'est envoyé que le 25&nbsp;juin&nbsp;; les 20&nbsp;$ (pour vous et votre filleul) n'apparaissent qu'une fois ce paiement complété. Seuls les parrainages de l'année civile en cours comptent vers votre statut.</p>
+              <p>Pour obtenir le crédit de parrainage, votre filleul doit <strong>compléter un paiement</strong> — la simple inscription ne suffit pas. Le paiement est considéré comme complété quand&nbsp;: pour un <strong>virement Interac</strong>, il a été déposé&nbsp;; pour un <strong>débit préautorisé (PAD)</strong>, il a été retiré&nbsp;; pour un <strong>Bill Pay</strong>, il a été envoyé. Le bonus n'est <strong>pas instantané</strong>&nbsp;: compléter le paiement ne le déclenche pas immédiatement, car le paiement reste «&nbsp;en cours&nbsp;» pendant quelques jours. Par exemple, une carte peut être chargée le 20&nbsp;juin alors que le paiement n'est envoyé que le 25&nbsp;juin&nbsp;; les 20&nbsp;$ (pour vous et votre filleul) n'apparaissent qu'une fois ce paiement complété. Seuls les parrainages de l'année civile en cours comptent vers votre statut.</p>
             </div>
           </details>
           <details>
@@ -1039,11 +1039,11 @@
       <!-- === CTA === -->
       <div class="cta-section">
         <h2>Prêt à payer vos factures par carte&nbsp;?</h2>
-        <p>Inscrivez-vous via mon <strong>lien de parrainage</strong>, complétez votre premier paiement dans l'application et recevez <strong>20&nbsp;$ de crédit Chexy</strong>. Aucun code à entrer.</p>
+        <p>Inscrivez-vous via mon <strong>lien de parrainage</strong>, complétez votre premier paiement et recevez <strong>20&nbsp;$ de crédit Chexy</strong>. Aucun code à entrer.</p>
         <a class="btn" href="https://app.chexy.co?ref=86GwJRXw20iY52PmYweG" target="_blank" rel="noopener sponsored noreferrer">
           💳 Activer mes 20&nbsp;$ sur Chexy
         </a>
-        <p style="font-size:0.85rem; color:var(--muted); margin-top:14px;">Sur ordinateur, le lien ouvre le site&nbsp;; sur mobile, l'application.</p>
+        <p style="font-size:0.85rem; color:var(--muted); margin-top:14px;">Aucun code à saisir : le parrainage passe par le lien.</p>
       </div>
 
       <div class="transparency">
