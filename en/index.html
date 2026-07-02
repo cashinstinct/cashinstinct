@@ -75,7 +75,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "inLanguage": "en-CA",
         "datePublished": "2026-06-12",
-        "dateModified": "2026-06-12",
+        "dateModified": "2026-07-01",
         "author":    { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization" },
         "mainEntity": {
@@ -557,7 +557,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
           <span class="lbl">first program tracked</span>
         </div>
         <div class="stat" role="listitem">
-          <span class="num"><span id="stats-month"></span></span>
+          <span class="num"><span id="stats-month">July</span></span>
           <span class="lbl">last updated</span>
         </div>
       </div>
@@ -581,7 +581,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
               <strong>$25 credit</strong> on your second EBOX bill with referral code <strong>GE911</strong>.
             </p>
             <div class="link-meta">
-              <span class="verified">Verified <span class="verif-month"></span></span> · full details, conditions and promo screenshot on the dedicated page.
+              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · full details, conditions and promo screenshot on the dedicated page.
             </div>
           </div>
         </div>
@@ -600,7 +600,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
               <strong>$10 USD promo credit ($12.50 CAD)</strong> when you sign up via our official invite link or use referral code <strong>CASHINSTINCT</strong> on any first custom sticker order of $30 USD or more.
             </p>
             <div class="link-meta">
-              <span class="verified">Verified <span class="verif-month"></span></span> · currency breakdown and full activation guide on the dedicated page.
+              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · currency breakdown and full activation guide on the dedicated page.
             </div>
           </div>
 
@@ -616,7 +616,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
               <strong>1 free month</strong> of printing with referral code <strong>SVdn7</strong>. Compatible with most recent HP printers in Canada.
             </p>
             <div class="link-meta">
-              <span class="verified">Verified <span class="verif-month"></span></span> · step-by-step tutorial + subscription FAQ on the dedicated page.
+              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · step-by-step tutorial + subscription FAQ on the dedicated page.
             </div>
           </div>
         </div>
@@ -635,7 +635,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
               <strong>$20 cashback</strong> via the referral link. Pay your <strong>property tax, Hydro bills and income taxes</strong> by credit card to earn points. No code to enter — sign-up is through a link.
             </p>
             <div class="link-meta">
-              <span class="verified">Verified <span class="verif-month"></span></span> · 1.75% fee, worth-it math, status tiers and FAQ on the dedicated page.
+              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · 1.75% fee, worth-it math, status tiers and FAQ on the dedicated page.
             </div>
           </div>
 
@@ -651,7 +651,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
                <strong>$50 welcome bonus</strong> with Orange Key <strong>14130944S1</strong> when opening a Tangerine chequing or savings account. No-fee online banking.
             </p>
             <div class="link-meta">
-              <span class="verified">Verified <span class="verif-month"></span></span> · conditions, bonus timeline and activation steps on the dedicated page.
+              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · conditions, bonus timeline and activation steps on the dedicated page.
             </div>
           </div>
 
@@ -719,7 +719,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
     </main>
 
     <footer>
-      <p>© 2026 Cashinstinct — Personal selection of referral codes for Canada. Last update : <span id="footer-date"></span>.</p>
+      <p>© 2026 Cashinstinct — Personal selection of referral codes for Canada. Last update : <span id="footer-date">July 2026</span>.</p>
       <p>
         Links are affiliate-based: you get the benefit (discount, free month, cashback or bonus),
         and I receive a referral reward in return.
@@ -743,61 +743,13 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
   </div>
 
  
-<script>
-  // ── SCRIPT UNIVERSEL : DATES DYNAMIQUES & JSON-LD dateModified ──
-  (function() {
-    var now = new Date();
-    var lang = document.documentElement.lang || "fr-CA";
-    
-    // 1. Format Court (ex: "Juin 2026")
-    var footerDate = document.getElementById("footer-date");
-    if (footerDate) {
-      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
-      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-    }
-
-    // 1b. Current month for stats bar + "Verified" markers
-    var monthName = now.toLocaleDateString(lang, { month: "long" });
-    var monthCap = monthName.charAt(0).toUpperCase() + monthName.slice(1);
-    var monthYear = monthCap + " " + now.getFullYear();
-    var statsMonth = document.getElementById("stats-month");
-    if (statsMonth) { statsMonth.textContent = monthCap; }
-    document.querySelectorAll(".verif-month").forEach(function(el) {
-      el.textContent = monthYear;
-    });
-    
-    // 2. Format Long localisé (ex: "12 juin 2026")
-    var trustDate = document.getElementById("trust-date");
-    if (trustDate) {
-      var options = lang.startsWith("fr") 
-        ? { day: "numeric", month: "long", year: "numeric" }
-        : { month: "long", day: "numeric", year: "numeric" };
-      
-      trustDate.textContent = now.toLocaleDateString(lang, options);
-      if (trustDate.tagName === "TIME") {
-        trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-      }
-    }
-
-    // 3. Mise à jour automatique du JSON-LD dateModified (Compatible WebPage & CollectionPage)
-    try {
-      var today = now.toISOString().slice(0, 10);
-      var ldJson = document.querySelector('script[type="application/ld+json"]');
-      if (ldJson) {
-        var data = JSON.parse(ldJson.textContent);
-        if (data && data["@graph"]) {
-          var pageNode = data["@graph"].find(function(n) { 
-            return n["@type"] === "WebPage" || n["@type"] === "CollectionPage"; 
-          });
-          if (pageNode) {
-            pageNode.dateModified = today;
-            ldJson.textContent = JSON.stringify(data);
-          }
-        }
-      }
-    } catch(e) {}
-  })();
-</script>
+<!-- STATIC DATES — INTENTIONAL (fix 2026-07-02). The old "SCRIPT UNIVERSEL" JS block
+     rewrote dateModified live in the DOM on every load (violated the v2026 rule:
+     dateModified hardcoded, never injected via JS) and left footer-date/stats-month/
+     verif-month empty for any client without JS execution (Reddit in-app browsers,
+     some crawlers). The 5 "Verified" spans, stats-month and footer-date are now
+     hardcoded above — update manually to match dateModified on each push. Do not
+     reintroduce a script that mutates JSON-LD at runtime. -->
 
 
   <script>
