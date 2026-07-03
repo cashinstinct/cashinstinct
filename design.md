@@ -163,17 +163,15 @@ Badge "code copié", carte programme homepage, FAQ accordion — pas extraits,
 Pas de règle unique claire — 8px/12px dominent, cohérent avec les composants
 ci-dessus.
 
-## Angles morts / à trancher
+## Nice to have** — `--radius` en variable n'existe que sur homepage.
+
+Pages programmes hardcodent `8px`/`12px` en dur. Pas de action requise, à
+  généraliser en variable la prochaine fois que tu repasses sur une page
+  programme (pas une passe dédiée).
+  
+## Historique
 
 - ✅ **Résolu (2026-07-02)** — `--blue`/`--blue-contrast` renommés en
   `--accent`/`--accent-dark` sur homepage FR/EN, uniforme avec les programmes.
-- **Nice to have** — `--radius` en variable n'existe que sur homepage. Pages
-  programmes hardcodent `8px`/`12px` en dur. Pas de action requise, à
-  généraliser en variable la prochaine fois que tu repasses sur une page
-  programme (pas une passe dédiée).
 - ✅ **Complété (2026-07-02)** — les 8 programmes + homepage extraits. Doc
   fiable pour une nouvelle page.
-- **Nouveau, pas encore tranché** : bug couleur EBOX (`--accent-dark` bleu au
-  lieu d'une teinte rouge) et divergence de style `.cta-btn-hero` entre pages
-  anciennes/récentes — voir sections ci-dessus. Aucune action prise, en
-  attente de ta décision.
