@@ -1077,37 +1077,43 @@
 
   
   <!-- SCRIPTS -->
-    <!--
-  DATES — script pour pages FR
-  Le JS gère le format selon document.documentElement.lang à l'exécution : "19&nbsp;juin 2026".
+
+  <!--
+  DATES — AFFICHAGE VISUEL UNIQUEMENT (pourquoi ce script est bridé)
+  ────────────────────────────────────────────────────────────────
+  Ce script ne fait QU'UNE chose : rafraîchir le TEXTE visible des <time>
+  (footer-date, trust-date) au format localisé. Il ne DOIT PAS toucher
+  l'attribut datetime="" ni le dateModified du JSON-LD.
+
+  RAISON (anti-pattern "false freshness") :
+  Les attributs datetime="" et le dateModified sont les SIGNAUX DE DATE LUS
+  PAR GOOGLE. Si le JS les réécrit avec new Date() à chaque visite, la page
+  se re-date toute seule sans changement réel de contenu → fraîcheur bidon.
+  Google finit par ignorer/dévaluer le signal. Donc :
+    • datetime="" des <time>  → STATIQUE, baké au deploy (ici 2026-07-04)
+    • dateModified JSON-LD     → STATIQUE, édité À LA MAIN au vrai changement
+    • textContent des <time>   → OK de rafraîchir en JS (purement visuel)
+
+  Les lignes setAttribute("datetime", now.toISOString()) ont été RETIRÉES
+  pour cette raison. Ne PAS les réintroduire.
    -->
     <script>
-  // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
-  // Met à jour les <time> visibles (footer-date, trust-date) à la date du jour.
-  // NE TOUCHE PAS au JSON-LD : dateModified est codé EN DUR dans le <head> et
-  // ne doit refléter QUE la vraie dernière modification (à mettre à jour au push).
   (function() {
     var now = new Date();
     var lang = document.documentElement.lang || "fr-CA";
-    
-    // 1. Format court (ex: "juin 2026")
+
+    // Texte visible seulement — l'attribut datetime reste STATIQUE (voir commentaire).
     var footerDate = document.getElementById("footer-date");
     if (footerDate) {
       footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
-      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
     }
-    
-    // 2. Format long localisé (ex: "19 juin 2026")
+
     var trustDate = document.getElementById("trust-date");
     if (trustDate) {
-      var options = lang.startsWith("fr") 
+      var options = lang.startsWith("fr")
         ? { day: "numeric", month: "long", year: "numeric" }
         : { month: "long", day: "numeric", year: "numeric" };
-      
       trustDate.textContent = now.toLocaleDateString(lang, options);
-      if (trustDate.tagName === "TIME") {
-        trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-      }
     }
   })();
 </script>
