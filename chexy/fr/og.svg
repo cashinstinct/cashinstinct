@@ -14,8 +14,8 @@
 
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
 
-    <!-- Ligne supérieure passée à 36 pour équivalence avec l'anglais -->
-    <text x="618" y="106" font-size="36" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.08em">PAYEZ LOYER, TAXES &amp; FACTURES PAR CARTE</text>
+    <!-- Ligne supérieure ramenée à 32 pour absorber les 39 caractères -->
+    <text x="618" y="106" font-size="32" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.08em">PAYEZ LOYER, TAXES &amp; FACTURES PAR CARTE</text>
 
     <!-- Marque -->
     <text x="618" y="248" font-size="150" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">CHEXY</text>
@@ -29,7 +29,7 @@
       <text x="0" y="34" font-size="104" font-weight="900" fill="#c4248f" letter-spacing="0.01em">OBTENEZ 20 $</text>
     </g>
 
-    <!-- Ligne inférieure réduite à 34 pour absorber les 47 caractères et éviter le recadrage -->
+    <!-- Ligne inférieure maintenue à 34 pour éviter le recadrage -->
     <text x="618" y="600" font-size="34" font-weight="700" fill="#ffffff" fill-opacity="0.88" letter-spacing="0.02em">à votre premier paiement · accumulez des points</text>
 
   </g>
