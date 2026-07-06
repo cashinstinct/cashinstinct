@@ -14,18 +14,23 @@
 
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
 
-    <text x="618" y="106" font-size="32" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.08em">PAYEZ LOYER, TAXES &amp; FACTURES PAR CARTE</text>
+    <!-- Ligne supérieure passée à 36 pour équivalence avec l'anglais -->
+    <text x="618" y="106" font-size="36" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.08em">PAYEZ LOYER, TAXES &amp; FACTURES PAR CARTE</text>
 
+    <!-- Marque -->
     <text x="618" y="248" font-size="150" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">CHEXY</text>
 
+    <!-- Sous-marque -->
     <text x="618" y="320" font-size="54" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.08em">LIEN DE PARRAINAGE</text>
 
+    <!-- Capsule élargie -->
     <g transform="translate(618, 460)" filter="url(#cardshadow)">
       <rect x="-400" y="-86" width="800" height="172" rx="86" fill="#ffffff"/>
       <text x="0" y="34" font-size="104" font-weight="900" fill="#c4248f" letter-spacing="0.01em">OBTENEZ 20 $</text>
     </g>
 
-    <text x="618" y="600" font-size="38" font-weight="700" fill="#ffffff" fill-opacity="0.88" letter-spacing="0.02em">à votre premier paiement · accumulez des points</text>
+    <!-- Ligne inférieure réduite à 34 pour absorber les 47 caractères et éviter le recadrage -->
+    <text x="618" y="600" font-size="34" font-weight="700" fill="#ffffff" fill-opacity="0.88" letter-spacing="0.02em">à votre premier paiement · accumulez des points</text>
 
   </g>
 </svg>
