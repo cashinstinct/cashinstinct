@@ -14,8 +14,8 @@
 
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
 
-    <!-- Suréligne -->
-    <text x="618" y="108" font-size="36" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.08em">PAY RENT, TAXES &amp; BILLS BY CARD</text>
+    <!-- Suréligne largeur ok pour reddit -->
+    <text x="618" y="108" font-size="34" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.08em">PAY RENT, TAXES &amp; BILLS BY CARD</text>
 
     <!-- Marque — CHEXY dominant -->
     <text x="618" y="248" font-size="150" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">CHEXY</text>
