@@ -46,4 +46,4 @@ Si une offre n'est plus valide ou si vous avez une question, ouvrez une [issue](
 
 ---
 
-*Mis à jour : juin 2026*
+*Mis à jour : juillet 2026*
