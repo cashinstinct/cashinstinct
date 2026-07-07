@@ -314,12 +314,12 @@
       background: var(--bg);
     }
     img { max-width: 100%; height: auto; display: block; }
-    a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    a { color: var(--accent-text); text-decoration: none; font-weight: 600; }
     a:hover { text-decoration: underline; }
     code {
       font-family: "Courier New", Courier, monospace;
       background: var(--surface-soft);
-      color: var(--accent-dark);
+      color: var(--accent-text);
       padding: 2px 8px;
       border-radius: 4px;
       font-size: 0.97em;
@@ -359,9 +359,9 @@
     .nav { display: flex; gap: 12px; flex-wrap: nowrap; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     .nav::-webkit-scrollbar { display: none; }
     .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
-    .nav a:hover, .nav a.active { color: var(--accent); }
+    .nav a:hover, .nav a.active { color: var(--accent-text); }
     .nav a.nav-fr, .nav a.nav-en { font-size: 0.85rem; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted); }
-    .nav a.nav-en:hover { color: var(--accent); border-color: var(--accent); }
+    .nav a.nav-en:hover { color: var(--accent-text); border-color: var(--accent-text); }
     .theme-btn {
       background: var(--surface-muted); border: 1px solid var(--border); color: var(--text);
       cursor: pointer; font-size: 1rem; padding: 6px 12px; border-radius: 6px;
@@ -404,7 +404,7 @@
     .cumul-badge .plus { opacity: .8; font-size: .9em; margin: 0 2px; }
     .cumul-badge .total-pill {
       background: #fff;
-      color: var(--accent);
+      color: var(--accent-text);
       border-radius: 20px;
       padding: 4px 14px;
       font-size: .95rem;
@@ -474,7 +474,7 @@
       padding: 10px 14px; font-size: 0.95rem;
       border: 1px solid rgba(255,255,255,0.4);
     }
-    .cta-copy-btn.copied { background: #fff; color: var(--accent); }
+    .cta-copy-btn.copied { background: #fff; color: var(--accent-text); }
     .copy-status {
       display: block; min-height: 1.2em; font-size: 0.85rem;
       text-align: center; margin-top: 6px;
@@ -571,7 +571,7 @@
     }
     [data-theme="dark"] .cumul-box { background: rgba(255,122,26,0.08); }
     .cumul-box h3 {
-      font-size: 1.15rem; font-weight: 800; color: var(--accent);
+      font-size: 1.15rem; font-weight: 800; color: var(--accent-text);
       margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
     }
     .cumul-row {
@@ -583,7 +583,7 @@
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 8px; padding: 16px 12px;
     }
-    .cumul-item .amount { font-size: 1.6rem; font-weight: 900; color: var(--accent); display: block; }
+    .cumul-item .amount { font-size: 1.6rem; font-weight: 900; color: var(--accent-text); display: block; }
     .cumul-item .label { font-size: .95rem; color: var(--text-soft); display: block; margin-top: 6px; line-height: 1.5; }
     .cumul-sep { font-size: 1.6rem; font-weight: 900; color: var(--muted); }
     .cumul-total { border-color: #1a7a3c !important; }
@@ -635,7 +635,7 @@
     .review-box li { margin-bottom: 10px; }
     .trust-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.85rem; font-weight: 700; color: var(--accent);
+      font-size: 0.85rem; font-weight: 700; color: var(--accent-text);
       background: rgba(255,102,0,0.08); padding: 6px 12px;
       border-radius: 12px; margin-bottom: 16px;
     }
@@ -652,7 +652,7 @@
       background: var(--surface-soft); color: var(--text);
     }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; font-size: 1.4rem; font-weight: 300; color: var(--accent); flex-shrink: 0; margin-left: 12px; }
+    summary::after { content: "+"; font-size: 1.4rem; font-weight: 300; color: var(--accent-text); flex-shrink: 0; margin-left: 12px; }
     details[open] summary::after { content: "−"; }
     details[open] summary { border-bottom: 1px solid var(--border); }
     .faq-body { padding: 16px 20px; font-size: 0.97rem; color: var(--text-soft); background: var(--surface); }
@@ -667,10 +667,10 @@
     }
     .cta-section h2 { font-size: 1.6rem; margin-bottom: 12px; color: #fff; }
     .cta-section p { opacity: 0.95; margin-bottom: 24px; font-size: 1.05rem; color: #fff; }
-    .btn { display: inline-block; background: #fff; color: var(--accent); font-weight: 800; font-size: 1.05rem; padding: 14px 36px; border-radius: 8px; transition: opacity 0.15s; text-decoration: none; }
+    .btn { display: inline-block; background: #fff; color: var(--accent-text); font-weight: 800; font-size: 1.05rem; padding: 14px 36px; border-radius: 8px; transition: opacity 0.15s; text-decoration: none; }
     .btn:hover { opacity: 0.88; }
     .cta-code-row { margin-top: 16px; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .cta-code-pill { display: inline-block; background: rgba(255,255,255,0.97); color: var(--accent); font-family: "Courier New", Courier, monospace; font-weight: 900; letter-spacing: 0.04em; padding: 10px 14px; border-radius: 8px; }
+    .cta-code-pill { display: inline-block; background: rgba(255,255,255,0.97); color: var(--accent-text); font-family: "Courier New", Courier, monospace; font-weight: 900; letter-spacing: 0.04em; padding: 10px 14px; border-radius: 8px; }
 
     /* ============================================================
        16. VIDEO
@@ -748,7 +748,7 @@
       .sticky-mobile-cta .s-code { font-family: "Courier New", Courier, monospace; font-weight: 900; font-size: 1.1rem; letter-spacing: 0.06em; }
       .sticky-mobile-cta .s-label { font-size: 0.75rem; opacity: 0.85; }
       .sticky-mobile-cta .s-btn { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.4); color: #fff; font-weight: 800; font-size: 0.9rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
-      .sticky-mobile-cta .s-btn.copied { background: #fff; color: var(--accent); }
+      .sticky-mobile-cta .s-btn.copied { background: #fff; color: var(--accent-text); }
     }
 
     /* ============================================================
@@ -829,7 +829,7 @@
       
       <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 20px;">
+          <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-text); margin-bottom: 20px;">
           Étape 1 — Copier la Clé Orange
           </p>
           <div class="input-copy-group" style="display: flex; flex-direction: column; background: transparent; border: none; gap: 10px; margin-bottom: 12px; padding: 0;">
