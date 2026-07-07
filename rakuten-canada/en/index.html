@@ -1001,9 +1001,12 @@
       <nav class="footer-links" aria-label="Site links">
         <a href="https://cashinstinct.ca/ebox/en/">🌐 EBOX Internet</a>
         <a href="https://cashinstinct.ca/stickermule/en/">🏷️ Sticker Mule</a>
+        <a href="https://cashinstinct.ca/hp-instant-ink/en/">🖨️ HP Instant Ink</a>
+        <a href="https://cashinstinct.ca/chexy/en/">🏠 Chexy</a>
         <a href="https://cashinstinct.ca/tangerine/en/">🍊 Tangerine Bank</a>
-        <a href="https://cashinstinct.ca/swagbucks/en/">🔵 Swagbucks</a>
-        <a href="https://cashinstinct.ca/rakuten-canada/fr/">FR ↗ Version française</a>
+        <a href="https://cashinstinct.ca/achieva/en/">🌱 Achieva Financial</a>
+        <a href="https://cashinstinct.ca/swagbucks/en/">💙 Swagbucks</a>
+        <a href="https://cashinstinct.ca/rakuten-canada/fr/">🇫🇷 Version française</a>
       </nav>
     </div>
   </footer>
@@ -1019,39 +1022,30 @@
 
   
   <!-- SCRIPTS -->
-    <!--
-  DATES — script pour pages EN
-  Le JS gère le format selon document.documentElement.lang à l'exécution : "June 19, 2026". 
-   -->
 <script>
-  // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
-  // Met à jour les <time> visibles (footer-date, trust-date) à la date du jour.
-  // NE TOUCHE PAS au JSON-LD : dateModified est codé EN DUR dans le <head> et
-  // ne doit refléter QUE la vraie dernière modification (à mettre à jour au push).
-  (function() {
-    var now = new Date();
-    var lang = document.documentElement.lang || "en-CA";
-    
-    // 1. Format court (ex: "June 2026")
-    var footerDate = document.getElementById("footer-date");
-    if (footerDate) {
-      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
-      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-    }
-    
-    // 2. Format long localisé (ex: "June 18, 2026")
-    var trustDate = document.getElementById("trust-date");
-    if (trustDate) {
-      var options = lang.startsWith("fr") 
-        ? { day: "numeric", month: "long", year: "numeric" }
-        : { month: "long", day: "numeric", year: "numeric" };
-      
-      trustDate.textContent = now.toLocaleDateString(lang, options);
-      if (trustDate.tagName === "TIME") {
-        trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-      }
-    }
-  })();
+ // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
+// Met à jour le textContent des <time> visibles (footer-date, trust-date).
+// NE TOUCHE JAMAIS à l'attribut datetime ni au dateModified du JSON-LD :
+// ces signaux machine sont bakés EN DUR et ne reflètent que la vraie
+// dernière modification (à mettre à jour au push). Réécrire datetime en JS
+// = "false freshness" → Google dévalue le signal.
+(function() {
+  var now = new Date();
+  var lang = document.documentElement.lang || "fr-CA";
+
+  var footerDate = document.getElementById("footer-date");
+  if (footerDate) {
+    footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
+  }
+
+  var trustDate = document.getElementById("trust-date");
+  if (trustDate) {
+    var options = lang.startsWith("fr")
+      ? { day: "numeric", month: "long", year: "numeric" }
+      : { month: "long", day: "numeric", year: "numeric" };
+    trustDate.textContent = now.toLocaleDateString(lang, options);
+  }
+})();
 </script>
 
   <script>
