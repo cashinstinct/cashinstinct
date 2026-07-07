@@ -365,7 +365,10 @@
 
     img { max-width: 100%; height: auto; display: block; }
     a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+a:hover { text-decoration: underline; }
+
+/* Correction pour Lighthouse */
+p a, li a { text-decoration: underline; text-underline-offset: 2px; }
 
     /* ── SKIP NAV ── */
     .skip-nav {
