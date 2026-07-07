@@ -57,7 +57,7 @@
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-06-20",
-        "dateModified": "2026-06-22",
+        "dateModified": "2026-07-06",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
         "publisher": {
           "@type": "Organization",
@@ -672,7 +672,7 @@
         🧮 <strong>Quand c'est rentable&nbsp;:</strong> dès que votre carte rapporte plus que 1,75&nbsp;% en points ou remise, et surtout pour atteindre le seuil d'un <strong>bonus de bienvenue</strong> de carte de crédit avec des dépenses que vous payez de toute façon.
       </div>
 
-      <p style="font-size:0.8rem; color:var(--muted); margin:16px 0 24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-06-22">22&nbsp;juin 2026</time></p>
+      <p style="font-size:0.8rem; color:var(--muted); margin:16px 0 24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-07-06">6&nbsp;juillet 2026</time></p>
 
       <div class="transparency" style="margin-bottom: 24px;">
         <strong>Transparence&nbsp;:</strong> ce guide indépendant assure un suivi de parrainage. Si vous vous inscrivez à Chexy via mon lien de parrainage, vous obtenez votre bonus de 20&nbsp;$ (financé par Chexy) — et Chexy me verse aussi 20&nbsp;$, sans aucun coût supplémentaire pour vous. Divulgation complète au bas de cette page.
@@ -1070,46 +1070,49 @@
 <footer>
   <div class="container">
     <p>Site non affilié officiellement à Chexy. Les marques appartiennent à leurs propriétaires respectifs.</p>
-    <p style="margin-top:6px;">Lien de parrainage Chexy — Mis à jour&nbsp;: <time id="footer-date" datetime="2026-06-20">Juin 2026</time></p>
+    <p style="margin-top:6px;">Lien de parrainage Chexy — Mis à jour&nbsp;: <time id="footer-date" datetime="2026-07-06">Juillet 2026</time></p>
   </div>
 
   <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
-    <a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true"> · </span>
-    <a href="https://cashinstinct.ca/stickermule/fr/">Sticker Mule</a><span aria-hidden="true"> · </span>
-    <a href="https://cashinstinct.ca/hp-instant-ink/fr/">HP Instant Ink</a><span aria-hidden="true"> · </span>
-    <a href="https://cashinstinct.ca/tangerine/fr/">Banque Tangerine</a><span aria-hidden="true"> · </span>
-    <a href="https://cashinstinct.ca/chexy/fr/">Chexy</a><span aria-hidden="true"> · </span>
-    <a href="https://cashinstinct.ca/rakuten-canada/fr/">Rakuten Canada</a><span aria-hidden="true"> · </span>
-    <a href="https://cashinstinct.ca/swagbucks/fr/">Swagbucks</a>
+      <nav class="footer-links" aria-label="Liens du site">
+        <a href="https://cashinstinct.ca/ebox/fr/">🌐 EBOX Internet</a>
+        <a href="https://cashinstinct.ca/stickermule/fr/">🏷️ Sticker Mule</a>
+        <a href="https://cashinstinct.ca/hp-instant-ink/fr/">🖨️ HP Instant Ink</a>
+        <a href="https://cashinstinct.ca/tangerine/fr/">🍊 Banque Tangerine</a>
+        <a href="https://cashinstinct.ca/achieva/fr/">🌱 Achieva Financial</a>
+        <a href="https://cashinstinct.ca/rakuten-canada/fr/">🛍️ Rakuten Canada</a>
+        <a href="https://cashinstinct.ca/swagbucks/fr/">💙 Swagbucks</a>
+        <a href="https://cashinstinct.ca/chexy/en/">🇬🇧 English version</a>
+      </nav>
   </div>
 </footer>
 
 <!-- SCRIPTS -->
-<!--
-  DATES — script pour pages FR.
-  Le JS formate selon document.documentElement.lang à l'exécution → "20 juin 2026".
-  NE TOUCHE PAS au JSON-LD : dateModified est codé EN DUR dans le <head>.
--->
+
 <script>
-  (function() {
-    var now = new Date();
-    var lang = document.documentElement.lang || "fr-CA";
-    var footerDate = document.getElementById("footer-date");
-    if (footerDate) {
-      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
-      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-    }
-    var trustDate = document.getElementById("trust-date");
-    if (trustDate) {
-      var options = lang.startsWith("fr")
-        ? { day: "numeric", month: "long", year: "numeric" }
-        : { month: "long", day: "numeric", year: "numeric" };
-      trustDate.textContent = now.toLocaleDateString(lang, options);
-      if (trustDate.tagName === "TIME") {
-        trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-      }
-    }
-  })();
+// ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
+// Met à jour le textContent des <time> visibles (footer-date, trust-date).
+// NE TOUCHE JAMAIS à l'attribut datetime ni au dateModified du JSON-LD :
+// ces signaux machine sont bakés EN DUR et ne reflètent que la vraie
+// dernière modification (à mettre à jour au push). Réécrire datetime en JS
+// = "false freshness" → Google dévalue le signal.
+(function() {
+  var now = new Date();
+  var lang = document.documentElement.lang || "fr-CA";
+
+  var footerDate = document.getElementById("footer-date");
+  if (footerDate) {
+    footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
+  }
+
+  var trustDate = document.getElementById("trust-date");
+  if (trustDate) {
+    var options = lang.startsWith("fr")
+      ? { day: "numeric", month: "long", year: "numeric" }
+      : { month: "long", day: "numeric", year: "numeric" };
+    trustDate.textContent = now.toLocaleDateString(lang, options);
+  }
+})();
 </script>
 
 <!-- Calculatrice Chexy -->
