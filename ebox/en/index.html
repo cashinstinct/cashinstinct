@@ -1505,44 +1505,45 @@
     </div>
 
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
-      <a href="https://cashinstinct.ca/en/">Home</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/hp-instant-ink/en/">HP Instant Ink</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/tangerine/en/">Tangerine Bank</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/achieva/en/">Achieva Financial</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/rakuten-canada/en/">Rakuten Canada</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/swagbucks/en/">Swagbucks</a>
+  <nav class="footer-links" aria-label="Liens du site">
+        <a href="https://cashinstinct.ca/stickermule/en/">🏷️ Sticker Mule</a>
+        <a href="https://cashinstinct.ca/hp-instant-ink/en/">🖨️ HP Instant Ink</a>
+        <a href="https://cashinstinct.ca/chexy/en/">🏠 Chexy</a>
+        <a href="https://cashinstinct.ca/tangerine/en/">🍊 Tangerine Bank</a>
+        <a href="https://cashinstinct.ca/achieva/en/">🌱 Achieva Financial</a>
+        <a href="https://cashinstinct.ca/rakuten-canada/en/">🛍️ Rakuten Canada</a>
+        <a href="https://cashinstinct.ca/swagbucks/en/">💙 Swagbucks</a>
+        <a href="https://cashinstinct.ca/ebox/fr/">🇫🇷 Version française</a>
+      </nav>
     </div>
   </footer>
 
   
   <!-- SCRIPTS -->
 <script>
-  // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
-  // Met à jour le textContent des <time> visibles (footer-date, trust-date).
-  // NE TOUCHE JAMAIS à l'attribut datetime ni au dateModified du JSON-LD :
-  // ces signaux machine sont bakés EN DUR et ne reflètent que la vraie
-  // dernière modification (à mettre à jour au push). Réécrire datetime en JS
-  // = "false freshness" → Google dévalue le signal.
-  (function() {
-    var now = new Date();
-    var lang = document.documentElement.lang || "fr-CA";
+ // ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
+// Met à jour le textContent des <time> visibles (footer-date, trust-date).
+// NE TOUCHE JAMAIS à l'attribut datetime ni au dateModified du JSON-LD :
+// ces signaux machine sont bakés EN DUR et ne reflètent que la vraie
+// dernière modification (à mettre à jour au push). Réécrire datetime en JS
+// = "false freshness" → Google dévalue le signal.
+(function() {
+  var now = new Date();
+  var lang = document.documentElement.lang || "fr-CA";
 
-    // 1. Format court (ex: "juillet 2026")
-    var footerDate = document.getElementById("footer-date");
-    if (footerDate) {
-      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
-    }
+  var footerDate = document.getElementById("footer-date");
+  if (footerDate) {
+    footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
+  }
 
-    // 2. Format long localisé (ex: "3 juillet 2026")
-    var trustDate = document.getElementById("trust-date");
-    if (trustDate) {
-      var options = lang.startsWith("fr")
-        ? { day: "numeric", month: "long", year: "numeric" }
-        : { month: "long", day: "numeric", year: "numeric" };
-      trustDate.textContent = now.toLocaleDateString(lang, options);
-    }
-  })();
+  var trustDate = document.getElementById("trust-date");
+  if (trustDate) {
+    var options = lang.startsWith("fr")
+      ? { day: "numeric", month: "long", year: "numeric" }
+      : { month: "long", day: "numeric", year: "numeric" };
+    trustDate.textContent = now.toLocaleDateString(lang, options);
+  }
+})();
 </script>
 
   <script>
