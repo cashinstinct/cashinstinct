@@ -57,7 +57,7 @@
         "inLanguage": "en-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-06-20",
-        "dateModified": "2026-06-22",
+        "dateModified": "2026-07-06",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
         "publisher": {
           "@type": "Organization",
@@ -665,7 +665,7 @@
         🧮 <strong>When it's worth it:</strong> as soon as your card earns more than 1.75% in points or rewards, and especially to hit the spending threshold of a credit card <strong>welcome bonus</strong> using expenses you'd pay anyway.
       </div>
 
-      <p style="font-size:0.8rem; color:var(--muted); margin:16px 0 24px;" class="last-updated">Updated <time id="trust-date" datetime="2026-06-22">June 22, 2026</time></p>
+      <p style="font-size:0.8rem; color:var(--muted); margin:16px 0 24px;" class="last-updated">Updated <time id="trust-date" datetime="2026-07-06">July 6, 2026</time></p>
 
       <div class="transparency" style="margin-bottom: 24px;">
         <strong>Transparency:</strong> this independent guide uses referral tracking. If you sign up for Chexy through my referral link, you get your $20 bonus (funded by Chexy) — and Chexy also pays me $20, at no extra cost to you. Full disclosure at the bottom of this page.
@@ -1063,7 +1063,7 @@
 <footer>
   <div class="container">
     <p>Site not officially affiliated with Chexy. Trademarks belong to their respective owners.</p>
-    <p style="margin-top:6px;">Chexy referral link — Updated: <time id="footer-date" datetime="2026-06-20">June 2026</time></p>
+    <p style="margin-top:6px;">Chexy referral link — Updated: <time id="footer-date" datetime="2026-07-06">July 2026</time></p>
   </div>
 
   <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
@@ -1078,31 +1078,31 @@
 </footer>
 
 <!-- SCRIPTS -->
-<!--
-  DATES — script (works for both FR and EN via document.documentElement.lang).
-  Le JS formate selon document.documentElement.lang à l'exécution → "20 juin 2026".
-  NE TOUCHE PAS au JSON-LD : dateModified est codé EN DUR dans le <head>.
--->
+
 <script>
-  (function() {
-    var now = new Date();
-    var lang = document.documentElement.lang || "fr-CA";
-    var footerDate = document.getElementById("footer-date");
-    if (footerDate) {
-      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
-      footerDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-    }
-    var trustDate = document.getElementById("trust-date");
-    if (trustDate) {
-      var options = lang.startsWith("fr")
-        ? { day: "numeric", month: "long", year: "numeric" }
-        : { month: "long", day: "numeric", year: "numeric" };
-      trustDate.textContent = now.toLocaleDateString(lang, options);
-      if (trustDate.tagName === "TIME") {
-        trustDate.setAttribute("datetime", now.toISOString().slice(0, 10));
-      }
-    }
-  })();
+// ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
+// Met à jour le textContent des <time> visibles (footer-date, trust-date).
+// NE TOUCHE JAMAIS à l'attribut datetime ni au dateModified du JSON-LD :
+// ces signaux machine sont bakés EN DUR et ne reflètent que la vraie
+// dernière modification (à mettre à jour au push). Réécrire datetime en JS
+// = "false freshness" → Google dévalue le signal.
+(function() {
+  var now = new Date();
+  var lang = document.documentElement.lang || "fr-CA";
+
+  var footerDate = document.getElementById("footer-date");
+  if (footerDate) {
+    footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
+  }
+
+  var trustDate = document.getElementById("trust-date");
+  if (trustDate) {
+    var options = lang.startsWith("fr")
+      ? { day: "numeric", month: "long", year: "numeric" }
+      : { month: "long", day: "numeric", year: "numeric" };
+    trustDate.textContent = now.toLocaleDateString(lang, options);
+  }
+})();
 </script>
 
 <!-- Calculatrice Chexy -->
