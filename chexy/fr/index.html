@@ -1094,32 +1094,6 @@
 
 <!-- SCRIPTS -->
 
-<script>
-// ── DATES D'AFFICHAGE (VISUEL UNIQUEMENT) ──
-// Met à jour le textContent des <time> visibles (footer-date, trust-date).
-// NE TOUCHE JAMAIS à l'attribut datetime ni au dateModified du JSON-LD :
-// ces signaux machine sont bakés EN DUR et ne reflètent que la vraie
-// dernière modification (à mettre à jour au push). Réécrire datetime en JS
-// = "false freshness" → Google dévalue le signal.
-(function() {
-  var now = new Date();
-  var lang = document.documentElement.lang || "fr-CA";
-
-  var footerDate = document.getElementById("footer-date");
-  if (footerDate) {
-    footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
-  }
-
-  var trustDate = document.getElementById("trust-date");
-  if (trustDate) {
-    var options = lang.startsWith("fr")
-      ? { day: "numeric", month: "long", year: "numeric" }
-      : { month: "long", day: "numeric", year: "numeric" };
-    trustDate.textContent = now.toLocaleDateString(lang, options);
-  }
-})();
-</script>
-
 <!-- Calculatrice Chexy -->
 <script>
 function calcChexy() {
