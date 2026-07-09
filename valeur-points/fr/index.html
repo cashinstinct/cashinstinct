@@ -505,27 +505,6 @@
     </div>
   </footer>
 
-  <!--
-  DATES — AFFICHAGE VISUEL UNIQUEMENT (même convention que le reste du site)
-  Ne touche jamais datetime="" ni dateModified JSON-LD — anti "false freshness".
-  -->
-  <script>
-  (function() {
-    var now = new Date();
-    var lang = document.documentElement.lang || "fr-CA";
-
-    var footerDate = document.getElementById("footer-date");
-    if (footerDate) {
-      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
-    }
-
-    var trustDate = document.getElementById("trust-date");
-    if (trustDate) {
-      trustDate.textContent = now.toLocaleDateString(lang, { day: "numeric", month: "long", year: "numeric" });
-    }
-  })();
-  </script>
-
   <script>
     /* ── thème — identique au reste du site ── */
     (function() {
