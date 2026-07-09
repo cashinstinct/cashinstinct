@@ -1089,47 +1089,6 @@
   
   <!-- SCRIPTS -->
 
-  <!--
-  DATES — AFFICHAGE VISUEL UNIQUEMENT (pourquoi ce script est bridé)
-  ────────────────────────────────────────────────────────────────
-  Ce script ne fait QU'UNE chose : rafraîchir le TEXTE visible des <time>
-  (footer-date, trust-date) au format localisé. Il ne DOIT PAS toucher
-  l'attribut datetime="" ni le dateModified du JSON-LD.
-
-  RAISON (anti-pattern "false freshness") :
-  Les attributs datetime="" et le dateModified sont les SIGNAUX DE DATE LUS
-  PAR GOOGLE. Si le JS les réécrit avec new Date() à chaque visite, la page
-  se re-date toute seule sans changement réel de contenu → fraîcheur bidon.
-  Google finit par ignorer/dévaluer le signal. Donc :
-    • datetime="" des <time>  → STATIQUE, baké au deploy (ici 2026-07-04)
-    • dateModified JSON-LD     → STATIQUE, édité À LA MAIN au vrai changement
-    • textContent des <time>   → OK de rafraîchir en JS (purement visuel)
-
-  Les lignes setAttribute("datetime", now.toISOString()) ont été RETIRÉES
-  pour cette raison. Ne PAS les réintroduire.
-   -->
-    <script>
-  (function() {
-    var now = new Date();
-    var lang = document.documentElement.lang || "fr-CA";
-
-    // Texte visible seulement — l'attribut datetime reste STATIQUE (voir commentaire).
-    var footerDate = document.getElementById("footer-date");
-    if (footerDate) {
-      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
-    }
-
-    var trustDate = document.getElementById("trust-date");
-    if (trustDate) {
-      var options = lang.startsWith("fr")
-        ? { day: "numeric", month: "long", year: "numeric" }
-        : { month: "long", day: "numeric", year: "numeric" };
-      trustDate.textContent = now.toLocaleDateString(lang, options);
-    }
-  })();
-</script>
-
-  
 <script>
   // ── MODULE DE COPIE UNIFIÉ — source de vérité unique via data-copy / data-target ──
   (function() {
