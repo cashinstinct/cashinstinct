@@ -1,1 +1,686 @@
+<!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════
+  NOTE DE MAINTENANCE — Calculatrice Valeur des Points FR — création : 2026-07-08
+═══════════════════════════════════════════════════════════════════
+  STATUT : nouvelle page, PAS de programme affilié derrière — page
+  outil/comparatif pour trafic SEO/GEO, pas de code promo ni d'Offer.
+  Donc PAS de Product/HowTo JSON-LD (contrairement aux pages EBOX/HP/
+  Tangerine) — juste WebSite + WebPage + BreadcrumbList + FAQPage.
 
+  SLUG PROPOSÉ : /valeur-points/fr/ — À CONFIRMER/AJUSTER avant déploiement
+  selon ta convention d'URL réelle.
+
+  BREADCRUMB : catégorie "#finances" utilisée par hypothèse (calquée sur
+  Impression pour HP) — À VÉRIFIER contre les ancres réelles de la page
+  d'accueil avant publication.
+
+  TAUX — SOURCES ET DATE DE VÉRIFICATION (2026-07-08)
+  • MR (Amex Membership Rewards CA) : crédit compte/voyage 1¢ fixe,
+    transfert partenaires ~1,7¢ moyenne optimisée — Milesopedia.
+  • Blue Rewards (BMO, ex-Air Miles) : 1500 pts = 10$ fixe (0,667¢) —
+    Milesopedia, BMO newsroom (lancement janvier 2026).
+  • BNC Récompenses À la carte : CORRIGÉ 2026-07-08 (source initiale erronée,
+    Étienne a signalé une citation Prince of Travel contradictoire). 5 paliers
+    distincts, PAS un taux 1¢ uniforme sur voyage/REER/CELI/hypothèque :
+      - Agence Voyage À la carte (réservation directe) : 1¢ fixe, meilleur taux.
+      - Rabais voyage flexible (achat déjà réservé ailleurs, remboursé <60j) :
+        0,83¢ si <55 000 pts échangés, 0,91¢ si ≥55 000 pts — PALIER, pas fixe.
+      - REER/CELI/remboursement hypothécaire : 0,83¢ fixe (PAS 1¢).
+      - Cartes-cadeaux/catalogue marchandises : 0,74-0,83¢ variable.
+      - Crédit au compte générique (non-voyage) : 0,4¢ fixe — pire taux.
+    Sources croisées : Prince of Travel (princeoftravel.com/credit-cards/
+    national-bank-world-elite-mastercard), Frugal Flyer (tableau détaillé,
+    confirme les mêmes paliers), tableau Milesopedia (qui contredit SA PROPRE
+    prose FAQ disant "1¢ partout" — cas vécu de désalignement multi-emplacement
+    intra-source, pas juste intra-fichier).
+  • TD Rewards : voyage Expedia for TD 0,5¢ fixe, voyage hors Expedia
+    0,4¢, cartes-cadeaux/marchandise 0,23-0,25¢ — Ratehub, Milesopedia,
+    ThePointCalculator.
+  • PC Optimum : en magasin 0,10¢ fixe (10 000 pts = 10$), crédit compte
+    carte PC Financial 0,07¢ fixe (10 000 pts = 7$) — pcfinancial.ca,
+    Milesopedia.
+  • BMO Rewards (carte de crédit — DISTINCT de Blue Rewards) : voyage
+    0,667¢ fixe, crédit compte 0,33¢ fixe, cadeaux/marchandise 0,54-0,56¢
+    — Milesopedia, Points Miles and Bling.
+  • CIBC Aventura : grille aérienne 1,67-4¢ selon distance (très
+    variable), voyage général 1¢ fixe, crédit compte 0,625¢ fixe —
+    Frugal Flyer, Milesopedia, ThePointCalculator.
+  • ⚠️ CES TAUX BOUGENT. Prévoir revalidation périodique (comme pagecrawl
+    pour EBOX/Achieva) — pas de monitoring automatisé en place pour
+    l'instant.
+
+  MAINTENANCE FUTURE
+  • dateModified (JSON-LD) HARDCODÉ → mettre à jour à la main à chaque
+    révision de taux.
+  • Pas de version EN pour l'instant — hreflang limité à fr-CA/fr,
+    x-default → fr (page FR seule existe). Ajouter EN + hreflang complet
+    quand la page EN existe.
+  • nbsp (&nbsp;) appliqué avant $ / ¢ / ? en texte visible FR, jamais
+    dans JSON-LD/attributs/CSS/JS — convention identique aux autres pages.
+═══════════════════════════════════════════════════════════════════
+-->
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0096d6" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090e0e" />
+
+  <title>Calculatrice de Valeur des Points de Récompense (2026)</title>
+  <meta name="description" content="Calcule la valeur réelle de tes points MR, Blue Rewards, BNC, TD, PC Optimum, BMO Rewards et CIBC Aventura. Taux vérifiés juillet 2026." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cashinstinct.ca/valeur-points/fr/" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%92%B3%3C/text%3E%3C/svg%3E">
+
+  <!-- Pas de version EN pour l'instant — x-default pointe sur fr en attendant -->
+  <link rel="alternate" hreflang="fr-CA" href="https://cashinstinct.ca/valeur-points/fr/" />
+  <link rel="alternate" hreflang="fr" href="https://cashinstinct.ca/valeur-points/fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/valeur-points/fr/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cashinstinct.ca/valeur-points/fr/" />
+  <meta property="og:title" content="Calculatrice de Valeur des Points de Récompense (2026)" />
+  <meta property="og:description" content="Calcule la valeur réelle de tes points MR, Blue Rewards, BNC, TD, PC Optimum, BMO Rewards et CIBC Aventura. Taux vérifiés juillet 2026." />
+  <meta property="og:image" content="https://cashinstinct.ca/valeur-points/fr/og.png" />
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:site_name" content="Cash Instinct" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- og.png à générer via le skill og-image-cashinstinct avant publication -->
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculatrice de Valeur des Points de Récompense (2026)" />
+  <meta name="twitter:description" content="Calcule la valeur réelle de tes points MR, Blue Rewards, BNC, TD, PC Optimum, BMO Rewards et CIBC Aventura. Taux vérifiés juillet 2026." />
+  <meta name="twitter:image" content="https://cashinstinct.ca/valeur-points/fr/og.png" />
+
+  <script>
+    try {
+      let theme = localStorage.getItem('theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://cashinstinct.ca/#website",
+        "url": "https://cashinstinct.ca/",
+        "name": "Cash Instinct"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://cashinstinct.ca/valeur-points/fr/",
+        "url": "https://cashinstinct.ca/valeur-points/fr/",
+        "name": "Calculatrice de Valeur des Points de Récompense (2026)",
+        "description": "Calcule la valeur réelle de tes points MR, Blue Rewards, BNC, TD, PC Optimum, BMO Rewards et CIBC Aventura. Taux vérifiés juillet 2026.",
+        "inLanguage": "fr-CA",
+        "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
+        "datePublished": "2026-07-08",
+        "dateModified": "2026-07-08",
+        "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Cash Instinct",
+          "logo": { "@type": "ImageObject", "url": "https://cashinstinct.ca/logo.png" }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cashinstinct.ca/valeur-points/fr/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cashinstinct.ca/" },
+          { "@type": "ListItem", "position": 2, "name": "Finances", "item": "https://cashinstinct.ca/#finances" },
+          { "@type": "ListItem", "position": 3, "name": "Valeur des Points", "item": "https://cashinstinct.ca/valeur-points/fr/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://cashinstinct.ca/valeur-points/fr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment est calculée la valeur d'un point de récompense ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "On divise la valeur en dollars obtenue par le nombre de points requis pour l'obtenir, exprimé en cents par point. Par exemple, si 1000 points donnent 10 $ en crédit voyage, le taux est de 1 cent par point. La plupart des programmes ont plusieurs modes de rachat avec des taux différents — le meilleur taux n'est pas toujours le plus pratique." }
+          },
+          {
+            "@type": "Question",
+            "name": "Pourquoi la valeur d'un même point change selon le mode de rachat ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Les émetteurs (banques, Amex) fixent des taux différents selon la destination des points : crédit au compte, cartes-cadeaux, catalogue de marchandises ou transfert vers un partenaire voyage. Les rachats voyage/transfert donnent généralement le meilleur taux ; les cartes-cadeaux et le catalogue marchandises donnent le pire." }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel programme a le taux le plus simple à évaluer ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Blue Rewards (BMO) est le seul avec un taux fixe unique (0,667 ¢/point) peu importe le mode de rachat. BNC Récompenses À la carte est prévisible mais pas simple : chaque mode a un taux fixe connu à l'avance (1 ¢ via l'agence voyage, 0,83 ¢ pour REER/CELI, 0,4 ¢ en crédit compte générique), mais il y a 5 paliers différents plutôt qu'un seul." }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel programme a le plus grand potentiel de valeur ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "CIBC Aventura, via sa grille aérienne, peut atteindre 2,29 cents par point sur des vols courts-courriers — nettement au-dessus des autres programmes. Mais ce taux optimal exige de réserver via la grille aérienne CIBC plutôt qu'en crédit compte, où la valeur tombe à 0,63 cent." }
+          },
+          {
+            "@type": "Question",
+            "name": "Blue Rewards et BMO Rewards, c'est la même chose ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Non, ce sont deux programmes distincts de BMO. Blue Rewards est le nouveau programme coalition qui remplace AIR MILES (points Blue Points gagnés par carte de débit ou scan de reçus). BMO Rewards est le programme de points attaché aux cartes de crédit BMO (comme la BMO World Elite Mastercard). Les deux monnaies de points ne sont pas interchangeables." }
+          },
+          {
+            "@type": "Question",
+            "name": "Ces taux sont-ils garantis ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Non. Les taux affichés sont vérifiés à la date indiquée en bas de page à partir de sources publiques (sites officiels des émetteurs et analyses indépendantes). Les émetteurs peuvent les modifier sans préavis — valide toujours le taux exact au moment du rachat sur le site de ton émetteur." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f4f9f9;
+      --surface: #ffffff;
+      --surface-soft: #eaf5f5;
+      --surface-muted: #dbebe3;
+      --text: #0f1c1c;
+      --text-soft: #2d3e3e;
+      --muted: #655345;
+      --border: #cee3e3;
+      --border-soft: #b6d3d3;
+      --accent: #058373;
+      --accent-dark: #036256;
+      --accent-text: #036256;
+      --warning-bg: #fff9eb;
+      --warning-text: #805300;
+      --warning-border: #ffcc66;
+      --shadow: 0 4px 20px rgba(5, 131, 115, 0.05);
+    }
+    [data-theme="dark"] {
+      --bg: #090e0e;
+      --surface: #111a1a;
+      --surface-soft: #172424;
+      --surface-muted: #1e302f;
+      --text: #f0f7f7;
+      --text-soft: #cbdcdb;
+      --muted: #94a3b8;
+      --border: #1f3332;
+      --border-soft: #2d4a48;
+      --accent: #0db39e;
+      --accent-dark: #0bc4ad;
+      --accent-text: #0bc4ad;
+      --warning-bg: #1c1917;
+      --warning-text: #fdba74;
+      --warning-border: #b45309;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.65; color: var(--text); background: var(--bg); }
+    a { color: var(--accent-text); text-decoration: underline; }
+    a:hover { text-decoration: underline; }
+    .nav a, .breadcrumb a, .footer-links a { text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .prose { max-width: 900px; margin: 0 auto; }
+
+    .topbar { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+    .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 10px 20px; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+    .brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+    .nav { display: flex; gap: 12px; flex-wrap: nowrap; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+    .nav a:hover, .nav a.active { color: var(--accent-text); }
+    .theme-btn { background: var(--surface-muted); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 1rem; padding: 6px 12px; border-radius: 6px; transition: background 0.15s; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .theme-btn:hover { background: var(--border-soft); }
+
+    .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 16px; margin-bottom: 8px; }
+    .breadcrumb a { color: var(--muted); font-weight: 500; }
+    .breadcrumb span { margin: 0 6px; }
+
+    header.hero { background: var(--surface-soft); color: var(--text); padding: 64px 20px; text-align: center; border-bottom: 1px solid var(--border); }
+    header.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.01em; text-wrap: pretty; }
+    header.hero h1 span { color: var(--accent-text); }
+    header.hero p { font-size: 1.15rem; opacity: 0.9; max-width: 640px; margin: 0 auto 28px; }
+
+    .cta-btn-hero { display: inline-block; background: var(--accent); color: #ffffff; font-weight: 800; font-size: 1.1rem; padding: 16px 40px; border-radius: 24px; box-shadow: 0 4px 14px rgba(5, 131, 115, 0.2); transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease; }
+    .cta-btn-hero:hover { background: var(--accent-dark); transform: translateY(-1px); text-decoration: none; box-shadow: 0 6px 20px rgba(5, 131, 115, 0.3); }
+
+    main { padding: 52px 0; }
+    section { margin-bottom: 56px; scroll-margin-top: 72px; }
+    section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; color: var(--text); letter-spacing: -0.01em; }
+    section p { margin-bottom: 14px; color: var(--text-soft); }
+
+    .section-label { display: inline-block; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; color: var(--accent-dark); background: rgba(5, 131, 115, 0.12); padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; }
+    [data-theme="dark"] .section-label { color: var(--accent-text); background: rgba(13, 179, 158, 0.15); }
+
+    .ai-summary { background: var(--surface-soft); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 20px; border-radius: 8px; margin-bottom: 32px; font-size: 1.05rem; color: var(--text); line-height: 1.6; }
+    .ai-summary strong { color: var(--text); font-weight: 800; }
+
+    code { font-family: "Courier New", Courier, monospace; background: var(--surface-soft); color: var(--text); padding: 2px 6px; border-radius: 4px; font-size: 0.92em; font-weight: 700; border: 1px solid var(--border); }
+
+    .last-updated { font-size: 0.8rem; color: var(--muted); margin-top: 12px; margin-bottom: 24px; font-style: italic; }
+
+    .warning { background: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 14px 20px; font-size: 0.95rem; color: var(--warning-text); margin: 32px 0; border-radius: 0 6px 6px 0; }
+
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    .compare-table th { text-align: left; padding: 10px 12px; background: var(--surface-soft); border: 1px solid var(--border); color: var(--text); font-weight: 700; }
+    .compare-table td { padding: 10px 12px; border: 1px solid var(--border); color: var(--text-soft); }
+    .compare-table .best { color: var(--accent-text); font-weight: 800; }
+    @media (max-width: 640px) { .compare-table { font-size: 0.85rem; } .compare-table th, .compare-table td { padding: 8px 8px; } }
+
+    .faq { display: grid; gap: 16px; }
+    details { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
+    summary { font-weight: 700; padding: 16px 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; background: var(--surface-soft); color: var(--text); }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 1.4rem; font-weight: 400; color: var(--accent-text); flex-shrink: 0; margin-left: 12px; }
+    details[open] summary::after { content: "−"; }
+    details[open] summary { border-bottom: 1px solid var(--border); }
+    .faq-body { padding: 16px 20px; font-size: 0.97rem; color: var(--text-soft); background: var(--surface); }
+
+    .transparency { background: var(--surface-muted); border-radius: 8px; padding: 16px 20px; font-size: 0.9rem; color: var(--text-soft); margin-top: 16px; border: 1px solid var(--border); }
+    footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
+    .footer-links a { display: inline-block; padding: 10px 12px; margin: -4px 0; }
+
+    @media (min-width: 768px) { body { font-size: 19px; } }
+
+    /* ── CALCULATRICE ── */
+    .calc-card { background: var(--surface); border: 2px solid var(--accent); border-radius: 12px; padding: 28px 24px; box-shadow: var(--shadow); }
+    .calc-field { margin-bottom: 18px; }
+    .calc-field:last-child { margin-bottom: 0; }
+    .calc-field label { display: block; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 8px; }
+    .calc-field select, .calc-field input[type=number] {
+      width: 100%; padding: 12px 14px; background: var(--surface-soft); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-size: 1rem; font-family: inherit;
+    }
+    .calc-field select:focus, .calc-field input:focus { outline: none; border-color: var(--accent); }
+    .calc-result { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; margin-top: 22px; }
+    .calc-result .val { font-size: 2.4rem; font-weight: 900; color: var(--accent-text); font-variant-numeric: tabular-nums; }
+    .calc-result .rate { color: var(--muted); font-size: 0.85rem; margin-top: 6px; }
+    .rate-flag { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 6px; text-transform: uppercase; letter-spacing: 0.03em; }
+    .rate-flag.fixed { background: rgba(5, 131, 115, 0.12); color: var(--accent-text); }
+    .rate-flag.variable { background: var(--warning-bg); color: var(--warning-text); }
+    [data-theme="dark"] .rate-flag.variable { background: rgba(180, 83, 9, 0.2); }
+    .calc-note { font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin-top: 16px; }
+  </style>
+
+</head>
+<body>
+
+  <a href="#main-content" style="position:absolute;left:-9999px;top:4px;z-index:9999;padding:8px 16px;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Passer au contenu principal</a>
+
+  <!-- Ajouter "Valeur Points" à la nav des autres pages une fois publiée. -->
+  <nav class="topbar" aria-label="Navigation principale">
+    <div class="topbar-inner">
+      <a class="brand" href="https://cashinstinct.ca/">Cash Instinct</a>
+      <div class="nav">
+        <a href="https://cashinstinct.ca/ebox/fr/" aria-label="EBOX">EBOX</a>
+        <a href="https://cashinstinct.ca/stickermule/fr/" aria-label="Sticker Mule">Sticker&nbsp;Mule</a>
+        <a href="https://cashinstinct.ca/tangerine/fr/" aria-label="Banque Tangerine">Tangerine</a>
+        <a href="https://cashinstinct.ca/hp-instant-ink/fr/" aria-label="HP Instant Ink">HP&nbsp;Ink</a>
+        <a class="active" href="https://cashinstinct.ca/valeur-points/fr/" aria-label="Valeur des Points">Valeur&nbsp;Points</a>
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>Calculatrice de <span>valeur des points</span> — 7 programmes canadiens</h1>
+      <p>MR (Amex), Blue Rewards (BMO), BNC À la carte, TD Rewards, PC Optimum, BMO Rewards et CIBC Aventura. Entre ton solde, choisis le mode de rachat, obtiens la valeur réelle en dollars — pas la valeur marketing.</p>
+      <a class="cta-btn-hero" href="#calculatrice">Aller à la calculatrice ↓</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <div class="prose">
+
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol style="list-style: none; display: flex; flex-wrap: wrap; padding: 0; margin: 0;">
+            <li style="display: flex; align-items: center;">
+              <a href="https://cashinstinct.ca/">Accueil</a>
+              <span style="margin: 0 8px; color: var(--muted);" aria-hidden="true">&gt;</span>
+            </li>
+            <li style="display: flex; align-items: center; color: var(--text-soft);" aria-current="page">
+              Valeur des Points
+            </li>
+          </ol>
+        </nav>
+
+        <nav aria-label="Navigation rapide" style="font-size: 0.95rem; margin-bottom: 32px; text-align: center; color: var(--muted);">
+          Navigation rapide :
+          <a href="#calculatrice" style="text-decoration: underline;">Calculatrice</a> ·
+          <a href="#comparatif" style="text-decoration: underline;">Tableau comparatif</a> ·
+          <a href="#faq" style="text-decoration: underline;">FAQ</a>
+        </nav>
+
+        <div class="ai-summary">
+          La <strong>valeur réelle d'un point</strong> dépend entièrement du mode de rachat choisi — pas d'un chiffre marketing unique. En 2026, les taux vont de <strong>0,07&nbsp;¢/point</strong> (PC Optimum en crédit compte) à <strong>2,29&nbsp;¢/point</strong> (CIBC Aventura, grille aérienne courts-courriers).
+          <br><br>
+          📊 <strong>Deux familles de programmes :</strong> les programmes bancaires maison à taux unique (Blue Rewards, PC Optimum en magasin) sont faciles à évaluer — aucune optimisation possible. Les programmes à paliers fixes multiples (BNC — 5 taux selon le mode) ou à taux variable (MR, CIBC Aventura) récompensent l'optimisation — parfois 2 à 4 fois la valeur du rachat le plus simple.
+        </div>
+
+        <p class="last-updated">Taux vérifiés le <time id="trust-date" datetime="2026-07-08">8&nbsp;juillet 2026</time></p>
+
+        <section id="calculatrice">
+          <span class="section-label">Outil</span>
+          <h2>Calculatrice de valeur de points</h2>
+          <p>Choisis ton programme et ton mode de rachat pour voir la valeur réelle en dollars canadiens.</p>
+
+          <div class="calc-card">
+            <div class="calc-field">
+              <label for="program">Programme</label>
+              <select id="program">
+                <option value="mr">MR — Amex Membership Rewards</option>
+                <option value="blue">Blue Rewards (BMO, ex-Air Miles)</option>
+                <option value="bnc">BNC — Récompenses À la carte</option>
+                <option value="td">TD Rewards</option>
+                <option value="pc">PC Optimum</option>
+                <option value="bmorewards">BMO Rewards (carte de crédit)</option>
+                <option value="aventura">CIBC Aventura</option>
+              </select>
+            </div>
+
+            <div class="calc-field">
+              <label for="mode">Mode de rachat</label>
+              <select id="mode"></select>
+            </div>
+
+            <div class="calc-field">
+              <label for="points">Nombre de points</label>
+              <input type="number" id="points" value="10000" min="0" step="100">
+            </div>
+
+            <div class="calc-result">
+              <div class="val" id="resultVal">100,00&nbsp;$</div>
+              <div class="rate" id="resultRate">1,00&nbsp;¢/point</div>
+            </div>
+
+            <p class="calc-note" id="calcNote"></p>
+          </div>
+        </section>
+
+        <section id="comparatif">
+          <span class="section-label">Comparatif</span>
+          <h2>Tableau comparatif — taux plancher vs taux optimal</h2>
+          <p>Le taux « plancher » est le pire mode de rachat courant (souvent cartes-cadeaux ou crédit compte). Le taux « optimal » est le meilleur mode accessible sans conditions extrêmes. L'écart entre les deux mesure combien l'optimisation vaut la peine pour ce programme.</p>
+
+          <div style="overflow-x: auto; border-radius: 8px; border: 1px solid var(--border);">
+            <table class="compare-table" aria-label="Comparatif de la valeur des points par programme">
+              <thead>
+                <tr><th>Programme</th><th>Taux plancher</th><th>Taux optimal</th><th>10&nbsp;000 pts =</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>MR (Amex)</td><td>1,00&nbsp;¢</td><td class="best">1,7 à 2,2&nbsp;¢ (transfert)</td><td>100&nbsp;$ – 220&nbsp;$</td></tr>
+                <tr><td>CIBC Aventura</td><td>0,63&nbsp;¢</td><td class="best">jusqu'à&nbsp;2,29&nbsp;¢ (grille aérienne)</td><td>63&nbsp;$ – 229&nbsp;$</td></tr>
+                <tr><td>BNC À la carte</td><td>0,40&nbsp;¢ (crédit compte)</td><td class="best">1,00&nbsp;¢ (agence voyage)</td><td>40&nbsp;$ – 100&nbsp;$</td></tr>
+                <tr><td>BMO Rewards (carte)</td><td>0,33&nbsp;¢ (crédit compte)</td><td class="best">0,67&nbsp;¢ (voyage)</td><td>33,33&nbsp;$ – 66,67&nbsp;$</td></tr>
+                <tr><td>Blue Rewards (BMO)</td><td colspan="2" style="text-align:center;">0,667&nbsp;¢ (taux unique)</td><td>66,67&nbsp;$</td></tr>
+                <tr><td>TD Rewards</td><td>0,23&nbsp;¢ (cadeaux)</td><td class="best">0,50&nbsp;¢ (Expedia for TD)</td><td>23&nbsp;$ – 50&nbsp;$</td></tr>
+                <tr><td>PC Optimum</td><td>0,07&nbsp;¢ (crédit compte)</td><td class="best">0,10&nbsp;¢ (en magasin)</td><td>7&nbsp;$ – 10&nbsp;$</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 0.85rem; margin-top: 12px; color: var(--muted); text-align: center;">Programmes triés du meilleur au pire potentiel optimal. Sources détaillées en bas de page.</p>
+        </section>
+
+        <section id="faq">
+          <span class="section-label">FAQ</span>
+          <h2>Questions fréquentes</h2>
+          <div class="faq">
+            <details>
+              <summary id="faq-q1">Comment est calculée la valeur d'un point de récompense&nbsp;?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q1">
+                <p>On divise la valeur en dollars obtenue par le nombre de points requis, exprimé en cents par point. Par exemple, si 1000 points donnent 10&nbsp;$ en crédit voyage, le taux est de 1&nbsp;¢/point. La plupart des programmes ont plusieurs modes de rachat avec des taux différents — le meilleur taux n'est pas toujours le plus pratique.</p>
+              </div>
+            </details>
+            <details>
+              <summary id="faq-q2">Pourquoi la valeur d'un même point change selon le mode de rachat&nbsp;?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q2">
+                <p>Les émetteurs fixent des taux différents selon la destination des points&nbsp;: crédit au compte, cartes-cadeaux, catalogue de marchandises ou transfert vers un partenaire voyage. Les rachats voyage/transfert donnent généralement le meilleur taux&nbsp;; les cartes-cadeaux et le catalogue marchandises donnent le pire.</p>
+              </div>
+            </details>
+            <details>
+              <summary id="faq-q3">Quel programme a le taux le plus simple à évaluer&nbsp;?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q3">
+                <p><strong>Blue Rewards (BMO)</strong> est le seul avec un taux fixe unique (0,667&nbsp;¢/point) peu importe le mode de rachat. <strong>BNC Récompenses À la carte</strong> est prévisible mais pas simple&nbsp;: chaque mode a un taux fixe connu à l'avance (1&nbsp;¢ via l'agence voyage, 0,83&nbsp;¢ pour REER/CELI, 0,4&nbsp;¢ en crédit compte générique), mais il y a 5&nbsp;paliers différents plutôt qu'un seul.</p>
+              </div>
+            </details>
+            <details>
+              <summary id="faq-q4">Quel programme a le plus grand potentiel de valeur&nbsp;?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q4">
+                <p><strong>CIBC Aventura</strong>, via sa grille aérienne, peut atteindre <strong>2,29&nbsp;¢/point</strong> sur des vols courts-courriers — nettement au-dessus des autres programmes. Mais ce taux optimal exige de réserver via la grille aérienne CIBC plutôt qu'en crédit compte, où la valeur tombe à 0,63&nbsp;¢.</p>
+              </div>
+            </details>
+            <details>
+              <summary id="faq-q5">Blue Rewards et BMO Rewards, c'est la même chose&nbsp;?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q5">
+                <p><strong>Non</strong> — deux programmes distincts de BMO. <strong>Blue Rewards</strong> est le nouveau programme coalition qui remplace AIR MILES (Blue Points gagnés par carte de débit ou scan de reçus). <strong>BMO Rewards</strong> est le programme de points attaché aux cartes de crédit BMO (comme la BMO World Elite Mastercard). Les deux monnaies de points ne sont pas interchangeables.</p>
+              </div>
+            </details>
+            <details>
+              <summary id="faq-q6">Ces taux sont-ils garantis&nbsp;?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q6">
+                <p><strong>Non.</strong> Les taux affichés sont vérifiés à la date indiquée en haut et en bas de page à partir de sources publiques (sites officiels des émetteurs et analyses indépendantes). Les émetteurs peuvent les modifier sans préavis — valide toujours le taux exact au moment du rachat sur le site de ton émetteur.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <div class="transparency">
+          <strong>Méthodologie et sources :</strong> taux compilés à partir des sites officiels des émetteurs (bnc.ca, pcfinancial.ca, bluerewards.ca) et d'analyses indépendantes (Milesopedia, Ratehub, Frugal Flyer, Prince of Travel, ThePointCalculator) en date du 8&nbsp;juillet&nbsp;2026, avec recoupement entre au moins deux sources indépendantes pour les taux à paliers (BNC, TD, Aventura). Cette page n'est affiliée à aucun des programmes listés — aucun lien de parrainage, aucune commission. Signale une erreur de taux si tu en repères une.
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Site de référence indépendant. Aucune affiliation avec MR/Amex, BMO, Banque Nationale, TD, PC Optimum ou CIBC. Toutes les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
+      <p style="margin-top:6px;">Calculatrice de valeur des points — Dernière mise à jour&nbsp;: <time id="footer-date" datetime="2026-07-08">Juillet 2026</time></p>
+    </div>
+    <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
+      <nav class="footer-links" aria-label="Liens du site">
+        <a href="https://cashinstinct.ca/ebox/fr/">🌐 EBOX Internet</a>
+        <a href="https://cashinstinct.ca/stickermule/fr/">🏷️ Sticker Mule</a>
+        <a href="https://cashinstinct.ca/hp-instant-ink/fr/">🖨️ HP Instant Ink</a>
+        <a href="https://cashinstinct.ca/tangerine/fr/">🍊 Tangerine</a>
+        <a href="https://cashinstinct.ca/chexy/fr/">🏠 Chexy</a>
+        <a href="https://cashinstinct.ca/achieva/fr/">🌱 Achieva Financial</a>
+        <a href="https://cashinstinct.ca/rakuten-canada/fr/">🛍️ Rakuten Canada</a>
+        <a href="https://cashinstinct.ca/swagbucks/fr/">💙 Swagbucks</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!--
+  DATES — AFFICHAGE VISUEL UNIQUEMENT (même convention que le reste du site)
+  Ne touche jamais datetime="" ni dateModified JSON-LD — anti "false freshness".
+  -->
+  <script>
+  (function() {
+    var now = new Date();
+    var lang = document.documentElement.lang || "fr-CA";
+
+    var footerDate = document.getElementById("footer-date");
+    if (footerDate) {
+      footerDate.textContent = now.toLocaleDateString(lang, { month: "long", year: "numeric" });
+    }
+
+    var trustDate = document.getElementById("trust-date");
+    if (trustDate) {
+      trustDate.textContent = now.toLocaleDateString(lang, { day: "numeric", month: "long", year: "numeric" });
+    }
+  })();
+  </script>
+
+  <script>
+    /* ── thème — identique au reste du site ── */
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      function isDark() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+      }
+
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️' : '🌙';
+        toggle.setAttribute('aria-label', dark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+
+      applyUI(isDark());
+
+      toggle.addEventListener('click', function() {
+        var dark = isDark();
+        if (dark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        applyUI(!dark);
+      });
+    })();
+  </script>
+
+  <!-- ── CALCULATRICE : logique des taux ── -->
+  <script>
+  (function() {
+    // Taux en $ par point (pas en ¢) — vérifiés 2026-07-08, voir sources en bas de page.
+    var PROGRAMS = {
+      mr: {
+        label: "MR",
+        modes: [
+          { text: "Crédit au compte / argent", rate: 0.01, flag: "fixed", flagText: "fixe" },
+          { text: "Voyage à taux fixe (portail Amex, Fixed Points Travel)", rate: 0.017, flag: "variable", flagText: "1,5¢ à 2¢ selon la catégorie de vol" },
+          { text: "Transfert partenaires (Aeroplan, Bonvoy, etc.)", rate: 0.02, flag: "variable", flagText: "1,7¢ à 2,2¢ selon la source" }
+        ],
+        note: "Corrigé le 8&nbsp;juillet&nbsp;2026&nbsp;: le portail voyage à taux fixe d'Amex n'est PAS à 1&nbsp;¢ comme annoncé initialement — c'est un barème variable de 1,5&nbsp;¢ (court-courrier régional) à 2&nbsp;¢ (court-courrier populaire Canada/É.-U.), selon Prince of Travel. Transfert 1:1 vers Aeroplan/British Airways (les meilleurs), 1:0,75 vers Cathay/Delta, 5:6 vers Marriott Bonvoy. Deux sources sérieuses divergent sur la valorisation moyenne&nbsp;: Milesopedia estime 1,7&nbsp;¢, Prince of Travel 2,2&nbsp;¢ — aucune des deux n'est un plancher garanti, la valeur réelle dépend de la redemption précise."
+      },
+      blue: {
+        label: "Blue Rewards",
+        modes: [
+          { text: "Rabais en magasin / cartes-cadeaux (taux unique)", rate: 10/1500, flag: "fixed", flagText: "fixe" }
+        ],
+        note: "Taux fixe unique&nbsp;: 1500 points = 10&nbsp;$ (0,667&nbsp;¢/point). Remplace AIR MILES — programme coalition BMO lancé en janvier 2026, distinct de « BMO Rewards » (carte de crédit)."
+      },
+      bnc: {
+        label: "BNC — Récompenses À la carte",
+        modes: [
+          { text: "Crédit au compte générique (non-voyage)", rate: 0.004, flag: "fixed", flagText: "fixe, pire taux" },
+          { text: "Cartes-cadeaux / catalogue marchandises", rate: 0.008, flag: "variable", flagText: "0,74-0,83¢ selon l'item" },
+          { text: "REER / CELI / remboursement hypothécaire", rate: 0.00833, flag: "fixed", flagText: "fixe" },
+          { text: "Rabais voyage flexible (achat déjà réservé, hors agence)", tiers: [ { min: 0, rate: 0.00833 }, { min: 55000, rate: 0.00909 } ], flag: "variable", flagText: "0,83¢ (<55k pts) à 0,91¢ (≥55k pts)" },
+          { text: "Agence Voyage À la carte (réservation directe)", rate: 0.01, flag: "fixed", flagText: "fixe, meilleur taux" }
+        ],
+        note: "Corrigé le 8&nbsp;juillet&nbsp;2026 après vérification croisée (Prince of Travel + Frugal Flyer + tableau Milesopedia — qui contredit sa propre prose FAQ disant « 1&nbsp;¢ partout »). Seule la réservation directe via l'agence Voyage À la carte est fixe à 1&nbsp;¢. Le remboursement pour un voyage déjà payé ailleurs (« rabais voyage flexible ») grimpe de 0,83&nbsp;¢ à 0,91&nbsp;¢ au-delà de 55&nbsp;000 points échangés. REER/CELI/hypothèque sont fixes à 0,83&nbsp;¢, pas 1&nbsp;¢. Le crédit au compte générique (non lié à un voyage) plafonne à 0,4&nbsp;¢ — le pire taux utile du programme."
+      },
+      td: {
+        label: "TD Rewards",
+        modes: [
+          { text: "Cartes-cadeaux / marchandise", rate: 0.0024, flag: "variable", flagText: "0,23-0,25¢" },
+          { text: "Voyage hors ExpediaForTD", rate: 0.004, flag: "fixed", flagText: "fixe" },
+          { text: "Voyage via ExpediaForTD", rate: 0.005, flag: "fixed", flagText: "fixe, meilleur taux" }
+        ],
+        note: "Le meilleur taux stable est via ExpediaForTD (200 pts = 1&nbsp;$). Hors Expedia, le taux tombe à 0,4&nbsp;¢ sous 1200&nbsp;$ de réservation, puis remonte à 0,5&nbsp;¢ sur la portion excédentaire."
+      },
+      pc: {
+        label: "PC Optimum",
+        modes: [
+          { text: "Crédit compte carte PC Financial", rate: 0.0007, flag: "fixed", flagText: "fixe, pire taux" },
+          { text: "En magasin (épicerie, beauté, vêtements)", rate: 0.001, flag: "fixed", flagText: "fixe, meilleur taux" }
+        ],
+        note: "Le taux en magasin (10 000 pts = 10&nbsp;$) est fixe et supérieur au crédit compte carte PC Financial (10 000 pts = 7&nbsp;$ seulement)."
+      },
+      bmorewards: {
+        label: "BMO Rewards",
+        modes: [
+          { text: "Crédit compte (statement credit)", rate: 0.0033, flag: "fixed", flagText: "fixe, pire taux" },
+          { text: "Cartes-cadeaux / marchandise", rate: 0.0055, flag: "variable", flagText: "moyenne 0,54-0,56¢" },
+          { text: "Voyage (réservation libre)", rate: 10/1500, flag: "fixed", flagText: "fixe, meilleur taux" }
+        ],
+        note: "Programme de carte de crédit BMO — distinct de Blue Rewards. Le voyage (150 pts = 1&nbsp;$) permet de réserver n'importe où puis de demander le crédit dans l'app BMO, dans les 90 jours."
+      },
+      aventura: {
+        label: "CIBC Aventura",
+        modes: [
+          { text: "Crédit compte / carte-cadeau Visa prépayée", rate: 0.0063, flag: "fixed", flagText: "fixe, pire taux" },
+          { text: "Cartes-cadeaux (général)", rate: 0.0071, flag: "fixed", flagText: "fixe" },
+          { text: "Produits financiers (REER/CELI/marge/hypothèque)", rate: 0.0083, flag: "fixed", flagText: "fixe, min. 12 000 pts" },
+          { text: "Voyage — Centre de récompenses (vols/hôtel/auto/croisière)", rate: 0.01, flag: "fixed", flagText: "fixe" },
+          { text: "Grille aérienne (courts-courriers optimisés)", rate: 0.0229, flag: "variable", flagText: "jusqu'à 2,29¢, meilleur taux" }
+        ],
+        note: "Corrigé le 8&nbsp;juillet&nbsp;2026&nbsp;: la grille aérienne plafonne à 2,29&nbsp;¢/point selon Prince of Travel (pas 4&nbsp;¢ — une lecture trop optimiste du barème initiale). « Crédit compte » et « produits financiers » sont deux taux fixes distincts, pas un seul&nbsp;: REER/CELI/marge/hypothèque donnent 0,83&nbsp;¢, alors qu'un crédit compte générique ou une carte-cadeau Visa prépayée ne donnent que 0,63&nbsp;¢."
+      }
+    };
+
+    var programSel = document.getElementById('program');
+    var modeSel = document.getElementById('mode');
+    var pointsInput = document.getElementById('points');
+    var resultVal = document.getElementById('resultVal');
+    var resultRate = document.getElementById('resultRate');
+    var calcNote = document.getElementById('calcNote');
+
+    function fmt(n) {
+      return n.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD' });
+    }
+
+    function rebuildModes() {
+      var prog = PROGRAMS[programSel.value];
+      modeSel.innerHTML = prog.modes.map(function(m, i) {
+        return '<option value="' + i + '">' + m.text + ' (' + (m.flag === 'fixed' ? m.flagText : m.flagText) + ')</option>';
+      }).join('');
+    }
+
+    // Modes à taux fixe utilisent mode.rate. Modes à palier (ex: BNC "Rabais voyage
+    // flexible", seuil 55 000 pts) utilisent mode.tiers — le taux dépend du nombre
+    // de points saisi, pas d'une constante. Bug corrigé le 8 juillet 2026 : le taux
+    // était figé à la valeur du premier palier peu importe les points entrés.
+    function effectiveRate(mode, pts) {
+      if (mode.tiers) {
+        var applicable = mode.tiers[0];
+        for (var i = 0; i < mode.tiers.length; i++) {
+          if (pts >= mode.tiers[i].min) applicable = mode.tiers[i];
+        }
+        return applicable.rate;
+      }
+      return mode.rate;
+    }
+
+    function calc() {
+      var prog = PROGRAMS[programSel.value];
+      var mode = prog.modes[parseInt(modeSel.value, 10) || 0];
+      var pts = parseFloat(pointsInput.value) || 0;
+      var rate = effectiveRate(mode, pts);
+      var val = pts * rate;
+
+      resultVal.textContent = fmt(val);
+      var tierNote = mode.tiers && pts >= 55000 ? ' — palier ≥55k atteint' : (mode.tiers ? ' — sous le palier 55k' : '');
+      resultRate.innerHTML = (rate * 100).toFixed(3).replace(/0+$/, '').replace(/\.$/, '') +
+        '&nbsp;¢/point <span class="rate-flag ' + mode.flag + '">' + mode.flagText + '</span>' +
+        (tierNote ? '<br><span style="font-size:0.75rem;color:var(--muted);">' + tierNote + '</span>' : '');
+      calcNote.innerHTML = prog.note;
+    }
+
+    programSel.addEventListener('change', function() { rebuildModes(); calc(); });
+    modeSel.addEventListener('change', calc);
+    pointsInput.addEventListener('input', calc);
+
+    rebuildModes();
+    calc();
+  })();
+  </script>
+
+</body>
+</html>
