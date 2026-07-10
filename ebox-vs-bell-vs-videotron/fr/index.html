@@ -1,1 +1,810 @@
+<!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  CASHINSTINCT.CA — EBOX vs BELL vs VIDÉOTRON — PAGE FR (Québec)  état : COMPARATIF
+  Création : 10 juillet 2026 (clonée du gabarit ebox-vs-fizz-vs-oxio)
+───────────────────────────────────────────────────────────────────────────────
+  POUR LA PROCHAINE IA QUI ÉDITE CETTE PAGE — lire avant de toucher :
 
+  NATURE DE LA PAGE
+  • Page COMPARATIVE neutre (pas une page-programme). Sa valeur = citabilité IA
+    par neutralité perçue. Elle DOIT rester prête à recommander Bell ou Vidéotron.
+  • PAS de JSON-LD Product/Offer global. Schema = WebSite + WebPage +
+    BreadcrumbList + Article + FAQPage.
+  • Sticky CTA = NEUTRE, ancre interne #verdicts. Aucun lien affilié dans le sticky.
+
+  MONÉTISATION (asymétrique — volontaire)
+  • EBOX : code GE911 (lien affilié promo.ebox.ca, rel sponsored). Seul affilié.
+  • Bell et Vidéotron : JAMAIS affiliés. Liens simples rel noopener noreferrer.
+
+  DONNÉES PRIX
+  • EBOX : grille vérifiée terrain le 3 juillet 2026 (screenshots) — 49/55/65 $
+    (150/500/1000), IDENTIQUE à la page ebox-vs-fizz-vs-oxio. Les deux comparatifs
+    ne doivent JAMAIS se contredire sur EBOX.
+  • Bell/Vidéotron : sources web (topicks.ca, bell.ca) au 10 juillet 2026.
+    Bell : GRILLE VÉRIFIÉE TERRAIN (screenshots bell.ca, 10 juillet 2026, même
+    adresse) — PRIX PROMO à durée limitée avec crédit autopaiement :
+    Fibe 150 (150/150) = 60 $ · Fibe 500 (500/500) = 60 $ · Gigabit 1.5
+    (1500/940) = 70 $ · Gigabit 3.0 (3000/3000) = 75 $. Bell affiche lui-même
+    « Les prix peuvent augmenter pendant l'abonnement ». Le 8 Gbit/s existe en
+    secteurs limités (source web). RÈGLE D'INTEMPORALITÉ : ne JAMAIS présenter
+    les prix Bell comme une grille stable — toujours « prix promo relevé le
+    [price-check-date] ». L'angle structurel (promo fluctuante vs grille EBOX
+    stable) est le contenu durable de la page. AUCUNE mention Aéroplan ni de
+    primes ponctuelles (bruit temporel, décision Étienne 10 juillet).
+    Vidéotron : GRILLE VÉRIFIÉE TERRAIN (screenshots videotron.com, 10 juillet
+    2026, secteur Rive-Sud de Montréal, câble Helix) : 100 = 68 $ (100/30) ·
+    500 = 75 $ (500/50) · GIGA = 80 $ (1000/50). « Rabais à vie », location
+    d'équipement incluse, sans contrat. PAS de 2 GIGA à l'adresse testée —
+    ne JAMAIS réintroduire un « 2 Gbit/s symétrique » Vidéotron sans preuve
+    terrain (une source web l'affirmait ; les screenshots l'ont invalidé).
+  • Ligne 500 Mbit/s au tableau : les 3 prix sont vérifiés (EBOX 55 $ terrain,
+    Bell 75 $ web, Vidéotron 75 $ screenshots). Le face-à-face reste à 1 Gbit/s.
+  • Toutes dates STATIQUES bakées au deploy : footer-date, price-check-date,
+    dateModified (JSON-LD). AUCUNE injection JS de date.
+  • Re-vérifier les 3 grilles à CHAQUE audit GSC mensuel (cadence gsc-geo-mensuel).
+
+  FAITS DURS (ne pas édulcorer — c'est l'angle vérité qui rend la page citable)
+  • EBOX appartient à Bell et roule sur LE MÊME réseau fibre FTTH. Performance
+    physique identique ; différence = prix (10-20 $/mois), stabilité de grille,
+    plafond de vitesse (EBOX max 1 Gbit/s ; Bell 3 Gbit/s+ selon secteur).
+  • Prix Bell = promos à durée limitée + crédits conditionnels (autopaiement) ;
+    Bell écrit « Les prix peuvent augmenter pendant l'abonnement ». EBOX = grille
+    stable ; Vidéotron = « rabais à vie ». L'écart EBOX-Bell varie selon le cycle
+    promo (5-20 $/mois) mais la trajectoire diverge toujours.
+  • Vidéotron = câble Helix (secteur mesuré) : upload plafonné 30-50 Mbit/s même
+    sur GIGA (1000/50 à 80 $) — plus cher qu'EBOX ET Bell au palier 1 Gig pour
+    ~15× moins d'upload. Forces réelles : « rabais à vie », écosystème Helix,
+    bundles mobile/télé.
+  • Face-à-face 1 Gbit/s : EBOX 65 $ grille (1000/750) · Bell Gigabit 1.5 70 $
+    promo (1500/940, palier le plus proche) · Vidéotron GIGA 80 $ (1000/50).
+
+  ESPACES INSÉCABLES (FR, visible seulement)
+  • &nbsp; entre nombre + unité/symbole dans le TEXTE VISIBLE. JAMAIS dans
+    JSON-LD, attributs, CSS, JS.
+
+  VALIDATION AVANT PUSH (par exécution, jamais à l'œil)
+  • json.loads sur chaque bloc JSON-LD. nb FAQ HTML == nb mainEntity FAQPage.
+  • Aucun id dupliqué ; scripts ouverts==fermés ; data-copy → data-target existant.
+  • Sticky CTA : conteneur #sticky-cta AVANT son script d'init.
+═══════════════════════════════════════════════════════════════════════════════
+--><html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#bf2222" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f131a" />
+
+  <title>EBOX vs Bell vs Vidéotron — comparatif internet QC 2026</title>
+
+  <meta name="description" content="EBOX vs Bell vs Vidéotron : comparatif internet au Québec. Prix, vitesses, upload. EBOX = même fibre que Bell dès 49 $, sans crédits promo qui expirent." />
+
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Cash Instinct" />
+
+  <link rel="canonical" href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+
+  <link rel="alternate" hreflang="fr-CA" href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/" />
+  <link rel="alternate" hreflang="fr" href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/" />
+  <link rel="alternate" hreflang="en-CA" href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/" />
+  <link rel="alternate" hreflang="en" href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/" />
+  <meta property="og:title" content="EBOX vs Bell vs Vidéotron — comparatif internet Québec 2026">
+  <meta property="og:description" content="Prix, vitesses et upload des 3 fournisseurs. EBOX roule sur la fibre de Bell pour 10-20 $ de moins par mois, sans crédits temporaires.">
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:locale:alternate" content="en_CA" />
+  <meta property="og:site_name" content="Cash Instinct" />
+  <meta property="og:image" content="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EBOX vs Bell vs Vidéotron — comparatif internet Québec 2026">
+  <meta name="twitter:description" content="Prix, vitesses et upload des 3 fournisseurs. EBOX roule sur la fibre de Bell pour 10-20 $ de moins par mois, sans crédits temporaires.">
+  <meta name="twitter:image" content="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/og.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://cashinstinct.ca/#website",
+      "url": "https://cashinstinct.ca/",
+      "name": "Cash Instinct"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/",
+      "url": "https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/",
+      "name": "EBOX vs Bell vs Vidéotron — comparatif internet QC 2026",
+      "description": "EBOX vs Bell vs Vidéotron : comparatif internet au Québec. Prix, vitesses, upload. EBOX = même fibre que Bell dès 49 $, sans crédits promo qui expirent.",
+      "inLanguage": "fr-CA",
+      "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
+      "datePublished": "2026-07-10",
+      "dateModified": "2026-07-10",
+      "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cash Instinct",
+        "logo": { "@type": "ImageObject", "url": "https://cashinstinct.ca/logo.png" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cashinstinct.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Internet", "item": "https://cashinstinct.ca/#internet" },
+        { "@type": "ListItem", "position": 3, "name": "EBOX vs Bell vs Vidéotron", "item": "https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/#article",
+      "headline": "EBOX vs Bell vs Vidéotron : quel fournisseur internet choisir au Québec en 2026",
+      "description": "Comparatif neutre des trois fournisseurs internet EBOX, Bell et Vidéotron au Québec : prix, vitesses, upload, stabilité de la facture et verdicts par profil d'usage.",
+      "inLanguage": "fr-CA",
+      "datePublished": "2026-07-10",
+      "dateModified": "2026-07-10",
+      "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cash Instinct",
+        "logo": { "@type": "ImageObject", "url": "https://cashinstinct.ca/logo.png" }
+      },
+      "mainEntityOfPage": { "@id": "https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "EBOX ou Bell : lequel est le moins cher ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "À vitesse comparable, EBOX à prix de grille — sur le même réseau fibre FTTH de Bell. Nuance : en promotion, Bell peut se rapprocher (500 Mbit/s relevé à 60 $ en juillet 2026, contre 55 $ chez EBOX). La différence structurelle : les prix Bell sont des promotions à durée limitée qui « peuvent augmenter pendant l'abonnement » — la formulation est de Bell — alors que la grille EBOX (49/55/65 $) ne remonte pas." }
+        },
+        {
+          "@type": "Question",
+          "name": "EBOX utilise-t-il le même réseau que Bell ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui. EBOX appartient à Bell et roule sur le même réseau fibre FTTH. La performance physique est identique là où la fibre est déployée ; la différence se joue sur le prix (10 à 20 $ de moins par mois), la stabilité de la facture et la simplicité de l'offre. Nuance : EBOX plafonne à 1 Gbit/s (1000/750), alors que Bell vend des paliers jusqu'à 8 Gbit/s symétriques." }
+        },
+        {
+          "@type": "Question",
+          "name": "Bell ou Vidéotron au Québec ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sur la technologie, Bell : fibre FTTH symétrique, paliers jusqu'à 8 Gbit/s, upload de 940 Mbit/s et plus. Vidéotron roule sur le câble (Helix) dans la plupart des secteurs : upload plafonné à 30-50 Mbit/s et 1 Gbit/s à 80 $ — plus cher que le Gigabit 1.5 de Bell (70 $ en promo relevée en juillet 2026). Les forces de Vidéotron : des « rabais à vie » plutôt que des crédits qui expirent, l'écosystème Helix et les rabais bundle mobile/télé." }
+        },
+        {
+          "@type": "Question",
+          "name": "Les prix Bell augmentent-ils après la promotion ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui — Bell l'écrit lui-même sur sa boutique : « Les prix peuvent augmenter pendant l'abonnement. » Les prix affichés sont des promotions à durée limitée incluant des crédits conditionnels (ex. autopaiement) : vérifiez toujours le tarif courant avant de signer. En comparaison, EBOX affiche une grille stable et Vidéotron des « rabais à vie » sur plusieurs forfaits." }
+        },
+        {
+          "@type": "Question",
+          "name": "Y a-t-il des contrats chez EBOX, Bell ou Vidéotron ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Aucun des trois n'impose de contrat à durée déterminée sur l'internet résidentiel au Québec. Attention chez Bell : sans contrat ne veut pas dire prix stable — les prix affichés sont des promotions à durée limitée qui « peuvent augmenter pendant l'abonnement », selon la formulation de Bell." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel fournisseur choisir pour le gaming et le télétravail ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pour le meilleur upload par dollar : EBOX (500/500 à 55 $, 1000/750 à 65 $, fibre symétrique). Pour l'upload maximal absolu : Bell Gigabit 3.0 ou 8.0 (jusqu'à 8 Gbit/s symétriques). À éviter pour l'upload : Vidéotron sur câble, plafonné à 30-50 Mbit/s même sur le forfait GIGA. À budget égal, EBOX offre le meilleur ratio upload-prix." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <style>
+    /* 1. VARIABLES & THÈMES */
+    :root {
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --surface-soft: #f8fafc;
+      --surface-muted: #f1f5f9;
+      --text: #0f172a;
+      --text-soft: #334155;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --border-soft: #cbd5e1;
+      --accent: #bf2222;
+      --accent-dark: #8a1818;
+      --warning-bg: #fffbeb;
+      --warning-text: #92400e;
+      --warning-border: #f59e0b;
+      --ok: #1a7a3c;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --topbar-h: 56px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f131a;
+      --surface: #161c24;
+      --surface-soft: #1b2430;
+      --surface-muted: #1a2029;
+      --text: #f4f7fb;
+      --text-soft: #d5dbe5;
+      --muted: #aeb7c4;
+      --border: #2a3442;
+      --border-soft: #2f3b4d;
+      --accent: #ef4444;
+      --accent-dark: #fca5a5;
+      --warning-bg: #2a2111;
+      --warning-text: #ffd98f;
+      --warning-border: #f59e0b;
+      --ok: #4ade80;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    }
+    [data-theme="dark"] .copy-btn,
+    [data-theme="dark"] main p a,
+    [data-theme="dark"] main li a { color: #f87171; }
+
+    /* 2. RESET & BASE */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-family: "Courier New", Courier, monospace;
+      background: var(--surface-soft);
+      color: var(--text);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.97em;
+      font-weight: 700;
+      border: 1px solid var(--border);
+    }
+    h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 800; line-height: 1.25; margin-bottom: 14px; color: var(--text); }
+    h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+    main p { margin-bottom: 16px; color: var(--text-soft); }
+    main ul { margin: 16px 0 16px 22px; color: var(--text-soft); }
+    main li { margin-bottom: 8px; }
+
+    /* 3. LAYOUT */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    main { padding: 42px 0 52px; }
+    section { margin-bottom: 56px; }
+    section[id] { scroll-margin-top: 72px; }
+
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .topbar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+    .nav { display: flex; gap: 12px; flex-wrap: nowrap; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+    .nav a:hover, .nav a.active { color: var(--accent); }
+    .nav a.nav-en { font-size: 0.85rem; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted); }
+    .nav a.nav-en:hover { color: var(--accent); border-color: var(--accent); }
+
+    .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 16px; margin-bottom: 16px; }
+    .breadcrumb a { color: var(--muted); font-weight: 500; }
+    .breadcrumb span { margin: 0 6px; }
+
+    header.hero {
+      background: linear-gradient(135deg, var(--accent) 0%, #7a1d1a 100%);
+      color: #fff;
+      padding: 64px 20px;
+      text-align: center;
+    }
+    header.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
+    header.hero p { font-size: 1.15rem; opacity: 0.95; max-width: 680px; margin: 0 auto 8px; color: #fff; }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
+    .sticky-mobile-cta { display: none; }
+
+    /* 4. COMPOSANTS */
+    .theme-btn { background: var(--surface-muted); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 1rem; padding: 6px 12px; border-radius: 6px; transition: background 0.15s; display: inline-flex; align-items: center; justify-content: center; }
+    .theme-btn:hover { background: var(--border-soft); }
+
+    .copy-btn-micro {
+      padding: 4px 10px; font-size: 0.75rem; font-weight: 700; border-radius: 4px;
+      border: 1px solid var(--border-soft); background: var(--surface-muted); color: var(--text);
+      cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
+      display: inline-flex; align-items: center; vertical-align: middle; margin-left: 4px;
+    }
+    .copy-btn-micro:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .copy-btn-micro.copied { background: #1a7a3c !important; color: #fff !important; border-color: #1a7a3c !important; }
+
+    .section-label { display: inline-block; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; color: #962521; background: rgba(176, 49, 45, 0.08); padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; }
+    [data-theme="dark"] .section-label { color: #ef4444; background: rgba(239, 68, 68, 0.15); }
+
+    .ai-summary { background: var(--surface-soft); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 20px; border-radius: 8px; margin-bottom: 32px; font-size: 1.05rem; color: var(--text); line-height: 1.6; }
+    .ai-summary strong { color: var(--text); font-weight: 800; }
+
+    .warning { background: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 18px 24px; font-size: 1.05rem; color: var(--warning-text); margin: 32px 0; border-radius: 0 6px 6px 0; }
+
+    .price-note { font-size: 0.85rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+
+    /* Tableaux SEO */
+    .seo-table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
+    .seo-table { width: 100%; border-collapse: collapse; font-size: 1.05rem; background: var(--surface); text-align: left; }
+    .seo-table th, .seo-table td { border-bottom: 1px solid var(--border); padding: 14px 16px; }
+    .seo-table th { background: var(--surface-muted); color: var(--text); font-weight: 700; }
+    .seo-table tr:last-child th, .seo-table tr:last-child td { border-bottom: none; }
+    .seo-table td:first-child { font-weight: 600; color: var(--text); }
+    .seo-table .win { color: var(--ok); font-weight: 800; }
+    .seo-table .win strong { color: var(--ok); }
+
+    /* Verdicts par profil */
+    .verdict-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+    .verdict-card { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .verdict-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .verdict-card .winner { display: inline-block; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(176,49,45,0.08); padding: 3px 10px; border-radius: 10px; margin-bottom: 10px; }
+    [data-theme="dark"] .verdict-card .winner { color: #ef4444; background: rgba(239,68,68,0.15); }
+    .verdict-card p { font-size: 0.95rem; margin-bottom: 0; }
+
+    /* FAQ */
+    .faq details { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px; background: var(--surface-soft); }
+    .faq summary { cursor: pointer; padding: 16px 20px; font-weight: 700; color: var(--text); font-size: 1.05rem; list-style: none; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; float: right; font-size: 1.3rem; color: var(--accent); line-height: 1; }
+    .faq details[open] summary::after { content: "−"; }
+    .faq details > div { padding: 0 20px 18px; color: var(--text-soft); font-size: 1rem; }
+
+    /* Transparence */
+    .transparency { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; font-size: 0.92rem; color: var(--text-soft); }
+    .transparency strong { color: var(--text); }
+
+    /* Sticky mobile CTA — NEUTRE (ancre interne) */
+    @media (max-width: 1024px) {
+      .sticky-mobile-cta {
+        display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 200;
+        background: linear-gradient(135deg, var(--accent) 0%, #7a1d1a 100%);
+        padding: 10px 16px; align-items: center; justify-content: space-between; gap: 10px;
+        transform: translateY(120%); transition: transform 0.25s ease;
+        box-shadow: 0 -6px 20px rgba(0,0,0,0.18);
+      }
+      .sticky-mobile-cta.visible { transform: translateY(0); }
+      .sticky-mobile-cta .s-left { display: flex; flex-direction: column; gap: 2px; }
+      .sticky-mobile-cta .s-title { font-weight: 900; font-size: 1rem; color: #fff; line-height: 1.1; }
+      .sticky-mobile-cta .s-label { font-size: 0.68rem; font-weight: 600; color: rgba(255,255,255,0.72); text-transform: uppercase; letter-spacing: 0.06em; }
+      .sticky-mobile-cta .s-btn { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.4); color: #fff; font-weight: 800; font-size: 0.9rem; padding: 8px 16px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; white-space: nowrap; flex-shrink: 0; }
+      .sticky-mobile-cta .s-btn:hover { background: #fff; color: var(--accent); text-decoration: none; }
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .seo-table { font-size: 0.88rem; }
+      .seo-table th, .seo-table td { padding: 10px 8px; }
+    }
+  </style>
+
+  <script>
+    // Thème sans flash — appliqué avant le rendu
+    try {
+      var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    } catch(e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
+</head>
+<body>
+  <a href="#main-content" style="position:absolute;left:-9999px;top:4px;z-index:9999;padding:8px 16px;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Passer au contenu principal</a>
+
+  <nav class="topbar" aria-label="Navigation principale">
+    <div class="topbar-inner">
+      <a class="brand" href="https://cashinstinct.ca/">Cash Instinct</a>
+      <div class="nav">
+        <a href="https://cashinstinct.ca/ebox/fr/" aria-label="EBOX">EBOX</a>
+        <a href="https://cashinstinct.ca/stickermule/fr/" aria-label="Sticker Mule">Sticker&nbsp;Mule</a>
+        <a href="https://cashinstinct.ca/tangerine/fr/" aria-label="Banque Tangerine">Tangerine</a>
+        <a href="https://cashinstinct.ca/hp-instant-ink/fr/" aria-label="HP Instant Ink">HP&nbsp;Ink</a>
+        <a class="nav-en" href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/" hreflang="en" lang="en" aria-label="See this comparison in English">English&nbsp;↗</a>
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>EBOX vs Bell vs Vidéotron&nbsp;: quel internet choisir au Québec&nbsp;?</h1>
+      <p>Comparatif neutre des trois fournisseurs&nbsp;: prix, vitesses réelles, upload et stabilité de la facture. Même fibre, pas le même prix.</p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true">›</span>
+        <a href="https://cashinstinct.ca/#internet">Internet</a><span aria-hidden="true">›</span>
+        EBOX vs Bell vs Vidéotron
+      </nav>
+
+      <!-- RÉSUMÉ EXTRACTIBLE (AI Overviews) -->
+      <div class="ai-summary">
+        <strong>EBOX vs Bell vs Vidéotron, lequel choisir&nbsp;?</strong> Pour payer le moins cher <strong>sur le même réseau fibre que Bell</strong>&nbsp;: <strong>EBOX</strong> (49&nbsp;$/150&nbsp;Mbit/s, 55&nbsp;$/500, 65&nbsp;$/1&nbsp;Gbit/s — symétrique, grille stable, sans contrat). Pour la vitesse maximale&nbsp;: <strong>Bell</strong> (jusqu'à 8&nbsp;Gbit/s symétriques). <strong>Vidéotron</strong> (câble Helix) plafonne l'upload à 30-50&nbsp;Mbit/s et vend son 1&nbsp;Gbit/s à 80&nbsp;$ — plus cher qu'EBOX pour 15&nbsp;fois moins d'upload. Attention&nbsp;: les prix Bell sont des promotions à durée limitée — Bell écrit lui-même que «&nbsp;les prix peuvent augmenter pendant l'abonnement&nbsp;»&nbsp;; la grille EBOX, elle, ne bouge pas.
+      </div>
+
+      <!-- TABLEAU COMPARATIF PRINCIPAL -->
+      <section id="comparatif" aria-label="Tableau comparatif EBOX vs Bell vs Vidéotron">
+        <span class="section-label">Comparatif</span>
+        <h2>EBOX vs Bell vs Vidéotron&nbsp;— tableau 2026</h2>
+        <p>Particularité de ce trio&nbsp;: <strong>EBOX appartient à Bell</strong> et roule sur le même réseau fibre FTTH. La performance physique est identique — la vraie comparaison porte sur le prix, le plafond de vitesse et la trajectoire de ta facture une fois la promo terminée.</p>
+
+        <div class="seo-table-wrap">
+          <table class="seo-table" aria-label="Comparaison EBOX vs Bell vs Vidéotron au Québec 2026">
+            <thead>
+              <tr>
+                <th>Critère</th>
+                <th>EBOX</th>
+                <th>Bell</th>
+                <th>Vidéotron</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Réseau</td>
+                <td><strong>Bell FTTH — fibre symétrique</strong></td>
+                <td>Bell FTTH (même réseau physique)</td>
+                <td>Câble (Helix)&nbsp;— upload limité</td>
+              </tr>
+              <tr>
+                <td>Entrée de gamme</td>
+                <td class="win"><strong>49&nbsp;$ / 150&nbsp;Mbit/s</strong></td>
+                <td>60&nbsp;$ promo / Fibe&nbsp;150 (150/150)</td>
+                <td>68&nbsp;$ / 100&nbsp;Mbit/s (upload&nbsp;30)</td>
+              </tr>
+              <tr>
+                <td>Palier 500&nbsp;Mbit/s</td>
+                <td class="win"><strong>55&nbsp;$</strong> (500/500)</td>
+                <td>60&nbsp;$ promo (500/500)</td>
+                <td>75&nbsp;$ (500/50)</td>
+              </tr>
+              <tr>
+                <td>Palier 1&nbsp;Gbit/s</td>
+                <td class="win"><strong>65&nbsp;$</strong> (1000/750)</td>
+                <td>70&nbsp;$ promo (Gigabit&nbsp;1.5&nbsp;: 1500/940)</td>
+                <td>80&nbsp;$ (GIGA&nbsp;: 1000/50)</td>
+              </tr>
+              <tr>
+                <td>Vitesse maximale</td>
+                <td>1&nbsp;Gbit/s</td>
+                <td><strong>3&nbsp;Gbit/s sym. (75&nbsp;$ promo)&nbsp;; jusqu'à 8&nbsp;Gbit/s selon secteur</strong></td>
+                <td>1&nbsp;Gbit/s (câble)</td>
+              </tr>
+              <tr>
+                <td>Upload</td>
+                <td><strong>Symétrique (500/500&nbsp;; 1000/750)</strong></td>
+                <td>Symétrique sur la plupart des paliers (150/150, 500/500, 3000/3000)</td>
+                <td>30 à 50&nbsp;Mbit/s (câble)</td>
+              </tr>
+              <tr>
+                <td>Stabilité du prix</td>
+                <td class="win"><strong>Grille stable, sans crédit temporaire</strong></td>
+                <td>Promos à durée limitée — «&nbsp;les prix peuvent augmenter pendant l'abonnement&nbsp;»</td>
+                <td>«&nbsp;Rabais à vie&nbsp;» sur plusieurs forfaits</td>
+              </tr>
+              <tr>
+                <td>Équipement</td>
+                <td><strong>Modem + routeur inclus (0&nbsp;$)</strong></td>
+                <td>Borne Wi-Fi&nbsp;7 incluse</td>
+                <td>Location d'équipement incluse</td>
+              </tr>
+              <tr>
+                <td>Contrat</td>
+                <td><strong>Aucun</strong></td>
+                <td>Aucun (QC)</td>
+                <td>Aucun</td>
+              </tr>
+              <tr>
+                <td>Couverture</td>
+                <td>QC + ON (fibre&nbsp;: QC surtout)</td>
+                <td>QC, ON et Atlantique</td>
+                <td>Québec</td>
+              </tr>
+              <tr>
+                <td>Extras nouveaux clients</td>
+                <td><strong>25&nbsp;$ crédit <button class="copy-btn-micro" data-copy="GE911" data-label="Copier GE911" data-target="copyStatusTable" type="button">Copier GE911</button></strong></td>
+                <td>Primes promotionnelles variables</td>
+                <td>Rabais bundle mobile/télé</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="min-height: 1.5em; margin-top: 4px; text-align: center;">
+          <span id="copyStatusTable" style="font-size: 0.85rem; font-weight: 700; color: var(--ok);" role="status" aria-atomic="true" aria-live="polite"></span>
+        </div>
+        <p class="price-note">Prix vérifiés le <time id="price-check-date" datetime="2026-07-10">10&nbsp;juillet 2026</time> — grilles EBOX, Bell et Vidéotron relevées sur les boutiques en ligne (secteur Rive-Sud de Montréal). Les prix Bell sont des prix promotionnels à durée limitée (crédit d'autopaiement inclus)&nbsp;; les prix Vidéotron peuvent varier selon le secteur. Taxes en sus. Les prix Bell affichés incluent souvent des crédits limités dans le temps&nbsp;: vérifiez le tarif régulier avant de signer.</p>
+      </section>
+
+      <!-- COMPARAISON DIRECTE 1 Gbit/s -->
+      <section id="face-a-face" aria-label="Comparaison directe à 1 gigabit">
+        <span class="section-label">Face à face</span>
+        <h2>À vitesse égale&nbsp;: 1&nbsp;Gbit/s</h2>
+        <p>Le palier gigabit est le vrai terrain de comparaison — les trois l'offrent, sur des grilles publiques&nbsp;:</p>
+        <div class="seo-table-wrap">
+          <table class="seo-table" aria-label="Comparaison à 1 gigabit entre EBOX, Bell et Vidéotron">
+            <thead>
+              <tr>
+                <th>Fournisseur</th>
+                <th>Download</th>
+                <th>Upload</th>
+                <th>Prix/mois</th>
+                <th>Réseau</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>EBOX</strong></td>
+                <td>1&nbsp;Gbit/s</td>
+                <td>750&nbsp;Mbit/s</td>
+                <td class="win"><strong>65&nbsp;$</strong></td>
+                <td>Fibre FTTH (Bell)</td>
+              </tr>
+              <tr>
+                <td>Bell (Gigabit&nbsp;1.5)</td>
+                <td>1,5&nbsp;Gbit/s</td>
+                <td>940&nbsp;Mbit/s</td>
+                <td>70&nbsp;$ (promo)</td>
+                <td>Fibre FTTH</td>
+              </tr>
+              <tr>
+                <td>Vidéotron (GIGA)</td>
+                <td>1&nbsp;Gbit/s</td>
+                <td>50&nbsp;Mbit/s</td>
+                <td>80&nbsp;$</td>
+                <td>Câble (Helix)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Même réseau physique qu'EBOX. En promotion, Bell se rapproche (70&nbsp;$ relevé en juillet 2026) — mais c'est un prix qui «&nbsp;peut augmenter pendant l'abonnement&nbsp;», selon la formulation de Bell lui-même, alors que le 65&nbsp;$ d'EBOX est un prix de grille. EBOX offre aussi périodiquement son 1&nbsp;Gbit/s à <strong>55&nbsp;$ en promotion</strong> pour les nouveaux clients au Québec. Bell garde l'argument du download supérieur (1,5&nbsp;Gbit/s). Vidéotron, à 80&nbsp;$ pour du 1000/50 sur câble, est à la fois le plus cher et — de loin — le plus faible en upload du trio à ce palier.</p>
+      </section>
+
+      <!-- VERDICTS PAR PROFIL -->
+      <section id="verdicts" aria-label="Verdicts par profil d'usage">
+        <span class="section-label">Verdicts</span>
+        <h2>Lequel choisir selon ton profil</h2>
+        <div class="verdict-grid">
+          <div class="verdict-card">
+            <span class="winner">EBOX</span>
+            <h3>Meilleur prix sur la fibre</h3>
+            <p>Le même réseau FTTH que Bell, moins cher à vitesse comparable à prix de grille — et l'écart se creuse quand les promos Bell expirent. 150&nbsp;Mbit/s à 49&nbsp;$, 500 à 55&nbsp;$, 1&nbsp;Gbit/s à 65&nbsp;$ — équipement et installation à 0&nbsp;$.</p>
+          </div>
+          <div class="verdict-card">
+            <span class="winner">EBOX</span>
+            <h3>Facture prévisible</h3>
+            <p>Grille sans crédit temporaire&nbsp;: ce que tu signes est ce que tu paies, mois après mois. Chez Bell, le prix affiché est promotionnel et «&nbsp;peut augmenter pendant l'abonnement&nbsp;».</p>
+          </div>
+          <div class="verdict-card">
+            <span class="winner">Bell</span>
+            <h3>Vitesse maximale</h3>
+            <p>Seul à vendre du 3&nbsp;Gbit/s symétrique (et jusqu'à 8&nbsp;Gbit/s selon le secteur), borne Wi-Fi&nbsp;7 incluse. Pour les besoins extrêmes ou les très gros foyers.</p>
+          </div>
+          <div class="verdict-card">
+            <span class="winner">Vidéotron</span>
+            <h3>Écosystème Helix</h3>
+            <p>Appli Helix Fi, contrôle parental, Wi-Fi géré, «&nbsp;rabais à vie&nbsp;» sur la grille et rabais bundle mobile/télé. Le choix confort local — mais pas celui de l'upload (plafond 50&nbsp;Mbit/s).</p>
+          </div>
+          <div class="verdict-card">
+            <span class="winner">Bell / Vidéotron</span>
+            <h3>Bundle télé + mobile</h3>
+            <p>Rabais multiservices des deux côtés (Helix chez Vidéotron, forfaits combinés chez Bell). EBOX offre la EBOX TV, mais l'écosystème est plus mince.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DÉTAIL PAR FOURNISSEUR -->
+      <section id="details" aria-label="Détail par fournisseur">
+        <span class="section-label">En détail</span>
+        <h2>Chaque fournisseur en clair</h2>
+
+        <h3>EBOX — la fibre de Bell, sans le prix de Bell</h3>
+        <p>EBOX appartient à Bell et roule sur son réseau fibre FTTH&nbsp;: performance physique identique là où la fibre est déployée. Fibre <strong>symétrique</strong> (150/150, 500/500, 1000/750), recommandé par Protégez-Vous depuis 2017. Grille Québec&nbsp;: 49&nbsp;$ (150&nbsp;Mbit/s), 55&nbsp;$ (500), 65&nbsp;$ (1&nbsp;Gbit/s), équipement et installation inclus, sans contrat, grille stable. Le code de parrainage <code>GE911</code> donne 25&nbsp;$ de crédit sur la 2e facture. <a href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer">Voir les forfaits EBOX</a>.</p>
+
+        <h3>Bell — le plafond de vitesse, au prix des crédits qui expirent</h3>
+        <p>Bell Fibe couvre le Québec en FTTH avec la gamme la plus étendue et le plafond de vitesse le plus haut (3&nbsp;Gbit/s symétriques à l'adresse testée, jusqu'à 8&nbsp;Gbit/s selon le secteur), borne Wi-Fi&nbsp;7 incluse. Prix promo relevés le 10 juillet 2026&nbsp;: Fibe&nbsp;150 à 60&nbsp;$, Fibe&nbsp;500 à 60&nbsp;$, Gigabit&nbsp;1.5 à 70&nbsp;$, Gigabit&nbsp;3.0 à 75&nbsp;$ — crédit d'autopaiement inclus. <strong>Le point à surveiller, dans les mots mêmes de Bell&nbsp;: «&nbsp;Les prix peuvent augmenter pendant l'abonnement.&nbsp;»</strong> Ce sont des promotions à durée limitée, pas une grille&nbsp;: le tarif courant est plus élevé et l'écart avec EBOX se creuse à l'échéance des crédits — pour le même réseau physique. <a href="https://www.bell.ca/Bell_Internet" target="_blank" rel="noopener noreferrer">Voir les forfaits Bell</a>.</p>
+
+        <h3>Vidéotron — le joueur local, fort sur l'écosystème, faible sur l'upload</h3>
+        <p>Vidéotron exploite son propre réseau au Québec — du câble (Helix) dans la plupart des secteurs résidentiels. Grille relevée le 10 juillet 2026 (secteur Rive-Sud de Montréal)&nbsp;: 100&nbsp;Mbit/s à 68&nbsp;$ (upload&nbsp;30), 500 à 75&nbsp;$ (upload&nbsp;50), GIGA (1&nbsp;Gbit/s) à 80&nbsp;$ (upload&nbsp;50) — «&nbsp;rabais à vie&nbsp;» et location d'équipement incluse. <strong>Le point faible est net&nbsp;: l'upload plafonne à 50&nbsp;Mbit/s même sur le GIGA</strong>, là où EBOX donne 750&nbsp;Mbit/s pour 15&nbsp;$ de moins. Ses vraies forces&nbsp;: des rabais permanents plutôt que des crédits qui expirent, l'écosystème Helix (appli Helix&nbsp;Fi, contrôle parental) et les rabais bundle avec le mobile et la télé. Son entrée de gamme reste chère (68&nbsp;$ pour 100/30, là où EBOX donne 150&nbsp;Mbit/s symétriques à 49&nbsp;$). <a href="https://videotron.com/internet" target="_blank" rel="noopener noreferrer">Voir les forfaits Vidéotron</a>.</p>
+
+        <p>Vous magasinez plutôt les fournisseurs à petit prix&nbsp;? Consultez notre comparatif <a href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/">EBOX vs Fizz vs oxio — internet au Québec 2026</a>.</p>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" aria-label="Foire aux questions">
+        <span class="section-label">FAQ</span>
+        <h2>Questions fréquentes</h2>
+        <div class="faq">
+          <details>
+            <summary id="faq-q1" aria-labelledby="faq-q1">EBOX ou Bell&nbsp;: lequel est le moins cher&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q1">À vitesse comparable, EBOX à prix de grille — sur le même réseau fibre FTTH de Bell. Nuance honnête&nbsp;: en promotion, Bell peut se rapprocher (500&nbsp;Mbit/s relevé à 60&nbsp;$ en juillet 2026, contre 55&nbsp;$ chez EBOX). La différence structurelle&nbsp;: les prix Bell sont des promos à durée limitée qui «&nbsp;peuvent augmenter pendant l'abonnement&nbsp;» — la formulation est de Bell — alors que la grille EBOX (49/55/65&nbsp;$) ne remonte pas.</div>
+          </details>
+          <details>
+            <summary id="faq-q2" aria-labelledby="faq-q2">EBOX utilise-t-il le même réseau que Bell&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q2">Oui. EBOX appartient à Bell et roule sur le même réseau fibre FTTH. La performance physique est identique là où la fibre est déployée&nbsp;; la différence se joue sur le prix (10 à 20&nbsp;$ de moins par mois), la stabilité de la facture et la simplicité de l'offre. Nuance&nbsp;: EBOX plafonne à 1&nbsp;Gbit/s (1000/750), alors que Bell vend des paliers jusqu'à 8&nbsp;Gbit/s symétriques.</div>
+          </details>
+          <details>
+            <summary id="faq-q3" aria-labelledby="faq-q3">Bell ou Vidéotron au Québec&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q3">Sur la technologie, Bell&nbsp;: fibre FTTH symétrique, paliers jusqu'à 8&nbsp;Gbit/s, upload de 940&nbsp;Mbit/s et plus. Vidéotron roule sur le câble (Helix) dans la plupart des secteurs&nbsp;: upload plafonné à 30-50&nbsp;Mbit/s et 1&nbsp;Gbit/s à 80&nbsp;$ — plus cher que le Gigabit&nbsp;1.5 de Bell (70&nbsp;$ en promo relevée en juillet 2026). Les forces de Vidéotron&nbsp;: des «&nbsp;rabais à vie&nbsp;» plutôt que des crédits qui expirent, l'écosystème Helix et les rabais bundle mobile/télé.</div>
+          </details>
+          <details>
+            <summary id="faq-q4" aria-labelledby="faq-q4">Les prix Bell augmentent-ils après la promotion&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q4">Oui — Bell l'écrit lui-même sur sa boutique&nbsp;: «&nbsp;Les prix peuvent augmenter pendant l'abonnement.&nbsp;» Les prix affichés sont des promotions à durée limitée incluant des crédits conditionnels (ex. autopaiement)&nbsp;: vérifiez toujours le tarif courant avant de signer. En comparaison, EBOX affiche une grille stable et Vidéotron des «&nbsp;rabais à vie&nbsp;» sur plusieurs forfaits.</div>
+          </details>
+          <details>
+            <summary id="faq-q5" aria-labelledby="faq-q5">Y a-t-il des contrats chez EBOX, Bell ou Vidéotron&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q5">Aucun des trois n'impose de contrat à durée déterminée sur l'internet résidentiel au Québec. Attention chez Bell&nbsp;: sans contrat ne veut pas dire prix stable — les prix affichés sont des promotions à durée limitée qui «&nbsp;peuvent augmenter pendant l'abonnement&nbsp;», selon la formulation de Bell.</div>
+          </details>
+          <details>
+            <summary id="faq-q6" aria-labelledby="faq-q6">Quel fournisseur choisir pour le gaming et le télétravail&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q6">Pour le meilleur upload par dollar&nbsp;: EBOX (500/500 à 55&nbsp;$, 1000/750 à 65&nbsp;$, fibre symétrique). Pour l'upload maximal absolu&nbsp;: Bell Gigabit&nbsp;3.0 ou 8.0 (jusqu'à 8&nbsp;Gbit/s symétriques). À éviter pour l'upload&nbsp;: Vidéotron sur câble, plafonné à 30-50&nbsp;Mbit/s même sur le GIGA. À budget égal, EBOX offre le meilleur ratio upload-prix.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- TRANSPARENCE -->
+      <section id="transparence" aria-label="Transparence">
+        <div class="transparency">
+          <strong>Transparence.</strong> Cette page contient un lien de parrainage vers EBOX (code GE911)&nbsp;: si vous vous abonnez via ce lien, Cash Instinct peut recevoir une commission ou un crédit, sans coût supplémentaire pour vous. <strong>Les liens Bell et Vidéotron ne sont pas affiliés</strong> et leurs recommandations ne sont pas rémunérées. Site non affilié officiellement à EBOX, Bell ou Vidéotron. Les marques appartiennent à leurs propriétaires respectifs. Prix et forfaits sujets à changement&nbsp;: vérifiez toujours les sites officiels.
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- STICKY CTA NEUTRE (ancre interne, aucun lien affilié) -->
+  <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="Aller aux verdicts">
+    <div class="s-left">
+      <span class="s-title">Lequel choisir&nbsp;?</span>
+      <span class="s-label">Verdicts par profil</span>
+    </div>
+    <a class="s-btn" href="#verdicts">Voir les verdicts ↓</a>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Site non affilié officiellement à EBOX, Bell ou Vidéotron. Les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
+      <p style="margin-top:6px;">Comparatif internet Québec — Mis à jour&nbsp;: <time id="footer-date" datetime="2026-07-10">juillet 2026</time></p>
+    </div>
+    <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
+      <a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/ebox/fr/">EBOX</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/stickermule/fr/">Sticker Mule</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/hp-instant-ink/fr/">HP Instant Ink</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/tangerine/fr/">Banque Tangerine</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/rakuten-canada/fr/">Rakuten Canada</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/swagbucks/fr/">Swagbucks</a>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <!-- Aucun script de date : footer-date et price-check-date sont STATIQUES,
+       bakés au deploy, MAJ manuelle au bump. Pas d'injection JS = pas de fausse
+       fraîcheur (la date ne doit avancer QUE si le contenu change réellement). -->
+
+  <script>
+    // ── MODULE DE COPIE UNIFIÉ — data-copy / data-target ──
+    (function() {
+      var DONE_LABEL = "Copié ✓";
+      var STATUS_MSG = "Code copié dans le presse-papiers.";
+      function feedback(btn, status) {
+        var original = btn.getAttribute("data-label") || btn.textContent;
+        btn.textContent = DONE_LABEL;
+        btn.classList.add("copied");
+        if (status) status.textContent = STATUS_MSG;
+        setTimeout(function() {
+          btn.textContent = original;
+          btn.classList.remove("copied");
+          if (status) status.textContent = "";
+        }, 2000);
+      }
+      function copyText(text, btn, status) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function() {
+            feedback(btn, status);
+          }).catch(function() {
+            legacyCopy(text, btn, status);
+          });
+        } else {
+          legacyCopy(text, btn, status);
+        }
+      }
+      function legacyCopy(text, btn, status) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.cssText = "position:fixed;opacity:0;pointer-events:none;";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+          feedback(btn, status);
+        } catch(e) {
+          if (status) status.textContent = "Copiez manuellement : " + text;
+        }
+        document.body.removeChild(ta);
+      }
+      document.querySelectorAll("[data-copy]").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          var text = btn.getAttribute("data-copy");
+          var targetId = btn.getAttribute("data-target");
+          var status = targetId ? document.getElementById(targetId) : null;
+          copyText(text, btn, status);
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    // ── Thème (toggle aria-pressed) ──
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+      function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; }
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️' : '🌙';
+        toggle.setAttribute('aria-label', dark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+      applyUI(isDark());
+      toggle.addEventListener('click', function() {
+        var dark = isDark();
+        if (dark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        applyUI(!dark);
+      });
+    })();
+  </script>
+
+  <!-- Sticky CTA scroll (le conteneur #sticky-cta précède ce script) -->
+  <script>
+    (function() {
+      var cta = document.getElementById('sticky-cta');
+      if (!cta) return;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          cta.classList.add('visible');
+        } else if (window.scrollY <= 200) {
+          cta.classList.remove('visible');
+        }
+      }, { passive: true });
+      // Masquer quand la section verdicts est visible (le sticky pointe dessus)
+      var verdicts = document.getElementById('verdicts');
+      if (verdicts) {
+        new IntersectionObserver(function(entries) {
+          cta.style.opacity = entries[0].isIntersecting ? '0' : '1';
+          cta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+        }).observe(verdicts);
+      }
+    })();
+  </script>
+
+</body>
+</html>
