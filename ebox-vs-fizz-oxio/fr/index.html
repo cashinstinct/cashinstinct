@@ -15,8 +15,12 @@
 
   MONÉTISATION (asymétrique — volontaire)
   • EBOX : code GE911 (lien affilié promo.ebox.ca, rel sponsored). Affilié #1.
-  • Fizz : [FIZZ_CODE_PLACEHOLDER] — code à insérer avant publication (accord +
-    code du père d'Étienne à confirmer). NE PAS publier avec le placeholder tel quel.
+  • Fizz : PAS de code au lancement (publié non monétisé, lien simple rel sans
+    sponsored). PROCÉDURE D'AJOUT quand le code arrive : (1) body — ajouter
+    (code : XXX) après « Voir les forfaits Fizz » ; (2) rel du lien Fizz +=
+    sponsored ; (3) transparence — remettre Fizz dans la phrase parrainage et
+    retirer « Le lien Fizz n'est pas affilié » ; (4) llms.txt + bump
+    4 emplacements/5 chaînes (voir skill valid-page).
   • oxio : AUCUN code. Lien non-affilié + phrase de transparence. Formulation exacte
     « on ne monétise pas oxio ». NE JAMAIS écrire « oxio n'a pas de programme »
     (faux : des codes referral existent). C'est un choix de neutralité, pas une absence.
@@ -53,7 +57,7 @@
   • Chaque summary a son aria-labelledby ; aucun id dupliqué ; scripts ouverts==fermés.
   • Chaque data-copy a un data-target pointant un span existant.
   • Sticky CTA : conteneur #sticky-cta AVANT son script d'init.
-  • Remplacer [FIZZ_CODE_PLACEHOLDER] par le vrai code Fizz.
+  • Code Fizz : ABSENT au lancement — suivre la procédure du bloc MONÉTISATION à l'ajout.
 ═══════════════════════════════════════════════════════════════════════════════
 -->
 <html lang="fr-CA">
@@ -607,7 +611,7 @@
         <p>EBOX roule sur le réseau fibre FTTH de Bell. C'est le seul des trois à offrir de la <strong>vraie symétrie</strong>&nbsp;: 150/150, 500/500, et 1000/750 sur le Gbit/s. Recommandé par Protégez-Vous depuis 2017. Grille Québec&nbsp;: 49&nbsp;$ (150&nbsp;Mbit/s), 55&nbsp;$ (500), 65&nbsp;$ (1&nbsp;Gbit/s), équipement et installation inclus, sans contrat. Le code de parrainage <code>GE911</code> donne 25&nbsp;$ de crédit sur la 2e facture. <a href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer">Voir les forfaits EBOX</a>.</p>
 
         <h3>Fizz — le plancher le moins cher, mais câble et QC seulement</h3>
-        <p>Fizz (Vidéotron) fonctionne sur le réseau câble, en <strong>asymétrique</strong>&nbsp;: l'upload plafonne à 50&nbsp;Mbit/s même sur le forfait 940&nbsp;Mbit/s. Grille&nbsp;: 40&nbsp;$ (30&nbsp;Mbit/s) jusqu'à 68&nbsp;$ (940). Modem Wi-Fi&nbsp;5 sur les forfaits d'entrée, Wi-Fi&nbsp;6 à partir de 400&nbsp;Mbit/s. Fonctionne 100&nbsp;% en ligne (pas de support téléphonique), système de crédits fidélité. <strong>Important&nbsp;: l'internet Fizz est offert au Québec seulement</strong>, pas en Ontario. <!-- FIZZ_CODE : insérer le vrai code avant publication --><a href="https://fizz.ca/fr/internet" target="_blank" rel="noopener sponsored noreferrer">Voir les forfaits Fizz</a> (code&nbsp;: <code>[FIZZ_CODE_PLACEHOLDER]</code>).</p>
+        <p>Fizz (Vidéotron) fonctionne sur le réseau câble, en <strong>asymétrique</strong>&nbsp;: l'upload plafonne à 50&nbsp;Mbit/s même sur le forfait 940&nbsp;Mbit/s. Grille&nbsp;: 40&nbsp;$ (30&nbsp;Mbit/s) jusqu'à 68&nbsp;$ (940). Modem Wi-Fi&nbsp;5 sur les forfaits d'entrée, Wi-Fi&nbsp;6 à partir de 400&nbsp;Mbit/s. Fonctionne 100&nbsp;% en ligne (pas de support téléphonique), système de crédits fidélité. <strong>Important&nbsp;: l'internet Fizz est offert au Québec seulement</strong>, pas en Ontario. <!-- FIZZ : pas encore de code — voir bloc MONÉTISATION en tête de fichier pour la procédure d'ajout --><a href="https://fizz.ca/fr/internet" target="_blank" rel="noopener noreferrer">Voir les forfaits Fizz</a>.</p>
 
         <h3>oxio — simple et bien noté, mais pas de fibre garantie</h3>
         <p>oxio (Cogeco) s'appuie sur le réseau Vidéotron au Québec (accès de gros). Interface simple, garantie 60&nbsp;jours, pas de hausse de prix, service client bien noté (~4,4/5 PlanHub, 4,2/5 Google). <strong>Le point clé&nbsp;: le prix et la vitesse d'oxio varient énormément selon l'adresse.</strong> À Montréal (et Brossard, La Prairie), on a mesuré du câble sans 1&nbsp;Gbit/s, avec le 500&nbsp;Mbit/s à 75&nbsp;$ — plus cher qu'EBOX fibre (55&nbsp;$). Mais à Trois-Rivières, la même vitesse tombe à 40&nbsp;$ et le 1&nbsp;Gbit/s est offert à 50&nbsp;$ — là, oxio bat EBOX sur le prix (EBOX ne garde que l'upload symétrique). Dans tous les cas l'upload reste bridé (2 à 50&nbsp;Mbit/s selon le forfait et le secteur, câble asymétrique). Le marketing oxio annonce «&nbsp;jusqu'à 1&nbsp;Gbit/s&nbsp;»&nbsp;: <strong>vérifiez toujours votre code postal</strong>, c'est le seul des trois où le prix change autant. <a href="https://oxio.ca/fr" target="_blank" rel="noopener noreferrer">Voir oxio</a> — <em>nous ne monétisons pas oxio, cette recommandation n'est pas rémunérée.</em></p>
@@ -648,7 +652,7 @@
       <!-- TRANSPARENCE -->
       <section id="transparence" aria-label="Transparence">
         <div class="transparency">
-          <strong>Transparence.</strong> Cette page contient des liens de parrainage vers EBOX (code GE911) et Fizz&nbsp;: si vous vous abonnez via ces liens, Cash Instinct peut recevoir une commission ou un crédit, sans coût supplémentaire pour vous. <strong>Nous ne monétisons pas oxio</strong>&nbsp;: le lien oxio n'est pas affilié et sa recommandation n'est pas rémunérée. Site non affilié officiellement à EBOX, Fizz ou oxio. Les marques appartiennent à leurs propriétaires respectifs. Prix et forfaits sujets à changement&nbsp;: vérifiez toujours les sites officiels.
+          <strong>Transparence.</strong> Cette page contient un lien de parrainage vers EBOX (code GE911)&nbsp;: si vous vous abonnez via ce lien, Cash Instinct peut recevoir une commission ou un crédit, sans coût supplémentaire pour vous. Le lien Fizz n'est pas affilié. <strong>Nous ne monétisons pas oxio</strong>&nbsp;: le lien oxio n'est pas affilié et sa recommandation n'est pas rémunérée. Site non affilié officiellement à EBOX, Fizz ou oxio. Les marques appartiennent à leurs propriétaires respectifs. Prix et forfaits sujets à changement&nbsp;: vérifiez toujours les sites officiels.
         </div>
       </section>
 
