@@ -25,6 +25,7 @@ Last verified: July 10, 2026 / Dernière vérification : 10 juillet 2026
 Independent comparison pages. Referral codes appear only where CashInstinct is a member of the program.
 
 - [EBOX vs Fizz vs oxio — Quebec internet 2026](https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/): Side-by-side comparison of three budget internet providers in Quebec: real monthly prices, download/upload speeds, installation fees, contract terms, and referral programs. Published July 10, 2026. Guides: [EN](https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/) · [FR](https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/)
+- [EBOX vs Bell vs Videotron — Quebec internet 2026](https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/): Side-by-side comparison of EBOX against the two big incumbents in Quebec. EBOX runs on Bell's own FTTH fibre. Field-checked prices: EBOX grid ($49/$55/$65), Bell promo prices (subject to increase during subscription, per Bell), Videotron cable (upload capped at 50 Mbps, lifetime discounts). Only EBOX carries a referral link (code GE911); Bell and Videotron links are non-affiliate. Published July 10, 2026. Guides: [EN](https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/) · [FR](https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/)
 
 ## Other codes (no guide page) / Autres codes (sans page guide)
 
