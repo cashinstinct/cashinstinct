@@ -1,0 +1,30 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- gradient dérivé de l'accent de la page : #bf2222 -> #7a1d1a (NE PAS changer sans raison) -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#bf2222"/>
+      <stop offset="100%" stop-color="#7a1d1a"/>
+    </linearGradient>
+    <filter id="cardshadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="20" flood-color="#000000" flood-opacity="0.30"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- barre latérale 18px (gabarit v3) -->
+  <rect x="0" y="0" width="18" height="630" fill="#ffffff" fill-opacity="0.30"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <!-- overline -->
+    <text x="618" y="104" font-size="40" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.10em">INTERNET QUÉBEC · 2026</text>
+    <!-- marque : EBOX en héros (le pick valeur), 150px -->
+    <text x="618" y="244" font-size="150" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">EBOX</text>
+    <!-- sous-marque : les deux autres -->
+    <text x="618" y="316" font-size="52" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.06em">vs BELL vs VIDÉOTRON</text>
+    <!-- HÉROS : capsule BLANCHE OPAQUE (jamais fill-opacity) ; x = -width/2 -->
+    <g transform="translate(618, 462)" filter="url(#cardshadow)">
+      <rect x="-410" y="-86" width="820" height="172" rx="86" fill="#ffffff"/>
+      <text x="0" y="30" font-size="84" font-weight="900" fill="#bf2222" letter-spacing="0.01em">DÈS 49 $/MOIS</text>
+    </g>
+    <!-- footer : court -->
+    <text x="618" y="600" font-size="37" font-weight="700" fill="#ffffff" fill-opacity="0.88" letter-spacing="0.02em">Fibre · grille stable vs promos qui expirent</text>
+  </g>
+</svg>
