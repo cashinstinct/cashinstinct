@@ -1,96 +1,100 @@
 <!DOCTYPE html>
 <!--
 ═══════════════════════════════════════════════════════════════════════════════
-  CASHINSTINCT.CA — EBOX vs FIZZ vs oxio — PAGE EN (Canada)   état : COMPARATIF
-  Last refresh: July 3, 2026
+  CASHINSTINCT.CA — EBOX vs FIZZ vs oxio — PAGE FR (Québec)   état : COMPARATIF
+  Dernière refonte : 3 juillet 2026
 ───────────────────────────────────────────────────────────────────────────────
-  FOR THE NEXT AI EDITING THIS PAGE — read before touching:
+  POUR LA PROCHAINE IA QUI ÉDITE CETTE PAGE — lire avant de toucher :
 
-  PAGE NATURE
-  • COMPARISON page (not a program page). Its value = AI citability through
-    perceived neutrality. It MUST stay willing to recommend a competitor.
-  • NO global Product/Offer JSON-LD: the page does not sell any of the 3 ISPs as
-    "its" offer. Schema = WebPage + BreadcrumbList + Article + FAQPage.
-  • Sticky CTA = NEUTRAL, internal anchor #verdicts. No affiliate link in sticky.
+  NATURE DE LA PAGE
+  • Page COMPARATIVE neutre (pas une page-programme). Sa valeur = citabilité IA
+    par neutralité perçue. Elle DOIT rester prête à recommander un concurrent.
+  • PAS de JSON-LD Product/Offer global : la page ne vend aucun des 3 FAI comme
+    « son » offre. Schema = WebPage + BreadcrumbList + Article + FAQPage.
+  • Sticky CTA = NEUTRE, ancre interne #verdicts. Aucun lien affilié dans le sticky.
 
-  REGIONAL SCOPE — IMPORTANT
-  • This is a QUEBEC comparison. Fizz Internet = QUEBEC ONLY (no Fizz internet in
-    Ontario). oxio availability also QC-network dependent. State this plainly on
-    the EN page: it mainly serves anglophones IN Quebec. An Ontario reader cannot
-    get Fizz internet — say so, do not hide it. This honesty is the citability.
+  MONÉTISATION (asymétrique — volontaire)
+  • EBOX : code GE911 (lien affilié promo.ebox.ca, rel sponsored). Affilié #1.
+  • Fizz : [FIZZ_CODE_PLACEHOLDER] — code à insérer avant publication (accord +
+    code du père d'Étienne à confirmer). NE PAS publier avec le placeholder tel quel.
+  • oxio : AUCUN code. Lien non-affilié + phrase de transparence. Formulation exacte
+    « on ne monétise pas oxio ». NE JAMAIS écrire « oxio n'a pas de programme »
+    (faux : des codes referral existent). C'est un choix de neutralité, pas une absence.
 
-  MONETIZATION (asymmetric — intentional)
-  • EBOX: code GE911 (affiliate link, rel sponsored). Primary affiliate.
-  • Fizz: [FIZZ_CODE_PLACEHOLDER] — insert real code before publishing.
-  • oxio: NO code. Non-affiliate link + transparency line. Exact wording
-    "we don't monetize oxio". NEVER write "oxio has no program" (false).
+  DONNÉES PRIX — grilles vérifiées terrain le 3 juillet 2026 (screenshots).
+  • TOUTES les dates de la page sont STATIQUES, bakées au deploy, MAJ manuelle au
+    bump : footer-date, price-check-date et dateModified (JSON-LD). AUCUNE injection
+    JS de date (pattern « fausse fraîcheur » purgé du site). Une date n'avance QUE
+    si le contenu change réellement.
+  • Re-vérifier les 3 grilles à CHAQUE audit GSC mensuel (cadence gsc-geo-mensuel).
+    À chaque re-vérif : confronter aux sites officiels → MAJ price-check-date manuelle
+    → dateModified (head) au push → re-valider valid-page-cashinstinct.
 
-  PRICE DATA — grids field-verified July 3, 2026 (screenshots).
-  • ALL dates on the page are STATIC, baked at deploy, updated manually at bump:
-    footer-date, price-check-date and dateModified (JSON-LD). NO JS date injection
-    (the "false freshness" pattern is purged from the site). A date only advances
-    when content actually changes. Re-verify the 3 grids at every monthly GSC audit.
+  FAITS DURS (ne pas édulcorer — c'est l'angle vérité qui rend la page citable)
+  • EBOX = Bell FTTH, FIBRE SYMÉTRIQUE (150/150, 500/500 ; 1 Gbps = 1000/750).
+    Seul des 3 à offrir du symétrique. Grille QC : 49/55/65 $. Équipement 0 $.
+  • Fizz = Vidéotron, CÂBLE asymétrique. Upload plafonné 50 Mbit/s même sur le 940.
+    Internet Fizz = QUÉBEC SEULEMENT (pas d'internet Fizz en Ontario).
+  • oxio = proprio Cogeco, réseau Vidéotron QC (câble/TPIA), asymétrique. Prix et
+    dispo varient ÉNORMÉMENT selon l'adresse (loterie de code postal). Deux secteurs
+    mesurés : Montréal/Brossard/La Prairie = câble, pas de 1 Gbps, 500 Mbit/s à 75 $ ;
+    Trois-Rivières = 1 Gbps dispo, 500 Mbit/s à 40 $. Upload bridé partout (2-50 Mbit/s).
+    Formuler « varie selon le secteur / toujours tester son code postal », jamais une
+    généralisation unique.
+  • Comparaison 500 Mbps (secteur fibre EBOX) : EBOX 55 $/500 up · Fizz 58 $/50 up
+    · oxio 75 $/50 up. EBOX = moins cher ET 10× l'upload.
 
-  HARD FACTS (do not soften — the truth angle is what makes this citable)
-  • EBOX = Bell FTTH, SYMMETRIC fibre (150/150, 500/500; 1 Gbps = 1000/750).
-    Only one of the 3 with symmetry. QC grid: $49/$55/$65. Equipment $0.
-  • Fizz = Vidéotron, CABLE asymmetric. Upload capped 50 Mbps even on 940.
-    Fizz Internet = QUEBEC ONLY.
-  • oxio = Cogeco-owned, Vidéotron QC network (cable/TPIA), asymmetric. Price and
-    availability vary HUGELY by address (postal-code lottery). Two measured sectors:
-    Montreal/Brossard/La Prairie = cable, no 1 Gbps, 500 Mbps at $75; Trois-Rivières
-    = 1 Gbps available, 500 Mbps at $40. Upload throttled everywhere (2-50 Mbps). Word
-    it "varies by area / always check your postal code", never a single generalization.
-  • 500 Mbps compare (EBOX fibre area): EBOX $55/500 up · Fizz $58/50 up
-    · oxio $75/50 up. EBOX = cheaper AND 10x the upload.
+  ESPACES INSÉCABLES (FR, visible seulement)
+  • &nbsp; entre nombre + unité/symbole dans le TEXTE VISIBLE : 55&nbsp;$/mois,
+    500&nbsp;Mbit/s, 25&nbsp;$. JAMAIS dans JSON-LD, attributs, CSS, JS.
 
-  VALIDATION BEFORE PUSH (by execution, never by eye)
-  • json.loads each JSON-LD block. HTML FAQ count == FAQPage mainEntity count.
-  • Each summary has aria-labelledby; no duplicate ids; scripts open==close.
-  • Each data-copy has a data-target pointing to an existing span.
-  • Sticky CTA: #sticky-cta container BEFORE its init script.
-  • Replace [FIZZ_CODE_PLACEHOLDER] with the real Fizz code.
+  VALIDATION AVANT PUSH (par exécution, jamais à l'œil)
+  • json.loads sur chaque bloc JSON-LD. nb FAQ HTML == nb mainEntity FAQPage.
+  • Chaque summary a son aria-labelledby ; aucun id dupliqué ; scripts ouverts==fermés.
+  • Chaque data-copy a un data-target pointant un span existant.
+  • Sticky CTA : conteneur #sticky-cta AVANT son script d'init.
+  • Remplacer [FIZZ_CODE_PLACEHOLDER] par le vrai code Fizz.
 ═══════════════════════════════════════════════════════════════════════════════
 -->
-<html lang="en-CA">
+<html lang="fr-CA">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#bf2222" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f131a" />
 
-  <title>EBOX vs Fizz vs oxio — Quebec internet compared 2026</title>
+  <title>EBOX vs Fizz vs oxio — comparatif internet QC 2026</title>
 
-  <meta name="description" content="EBOX vs Fizz vs oxio: Quebec internet compared. Price, speed, upload and network. EBOX symmetric fibre from $49; Fizz and oxio on Vidéotron cable." />
+  <meta name="description" content="EBOX vs Fizz vs oxio : comparatif internet au Québec. Prix, vitesses, upload et réseau. EBOX fibre symétrique dès 49 $, Fizz et oxio sur câble Vidéotron." />
 
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Cash Instinct" />
 
-  <link rel="canonical" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/" />
+  <link rel="canonical" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 
-  <link rel="alternate" hreflang="en-CA" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/" />
-  <link rel="alternate" hreflang="en" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/" />
   <link rel="alternate" hreflang="fr-CA" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/" />
   <link rel="alternate" hreflang="fr" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/" />
+  <link rel="alternate" hreflang="en-CA" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/" />
+  <link rel="alternate" hreflang="en" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/" />
   <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/" />
-  <meta property="og:title" content="EBOX vs Fizz vs oxio — Quebec internet compared 2026">
-  <meta property="og:description" content="Price, speed, upload and network across all three. EBOX symmetric fibre from $49; Fizz and oxio on Vidéotron cable (asymmetric).">
-  <meta property="og:locale" content="en_CA" />
-  <meta property="og:locale:alternate" content="fr_CA" />
+  <meta property="og:url" content="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/" />
+  <meta property="og:title" content="EBOX vs Fizz vs oxio — comparatif internet Québec 2026">
+  <meta property="og:description" content="Prix, vitesses, upload et réseau des 3 fournisseurs. EBOX fibre symétrique dès 49 $, Fizz et oxio sur câble Vidéotron asymétrique.">
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:locale:alternate" content="en_CA" />
   <meta property="og:site_name" content="Cash Instinct" />
-  <meta property="og:image" content="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/og.png" />
+  <meta property="og:image" content="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EBOX vs Fizz vs oxio — Quebec internet compared 2026">
-  <meta name="twitter:description" content="Price, speed, upload and network across all three. EBOX symmetric fibre from $49; Fizz and oxio on Vidéotron cable (asymmetric).">
-  <meta name="twitter:image" content="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/og.png" />
+  <meta name="twitter:title" content="EBOX vs Fizz vs oxio — comparatif internet Québec 2026">
+  <meta name="twitter:description" content="Prix, vitesses, upload et réseau des 3 fournisseurs. EBOX fibre symétrique dès 49 $, Fizz et oxio sur câble Vidéotron asymétrique.">
+  <meta name="twitter:image" content="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/og.png" />
 
 <script type="application/ld+json">
 {
@@ -104,11 +108,11 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/",
-      "url": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/",
-      "name": "EBOX vs Fizz vs oxio — Quebec internet compared 2026",
-      "description": "EBOX vs Fizz vs oxio: Quebec internet compared. Price, speed, upload and network. EBOX symmetric fibre from $49; Fizz and oxio on Vidéotron cable.",
-      "inLanguage": "en-CA",
+      "@id": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/",
+      "url": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/",
+      "name": "EBOX vs Fizz vs oxio — comparatif internet QC 2026",
+      "description": "EBOX vs Fizz vs oxio : comparatif internet au Québec. Prix, vitesses, upload et réseau. EBOX fibre symétrique dès 49 $, Fizz et oxio sur câble Vidéotron.",
+      "inLanguage": "fr-CA",
       "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
       "datePublished": "2026-07-03",
       "dateModified": "2026-07-03",
@@ -121,19 +125,19 @@
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/#breadcrumb",
+      "@id": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cashinstinct.ca/" },
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cashinstinct.ca/" },
         { "@type": "ListItem", "position": 2, "name": "Internet", "item": "https://cashinstinct.ca/#internet" },
-        { "@type": "ListItem", "position": 3, "name": "EBOX vs Fizz vs oxio", "item": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/" }
+        { "@type": "ListItem", "position": 3, "name": "EBOX vs Fizz vs oxio", "item": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/" }
       ]
     },
     {
       "@type": "Article",
-      "@id": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/#article",
-      "headline": "EBOX vs Fizz vs oxio: which internet provider to choose in Quebec in 2026",
-      "description": "Neutral comparison of three Quebec internet providers — EBOX, Fizz and oxio: verified prices, real speeds, upload, physical network and verdicts by use case.",
-      "inLanguage": "en-CA",
+      "@id": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/#article",
+      "headline": "EBOX vs Fizz vs oxio : quel fournisseur internet choisir au Québec en 2026",
+      "description": "Comparatif neutre des trois fournisseurs internet EBOX, Fizz et oxio au Québec : prix vérifiés, vitesses réelles, upload, réseau physique et verdicts par profil d'usage.",
+      "inLanguage": "fr-CA",
       "datePublished": "2026-07-03",
       "dateModified": "2026-07-03",
       "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
@@ -142,41 +146,41 @@
         "name": "Cash Instinct",
         "logo": { "@type": "ImageObject", "url": "https://cashinstinct.ca/logo.png" }
       },
-      "mainEntityOfPage": { "@id": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/" }
+      "mainEntityOfPage": { "@id": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/" }
     },
     {
       "@type": "FAQPage",
-      "@id": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/#faq",
+      "@id": "https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/#faq",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "EBOX or Fizz: which is cheaper?",
-          "acceptedAnswer": { "@type": "Answer", "text": "It depends on the speed. Fizz has the lowest entry price with its 30 Mbps plan at $40, ideal for 1 to 2 people. But at equal speed from 150 Mbps up, EBOX is the better value: equipment and installation at $0, and symmetric fibre. At 500 Mbps, EBOX is $55 versus $58 at Fizz, with 10 times more upload." }
+          "name": "EBOX ou Fizz : lequel est le moins cher ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ça dépend de la vitesse. Fizz a le plancher le plus bas avec son forfait 30 Mbit/s à 40 $, idéal pour 1 à 2 personnes. Mais à vitesse égale dès 150 Mbit/s, EBOX est plus avantageux : équipement et installation à 0 $, et fibre symétrique. À 500 Mbit/s, EBOX est à 55 $ contre 58 $ chez Fizz, avec 10 fois plus d'upload." }
         },
         {
           "@type": "Question",
-          "name": "Is oxio reliable?",
-          "acceptedAnswer": { "@type": "Answer", "text": "oxio is well rated for customer service (about 4.4/5 on PlanHub, 4.2/5 on Google) and offers a 60-day guarantee. In Quebec its infrastructure runs on the Vidéotron network (cable). The key point: its price varies enormously by address. The same 500 Mbps plan costs $75 in Montreal but $40 in Trois-Rivières. Always check your postal code before concluding anything about oxio." }
+          "name": "Est-ce que oxio est fiable ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "oxio est bien noté côté service client (environ 4,4/5 sur PlanHub, 4,2/5 sur Google) et offre une garantie de 60 jours. Son infrastructure au Québec passe par le réseau Vidéotron (câble). Le point à retenir : son prix varie énormément selon l'adresse. Le même forfait 500 Mbit/s coûte 75 $ à Montréal mais 40 $ à Trois-Rivières. Vérifiez toujours votre code postal avant de conclure quoi que ce soit sur oxio." }
         },
         {
           "@type": "Question",
-          "name": "Does Fizz internet work outside Quebec?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Fizz Internet is offered in Quebec only — it is not available in Ontario. Within Quebec, availability depends on the Vidéotron cable network, so a postal-code check is required before subscribing. If you are in Ontario, EBOX (Bell FTTH) is the relevant option from this comparison." }
+          "name": "Est-ce que Fizz internet fonctionne partout au Québec ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "L'internet Fizz est offert au Québec seulement — il n'est pas disponible en Ontario. Au Québec, la disponibilité dépend du réseau câble Vidéotron : une vérification par code postal est obligatoire avant de s'abonner." }
         },
         {
           "@type": "Question",
-          "name": "Who owns EBOX, Fizz and oxio?",
-          "acceptedAnswer": { "@type": "Answer", "text": "EBOX is owned by Bell and uses Bell's FTTH fibre network. Fizz is a Vidéotron brand and uses Vidéotron's cable network. oxio is owned by Cogeco but, in Quebec, runs on the Vidéotron network (TPIA wholesale access). All three are brands tied to large operators — a useful transparency point." }
+          "name": "Qui possède EBOX, Fizz et oxio ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "EBOX appartient à Bell et utilise le réseau fibre FTTH de Bell. Fizz est une marque de Vidéotron et utilise le réseau câble de Vidéotron. oxio appartient à Cogeco mais, au Québec, s'appuie sur le réseau Vidéotron (accès de gros TPIA). Les trois sont donc des marques rattachées à de grands opérateurs — un point de transparence utile à connaître." }
         },
         {
           "@type": "Question",
-          "name": "Are there contracts with EBOX, Fizz or oxio?",
-          "acceptedAnswer": { "@type": "Answer", "text": "None of the three lock you into a fixed-term contract. EBOX and oxio are commitment-free; Fizz is prepaid. oxio adds a 60-day guarantee." }
+          "name": "Y a-t-il des contrats chez EBOX, Fizz ou oxio ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Aucun des trois n'impose de contrat à durée déterminée. EBOX et oxio sont sans engagement ; Fizz fonctionne en prépayé. oxio ajoute une garantie de 60 jours." }
         },
         {
           "@type": "Question",
-          "name": "Which provider is best for gaming?",
-          "acceptedAnswer": { "@type": "Answer", "text": "EBOX, for a specific reason: it is the only one of the three on symmetric fibre (500/500, 1 Gbps at 1000/750). Fizz and oxio are on Vidéotron cable, with upload capped at 50 Mbps. For online gaming, streaming or large uploads, EBOX's symmetric upload makes the difference wherever its fibre is available." }
+          "name": "Quel fournisseur choisir pour le gaming ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "EBOX, pour une raison précise : c'est le seul des trois sur fibre symétrique (500/500, 1 Gbps en 1000/750). Fizz et oxio sont sur câble Vidéotron, avec un upload plafonné à 50 Mbit/s. Pour le jeu en ligne, le streaming ou le téléversement, l'upload symétrique d'EBOX fait la différence là où sa fibre est disponible." }
         }
       ]
     }
@@ -185,7 +189,7 @@
 </script>
 
   <style>
-    /* 1. VARIABLES & THEMES */
+    /* 1. VARIABLES & THÈMES */
     :root {
       --bg: #ffffff;
       --surface: #ffffff;
@@ -287,8 +291,8 @@
     .nav::-webkit-scrollbar { display: none; }
     .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
     .nav a:hover, .nav a.active { color: var(--accent); }
-    .nav a.nav-fr { font-size: 0.85rem; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted); }
-    .nav a.nav-fr:hover { color: var(--accent); border-color: var(--accent); }
+    .nav a.nav-en { font-size: 0.85rem; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted); }
+    .nav a.nav-en:hover { color: var(--accent); border-color: var(--accent); }
 
     .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 16px; margin-bottom: 16px; }
     .breadcrumb a { color: var(--muted); font-weight: 500; }
@@ -306,7 +310,7 @@
     footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
     .sticky-mobile-cta { display: none; }
 
-    /* 4. COMPONENTS */
+    /* 4. COMPOSANTS */
     .theme-btn { background: var(--surface-muted); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 1rem; padding: 6px 12px; border-radius: 6px; transition: background 0.15s; display: inline-flex; align-items: center; justify-content: center; }
     .theme-btn:hover { background: var(--border-soft); }
 
@@ -329,7 +333,7 @@
 
     .price-note { font-size: 0.85rem; color: var(--muted); font-style: italic; margin-top: 10px; }
 
-    /* SEO tables */
+    /* Tableaux SEO */
     .seo-table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
     .seo-table { width: 100%; border-collapse: collapse; font-size: 1.05rem; background: var(--surface); text-align: left; }
     .seo-table th, .seo-table td { border-bottom: 1px solid var(--border); padding: 14px 16px; }
@@ -339,7 +343,7 @@
     .seo-table .win { color: var(--ok); font-weight: 800; }
     .seo-table .win strong { color: var(--ok); }
 
-    /* Verdicts */
+    /* Verdicts par profil */
     .verdict-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
     .verdict-card { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
     .verdict-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
@@ -355,11 +359,11 @@
     .faq details[open] summary::after { content: "−"; }
     .faq details > div { padding: 0 20px 18px; color: var(--text-soft); font-size: 1rem; }
 
-    /* Transparency */
+    /* Transparence */
     .transparency { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; font-size: 0.92rem; color: var(--text-soft); }
     .transparency strong { color: var(--text); }
 
-    /* Sticky mobile CTA — NEUTRAL (internal anchor) */
+    /* Sticky mobile CTA — NEUTRE (ancre interne) */
     @media (max-width: 1024px) {
       .sticky-mobile-cta {
         display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 200;
@@ -384,7 +388,7 @@
   </style>
 
   <script>
-    // Flash-free theme — applied before render
+    // Thème sans flash — appliqué avant le rendu
     try {
       var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', t);
@@ -394,54 +398,54 @@
   </script>
 </head>
 <body>
-  <a href="#main-content" style="position:absolute;left:-9999px;top:4px;z-index:9999;padding:8px 16px;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Skip to main content</a>
+  <a href="#main-content" style="position:absolute;left:-9999px;top:4px;z-index:9999;padding:8px 16px;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Passer au contenu principal</a>
 
-  <nav class="topbar" aria-label="Main navigation">
+  <nav class="topbar" aria-label="Navigation principale">
     <div class="topbar-inner">
       <a class="brand" href="https://cashinstinct.ca/">Cash Instinct</a>
       <div class="nav">
-        <a href="https://cashinstinct.ca/ebox/en/" aria-label="EBOX">EBOX</a>
-        <a href="https://cashinstinct.ca/stickermule/en/" aria-label="Sticker Mule">Sticker&nbsp;Mule</a>
-        <a href="https://cashinstinct.ca/tangerine/en/" aria-label="Tangerine Bank">Tangerine</a>
-        <a href="https://cashinstinct.ca/hp-instant-ink/en/" aria-label="HP Instant Ink">HP&nbsp;Ink</a>
-        <a class="nav-fr" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/" hreflang="fr" lang="fr" aria-label="Voir cette comparaison en français">Français&nbsp;↗</a>
-        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Enable dark mode" aria-pressed="false">🌙</button>
+        <a href="https://cashinstinct.ca/ebox/fr/" aria-label="EBOX">EBOX</a>
+        <a href="https://cashinstinct.ca/stickermule/fr/" aria-label="Sticker Mule">Sticker&nbsp;Mule</a>
+        <a href="https://cashinstinct.ca/tangerine/fr/" aria-label="Banque Tangerine">Tangerine</a>
+        <a href="https://cashinstinct.ca/hp-instant-ink/fr/" aria-label="HP Instant Ink">HP&nbsp;Ink</a>
+        <a class="nav-en" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/" hreflang="en" lang="en" aria-label="See this comparison in English">English&nbsp;↗</a>
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
       </div>
     </div>
   </nav>
 
   <header class="hero">
     <div class="container">
-      <h1>EBOX vs Fizz vs oxio: which internet to choose in Quebec?</h1>
-      <p>A neutral comparison of all three: verified prices, real speeds, upload and physical network. No jargon, no marketing.</p>
+      <h1>EBOX vs Fizz vs oxio&nbsp;: quel internet choisir au Québec&nbsp;?</h1>
+      <p>Comparatif neutre des trois fournisseurs&nbsp;: prix vérifiés, vitesses réelles, upload et réseau physique. Sans jargon, sans marketing.</p>
     </div>
   </header>
 
   <main id="main-content">
     <div class="container">
 
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="https://cashinstinct.ca/">Home</a><span aria-hidden="true">›</span>
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true">›</span>
         <a href="https://cashinstinct.ca/#internet">Internet</a><span aria-hidden="true">›</span>
         EBOX vs Fizz vs oxio
       </nav>
 
-      <!-- EXTRACTABLE SUMMARY (AI Overviews) -->
+      <!-- RÉSUMÉ EXTRACTIBLE (AI Overviews) -->
       <div class="ai-summary">
-        <strong>EBOX vs Fizz vs oxio — which one?</strong> For the best speed-to-price ratio and the only <strong>symmetric fibre</strong> network, it's <strong>EBOX</strong> (from $49/mo in Quebec, upload equal to download). For the cheapest floor, <strong>Fizz</strong> at $40/mo (30 Mbps, Quebec only). <strong>oxio</strong> is a postal-code lottery: 500 Mbps costs $75 in Montreal but $40 in Trois-Rivières — always check your address. Fizz and oxio both run on Vidéotron cable (upload capped at 50 Mbps). <strong>Note:</strong> this is a Quebec comparison — Fizz internet is not available in Ontario.
+        <strong>EBOX vs Fizz vs oxio, lequel choisir&nbsp;?</strong> Pour le meilleur rapport vitesse-prix et le seul réseau <strong>fibre symétrique</strong>, c'est <strong>EBOX</strong> (dès 49&nbsp;$/mois au Québec, upload égal au download). Pour le plancher le moins cher, <strong>Fizz</strong> à 40&nbsp;$/mois (30&nbsp;Mbit/s, Québec seulement). <strong>oxio</strong> est une loterie de code postal&nbsp;: 500&nbsp;Mbit/s à 75&nbsp;$ à Montréal, mais à 40&nbsp;$ à Trois-Rivières — vérifiez toujours votre adresse. Fizz et oxio roulent sur le câble Vidéotron (upload plafonné à 50&nbsp;Mbit/s).
       </div>
 
-      <!-- MAIN COMPARISON TABLE -->
-      <section id="comparison" aria-label="EBOX vs Fizz vs oxio comparison table">
-        <span class="section-label">Comparison</span>
-        <h2>EBOX vs Fizz vs oxio — 2026 table</h2>
-        <p>All three are brands of large operators: EBOX (Bell), Fizz (Vidéotron), oxio (Cogeco, but on the Vidéotron network in Quebec). The structural difference: EBOX runs on <strong>fibre</strong>, Fizz and oxio on <strong>cable</strong>.</p>
+      <!-- TABLEAU COMPARATIF PRINCIPAL -->
+      <section id="comparatif" aria-label="Tableau comparatif EBOX vs Fizz vs oxio">
+        <span class="section-label">Comparatif</span>
+        <h2>EBOX vs Fizz vs oxio&nbsp;— tableau 2026</h2>
+        <p>Les trois sont des marques de grands opérateurs&nbsp;: EBOX (Bell), Fizz (Vidéotron), oxio (Cogeco, mais réseau Vidéotron au Québec). La différence structurelle&nbsp;: EBOX est sur <strong>fibre</strong>, Fizz et oxio sur <strong>câble</strong>.</p>
 
         <div class="seo-table-wrap">
-          <table class="seo-table" aria-label="EBOX vs Fizz vs oxio comparison in Quebec 2026">
+          <table class="seo-table" aria-label="Comparaison EBOX vs Fizz vs oxio au Québec 2026">
             <thead>
               <tr>
-                <th>Criterion</th>
+                <th>Critère</th>
                 <th>EBOX</th>
                 <th>Fizz</th>
                 <th>oxio</th>
@@ -449,64 +453,64 @@
             </thead>
             <tbody>
               <tr>
-                <td>Network</td>
-                <td><strong>Bell FTTH — symmetric fibre</strong></td>
-                <td>Vidéotron — cable</td>
-                <td>Vidéotron QC — cable (TPIA)</td>
+                <td>Réseau</td>
+                <td><strong>Bell FTTH — fibre symétrique</strong></td>
+                <td>Vidéotron — câble</td>
+                <td>Vidéotron QC — câble (TPIA)</td>
               </tr>
               <tr>
-                <td>Entry tier</td>
-                <td><strong>$49 / 150 Mbps</strong></td>
-                <td>$40 / 30 Mbps</td>
-                <td>from $25 / 15 Mbps (regional) — $50 / 30 Mbps (Montreal)</td>
+                <td>Entrée de gamme</td>
+                <td><strong>49&nbsp;$ / 150&nbsp;Mbit/s</strong></td>
+                <td>40&nbsp;$ / 30&nbsp;Mbit/s</td>
+                <td>dès 25&nbsp;$ / 15&nbsp;Mbit/s (région) — 50&nbsp;$ / 30&nbsp;Mbit/s (Montréal)</td>
               </tr>
               <tr>
-                <td>500 Mbps tier</td>
-                <td class="win"><strong>$55 (500 up)</strong></td>
-                <td>$58 (50 up)</td>
-                <td>$40 (regional) to $75 (Montreal), 2-50 up</td>
+                <td>Palier 500&nbsp;Mbit/s</td>
+                <td class="win"><strong>55&nbsp;$ (500 up)</strong></td>
+                <td>58&nbsp;$ (50 up)</td>
+                <td>40&nbsp;$ (région) à 75&nbsp;$ (Montréal), 2-50 up</td>
               </tr>
               <tr>
-                <td>Top tier</td>
-                <td><strong>$65 / 1 Gbps</strong> (750 up)</td>
-                <td>$68 / 940 Mbps (50 up)</td>
-                <td>No 1 Gbps in Montreal; available at $50 in regional areas (e.g. Trois-Rivières)</td>
+                <td>Haut de gamme</td>
+                <td><strong>65&nbsp;$ / 1&nbsp;Gbit/s</strong> (750 up)</td>
+                <td>68&nbsp;$ / 940&nbsp;Mbit/s (50 up)</td>
+                <td>Pas de 1&nbsp;Gbit/s à Montréal ; dispo à 50&nbsp;$ en région (ex. Trois-Rivières)</td>
               </tr>
               <tr>
-                <td>Max upload</td>
-                <td><strong>Symmetric (up to 750 Mbps)</strong></td>
-                <td>50 Mbps</td>
-                <td>50 Mbps</td>
+                <td>Upload max</td>
+                <td><strong>Symétrique (jusqu'à 750&nbsp;Mbit/s)</strong></td>
+                <td>50&nbsp;Mbit/s</td>
+                <td>50&nbsp;Mbit/s</td>
               </tr>
               <tr>
-                <td>Equipment</td>
-                <td><strong>Modem + router included ($0)</strong></td>
-                <td>Wi-Fi modem included</td>
-                <td>Modem + eero 6 router included</td>
+                <td>Équipement</td>
+                <td><strong>Modem + routeur inclus (0&nbsp;$)</strong></td>
+                <td>Modem Wi-Fi inclus</td>
+                <td>Modem + routeur eero&nbsp;6 inclus</td>
               </tr>
               <tr>
                 <td>Installation</td>
-                <td><strong>$0</strong></td>
-                <td>$0</td>
-                <td>$0</td>
+                <td><strong>0&nbsp;$</strong></td>
+                <td>0&nbsp;$</td>
+                <td>0&nbsp;$</td>
               </tr>
               <tr>
-                <td>Contract</td>
-                <td><strong>None</strong></td>
-                <td>None (prepaid)</td>
-                <td>None (60-day guarantee)</td>
+                <td>Contrat</td>
+                <td><strong>Aucun</strong></td>
+                <td>Aucun (prépayé)</td>
+                <td>Aucun (garantie 60&nbsp;j)</td>
               </tr>
               <tr>
-                <td>Coverage</td>
+                <td>Couverture</td>
                 <td>QC + ON</td>
-                <td>Quebec only</td>
-                <td>QC (address-dependent)</td>
+                <td>Québec seulement</td>
+                <td>QC (selon adresse)</td>
               </tr>
               <tr>
-                <td>Referral</td>
-                <td><strong>$25 credit <button class="copy-btn-micro" data-copy="GE911" data-label="Copy GE911" data-target="copyStatusTable" type="button">Copy GE911</button></strong></td>
-                <td>$25 (Fizz code)</td>
-                <td>Not monetized here</td>
+                <td>Parrainage</td>
+                <td><strong>25&nbsp;$ crédit <button class="copy-btn-micro" data-copy="GE911" data-label="Copier GE911" data-target="copyStatusTable" type="button">Copier GE911</button></strong></td>
+                <td>25&nbsp;$ (code Fizz)</td>
+                <td>Non monétisé ici</td>
               </tr>
             </tbody>
           </table>
@@ -514,183 +518,178 @@
         <div style="min-height: 1.5em; margin-top: 4px; text-align: center;">
           <span id="copyStatusTable" style="font-size: 0.85rem; font-weight: 700; color: var(--ok);" role="status" aria-atomic="true" aria-live="polite"></span>
         </div>
-        <p class="price-note">Prices verified on <time id="price-check-date" datetime="2026-07-03">July 3, 2026</time> on the official sites (Quebec grid). Taxes extra. Fizz and oxio prices vary by postal code: check your address before subscribing.</p>
+        <p class="price-note">Prix vérifiés le <time id="price-check-date" datetime="2026-07-03">3&nbsp;juillet 2026</time> sur les sites officiels (grille Québec). Taxes en sus. Les prix Fizz et oxio varient selon le code postal&nbsp;: vérifiez votre adresse avant de vous abonner.</p>
       </section>
 
-      <!-- ONTARIO NOTICE -->
-      <div class="warning">
-        <strong>In Ontario?</strong> Fizz internet is Quebec-only and oxio's availability depends on the local network. Of these three, <strong>EBOX</strong> (Bell FTTH fibre) is the one available in Ontario — see the <a href="https://cashinstinct.ca/ebox/en/">EBOX page</a> for Ontario pricing.
-      </div>
-
-      <!-- HEAD-TO-HEAD 500 Mbps -->
-      <section id="head-to-head" aria-label="Head-to-head at 500 Mbps">
-        <span class="section-label">Head to head</span>
-        <h2>At equal speed: 500 Mbps</h2>
-        <p>Where EBOX fibre is available, the comparison at identical download speed is clear-cut:</p>
+      <!-- COMPARAISON DIRECTE 500 Mbps -->
+      <section id="face-a-face" aria-label="Comparaison directe à 500 Mbps">
+        <span class="section-label">Face à face</span>
+        <h2>À vitesse égale&nbsp;: 500&nbsp;Mbit/s</h2>
+        <p>Là où la fibre EBOX est disponible, la comparaison à débit descendant identique est nette&nbsp;:</p>
         <div class="seo-table-wrap">
-          <table class="seo-table" aria-label="500 Mbps comparison between EBOX, Fizz and oxio">
+          <table class="seo-table" aria-label="Comparaison à 500 Mbps entre EBOX, Fizz et oxio">
             <thead>
               <tr>
-                <th>Provider</th>
+                <th>Fournisseur</th>
                 <th>Download</th>
                 <th>Upload</th>
-                <th>Price/mo</th>
-                <th>Network</th>
+                <th>Prix/mois</th>
+                <th>Réseau</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>EBOX</strong></td>
-                <td>500 Mbps</td>
-                <td class="win"><strong>500 Mbps</strong></td>
-                <td class="win"><strong>$55</strong></td>
-                <td>Symmetric fibre</td>
+                <td>500&nbsp;Mbit/s</td>
+                <td class="win"><strong>500&nbsp;Mbit/s</strong></td>
+                <td class="win"><strong>55&nbsp;$</strong></td>
+                <td>Fibre symétrique</td>
               </tr>
               <tr>
                 <td>Fizz</td>
-                <td>500 Mbps</td>
-                <td>50 Mbps</td>
-                <td>$58</td>
-                <td>Asym. cable</td>
+                <td>500&nbsp;Mbit/s</td>
+                <td>50&nbsp;Mbit/s</td>
+                <td>58&nbsp;$</td>
+                <td>Câble asym.</td>
               </tr>
               <tr>
                 <td>oxio</td>
-                <td>500 Mbps</td>
-                <td>50 Mbps</td>
-                <td>$75</td>
-                <td>Asym. cable</td>
+                <td>500&nbsp;Mbit/s</td>
+                <td>50&nbsp;Mbit/s</td>
+                <td>75&nbsp;$</td>
+                <td>Câble asym.</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p>At equal download speed, EBOX is the <strong>cheapest</strong> and offers <strong>10× the upload</strong>. Fizz and oxio only keep the edge outside EBOX fibre areas, or on Fizz's floor plan (30 Mbps at $40).</p>
+        <p>À débit descendant égal, EBOX est le <strong>moins cher</strong> et offre <strong>10&nbsp;fois l'upload</strong>. Fizz et oxio ne gardent l'avantage qu'en dehors des zones fibre EBOX, ou sur le forfait plancher de Fizz (30&nbsp;Mbit/s à 40&nbsp;$).</p>
       </section>
 
-      <!-- VERDICTS BY PROFILE -->
-      <section id="verdicts" aria-label="Verdicts by use case">
+      <!-- VERDICTS PAR PROFIL -->
+      <section id="verdicts" aria-label="Verdicts par profil d'usage">
         <span class="section-label">Verdicts</span>
-        <h2>Which to choose by profile</h2>
+        <h2>Lequel choisir selon ton profil</h2>
         <div class="verdict-grid">
           <div class="verdict-card">
             <span class="winner">Fizz</span>
-            <h3>Tightest budget</h3>
-            <p>The 30 Mbps plan at $40 is enough for 1 to 2 people and HD streaming. The lowest floor of the three.</p>
+            <h3>Budget minimal</h3>
+            <p>Le forfait 30&nbsp;Mbit/s à 40&nbsp;$ suffit pour 1 à 2 personnes et du streaming HD. Le plancher le moins cher des trois.</p>
           </div>
           <div class="verdict-card">
             <span class="winner">EBOX</span>
-            <h3>Best speed-to-price</h3>
-            <p>150 Mbps at $49, 500 at $55, 1 Gbps at $65 — equipment and installation at $0.</p>
+            <h3>Meilleur rapport vitesse-prix</h3>
+            <p>150&nbsp;Mbit/s à 49&nbsp;$, 500 à 55&nbsp;$, 1&nbsp;Gbit/s à 65&nbsp;$ — équipement et installation à 0&nbsp;$.</p>
           </div>
           <div class="verdict-card">
             <span class="winner">EBOX</span>
-            <h3>Gamer / remote work (upload)</h3>
-            <p>The only symmetric fibre network. Fizz and oxio cap at 50 Mbps upload — throttling online gaming, streaming and large uploads.</p>
+            <h3>Gamer / télétravail (upload)</h3>
+            <p>Seul réseau fibre symétrique. Fizz et oxio plafonnent à 50&nbsp;Mbit/s en amont — bridant le jeu en ligne, le streaming et le gros téléversement.</p>
           </div>
           <div class="verdict-card">
             <span class="winner">oxio</span>
-            <h3>Zero hassle</h3>
-            <p>60-day guarantee, no price hikes, strong service ratings (~4.4/5 PlanHub). Worth it if the price-to-speed holds at your address: where EBOX fibre is offered, EBOX takes the edge back.</p>
+            <h3>Zéro tracas</h3>
+            <p>Garantie 60&nbsp;jours, pas de hausse de prix, service bien noté (~4,4/5 PlanHub). Valable si le rapport prix-vitesse tient à ton adresse&nbsp;: là où la fibre EBOX est offerte, EBOX reprend l'avantage.</p>
           </div>
           <div class="verdict-card">
             <span class="winner">Fizz</span>
-            <h3>Already a Fizz mobile customer</h3>
-            <p>Cross loyalty credits and perks between Fizz mobile and internet. Consistent if you're already in the ecosystem (Quebec only).</p>
+            <h3>Déjà client Fizz mobile</h3>
+            <p>Crédits et bonus fidélité croisés entre le mobile et l'internet Fizz. Cohérent si tu es déjà dans l'écosystème.</p>
           </div>
         </div>
       </section>
 
-      <!-- PROVIDER DETAIL -->
-      <section id="details" aria-label="Provider detail">
-        <span class="section-label">In detail</span>
-        <h2>Each provider, plainly</h2>
+      <!-- DÉTAIL PAR FOURNISSEUR -->
+      <section id="details" aria-label="Détail par fournisseur">
+        <span class="section-label">En détail</span>
+        <h2>Chaque fournisseur en clair</h2>
 
-        <h3>EBOX — symmetric fibre, no upload compromise</h3>
-        <p>EBOX runs on Bell's FTTH fibre network. It's the only one of the three to offer <strong>true symmetry</strong>: 150/150, 500/500, and 1000/750 on the Gbps tier. Recommended by Protégez-Vous since 2017. Quebec grid: $49 (150 Mbps), $55 (500), $65 (1 Gbps), equipment and installation included, no contract. The referral code <code>GE911</code> gives a $25 credit on your 2nd bill. Available in both Quebec and Ontario. <a href="https://promo.ebox.ca/v-fibre/en-qc" target="_blank" rel="noopener sponsored noreferrer">See EBOX plans</a>.</p>
+        <h3>EBOX — fibre symétrique, sans compromis d'upload</h3>
+        <p>EBOX roule sur le réseau fibre FTTH de Bell. C'est le seul des trois à offrir de la <strong>vraie symétrie</strong>&nbsp;: 150/150, 500/500, et 1000/750 sur le Gbit/s. Recommandé par Protégez-Vous depuis 2017. Grille Québec&nbsp;: 49&nbsp;$ (150&nbsp;Mbit/s), 55&nbsp;$ (500), 65&nbsp;$ (1&nbsp;Gbit/s), équipement et installation inclus, sans contrat. Le code de parrainage <code>GE911</code> donne 25&nbsp;$ de crédit sur la 2e facture. <a href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer">Voir les forfaits EBOX</a>.</p>
 
-        <h3>Fizz — cheapest floor, but cable and Quebec-only</h3>
-        <p>Fizz (Vidéotron) runs on the cable network, <strong>asymmetric</strong>: upload caps at 50 Mbps even on the 940 Mbps plan. Grid: $40 (30 Mbps) up to $68 (940). Wi-Fi 5 modem on entry plans, Wi-Fi 6 from 400 Mbps up. Fully online (no phone support), loyalty-credit system. <strong>Important: Fizz internet is Quebec-only</strong>, not available in Ontario. <!-- FIZZ_CODE: insert real code before publishing --><a href="https://fizz.ca/en/internet" target="_blank" rel="noopener sponsored noreferrer">See Fizz plans</a> (code: <code>[FIZZ_CODE_PLACEHOLDER]</code>).</p>
+        <h3>Fizz — le plancher le moins cher, mais câble et QC seulement</h3>
+        <p>Fizz (Vidéotron) fonctionne sur le réseau câble, en <strong>asymétrique</strong>&nbsp;: l'upload plafonne à 50&nbsp;Mbit/s même sur le forfait 940&nbsp;Mbit/s. Grille&nbsp;: 40&nbsp;$ (30&nbsp;Mbit/s) jusqu'à 68&nbsp;$ (940). Modem Wi-Fi&nbsp;5 sur les forfaits d'entrée, Wi-Fi&nbsp;6 à partir de 400&nbsp;Mbit/s. Fonctionne 100&nbsp;% en ligne (pas de support téléphonique), système de crédits fidélité. <strong>Important&nbsp;: l'internet Fizz est offert au Québec seulement</strong>, pas en Ontario. <!-- FIZZ_CODE : insérer le vrai code avant publication --><a href="https://fizz.ca/fr/internet" target="_blank" rel="noopener sponsored noreferrer">Voir les forfaits Fizz</a> (code&nbsp;: <code>[FIZZ_CODE_PLACEHOLDER]</code>).</p>
 
-        <h3>oxio — simple and well rated, but no guaranteed fibre</h3>
-        <p>oxio (Cogeco) runs on the Vidéotron network in Quebec (wholesale access). Simple interface, 60-day guarantee, no price hikes, well-rated service (~4.4/5 PlanHub, 4.2/5 Google). <strong>The key point: oxio's price and speed vary enormously by address.</strong> In Montreal (and Brossard, La Prairie), we measured cable with no 1 Gbps, and the 500 Mbps plan at $75 — more expensive than EBOX fibre ($55). But in Trois-Rivières, the same speed drops to $40 and 1 Gbps is offered at $50 — there, oxio beats EBOX on price (EBOX only keeps the symmetric upload). In all cases the upload stays throttled (2 to 50 Mbps depending on plan and area, asymmetric cable). oxio markets "up to 1 Gbps": <strong>always check your postal code</strong> — it's the only one of the three where the price shifts this much. <a href="https://oxio.ca/en" target="_blank" rel="noopener noreferrer">See oxio</a> — <em>we don't monetize oxio; this recommendation is not paid.</em></p>
+        <h3>oxio — simple et bien noté, mais pas de fibre garantie</h3>
+        <p>oxio (Cogeco) s'appuie sur le réseau Vidéotron au Québec (accès de gros). Interface simple, garantie 60&nbsp;jours, pas de hausse de prix, service client bien noté (~4,4/5 PlanHub, 4,2/5 Google). <strong>Le point clé&nbsp;: le prix et la vitesse d'oxio varient énormément selon l'adresse.</strong> À Montréal (et Brossard, La Prairie), on a mesuré du câble sans 1&nbsp;Gbit/s, avec le 500&nbsp;Mbit/s à 75&nbsp;$ — plus cher qu'EBOX fibre (55&nbsp;$). Mais à Trois-Rivières, la même vitesse tombe à 40&nbsp;$ et le 1&nbsp;Gbit/s est offert à 50&nbsp;$ — là, oxio bat EBOX sur le prix (EBOX ne garde que l'upload symétrique). Dans tous les cas l'upload reste bridé (2 à 50&nbsp;Mbit/s selon le forfait et le secteur, câble asymétrique). Le marketing oxio annonce «&nbsp;jusqu'à 1&nbsp;Gbit/s&nbsp;»&nbsp;: <strong>vérifiez toujours votre code postal</strong>, c'est le seul des trois où le prix change autant. <a href="https://oxio.ca/fr" target="_blank" rel="noopener noreferrer">Voir oxio</a> — <em>nous ne monétisons pas oxio, cette recommandation n'est pas rémunérée.</em></p>
       </section>
 
       <!-- FAQ -->
-      <section id="faq" aria-label="Frequently asked questions">
+      <section id="faq" aria-label="Foire aux questions">
         <span class="section-label">FAQ</span>
-        <h2>Frequently asked questions</h2>
+        <h2>Questions fréquentes</h2>
         <div class="faq">
           <details>
-            <summary id="faq-q1" aria-labelledby="faq-q1">EBOX or Fizz: which is cheaper?</summary>
-            <div role="region" aria-labelledby="faq-q1">It depends on the speed. Fizz has the lowest entry price with its 30 Mbps plan at $40, ideal for 1 to 2 people. But at equal speed from 150 Mbps up, EBOX is the better value: equipment and installation at $0, and symmetric fibre. At 500 Mbps, EBOX is $55 versus $58 at Fizz, with 10 times more upload.</div>
+            <summary id="faq-q1" aria-labelledby="faq-q1">EBOX ou Fizz&nbsp;: lequel est le moins cher&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q1">Ça dépend de la vitesse. Fizz a le plancher le plus bas avec son forfait 30&nbsp;Mbit/s à 40&nbsp;$, idéal pour 1 à 2 personnes. Mais à vitesse égale dès 150&nbsp;Mbit/s, EBOX est plus avantageux&nbsp;: équipement et installation à 0&nbsp;$, et fibre symétrique. À 500&nbsp;Mbit/s, EBOX est à 55&nbsp;$ contre 58&nbsp;$ chez Fizz, avec 10&nbsp;fois plus d'upload.</div>
           </details>
           <details>
-            <summary id="faq-q2" aria-labelledby="faq-q2">Is oxio reliable?</summary>
-            <div role="region" aria-labelledby="faq-q2">oxio is well rated for customer service (about 4.4/5 on PlanHub, 4.2/5 on Google) and offers a 60-day guarantee. In Quebec its infrastructure runs on the Vidéotron network (cable). The key point: its price varies enormously by address. The same 500 Mbps plan costs $75 in Montreal but $40 in Trois-Rivières. Always check your postal code before concluding anything about oxio.</div>
+            <summary id="faq-q2" aria-labelledby="faq-q2">Est-ce que oxio est fiable&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q2">oxio est bien noté côté service client (environ 4,4/5 sur PlanHub, 4,2/5 sur Google) et offre une garantie de 60&nbsp;jours. Son infrastructure au Québec passe par le réseau Vidéotron (câble). Le point à retenir&nbsp;: son prix varie énormément selon l'adresse. Le même forfait 500&nbsp;Mbit/s coûte 75&nbsp;$ à Montréal mais 40&nbsp;$ à Trois-Rivières. Vérifiez toujours votre code postal avant de conclure quoi que ce soit sur oxio.</div>
           </details>
           <details>
-            <summary id="faq-q3" aria-labelledby="faq-q3">Does Fizz internet work outside Quebec?</summary>
-            <div role="region" aria-labelledby="faq-q3">No. Fizz Internet is offered in Quebec only — it is not available in Ontario. Within Quebec, availability depends on the Vidéotron cable network, so a postal-code check is required before subscribing. If you are in Ontario, EBOX (Bell FTTH) is the relevant option from this comparison.</div>
+            <summary id="faq-q3" aria-labelledby="faq-q3">Est-ce que Fizz internet fonctionne partout au Québec&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q3">L'internet Fizz est offert au Québec seulement — il n'est pas disponible en Ontario. Au Québec, la disponibilité dépend du réseau câble Vidéotron&nbsp;: une vérification par code postal est obligatoire avant de s'abonner.</div>
           </details>
           <details>
-            <summary id="faq-q4" aria-labelledby="faq-q4">Who owns EBOX, Fizz and oxio?</summary>
-            <div role="region" aria-labelledby="faq-q4">EBOX is owned by Bell and uses Bell's FTTH fibre network. Fizz is a Vidéotron brand and uses Vidéotron's cable network. oxio is owned by Cogeco but, in Quebec, runs on the Vidéotron network (TPIA wholesale access). All three are brands tied to large operators — a useful transparency point.</div>
+            <summary id="faq-q4" aria-labelledby="faq-q4">Qui possède EBOX, Fizz et oxio&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q4">EBOX appartient à Bell et utilise le réseau fibre FTTH de Bell. Fizz est une marque de Vidéotron et utilise le réseau câble de Vidéotron. oxio appartient à Cogeco mais, au Québec, s'appuie sur le réseau Vidéotron (accès de gros TPIA). Les trois sont donc des marques rattachées à de grands opérateurs — un point de transparence utile à connaître.</div>
           </details>
           <details>
-            <summary id="faq-q5" aria-labelledby="faq-q5">Are there contracts with EBOX, Fizz or oxio?</summary>
-            <div role="region" aria-labelledby="faq-q5">None of the three lock you into a fixed-term contract. EBOX and oxio are commitment-free; Fizz is prepaid. oxio adds a 60-day guarantee.</div>
+            <summary id="faq-q5" aria-labelledby="faq-q5">Y a-t-il des contrats chez EBOX, Fizz ou oxio&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q5">Aucun des trois n'impose de contrat à durée déterminée. EBOX et oxio sont sans engagement&nbsp;; Fizz fonctionne en prépayé. oxio ajoute une garantie de 60&nbsp;jours.</div>
           </details>
           <details>
-            <summary id="faq-q6" aria-labelledby="faq-q6">Which provider is best for gaming?</summary>
-            <div role="region" aria-labelledby="faq-q6">EBOX, for a specific reason: it is the only one of the three on symmetric fibre (500/500, 1 Gbps at 1000/750). Fizz and oxio are on Vidéotron cable, with upload capped at 50 Mbps. For online gaming, streaming or large uploads, EBOX's symmetric upload makes the difference wherever its fibre is available.</div>
+            <summary id="faq-q6" aria-labelledby="faq-q6">Quel fournisseur choisir pour le gaming&nbsp;?</summary>
+            <div role="region" aria-labelledby="faq-q6">EBOX, pour une raison précise&nbsp;: c'est le seul des trois sur fibre symétrique (500/500, 1&nbsp;Gbit/s en 1000/750). Fizz et oxio sont sur câble Vidéotron, avec un upload plafonné à 50&nbsp;Mbit/s. Pour le jeu en ligne, le streaming ou le téléversement, l'upload symétrique d'EBOX fait la différence là où sa fibre est disponible.</div>
           </details>
         </div>
       </section>
 
-      <!-- TRANSPARENCY -->
-      <section id="transparency" aria-label="Transparency">
+      <!-- TRANSPARENCE -->
+      <section id="transparence" aria-label="Transparence">
         <div class="transparency">
-          <strong>Transparency.</strong> This page contains referral links to EBOX (code GE911) and Fizz: if you subscribe through them, Cash Instinct may earn a commission or credit at no extra cost to you. <strong>We don't monetize oxio</strong>: the oxio link is not affiliate and its recommendation is not paid. This site is not officially affiliated with EBOX, Fizz or oxio. Trademarks belong to their respective owners. Prices and plans are subject to change — always check the official sites.
+          <strong>Transparence.</strong> Cette page contient des liens de parrainage vers EBOX (code GE911) et Fizz&nbsp;: si vous vous abonnez via ces liens, Cash Instinct peut recevoir une commission ou un crédit, sans coût supplémentaire pour vous. <strong>Nous ne monétisons pas oxio</strong>&nbsp;: le lien oxio n'est pas affilié et sa recommandation n'est pas rémunérée. Site non affilié officiellement à EBOX, Fizz ou oxio. Les marques appartiennent à leurs propriétaires respectifs. Prix et forfaits sujets à changement&nbsp;: vérifiez toujours les sites officiels.
         </div>
       </section>
 
     </div>
   </main>
 
-  <!-- NEUTRAL STICKY CTA (internal anchor, no affiliate link) -->
-  <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="Go to verdicts">
+  <!-- STICKY CTA NEUTRE (ancre interne, aucun lien affilié) -->
+  <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="Aller aux verdicts">
     <div class="s-left">
-      <span class="s-title">Which one?</span>
-      <span class="s-label">Verdicts by profile</span>
+      <span class="s-title">Lequel choisir&nbsp;?</span>
+      <span class="s-label">Verdicts par profil</span>
     </div>
-    <a class="s-btn" href="#verdicts">See verdicts ↓</a>
+    <a class="s-btn" href="#verdicts">Voir les verdicts ↓</a>
   </div>
 
   <footer>
     <div class="container">
-      <p>This site is not officially affiliated with EBOX, Fizz or oxio. Trademarks belong to their respective owners.</p>
-      <p style="margin-top:6px;">Quebec internet comparison — Updated: <time id="footer-date" datetime="2026-07-03">July 2026</time></p>
+      <p>Site non affilié officiellement à EBOX, Fizz ou oxio. Les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
+      <p style="margin-top:6px;">Comparatif internet Québec — Mis à jour&nbsp;: <time id="footer-date" datetime="2026-07-03">juillet 2026</time></p>
     </div>
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
-      <a href="https://cashinstinct.ca/">Home</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/ebox/en/">EBOX</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/hp-instant-ink/en/">HP Instant Ink</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/tangerine/en/">Tangerine Bank</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/rakuten-canada/en/">Rakuten Canada</a><span aria-hidden="true"> · </span>
-      <a href="https://cashinstinct.ca/swagbucks/en/">Swagbucks</a>
+      <a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/ebox/fr/">EBOX</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/stickermule/fr/">Sticker Mule</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/hp-instant-ink/fr/">HP Instant Ink</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/tangerine/fr/">Banque Tangerine</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/rakuten-canada/fr/">Rakuten Canada</a><span aria-hidden="true"> · </span>
+      <a href="https://cashinstinct.ca/swagbucks/fr/">Swagbucks</a>
     </div>
   </footer>
 
   <!-- SCRIPTS -->
-  <!-- No date script: footer-date and price-check-date are STATIC, baked at
-       deploy, updated manually at bump. No JS injection = no false freshness
-       (the date must only advance when content actually changes). -->
+  <!-- Aucun script de date : footer-date et price-check-date sont STATIQUES,
+       bakés au deploy, MAJ manuelle au bump. Pas d'injection JS = pas de fausse
+       fraîcheur (la date ne doit avancer QUE si le contenu change réellement). -->
 
   <script>
-    // ── UNIFIED COPY MODULE — data-copy / data-target ──
+    // ── MODULE DE COPIE UNIFIÉ — data-copy / data-target ──
     (function() {
-      var DONE_LABEL = "Copied ✓";
-      var STATUS_MSG = "Code copied to clipboard.";
+      var DONE_LABEL = "Copié ✓";
+      var STATUS_MSG = "Code copié dans le presse-papiers.";
       function feedback(btn, status) {
         var original = btn.getAttribute("data-label") || btn.textContent;
         btn.textContent = DONE_LABEL;
@@ -723,7 +722,7 @@
           document.execCommand("copy");
           feedback(btn, status);
         } catch(e) {
-          if (status) status.textContent = "Copy manually: " + text;
+          if (status) status.textContent = "Copiez manuellement : " + text;
         }
         document.body.removeChild(ta);
       }
@@ -739,14 +738,14 @@
   </script>
 
   <script>
-    // ── Theme (aria-pressed toggle) ──
+    // ── Thème (toggle aria-pressed) ──
     (function() {
       var toggle = document.getElementById('theme-toggle');
       if (!toggle) return;
       function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; }
       function applyUI(dark) {
         toggle.textContent = dark ? '☀️' : '🌙';
-        toggle.setAttribute('aria-label', dark ? 'Disable dark mode' : 'Enable dark mode');
+        toggle.setAttribute('aria-label', dark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
         toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
       }
       applyUI(isDark());
@@ -764,7 +763,7 @@
     })();
   </script>
 
-  <!-- Sticky CTA scroll (the #sticky-cta container precedes this script) -->
+  <!-- Sticky CTA scroll (le conteneur #sticky-cta précède ce script) -->
   <script>
     (function() {
       var cta = document.getElementById('sticky-cta');
@@ -776,6 +775,7 @@
           cta.classList.remove('visible');
         }
       }, { passive: true });
+      // Masquer quand la section verdicts est visible (le sticky pointe dessus)
       var verdicts = document.getElementById('verdicts');
       if (verdicts) {
         new IntersectionObserver(function(entries) {
