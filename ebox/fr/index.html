@@ -322,6 +322,7 @@
       --border-soft: #cbd5e1;
       --accent: #bf2222;
       --accent-dark: #8a1818;
+      --ok: #1a7a3c;
       --warning-bg: #fffbeb;
       --warning-text: #92400e;
       --warning-border: #f59e0b;
@@ -333,6 +334,7 @@
       --bg: #0f131a;
       --surface: #161c24;
       --surface-soft: #1b2430;
+      --ok: #4ade80;
       --surface-muted: #1a2029;
       --text: #f4f7fb;
       --text-soft: #d5dbe5;
@@ -838,7 +840,7 @@
             </p>
             <div class="input-copy-group" style="display: flex; flex-direction: column; background: transparent; border: none; gap: 10px; margin-bottom: 12px; padding: 0;">
               <input type="text" value="GE911" id="promo-code" readonly aria-readonly="true" aria-label="Numéro de client EBOX" style="width: 100%; border: 1px solid var(--border); background: var(--surface-soft); padding: 12px 16px; font-family: monospace; font-size: 1.2rem; font-weight: 700; color: var(--text); text-align: center; border-radius: 8px;" />
-              <button class="copy-btn" data-copy="GE911" data-label="Copier le code" data-target="copyStatusHero" type="button"
+              <button class="copy-btn" data-copy="GE911" data-label="Copier le code" data-target="copyStatusHero" aria-controls="copyStatusHero" type="button"
                 style="width: 100%; background: var(--text); color: var(--surface); border: none; border-radius: 8px; font-weight: 700; padding: 12px 20px; cursor: pointer; font-size: 1rem; white-space: nowrap; -webkit-appearance: none;">Copier le code</button>
             </div>
             <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
@@ -1241,7 +1243,7 @@
                 </tr>
                 <tr>
                   <td>Rabais nouveau client</td>
-                  <td><strong>25&nbsp;$ <button class="copy-btn-micro" data-copy="GE911" data-label="Copier GE911" data-target="copyStatusTable" type="button">Copier GE911</button> de crédit de parrainage</strong></td>      
+                  <td><strong>25&nbsp;$ <button class="copy-btn-micro" data-copy="GE911" data-label="Copier GE911" data-target="copyStatusTable" aria-controls="copyStatusTable" type="button">Copier GE911</button> de crédit de parrainage</strong></td>      
                   <td>Aucun équivalent</td>
                   <td>Promo variable</td>
                 </tr>
@@ -1256,7 +1258,7 @@
           </div>
 
           <div style="min-height: 1.5em; margin-top: 4px; text-align: center;">
-            <span id="copyStatusTable" style="font-size: 0.85rem; font-weight: 700; color: #1a7a3c;" role="status" aria-atomic="true" aria-live="polite"></span>
+            <span id="copyStatusTable" style="font-size: 0.85rem; font-weight: 700; color: var(--ok);" role="status" aria-atomic="true" aria-live="polite"></span>
           </div>
 
           <p style="font-size: 0.85rem; color: var(--muted); margin-top: 8px; text-align: center;">
@@ -1495,7 +1497,7 @@
           </a>
           <div class="cta-code-row">
             <span class="cta-code-pill">GE911</span>
-            <button class="cta-copy-btn" data-copy="GE911" data-label="Copier le code" data-target="copyStatusCta" type="button">Copier le code</button>
+            <button class="cta-copy-btn" data-copy="GE911" data-label="Copier le code" data-target="copyStatusCta" aria-controls="copyStatusCta" type="button">Copier le code</button>
           </div>
           <span class="copy-status" id="copyStatusCta" role="status" aria-atomic="true" aria-live="polite"></span>
         </div>
@@ -1514,7 +1516,7 @@
       <span class="s-label">Code client EBOX</span>
     </div>
     <div class="s-actions">
-      <button class="s-btn" id="sticky-copy-btn" type="button" data-copy="GE911" data-label="Copier" data-target="stickyCopyStatus">Copier</button>
+      <button class="s-btn" id="sticky-copy-btn" type="button" data-copy="GE911" data-label="Copier" data-target="stickyCopyStatus" aria-controls="stickyCopyStatus">Copier</button>
       <a class="s-btn s-open-btn" href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer" aria-label="Ouvrir ebox.ca">Ouvrir ↗</a>
     </div>
     <span id="stickyCopyStatus" role="status" aria-atomic="true" aria-live="polite" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"></span>
