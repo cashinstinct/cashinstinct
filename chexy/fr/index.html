@@ -262,6 +262,7 @@
       --border-soft: #f8e3f1;
       --accent: #c4248f;
       --accent-dark: #1c0e42;
+      --danger-text: #b8342a;
       --warning-bg: #fff8e1;
       --warning-text: #7c5800;
       --warning-border: #f59e0b;
@@ -279,6 +280,7 @@
       --border-soft: #432a4a;
       --accent: #e24bb5;
       --accent-dark: #ef7bcb;
+      --danger-text: #ff6b5b;
       --warning-bg: #2a2111;
       --warning-text: #ffd98f;
       --warning-border: #f59e0b;
@@ -1113,7 +1115,7 @@ function calcChexy() {
   if (net > 0) {
     verdict = '✅ Gain net : <strong style="color:var(--accent);">+' + net.toFixed(2).replace('.', ',') + '$</strong>';
   } else if (net < 0) {
-    verdict = '⚠️ Perte nette : <strong style="color:#c0392b;">' + net.toFixed(2).replace('.', ',') + '$</strong> — votre carte ne rapporte pas assez pour couvrir les frais.';
+    verdict = '⚠️ Perte nette : <strong style="color:--danger-text;">' + net.toFixed(2).replace('.', ',') + '$</strong> — votre carte ne rapporte pas assez pour couvrir les frais.';
   } else {
     verdict = '➖ Équilibre : ni gain ni perte.';
   }
