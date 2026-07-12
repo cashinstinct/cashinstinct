@@ -57,7 +57,7 @@
         "inLanguage": "en-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-06-20",
-        "dateModified": "2026-07-06",
+        "dateModified": "2026-07-12",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
         "publisher": {
           "@type": "Organization",
@@ -196,12 +196,12 @@
           {
             "@type": "Question",
             "name": "When is your Chexy credit issued, and how do you use it?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Your credit (referral bonus or Chexy Cash) is added after a payment has been successfully completed: bill payment sent, Interac transfer deposited, pre-authorized debit (PAD) withdrawn, or EFT processed. To use it, you redeem it on your next payment: in the Wallet for an existing payment, or directly at the checkout screen for a new one. Important detail: redeem your credit before your card is charged — that's about 4 days before the due date for an existing payment. The credit applies to both recurring and one-time payments, but cannot be withdrawn or transferred: it only serves to reduce your payments through Chexy." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Your credit (referral bonus or Chexy Cash) is added after a payment has been successfully completed: bill payment sent, Interac transfer deposited, pre-authorized debit (PAD) withdrawn, or EFT processed. To use it, you redeem it on your next payment: in the Wallet for an existing payment, or directly at the checkout screen for a new one. Important detail: redeem your credit before your card is charged — that's about 4 business days before the due date for an existing payment. The credit applies to both recurring and one-time payments, but cannot be withdrawn or transferred: it only serves to reduce your payments through Chexy." }
           },
           {
             "@type": "Question",
             "name": "Is the $20 bonus a transfer or a credit?",
-            "acceptedAnswer": { "@type": "Answer", "text": "It's a Chexy credit, not a transfer to your bank account. Once your first payment is completed, the $20 appears as a credit balance in your Chexy account. You then redeem it via the Redeem button (in the Wallet or at the checkout screen) to reduce a future payment made through Chexy. Two concrete consequences: the credit applies to an active recurring payment, and it cannot be withdrawn or transferred — it only serves to lower the cost of a Chexy payment (for example, wiping out part of the 1.75% fee). It can take up to 2 weeks to appear after the conditions are met." }
+            "acceptedAnswer": { "@type": "Answer", "text": "It's a Chexy credit, not a transfer to your bank account. Once your first payment is completed, the $20 appears as a credit balance in your Chexy account. You then redeem it via the Redeem button (in the Wallet or at the checkout screen) to reduce a future payment made through Chexy. Two concrete consequences: the credit applies to an active recurring payment, and it cannot be withdrawn or transferred — it only serves to lower the cost of a Chexy payment (for example, wiping out part of the 1.75% fee). The credit may appear a few days after the payment is completed, sometimes a bit longer depending on processing." }
           }
         ]
       },
@@ -568,7 +568,7 @@
     <p>Pay your <strong>property and school taxes</strong>, your <strong>Hydro bill</strong> and your income taxes by credit card to earn points. Sign up via the <strong>referral link</strong>: <strong>$20 Chexy credit</strong> applied to your first payment.</p>
 
     <div style="max-width:520px;margin:36px auto 0;">
-      <a href="https://app.chexy.co?ref=86GwJRXw20iY52PmYweG" target="_blank" rel="noopener sponsored noreferrer"
+      <a href="https://chexy.app.link/REF-WDTW5Q" target="_blank" rel="noopener sponsored noreferrer"
          style="display:block; background:#fff; color:var(--accent); border-radius:12px; font-weight:900; padding:20px 28px; text-align:center; font-size:1.25rem; text-decoration:none; box-shadow:var(--shadow);">
         💳 Activate my $20 on Chexy
       </a>
@@ -629,6 +629,47 @@
 
   ⚠ STATS POLICY : tous les calculs $ de la page utilisent 1,75 % (taux Starter),
     cohérent avec le profil "usage perso + petit volume de filleuls".
+
+  ⚠ MODIF 12 JUILLET 2026 (par IA, demande Étienne) — LIEN PRIMAIRE = LIEN APP BRANCH :
+      → Tous les CTA visibles (hero, CTA bas de page, sticky mobile) pointent maintenant
+        vers le LIEN APP : https://chexy.app.link/REF-WDTW5Q (domaine *.app.link = Branch.io).
+      → POURQUOI le lien app plutôt que le lien web :
+        1. Le bonus 20 $/20 $ BIDIRECTIONNEL est explicitement documenté par Chexy UNIQUEMENT
+           pour le parcours mobile app (filleul télécharge l’app + 1er paiement DANS l’app).
+        2. Le lien Branch auto-détecte l’appareil : mobile → ouvre l’app (ou store) ;
+           desktop → fallback web automatique en CONSERVANT l’attribution. Un seul lien couvre
+           les deux, pas besoin de JS de swap.
+        3. Path app = 20 $ CASH pour le parrain PEU IMPORTE le tier. Le path web/standard
+           bascule la récompense du parrain vers frais réduits dès Pink (3 filleuls).
+      → Le lien web https://app.chexy.co?ref=86GwJRXw20iY52PmYweG reste documenté dans le
+        glossaire comme FORMAT ALTERNATIF / secours manuel. NE PAS le remettre dans les CTA.
+        Si un futur chat hésite entre app/web : c’est TRANCHÉ = APP PRIMAIRE.
+      → Contradiction source : la doc Chexy 2026 décrit 2 mécaniques qui se chevauchent
+        (référence standard par tier VS promo app). Les deux payent 20 $. Chaque IA qui lit
+        une seule section donne une réponse différente → d’où le flip-flop app/web. Le lien
+        app est le choix supérieur, ne pas rouvrir le débat.
+
+  ⚠ MODIF 12 JUILLET 2026 — DÉLAI DU CRÉDIT HARMONISÉ :
+      → Ancienne formulation q16 « jusqu’à 2 semaines » venait d’un résumé tiers non confirmé
+        et CONTREDISAIT q13 (« quelques jours »). Remplacée par « quelques jours, parfois un
+        peu plus selon le traitement ». La doc officielle ne donne AUCUN délai chiffré : le
+        crédit apparaît « after the payment is successfully processed ». Ne PAS réintroduire
+        le « 2 semaines ».
+
+  ⚠ RATING SCHEMA (aggregateRating reviewCount=1) — REVU 12 JUILLET, GARDÉ VOLONTAIREMENT :
+      → Review éditoriale d’un produit TIERS (Chexy) par l’éditeur = permis par Google
+        (≠ self-review d’une entité sur elle-même). reviewCount=1 est mince mais non contraire
+        aux règles. Décision : GARDÉ. Si Google flag un jour, remplacer par un vrai signal
+        d’avis, pas supprimer en panique.
+
+  ⚠ MODIF 12 JUILLET 2026 (suite) — 2 CORRECTIFS ANTI-FUITE :
+      → q15 : « 4 jours » → « 4 jours OUVRABLES » avant l’échéance (aligne la FAQ sur la
+        source chexy.co ; la page était moins précise que la note interne).
+      → HowTo (encadré warning) : ajout explicite « sur mobile, complète le 1er paiement
+        DANS l’app Chexy » — c’est le SEUL parcours où le 20 $/20 $ bidirectionnel est
+        documenté. Sans cette mention, un filleul qui paie sur le web retombe sur le barème
+        standard = fuite d’attribution probable (cause des conversions à zéro). Ne pas retirer.
+
   ════════════════════════════════════════════════════════════
 -->
 
@@ -672,7 +713,7 @@
         🧮 <strong>When it's worth it:</strong> as soon as your card earns more than 1.75% in points or rewards, and especially to hit the spending threshold of a credit card <strong>welcome bonus</strong> using expenses you'd pay anyway.
       </div>
 
-      <p style="font-size:0.8rem; color:var(--muted); margin:16px 0 24px;" class="last-updated">Updated <time id="trust-date" datetime="2026-07-06">July 6, 2026</time></p>
+      <p style="font-size:0.8rem; color:var(--muted); margin:16px 0 24px;" class="last-updated">Updated <time id="trust-date" datetime="2026-07-12">July 12, 2026</time></p>
 
       <div class="transparency" style="margin-bottom: 24px;">
         <strong>Transparency:</strong> this independent guide uses referral tracking. If you sign up for Chexy through my referral link, you get your $20 bonus (funded by Chexy) — and Chexy also pays me $20, at no extra cost to you. Full disclosure at the bottom of this page.
@@ -728,7 +769,7 @@
         <h2>How to pay your taxes and bills by card with Chexy</h2>
 
         <div class="warning">
-          ⚠️ <strong>Critical rule:</strong> to unlock the $20 bonus, sign up via the <strong>referral link</strong> (there is no code to enter at account creation) and complete your <strong>first payment</strong>.
+          ⚠️ <strong>Critical rule:</strong> to unlock the $20 bonus, sign up via the <strong>referral link</strong> (there is no code to enter at account creation) and complete your <strong>first payment</strong>. <br><br>📱 <strong>On mobile:</strong> complete that first payment <strong>in the Chexy app</strong> — it's the path that locks in the two-way $20/$20 bonus.
         </div>
 
         <div class="field-exact">
@@ -1019,13 +1060,13 @@
           <details>
             <summary id="faq-q15">When is your Chexy credit issued, and how do you use it?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q15">
-              <p>Your credit (referral bonus or Chexy Cash) is added <strong>after a payment has been successfully completed</strong>: bill payment sent, Interac transfer deposited, pre-authorized debit (PAD) withdrawn, or EFT processed. To use it, you redeem it on your next payment: in the "Wallet" for an existing payment, or directly at the checkout screen for a new one. Important detail: redeem your credit <strong>before your card is charged</strong> — that's about <strong>4 days before the due date</strong> for an existing payment. The credit applies to both recurring and one-time payments, but cannot be withdrawn or transferred: it only serves to reduce your payments through Chexy.</p>
+              <p>Your credit (referral bonus or Chexy Cash) is added <strong>after a payment has been successfully completed</strong>: bill payment sent, Interac transfer deposited, pre-authorized debit (PAD) withdrawn, or EFT processed. To use it, you redeem it on your next payment: in the "Wallet" for an existing payment, or directly at the checkout screen for a new one. Important detail: redeem your credit <strong>before your card is charged</strong> — that's about <strong>4 business days before the due date</strong> for an existing payment. The credit applies to both recurring and one-time payments, but cannot be withdrawn or transferred: it only serves to reduce your payments through Chexy.</p>
             </div>
           </details>
           <details>
             <summary id="faq-q16">Is the $20 bonus a transfer or a credit?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q16">
-              <p>It's a <strong>Chexy credit</strong>, not a transfer to your bank account. Once your first payment is completed, the $20 appears as a credit balance in your Chexy account. You then redeem it via the "Redeem" button (in the Wallet or at the checkout screen) to <strong>reduce a future payment</strong> made through Chexy. Two concrete consequences: the credit applies to an <strong>active recurring payment</strong>, and it <strong>cannot be withdrawn or transferred</strong> — it only serves to lower the cost of a Chexy payment (for example, wiping out part of the 1.75% fee). It can take up to 2 weeks to appear after the conditions are met.</p>
+              <p>It's a <strong>Chexy credit</strong>, not a transfer to your bank account. Once your first payment is completed, the $20 appears as a credit balance in your Chexy account. You then redeem it via the "Redeem" button (in the Wallet or at the checkout screen) to <strong>reduce a future payment</strong> made through Chexy. Two concrete consequences: the credit applies to an <strong>active recurring payment</strong>, and it <strong>cannot be withdrawn or transferred</strong> — it only serves to lower the cost of a Chexy payment (for example, wiping out part of the 1.75% fee). The credit may appear a few days after the payment is completed, sometimes a bit longer depending on processing.</p>
             </div>
           </details>
         </div>
@@ -1040,7 +1081,7 @@
       <div class="cta-section">
         <h2>Ready to pay your bills by card?</h2>
         <p>Sign up via my <strong>referral link</strong>, complete your first payment and receive <strong>$20 in Chexy credit</strong>. No code to enter.</p>
-        <a class="btn" href="https://app.chexy.co?ref=86GwJRXw20iY52PmYweG" target="_blank" rel="noopener sponsored noreferrer">
+        <a class="btn" href="https://chexy.app.link/REF-WDTW5Q" target="_blank" rel="noopener sponsored noreferrer">
           💳 Activate my $20 on Chexy
         </a>
         <p style="font-size:0.85rem; color:var(--muted); margin-top:14px;">No code to enter: the referral works through the link.</p>
@@ -1060,7 +1101,7 @@
     <div class="s-code">$20 bonus</div>
     <div class="s-label">Chexy referral link</div>
   </div>
-  <a href="https://app.chexy.co?ref=86GwJRXw20iY52PmYweG"
+  <a href="https://chexy.app.link/REF-WDTW5Q"
      target="_blank" rel="noopener sponsored noreferrer"
      style="background:var(--text);color:var(--surface);border-radius:6px;padding:10px 18px;font-weight:800;font-size:0.95rem;text-decoration:none;white-space:nowrap;flex-shrink:0;">
     Activate ↗
@@ -1070,7 +1111,7 @@
 <footer>
   <div class="container">
     <p>Site not officially affiliated with Chexy. Trademarks belong to their respective owners.</p>
-    <p style="margin-top:6px;">Chexy referral link — Updated: <time id="footer-date" datetime="2026-07-06">July 2026</time></p>
+    <p style="margin-top:6px;">Chexy referral link — Updated: <time id="footer-date" datetime="2026-07-12">July 2026</time></p>
   </div>
 
   <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
