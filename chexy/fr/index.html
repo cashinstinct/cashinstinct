@@ -57,7 +57,7 @@
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-06-20",
-        "dateModified": "2026-07-06",
+        "dateModified": "2026-07-12",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
         "publisher": {
           "@type": "Organization",
@@ -196,12 +196,12 @@
           {
             "@type": "Question",
             "name": "Quand le crédit Chexy est-il versé et comment l'utiliser ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Votre crédit (bonus de parrainage ou Chexy Cash) est ajouté après qu'un paiement a été complété avec succès : facture envoyée, virement Interac déposé, débit préautorisé (PAD) prélevé ou EFT traité. Pour l'appliquer, vous le rachetez sur votre prochain paiement : dans le Wallet pour un paiement existant, ou directement à l'écran de paiement pour un nouveau. Détail important : rachetez votre crédit avant que la carte soit chargée — soit environ 4 jours avant l'échéance pour un paiement existant. Le crédit s'applique aux paiements récurrents comme ponctuels, mais ne peut être ni retiré ni transféré : il sert uniquement à réduire vos paiements via Chexy." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Votre crédit (bonus de parrainage ou Chexy Cash) est ajouté après qu'un paiement a été complété avec succès : facture envoyée, virement Interac déposé, débit préautorisé (PAD) prélevé ou EFT traité. Pour l'appliquer, vous le rachetez sur votre prochain paiement : dans le Wallet pour un paiement existant, ou directement à l'écran de paiement pour un nouveau. Détail important : rachetez votre crédit avant que la carte soit chargée — soit environ 4 jours ouvrables avant l'échéance pour un paiement existant. Le crédit s'applique aux paiements récurrents comme ponctuels, mais ne peut être ni retiré ni transféré : il sert uniquement à réduire vos paiements via Chexy." }
           },
           {
             "@type": "Question",
             "name": "Le bonus de 20 $, c'est un virement ou un crédit ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "C'est un crédit Chexy, pas un virement dans votre compte bancaire. Une fois votre premier paiement complété, les 20 $ apparaissent comme un solde de crédit dans votre compte Chexy. Vous le rachetez ensuite via le bouton Redeem (dans le Wallet ou à l'écran de paiement) pour réduire un paiement futur fait via Chexy. Deux conséquences concrètes : le crédit s'applique sur un paiement récurrent actif, et il ne peut être ni retiré ni transféré — il sert uniquement à diminuer le coût d'un paiement Chexy (par exemple, effacer une partie des frais de 1,75 %). Comptez parfois jusqu'à 2 semaines pour qu'il apparaisse après que les conditions sont remplies." }
+            "acceptedAnswer": { "@type": "Answer", "text": "C'est un crédit Chexy, pas un virement dans votre compte bancaire. Une fois votre premier paiement complété, les 20 $ apparaissent comme un solde de crédit dans votre compte Chexy. Vous le rachetez ensuite via le bouton Redeem (dans le Wallet ou à l'écran de paiement) pour réduire un paiement futur fait via Chexy. Deux conséquences concrètes : le crédit s'applique sur un paiement récurrent actif, et il ne peut être ni retiré ni transféré — il sert uniquement à diminuer le coût d'un paiement Chexy (par exemple, effacer une partie des frais de 1,75 %). Le crédit peut apparaître quelques jours après que le paiement est complété, parfois un peu plus selon le traitement." }
           }
         ]
       },
@@ -568,7 +568,7 @@
     <p>Payez vos <strong>taxes scolaires et municipales</strong>, votre facture <strong>Hydro-Québec</strong> et vos impôts par carte de crédit pour accumuler des points. Inscription via le <strong>lien de parrainage</strong>&nbsp;: <strong>20&nbsp;$ de crédit Chexy</strong> appliqué à votre premier paiement.</p>
 
     <div style="max-width:520px;margin:36px auto 0;">
-      <a href="https://app.chexy.co?ref=86GwJRXw20iY52PmYweG" target="_blank" rel="noopener sponsored noreferrer"
+      <a href="https://chexy.app.link/REF-WDTW5Q" target="_blank" rel="noopener sponsored noreferrer"
          style="display:block; background:#fff; color:var(--accent); border-radius:12px; font-weight:900; padding:20px 28px; text-align:center; font-size:1.25rem; text-decoration:none; box-shadow:var(--shadow);">
         💳&nbsp;Activer mes 20&nbsp;$ sur Chexy
       </a>
@@ -636,6 +636,47 @@
 
   ⚠ STATS POLICY : tous les calculs $ de la page utilisent 1,75 % (taux Starter),
     cohérent avec le profil "usage perso + petit volume de filleuls".
+
+  ⚠ MODIF 12 JUILLET 2026 (par IA, demande Étienne) — LIEN PRIMAIRE = LIEN APP BRANCH :
+      → Tous les CTA visibles (hero, CTA bas de page, sticky mobile) pointent maintenant
+        vers le LIEN APP : https://chexy.app.link/REF-WDTW5Q (domaine *.app.link = Branch.io).
+      → POURQUOI le lien app plutôt que le lien web :
+        1. Le bonus 20 $/20 $ BIDIRECTIONNEL est explicitement documenté par Chexy UNIQUEMENT
+           pour le parcours mobile app (filleul télécharge l’app + 1er paiement DANS l’app).
+        2. Le lien Branch auto-détecte l’appareil : mobile → ouvre l’app (ou store) ;
+           desktop → fallback web automatique en CONSERVANT l’attribution. Un seul lien couvre
+           les deux, pas besoin de JS de swap.
+        3. Path app = 20 $ CASH pour le parrain PEU IMPORTE le tier. Le path web/standard
+           bascule la récompense du parrain vers frais réduits dès Pink (3 filleuls).
+      → Le lien web https://app.chexy.co?ref=86GwJRXw20iY52PmYweG reste documenté dans le
+        glossaire comme FORMAT ALTERNATIF / secours manuel. NE PAS le remettre dans les CTA.
+        Si un futur chat hésite entre app/web : c’est TRANCHÉ = APP PRIMAIRE.
+      → Contradiction source : la doc Chexy 2026 décrit 2 mécaniques qui se chevauchent
+        (référence standard par tier VS promo app). Les deux payent 20 $. Chaque IA qui lit
+        une seule section donne une réponse différente → d’où le flip-flop app/web. Le lien
+        app est le choix supérieur, ne pas rouvrir le débat.
+
+  ⚠ MODIF 12 JUILLET 2026 — DÉLAI DU CRÉDIT HARMONISÉ :
+      → Ancienne formulation q16 « jusqu’à 2 semaines » venait d’un résumé tiers non confirmé
+        et CONTREDISAIT q13 (« quelques jours »). Remplacée par « quelques jours, parfois un
+        peu plus selon le traitement ». La doc officielle ne donne AUCUN délai chiffré : le
+        crédit apparaît « after the payment is successfully processed ». Ne PAS réintroduire
+        le « 2 semaines ».
+
+  ⚠ RATING SCHEMA (aggregateRating reviewCount=1) — REVU 12 JUILLET, GARDÉ VOLONTAIREMENT :
+      → Review éditoriale d’un produit TIERS (Chexy) par l’éditeur = permis par Google
+        (≠ self-review d’une entité sur elle-même). reviewCount=1 est mince mais non contraire
+        aux règles. Décision : GARDÉ. Si Google flag un jour, remplacer par un vrai signal
+        d’avis, pas supprimer en panique.
+
+  ⚠ MODIF 12 JUILLET 2026 (suite) — 2 CORRECTIFS ANTI-FUITE :
+      → q15 : « 4 jours » → « 4 jours OUVRABLES » avant l’échéance (aligne la FAQ sur la
+        source chexy.co ; la page était moins précise que la note interne).
+      → HowTo (encadré warning) : ajout explicite « sur mobile, complète le 1er paiement
+        DANS l’app Chexy » — c’est le SEUL parcours où le 20 $/20 $ bidirectionnel est
+        documenté. Sans cette mention, un filleul qui paie sur le web retombe sur le barème
+        standard = fuite d’attribution probable (cause des conversions à zéro). Ne pas retirer.
+
   ════════════════════════════════════════════════════════════
 -->
 
@@ -679,7 +720,7 @@
         🧮 <strong>Quand c'est rentable&nbsp;:</strong> dès que votre carte rapporte plus que 1,75&nbsp;% en points ou remise, et surtout pour atteindre le seuil d'un <strong>bonus de bienvenue</strong> de carte de crédit avec des dépenses que vous payez de toute façon.
       </div>
 
-      <p style="font-size:0.8rem; color:var(--muted); margin:16px 0 24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-07-06">6&nbsp;juillet 2026</time></p>
+      <p style="font-size:0.8rem; color:var(--muted); margin:16px 0 24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-07-12">12&nbsp;juillet 2026</time></p>
 
       <div class="transparency" style="margin-bottom: 24px;">
         <strong>Transparence&nbsp;:</strong> ce guide indépendant assure un suivi de parrainage. Si vous vous inscrivez à Chexy via mon lien de parrainage, vous obtenez votre bonus de 20&nbsp;$ (financé par Chexy) — et Chexy me verse aussi 20&nbsp;$, sans aucun coût supplémentaire pour vous. Divulgation complète au bas de cette page.
@@ -735,7 +776,7 @@
         <h2>Comment payer ses taxes et factures par carte avec Chexy</h2>
 
         <div class="warning">
-          ⚠️ <strong>Règle critique&nbsp;:</strong> pour débloquer le bonus de 20&nbsp;$, inscrivez-vous via le <strong>lien de parrainage</strong> (il n'y a pas de code à entrer à la création du compte) et complétez votre <strong>premier paiement</strong>.
+          ⚠️ <strong>Règle critique&nbsp;:</strong> pour débloquer le bonus de 20&nbsp;$, inscrivez-vous via le <strong>lien de parrainage</strong> (il n'y a pas de code à entrer à la création du compte) et complétez votre <strong>premier paiement</strong>. <br><br>📱 <strong>Sur mobile&nbsp;:</strong> complétez ce premier paiement <strong>dans l'application Chexy</strong> — c'est le parcours qui verrouille le bonus bidirectionnel de 20&nbsp;$/20&nbsp;$.
         </div>
 
         <div class="field-exact">
@@ -1026,13 +1067,13 @@
           <details>
             <summary id="faq-q15">Quand le crédit Chexy est-il versé et comment l'utiliser&nbsp;?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q15">
-              <p>Votre crédit (bonus de parrainage ou Chexy Cash) est ajouté <strong>après qu'un paiement a été complété avec succès</strong>&nbsp;: facture envoyée, virement Interac déposé, débit préautorisé (PAD) prélevé ou EFT traité. Pour l'appliquer, vous le rachetez sur votre prochain paiement&nbsp;: dans le «&nbsp;Wallet&nbsp;» pour un paiement existant, ou directement à l'écran de paiement pour un nouveau. Détail important&nbsp;: rachetez votre crédit <strong>avant que la carte soit chargée</strong> — soit environ <strong>4 jours avant l'échéance</strong> pour un paiement existant. Le crédit s'applique aux paiements récurrents comme ponctuels, mais ne peut être ni retiré ni transféré&nbsp;: il sert uniquement à réduire vos paiements via Chexy.</p>
+              <p>Votre crédit (bonus de parrainage ou Chexy Cash) est ajouté <strong>après qu'un paiement a été complété avec succès</strong>&nbsp;: facture envoyée, virement Interac déposé, débit préautorisé (PAD) prélevé ou EFT traité. Pour l'appliquer, vous le rachetez sur votre prochain paiement&nbsp;: dans le «&nbsp;Wallet&nbsp;» pour un paiement existant, ou directement à l'écran de paiement pour un nouveau. Détail important&nbsp;: rachetez votre crédit <strong>avant que la carte soit chargée</strong> — soit environ <strong>4 jours ouvrables avant l'échéance</strong> pour un paiement existant. Le crédit s'applique aux paiements récurrents comme ponctuels, mais ne peut être ni retiré ni transféré&nbsp;: il sert uniquement à réduire vos paiements via Chexy.</p>
             </div>
           </details>
           <details>
             <summary id="faq-q16">Le bonus de 20&nbsp;$, c'est un virement ou un crédit&nbsp;?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q16">
-              <p>C'est un <strong>crédit Chexy</strong>, pas un virement dans votre compte bancaire. Une fois votre premier paiement complété, les 20&nbsp;$ apparaissent comme un solde de crédit dans votre compte Chexy. Vous le rachetez ensuite via le bouton «&nbsp;Redeem&nbsp;» (dans le Wallet ou à l'écran de paiement) pour <strong>réduire un paiement futur</strong> fait via Chexy. Deux conséquences concrètes&nbsp;: le crédit s'applique sur un <strong>paiement récurrent actif</strong>, et il <strong>ne peut être ni retiré ni transféré</strong> — il sert uniquement à diminuer le coût d'un paiement Chexy (par exemple, effacer une partie des frais de 1,75&nbsp;%). Comptez parfois jusqu'à 2&nbsp;semaines pour qu'il apparaisse après que les conditions sont remplies.</p>
+              <p>C'est un <strong>crédit Chexy</strong>, pas un virement dans votre compte bancaire. Une fois votre premier paiement complété, les 20&nbsp;$ apparaissent comme un solde de crédit dans votre compte Chexy. Vous le rachetez ensuite via le bouton «&nbsp;Redeem&nbsp;» (dans le Wallet ou à l'écran de paiement) pour <strong>réduire un paiement futur</strong> fait via Chexy. Deux conséquences concrètes&nbsp;: le crédit s'applique sur un <strong>paiement récurrent actif</strong>, et il <strong>ne peut être ni retiré ni transféré</strong> — il sert uniquement à diminuer le coût d'un paiement Chexy (par exemple, effacer une partie des frais de 1,75&nbsp;%). Le crédit peut apparaître quelques jours après que le paiement est complété, parfois un peu plus selon le traitement.</p>
             </div>
           </details>
         </div>
@@ -1047,7 +1088,7 @@
       <div class="cta-section">
         <h2>Prêt à payer vos factures par carte&nbsp;?</h2>
         <p>Inscrivez-vous via mon <strong>lien de parrainage</strong>, complétez votre premier paiement et recevez <strong>20&nbsp;$ de crédit Chexy</strong>. Aucun code à entrer.</p>
-        <a class="btn" href="https://app.chexy.co?ref=86GwJRXw20iY52PmYweG" target="_blank" rel="noopener sponsored noreferrer">
+        <a class="btn" href="https://chexy.app.link/REF-WDTW5Q" target="_blank" rel="noopener sponsored noreferrer">
           💳 Activer mes 20&nbsp;$ sur Chexy
         </a>
         <p style="font-size:0.85rem; color:var(--muted); margin-top:14px;">Aucun code à saisir : le parrainage passe par le lien.</p>
@@ -1067,7 +1108,7 @@
     <div class="s-code">20&nbsp;$ de prime</div>
     <div class="s-label">Lien de parrainage Chexy</div>
   </div>
-  <a href="https://app.chexy.co?ref=86GwJRXw20iY52PmYweG"
+  <a href="https://chexy.app.link/REF-WDTW5Q"
      target="_blank" rel="noopener sponsored noreferrer"
      style="background:var(--text);color:var(--surface);border-radius:6px;padding:10px 18px;font-weight:800;font-size:0.95rem;text-decoration:none;white-space:nowrap;flex-shrink:0;">
     Activer ↗
@@ -1077,7 +1118,7 @@
 <footer>
   <div class="container">
     <p>Site non affilié officiellement à Chexy. Les marques appartiennent à leurs propriétaires respectifs.</p>
-    <p style="margin-top:6px;">Lien de parrainage Chexy — Mis à jour&nbsp;: <time id="footer-date" datetime="2026-07-06">Juillet 2026</time></p>
+    <p style="margin-top:6px;">Lien de parrainage Chexy — Mis à jour&nbsp;: <time id="footer-date" datetime="2026-07-12">Juillet 2026</time></p>
   </div>
 
   <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
