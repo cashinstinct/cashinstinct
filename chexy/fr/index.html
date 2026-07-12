@@ -1115,7 +1115,7 @@ function calcChexy() {
   if (net > 0) {
     verdict = '✅ Gain net : <strong style="color:var(--accent);">+' + net.toFixed(2).replace('.', ',') + '$</strong>';
   } else if (net < 0) {
-    verdict = '⚠️ Perte nette : <strong style="color:--danger-text;">' + net.toFixed(2).replace('.', ',') + '$</strong> — votre carte ne rapporte pas assez pour couvrir les frais.';
+    verdict = '⚠️ Perte nette : <strong style="color:var(--danger-text);">' + net.toFixed(2).replace('.', ',') + '$</strong> — votre carte ne rapporte pas assez pour couvrir les frais.';
   } else {
     verdict = '➖ Équilibre : ni gain ni perte.';
   }
