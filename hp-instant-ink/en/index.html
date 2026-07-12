@@ -14,7 +14,7 @@
     la saisie manuelle, Google n'aime pas les HowTo ambigus.
 
   ALIGNEMENT SCHEMA↔HTML (vérifier à chaque édition)
-  • FAQ : 15 questions schema = 15 <summary> HTML. ids faq-q1→q15
+  • FAQ : 19 questions schema = 19 <summary> HTML. ids faq-q1→q19
     séquentiels, chacun avec son aria-labelledby. NE PAS ajouter une
     question d'un côté sans l'autre.
   • Compter <div> ouvrants = fermants AVANT push (un </div> orphelin
@@ -43,6 +43,8 @@
     href/style), CSS, JS. Vérifié = 0.
 
   À SURVEILLER / PROCHAINE ITÉRATION
+  • [FAIT 2026-07-11] Added #myths table + FAQ q18/q19 (1 month ≠ 6; member
+    code, no expiry / no user cap), ai-summary line, hero caption. dateModified→2026-07-11.
   • [FAIT 2026-07-04] Nouveau pricing HP en vigueur (rollout confirmé
     actif le 4 juillet via pagecrawl, date officielle 13 juillet). La
     grille principale #eligible-page-volumes porte désormais 10→1,500
@@ -132,7 +134,7 @@
         "inLanguage": "en-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-05-01",
-        "dateModified": "2026-07-07",
+        "dateModified": "2026-07-11",
         "citation": {
           "@type": "WebPage",
           "name": "HP Instant Ink FAQs (Canada)",
@@ -328,6 +330,16 @@
             "@type": "Question",
             "name": "Where do I enter the HP Instant Ink promo code / trial code?",
             "acceptedAnswer": { "@type": "Answer", "text": "If you sign up through the referral link try.hpinstantink.com/SVdn7, the friend code is applied automatically — there is no field to fill in. If you instead need to enter a code manually (a printer trial code, prepaid e-code or HP promo code), the field lives under Billing during enrollment at hpinstantink.com: look for Have a promo code? on the plan/payment step and paste the code there before confirming. A referral code like SVdn7 only works through its link, not in that box — the billing field is for HP-issued promo and trial codes." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the HP Instant Ink referral code give more than one free month?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. The current standard offer from the referral (friend) code is 1 free month on the plan you choose. Claims of 2, 3 or 6 months 'per code' are false: the 6 free months came from an old printer-purchase bundle (HP+ type), not the referral program. When we last tested it in Canada in July 2026, the credit shown was 'Refer a Friend — 1 month'. HP may adjust the value by country and date." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the HP Instant Ink friend code expire or have a usage limit?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. A referral code is a member code: it has no fixed expiry date and there is no cap on how many people can use it. That is different from a prepaid in-store HP Instant Ink card (one-time PIN) and from marketing promo codes like TaxTime26, which expire after a few weeks. HP notes that refer-a-friend terms can vary by country and date." }
           }
         ]
       },
@@ -647,7 +659,7 @@
         </a>
 
         <p style="font-size: 0.85rem; margin-top: 8px; text-align: center;">
-          The confirmation HP shows after opening the link: <strong>"You have 1&nbsp;free month of HP Instant Ink"</strong> — applied automatically, nothing to type.
+          The confirmation HP shows after opening the link: <strong>"You have 1&nbsp;free month of HP Instant Ink"</strong> — applied automatically, nothing to type. It's <strong>1&nbsp;month</strong>, the real value — not the "6 months" you see floating around.
         </p>
       </div>
 
@@ -711,6 +723,7 @@
   <a href="#plans" style="text-decoration: underline;">Pricing</a> ·
   <a href="#eligible-printers" style="text-decoration: underline;">Eligible Printers Compatibility</a> ·
   <a href="#coupon-vs-referral" style="text-decoration: underline;">Promo vs Referral</a> ·
+  <a href="#myths" style="text-decoration: underline;">Common Myths</a> ·
   <a href="#features" style="text-decoration: underline;">Key Facts</a> ·
   <a href="#review" style="text-decoration: underline;">My Review</a> ·
   <a href="#glossary" style="text-decoration: underline;">Glossary</a> ·
@@ -724,9 +737,11 @@
   📦 <strong>How it works:</strong> your connected printer automatically reports ink levels to HP's servers. New cartridges are shipped before you run out — you pay per page printed, not per ink volume used.
   <br><br>
   🔑 The easiest path is the <strong>referral link</strong>: it pre-applies <code>SVdn7</code> and the credit shows up on its own at the <strong>billing step</strong> as <em>"Refer a Friend — 1&nbsp;month"</em>. Signing up without the link? Type <code>SVdn7</code> yourself in the <em>"Enter promo or PIN code"</em> field at billing. If you already have free months included with a new printer, the code stacks on top.
+  <br><br>
+  ⚠️ <strong>To be clear:</strong> the friend code's standard offer is <strong>1&nbsp;month</strong> — not 6 — and because it's a member code, <strong>it doesn't expire</strong> and has no user limit.
 </div>
       
-  <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Updated <time id="trust-date" datetime="2026-07-07">July&nbsp;7, 2026</time></p>
+  <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Updated <time id="trust-date" datetime="2026-07-11">July&nbsp;11, 2026</time></p>
 
       <!-- ── NOUVELLE SECTION : Disponibilité Canada (cible requête n°1 "is hp instant ink available in canada" + grappe redeem) ── -->
       <section id="available-canada">
@@ -838,7 +853,7 @@
 
         <p>The HP Instant Ink <strong>friend code</strong> <code>SVdn7</code> is part of HP's official refer-a-friend program.</p>
 
-        <p>There is no limit on how many people you can invite, and the free month applies on any plan, from the 10-page tier up to 1,500&nbsp;pages. As a new customer, either open the <a href="#how-it-works">referral link</a> (code auto-applied) or enter code <code>SVdn7</code> yourself at the billing step — the same field described in the <a href="#where-to-redeem">manual entry section</a> above.</p>
+        <p>There is no limit on how many people you can invite, and the free month applies on any plan, from the 10-page tier up to 1,500&nbsp;pages. As a new customer, either open the <a href="#how-it-works">referral link</a> (code auto-applied) or enter code <code>SVdn7</code> yourself at the billing step — the same field described in the <a href="#where-to-redeem">manual entry section</a> above. Because it's a member code, it has no fixed expiry date — unlike marketing promo codes, which do expire.</p>
 
         <div class="warning">
           💡 <strong>Member code vs in-store card:</strong> a referral code like <code>SVdn7</code> is a member code entered (or auto-applied) during online sign-up. It is not the same as a prepaid Instant Ink card bought in a store, which carries a one-time PIN. Only the member code grants the refer-a-friend invite benefit.
@@ -944,9 +959,33 @@
 
         <p>The referral system using code <code>SVdn7</code> is the most reliable way to add a free month of ink to your billing: it isn't tied to a short marketing window, and it applies automatically through the link or when entered at the billing step. HP notes that refer-a-friend terms can vary by country and date, so always confirm the offer shown during your own sign-up.</p>
 
+        <p><strong>Watch out for multi-month promises:</strong> posts advertising 2, 3 or 6 months "with a code" confuse the referral with an old printer bundle. The standard referral offer is 1 month — see <a href="#myths">common myths</a>.</p>
         <blockquote cite="https://cashinstinct.ca/hp-instant-ink/en/">
           <p>"Several sites still mention the promotional code TaxTime26 for discounts on HP Instant Ink. The promotional offer tied to this code ended on March&nbsp;31, 2026. If you try entering this code at checkout, HP's system will display a coupon expired error. To avoid blocking your sign-up, use the referral key SVdn7, which was still active when we last tested it in Canada in July&nbsp;2026." — Cash Instinct</p>
         </blockquote>
+      </section>
+
+      <section id="myths">
+        <span class="section-label">Setting It Straight</span>
+        <h2>Common Myths About the HP Instant Ink Referral Code</h2>
+        <p>Two false claims circulate online about the friend code. Here's what HP's sign-up form actually shows — verified in Canada in July&nbsp;2026.</p>
+        <div style="overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border);">
+          <table class="compare-table" aria-label="Common myths about the HP Instant Ink code">
+            <thead>
+              <tr><th>What you read online</th><th>The reality (verified July&nbsp;2026)</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"Some codes give 2, 3 or 6 free months."</td>
+                <td><strong>False for referrals.</strong> The current standard offer from the friend code is <strong>1&nbsp;free month</strong>. The "6 months" came from an old printer-purchase bundle (HP+ type), not the code. HP may adjust the value by country and date.</td>
+              </tr>
+              <tr>
+                <td>"The friend code has a usage limit or eventually expires."</td>
+                <td><strong>False.</strong> A referral code is a <strong>member code</strong>: no fixed expiry date and no cap on how many people can use it. Different from a prepaid in-store card (one-time PIN) and from promo codes like <code>TaxTime26</code>, which do expire.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section id="features">
@@ -1012,6 +1051,10 @@
         <tr>
           <td>HP Instant Ink Promo Code</td>
           <td>Temporary marketing codes tied to HP campaigns (e.g. TaxTime26). These expire after a few weeks. SVdn7 is a referral code, not a promo code — both may appear on the same sign-up form.</td>
+        </tr>
+        <tr>
+          <td>"Multiple months" / "expired code" myth</td>
+          <td>The referral code gives <strong>1&nbsp;month</strong> (not 6 — that was an old printer bundle), and as a member code it <strong>doesn't expire</strong> and has no user limit.</td>
         </tr>
         <tr>
           <td>Stacking</td>
@@ -1152,6 +1195,18 @@
     <p>If you sign up through the referral link <code>try.hpinstantink.com/SVdn7</code>, the friend code is applied automatically — there is <strong>no field to fill in</strong>. If you instead need to enter a code manually (a printer trial code, prepaid e-code or HP promo code), the field lives under <strong>Billing</strong> during enrollment at hpinstantink.com: look for "Have a promo code?" on the plan/payment step and paste the code there before confirming. A referral code like <code>SVdn7</code> only works through its link, not in that box — the billing field is for HP-issued promo and trial codes.</p>
   </div>
 </details>
+          <details>
+            <summary id="faq-q18">Does the HP Instant Ink referral code give more than one free month?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q18">
+              <p><strong>No.</strong> The current standard offer from the friend code is <strong>1&nbsp;free month</strong> on the plan you choose. Claims of 2, 3 or 6 months "per code" are false: the 6 free months came from an <strong>old printer-purchase bundle</strong> (HP+ type), not the referral program. When we last tested it in Canada (July&nbsp;2026), the credit shown was <em>"Refer a Friend — 1&nbsp;month"</em>. HP may adjust the value by country and date.</p>
+            </div>
+          </details>
+          <details>
+            <summary id="faq-q19">Does the HP Instant Ink friend code expire or have a usage limit?</summary>
+            <div class="faq-body" role="region" aria-labelledby="faq-q19">
+              <p><strong>No.</strong> A referral code is a <strong>member code</strong>: no fixed expiry date and <strong>no cap</strong> on how many people can use it. That's different from a prepaid in-store card (one-time PIN) and from promo codes like <code>TaxTime26</code>, which do expire. HP notes that refer-a-friend terms can vary by country and date.</p>
+            </div>
+          </details>
         </div>
       </section>
 
@@ -1189,7 +1244,7 @@
 <footer>
   <div class="container">
     <p>Independent reference site, not officially affiliated with HP or the Instant Ink service. All trademarks belong to their respective owners.</p>
-    <p style="margin-top:6px;">HP Instant Ink Code: <code>SVdn7</code> — Last updated: <time id="footer-date" datetime="2026-07-07">July&nbsp;2026</time></p>
+    <p style="margin-top:6px;">HP Instant Ink Code: <code>SVdn7</code> — Last updated: <time id="footer-date" datetime="2026-07-11">July&nbsp;2026</time></p>
   </div>
   <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
      <nav class="footer-links" aria-label="Liens du site">
