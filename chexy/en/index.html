@@ -1108,7 +1108,7 @@ function calcChexy() {
   if (net > 0) {
     verdict = '✅ Net gain: <strong style="color:var(--accent);">+$' + net.toFixed(2) + '</strong>';
   } else if (net < 0) {
-    verdict = '⚠️ Net loss: <strong style="color:--danger-text;">$' + net.toFixed(2) + '</strong> — your card doesn\'t earn enough to cover the fees.';
+    verdict = '⚠️ Net loss: <strong style="color:var(--danger-text);">$' + net.toFixed(2) + '</strong> — your card doesn\'t earn enough to cover the fees.';
   } else {
     verdict = '➖ Break-even: no gain, no loss.';
   }
