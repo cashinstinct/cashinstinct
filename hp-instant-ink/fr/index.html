@@ -14,7 +14,7 @@
     la saisie manuelle, Google n'aime pas les HowTo ambigus.
 
   ALIGNEMENT SCHEMA↔HTML (vérifier à chaque édition)
-  • FAQ : 15 questions schema = 15 <summary> HTML. ids faq-q1→q15
+  • FAQ : 19 questions schema = 19 <summary> HTML. ids faq-q1→q19
     séquentiels (l'ancien faq-q3b bâtard a été renuméroté). Chacun avec
     son aria-labelledby. NE PAS ajouter une question d'un seul côté.
   • Compter <div> ouvrants = fermants AVANT push (comptage machine).
@@ -42,6 +42,10 @@
     href/style), CSS, JS. Vérifié = 0.
 
   À SURVEILLER / PROCHAINE ITÉRATION
+  • [FAIT 2026-07-11] Ajout section #mythes (tableau « idées reçues ») +
+    3 FAQ : q17 « où entrer le code » (symétrie avec EN q17), q18 (1 mois ≠ 6)
+    et q19 (code membre sans expiration ni limite). ai-summary, légende hero.
+    dateModified→2026-07-11. Symétrie FR↔EN rétablie (19 = 19, ids alignés).
   • [FAIT 2026-07-04] Nouveau pricing HP en vigueur (déploiement confirmé
     actif le 4 juillet via pagecrawl ; date officielle 13 juillet). Le
     tableau principal « Volume de pages admissibles » porte désormais la
@@ -132,7 +136,7 @@
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-05-01",
-        "dateModified": "2026-07-07",
+        "dateModified": "2026-07-11",
         "citation": {
           "@type": "WebPage",
           "name": "FAQ HP Instant Ink (Canada)",
@@ -285,6 +289,21 @@
             "@type": "Question",
             "name": "Existe-t-il encore un forfait HP Instant Ink gratuit (ou 6 mois gratuits) ?",
             "acceptedAnswer": { "@type": "Answer", "text": "Non — le forfait gratuit à vie n'existe plus pour les nouveaux abonnés. HP a retiré l'ancien forfait 15 pages gratuites par mois en 2020 ; seuls quelques comptes historiques l'ont conservé, et même ceux-là sont en voie d'être retirés. Les 6 mois gratuits que le monde cherche, c'était un ancien bundle à l'achat d'une imprimante : ce n'est pas un forfait permanent. Aujourd'hui, si vous vous inscrivez à HP Instant Ink au Canada, chaque forfait est un abonnement mensuel payant (à partir d'environ 1,79 $/mois). La vraie façon d'avoir de l'encre gratuite, c'est l'essai gratuit : la plupart des imprimantes HP neuves incluent 3 mois gratuits, et par-dessus vous pouvez ajouter 1 mois gratuit avec le code de parrainage SVdn7 (lien try.hpinstantink.com/SVdn7). Après la période gratuite, la facturation démarre automatiquement sauf annulation. Donc si vous cherchez un forfait gratuit, ce qui existe réellement, c'est un essai gratuit — et le code ami ajoute un mois de plus." }
+          },
+          {
+            "@type": "Question",
+            "name": "Où entrer le code promo ou le code d'essai HP Instant Ink ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Si vous vous inscrivez via le lien de parrainage try.hpinstantink.com/SVdn7, le code ami s'applique automatiquement — il n'y a aucun champ à remplir. Si vous devez entrer un code manuellement (code d'essai d'imprimante, code prépayé ou code promo HP), le champ se trouve sous « Facturation » lors de l'inscription sur hpinstantink.com : cherchez « Entrer le code promotionnel ou le code NIP » à l'étape du forfait ou du paiement et collez le code avant de confirmer. Un code de parrainage comme SVdn7 fonctionne uniquement via son lien, pas dans cette case — le champ de facturation est réservé aux codes promo et codes d'essai émis par HP." }
+          },
+          {
+            "@type": "Question",
+            "name": "Le code de parrainage HP Instant Ink donne-t-il plus d'un mois gratuit ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Non. L'offre standard actuelle du code de parrainage (code ami) est de 1 mois gratuit sur le forfait choisi. Les mentions de 2, 3 ou 6 mois « par code » sont fausses : les 6 mois gratuits provenaient d'un ancien bundle à l'achat d'une imprimante (type HP+), pas du parrainage. Lors de notre dernier test au Canada en juillet 2026, le crédit affiché était « Parrainer un ami — 1 mois ». HP peut ajuster la valeur selon le pays et la date." }
+          },
+          {
+            "@type": "Question",
+            "name": "Le code ami HP Instant Ink expire-t-il ou a-t-il une limite d'utilisations ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Non. Un code de parrainage est un code membre : il n'a pas de date d'expiration fixe et il n'y a aucune limite au nombre de personnes qui peuvent l'utiliser. C'est différent d'une carte HP Instant Ink prépayée en magasin (NIP à usage unique) et des codes promo marketing comme TaxTime26, qui expirent après quelques semaines. HP précise que les conditions du parrainage peuvent varier selon le pays et la date." }
           }
         ]
       },
@@ -604,7 +623,7 @@
                  style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
           </a>
           <p style="font-size: 0.85rem; margin-top: 8px; text-align: center;">
-            La confirmation qu'HP affiche après l'ouverture du lien : <strong>« Vous bénéficiez de 1&nbsp;mois gratuit de HP Instant Ink »</strong> — appliqué automatiquement, rien à taper.
+            La confirmation qu'HP affiche après l'ouverture du lien : <strong>« Vous bénéficiez de 1&nbsp;mois gratuit de HP Instant Ink »</strong> — appliqué automatiquement, rien à taper. C'est <strong>1&nbsp;mois</strong>, la valeur réelle&nbsp;: pas les «&nbsp;6&nbsp;mois&nbsp;» qu'on voit passer.
           </p>
         </div>
 
@@ -669,6 +688,7 @@
   <a href="#plans" style="text-decoration: underline;">Tarification</a> ·
   <a href="#eligible-printers" style="text-decoration: underline;">Imprimantes admissibles / Modèles compatibles</a> ·
   <a href="#coupon-vs-parrainage" style="text-decoration: underline;">Code promo ou parrainage</a> ·
+  <a href="#mythes" style="text-decoration: underline;">Idées reçues</a> ·
   <a href="#features" style="text-decoration: underline;">En bref</a> ·
   <a href="#review" style="text-decoration: underline;">Avis personnel</a> ·
   <a href="#glossaire" style="text-decoration: underline;">Glossaire</a> ·
@@ -681,9 +701,11 @@
   📦 <strong>Comment ça fonctionne :</strong> votre imprimante connectée signale automatiquement le niveau d'encre aux serveurs HP. De nouvelles cartouches sont expédiées avant la panne — vous payez à la page imprimée, pas à la quantité d'encre utilisée.
   <br><br>
   🔑 Le plus simple est le <strong>lien de parrainage</strong> : il applique d'avance le code <code>SVdn7</code> et le crédit apparaît tout seul à <strong>l'étape de facturation</strong> sous <em>« Parrainer un ami — 1&nbsp;mois »</em>. Vous vous inscrivez sans le lien ? Saisissez <code>SVdn7</code> vous-même dans le champ <em>« Entrer le code promotionnel ou le code NIP »</em> à la facturation. Si votre imprimante neuve inclut déjà des mois gratuits, le code s'ajoute à la suite.
+  <br><br>
+  ⚠️ <strong>À clarifier :</strong> l'offre standard du code ami est de <strong>1&nbsp;mois</strong> — pas 6 — et comme c'est un code membre, <strong>il n'expire pas</strong> et n'a aucune limite d'utilisateurs.
 </div>
         
-<p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-07-07">7&nbsp;juillet 2026</time></p>
+<p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-07-11">11&nbsp;juillet 2026</time></p>
 
         <!-- ── SECTION : Disponibilité Canada (cible "hp instant ink disponible canada", "instant ink canada") ── -->
       <section id="disponible-canada">
@@ -772,7 +794,7 @@
         
         <p>Le <strong>code ami</strong> HP Instant Ink <code>SVdn7</code> fait partie du programme officiel de parrainage d'HP. Lorsque vous vous inscrivez avec ce code ami, vous obtenez <strong>1&nbsp;mois gratuit</strong> — et une fois membre, HP vous donne votre propre code à partager. Chaque personne qui s'inscrit avec votre code vous fait gagner un mois gratuit à votre tour.</p>
 
-        <p>Il n'y a aucune limite au nombre de personnes que vous pouvez inviter, et le mois gratuit s'applique sur n'importe quel forfait, du palier de <span style="white-space:nowrap">10 pages</span> jusqu'à <span style="white-space:nowrap">1 500 pages</span>. En tant que nouveau client, ouvrez le <a href="#how-it-works">lien de parrainage</a> (code appliqué automatiquement) ou entrez le code <code>SVdn7</code> vous-même à l'étape de facturation — le même champ décrit dans la <a href="#ou-entrer-le-code">section sur la saisie manuelle</a> ci-dessus.</p>
+        <p>Il n'y a aucune limite au nombre de personnes que vous pouvez inviter, et le mois gratuit s'applique sur n'importe quel forfait, du palier de <span style="white-space:nowrap">10 pages</span> jusqu'à <span style="white-space:nowrap">1 500 pages</span>. En tant que nouveau client, ouvrez le <a href="#how-it-works">lien de parrainage</a> (code appliqué automatiquement) ou entrez le code <code>SVdn7</code> vous-même à l'étape de facturation — le même champ décrit dans la <a href="#ou-entrer-le-code">section sur la saisie manuelle</a> ci-dessus. Comme c'est un code membre, il n'a pas de date d'expiration fixe — contrairement aux codes promo marketing qui, eux, expirent.</p>
 
         <div class="warning">
           💡 <strong>Code membre ou carte en magasin :</strong> un code de parrainage comme <code>SVdn7</code> est un code membre entré (ou appliqué automatiquement) lors de l'inscription en ligne. Ce n'est pas la même chose qu'une carte HP Instant Ink prépayée achetée en magasin, qui porte un NIP à usage unique. Seul le code membre donne droit à l'avantage du parrainage.
@@ -843,9 +865,33 @@
           <h2 style="text-wrap: inherit; max-width: none;">Code Promo vs Code de Parrainage HP Instant Ink — La réalité</h2>
           <p>De nombreux utilisateurs perdent du temps à chercher des coupons magiques sur les sites de rabais généraux pour obtenir de longs mois gratuits. En 2026, HP a grandement restreint les codes promotionnels publics. La grande majorité des codes textes génériques trouvés en ligne génèrent une erreur d'expiration.</p>
           <p>Le système de parrainage via le code <code>SVdn7</code> est la méthode la plus fiable pour insérer un mois d'encre sans frais à votre facturation : il n'est pas lié à une courte fenêtre marketing, et il s'applique automatiquement via le lien ou lorsqu'il est saisi à l'étape de facturation. HP précise que les conditions du parrainage peuvent varier selon le pays et la date ; confirmez toujours l'offre affichée lors de votre propre inscription.</p>
+          <p><strong>Attention aux promesses de plusieurs mois&nbsp;:</strong> les posts qui annoncent 2, 3 ou 6&nbsp;mois «&nbsp;avec un code&nbsp;» confondent le parrainage avec un ancien bundle d'imprimante. L'offre de parrainage standard est de 1&nbsp;mois — voir <a href="#mythes">idées reçues</a>.</p>
           <blockquote cite="https://cashinstinct.ca/hp-instant-ink/fr/">
             <p>« Plusieurs sites mentionnent encore le code promotionnel TaxTime26 pour obtenir des rabais sur HP Instant Ink. L'offre promotionnelle liée à ce code a pris fin le 31&nbsp;mars 2026. Si vous tentez d'entrer ce code au checkout, le système de HP affichera une erreur de coupon expiré. Pour éviter de bloquer votre inscription, utilisez la clé de parrainage SVdn7, qui était encore active lors de notre dernier test au Canada en juin 2026. » — Cash Instinct</p>
           </blockquote>
+        </section>
+
+        <section id="mythes">
+          <span class="section-label">À clarifier</span>
+          <h2>Idées reçues sur le code de parrainage HP Instant Ink</h2>
+          <p>Deux affirmations fausses circulent en ligne sur le code ami. Voici ce que le formulaire d'inscription HP affiche réellement — vérifié au Canada en juillet&nbsp;2026.</p>
+          <div style="overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border);">
+            <table class="compare-table" aria-label="Idées reçues sur le code HP Instant Ink">
+              <thead>
+                <tr><th>Ce qu'on lit en ligne</th><th>La réalité (vérifié juillet&nbsp;2026)</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>« Certains codes donnent 2, 3 ou 6&nbsp;mois gratuits. »</td>
+                  <td><strong>Faux pour le parrainage.</strong> L'offre standard actuelle du code ami est de <strong>1&nbsp;mois gratuit</strong>. Les «&nbsp;6&nbsp;mois&nbsp;» venaient d'un ancien bundle à l'achat d'imprimante (type HP+), pas du code. HP peut ajuster la valeur selon le pays et la date.</td>
+                </tr>
+                <tr>
+                  <td>« Le code ami a une limite d'utilisations ou finit par expirer. »</td>
+                  <td><strong>Faux.</strong> Un code de parrainage est un <strong>code membre</strong>&nbsp;: pas de date d'expiration fixe et aucun plafond sur le nombre de personnes qui peuvent l'utiliser. À distinguer d'une carte prépayée en magasin (NIP à usage unique) et des codes promo type <code>TaxTime26</code>, qui, eux, expirent.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
         <section id="features">
@@ -900,6 +946,10 @@
         <tr>
           <td>Code Promo HP Instant Ink</td>
           <td>Codes marketing temporaires liés aux campagnes HP (ex. TaxTime26). Ces codes expirent après quelques semaines. SVdn7 est un code de parrainage — les deux peuvent apparaître sur le même formulaire d'inscription.</td>
+        </tr>
+        <tr>
+          <td>Mythe «&nbsp;plusieurs mois&nbsp;» / «&nbsp;code expiré&nbsp;»</td>
+          <td>Le code de parrainage donne <strong>1&nbsp;mois</strong> (pas 6&nbsp;: ça, c'était un ancien bundle imprimante) et, en tant que code membre, il <strong>n'expire pas</strong> et n'a aucune limite d'utilisateurs.</td>
         </tr>
         <tr>
           <td>Cumul (Stacking)</td>
@@ -1033,6 +1083,24 @@
                 <p><strong>Non — le forfait gratuit à vie n'existe plus pour les nouveaux abonnés.</strong> HP a retiré l'ancien forfait «&nbsp;15 pages gratuites par mois&nbsp;» en 2020&nbsp;; seuls quelques comptes historiques l'ont conservé, et même ceux-là sont en voie d'être retirés. Les «&nbsp;6&nbsp;mois gratuits&nbsp;» que le monde cherche, c'était un ancien bundle à l'achat d'une imprimante&nbsp;: ce n'est pas un forfait permanent. Aujourd'hui, si vous vous inscrivez à HP Instant Ink au Canada, chaque forfait est un abonnement mensuel payant (à partir d'environ 1,79&nbsp;$/mois). La vraie façon d'avoir de l'encre gratuite, c'est l'<strong>essai gratuit</strong>&nbsp;: la plupart des imprimantes HP neuves incluent 3&nbsp;mois gratuits, et par-dessus vous pouvez ajouter <strong>1&nbsp;mois gratuit avec le code de parrainage <code>SVdn7</code></strong> (lien <code>try.hpinstantink.com/SVdn7</code>). Après la période gratuite, la facturation démarre automatiquement sauf annulation. Donc si vous cherchez un «&nbsp;forfait gratuit&nbsp;», ce qui existe réellement, c'est un essai gratuit — et le code ami ajoute un mois de plus.</p>
               </div>
             </details>
+            <details>
+              <summary id="faq-q17">Où entrer le code promo ou le code d'essai HP Instant Ink&nbsp;?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q17">
+                <p>Si vous vous inscrivez via le lien de parrainage <code>try.hpinstantink.com/SVdn7</code>, le code ami s'applique automatiquement — <strong>aucun champ à remplir</strong>. Si vous devez entrer un code manuellement (code d'essai d'imprimante, code prépayé ou code promo HP), le champ se trouve sous <strong>« Facturation »</strong> lors de l'inscription sur hpinstantink.com&nbsp;: cherchez <em>« Entrer le code promotionnel ou le code NIP »</em> à l'étape du forfait ou du paiement et collez le code avant de confirmer. Un code de parrainage comme <code>SVdn7</code> fonctionne uniquement via son lien, pas dans cette case — le champ de facturation est réservé aux codes promo et codes d'essai émis par HP.</p>
+              </div>
+            </details>
+            <details>
+              <summary id="faq-q18">Le code de parrainage HP Instant Ink donne-t-il plus d'un mois gratuit&nbsp;?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q18">
+                <p><strong>Non.</strong> L'offre standard actuelle du code ami est de <strong>1&nbsp;mois gratuit</strong> sur le forfait choisi. Les mentions de 2, 3 ou 6&nbsp;mois «&nbsp;par code&nbsp;» sont fausses&nbsp;: les 6&nbsp;mois venaient d'un <strong>ancien bundle à l'achat d'imprimante</strong> (type HP+), pas du parrainage. À notre dernier test au Canada (juillet&nbsp;2026), le crédit affiché était <em>« Parrainer un ami — 1&nbsp;mois »</em>. HP peut ajuster la valeur selon le pays et la date.</p>
+              </div>
+            </details>
+            <details>
+              <summary id="faq-q19">Le code ami HP Instant Ink expire-t-il ou a-t-il une limite d'utilisations&nbsp;?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q19">
+                <p><strong>Non.</strong> Un code de parrainage est un <strong>code membre</strong>&nbsp;: pas de date d'expiration fixe et <strong>aucune limite</strong> sur le nombre de personnes qui peuvent l'utiliser. À distinguer d'une carte prépayée en magasin (NIP à usage unique) et des codes promo type <code>TaxTime26</code>, qui, eux, expirent. HP précise que les conditions du parrainage peuvent varier selon le pays et la date.</p>
+              </div>
+            </details>
           </div>
         </section>
 
@@ -1070,7 +1138,7 @@
   <footer>
     <div class="container">
       <p>Site de référence indépendant, non affilié officiellement à la marque HP ou au service Instant Ink. Toutes les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
-      <p style="margin-top:6px;">HP Instant Ink Code : <code>SVdn7</code> — Dernière mise à jour : <time id="footer-date" datetime="2026-07-07">Juillet 2026</time></p>
+      <p style="margin-top:6px;">HP Instant Ink Code : <code>SVdn7</code> — Dernière mise à jour : <time id="footer-date" datetime="2026-07-11">Juillet 2026</time></p>
     </div>
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
       <nav class="footer-links" aria-label="Liens du site">
