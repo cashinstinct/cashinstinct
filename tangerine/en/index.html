@@ -266,6 +266,8 @@
     ============================================================ */
     :root {
       --accent-text: #b34800;
+      --danger-text: #b8342a;
+      --ok-text: #146b32;
       --bg: #ffffff;
       --surface: #ffffff;
       --surface-soft: #fffaf7;
@@ -284,6 +286,8 @@
     }
     [data-theme="dark"] {
       --accent-text: #ff7a1a;
+      --danger-text: #ff6b5b;
+      --ok-text: #4ade80;
       --bg: #0f131a;
       --surface: #161c24;
       --surface-soft: #1b2430;
@@ -975,7 +979,7 @@
     <label>Initial deposit ($)
       <input type="number" id="c-depot" value="250" min="0"
         style="width:100%;padding:.5rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);">
-      <span id="c-depot-err" style="color:#c0392b;font-size:.85rem;display:none;">⚠️ Minimum $250 deposit required to unlock the Orange Key bonus.</span>
+      <span id="c-depot-err" style="color:var(--danger-text);font-size:.85rem;display:none;">⚠️ Minimum $250 deposit required to unlock the Orange Key bonus.</span>
     </label>
 
     <label>Savings account? (promo rate 4.5% × <span style="white-space: nowrap;">5&nbsp;months</span>)
@@ -1278,7 +1282,7 @@
           </div>
 
           <div style="min-height: 1.5em; margin-top: 4px; text-align: center;">
-            <span id="copyStatusTable" style="font-size: 0.85rem; font-weight: 700; color: #1a7a3c;" role="status" aria-atomic="true" aria-live="polite"></span>
+            <span id="copyStatusTable" style="font-size: 0.85rem; font-weight: 700; color: var(--ok-text);" role="status" aria-atomic="true" aria-live="polite"></span>
           </div>
 
           <p style="font-size: 0.85rem; color: var(--muted); margin-top: 8px; text-align: center;">
