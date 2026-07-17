@@ -42,6 +42,24 @@
     href/style), CSS, JS. Vérifié = 0.
 
   À SURVEILLER / PROCHAINE ITÉRATION
+  • [FAIT 2026-07-16] Title/meta pivotés (symétrie avec EN, changement
+    appliqué là-bas en premier suite à signal GSC réel : CTR=0% sur
+    6 requêtes à pos. 8-10, 3 mois de données). Ancien title « HP Instant
+    Ink Canada — 1 Mois Gratuit avec le Code SVdn7 (2026) » → nouveau
+    « HP Instant Ink Canada (2026) : forfaits, imprimantes admissibles et
+    code du mois gratuit » (garde l'appât code, pivote vers autorité).
+    Idem meta description. Synchronisé sur 6 surfaces : <title>, meta
+    desc, og:title/desc, twitter:title/desc, JSON-LD WebPage name/desc
+    (même @id que la page). dateModified + trust-date + footer-date
+    bumpés à 2026-07-16 (les 3 doivent toujours matcher). Pas de typo
+    "500 pagess" trouvée sur FR (contrairement à EN) — rien à corriger.
+  • [FAIT 2026-07-16 #2] Fix bande bleue pâle en overscroll (haut/bas)
+    et barre d'outils Safari en dark mode manuel — même bug que EN.
+    Cause : les 2 <meta name="theme-color"> liées à prefers-color-scheme
+    (préférence OS) au lieu du toggle dark/light JS (data-theme). Fix :
+    1 seule balise <meta id="theme-color-meta">, mise à jour par JS
+    (script flash-free du head + handler du toggle) pour matcher --bg
+    réel. Bonus : html { background: var(--bg) } ajouté.
   • [FAIT 2026-07-11] Ajout section #mythes (tableau « idées reçues ») +
     3 FAQ : q17 « où entrer le code » (symétrie avec EN q17), q18 (1 mois ≠ 6)
     et q19 (code membre sans expiration ni limite). ai-summary, légende hero.
@@ -67,11 +85,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0096d6" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090e0e" />
+  <meta name="theme-color" id="theme-color-meta" content="#f4f9f9" />
   
-  <title>HP Instant Ink Canada — 1 Mois Gratuit avec le Code SVdn7 (2026)</title>
-  <meta name="description" content="HP Instant Ink Canada : 1 mois gratuit avec le code ami SVdn7. Comment l'activer, imprimantes admissibles et forfaits. Vérifié juillet 2026." />
+  <title>HP Instant Ink Canada (2026) : forfaits, imprimantes admissibles et code du mois gratuit</title>
+  <meta name="description" content="Guide complet sur HP Instant Ink au Canada (2026). Comparez les forfaits, vérifiez les imprimantes admissibles et obtenez 1 mois gratuit avec le code de parrainage SVdn7." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/hp-instant-ink/fr/" />
   
@@ -90,8 +107,8 @@
   
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashinstinct.ca/hp-instant-ink/fr/" />
-  <meta property="og:title" content="HP Instant Ink Canada — 1 Mois Gratuit avec le Code SVdn7 (2026)" />
-  <meta property="og:description" content="HP Instant Ink Canada : 1 mois gratuit avec le code ami SVdn7. Comment l'activer, imprimantes admissibles et forfaits. Vérifié juillet 2026." />
+  <meta property="og:title" content="HP Instant Ink Canada (2026) : forfaits, imprimantes admissibles et code du mois gratuit" />
+  <meta property="og:description" content="Guide complet sur HP Instant Ink au Canada (2026). Comparez les forfaits, vérifiez les imprimantes admissibles et obtenez 1 mois gratuit avec le code de parrainage SVdn7." />
   <meta property="og:image" content="https://cashinstinct.ca/hp-instant-ink/fr/og.png" />
   <meta property="og:locale" content="fr_CA" />
   <!-- ✅ og:locale:alternate simplifié : un seul alternate EN -->
@@ -101,8 +118,8 @@
   <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="HP Instant Ink Canada — 1 Mois Gratuit avec le Code SVdn7 (2026)" />
-  <meta name="twitter:description" content="HP Instant Ink Canada : 1 mois gratuit avec le code ami SVdn7. Comment l'activer, imprimantes admissibles et forfaits. Vérifié juillet 2026." />
+  <meta name="twitter:title" content="HP Instant Ink Canada (2026) : forfaits, imprimantes admissibles et code du mois gratuit" />
+  <meta name="twitter:description" content="Guide complet sur HP Instant Ink au Canada (2026). Comparez les forfaits, vérifiez les imprimantes admissibles et obtenez 1 mois gratuit avec le code de parrainage SVdn7." />
   <meta name="twitter:image" content="https://cashinstinct.ca/hp-instant-ink/fr/og.png" />
 
   <script>
@@ -112,6 +129,7 @@
         theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       }
       document.documentElement.setAttribute('data-theme', theme);
+      document.getElementById('theme-color-meta').setAttribute('content', theme === 'dark' ? '#090e0e' : '#f4f9f9');
     } catch (e) {
       document.documentElement.setAttribute('data-theme', 'light');
     }
@@ -131,12 +149,12 @@
         "@type": "WebPage",
         "@id": "https://cashinstinct.ca/hp-instant-ink/fr/",
         "url": "https://cashinstinct.ca/hp-instant-ink/fr/",
-        "name": "HP Instant Ink Canada — 1 Mois Gratuit avec le Code SVdn7 (2026)",
-        "description": "HP Instant Ink Canada : 1 mois gratuit avec le code ami SVdn7. Comment l'activer, imprimantes admissibles et forfaits. Vérifié juillet 2026.",
+        "name": "HP Instant Ink Canada (2026) : forfaits, imprimantes admissibles et code du mois gratuit",
+        "description": "Guide complet sur HP Instant Ink au Canada (2026). Comparez les forfaits, vérifiez les imprimantes admissibles et obtenez 1 mois gratuit avec le code de parrainage SVdn7.",
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-05-01",
-        "dateModified": "2026-07-11",
+        "dateModified": "2026-07-16",
         "citation": {
           "@type": "WebPage",
           "name": "FAQ HP Instant Ink (Canada)",
@@ -387,7 +405,7 @@
       --shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: var(--bg); }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.65; color: var(--text); background: var(--bg); }
     a { color: var(--accent-text); text-decoration: underline; }
     a:hover { text-decoration: underline; }
@@ -705,7 +723,7 @@
   ⚠️ <strong>À clarifier :</strong> l'offre standard du code ami est de <strong>1&nbsp;mois</strong> — pas 6 — et comme c'est un code membre, <strong>il n'expire pas</strong> et n'a aucune limite d'utilisateurs.
 </div>
         
-<p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-07-11">11&nbsp;juillet 2026</time></p>
+<p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-07-16">16&nbsp;juillet 2026</time></p>
 
         <!-- ── SECTION : Disponibilité Canada (cible "hp instant ink disponible canada", "instant ink canada") ── -->
       <section id="disponible-canada">
@@ -1138,7 +1156,7 @@
   <footer>
     <div class="container">
       <p>Site de référence indépendant, non affilié officiellement à la marque HP ou au service Instant Ink. Toutes les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
-      <p style="margin-top:6px;">HP Instant Ink Code : <code>SVdn7</code> — Dernière mise à jour : <time id="footer-date" datetime="2026-07-11">Juillet 2026</time></p>
+      <p style="margin-top:6px;">HP Instant Ink Code : <code>SVdn7</code> — Dernière mise à jour : <time id="footer-date" datetime="2026-07-16">Juillet 2026</time></p>
     </div>
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
       <nav class="footer-links" aria-label="Liens du site">
@@ -1219,6 +1237,7 @@
     (function() {
       var toggle = document.getElementById('theme-toggle');
       if (!toggle) return;
+      var themeColorMeta = document.getElementById('theme-color-meta');
 
       function isDark() {
         return document.documentElement.getAttribute('data-theme') === 'dark';
@@ -1238,9 +1257,11 @@
         if (dark) {
           document.documentElement.removeAttribute('data-theme');
           localStorage.setItem('theme', 'light');
+          if (themeColorMeta) themeColorMeta.setAttribute('content', '#f4f9f9');
         } else {
           document.documentElement.setAttribute('data-theme', 'dark');
           localStorage.setItem('theme', 'dark');
+          if (themeColorMeta) themeColorMeta.setAttribute('content', '#090e0e');
         }
         applyUI(!dark);
       });
