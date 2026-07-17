@@ -43,6 +43,16 @@
     href/style), CSS, JS. Vérifié = 0.
 
   À SURVEILLER / PROCHAINE ITÉRATION
+  • [FAIT 2026-07-16 #2] Fix bande bleue pâle visible en overscroll (haut/bas)
+    et dans la barre d'outils Safari en dark mode manuel. Cause : les 2
+    balises <meta name="theme-color"> étaient liées à prefers-color-scheme
+    (préférence OS), pas au toggle dark/light JS de la page (data-theme).
+    Un visiteur en dark via le bouton ☀️/🌙 mais OS en light voyait le bleu
+    HP (#0096d6) au lieu du fond dark (#090e0e). Fix : 1 seule balise
+    <meta id="theme-color-meta">, mise à jour par JS (script flash-free du
+    head + handler du toggle) pour matcher --bg réel à chaque changement.
+    Bonus : html { background: var(--bg) } ajouté (évite flash blanc en
+    rebond de scroll, html n'avait jamais eu de background, seul body).
   • [FAIT 2026-07-16] Title/meta pivotés d'un framing "deal coupon" vers
     "guide complet" — cause : GSC 3 mois montrait CTR=0% sur 6 requêtes
     à pos. 8-10 (attendu 2.2-3%), signal réel (pas du bruit 7j). Ancien
@@ -86,8 +96,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0096d6" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090e0e" />
+  <meta name="theme-color" id="theme-color-meta" content="#f4f9f9" />
 
   <title>HP Instant Ink Canada (2026): Plans, Eligible Printers &amp; Free Month Code</title>
   <meta name="description" content="Complete guide to HP Instant Ink in Canada (2026). Compare subscription plans, check eligible printers, and get 1 free month with referral code SVdn7." />
@@ -132,6 +141,7 @@
         theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       }
       document.documentElement.setAttribute('data-theme', theme);
+      document.getElementById('theme-color-meta').setAttribute('content', theme === 'dark' ? '#090e0e' : '#f4f9f9');
     } catch (e) {
       document.documentElement.setAttribute('data-theme', 'light');
     }
@@ -444,7 +454,7 @@
       --shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: var(--bg); }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.65; color: var(--text); background: var(--bg); }
     a { color: var(--accent-text); text-decoration: underline; }
     a:hover { text-decoration: underline; }
@@ -1347,6 +1357,7 @@
     (function() {
       var toggle = document.getElementById('theme-toggle');
       if (!toggle) return;
+      var themeColorMeta = document.getElementById('theme-color-meta');
       function isDark() {
         return document.documentElement.getAttribute('data-theme') === 'dark';
       }
@@ -1361,9 +1372,11 @@
         if (dark) {
           document.documentElement.removeAttribute('data-theme');
           localStorage.setItem('theme', 'light');
+          if (themeColorMeta) themeColorMeta.setAttribute('content', '#f4f9f9');
         } else {
           document.documentElement.setAttribute('data-theme', 'dark');
           localStorage.setItem('theme', 'dark');
+          if (themeColorMeta) themeColorMeta.setAttribute('content', '#090e0e');
         }
         applyUI(!dark);
       });
