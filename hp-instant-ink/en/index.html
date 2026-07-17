@@ -43,6 +43,28 @@
     href/style), CSS, JS. Vérifié = 0.
 
   À SURVEILLER / PROCHAINE ITÉRATION
+  • [FAIT 2026-07-16] Title/meta pivotés d'un framing "deal coupon" vers
+    "guide complet" — cause : GSC 3 mois montrait CTR=0% sur 6 requêtes
+    à pos. 8-10 (attendu 2.2-3%), signal réel (pas du bruit 7j). Ancien
+    title "HP Instant Ink Canada — Free Month with Code SVdn7 (2026)" →
+    nouveau "HP Instant Ink Canada (2026): Plans, Eligible Printers &
+    Free Month Code" (garde l'appât code, pivote vers autorité). Idem
+    meta description. Synchronisé sur 6 surfaces : <title>, meta desc,
+    og:title/desc, twitter:title/desc, JSON-LD WebPage name/desc (même
+    @id que la page). JSON-LD Product (desc différente, ligne ~175) 
+    volontairement PAS touché — objet distinct. dateModified + trust-date
+    + footer-date bumpés à 2026-07-16 (les 3 doivent toujours matcher).
+    Bonus : fix typo "500 pages</span>s" → "500 pages</span>" (s échappé
+    hors du span, ligne ~882).
+    EXCLU de ce déploiement (volontaire, pour isoler l'impact du
+    title) : schema Product/offers multi-paliers (2.49$→72.99$, 8 tiers)
+    et ajustement HowTo "how to claim...free trial" (requête GEO pos.
+    21.4, cible = intégrer sémantique "claim"/"free trial" dans le name
+    du HowTo + sous-titre).
+  • PROCHAINE ÉTAPE : attendre 2-3 semaines (pas 7j, trop bruité) avant
+    de mesurer l'impact CTR du nouveau title. Ne PAS toucher au HowTo
+    "claim" avant cette fenêtre, sinon impossible d'attribuer laquelle
+    des deux modifs a bougé quoi.
   • [FAIT 2026-07-11] Added #myths table + FAQ q18/q19 (1 month ≠ 6; member
     code, no expiry / no user cap), ai-summary line, hero caption. dateModified→2026-07-11.
   • [FAIT 2026-07-04] Nouveau pricing HP en vigueur (rollout confirmé
@@ -67,8 +89,8 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0096d6" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090e0e" />
 
-  <title>HP Instant Ink Canada — Free Month with Code SVdn7 (2026)</title>
-  <meta name="description" content="HP Instant Ink Canada: get 1 free month with friend code SVdn7. How to redeem, eligible printers and plans. Verified July 2026." />
+  <title>HP Instant Ink Canada (2026): Plans, Eligible Printers &amp; Free Month Code</title>
+  <meta name="description" content="Complete guide to HP Instant Ink in Canada (2026). Compare subscription plans, check eligible printers, and get 1 free month with referral code SVdn7." />
    <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/hp-instant-ink/en/" />
 
@@ -85,8 +107,8 @@
   <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/hp-instant-ink/en/" />
   <link rel="preload" as="image" href="https://cashinstinct.ca/hp-instant-ink/en/images/hp-link-proof-en.webp" type="image/webp" />
 
-  <meta property="og:title" content="HP Instant Ink Canada — Free Month with Code SVdn7 (2026)" />
-  <meta property="og:description" content="HP Instant Ink Canada: get 1 free month with friend code SVdn7. How to redeem, eligible printers and plans. Verified July 2026." />
+  <meta property="og:title" content="HP Instant Ink Canada (2026): Plans, Eligible Printers &amp; Free Month Code" />
+  <meta property="og:description" content="Complete guide to HP Instant Ink in Canada (2026). Compare subscription plans, check eligible printers, and get 1 free month with referral code SVdn7." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashinstinct.ca/hp-instant-ink/en/" />
   <meta property="og:image" content="https://cashinstinct.ca/hp-instant-ink/en/og.png" />
@@ -99,8 +121,8 @@
 
   
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="HP Instant Ink Canada — Free Month with Code SVdn7 (2026)" />
-  <meta name="twitter:description" content="HP Instant Ink Canada: get 1 free month with friend code SVdn7. How to redeem, eligible printers and plans. Verified July 2026." />
+  <meta name="twitter:title" content="HP Instant Ink Canada (2026): Plans, Eligible Printers &amp; Free Month Code" />
+  <meta name="twitter:description" content="Complete guide to HP Instant Ink in Canada (2026). Compare subscription plans, check eligible printers, and get 1 free month with referral code SVdn7." />
   <meta name="twitter:image" content="https://cashinstinct.ca/hp-instant-ink/en/og.png" />
 
   <script>
@@ -129,12 +151,12 @@
         "@type": "WebPage",
         "@id": "https://cashinstinct.ca/hp-instant-ink/en/",
         "url": "https://cashinstinct.ca/hp-instant-ink/en/",
-        "name": "HP Instant Ink Canada — Free Month with Code SVdn7 (2026)",
-        "description": "HP Instant Ink Canada: get 1 free month with friend code SVdn7. How to redeem, eligible printers and plans. Verified July 2026.",
+        "name": "HP Instant Ink Canada (2026): Plans, Eligible Printers & Free Month Code",
+        "description": "Complete guide to HP Instant Ink in Canada (2026). Compare subscription plans, check eligible printers, and get 1 free month with referral code SVdn7.",
         "inLanguage": "en-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-05-01",
-        "dateModified": "2026-07-11",
+        "dateModified": "2026-07-16",
         "citation": {
           "@type": "WebPage",
           "name": "HP Instant Ink FAQs (Canada)",
@@ -741,7 +763,7 @@
   ⚠️ <strong>To be clear:</strong> the friend code's standard offer is <strong>1&nbsp;month</strong> — not 6 — and because it's a member code, <strong>it doesn't expire</strong> and has no user limit.
 </div>
       
-  <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Updated <time id="trust-date" datetime="2026-07-11">July&nbsp;11, 2026</time></p>
+  <p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Updated <time id="trust-date" datetime="2026-07-16">July&nbsp;16, 2026</time></p>
 
       <!-- ── NOUVELLE SECTION : Disponibilité Canada (cible requête n°1 "is hp instant ink available in canada" + grappe redeem) ── -->
       <section id="available-canada">
@@ -879,7 +901,7 @@
     <tr><td>Occasional printing</td><td><span style="white-space:nowrap">50 pages</span></td><td>$7.99</td></tr>
     <tr><td>Moderate printing</td><td><span style="white-space:nowrap">100 pages</span></td><td>$10.99</td></tr>
     <tr><td>Frequent printing</td><td><span style="white-space:nowrap">300 pages</span></td><td>$20.49</td></tr>
-    <tr><td>Heavy printing</td><td><span style="white-space:nowrap">500 pages</span>s</td><td>$29.99</td></tr>
+    <tr><td>Heavy printing</td><td><span style="white-space:nowrap">500 pages</span></td><td>$29.99</td></tr>
     <tr><td>Business printing</td><td><span style="white-space:nowrap">700 pages</span></td><td>$37.99</td></tr>
     <tr><td>Intense printing</td><td><span style="white-space:nowrap">1,500 pages</span></td><td>$72.99</td></tr>
   </tbody>
@@ -1244,7 +1266,7 @@
 <footer>
   <div class="container">
     <p>Independent reference site, not officially affiliated with HP or the Instant Ink service. All trademarks belong to their respective owners.</p>
-    <p style="margin-top:6px;">HP Instant Ink Code: <code>SVdn7</code> — Last updated: <time id="footer-date" datetime="2026-07-11">July&nbsp;2026</time></p>
+    <p style="margin-top:6px;">HP Instant Ink Code: <code>SVdn7</code> — Last updated: <time id="footer-date" datetime="2026-07-16">July&nbsp;2026</time></p>
   </div>
   <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
      <nav class="footer-links" aria-label="Liens du site">
