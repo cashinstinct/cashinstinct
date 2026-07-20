@@ -317,7 +317,6 @@
 
   <a href="#main-content" style="position:absolute;left:-9999px;top:4px;z-index:9999;padding:8px 16px;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Passer au contenu principal</a>
 
-  <!-- Ajouter "Valeur Points" à la nav des autres pages une fois publiée. -->
   <nav class="topbar" aria-label="Navigation principale">
     <div class="topbar-inner">
       <a class="brand" href="https://cashinstinct.ca/">Cash Instinct</a>
@@ -327,6 +326,7 @@
         <a href="https://cashinstinct.ca/tangerine/fr/" aria-label="Banque Tangerine">Tangerine</a>
         <a href="https://cashinstinct.ca/hp-instant-ink/fr/" aria-label="HP Instant Ink">HP&nbsp;Ink</a>
         <a class="active" href="https://cashinstinct.ca/valeur-points/fr/" aria-label="Valeur des Points">Valeur&nbsp;Points</a>
+        <a href="https://cashinstinct.ca/rht/fr/" aria-label="Refundable Hotel Trick">RHT</a>
         <button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
       </div>
     </div>
@@ -371,8 +371,10 @@
           La <strong>valeur réelle d'un point</strong> dépend entièrement du mode de rachat choisi — pas d'un chiffre marketing unique. En 2026, les taux vont de <strong>0,07&nbsp;¢/point</strong> (PC Optimum en crédit compte) à <strong>2,29&nbsp;¢/point</strong> (CIBC Aventura, grille aérienne courts-courriers).
           <br><br>
           📊 <strong>Deux familles de programmes :</strong> les programmes bancaires maison à taux unique (Blue Rewards, PC Optimum en magasin) sont faciles à évaluer — aucune optimisation possible. Les programmes à paliers fixes multiples (BNC — 5 taux selon le mode) ou à taux variable (MR, CIBC Aventura) récompensent l'optimisation — parfois 2 à 4 fois la valeur du rachat le plus simple.
+          <br><br>
+          💡 <strong>Astuce de pro :</strong> Tu peux forcer l'encaissement de tes points au taux voyage optimal (en argent comptant) sans avoir à voyager en utilisant la mécanique du <a href="https://cashinstinct.ca/rht/fr/">Refundable Hotel Trick (RHT)</a>.
         </div>
-
+        
         <p class="last-updated">Taux vérifiés le <time id="trust-date" datetime="2026-07-19">19&nbsp;juillet 2026</time></p>
 
         <section id="calculatrice">
@@ -388,8 +390,10 @@
                 <option value="blue">Blue Rewards (BMO, ex-Air Miles)</option>
                 <option value="bnc">BNC — Récompenses À la carte</option>
                 <option value="td">TD Rewards</option>
+                <option value="scene">Scene+ (Banque Scotia)</option>
                 <option value="pc">PC Optimum</option>
                 <option value="bmorewards">BMO Rewards (carte de crédit)</option>
+                <option value="mbna">MBNA Rewards</option>
                 <option value="aventura">CIBC Aventura</option>
               </select>
             </div>
@@ -423,9 +427,11 @@
               <thead>
                 <tr><th>Programme</th><th>Taux plancher</th><th>Taux optimal</th><th>10&nbsp;000 pts =</th></tr>
               </thead>
-              <tbody>
+               <tbody>
                 <tr><td>MR (Amex)</td><td>1,00&nbsp;¢</td><td class="best">1,7 à 2,2&nbsp;¢ (transfert)</td><td>100&nbsp;$ – 220&nbsp;$</td></tr>
                 <tr><td>CIBC Aventura</td><td>0,63&nbsp;¢</td><td class="best">jusqu'à&nbsp;2,29&nbsp;¢ (grille aérienne)</td><td>63&nbsp;$ – 229&nbsp;$</td></tr>
+                <tr><td>Scene+ (Scotia)</td><td>0,71&nbsp;¢ (crédit compte)</td><td class="best">1,00&nbsp;¢ (voyage/épicerie)</td><td>71&nbsp;$ – 100&nbsp;$</td></tr>
+                <tr><td>MBNA Rewards</td><td>0,83&nbsp;¢ (crédit compte)</td><td class="best">1,00&nbsp;¢ (voyage)</td><td>83,33&nbsp;$ – 100&nbsp;$</td></tr>
                 <tr><td>BNC À la carte</td><td>0,40&nbsp;¢ (crédit compte)</td><td class="best">1,00&nbsp;¢ (agence voyage)</td><td>40&nbsp;$ – 100&nbsp;$</td></tr>
                 <tr><td>BMO Rewards (carte)</td><td>0,33&nbsp;¢ (crédit compte)</td><td class="best">0,67&nbsp;¢ (voyage)</td><td>33,33&nbsp;$ – 66,67&nbsp;$</td></tr>
                 <tr><td>Blue Rewards (BMO)</td><td colspan="2" style="text-align:center;">0,667&nbsp;¢ (taux unique)</td><td>66,67&nbsp;$</td></tr>
@@ -494,7 +500,7 @@
       <p style="margin-top:6px;">Calculatrice de valeur des points — Dernière mise à jour&nbsp;: <time id="footer-date" datetime="2026-07-19">Juillet 2026</time></p>
     </div>
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
-      <nav class="footer-links" aria-label="Liens du site">
+       <nav class="footer-links" aria-label="Liens du site">
         <a href="https://cashinstinct.ca/ebox/fr/">🌐 EBOX Internet</a>
         <a href="https://cashinstinct.ca/stickermule/fr/">🏷️ Sticker Mule</a>
         <a href="https://cashinstinct.ca/hp-instant-ink/fr/">🖨️ HP Instant Ink</a>
@@ -503,6 +509,8 @@
         <a href="https://cashinstinct.ca/achieva/fr/">🌱 Achieva Financial</a>
         <a href="https://cashinstinct.ca/rakuten-canada/fr/">🛍️ Rakuten Canada</a>
         <a href="https://cashinstinct.ca/swagbucks/fr/">💙 Swagbucks</a>
+        <a href="https://cashinstinct.ca/valeur-points/fr/">🧮 Valeur Points</a>
+        <a href="https://cashinstinct.ca/rht/fr/">🏨 RHT</a>
       </nav>
     </div>
   </footer>
@@ -553,6 +561,24 @@
           { text: "Transfert partenaires (Aeroplan, Bonvoy, etc.)", rate: 0.02, flag: "variable", flagText: "1,7¢ à 2,2¢ selon la source" }
         ],
         note: "Le portail voyage à taux fixe d'Amex est un barème variable de 1,5&nbsp;¢ (court-courrier régional) à 2&nbsp;¢ (court-courrier populaire Canada/É.-U.), selon Prince of Travel. Transfert 1:1 vers Aeroplan/British Airways (les meilleurs), 1:0,75 vers Cathay/Delta, 5:6 vers Marriott Bonvoy. Deux sources sérieuses divergent sur la valorisation moyenne&nbsp;: Milesopedia estime 1,7&nbsp;¢, Prince of Travel 2,2&nbsp;¢ — aucune des deux n'est un plancher garanti, la valeur réelle dépend de la redemption précise."
+      },
+        scene: {
+        label: "Scene+",
+        defaultIndex: 1,
+        modes: [
+          { text: "Crédit au compte générique", rate: 0.0071, flag: "fixed", flagText: "fixe, pire taux" },
+          { text: "Voyage / Épicerie (Empire) / Cinéma", rate: 0.01, flag: "fixed", flagText: "fixe, meilleur taux" }
+        ],
+        note: "Le taux optimal de 1&nbsp;¢/point s'obtient très facilement en appliquant les points sur un achat de voyage (RHT), ou directement à la caisse chez IGA/Sobeys. Le crédit au compte régulier pour tout autre achat dévalue les points à environ 0,71&nbsp;¢."
+      },
+      mbna: {
+        label: "MBNA Rewards",
+        defaultIndex: 1,
+        modes: [
+          { text: "Crédit au compte (remise en argent)", rate: 0.00833, flag: "fixed", flagText: "fixe, pire taux" },
+          { text: "Voyage (via portail ou achat remboursé)", rate: 0.01, flag: "fixed", flagText: "fixe, meilleur taux" }
+        ],
+        note: "MBNA pénalise les remises en argent directes (120 points = 1&nbsp;$, soit 0,83&nbsp;¢). Le taux maximal de 1&nbsp;¢ s'obtient en échangeant contre des achats de voyage (100 points = 1&nbsp;$). Idéal pour la mécanique du RHT."
       },
       blue: {
         label: "Blue Rewards",
