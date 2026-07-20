@@ -2,6 +2,9 @@
 <!--
 ═══════════════════════════════════════════════════════════════════
   NOTE DE MAINTENANCE — Calculatrice Valeur des Points FR — création : 2026-07-08
+  MISE À JOUR : 2026-07-19 — defaults de la calculatrice changés (voir
+  defaultIndex par programme) + vérification des taux (voir résumé de
+  chat pour le détail des sources revérifiées ce jour-là).
 ═══════════════════════════════════════════════════════════════════
   STATUT : nouvelle page, PAS de programme affilié derrière — page
   outil/comparatif pour trafic SEO/GEO, pas de code promo ni d'Offer.
@@ -15,14 +18,15 @@
   Impression pour HP) — À VÉRIFIER contre les ancres réelles de la page
   d'accueil avant publication.
 
-  TAUX — SOURCES ET DATE DE VÉRIFICATION (2026-07-08)
-  • MR (Amex Membership Rewards CA) : crédit compte/voyage 1¢ fixe,
-    transfert partenaires ~1,7¢ moyenne optimisée — Milesopedia.
+  TAUX — SOURCES ET DATE DE VÉRIFICATION (2026-07-08, revalidé 2026-07-19)
+  • MR (Amex Membership Rewards CA) : crédit compte 1¢ fixe, portail voyage
+    à taux fixe 1,5-2¢ selon catégorie, transfert partenaires 1,7-2,2¢
+    moyenne optimisée — Milesopedia, Prince of Travel.
   • Blue Rewards (BMO, ex-Air Miles) : 1500 pts = 10$ fixe (0,667¢) —
-    Milesopedia, BMO newsroom (lancement janvier 2026).
-  • BNC Récompenses À la carte : CORRIGÉ 2026-07-08 (source initiale erronée,
-    Étienne a signalé une citation Prince of Travel contradictoire). 5 paliers
-    distincts, PAS un taux 1¢ uniforme sur voyage/REER/CELI/hypothèque :
+    Milesopedia, BMO newsroom (lancement le 2 juin 2026, corrigé le
+    19&nbsp;juillet&nbsp;2026 — la page indiquait à tort "janvier 2026").
+  • BNC Récompenses À la carte : 5 paliers distincts, PAS un taux 1¢
+    uniforme sur voyage/REER/CELI/hypothèque :
       - Agence Voyage À la carte (réservation directe) : 1¢ fixe, meilleur taux.
       - Rabais voyage flexible (achat déjà réservé ailleurs, remboursé <60j) :
         0,83¢ si <55 000 pts échangés, 0,91¢ si ≥55 000 pts — PALIER, pas fixe.
@@ -30,10 +34,7 @@
       - Cartes-cadeaux/catalogue marchandises : 0,74-0,83¢ variable.
       - Crédit au compte générique (non-voyage) : 0,4¢ fixe — pire taux.
     Sources croisées : Prince of Travel (princeoftravel.com/credit-cards/
-    national-bank-world-elite-mastercard), Frugal Flyer (tableau détaillé,
-    confirme les mêmes paliers), tableau Milesopedia (qui contredit SA PROPRE
-    prose FAQ disant "1¢ partout" — cas vécu de désalignement multi-emplacement
-    intra-source, pas juste intra-fichier).
+    national-bank-world-elite-mastercard), Frugal Flyer, Milesopedia.
   • TD Rewards : voyage Expedia for TD 0,5¢ fixe, voyage hors Expedia
     0,4¢, cartes-cadeaux/marchandise 0,23-0,25¢ — Ratehub, Milesopedia,
     ThePointCalculator.
@@ -43,9 +44,10 @@
   • BMO Rewards (carte de crédit — DISTINCT de Blue Rewards) : voyage
     0,667¢ fixe, crédit compte 0,33¢ fixe, cadeaux/marchandise 0,54-0,56¢
     — Milesopedia, Points Miles and Bling.
-  • CIBC Aventura : grille aérienne 1,67-4¢ selon distance (très
-    variable), voyage général 1¢ fixe, crédit compte 0,625¢ fixe —
-    Frugal Flyer, Milesopedia, ThePointCalculator.
+  • CIBC Aventura : grille aérienne jusqu'à 2,29¢ (courts-courriers),
+    Centre de récompenses (voyage général) 1¢ fixe, produits financiers
+    (REER/CELI/marge/hypothèque) 0,83¢ fixe, crédit compte/carte-cadeau
+    Visa prépayée 0,63¢ fixe — Frugal Flyer, Prince of Travel, Milesopedia.
   • ⚠️ CES TAUX BOUGENT. Prévoir revalidation périodique (comme pagecrawl
     pour EBOX/Achieva) — pas de monitoring automatisé en place pour
     l'instant.
@@ -127,7 +129,7 @@
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-07-08",
-        "dateModified": "2026-07-08",
+        "dateModified": "2026-07-19",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
         "publisher": {
           "@type": "Organization",
@@ -332,7 +334,7 @@
 
   <header class="hero">
     <div class="container">
-      <h1>Calculatrice de <span>valeur des points</span> — 7 programmes canadiens</h1>
+      <h1>Calculatrice de <span>valeur des points</span> — 7&nbsp;programmes canadiens</h1>
       <p>MR (Amex), Blue Rewards (BMO), BNC À la carte, TD Rewards, PC Optimum, BMO Rewards et CIBC Aventura. Entre ton solde, choisis le mode de rachat, obtiens la valeur réelle en dollars — pas la valeur marketing.</p>
       <a class="cta-btn-hero" href="#calculatrice">Aller à la calculatrice ↓</a>
     </div>
@@ -371,7 +373,7 @@
           📊 <strong>Deux familles de programmes :</strong> les programmes bancaires maison à taux unique (Blue Rewards, PC Optimum en magasin) sont faciles à évaluer — aucune optimisation possible. Les programmes à paliers fixes multiples (BNC — 5 taux selon le mode) ou à taux variable (MR, CIBC Aventura) récompensent l'optimisation — parfois 2 à 4 fois la valeur du rachat le plus simple.
         </div>
 
-        <p class="last-updated">Taux vérifiés le <time id="trust-date" datetime="2026-07-08">8&nbsp;juillet 2026</time></p>
+        <p class="last-updated">Taux vérifiés le <time id="trust-date" datetime="2026-07-19">19&nbsp;juillet 2026</time></p>
 
         <section id="calculatrice">
           <span class="section-label">Outil</span>
@@ -479,7 +481,7 @@
         </section>
 
         <div class="transparency">
-          <strong>Méthodologie et sources :</strong> taux compilés à partir des sites officiels des émetteurs (bnc.ca, pcfinancial.ca, bluerewards.ca) et d'analyses indépendantes (Milesopedia, Ratehub, Frugal Flyer, Prince of Travel, ThePointCalculator) en date du 8&nbsp;juillet&nbsp;2026, avec recoupement entre au moins deux sources indépendantes pour les taux à paliers (BNC, TD, Aventura). Cette page n'est affiliée à aucun des programmes listés — aucun lien de parrainage, aucune commission. Signale une erreur de taux si tu en repères une.
+          <strong>Méthodologie et sources :</strong> taux compilés à partir des sites officiels des émetteurs (bnc.ca, pcfinancial.ca, bluerewards.ca) et d'analyses indépendantes (Milesopedia, Ratehub, Frugal Flyer, Prince of Travel, ThePointCalculator), vérifiés le 8&nbsp;juillet&nbsp;2026 et revalidés le 19&nbsp;juillet&nbsp;2026, avec recoupement entre au moins deux sources indépendantes pour les taux à paliers (BNC, TD, Aventura). Cette page n'est affiliée à aucun des programmes listés — aucun lien de parrainage, aucune commission. Signale une erreur de taux si tu en repères une.
         </div>
 
       </div>
@@ -489,7 +491,7 @@
   <footer>
     <div class="container">
       <p>Site de référence indépendant. Aucune affiliation avec MR/Amex, BMO, Banque Nationale, TD, PC Optimum ou CIBC. Toutes les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
-      <p style="margin-top:6px;">Calculatrice de valeur des points — Dernière mise à jour&nbsp;: <time id="footer-date" datetime="2026-07-08">Juillet 2026</time></p>
+      <p style="margin-top:6px;">Calculatrice de valeur des points — Dernière mise à jour&nbsp;: <time id="footer-date" datetime="2026-07-19">Juillet 2026</time></p>
     </div>
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
       <nav class="footer-links" aria-label="Liens du site">
@@ -540,26 +542,29 @@
   <!-- ── CALCULATRICE : logique des taux ── -->
   <script>
   (function() {
-    // Taux en $ par point (pas en ¢) — vérifiés 2026-07-08, voir sources en bas de page.
+    // Taux en $ par point (pas en ¢) — vérifiés 2026-07-08, revalidés 2026-07-19, voir sources en bas de page.
     var PROGRAMS = {
       mr: {
         label: "MR",
+        defaultIndex: 0,
         modes: [
           { text: "Crédit au compte / argent", rate: 0.01, flag: "fixed", flagText: "fixe" },
           { text: "Voyage à taux fixe (portail Amex, Fixed Points Travel)", rate: 0.017, flag: "variable", flagText: "1,5¢ à 2¢ selon la catégorie de vol" },
           { text: "Transfert partenaires (Aeroplan, Bonvoy, etc.)", rate: 0.02, flag: "variable", flagText: "1,7¢ à 2,2¢ selon la source" }
         ],
-        note: "Corrigé le 8&nbsp;juillet&nbsp;2026&nbsp;: le portail voyage à taux fixe d'Amex n'est PAS à 1&nbsp;¢ comme annoncé initialement — c'est un barème variable de 1,5&nbsp;¢ (court-courrier régional) à 2&nbsp;¢ (court-courrier populaire Canada/É.-U.), selon Prince of Travel. Transfert 1:1 vers Aeroplan/British Airways (les meilleurs), 1:0,75 vers Cathay/Delta, 5:6 vers Marriott Bonvoy. Deux sources sérieuses divergent sur la valorisation moyenne&nbsp;: Milesopedia estime 1,7&nbsp;¢, Prince of Travel 2,2&nbsp;¢ — aucune des deux n'est un plancher garanti, la valeur réelle dépend de la redemption précise."
+        note: "Le portail voyage à taux fixe d'Amex est un barème variable de 1,5&nbsp;¢ (court-courrier régional) à 2&nbsp;¢ (court-courrier populaire Canada/É.-U.), selon Prince of Travel. Transfert 1:1 vers Aeroplan/British Airways (les meilleurs), 1:0,75 vers Cathay/Delta, 5:6 vers Marriott Bonvoy. Deux sources sérieuses divergent sur la valorisation moyenne&nbsp;: Milesopedia estime 1,7&nbsp;¢, Prince of Travel 2,2&nbsp;¢ — aucune des deux n'est un plancher garanti, la valeur réelle dépend de la redemption précise."
       },
       blue: {
         label: "Blue Rewards",
+        defaultIndex: 0,
         modes: [
-          { text: "Rabais en magasin / cartes-cadeaux (taux unique)", rate: 10/1500, flag: "fixed", flagText: "fixe" }
+          { text: "Rabais en magasin / cartes-cadeaux / voyage (taux unique)", rate: 10/1500, flag: "fixed", flagText: "fixe" }
         ],
-        note: "Taux fixe unique&nbsp;: 1500 points = 10&nbsp;$ (0,667&nbsp;¢/point). Remplace AIR MILES — programme coalition BMO lancé en janvier 2026, distinct de « BMO Rewards » (carte de crédit)."
+        note: "Taux fixe unique&nbsp;: 1500 points = 10&nbsp;$ (0,667&nbsp;¢/point), aussi bien en magasin qu'en voyage via le portail propulsé par Expedia. Remplace AIR MILES — programme coalition BMO lancé le 2&nbsp;juin&nbsp;2026, distinct de « BMO Rewards » (carte de crédit)."
       },
       bnc: {
         label: "BNC — Récompenses À la carte",
+        defaultIndex: 3,
         modes: [
           { text: "Crédit au compte générique (non-voyage)", rate: 0.004, flag: "fixed", flagText: "fixe, pire taux" },
           { text: "Cartes-cadeaux / catalogue marchandises", rate: 0.008, flag: "variable", flagText: "0,74-0,83¢ selon l'item" },
@@ -567,10 +572,11 @@
           { text: "Rabais voyage flexible (achat déjà réservé, hors agence)", tiers: [ { min: 0, rate: 0.00833 }, { min: 55000, rate: 0.00909 } ], flag: "variable", flagText: "0,83¢ (<55k pts) à 0,91¢ (≥55k pts)" },
           { text: "Agence Voyage À la carte (réservation directe)", rate: 0.01, flag: "fixed", flagText: "fixe, meilleur taux" }
         ],
-        note: "Corrigé le 8&nbsp;juillet&nbsp;2026 après vérification croisée (Prince of Travel + Frugal Flyer + tableau Milesopedia — qui contredit sa propre prose FAQ disant « 1&nbsp;¢ partout »). Seule la réservation directe via l'agence Voyage À la carte est fixe à 1&nbsp;¢. Le remboursement pour un voyage déjà payé ailleurs (« rabais voyage flexible ») grimpe de 0,83&nbsp;¢ à 0,91&nbsp;¢ au-delà de 55&nbsp;000 points échangés. REER/CELI/hypothèque sont fixes à 0,83&nbsp;¢, pas 1&nbsp;¢. Le crédit au compte générique (non lié à un voyage) plafonne à 0,4&nbsp;¢ — le pire taux utile du programme."
+        note: "Seule la réservation directe via l'agence Voyage À la carte est fixe à 1&nbsp;¢. Le remboursement pour un voyage déjà payé ailleurs (« rabais voyage flexible ») grimpe de 0,83&nbsp;¢ à 0,91&nbsp;¢ au-delà de 55&nbsp;000 points échangés. REER/CELI/hypothèque sont fixes à 0,83&nbsp;¢, pas 1&nbsp;¢. Le crédit au compte générique (non lié à un voyage) plafonne à 0,4&nbsp;¢ — le pire taux utile du programme."
       },
       td: {
         label: "TD Rewards",
+        defaultIndex: 2,
         modes: [
           { text: "Cartes-cadeaux / marchandise", rate: 0.0023, flag: "variable", flagText: "0,23-0,25¢" },
           { text: "Voyage hors ExpediaForTD", rate: 0.004, flag: "fixed", flagText: "fixe" },
@@ -580,6 +586,7 @@
       },
       pc: {
         label: "PC Optimum",
+        defaultIndex: 1,
         modes: [
           { text: "Crédit compte carte PC Financial", rate: 0.0007, flag: "fixed", flagText: "fixe, pire taux" },
           { text: "En magasin (épicerie, beauté, vêtements)", rate: 0.001, flag: "fixed", flagText: "fixe, meilleur taux" }
@@ -588,6 +595,7 @@
       },
       bmorewards: {
         label: "BMO Rewards",
+        defaultIndex: 2,
         modes: [
           { text: "Crédit compte (statement credit)", rate: 0.0033, flag: "fixed", flagText: "fixe, pire taux" },
           { text: "Cartes-cadeaux / marchandise", rate: 0.0055, flag: "variable", flagText: "moyenne 0,54-0,56¢" },
@@ -597,6 +605,7 @@
       },
       aventura: {
         label: "CIBC Aventura",
+        defaultIndex: 3,
         modes: [
           { text: "Crédit compte / carte-cadeau Visa prépayée", rate: 0.0063, flag: "fixed", flagText: "fixe, pire taux" },
           { text: "Cartes-cadeaux (général)", rate: 0.0071, flag: "fixed", flagText: "fixe" },
@@ -604,7 +613,7 @@
           { text: "Voyage — Centre de récompenses (vols/hôtel/auto/croisière)", rate: 0.01, flag: "fixed", flagText: "fixe" },
           { text: "Grille aérienne (courts-courriers optimisés)", rate: 0.0229, flag: "variable", flagText: "jusqu'à 2,29¢, meilleur taux" }
         ],
-        note: "Corrigé le 8&nbsp;juillet&nbsp;2026&nbsp;: la grille aérienne plafonne à 2,29&nbsp;¢/point selon Prince of Travel (pas 4&nbsp;¢ — une lecture trop optimiste du barème initiale). « Crédit compte » et « produits financiers » sont deux taux fixes distincts, pas un seul&nbsp;: REER/CELI/marge/hypothèque donnent 0,83&nbsp;¢, alors qu'un crédit compte générique ou une carte-cadeau Visa prépayée ne donnent que 0,63&nbsp;¢."
+        note: "La grille aérienne plafonne à 2,29&nbsp;¢/point selon Prince of Travel. « Crédit compte » et « produits financiers » sont deux taux fixes distincts, pas un seul&nbsp;: REER/CELI/marge/hypothèque donnent 0,83&nbsp;¢, alors qu'un crédit compte générique ou une carte-cadeau Visa prépayée ne donnent que 0,63&nbsp;¢."
       }
     };
 
@@ -624,6 +633,7 @@
       modeSel.innerHTML = prog.modes.map(function(m, i) {
         return '<option value="' + i + '">' + m.text + ' (' + (m.flag === 'fixed' ? m.flagText : m.flagText) + ')</option>';
       }).join('');
+      modeSel.selectedIndex = prog.defaultIndex || 0;
     }
 
     // Modes à taux fixe utilisent mode.rate. Modes à palier (ex: BNC "Rabais voyage
