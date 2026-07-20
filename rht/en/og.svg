@@ -31,9 +31,9 @@
     
     <!-- Pastille / Tag dans la capsule -->
     <rect x="339" y="380" width="540" height="60" rx="30" fill="#eaf5f5" />
-    <text x="609" y="422" font-size="28" font-weight="800" fill="#036256" letter-spacing="0.08em">CASHOUT POINTS</text>
+    <text x="609" y="422" font-size="28" font-weight="800" fill="#036256" letter-spacing="0.08em">CONVERT YOUR POINTS</text>
 
     <!-- Sous-titre bas -->
-    <text x="609" y="570" font-size="36" font-weight="700" fill="#ffffff" fill-opacity="0.9" letter-spacing="0.05em">7 CANADIAN PROGRAMS</text>
+    <text x="609" y="570" font-size="36" font-weight="700" fill="#ffffff" fill-opacity="0.9" letter-spacing="0.05em">CASH-OUT MECHANICS</text>
   </g>
 </svg>
