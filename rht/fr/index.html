@@ -161,6 +161,17 @@
 
     .warning { background: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 14px 20px; font-size: 0.95rem; color: var(--warning-text); margin: 32px 0; border-radius: 0 6px 6px 0; line-height: 1.5; }
 
+    /* NOUVEAU : CSS pour la navigation rapide et le tableau de résumé */
+    .quicknav { display: flex; flex-wrap: wrap; gap: 8px; }
+    .quicknav a { display: inline-block; padding: 7px 14px; border-radius: 999px; background: var(--surface-soft); border: 1px solid var(--border); color: var(--text); font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.15s, border-color 0.15s, color 0.15s; }
+    .quicknav a:hover, .quicknav a:focus-visible { background: var(--accent); border-color: var(--accent); color: #fff; }
+    
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    .compare-table th { text-align: left; padding: 10px 12px; background: var(--surface-soft); border: 1px solid var(--border); color: var(--text); font-weight: 700; }
+    .compare-table td { padding: 10px 12px; border: 1px solid var(--border); color: var(--text-soft); }
+    .compare-table .best { color: var(--accent-text); font-weight: 800; }
+    @media (max-width: 640px) { .compare-table { font-size: 0.85rem; } .compare-table th, .compare-table td { padding: 8px 8px; } }
+
     footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
     .footer-links a { display: inline-block; padding: 10px 12px; margin: -4px 0; }
 
@@ -215,6 +226,78 @@
         <div class="warning" style="margin-top: 32px;">
           <strong>Avertissement :</strong> Ces méthodes vont à l'encontre des conditions d'utilisation des émetteurs. Bien qu'elles reposent sur les mécanismes de remboursement automatisés des banques, leur abus expose à un risque de rappel des points (clawback) ou de fermeture de compte. À utiliser de manière épisodique et en connaissance de cause.
         </div>
+
+        <nav class="quicknav" aria-label="Aller à une institution" style="margin-top: 24px; margin-bottom: 40px;">
+          <div style="width: 100%; font-size: 0.85rem; font-weight: 700; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Aller directement à :</div>
+          <a href="#scene-plus">Scene+</a>
+          <a href="#bmo-rewards">BMO Rewards</a>
+          <a href="#bnc">BNC À la carte</a>
+          <a href="#mbna">MBNA Rewards</a>
+          <a href="#cibc">CIBC Aventura</a>
+          <a href="#td">TD Rewards</a>
+          <a href="#amex">Amex Gold</a>
+        </nav>
+
+        <section id="resume">
+          <h2>Résumé des mécaniques par institution</h2>
+          <p>Toutes les institutions n'ont pas la même fenêtre d'opportunité. Certaines exigent que la transaction soit complétée (postée), d'autres qu'elle soit encore en attente.</p>
+          <div style="overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); margin-top: 20px;">
+            <table class="compare-table" aria-label="Résumé des méthodes RHT par programme">
+              <thead>
+                <tr>
+                  <th>Programme</th>
+                  <th>Taux visé</th>
+                  <th>Déclencheur (Quand appliquer les points)</th>
+                  <th>Condition critique</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Scene+</strong></td>
+                  <td class="best">1,00&nbsp;¢</td>
+                  <td>Transaction postée (dans les 90 jours)</td>
+                  <td>Aucune, mécanique très souple.</td>
+                </tr>
+                <tr>
+                  <td><strong>BMO Rewards</strong></td>
+                  <td class="best">0,67&nbsp;¢</td>
+                  <td>Transaction postée (dans les 30 jours)</td>
+                  <td>Utiliser l'option "Payer avec des points".</td>
+                </tr>
+                <tr>
+                  <td><strong>BNC À la carte</strong></td>
+                  <td class="best">0,83 à 0,91&nbsp;¢</td>
+                  <td>Transaction postée (dans les 60 jours)</td>
+                  <td>Sélectionner "Rabais voyage flexible".</td>
+                </tr>
+                <tr>
+                  <td><strong>MBNA Rewards</strong></td>
+                  <td class="best">1,00&nbsp;¢</td>
+                  <td>Transaction postée (dans les 90 jours)</td>
+                  <td>Catégorie de la transaction : Voyage.</td>
+                </tr>
+                <tr>
+                  <td><strong>CIBC Aventura</strong></td>
+                  <td class="best">1,00&nbsp;¢</td>
+                  <td>Transaction <strong>en attente (pending)</strong></td>
+                  <td>Ne jamais réserver via le portail CIBC.</td>
+                </tr>
+                <tr>
+                  <td><strong>TD Rewards (FCT)</strong></td>
+                  <td class="best">0,50&nbsp;¢</td>
+                  <td>Transaction postée (via ExpediaForTD)</td>
+                  <td>Nécessite un <strong>Product Switch</strong> de la carte avant d'annuler.</td>
+                </tr>
+                <tr>
+                  <td><strong>Amex Gold</strong></td>
+                  <td class="best">100&nbsp;$ (Crédit)</td>
+                  <td>Transaction postée (via Amex Travel)</td>
+                  <td>Réservation prépayée obligatoire.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
         <section id="scene-plus">
           <span class="section-label">Scene+</span>
