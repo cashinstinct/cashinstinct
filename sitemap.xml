@@ -73,29 +73,29 @@
     <priority>0.8</priority>
   </url> 
     <url>
-    <loc>https://cashinstinct.ca/chexy/fr/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-   <url>
-    <loc>https://cashinstinct.ca/chexy/en/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url> 
-  <url>
     <loc>https://cashinstinct.ca/tangerine/fr/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
    <url>
     <loc>https://cashinstinct.ca/tangerine/en/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://cashinstinct.ca/chexy/fr/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+   <url>
+    <loc>https://cashinstinct.ca/chexy/en/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url> 
   <url>
     <loc>https://cashinstinct.ca/achieva/fr/</loc>
     <lastmod>2026-06-17</lastmod>
@@ -134,7 +134,13 @@
   </url>
       <url>
     <loc>https://cashinstinct.ca/valeur-points/fr/</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+        <url>
+    <loc>https://cashinstinct.ca/rht/fr/</loc>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
