@@ -1,0 +1,28 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient de marque : teal du site (accent vers accent-dark) -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#058373"/>
+      <stop offset="100%" stop-color="#022e28"/>
+    </linearGradient>
+    <!-- Ombre portée de la capsule héros -->
+    <filter id="cardshadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="20" flood-color="#000000" flood-opacity="0.30"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Barre latérale 18px (gabarit v3, ne pas modifier la largeur) -->
+  <rect x="0" y="0" width="18" height="630" fill="#ffffff" fill-opacity="0.30"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <!-- Overline : marque du site, court, tient à 42px -->
+    <text x="618" y="100" font-size="42" font-weight="800" fill="#ffffff" fill-opacity="0.85" letter-spacing="0.11em">CASH INSTINCT</text>
+
+    <text x="618" y="238" font-size="122" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">RHT</text>
+    <text x="618" y="358" font-size="122" font-weight="900" fill="#ffffff" letter-spacing="-0.01em">HOTELS</text>
+
+    <!-- Sous-marque -->
+    <text x="618" y="410" font-size="44" font-weight="700" fill="#ffffff" fill-opacity="0.92" letter-spacing="0.06em">7 PROGRAMMES CANADIENS</text>
+
+  </g>
+</svg>
