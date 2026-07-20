@@ -91,6 +91,55 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Refundable Hotel Trick (RHT)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Refundable Hotel Trick (RHT) is a travel-rewards cash-out method where you book a refundable hotel, redeem points or a travel credit against that charge, then cancel the booking so the refund returns to your card in cash."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the Refundable Hotel Trick allowed by banks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. These methods generally go against the spirit or terms of the rewards programs. Using them can expose you to points clawbacks, account review, or account closure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do all Canadian rewards programs work the same way?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Some programs require the hotel charge to be posted before you redeem points, while others only work while the transaction is still pending."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the main risk with the RHT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The main risk is that the issuer may reverse the points redemption, claw back the value received, or close your rewards account if it detects abuse."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you use the RHT with travel credits instead of points?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sometimes. For example, some cardholders use refundable prepaid hotel bookings to trigger annual travel credits, then cancel the reservation after the credit appears."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg: #f4f9f9;
@@ -136,7 +185,6 @@
     .nav a, .breadcrumb a, .footer-links a { text-decoration: none; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
     .prose { max-width: 900px; margin: 0 auto; }
-
     .topbar { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
     .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 10px 20px; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
     .brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
@@ -186,6 +234,25 @@
     .footer-links a { display: inline-block; padding: 10px 12px; margin: -4px 0; }
 
     @media (min-width: 768px) { body { font-size: 19px; } }
+
+    /* FAQ Details Styles */
+    details {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+    }
+    details p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: var(--text-soft);
+    }
   </style>
 </head>
 <body>
@@ -217,7 +284,6 @@
   <main id="main-content">
     <div class="container">
       <div class="prose">
-
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <ol style="list-style: none; display: flex; flex-wrap: wrap; padding: 0; margin: 0;">
             <li style="display: flex; align-items: center;">
@@ -416,6 +482,36 @@
             <li><strong>Organic spending (Recommended):</strong> Simply use the card for your daily expenses (groceries, gas, bills) until the balance returns to zero. This is the most discreet and frictionless method.</li>
             <li><strong>Check request:</strong> You can contact the financial institution to request a check or transfer for the excess balance. The success and speed of this method depend entirely on each bank's internal procedures.</li>
           </ul>
+        </section>
+
+        <section id="faq">
+          <span class="section-label">FAQ</span>
+          <h2>Frequently Asked Questions</h2>
+
+          <details>
+            <summary>What is the Refundable Hotel Trick (RHT)?</summary>
+            <p>The Refundable Hotel Trick (RHT) is a travel-rewards cash-out method where you book a refundable hotel, redeem points or a travel credit against that charge, then cancel the booking so the refund returns to your card in cash.</p>
+          </details>
+
+          <details>
+            <summary>Is the Refundable Hotel Trick allowed by banks?</summary>
+            <p>No. These methods generally go against the spirit or terms of the rewards programs. Using them can expose you to points clawbacks, account review, or account closure.</p>
+          </details>
+
+          <details>
+            <summary>Do all Canadian rewards programs work the same way?</summary>
+            <p>No. Some programs require the hotel charge to be posted before you redeem points, while others only work while the transaction is still pending.</p>
+          </details>
+
+          <details>
+            <summary>What is the main risk with the RHT?</summary>
+            <p>The main risk is that the issuer may reverse the points redemption, claw back the value received, or close your rewards account if it detects abuse.</p>
+          </details>
+
+          <details>
+            <summary>Can you use the RHT with travel credits instead of points?</summary>
+            <p>Sometimes. For example, some cardholders use refundable prepaid hotel bookings to trigger annual travel credits, then cancel the reservation after the credit appears.</p>
+          </details>
         </section>
 
       </div>
