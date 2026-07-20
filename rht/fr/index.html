@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0096d6" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090e0e" />
+
+  <title>Refundable Hotel Trick (RHT) — Guide Canadien (2026)</title>
+  <meta name="description" content="Mécaniques d'encaissement de points voyage au Canada (CIBC, TD, Amex, Scene+, BMO Rewards) via le Refundable Hotel Trick (RHT)." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cashinstinct.ca/rht/fr/" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%8F%A8%3C/text%3E%3C/svg%3E">
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cashinstinct.ca/rht/fr/" />
+  <meta property="og:title" content="Refundable Hotel Trick (RHT) — Guide Canadien" />
+  <meta property="og:description" content="Mécaniques d'encaissement de points voyage au Canada (CIBC, TD, Amex, Scene+, BMO Rewards) via le Refundable Hotel Trick (RHT)." />
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:site_name" content="Cash Instinct" />
+
+  <script>
+    try {
+      let theme = localStorage.getItem('theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f4f9f9;
+      --surface: #ffffff;
+      --surface-soft: #eaf5f5;
+      --surface-muted: #dbebe3;
+      --text: #0f1c1c;
+      --text-soft: #2d3e3e;
+      --muted: #655345;
+      --border: #cee3e3;
+      --border-soft: #b6d3d3;
+      --accent: #058373;
+      --accent-dark: #036256;
+      --accent-text: #036256;
+      --warning-bg: #fff9eb;
+      --warning-text: #805300;
+      --warning-border: #ffcc66;
+      --shadow: 0 4px 20px rgba(5, 131, 115, 0.05);
+    }
+    [data-theme="dark"] {
+      --bg: #090e0e;
+      --surface: #111a1a;
+      --surface-soft: #172424;
+      --surface-muted: #1e302f;
+      --text: #f0f7f7;
+      --text-soft: #cbdcdb;
+      --muted: #94a3b8;
+      --border: #1f3332;
+      --border-soft: #2d4a48;
+      --accent: #0db39e;
+      --accent-dark: #0bc4ad;
+      --accent-text: #0bc4ad;
+      --warning-bg: #1c1917;
+      --warning-text: #fdba74;
+      --warning-border: #b45309;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.65; color: var(--text); background: var(--bg); }
+    a { color: var(--accent-text); text-decoration: underline; }
+    a:hover { text-decoration: underline; }
+    .nav a, .breadcrumb a, .footer-links a { text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .prose { max-width: 900px; margin: 0 auto; }
+
+    .topbar { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+    .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 10px 20px; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+    .brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+    .nav { display: flex; gap: 12px; flex-wrap: nowrap; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+    .nav a:hover, .nav a.active { color: var(--accent-text); }
+    .theme-btn { background: var(--surface-muted); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 1rem; padding: 6px 12px; border-radius: 6px; transition: background 0.15s; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .theme-btn:hover { background: var(--border-soft); }
+
+    .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 16px; margin-bottom: 8px; }
+    .breadcrumb a { color: var(--muted); font-weight: 500; }
+    .breadcrumb span { margin: 0 6px; }
+
+    header.hero { background: var(--surface-soft); color: var(--text); padding: 64px 20px; text-align: center; border-bottom: 1px solid var(--border); }
+    header.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.01em; text-wrap: pretty; }
+    header.hero h1 span { color: var(--accent-text); }
+    header.hero p { font-size: 1.15rem; opacity: 0.9; max-width: 640px; margin: 0 auto 28px; }
+
+    main { padding: 52px 0; }
+    section { margin-bottom: 56px; scroll-margin-top: 72px; }
+    section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; color: var(--text); letter-spacing: -0.01em; }
+    section p { margin-bottom: 14px; color: var(--text-soft); }
+    section ol, section ul { margin-left: 24px; margin-bottom: 24px; color: var(--text-soft); }
+    section li { margin-bottom: 8px; }
+
+    .section-label { display: inline-block; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; color: var(--accent-dark); background: rgba(5, 131, 115, 0.12); padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; }
+    [data-theme="dark"] .section-label { color: var(--accent-text); background: rgba(13, 179, 158, 0.15); }
+
+    .ai-summary { background: var(--surface-soft); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 20px; border-radius: 8px; margin-bottom: 32px; font-size: 1.05rem; color: var(--text); line-height: 1.6; }
+    .ai-summary strong { color: var(--text); font-weight: 800; }
+
+    .warning { background: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 14px 20px; font-size: 0.95rem; color: var(--warning-text); margin: 32px 0; border-radius: 0 6px 6px 0; line-height: 1.5; }
+
+    .transparency { background: var(--surface-muted); border-radius: 8px; padding: 16px 20px; font-size: 0.9rem; color: var(--text-soft); margin-top: 16px; border: 1px solid var(--border); }
+    footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
+    .footer-links a { display: inline-block; padding: 10px 12px; margin: -4px 0; }
+
+    @media (min-width: 768px) { body { font-size: 19px; } }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" style="position:absolute;left:-9999px;top:4px;z-index:9999;padding:8px 16px;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Passer au contenu principal</a>
+
+  <nav class="topbar" aria-label="Navigation principale">
+    <div class="topbar-inner">
+      <a class="brand" href="https://cashinstinct.ca/">Cash Instinct</a>
+      <div class="nav">
+        <a href="https://cashinstinct.ca/ebox/fr/" aria-label="EBOX">EBOX</a>
+        <a href="https://cashinstinct.ca/stickermule/fr/" aria-label="Sticker Mule">Sticker&nbsp;Mule</a>
+        <a href="https://cashinstinct.ca/tangerine/fr/" aria-label="Banque Tangerine">Tangerine</a>
+        <a href="https://cashinstinct.ca/hp-instant-ink/fr/" aria-label="HP Instant Ink">HP&nbsp;Ink</a>
+        <a href="https://cashinstinct.ca/valeur-points/fr/" aria-label="Valeur des Points">Valeur&nbsp;Points</a>
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>Refundable Hotel Trick <span>(RHT)</span></h1>
+      <p>Comment convertir virtuellement tes points et crédits voyage en argent comptant. Mécaniques spécifiques d'encaissement par institution financière canadienne.</p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <div class="prose">
+
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol style="list-style: none; display: flex; flex-wrap: wrap; padding: 0; margin: 0;">
+            <li style="display: flex; align-items: center;">
+              <a href="https://cashinstinct.ca/">Accueil</a>
+              <span style="margin: 0 8px; color: var(--muted);" aria-hidden="true">&gt;</span>
+            </li>
+            <li style="display: flex; align-items: center;">
+              <a href="https://cashinstinct.ca/#finances">Finances</a>
+              <span style="margin: 0 8px; color: var(--muted);" aria-hidden="true">&gt;</span>
+            </li>
+            <li style="display: flex; align-items: center; color: var(--text-soft);" aria-current="page">
+              Refundable Hotel Trick
+            </li>
+          </ol>
+        </nav>
+
+        <div class="warning" style="margin-top: 32px;">
+          <strong>Avertissement :</strong> Ces méthodes vont à l'encontre des conditions d'utilisation des émetteurs. Bien qu'elles reposent sur les mécanismes de remboursement automatisés des banques, leur abus expose à un risque de rappel des points (clawback) ou de fermeture de compte. À utiliser de manière épisodique et en connaissance de cause.
+        </div>
+
+        <section id="scene-plus">
+          <span class="section-label">Scene+</span>
+          <h2>Scene+ Rewards (Banque Scotia)</h2>
+          <p>Le programme Scene+ est l'un des plus simples et flexibles pour cette méthode, offrant un encaissement direct au taux optimal de 1&nbsp;¢ par point.</p>
+          <ol>
+            <li>Réserve une chambre d'hôtel remboursable avec ta carte de crédit Banque Scotia (ex: Scotia Or Amex).</li>
+            <li>Connecte-toi à ton compte Scotia, navigue vers tes transactions et sélectionne l'option <strong>Appliquer les points au voyage</strong> (<em>Apply Points to Travel</em>).</li>
+            <li>Sélectionne la transaction d'hôtel (valide pour les achats de voyage des 90 derniers jours) et applique le montant de points désiré.</li>
+            <li>Le crédit au compte apparaîtra dans les jours ouvrables suivants.</li>
+            <li>Annule la réservation d'hôtel via le marchand pour recevoir le remboursement en argent.</li>
+          </ol>
+        </section>
+
+        <section id="bmo-rewards">
+          <span class="section-label">BMO Rewards</span>
+          <h2>BMO Rewards</h2>
+          <p>Depuis la mise à jour du programme (qui permet de réserver ses voyages soi-même sans passer par l'agence BMO), le RHT est devenu la méthode de choix pour encaisser les points au taux maximal de 0,67&nbsp;¢/point.</p>
+          <ol>
+            <li>Porte une transaction d'hôtel remboursable sur ta carte BMO Rewards.</li>
+            <li>Dans un délai maximum de <strong>30 jours</strong>, connecte-toi au portail BMO Rewards et sélectionne <strong>Payer avec des points</strong> (<em>Pay with Points</em>).</li>
+            <li>Applique tes points contre cette transaction de voyage. Le crédit s'affichera au compte sous 3 à 5 jours.</li>
+            <li>Annule la réservation originale pour obtenir le remboursement en argent.</li>
+          </ol>
+        </section>
+
+        <section id="cibc">
+          <span class="section-label">Aventura</span>
+          <h2>CIBC Aventura</h2>
+          <p>La mécanique CIBC repose sur l'application des points sur une transaction en attente.</p>
+          <ol>
+            <li>Réserve un hôtel entièrement remboursable via un tiers (Expedia, Booking, etc.). <strong>Ne passe jamais par le portail CIBC.</strong></li>
+            <li>Surveille ton compte : dès que la transaction apparaît en <strong>Pending</strong> (en attente), l'option <em>Redeem with points</em> s'active.</li>
+            <li>Applique tes points immédiatement contre cette transaction. L'option disparaîtra une fois la transaction officiellement postée.</li>
+            <li>Patiente quelques jours, puis annule l'hôtel via le site du tiers. Le remboursement sera émis en argent directement sur ta carte.</li>
+          </ol>
+          <div class="warning">
+            ⚠️ <strong>Erreur fatale :</strong> Si tu réserves l'hôtel via le portail de récompenses CIBC en payant avec tes points, l'annulation te remboursera uniquement en points Aventura. Tu n'auras généré aucun encaissement.
+          </div>
+          
+          <div class="ai-summary" style="border-left-color: var(--accent-dark); margin-top: 32px;">
+            <strong>Note de pro : CIBC Aventura et les promotions</strong><br>
+            Le RHT standard pour CIBC nécessite d'attraper la transaction pendant qu'elle est en attente (<em>pending</em>) pour obtenir 1&nbsp;¢/point. Cependant, CIBC lance parfois des promotions <em>Shopping with Points</em> permettant d'effacer <strong>n'importe quel achat</strong> à un taux bonifié (souvent 1,25&nbsp;¢/point). Lorsqu'une telle promotion est active, le RHT devient inutile : il suffit de cibler une dépense courante pour encaisser les points à profit.
+          </div>
+        </section>
+
+        <section id="td">
+          <span class="section-label">TD Rewards</span>
+          <h2>TD First Class Travel (FCT)</h2>
+          <p>La méthode TD nécessite un transfert de produit (Product Switch) pour bloquer le retour des points.</p>
+          <ol>
+            <li>Réserve un hôtel remboursable via le portail <strong>Expedia for TD (E4TD)</strong> pour obtenir le taux maximal.</li>
+            <li>Applique tes points TD Rewards pour couvrir la transaction.</li>
+            <li><strong>Étape critique :</strong> Avant de faire quoi que ce soit d'autre, fais un <em>Product Switch</em> de ta carte FCT vers une carte TD qui n'utilise pas le système TD Rewards (ex. : une carte Remises / Cash Back).</li>
+            <li>Une fois la nouvelle carte active au système, annule la réservation d'hôtel. N'ayant plus de compte TD Rewards où renvoyer les points, le système émettra un crédit en argent sur le nouveau compte.</li>
+          </ol>
+          <div class="warning">
+            ⚠️ <strong>Erreur fatale :</strong> Si tu annules l'hôtel <em>avant</em> que le transfert de carte ne soit complété, les points retourneront simplement dans ton solde TD Rewards.
+          </div>
+        </section>
+
+        <section id="amex">
+          <span class="section-label">Crédit Annuel</span>
+          <h2>Amex Gold — Crédit Voyage (100 $)</h2>
+          <p>Cette mécanique ne touche pas aux points MR, mais permet d'encaisser le crédit statutaire annuel.</p>
+          <ol>
+            <li>Réserve un hôtel remboursable et <strong>prépayé</strong> obligatoirement via le portail <strong>Amex Travel</strong>.</li>
+            <li>Attends que la transaction et le crédit d'accompagnement de 100 $ apparaissent au compte.</li>
+            <li>Annule la réservation après quelques jours. L'hôtel te remboursera le montant de la transaction.</li>
+            <li>Le crédit de 100 $ reste sur le compte. (Note : Amex Canada ne reprend généralement pas ce crédit, contrairement aux pratiques plus agressives d'Amex US).</li>
+          </ol>
+        </section>
+
+        <section id="faq-solde">
+          <span class="section-label">Logistique</span>
+          <h2>Que faire avec le solde créditeur ?</h2>
+          <p>Si ton encaissement génère un solde positif important (ta carte tombe à -500&nbsp;$, par exemple), deux options s'offrent à toi :</p>
+          <ul>
+            <li><strong>Dépense organique (Recommandé) :</strong> Utilise simplement la carte pour tes dépenses quotidiennes (épicerie, essence, factures) jusqu'à ce que le solde revienne à zéro. C'est la méthode la plus discrète et sans friction.</li>
+            <li><strong>Demande de chèque :</strong> Tu peux contacter l'institution financière pour demander l'émission d'un chèque ou un virement pour le solde excédentaire. Le succès et la rapidité de cette méthode dépendent entièrement des procédures internes de chaque banque.</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Site de référence indépendant. Aucune affiliation avec MR/Amex, BMO, Banque Nationale, TD, Scotia ou CIBC. Toutes les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
+      <p style="margin-top:6px;">Dernière mise à jour&nbsp;: <time datetime="2026-07-19">Juillet 2026</time></p>
+    </div>
+    <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
+      <nav class="footer-links" aria-label="Liens du site">
+        <a href="https://cashinstinct.ca/ebox/fr/">🌐 EBOX Internet</a>
+        <a href="https://cashinstinct.ca/stickermule/fr/">🏷️ Sticker Mule</a>
+        <a href="https://cashinstinct.ca/hp-instant-ink/fr/">🖨️ HP Instant Ink</a>
+        <a href="https://cashinstinct.ca/tangerine/fr/">🍊 Tangerine</a>
+        <a href="https://cashinstinct.ca/chexy/fr/">🏠 Chexy</a>
+        <a href="https://cashinstinct.ca/achieva/fr/">🌱 Achieva Financial</a>
+        <a href="https://cashinstinct.ca/rakuten-canada/fr/">🛍️ Rakuten Canada</a>
+        <a href="https://cashinstinct.ca/swagbucks/fr/">💙 Swagbucks</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      function isDark() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+      }
+
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️' : '🌙';
+        toggle.setAttribute('aria-label', dark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+
+      applyUI(isDark());
+
+      toggle.addEventListener('click', function() {
+        var dark = isDark();
+        if (dark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        applyUI(!dark);
+      });
+    })();
+  </script>
+
+</body>
+</html>
