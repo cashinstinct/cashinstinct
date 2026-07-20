@@ -84,55 +84,52 @@
           { "@type": "ListItem", "position": 2, "name": "Outils", "item": "https://cashinstinct.ca/#outils" },
           { "@type": "ListItem", "position": 3, "name": "Refundable Hotel Trick", "item": "https://cashinstinct.ca/rht/fr/" }
         ]
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Qu'est-ce que le Refundable Hotel Trick (RHT) ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le Refundable Hotel Trick (RHT) est une méthode d'encaissement de points de voyage où vous réservez un hôtel remboursable, échangez des points ou un crédit de voyage contre ces frais, puis annulez la réservation afin que le remboursement retourne sur votre carte en argent comptant."
-        }
       },
       {
-        "@type": "Question",
-        "name": "Le Refundable Hotel Trick est-il autorisé par les banques ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Non. Ces méthodes vont généralement à l'encontre de l'esprit ou des conditions des programmes de récompenses. Leur utilisation peut vous exposer à des rappels de points (clawbacks), à une révision de compte ou à une fermeture de compte."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Tous les programmes de récompenses canadiens fonctionnent-ils de la même manière ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Non. Certains programmes exigent que les frais d'hôtel soient postés avant que vous puissiez échanger vos points, tandis que d'autres ne fonctionnent que lorsque la transaction est encore en attente (pending)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quel est le risque principal avec le RHT ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le risque principal est que l'émetteur annule l'échange de points, reprenne la valeur reçue ou ferme votre compte de récompenses s'il détecte un abus de la mécanique de remboursement."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Peut-on utiliser le RHT avec des crédits de voyage au lieu des points ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Parfois. Par exemple, certains détenteurs de carte utilisent des réservations d'hôtel prépayées et remboursables pour déclencher les crédits de voyage annuels, puis annulent la réservation une fois le crédit apparu au compte."
-        }
+        "@type": "FAQPage",
+        "@id": "https://cashinstinct.ca/rht/fr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que le Refundable Hotel Trick (RHT) ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le Refundable Hotel Trick (RHT) est une méthode d'encaissement de récompenses voyage où tu réserves un hôtel remboursable, appliques des points ou un crédit voyage contre cette transaction, puis annules la réservation afin que le remboursement revienne sur ta carte en argent."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Est-ce que le Refundable Hotel Trick est permis par les banques ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Ces méthodes vont généralement à l'encontre de l'esprit ou des conditions des programmes de récompenses. Leur utilisation peut t'exposer à un rappel des points, à une révision du compte ou à une fermeture de compte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Est-ce que tous les programmes de récompenses canadiens fonctionnent de la même façon ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Certains programmes exigent que la transaction d'hôtel soit postée avant d'appliquer les points, tandis que d'autres ne fonctionnent que pendant que la transaction est encore en attente."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que faire avec un solde créditeur ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Si ton encaissement génère un solde positif important, tu peux soit l'écouler naturellement avec tes dépenses quotidiennes (option recommandée), soit contacter l'institution financière pour demander un chèque ou un virement du solde excédentaire."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Peut-on utiliser le RHT avec des crédits voyage plutôt qu'avec des points ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Parfois. Par exemple, certains titulaires de carte utilisent des réservations d'hôtel prépayées et remboursables pour déclencher un crédit voyage annuel, puis annulent la réservation après l'apparition du crédit."
+            }
+          }
+        ]
       }
     ]
   }
@@ -218,11 +215,10 @@
 
     .warning { background: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 14px 20px; font-size: 0.95rem; color: var(--warning-text); margin: 32px 0; border-radius: 0 6px 6px 0; line-height: 1.5; }
 
-    /* NOUVEAU : CSS pour la navigation rapide et le tableau de résumé */
     .quicknav { display: flex; flex-wrap: wrap; gap: 8px; }
     .quicknav a { display: inline-block; padding: 7px 14px; border-radius: 999px; background: var(--surface-soft); border: 1px solid var(--border); color: var(--text); font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.15s, border-color 0.15s, color 0.15s; }
     .quicknav a:hover, .quicknav a:focus-visible { background: var(--accent); border-color: var(--accent); color: #fff; }
-    
+
     .compare-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
     .compare-table th { text-align: left; padding: 10px 12px; background: var(--surface-soft); border: 1px solid var(--border); color: var(--text); font-weight: 700; }
     .compare-table td { padding: 10px 12px; border: 1px solid var(--border); color: var(--text-soft); }
@@ -234,24 +230,14 @@
 
     @media (min-width: 768px) { body { font-size: 19px; } }
 
-    /* FAQ Details Styles */
-    details {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 16px;
-      margin-bottom: 12px;
-    }
-    summary {
-      cursor: pointer;
-      font-weight: 700;
-      color: var(--text);
-    }
-    details p {
-      margin-top: 12px;
-      margin-bottom: 0;
-      color: var(--text-soft);
-    }
+    .faq { display: grid; gap: 16px; }
+    details { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
+    summary { font-weight: 700; padding: 16px 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; background: var(--surface-soft); color: var(--text); }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 1.4rem; font-weight: 400; color: var(--accent-text); flex-shrink: 0; margin-left: 12px; }
+    details[open] summary::after { content: "−"; }
+    details[open] summary { border-bottom: 1px solid var(--border); }
+    .faq-body { padding: 16px 20px; font-size: 0.97rem; color: var(--text-soft); background: var(--surface); }
   </style>
 </head>
 <body>
@@ -283,6 +269,7 @@
   <main id="main-content">
     <div class="container">
       <div class="prose">
+
         <nav class="breadcrumb" aria-label="Fil d'Ariane">
           <ol style="list-style: none; display: flex; flex-wrap: wrap; padding: 0; margin: 0;">
             <li style="display: flex; align-items: center;">
@@ -317,6 +304,7 @@
         <section id="resume">
           <h2>Résumé des mécaniques par institution</h2>
           <p>Toutes les institutions n'ont pas la même fenêtre d'opportunité. Certaines exigent que la transaction soit complétée (postée), d'autres qu'elle soit encore en attente.</p>
+
           <div style="overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); margin-top: 20px;">
             <table class="compare-table" aria-label="Résumé des méthodes RHT par programme">
               <thead>
@@ -338,13 +326,13 @@
                   <td><strong>BMO Rewards</strong></td>
                   <td class="best">0,67&nbsp;¢</td>
                   <td>Transaction postée (dans les 30 jours)</td>
-                  <td>Utiliser l'option "Payer avec des points".</td>
+                  <td>Utiliser l'option « Payer avec des points ».</td>
                 </tr>
                 <tr>
                   <td><strong>BNC À la carte</strong></td>
                   <td class="best">0,83 à 0,91&nbsp;¢</td>
                   <td>Transaction postée (dans les 60 jours)</td>
-                  <td>Sélectionner "Rabais voyage flexible".</td>
+                  <td>Sélectionner « Rabais voyage flexible ».</td>
                 </tr>
                 <tr>
                   <td><strong>MBNA Rewards</strong></td>
@@ -365,8 +353,8 @@
                   <td>Nécessite un <strong>Product Switch</strong> de la carte avant d'annuler.</td>
                 </tr>
                 <tr>
-                  <td><strong>Amex Gold</strong></td>
-                  <td class="best">100&nbsp;$ (Crédit)</td>
+                  <td><strong>Amex Gold / Platine</strong></td>
+                  <td class="best">100&nbsp;$ ou 200&nbsp;$</td>
                   <td>Transaction postée (via Amex Travel)</td>
                   <td>Réservation prépayée obligatoire.</td>
                 </tr>
@@ -380,7 +368,7 @@
           <h2>Scene+ Rewards (Banque Scotia)</h2>
           <p>Le programme Scene+ est l'un des plus simples et flexibles pour cette méthode, offrant un encaissement direct au <a href="https://cashinstinct.ca/valeur-points/fr/">taux optimal de 1&nbsp;¢ par point</a>.</p>
           <ol>
-            <li>Réserve une chambre d'hôtel remboursable avec ta carte de crédit Banque Scotia (ex: Scotia Or Amex).</li>
+            <li>Réserve une chambre d'hôtel remboursable avec ta carte de crédit Banque Scotia (ex. : Scotia Or Amex).</li>
             <li>Connecte-toi à ton compte Scotia, navigue vers tes transactions et sélectionne l'option <strong>Appliquer les points au voyage</strong> (<em>Apply Points to Travel</em>).</li>
             <li>Sélectionne la transaction d'hôtel (valide pour les achats de voyage des 90 derniers jours) et applique le montant de points désiré.</li>
             <li>Le crédit au compte apparaîtra dans les jours ouvrables suivants.</li>
@@ -391,7 +379,7 @@
         <section id="bmo-rewards">
           <span class="section-label">BMO Rewards</span>
           <h2>BMO Rewards</h2>
-          <p>Depuis la mise à jour du programme (qui permet de réserver ses voyages soi-même sans passer par l'agence BMO), le RHT est devenu la méthode de choix pour encaisser les points au <a href="https://cashinstinct.ca/valeur-points/fr/">taux maximal de 0,67&nbsp;¢/point</a>.</p>
+          <p>Depuis la mise à jour du programme qui permet de réserver ses voyages soi-même sans passer par l'agence BMO, le RHT est devenu la méthode de choix pour encaisser les points au <a href="https://cashinstinct.ca/valeur-points/fr/">taux maximal de 0,67&nbsp;¢/point</a>.</p>
           <ol>
             <li>Porte une transaction d'hôtel remboursable sur ta carte BMO Rewards.</li>
             <li>Dans un délai maximum de <strong>30 jours</strong>, connecte-toi au portail BMO Rewards et sélectionne <strong>Payer avec des points</strong> (<em>Pay with Points</em>).</li>
@@ -403,10 +391,10 @@
         <section id="bnc">
           <span class="section-label">À la carte</span>
           <h2>BNC Récompenses À la carte</h2>
-          <p>La mécanique BNC utilise l'option « Rabais voyage flexible ». Elle permet d'encaisser les points (à <a href="https://cashinstinct.ca/valeur-points/fr/">0,83&nbsp;¢ ou 0,91&nbsp;¢</a> selon que l'on dépasse ou non le seuil des 55 000 points) sans avoir à transiger avec leur agence interne.</p>
+          <p>La mécanique BNC utilise l'option « Rabais voyage flexible ». Elle permet d'encaisser les points à <a href="https://cashinstinct.ca/valeur-points/fr/">0,83&nbsp;¢ ou 0,91&nbsp;¢</a> selon que l'on dépasse ou non le seuil des 55 000 points, sans avoir à transiger avec leur agence interne.</p>
           <ol>
             <li>Réserve un hôtel remboursable sur un site tiers (Expedia, Booking, etc.) pour que la transaction soit catégorisée comme un achat de voyage par MasterCard.</li>
-            <li>Attends que la transaction soit officiellement <strong>postée</strong> sur ton compte (pas en attente).</li>
+            <li>Attends que la transaction soit officiellement <strong>postée</strong> sur ton compte, pas en attente.</li>
             <li>Dans un délai de 60 jours suivant l'achat, connecte-toi au portail BNC Récompenses, va dans la section voyage et sélectionne <strong>Rabais voyage flexible</strong>.</li>
             <li>Applique tes points contre cette dépense spécifique. Le crédit au compte sera émis sous quelques jours.</li>
             <li>Annule l'hôtel sur le site tiers pour recevoir le remboursement en argent.</li>
@@ -420,7 +408,7 @@
           <ol>
             <li>Réserve un hôtel entièrement remboursable sur n'importe quel site de réservation (Expedia, Booking ou directement à l'hôtel) avec ta carte MBNA.</li>
             <li>Attends que la transaction passe du statut en attente à <strong>postée</strong>.</li>
-            <li>Connecte-toi au portail MBNA Rewards et sélectionne l'option pour échanger tes points contre des achats de voyage admissibles (valide pour les transactions des 90 derniers jours).</li>
+            <li>Connecte-toi au portail MBNA Rewards et sélectionne l'option pour échanger tes points contre des achats de voyage admissibles, valide pour les transactions des 90 derniers jours.</li>
             <li>Applique tes points contre l'achat de l'hôtel. Le crédit au compte sera appliqué sous quelques jours.</li>
             <li>Annule la réservation d'hôtel via le marchand pour encaisser le remboursement sur ta carte.</li>
           </ol>
@@ -437,12 +425,12 @@
             <li>Patiente quelques jours, puis annule l'hôtel via le site du tiers. Le remboursement sera émis en argent directement sur ta carte.</li>
           </ol>
           <div class="warning">
-            ⚠️ <strong>Erreur fatale :</strong> Si tu réserves l'hôtel via le portail de récompenses CIBC en payant avec tes points, l'annulation te remboursera uniquement en points Aventura. Tu n'auras généré aucun encaissement.
+            <strong>Erreur fatale :</strong> Si tu réserves l'hôtel via le portail de récompenses CIBC en payant avec tes points, l'annulation te remboursera uniquement en points Aventura. Tu n'auras généré aucun encaissement.
           </div>
-          
+
           <div class="ai-summary" style="border-left-color: var(--accent-dark); margin-top: 32px;">
             <strong>Note de pro : CIBC Aventura et les promotions</strong><br>
-            Le RHT standard pour CIBC nécessite d'attraper la transaction pendant qu'elle est en attente (<em>pending</em>) pour <a href="https://cashinstinct.ca/valeur-points/fr/">obtenir 1&nbsp;¢/point</a>. Cependant, CIBC lance parfois des promotions <em>Shopping with Points</em> permettant d'effacer <strong>n'importe quel achat</strong> à un taux bonifié (souvent 1,25&nbsp;¢/point). Lorsqu'une telle promotion est active, le RHT devient inutile : il suffit de cibler une dépense courante pour encaisser les points à profit.
+            Le RHT standard pour CIBC nécessite d'attraper la transaction pendant qu'elle est en attente (<em>pending</em>) pour <a href="https://cashinstinct.ca/valeur-points/fr/">obtenir 1&nbsp;¢/point</a>. Cependant, CIBC lance parfois des promotions <em>Shopping with Points</em> permettant d'effacer <strong>n'importe quel achat</strong> à un taux bonifié, souvent 1,25&nbsp;¢/point. Lorsqu'une telle promotion est active, le RHT devient inutile : il suffit de cibler une dépense courante pour encaisser les points à profit.
           </div>
         </section>
 
@@ -457,7 +445,7 @@
             <li>Une fois la nouvelle carte active au système, annule la réservation d'hôtel. N'ayant plus de compte TD Rewards où renvoyer les points, le système émettra un crédit en argent sur le nouveau compte.</li>
           </ol>
           <div class="warning">
-            ⚠️ <strong>Erreur fatale :</strong> Si tu annules l'hôtel <em>avant</em> que le transfert de carte ne soit complété, les points retourneront simplement dans ton solde TD Rewards.
+            <strong>Erreur fatale :</strong> Si tu annules l'hôtel <em>avant</em> que le transfert de carte ne soit complété, les points retourneront simplement dans ton solde TD Rewards.
           </div>
         </section>
 
@@ -466,51 +454,48 @@
           <h2>Amex Gold / Platine — Crédit Voyage</h2>
           <p>Cette mécanique ne touche pas aux points MR, mais permet d'encaisser le crédit statutaire annuel.</p>
           <ol>
-            <li>Réserve un hôtel remboursable et <strong>prépayé</strong> obligatoirement via le portail <strong>Amex Travel</strong>.</li>
+            <li>Réserve un hôtel remboursable et <strong>prépayé</strong>, obligatoirement via le portail <strong>Amex Travel</strong>.</li>
             <li>Attends que la transaction et le crédit d'accompagnement de 100&nbsp;$ (Amex Gold) ou de 200&nbsp;$ (Amex Platine) apparaissent au compte.</li>
             <li>Annule la réservation après quelques jours. L'hôtel te remboursera le montant de la transaction.</li>
-            <li>Le crédit de 100&nbsp;$ ou 200&nbsp;$ reste sur le compte. (Note : Amex Canada ne reprend généralement pas ce crédit, contrairement aux pratiques plus agressives d'Amex US).</li>
+            <li>Le crédit de 100&nbsp;$ ou 200&nbsp;$ reste sur le compte. Note : Amex Canada ne reprend généralement pas ce crédit, contrairement aux pratiques plus agressives d'Amex US.</li>
           </ol>
         </section>
 
-        <section id="faq-solde">
-          <span class="section-label">Logistique</span>
-          <h2>Que faire avec le solde créditeur ?</h2>
-          <p>Si ton encaissement génère un solde positif important (ta carte tombe à -500&nbsp;$, par exemple), deux options s'offrent à toi :</p>
-          <ul>
-            <li><strong>Dépense organique (Recommandé) :</strong> Utilise simplement la carte pour tes dépenses quotidiennes (épicerie, essence, factures) jusqu'à ce que le solde revienne à zéro. C'est la méthode la plus discrète et sans friction.</li>
-            <li><strong>Demande de chèque :</strong> Tu peux contacter l'institution financière pour demander l'émission d'un chèque ou un virement pour le solde excédentaire. Le succès et la rapidité de cette méthode dépendent entièrement des procédures internes de chaque banque.</li>
-          </ul>
-        </section>
-
         <section id="faq">
-          <span class="section-label">FAQ</span>
-          <h2>Foire aux questions (FAQ)</h2>
-
-          <details>
-            <summary>Qu'est-ce que le Refundable Hotel Trick (RHT) ?</summary>
-            <p>Le Refundable Hotel Trick (RHT) est une méthode d'encaissement de points de voyage où vous réservez un hôtel remboursable, échangez des points ou un crédit de voyage contre ces frais, puis annulez la réservation afin que le remboursement retourne sur votre carte en argent comptant.</p>
-          </details>
-
-          <details>
-            <summary>Le Refundable Hotel Trick est-il autorisé par les banques ?</summary>
-            <p>Non. Ces méthodes vont généralement à l'encontre de l'esprit ou des conditions des programmes de récompenses. Leur utilisation peut vous exposer à des rappels de points (clawbacks), à une révision de compte ou à une fermeture de compte.</p>
-          </details>
-
-          <details>
-            <summary>Tous les programmes de récompenses canadiens fonctionnent-ils de la même manière ?</summary>
-            <p>Non. Certains programmes exigent que les frais d'hôtel soient postés avant que vous puissiez échanger vos points, tandis que d'autres ne fonctionnent que lorsque la transaction est encore en attente (pending).</p>
-          </details>
-
-          <details>
-            <summary>Quel est le risque principal avec le RHT ?</summary>
-            <p>Le risque principal est que l'émetteur annule l'échange de points, reprenne la valeur reçue ou ferme votre compte de récompenses s'il détecte un abus de la mécanique de remboursement.</p>
-          </details>
-
-          <details>
-            <summary>Peut-on utiliser le RHT avec des crédits de voyage au lieu des points ?</summary>
-            <p>Parfois. Par exemple, certains détenteurs de carte utilisent des réservations d'hôtel prépayées et remboursables pour déclencher les crédits de voyage annuels, puis annulent la réservation une fois le crédit apparu au compte.</p>
-          </details>
+          <span class="section-label">Logistique & FAQ</span>
+          <h2>Questions fréquentes</h2>
+          <div class="faq">
+            <details>
+              <summary id="faq-q1">Qu'est-ce que le Refundable Hotel Trick (RHT) ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q1">
+                <p>Le Refundable Hotel Trick (RHT) est une méthode d'encaissement de récompenses voyage où tu réserves un hôtel remboursable, appliques des points ou un crédit voyage contre cette transaction, puis annules la réservation afin que le remboursement revienne sur ta carte en argent.</p>
+              </div>
+            </details>
+            <details>
+              <summary id="faq-q2">Est-ce que le Refundable Hotel Trick est permis par les banques ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q2">
+                <p>Non. Ces méthodes vont généralement à l'encontre de l'esprit ou des conditions des programmes de récompenses. Leur utilisation peut t'exposer à un rappel des points, à une révision du compte ou à une fermeture de compte.</p>
+              </div>
+            </details>
+            <details>
+              <summary id="faq-q3">Est-ce que tous les programmes de récompenses canadiens fonctionnent de la même façon ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q3">
+                <p>Non. Certains programmes exigent que la transaction d'hôtel soit postée avant d'appliquer les points, tandis que d'autres ne fonctionnent que pendant que la transaction est encore en attente.</p>
+              </div>
+            </details>
+            <details>
+              <summary id="faq-q4">Que faire avec un solde créditeur ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q4">
+                <p>Si ton encaissement génère un solde positif important, tu peux soit l'écouler naturellement avec tes dépenses quotidiennes (option recommandée), soit contacter l'institution financière pour demander un chèque ou un virement du solde excédentaire.</p>
+              </div>
+            </details>
+            <details>
+              <summary id="faq-q5">Peut-on utiliser le RHT avec des crédits voyage plutôt qu'avec des points ?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q5">
+                <p>Parfois. Par exemple, certains titulaires de carte utilisent des réservations d'hôtel prépayées et remboursables pour déclencher un crédit voyage annuel, puis annulent la réservation après l'apparition du crédit.</p>
+              </div>
+            </details>
+          </div>
         </section>
 
       </div>
