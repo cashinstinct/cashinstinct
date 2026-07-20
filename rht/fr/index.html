@@ -89,6 +89,55 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que le Refundable Hotel Trick (RHT) ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le Refundable Hotel Trick (RHT) est une méthode d'encaissement de points de voyage où vous réservez un hôtel remboursable, échangez des points ou un crédit de voyage contre ces frais, puis annulez la réservation afin que le remboursement retourne sur votre carte en argent comptant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le Refundable Hotel Trick est-il autorisé par les banques ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. Ces méthodes vont généralement à l'encontre de l'esprit ou des conditions des programmes de récompenses. Leur utilisation peut vous exposer à des rappels de points (clawbacks), à une révision de compte ou à une fermeture de compte."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Tous les programmes de récompenses canadiens fonctionnent-ils de la même manière ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. Certains programmes exigent que les frais d'hôtel soient postés avant que vous puissiez échanger vos points, tandis que d'autres ne fonctionnent que lorsque la transaction est encore en attente (pending)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quel est le risque principal avec le RHT ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le risque principal est que l'émetteur annule l'échange de points, reprenne la valeur reçue ou ferme votre compte de récompenses s'il détecte un abus de la mécanique de remboursement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on utiliser le RHT avec des crédits de voyage au lieu des points ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Parfois. Par exemple, certains détenteurs de carte utilisent des réservations d'hôtel prépayées et remboursables pour déclencher les crédits de voyage annuels, puis annulent la réservation une fois le crédit apparu au compte."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg: #f4f9f9;
@@ -184,6 +233,25 @@
     .footer-links a { display: inline-block; padding: 10px 12px; margin: -4px 0; }
 
     @media (min-width: 768px) { body { font-size: 19px; } }
+
+    /* FAQ Details Styles */
+    details {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+    }
+    details p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: var(--text-soft);
+    }
   </style>
 </head>
 <body>
@@ -215,7 +283,6 @@
   <main id="main-content">
     <div class="container">
       <div class="prose">
-
         <nav class="breadcrumb" aria-label="Fil d'Ariane">
           <ol style="list-style: none; display: flex; flex-wrap: wrap; padding: 0; margin: 0;">
             <li style="display: flex; align-items: center;">
@@ -396,7 +463,7 @@
 
         <section id="amex">
           <span class="section-label">Crédit Annuel</span>
-          <h2>Amex Gold / Platine — Crédit Voyage</h2>⁠
+          <h2>Amex Gold / Platine — Crédit Voyage</h2>
           <p>Cette mécanique ne touche pas aux points MR, mais permet d'encaisser le crédit statutaire annuel.</p>
           <ol>
             <li>Réserve un hôtel remboursable et <strong>prépayé</strong> obligatoirement via le portail <strong>Amex Travel</strong>.</li>
@@ -414,6 +481,36 @@
             <li><strong>Dépense organique (Recommandé) :</strong> Utilise simplement la carte pour tes dépenses quotidiennes (épicerie, essence, factures) jusqu'à ce que le solde revienne à zéro. C'est la méthode la plus discrète et sans friction.</li>
             <li><strong>Demande de chèque :</strong> Tu peux contacter l'institution financière pour demander l'émission d'un chèque ou un virement pour le solde excédentaire. Le succès et la rapidité de cette méthode dépendent entièrement des procédures internes de chaque banque.</li>
           </ul>
+        </section>
+
+        <section id="faq">
+          <span class="section-label">FAQ</span>
+          <h2>Foire aux questions (FAQ)</h2>
+
+          <details>
+            <summary>Qu'est-ce que le Refundable Hotel Trick (RHT) ?</summary>
+            <p>Le Refundable Hotel Trick (RHT) est une méthode d'encaissement de points de voyage où vous réservez un hôtel remboursable, échangez des points ou un crédit de voyage contre ces frais, puis annulez la réservation afin que le remboursement retourne sur votre carte en argent comptant.</p>
+          </details>
+
+          <details>
+            <summary>Le Refundable Hotel Trick est-il autorisé par les banques ?</summary>
+            <p>Non. Ces méthodes vont généralement à l'encontre de l'esprit ou des conditions des programmes de récompenses. Leur utilisation peut vous exposer à des rappels de points (clawbacks), à une révision de compte ou à une fermeture de compte.</p>
+          </details>
+
+          <details>
+            <summary>Tous les programmes de récompenses canadiens fonctionnent-ils de la même manière ?</summary>
+            <p>Non. Certains programmes exigent que les frais d'hôtel soient postés avant que vous puissiez échanger vos points, tandis que d'autres ne fonctionnent que lorsque la transaction est encore en attente (pending).</p>
+          </details>
+
+          <details>
+            <summary>Quel est le risque principal avec le RHT ?</summary>
+            <p>Le risque principal est que l'émetteur annule l'échange de points, reprenne la valeur reçue ou ferme votre compte de récompenses s'il détecte un abus de la mécanique de remboursement.</p>
+          </details>
+
+          <details>
+            <summary>Peut-on utiliser le RHT avec des crédits de voyage au lieu des points ?</summary>
+            <p>Parfois. Par exemple, certains détenteurs de carte utilisent des réservations d'hôtel prépayées et remboursables pour déclencher les crédits de voyage annuels, puis annulent la réservation une fois le crédit apparu au compte.</p>
+          </details>
         </section>
 
       </div>
