@@ -1,54 +1,36 @@
 <!DOCTYPE html>
 <!--
 ═══════════════════════════════════════════════════════════════════════════════
-  CASHINSTINCT.CA — EBOX — PAGE EN (Ontario)        état : PROMO ACTIVE (1 MONTH)
-  Dernière refonte : 14 juillet 2026
+  CASHINSTINCT.CA — EBOX — ENGLISH PAGE (QC + ON)   STATUS: NO ACTIVE PROMOTION
+  Last structural update: July 23, 2026
 ───────────────────────────────────────────────────────────────────────────────
-  POUR LA PROCHAINE IA QUI ÉDITE CETTE PAGE — lire avant de toucher :
+  MAINTENANCE NOTES — READ BEFORE EDITING
+  • GE911 is an ongoing referral code. It gives eligible new residential
+    customers a $25 credit on the second bill. Do not date it or present it as
+    a temporary promotion.
+  • This English page serves both Quebec and Ontario. Keep the two official
+    English order paths distinct:
+      Quebec:  promo.ebox.ca/v-fibre/en-qc
+      Ontario: promo.ebox.ca/r-fibre/en-on
+  • Do not reuse prices, plan details, dates or promotions from one province in
+    the other. No limited-time promotion is active on this page.
+  • The countdown markup is intentionally commented out and PROMO_ACTIVE is
+    false. To reactivate it, verify the official offer and province, update the
+    label and PROMO_END, set PROMO_ACTIVE to true, then resynchronize the hero,
+    offer section, eligibility copy, metadata and relevant FAQ answers.
+  • FAQ HTML and FAQPage.mainEntity must always have the same number of
+    questions and convey the same information.
+  • Update dateModified manually before publishing. Footer and trust dates are
+    visual only and may be refreshed by JavaScript.
+  • Before publishing: parse JSON-LD; check duplicate IDs, aria-labelledby,
+    data-copy targets, script tag counts, heading hierarchy and sticky CTA order.
+  • Keep the EBOX video player separate from the Sticker Mule yt-lite player.
 
-  CONTEXTE / RAISONNEMENT
-  • Cette page EN cible l'ONTARIO (tous les liens d'inscription pointent vers
-    promo.ebox.ca/r-fibre/en-on ; préfixe r-fibre = ON, v-fibre = QC).
-  • Le code de parrainage GE911 = 25 $ de crédit sur la 2e facture. C'est un
-    programme PERMANENT, valide QC + ON. Il ne change pas : ne pas le dater.
-  • PROMO ACTIVE : 1 month free on Fibre 500 and 1 Gbps, until July 26.
-  • Les promos EBOX changent souvent et sont en général « non jumelables » entre
-    elles. NE JAMAIS promettre un cumul (ex. « 25 $ + promo = X ») sans l'avoir
-    confirmé auprès d'EBOX. Présenter GE911 comme un avantage DISTINCT.
-  • ATTENTION province : la promo EN d'EBOX diffère de la FR. Côté Ontario, le
-    funnel est r-fibre/en-on ; côté Québec, v-fibre/en-qc. Vérifier quelle
-    province/forfait/prix s'applique AVANT d'écrire des chiffres.
-
-  POUR RÉACTIVER UNE PROMO (quand EBOX en republie une)
-  1. Hero : décommenter le bloc countdown du hero (chercher countdown-wrapper,
-     actuellement en commentaire dans le header hero). Mettre à jour le label.
-  2. Script countdown (bas de page) : passer PROMO_ACTIVE à true et régler
-     PROMO_END à la date de fin RÉELLE (vérifier la note légale ET le bandeau —
-     ils se contredisent parfois ; en cas de doute, demander au support EBOX).
-  3. Section promo-100 (actuellement « How GE911 works ») : y réinjecter les
-     détails de la promo (montant, forfait, dates, région). Le CSS cumul-* est
-     conservé et réutilisable.
-  4. Resynchroniser : meta description / og / twitter / JSON-LD WebPage +
-     FAQ JSON-LD ↔ FAQ HTML visible (les deux DOIVENT correspondre).
-  5. Mettre à jour dateModified EN DUR dans le JSON-LD (head) au moment du push.
-     Le JS ne touche plus au JSON-LD (corrigé juin 2026 : l'injection client-side
-     était invisible aux crawlers en passe brute). Les <time> footer-date et
-     trust-date restent auto-générés par JS — affichage visuel uniquement.
-
-  VALIDATION OBLIGATOIRE AVANT PUSH (par exécution, jamais à l'œil)
-  • Parser le JSON-LD (json.loads) — une trailing comma casse tout le graphe.
-  • Compter : nb FAQ HTML == nb mainEntity FAQPage ; chaque summary a son
-    aria-labelledby ; aucun id dupliqué ; balises script ouvrantes == fermantes.
-  • Boutons de copie : chaque data-copy doit avoir data-target pointant un span
-    existant + data-label == texte du bouton (hero, tableau, CTA, sticky).
-  • Sticky CTA : le conteneur sticky-cta doit précéder son script d'init.
-
-   NE PAS « unifier » le lecteur vidéo (classe video-container) avec celui de
-  Sticker Mule (classe yt-lite) — implémentation volontairement séparée.
-
-  VOULU : Videotron + Montréal conservés sur la page EN — audience = anglophones QC
-  (Montréal-Ouest etc.) autant qu'Ontario. Comparaison Videotron pertinente pour eux.
-  Décision 2026-07-07. NE PAS "corriger".
+  INTENTIONAL:
+  Keep references to Videotron and Montreal.
+  This page targets English-speaking users in both Quebec and Ontario.
+  Do not remove these references during copy-editing.
+  Decision: 2026-07-07.
 
 ═══════════════════════════════════════════════════════════════════════════════
 -->
@@ -59,11 +41,9 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#bf2222" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f131a" />
 
-  <!-- Title unifié <60 chars, cohérent avec og:title -->
-  <title>EBOX Referral Code GE911 — $25 Credit + 1 Month Free (2026)</title>
+  <title>EBOX Referral Code GE911 — $25 Credit on Your Second Bill</title>
 
-  <!-- Meta description raccourcie <155 chars -->
-  <meta name="description" content="EBOX referral code GE911: $25 credit on your 2nd bill. Flash promo: 1 month free on Fibre 500/1000 Mbps until July 26. No contract, modem included." />
+  <meta name="description" content="Use EBOX referral code GE911 for a $25 credit on your second bill. Ongoing referral program for eligible new residential customers in Quebec and Ontario." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Cash Instinct" />
 
@@ -78,9 +58,8 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashinstinct.ca/ebox/en/" />
-  <!-- og:title aligné avec le <title> -->
-  <meta property="og:title" content="EBOX Referral Code GE911 — $25 Credit + 1 Month Free (2026)">
-  <meta property="og:description" content="Get a $25 credit with EBOX referral code GE911 on your 2nd bill. Plus 1 month free on Fibre 500/1000 Mbps until July 26.">
+  <meta property="og:title" content="EBOX Referral Code GE911 — $25 Credit">
+  <meta property="og:description" content="Use EBOX referral code GE911 for a $25 credit on your second bill. For eligible new residential customers in Quebec and Ontario.">
   <meta property="og:locale" content="en_CA" />
   <meta property="og:locale:alternate" content="fr_CA" />
   <meta property="og:site_name" content="Cash Instinct" />
@@ -90,9 +69,8 @@
   <meta property="og:image:type" content="image/png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <!-- twitter:title aligné -->
-  <meta name="twitter:title" content="EBOX Referral Code GE911 — $25 Credit + 1 Month Free (2026)">
-  <meta name="twitter:description" content="EBOX client code GE911: $25 credit on your 2nd bill for eligible new customers. Flash promo: 1 month free on Fibre until July 26.">
+  <meta name="twitter:title" content="EBOX Referral Code GE911 — $25 Credit">
+  <meta name="twitter:description" content="Use EBOX customer referral code GE911 for a $25 credit on your second bill. Quebec and Ontario.">
   <meta name="twitter:image" content="https://cashinstinct.ca/ebox/en/og.png" />
 
 <script type="application/ld+json">
@@ -109,12 +87,12 @@
       "@type": "WebPage",
       "@id": "https://cashinstinct.ca/ebox/en/",
       "url": "https://cashinstinct.ca/ebox/en/",
-      "name": "EBOX Referral Code GE911 — $25 Credit + 1 Month Free (2026)",
-      "description": "EBOX referral code GE911: $25 credit on your 2nd bill. Flash promo: 1 month free on Fibre 500/1000 Mbps until July 26. No contract, modem included.",
+      "name": "EBOX Referral Code GE911 — $25 Credit on Your Second Bill",
+      "description": "Use EBOX referral code GE911 for a $25 credit on your second bill. Ongoing referral program for eligible new residential customers in Quebec and Ontario.",
       "inLanguage": "en-CA",
       "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
       "datePublished": "2026-06-02",
-      "dateModified": "2026-07-14",
+      "dateModified": "2026-07-23",
       "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
       "publisher": {
         "@type": "Organization",
@@ -145,14 +123,14 @@
       "offers": {
         "@type": "Offer",
         "name": "EBOX referral credit (code GE911)",
-        "description": "Using referral code GE911 at sign-up applies a $25 credit on the second bill for eligible new EBOX residential customers in Quebec and Ontario. Plans start at no upfront cost (no installation fee, modem included); monthly Internet pricing is set by EBOX and varies by plan.",
+        "description": "Using referral code GE911 at sign-up provides a $25 credit on the second bill for eligible new EBOX residential customers in Quebec and Ontario. The referral code itself has no purchase price; monthly Internet pricing is set by EBOX and varies by plan.",
         "price": "0",
         "priceCurrency": "CAD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
           "price": "0",
           "priceCurrency": "CAD",
-          "description": "No upfront cost to subscribe with code GE911. The $25 referral credit is applied on the second bill. Monthly plan pricing is set by EBOX."
+          "description": "The referral code itself has no purchase price. The $25 referral credit is applied on the second bill for eligible customers. Monthly service pricing is determined by EBOX according to the selected plan."
         },
         "availability": "https://schema.org/InStock",
         "eligibleRegion": [
@@ -177,7 +155,7 @@
     {
       "@type": "HowTo",
       "@id": "https://cashinstinct.ca/ebox/en/#howto",
-      "name": "How to use EBOX client code GE911",
+      "name": "How to use EBOX referral code GE911",
       "description": "Steps to apply referral code GE911 and get a $25 credit on your second EBOX bill.",
       "totalTime": "PT5M",
       "step": [
@@ -191,7 +169,7 @@
         {
           "@type": "HowToStep",
           "position": 2,
-          "name": "Enter client code GE911",
+          "name": "Enter referral code GE911",
           "text": "When filling out the order form, find the field 'Enter the client number of the friend who referred you' and type GE911.",
           "url": "https://cashinstinct.ca/ebox/en/#howto-step-2"
         },
@@ -217,62 +195,62 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the EBOX client code to use in 2026?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The EBOX client code featured on this page is GE911. It gives a $25 credit on the 2nd bill for eligible new customers." }
+          "name": "What is the EBOX referral code?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The EBOX referral code featured on this page is GE911. It provides a $25 credit on the second bill for eligible new residential customers." }
         },
         {
           "@type": "Question",
-          "name": "Does EBOX client code GE911 still work?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. GE911 is a permanent client code, verified and updated regularly on this page. It applies the $25 credit available in the EBOX system for eligible new customers." }
+          "name": "Is the EBOX referral code GE911 still valid?",
+          "acceptedAnswer": { "@type": "Answer", "text": "GE911 belongs to EBOX's ongoing referral program and is checked regularly on this page. Eligible new residential customers can receive a $25 credit on their second bill." }
         },
         {
           "@type": "Question",
-          "name": "Why is EBOX code GE911 not working?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Cause #1 in 90% of cases: the code was entered in the Promo Code box instead of the Code — $25 for you and your friends! field. These two fields are distinct — only the second one activates the referral credit. Another case: if you reached EBOX through a reseller link, the $25 for you and your friends field may be hidden on the website. The code still applies — order directly at ebox.ca, or call EBOX at 1-844-323-EBOX (3269) to have GE911 added." }
+          "name": "Why isn't the EBOX referral code GE911 working?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The most common cause is entering GE911 in the Promo Code field instead of the referral field. If the referral field is missing, restart the order directly from ebox.ca or contact EBOX before completing the order to ask whether the code can be added." }
         },
         {
           "@type": "Question",
-          "name": "Does EBOX run promotions on top of code GE911?",
-          "acceptedAnswer": { "@type": "Answer", "text": "EBOX regularly runs limited-time promotions (prepaid cards, price drops on Fibre plans) for new customers in Quebec and Ontario. These promos change over time. Referral code GE911 is entered in a separate field from the Promo Code box, so it does not conflict with a promotion — you can fill in both. It gives a $25 credit on your 2nd bill. Always check ebox.ca for the current promotion." }
+          "name": "Does EBOX offer other promotions?",
+          "acceptedAnswer": { "@type": "Answer", "text": "EBOX occasionally offers limited-time promotions. GE911 belongs to its ongoing referral program and is entered in a separate referral field. Check the terms of the current offer to confirm whether the benefits can be combined." }
         },
         {
           "@type": "Question",
-          "name": "How much credit does EBOX code GE911 give?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Referral code GE911 gives a $25 credit on the second bill for eligible new EBOX residential customers in Quebec and Ontario. It is a permanent program with no expiry date." }
+          "name": "How much credit does GE911 provide?",
+          "acceptedAnswer": { "@type": "Answer", "text": "GE911 provides a $25 referral credit on the second bill for eligible new EBOX residential customers in Quebec and Ontario." }
         },
         {
           "@type": "Question",
-          "name": "Where exactly do I enter EBOX client code GE911?",
+          "name": "Where do I enter GE911?",
           "acceptedAnswer": { "@type": "Answer", "text": "Enter GE911 in the field labelled 'Enter the client number of the friend who referred you' — not in the Promo Code box. In the dropdown 'How did you hear about EBOX?', select 'Friend or family' before entering the code." }
         },
         {
           "@type": "Question",
           "name": "Is EBOX contract-free?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. EBOX requires no minimum commitment. You can cancel at any time without penalty — a concrete advantage over Bell or Videotron, which typically require 12 to 24-month contracts." }
+          "acceptedAnswer": { "@type": "Answer", "text": "EBOX states that its residential Internet service has no fixed-term contract. Review the current service terms for your province and selected plan before ordering." }
         },
         {
           "@type": "Question",
-          "name": "Can I add the EBOX referral code after signing up?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Officially, no — if you forgot to enter the code during checkout, EBOX formal policy states it must be entered at that point. However, many customers on Reddit report success by calling EBOX or opening a live chat session immediately after ordering. If your physical installation hasn't happened yet, support agents can manually bind code GE911 to your account." }
+          "name": "Can GE911 be added after the order?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Officially, the referral code should be entered during checkout. Some customers report that EBOX has helped them after the order when they contacted customer service before installation, but this is handled case by case and is not guaranteed." }
         },
         {
           "@type": "Question",
-          "name": "Was the EBOX discount $50 before?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes, EBOX temporarily offered a $50 promotional credit. Since June 2026, the standard referral discount has returned to $25 with code GE911." }
+          "name": "Does the EBOX referral code GE911 work in Quebec and Ontario?",
+          "acceptedAnswer": { "@type": "Answer", "text": "GE911 is intended for eligible new residential customers in both Quebec and Ontario. Choose the English order path for your province because availability and plan terms are determined by the service address." }
         },
         {
           "@type": "Question",
-          "name": "What is the difference between an EBOX promo code and this client code?",
-          "acceptedAnswer": { "@type": "Answer", "text": "These are two separate fields. The promo code is a temporary marketing offer. The client code (GE911) is a permanent referral entered in the 'Enter the client number of the friend who referred you' field — not in the Promo Code box." }
+          "name": "Is GE911 an EBOX promo code?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. GE911 is a customer referral code entered in the referral customer number field. A promotional code belongs in the separate Promo Code field and may have its own terms and expiry date." }
         },
         {
           "@type": "Question",
-          "name": "I used to be an EBOX customer. Can I use a referral code again?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your previous EBOX account has been completely closed for more than 12 months, and you sign up as a brand-new customer rather than reactivating your old profile, both you and the referrer are eligible for the $25 credit." }
+          "name": "Can former EBOX customers use a referral code?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A former customer may be treated as a new customer if the previous service has been closed for more than 12 months and a new order is submitted instead of a reactivation. Final eligibility is determined by EBOX." }
         },
         {
           "@type": "Question",
-          "name": "I'm already an EBOX customer — where do I find my own client code?",
+          "name": "Where can existing EBOX customers find their customer code?",
           "acceptedAnswer": { "@type": "Answer", "text": "Your client code appears on your EBOX invoice, right next to the contract number — typically a few letters followed by digits. You can also find it in your day-one emails, though not in the message body: it's the c= parameter in the account activation link (client.ebox.ca/validate URL), and it's embedded in the filename of the contract summary PDF (format ebox_contract_yourcode_contractnumber.pdf). If you deleted those emails, contact EBOX at 1-844-323-3269 or via live chat. Once you have it, you can share it to earn a $25 credit per referred subscriber — the same program as code GE911." }
         }
       ]
@@ -433,6 +411,12 @@
   padding: 10px 12px;
   margin: -4px 0;
 }
+    .footer-hub { max-width: 700px; margin: 24px auto 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; text-align: left; }
+    .footer-hub h2 { color: var(--text); font-size: 0.95rem; margin-bottom: 8px; }
+    .footer-hub ul { list-style: none; margin: 0; padding: 0; }
+    .footer-hub li { margin: 3px 0; }
+    .footer-hub a { color: var(--muted); text-decoration: none; display: inline-block; padding: 5px 0; }
+    .footer-hub a:hover { color: var(--accent); text-decoration: underline; }
     
     /* 4. COMPOSANTS RÉUTILISABLES & BLOCS SPÉCIAUX */
     /* Boutons et éléments d'action */
@@ -588,6 +572,42 @@
     .review-box p:last-child { margin-bottom: 0; }
     .review-box ul { margin: 16px 0 16px 20px; color: var(--text-soft); }
     .review-box li { margin-bottom: 10px; }
+    .experience-proof { background: var(--surface-soft); border: 1px solid var(--border); border-left: 4px solid #1a7a3c; border-radius: 8px; padding: 20px 24px; margin: 22px 0; }
+    .experience-proof h3 { color: var(--text); font-size: 1.15rem; margin-bottom: 12px; }
+    .experience-proof ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 20px; }
+    .experience-proof li { color: var(--text-soft); }
+
+    /* Province choice */
+    .province-picker { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin: 22px auto 0; max-width: 560px; text-align: center; }
+    .province-picker strong { display: block; color: var(--text); margin-bottom: 12px; }
+    .province-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .province-links a { display: inline-block; background: var(--accent); color: #fff; border-radius: 7px; padding: 10px 18px; font-weight: 800; text-decoration: none; }
+    .province-links a:hover { background: var(--accent-dark); }
+    [data-theme="dark"] .province-links a { background: #b91c1c; color: #fff; }
+    [data-theme="dark"] .province-links a:hover { background: #991b1b; color: #fff; }
+
+    /* Comparison cards */
+    .comparison-hub { margin: 34px 0; }
+    .comparison-hub > h3 { font-size: 1.55rem; font-weight: 800; margin-bottom: 18px; color: var(--text); letter-spacing: -0.02em; }
+    .comparison-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
+    .comparison-card { background: var(--surface-soft); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 12px; padding: 22px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+    .comparison-card h3 { color: var(--text); font-size: 1.2rem; margin-bottom: 12px; }
+    .comparison-card p { margin-bottom: 10px; }
+    .comparison-card ul { margin: 0 0 20px 20px; color: var(--text-soft); columns: 2; column-gap: 24px; }
+    .comparison-card li { margin-bottom: 7px; break-inside: avoid; }
+    .comparison-card .card-link { margin-top: auto; align-self: flex-start; display: inline-block; background: var(--accent); color: #fff; border-radius: 7px; padding: 10px 16px; font-weight: 800; text-decoration: none; }
+    .comparison-card .card-link:hover { background: var(--accent-dark); }
+    [data-theme="dark"] .comparison-card .card-link { background: #b91c1c; color: #fff; }
+    [data-theme="dark"] .comparison-card .card-link:hover { background: #991b1b; color: #fff; }
+    .comparison-reminder { background: var(--surface-soft); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 18px 20px; margin: 32px 0; }
+    .comparison-reminder h2 { font-size: 1.2rem; margin: 0 0 8px; text-align: left; }
+    .comparison-reminder p { margin: 0; }
+
+    /* Useful definitions */
+    .glossary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+    .glossary-item { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+    .glossary-item dt { color: var(--text); font-weight: 800; margin-bottom: 7px; }
+    .glossary-item dd { color: var(--text-soft); margin: 0; }
 
     /* Blocs FAQ (Détails déroulants) */
     .faq { display: grid; gap: 16px; }
@@ -713,6 +733,9 @@
       .topbar-inner { padding: 14px 20px; }
       .nav { gap: 12px; }
       .facts { grid-template-columns: 1fr; }
+      .comparison-cards, .glossary-grid, .experience-proof ul, .footer-hub { grid-template-columns: 1fr; }
+      .comparison-card ul { columns: 1; }
+      .footer-hub { text-align: center; gap: 14px; }
       body { padding-bottom: 80px; }
       
       /* cumul-sep visible en mobile avec texte inline entre items */
@@ -814,6 +837,7 @@
     <a class="brand" href="https://cashinstinct.ca/en/">Cash Instinct</a>
     <div class="nav">
       <a class="active" href="https://cashinstinct.ca/ebox/en/" aria-label="EBOX">EBOX</a>
+      <a href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/">Comparisons</a>
       <a href="https://cashinstinct.ca/stickermule/en/" aria-label="Sticker Mule">Sticker&nbsp;Mule</a>
       <a href="https://cashinstinct.ca/tangerine/en/" aria-label="Tangerine Bank">Tangerine</a>
       <a href="https://cashinstinct.ca/hp-instant-ink/en/" aria-label="HP Instant Ink">HP&nbsp;Ink</a>
@@ -827,18 +851,19 @@
     <div class="container">
       <div style="display:flex;justify-content:center;margin-bottom:28px;">
         <div class="cumul-badge" style="display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 6px; background: rgba(0,0,0,.25); border: 2px solid rgba(255,255,255,.6); border-radius: 40px; padding: 10px 16px; font-size: 0.9rem; font-weight: 800; color: #fff; max-width: calc(100% - 32px); box-sizing: border-box;">
-          <span style="white-space:nowrap;">🌐 EBOX code GE911</span>
+          <span style="white-space:nowrap;">🌐 EBOX Referral Code GE911</span>
           <span class="plus" style="opacity: .8; font-size: .9em; margin: 0 2px;">→</span>
-          <span class="total-pill" style="background: #fff; color: var(--accent); border-radius: 20px; padding: 4px 14px; font-size: .95rem; font-weight: 900; white-space: nowrap;">🎁 $25 + 1 month</span>
+          <span class="total-pill" style="background: #fff; color: var(--accent); border-radius: 20px; padding: 4px 14px; font-size: .95rem; font-weight: 900; white-space: nowrap;">🎁 $25 credit</span>
         </div>
       </div>
-      <h1>EBOX Referral Code GE911 — $25 credit + 1 MONTH FREE</h1>
-      <p>Enter <strong>referral code GE911</strong> at sign-up to get a <strong>$25 credit</strong> on your 2nd EBOX bill. ⚡ <strong>Flash Promo:</strong> Get <strong>1 month of free Internet</strong> on 500 Mbps or 1 Gbps Fibre plans before July 26!</p>
+      <h1>EBOX Referral Code GE911 — $25 Credit</h1>
+      <p>Enter <strong>referral code GE911</strong> during sign-up to receive a <strong>$25 credit on your second bill</strong>. The ongoing referral program is available to eligible new residential customers in Quebec and Ontario.</p>
       
-      
+      <!-- LIMITED-TIME PROMOTION — keep this block commented out. Reactivate it
+           only after verifying the offer, province and official end date.
       <div id="countdown-wrapper">
         <div class="countdown-bar" id="countdown-bar">
-          <span class="countdown-label">⏳ 1 month free promo expires in</span>
+          <span class="countdown-label">⏳ This offer expires in</span>
           <div class="countdown-units">
             <div class="countdown-unit"><span class="val" id="cd-days">--</span><span class="lbl">days</span></div>
             <div class="countdown-unit"><span class="val" id="cd-hours">--</span><span class="lbl">hours</span></div>
@@ -847,10 +872,10 @@
           </div>
         </div>
         <div class="promo-expired-notice" id="hero-expired-notice">
-          ✅ The "1 month free" promo has ended — code <strong>GE911</strong> is still active and gives you a <strong>$25 credit</strong> on your 2nd bill.
+          ✅ This limited-time offer has ended. Referral code <strong>GE911</strong> remains part of the ongoing referral program.
         </div>
       </div>
-      
+      -->
 
    
       <div class="hero-methods">
@@ -858,7 +883,7 @@
           <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-soft); letter-spacing: 0.05em;">
-                Step 1 — Copy the EBOX client code
+                Step 1 — Copy the EBOX referral code
               </p>
 
               <div class="input-copy-group" style="display: flex; flex-direction: column; background: transparent; border: none; gap: 10px; margin-bottom: 12px; padding: 0;">
@@ -869,16 +894,16 @@
               <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
 
               <p style="font-size: 0.95rem; line-height: 1.4; text-align: center; margin: 16px 0 0 0; color: var(--text-soft);">
-                Save the code to paste it in Personal Information section : "Code — $25 for you and your friends!".
+                Save the code, then paste it into the Personal Information section under "Code — $25 for you and your friends!"
               </p>
 
               <p style="font-size: 0.95rem; line-height: 1.4; text-align: center; margin: 12px 0 0 0; color: var(--text-soft);">
-                GE911 is a permanent EBOX customer code and is always valid.
+                GE911 belongs to EBOX's ongoing referral program for eligible new residential customers.
               </p>
             </div>
 
             <p style="font-size: 0.95rem; line-height: 1.4; text-align: center; margin: 24px 0 0 0;">
-              <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer" style="text-decoration: underline; font-weight: 700;">Go to the official EBOX website</a> and enter it in the field shown above.
+              Choose the English sign-up path for your province below.
             </p>
           </div>
 
@@ -888,7 +913,7 @@
                 Step 2 — Paste in the Personal Information section
               </p>
 
-              <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer" style="display: block;">
+              <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer" style="display: block;">
                 <picture>
                   <source srcset="https://cashinstinct.ca/ebox/en/images/ebox-client-code-ge911-validation-EN.webp" type="image/webp">
                   <img src="https://cashinstinct.ca/ebox/en/images/ebox-client-code-ge911-validation-EN.png"
@@ -902,15 +927,22 @@
                 </picture>
               </a>
               <p style="font-size: 0.95rem; line-height: 1.4; text-align: center; margin: 16px 0 0 0; color: var(--text-soft);">
-                Once you paste GE911, the system will instantly display a green confirmation text message "The code you entered is valid". You can't go wrong.
+                After you paste GE911, the form displays a green confirmation message: "The code you entered is valid." This confirmation lets you verify that the code was accepted before continuing.
               </p>
             </div>
 
             <p style="font-size: 0.95rem; line-height: 1.4; text-align: center; margin: 24px 0 0 0;">
-              <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer" style="text-decoration: underline; font-weight: 700;">Go to the official EBOX website</a> and enter it in the field shown above.
+              Use the referral customer number field shown above, not the Promo Code field.
             </p>
           </div>
 
+        </div>
+        <div class="province-picker" role="group" aria-labelledby="province-picker-heading">
+          <strong id="province-picker-heading">Choose your province</strong>
+          <div class="province-links">
+            <a href="https://promo.ebox.ca/v-fibre/en-qc" target="_blank" rel="noopener sponsored noreferrer">Quebec</a>
+            <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer">Ontario</a>
+          </div>
         </div>
     </div>
   </header>
@@ -936,7 +968,7 @@
         </nav>
 
         <div class="post-promo-notice" id="post-promo-block">
-          ℹ️ <strong>This promotion has now ended.</strong> Referral code <strong>GE911</strong> is still active and always gives <strong>$25 credit</strong> on your 2nd EBOX bill. No expiry — it's a permanent program.
+          Referral code <strong>GE911</strong> remains part of EBOX's ongoing referral program and provides a <strong>$25 credit</strong> on the second bill for eligible customers.
         </div>
 
         <nav aria-label="Internal navigation" style="font-size: 0.95rem; margin-top: -12px; margin-bottom: 32px; text-align: center; color: var(--muted);">
@@ -945,7 +977,7 @@
           <a href="#how-to-use" style="text-decoration: underline;">Activation Guide</a> ·
           <a href="#video-tutorial" style="text-decoration: underline;">Video Tutorial</a> ·
           <a href="#eligibility" style="text-decoration: underline;">Eligibility</a> ·
-          <a href="#comparison" style="text-decoration: underline;">EBOX vs Bell vs Videotron</a> ·
+          <a href="#comparisons" style="text-decoration: underline;">Comparisons</a> ·
           <a href="#review" style="text-decoration: underline;">My Experience</a> ·
           <a href="#glossary" style="text-decoration: underline;">Glossary</a> ·
           <a href="#faq" style="text-decoration: underline;">FAQ</a>
@@ -955,58 +987,53 @@
           <section class="summary-box" aria-labelledby="summary-heading">
           <h2 id="summary-heading">Quick summary of the EBOX referral code</h2>
           <div class="ai-summary">
-          The active EBOX client number is <strong>GE911</strong>. This permanent referral code provides a credit of <strong>$25 automatically applied on the second bill</strong> for any eligible new residential subscriber. It must be entered in the Personal Information section : <em>"Code — $25 for you and your friends!"</em> field during the initial online order or by phone at <a href="tel:+18443233269">1-844-323-EBOX (3269)</a>.
+          The EBOX referral code featured on this page is <strong>GE911</strong>. Eligible new residential customers receive a <strong>$25 credit on their second bill</strong>. Enter it in the Personal Information section under <em>"Code — $25 for you and your friends!"</em> when ordering online, or provide it by phone at <a href="tel:+18443233269">1-844-323-EBOX (3269)</a>.
           Many people search for "EBOX referral code", "EBOX promo code", or "EBOX client number"; in the order form, the official field is labelled "Enter the client number of the friend who referred you".
           <br><br>
-          ℹ️ <strong>About promotions:</strong> EBOX regularly runs limited-time offers (prepaid cards, Fibre price drops) for new customers in Quebec and Ontario. Code GE911 is a separate, permanent program that gives <strong>$25 credit</strong> on your 2nd bill. Check <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> for the current promotion. No contract, modem included.
+          ℹ️ <strong>About promotions:</strong> EBOX occasionally offers limited-time promotions. GE911 belongs to its ongoing referral program and is entered in a separate referral field. Check the terms of the current offer to confirm whether the benefits can be combined.
         </div>
           <div class="transparency" style="margin-bottom: 24px;">
-            <strong>Transparency:</strong> this independent guide provides EBOX referral tracking. If you sign up with client code <code>GE911</code>, you get your $25 credit on your 2nd bill (fully funded by EBOX) — and EBOX also gives me a referral credit, at no extra cost to you. Full disclosure at the bottom of this page.
+            <strong>Transparency:</strong> This is an independent guide to the EBOX referral program. If you sign up with referral code <code>GE911</code>, you receive a $25 credit on your second bill, funded by EBOX. EBOX also gives me a referral credit at no additional cost to you. Full disclosure appears at the bottom of this page.
           </div>
-          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-07-14">July 14, 2026</time></p>
+          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-07-23">July 23, 2026</time></p>
         </section>
 
         <section id="promo-100" aria-label="How the EBOX GE911 referral works">
-          <span class="section-label">Combined Offer</span>
-          <h2>EBOX referral code GE911 — $25 + 1 month free</h2>
+          <span class="section-label">Referral Program</span>
+          <h2>How the EBOX GE911 referral credit works</h2>
 
           <div class="cumul-box">
             <h3>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="color:var(--accent);"><polyline points="20 6 9 17 4 12"/></svg>
-              Flash Promo + Referral: Double Benefit
+              EBOX referral program at a glance
             </h3>
-            <div class="cumul-row" style="grid-template-columns: 1fr auto 1fr; max-width: 600px; margin: 0 auto;">
+            <div class="cumul-row" style="grid-template-columns: 1fr; max-width: 360px; margin: 0 auto;">
               <div class="cumul-item">
-                <span class="amount">1 Month</span>
-                <span class="label">Free Internet<br>(500M or 1G Fibre)</span>
-              </div>
-              <div class="cumul-sep">+</div>
-              <div class="cumul-item cumul-total">
                 <span class="amount">$25</span>
-                <span class="label">Referral Credit<br>Code GE911</span>
+                <span class="label">Credit on the second bill<br>with code GE911</span>
               </div>
             </div>
             <p class="cumul-note" style="margin-top: 16px;">
-              💡 <strong>How it works.</strong> Subscribe to a 500 Mbps or 1 Gbps Fibre plan before July 26 to get one month free (credited on your 2nd bill). Enter code <code>GE911</code> during sign-up in the referral field to add an <strong>extra $25 credit</strong>.
+              💡 <strong>How it works.</strong> Enter <code>GE911</code> in the referral customer number field during sign-up. Eligible new residential customers receive a <strong>$25 credit on the second bill</strong>.
             </p>
           </div>
 
           <div class="facts" style="margin-top: 24px;">
             <div class="fact">
               <strong>💵 Credit amount</strong>
-              <span>$25 applied automatically on your 2nd bill.</span>
+              <span>$25 applied automatically to your second bill.</span>
             </div>
             <div class="fact">
               <strong>♾️ Validity</strong>
-              <span>Permanent program — no expiry date.</span>
+              <span>Ongoing EBOX referral program.</span>
             </div>
             <div class="fact">
               <strong>📍 Eligible regions</strong>
               <span>New residential customers in Quebec and Ontario.</span>
             </div>
             <div class="fact">
-              <strong>📦 Included</strong>
-              <span>Modem and router included, $0 installation. No contract.</span>
+              <strong>📍 Province-specific order</strong>
+              <span>Choose the Quebec or Ontario English sign-up path for your service address.</span>
             </div>
           </div>
 
@@ -1015,34 +1042,34 @@
           <ol class="steps">
             <li id="promo-step-1">
               <div>
-                <h3>Go to ebox.ca and choose your Fibre plan</h3>
-                <p>Select the residential Internet plan that fits your address, where the technology is available.</p>
+                <h3>Go to ebox.ca and choose an Internet plan</h3>
+                <p>Select a residential Internet plan available at your address.</p>
               </div>
             </li>
             <li id="promo-step-2">
               <div>
-               <h3>Enter client code GE911</h3>
-                <p>When filling out the order form, specifically look for the <strong>"Code — $25 for you and your friends!"</strong> field and type <code>GE911</code> in the "Enter the client number of the friend who referred you" field. Be careful not to confuse it with the general promo code box.</p>  </div>
+               <h3>Enter referral code GE911</h3>
+                <p>On the order form, find <strong>"Code — $25 for you and your friends!"</strong> and enter <code>GE911</code> in the "Enter the client number of the friend who referred you" field. Do not use the separate Promo Code box.</p>  </div>
             </li>
             <li id="promo-step-3">
               <div>
                 <h3>Confirm the on-screen validation</h3>
-                <p>The system instantly shows a green confirmation that the code is valid. Complete your order — the $25 credit lands on your 2nd bill.</p>
+                <p>The form displays a green message confirming that the code is valid. Complete your order, and the $25 credit will appear on your second bill.</p>
               </div>
             </li>
           </ol>
 
           <div class="transparency" style="margin-top: 24px;">
-            <strong>Note:</strong> Code GE911 is a permanent referral program giving $25 credit on the 2nd bill for eligible new EBOX residential customers in Quebec and Ontario. It is entered in a separate field from the Promo Code box, so it applies to any direct order at ebox.ca alongside a current promotion. Always verify current terms on the official site <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> before ordering.
+            <strong>Note:</strong> GE911 belongs to EBOX's ongoing referral program and is entered in a separate field from a promotional code. Check the terms of any current offer on <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> to confirm whether the benefits can be combined.
           </div>
         </section>
 
         <section id="how-to-use" aria-label="Usage instructions">
           <span class="section-label">Quick Tutorial</span>
-          <h2>How to use client code GE911</h2>
+          <h2>How to use referral code GE911</h2>
 
          <div class="warning">
-         ⚠️ <strong>Missed the field during checkout?</strong> Officially, EBOX states it's not possible to add a code retroactively. However, recent user reports on Reddit confirm that if you contact EBOX customer service (via phone or online chat) <strong>immediately after ordering and before your installation date</strong>, support agents will usually add code <code>GE911</code> manually as a courtesy. Don't wait!
+         ⚠️ <strong>Missed the field during checkout?</strong> Officially, the referral code should be entered during checkout. Some customers report that EBOX has helped them after the order when they contacted customer service before installation, but this is handled case by case and is not guaranteed. If you missed <code>GE911</code>, contact EBOX as soon as possible.
         </div>
 
           <div class="field-exact">
@@ -1063,8 +1090,8 @@
             </li>
             <li id="howto-step-2">
               <div>
-                <h3>Enter client code GE911</h3>
-                <p>When filling out the order form, specifically look for the <strong>"Code — $25 for you and your friends!"</strong> field and type <code>GE911</code> in the "Enter the client number of the friend who referred you" field. Be careful not to confuse it with the general promo code box.</p>
+                <h3>Enter referral code GE911</h3>
+                <p>On the order form, find <strong>"Code — $25 for you and your friends!"</strong> and enter <code>GE911</code> in the "Enter the client number of the friend who referred you" field. Do not use the separate Promo Code box.</p>
                   <picture>
                    <source srcset="https://cashinstinct.ca/ebox/en/images/ebox-client-code-ge911-validation-EN.webp" type="image/webp">
                     <img src="https://cashinstinct.ca/ebox/en/images/ebox-client-code-ge911-validation-EN.png"
@@ -1086,8 +1113,8 @@
             </li>
             <li id="howto-step-4">
               <div>
-                <h3>Get your $25 discount</h3>
-                <p>Complete your subscription. The $25 credit will be automatically applied on your <strong>second bill</strong>.</p>
+                <h3>Receive your $25 credit</h3>
+                <p>Complete your order. The $25 credit will be applied automatically to your <strong>second bill</strong>.</p>
               </div>
             </li>
           </ol>
@@ -1095,12 +1122,12 @@
 
         <section id="code-not-working" aria-label="EBOX code troubleshooting">
           <span class="section-label">Troubleshooting</span>
-          <h2>EBOX code GE911 not working? Here's why</h2>
-          <p>The vast majority of failures come from one problem: the code was entered in the <strong>wrong field</strong>. EBOX has two distinct boxes in its form — and they don't do the same thing.</p>
+          <h2>Why isn't EBOX referral code GE911 working?</h2>
+          <p>The most common issue is entering the code in the <strong>wrong field</strong>. The EBOX form has two separate fields, each with a different purpose.</p>
 
           <div class="field-exact">
             <strong>✅ Correct section — this is where GE911 goes</strong>
-            Exact label: <em>"Code — $25 for you and your friends!"</em> Location: Personal Information page.
+            Look for <em>"Code — $25 for you and your friends!"</em> on the Personal Information page.
           </div>
 
           <div class="warning">
@@ -1133,7 +1160,7 @@
                 </tr>
                 <tr>
                   <td>Code added after account creation</td>
-                  <td>Cannot be applied retroactively — must be entered at initial order</td>
+                  <td>Enter the code when placing the initial order</td>
                 </tr>
                 <tr>
                   <td>Existing account at the same address</td>
@@ -1141,7 +1168,7 @@
                 </tr>
                 <tr>
                   <td>Typo in the code</td>
-                  <td>Copy GE911 exactly — no spaces, no lowercase</td>
+                  <td>Copy GE911 exactly, with no spaces and in uppercase</td>
                 </tr>
               </tbody>
             </table>
@@ -1153,8 +1180,8 @@
              DIFFÉRENTE du .yt-lite de Sticker Mule. VOULU — développé séparément.
              VideoObject JSON-LD aligné sur cette vidéo (dUFRORlBJYA). Ne pas "unifier". -->
           <span class="section-label">Video Guide</span>
-          <h2>Video tutorial (In French)</h2>
-          <p>Watch this quick screen recording showing exactly where to find and fill the referral field during checkout.</p>
+          <h2>Video tutorial (French audio)</h2>
+          <p>This short screen recording shows where to find the referral field and enter the code during checkout.</p>
           
           <div class="video-container">
             <!-- tabindex="0" + role="button" pour accessibilité clavier -->
@@ -1198,107 +1225,107 @@
             })();
           </script>
           <div class="transparency">
-            <strong>Visual Reminder:</strong> Even though the video guide is in French, the interface layout is identical on the English site. Do not use the "Promo Code" box at the top. Enter <code>GE911</code> in the Personal Information section : <strong>"Code — $25 for you and your friends!"</strong>.
+            <strong>Visual reminder:</strong> Although the video is in French, the English checkout uses the same layout. Do not use the Promo Code box at the top. Enter <code>GE911</code> in the Personal Information section under <strong>"Code — $25 for you and your friends!"</strong>
           </div>
         </section>
         
         <section id="eligibility" aria-label="Eligibility criteria">
           <span class="section-label">Conditions</span>
           <h2>Who can use the EBOX referral code?</h2>
-          <p>Client number <code>GE911</code> is intended for any <strong>new residential customer</strong> subscribing to an EBOX Internet plan in Quebec or Ontario. To prevent abuse, the referral code cannot be used for multiple subscriptions at the same physical address.</p>
-          <p>🔄 <strong>Former EBOX customers:</strong> If you previously had an account, you are still eligible for the $25 credit <strong>only if your account has been closed for more than 12 months</strong>, and you create a completely new account instead of reactivating your old profile.</p>
-          <p>🎁 <strong>Limited-time promotions:</strong> EBOX periodically offers time-limited deals (prepaid cards, Fibre price drops) for new customers in Quebec and Ontario. These use the separate Promo Code field, so the GE911 referral credit applies on top of any direct ebox.ca order. Check <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> for any current offer.</p>
+          <p>Referral code <code>GE911</code> is intended for <strong>new residential customers</strong> signing up for EBOX Internet in Quebec or Ontario. The referral code cannot be used for multiple subscriptions at the same address.</p>
+          <p>🔄 <strong>Former EBOX customers:</strong> A former customer may be treated as a new customer if the previous service has been closed for more than 12 months and a new order is submitted instead of a reactivation. Final eligibility is determined by EBOX.</p>
+          <p>🎁 <strong>Limited-time promotions:</strong> EBOX occasionally offers temporary deals. GE911 is entered in a separate referral field from a promotional code. Check the current offer terms on <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> to confirm whether the benefits can be combined.</p>
         </section>
 
         <section id="comparison" aria-label="EBOX vs Bell vs Videotron comparison">
           <span class="section-label">Comparison</span>
-          <h2>EBOX vs Bell vs Videotron — 2026 Comparison</h2>
-          <p>EBOX uses the same fibre infrastructure as Bell (FTTH network). You get the same physical connection, at an independent provider's price — no contract, equipment included.</p>
-
+          <h2>Is EBOX cheaper than Bell or Videotron?</h2>
+          <div class="ai-summary">
+            For commonly advertised 500 Mbps plans in Quebec, EBOX is currently about
+            <strong>$20–$23 per month less</strong> than Bell or Videotron. That works out to roughly
+            <strong>$240–$276 per year</strong>, before considering referral credits.
+          </div>
+          <p>Many people compare EBOX with Bell because both services often use Bell’s fibre network where available.</p>
           <div class="seo-table-wrap">
-            <table class="seo-table" aria-label="EBOX vs Bell vs Videotron comparison 2026">
+            <table class="seo-table" aria-label="Compact comparison of publicly advertised 500 Mbps Internet plans">
               <thead>
                 <tr>
-                  <th>Criteria</th>
-                  <th>EBOX + client code GE911</th>
-                  <th>Bell Fibe</th>
-                  <th>Videotron</th>
+                  <th>Provider</th>
+                  <th>Typical 500 Mbps*</th>
+                  <th>Contract</th>
+                  <th>Network</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>~500 Mbps</td>
-                  <td><strong>~$55/month</strong></td>
+                  <td>EBOX <button class="copy-btn-micro" data-copy="GE911" data-label="Copy GE911" data-target="copyStatusComparison" aria-controls="copyStatusComparison" type="button">Copy GE911</button></td>
+                  <td>~$55/month</td>
+                  <td>No fixed term</td>
+                  <td>Bell FTTH where available</td>
+                </tr>
+                <tr>
+                  <td>Bell</td>
                   <td>~$75/month</td>
-                  <td>~$75/month</td>
+                  <td>Varies by offer</td>
+                  <td>Bell FTTH where available</td>
                 </tr>
                 <tr>
-                  <td>~1 Gbps</td>
-                  <td><strong>~$65/month</strong></td>
-                  <td>~$85/month</td>
-                  <td>~$75/month</td>
-                </tr>
-                <tr>
-                  <td>Contract</td>
-                  <td><strong>None</strong></td>
-                  <td>Typically 24 months</td>
-                  <td>Typically 12–24 months</td>
-                </tr>
-                <tr>
-                  <td>Equipment</td>
-                  <td><strong>Modem + router included</strong></td>
-                  <td>Rental ~$12/month</td>
-                  <td>Rental ~$10/month</td>
-                </tr>
-             <tr>
-  <td>New customer discount</td>
-  <td><strong>$25 <button class="copy-btn-micro" data-copy="GE911" data-label="Copy GE911" data-target="copyStatusTable" aria-controls="copyStatusTable" type="button">Copy GE911</button> referral credit</strong></td>      
-  <td>No equivalent</td>
-  <td>Variable promo</td>
-</tr>
-                <tr>
-                  <td>Physical network</td>
-                  <td>Bell FTTH</td>
-                  <td>Bell FTTH</td>
-                  <td>Videotron coax cable</td>
+                  <td>Videotron</td>
+                  <td>~$78/month</td>
+                  <td>No commitment advertised</td>
+                  <td>Fibre/coax hybrid; FTTH in select areas</td>
                 </tr>
               </tbody>
-</table>
-</div>
-<div style="min-height: 1.5em; margin-top: 4px; text-align: center;">
-  <span id="copyStatusTable" style="font-size: 0.85rem; font-weight: 700; color: var(--ok);" role="status" aria-atomic="true" aria-live="polite"></span>
-</div>
-
-<p style="font-size: 0.85rem; color: var(--muted); margin-top: 8px;">
-  Approximate prices. Check each provider's website for your address.
-</p>
-
-          <div class="ai-summary" style="margin-top: 28px;">
-            💰 <strong>Real-world savings example — switching from Bell to EBOX</strong><br><br>
-            Bell 500 Mbps: <strong>~$75/month</strong><br>
-            EBOX 500 Mbps with client code GE911: <strong>~$55/month</strong><br><br>
-            Difference: <strong>$20/month → $240 saved per year</strong>, plus a $25 GE911 referral credit on your 2nd bill, without changing the physical network, and with no contract.
+            </table>
           </div>
-
-          <p style="margin-top: 16px;">
-            Comparing EBOX against budget providers instead? See our detailed <a href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/">EBOX vs Fizz vs oxio — Quebec internet 2026</a> comparison: real prices, speeds, installation fees, and referral programs for all three providers.
+          <div style="min-height: 1.5em; margin-top: 4px; text-align: center;">
+            <span id="copyStatusComparison" style="font-size: 0.85rem; font-weight: 700; color: var(--ok);" role="status" aria-atomic="true" aria-live="polite"></span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: 8px;">
+            <small>*Approximate publicly advertised pricing for new customers. Quebec example shown; Ontario pricing differs. Prices, eligibility and service availability vary by address and can change without notice.</small>
           </p>
-          <p style="margin-top: 12px;">
-            Weighing EBOX against the big incumbents instead? See our <a href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/">EBOX vs Bell vs Videotron — Quebec internet 2026</a> comparison: grid vs promo prices, upload ceilings, and the fine print on credits that expire.
+          <p>
+            For detailed pricing, equipment, promotions and province-specific plans, see the complete
+            <a href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/">EBOX vs Bell vs Videotron comparison</a>.
           </p>
+          <div class="comparison-hub" id="comparisons" aria-labelledby="comparisons-heading">
+            <span class="section-label">Detailed Guides</span>
+            <h3 id="comparisons-heading">Still deciding?</h3>
+            <p>Use the comparison that best matches the providers on your shortlist.</p>
+            <div class="comparison-cards">
+              <article class="comparison-card">
+                <h3>EBOX vs Bell vs Videotron</h3>
+                <p>Compare the major providers across the factors that matter to your household:</p>
+                <ul>
+                  <li>pricing</li><li>promotions</li><li>speed</li>
+                  <li>service terms</li><li>equipment</li><li>support</li>
+                </ul>
+                <a class="card-link" href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/">View the comparison <span aria-hidden="true">→</span></a>
+              </article>
+              <article class="comparison-card">
+                <h3>EBOX vs Fizz vs oxio</h3>
+                <p>Compare lower-cost providers according to your connection needs:</p>
+                <ul>
+                  <li>pricing</li><li>service quality</li><li>speed</li>
+                  <li>fibre availability</li><li>referral programs</li>
+                </ul>
+                <a class="card-link" href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/">View the comparison <span aria-hidden="true">→</span></a>
+              </article>
+            </div>
+          </div>
         </section>
 
         <section id="details" aria-label="Quick technical information">
-          <span class="section-label">At a Glance</span>
+          <span class="section-label">At a glance</span>
           <h2>Useful information about EBOX</h2>
           <div class="facts">
             <div class="fact">
-              <strong>When the discount applies</strong>
-              <span>The credit is applied on the 2nd bill.</span>
+              <strong>When the credit applies</strong>
+              <span>The credit is applied to the second bill.</span>
             </div>
             <div class="fact">
               <strong>Validity</strong>
-              <span>Referral code GE911 is permanent and active in 2026.</span>
+              <span>GE911 belongs to EBOX's ongoing referral program.</span>
             </div>
             <div class="fact">
               <strong>🎁 Promotions</strong>
@@ -1324,62 +1351,49 @@
         </section>
 
         <section id="review" aria-label="Personal review">
-          <span class="section-label">My Experience</span>
-          <h2>My review of EBOX</h2>
+          <span class="section-label">My experience</span>
+          <h2>My EBOX experience</h2>
           <div class="review-box">
            <div class="trust-badge">✓ Tested and verified by Cash Instinct</div>
-            <p>Since switching to EBOX on the 500 Mbps Fibre plan in the Montreal area (QC), my experience has been very positive. Speedtest measurements consistently show 480–510 Mbps download / 490–510 Mbps upload. I've had no billing errors and my uptime monitoring shows fewer than 3 visible disconnections over 6 months.</p>
-            <p>What I particularly appreciate:</p>
+            <aside class="experience-proof" aria-labelledby="why-ebox-heading">
+              <h3 id="why-ebox-heading">Why I recommend EBOX</h3>
+              <ul>
+                <li>✓ Current customer</li>
+                <li>✓ Fibre 500 Mbps plan</li>
+                <li>✓ Speedtests around 480–510 Mbps</li>
+                <li>✓ Few observed disconnections</li>
+                <li>✓ No billing errors in my experience</li>
+              </ul>
+            </aside>
+            <p>Since switching to EBOX's Fibre 500 Mbps plan in the Montreal area, I've had a very positive experience. My Speedtest results consistently show download speeds of 480–510 Mbps and upload speeds of 490–510 Mbps. I haven't encountered any billing errors, and my uptime monitoring recorded fewer than three noticeable disconnections over six months.</p>
+            <p>What I appreciate most:</p>
             <ul>
-              <li><strong>Fibre network reliability:</strong> Outages have been rare in my experience, strongly supported by the solidity of Bell's infrastructure on which EBOX operates.</li>
-              <li><strong>No contract:</strong> Full freedom to cancel without penalty — a concrete advantage over Bell or Videotron.</li>
-              <li><strong>Simple billing:</strong> No nasty surprises or billing errors.</li>
-              <li><strong>Better overall impression:</strong> Personally, EBOX has given me a better impression of stability than my past experience with Videotron (Vidéotron).</li>
+              <li><strong>Reliable fibre service:</strong> Outages have been rare in my experience. EBOX delivers service over Bell's fibre infrastructure.</li>
+              <li><strong>No contract:</strong> I can cancel without a penalty, which gives me more flexibility.</li>
+              <li><strong>Straightforward billing:</strong> I haven't encountered unexpected charges or billing errors.</li>
+              <li><strong>A stable experience:</strong> EBOX has felt more stable than my previous Videotron service.</li>
             </ul>
-            <p>If you're looking for a simple, reliable Internet provider that's easy to recommend to people around you, EBOX is an option I find genuinely solid based on my own experience.</p>
+            <p>To place this experience in context, see the <a href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/">EBOX vs Bell vs Videotron comparison</a>.</p>
             <p style="margin-top: 20px; font-size: 0.95rem; border-top: 1px dashed var(--border); padding-top: 15px;">
-              💡 Optimizing your household expenses? Also check out my guides and codes for <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a>, your accounts with <a href="https://cashinstinct.ca/tangerine/en/">Tangerine</a>, or your printer ink with <a href="https://cashinstinct.ca/hp-instant-ink/en/">HP Instant Ink</a>.
+              💡 Looking to reduce household expenses? See my other guides and codes for <a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a>, <a href="https://cashinstinct.ca/tangerine/en/">Tangerine</a>, and <a href="https://cashinstinct.ca/hp-instant-ink/en/">HP Instant Ink</a>.
             </p>
           </div>
         </section>
 
         <section id="glossary" aria-label="EBOX client number glossary">
           <span class="section-label">Glossary</span>
-          <h2>Terms associated with EBOX referral model</h2>
-          <p>The EBOX referral ecosystem uses various marketing keywords across the web. Here is a clear summary to help you navigate checkout safely:</p>
-          
-          <div class="seo-table-wrap">
-            <table class="seo-table" aria-label="Glossary of EBOX referral keywords">
-              <thead>
-                <tr>
-                  <th>Searched Keyword</th>
-                  <th>Meaning &amp; Setup Context</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>EBOX Client Number</td>
-                  <td>The official account ID required to activate user rewards. On this platform, the verified code is <strong>GE911</strong>.</td>
-                </tr>
-                <tr>
-                  <td>GE911</td>
-                  <td>The permanent, tested referral code active for 2026. Secures an automatic $25 credit on your second invoice.</td>
-                </tr>
-                <tr>
-                  <td>EBOX Promo Code</td>
-                  <td>A distinct container located at the very top of checkout, reserved exclusively for targeted corporate events. Do not submit GE911 here.</td>
-                </tr>
-                <tr>
-                  <td>EBOX Referral Code / Reference</td>
-                  <td>Common forum slang phrases used by shoppers when looking for an active user identification string.</td>
-                </tr>
-                <tr>
-                  <td>Residential Fibre (FTTH)</td>
-                  <td>Direct optical connection architecture utilized by EBOX (via Bell's physical infrastructure) to unlock 500 Mbps and 1 Gbps performance tiers.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <h2>EBOX terms to understand before ordering</h2>
+          <p>These definitions clarify the labels customers encounter during sign-up and billing.</p>
+          <dl class="glossary-grid">
+            <div class="glossary-item"><dt>Referral customer number</dt><dd>An EBOX account identifier used for referrals. The referral code featured on this page is <strong>GE911</strong>.</dd></div>
+            <div class="glossary-item"><dt>Referral code</dt><dd>The common term for the customer number entered in the referral field. For eligible customers, GE911 provides a $25 credit on the second bill.</dd></div>
+            <div class="glossary-item"><dt>Promo code</dt><dd>A temporary marketing code issued by EBOX. The Promo Code field is separate from the referral field, so GE911 should not be entered there.</dd></div>
+            <div class="glossary-item"><dt>Referral program</dt><dd>EBOX's ongoing program for customers who refer eligible new residential subscribers. The new customer and referrer may each receive a credit under the program terms.</dd></div>
+            <div class="glossary-item"><dt>Second bill</dt><dd>The $25 referral credit does not appear on the first invoice. For an eligible order, it is applied during the next billing cycle.</dd></div>
+            <div class="glossary-item"><dt>Reactivation</dt><dd>Restoring a former account rather than submitting a new order. EBOX determines whether a returning customer qualifies for the referral program.</dd></div>
+            <div class="glossary-item"><dt>New customer</dt><dd>A person opening a new residential EBOX service. A former customer may be treated as new after more than 12 months, but final eligibility is determined by EBOX.</dd></div>
+            <div class="glossary-item"><dt>FTTH</dt><dd>Fibre to the home: an optical fibre connection that reaches the residence where this technology is available.</dd></div>
+          </dl>
         </section>
 
         <!-- chaque faq-body a un id lié au summary via aria-labelledby -->
@@ -1388,39 +1402,38 @@
           <h2>Frequently Asked Questions</h2>
           <div class="faq">
             <details>
-              <summary id="faq-q1">What is the EBOX client code to use in 2026?</summary>
+              <summary id="faq-q1">What is the EBOX referral code?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q1">
-                <p>The client number to use is <strong>GE911</strong>. It gives a $25 credit on the 2nd bill for any eligible new subscriber.</p>
+                <p>The EBOX referral code featured on this page is <strong>GE911</strong>. It provides a $25 credit on the second bill for eligible new residential customers.</p>
               </div>
             </details>
             <details>
-              <summary id="faq-q2">Does EBOX client code GE911 still work?</summary>
+              <summary id="faq-q2">Is the EBOX referral code GE911 still valid?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q2">
-                <p>Yes. GE911 is a permanent client code, verified and updated regularly on this page. It applies the $25 credit available in the EBOX system for eligible new customers.</p>
+                <p>GE911 belongs to EBOX's ongoing referral program and is checked regularly on this page. Eligible new residential customers can receive a $25 credit on their second bill.</p>
               </div>
             </details>
             <details>
-              <summary id="faq-q3">Why is EBOX code GE911 not working?</summary>
+              <summary id="faq-q3">Why isn't the EBOX referral code GE911 working?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q3">
-                <p>Cause #1 in 90% of cases: the code was entered in the <strong>"Promo Code"</strong> box instead of the Personal Information section: <strong>"Code — $25 for you and your friends!"</strong> field. These two fields are distinct — only the referral field activates client code GE911.</p>
-                <p>Another case: if you reached EBOX through a <strong>reseller link</strong>, the "$25 for you and your friends" field may be hidden on the website. The code still applies — order directly at <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a>, or call EBOX at <a href="tel:+18443233269">1-844-323-EBOX (3269)</a> to have GE911 added.</p>
-                <p>Other reasons include attempting to use a code for an installation at an address where an active account already exists, or trying to claim a referral on a reactivated account closed less than a year ago.</p>
+                <p>The most common cause is entering GE911 in the <strong>Promo Code</strong> field instead of the referral field.</p>
+                <p>If the referral field is missing, restart the order directly from <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> or contact EBOX at <a href="tel:+18443233269">1-844-323-EBOX (3269)</a> before completing the order to ask whether the code can be added.</p>
               </div>
             </details>
             <details>
-              <summary id="faq-q4">Does EBOX run promotions on top of code GE911?</summary>
+              <summary id="faq-q4">Does EBOX offer other promotions?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q4">
-                <p>EBOX regularly runs limited-time promotions (prepaid cards, price drops on Fibre plans) for new customers in Quebec and Ontario. These promos change over time. Referral code <code>GE911</code> is entered in a separate field from the Promo Code box, so it does not conflict with a promotion — you can fill in both. It gives a <strong>$25 credit</strong> on your 2nd bill. Always check <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> for the current promotion.</p>
+                <p>EBOX occasionally offers limited-time promotions. GE911 belongs to its ongoing referral program and is entered in a separate referral field. Check the terms of the current offer on <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> to confirm whether the benefits can be combined.</p>
               </div>
             </details>
             <details>
-              <summary id="faq-q5">How much credit does EBOX code GE911 give?</summary>
+              <summary id="faq-q5">How much credit does GE911 provide?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q5">
-                <p>Referral code <code>GE911</code> gives a <strong>$25 credit</strong> on the second bill for eligible new EBOX residential customers in Quebec and Ontario. It is a permanent program with no expiry date.</p>
+                <p>GE911 provides a <strong>$25 referral credit</strong> on the second bill for eligible new EBOX residential customers in Quebec and Ontario.</p>
               </div>
             </details>
             <details>
-              <summary id="faq-q6">Where exactly do I enter EBOX client code GE911?</summary>
+              <summary id="faq-q6">Where do I enter GE911?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q6">
                 <p>Enter GE911 in the <strong>"Enter the client number of the friend who referred you"</strong> field displayed during sign-up — not in the "Promo Code" box. In the dropdown "How did you hear about EBOX?", you can select <strong>"Friend or family"</strong> before entering the code.</p>
               </div>
@@ -1428,33 +1441,31 @@
             <details>
               <summary id="faq-q7">Is EBOX contract-free?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q7">
-                <p>Yes. EBOX does not require any minimum commitment. You can cancel at any time, without penalty. This is a concrete advantage over Bell or Videotron, which may require 12 to 24-month commitments.</p>
+                <p>EBOX states that its residential Internet service has no fixed-term contract. Review the current service terms for your province and selected plan before ordering.</p>
               </div>
             </details>
             <details>
-              <summary id="faq-q8">Can I add the EBOX referral code after signing up?</summary>
+              <summary id="faq-q8">Can GE911 be added after the order?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q8">
-                <p><strong>Officially, no</strong> — if you forgot to enter the code during checkout, EBOX's formal policy notes that it must be entered during the initial order.</p>
-                <p>💬 <strong>The Support Loophole (YMMV):</strong> Despite the official rule, many new customers on Reddit report success by calling EBOX at 1-844-323-EBOX (3269) or opening a live chat session <em>immediately</em> after submitting their order. If your physical installation hasn't happened yet, support agents are generally flexible and can manually bind code <code>GE911</code> to your account if you ask politely.</p>
+                <p>Officially, the referral code should be entered during checkout. Some customers report that EBOX has helped them after the order when they contacted customer service before installation, but this is handled case by case and is not guaranteed.</p>
               </div>
             </details>
             <details>
-              <summary id="faq-q9">Was the EBOX discount $50 before?</summary>
+              <summary id="faq-q9">Does the EBOX referral code GE911 work in Quebec and Ontario?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q9">
-                <!-- FIXED HISTORICAL DATE: "June 2026" = month the credit returned to $25. Do NOT re-date each pass (this is NOT a freshness signal). Same in the q9 JSON-LD. -->
-                <p>Yes, EBOX temporarily offered a $50 promotional credit. Since <strong>June 2026</strong>, the standard referral discount has returned to $25 with code GE911. Unlike old forum posts, this page gives you the exact amount currently in effect.</p>
+                <p>GE911 is intended for eligible new residential customers in both Quebec and Ontario. Choose the English order path for your province because availability and plan terms are determined by the service address.</p>
               </div>
             </details>
             <details>
-              <summary id="faq-q10">What is the difference between an EBOX promo code and this client code?</summary>
+              <summary id="faq-q10">Is GE911 an EBOX promo code?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q10">
-                <p>These are two separate fields during sign-up. Here's how not to confuse them:</p>
+                <p>No. GE911 is a customer referral code entered in the referral customer number field. A promotional code belongs in the separate Promo Code field and may have its own terms and expiry date.</p>
                 <div class="seo-table-wrap">
                   <table class="seo-table" aria-label="Comparative table between a permanent client code and an EBOX promo code">
                     <thead>
                       <tr>
                         <th>Feature</th>
-                        <th>Client Number (GE911)</th>
+                        <th>Referral customer number (GE911)</th>
                         <th>Promo Code</th>
                       </tr>
                     </thead>
@@ -1471,39 +1482,45 @@
                       </tr>
                       <tr>
                         <td>Where to enter it?</td>
-                        <td>"Personal Information" section (client code of the friend)</td>
+                        <td>Referral field in the Personal Information section</td>
                         <td>"Promo Code" box</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
-                <p>During the order form, make sure to enter <code>GE911</code> in the correct section, otherwise the system will not be able to validate your $25 credit.</p>
+                <p>Enter <code>GE911</code> in the referral field and check the on-screen confirmation before continuing.</p>
               </div>
             </details>
                                  <details>
-              <summary id="faq-q11">I used to be an EBOX customer. Can I use a referral code again?</summary>
+              <summary id="faq-q11">Can former EBOX customers use a referral code?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q11">
-                <p>Yes, but under strict conditions: your previous EBOX account must have been completely closed for <strong>more than one full year (12 months)</strong>. Additionally, you must sign up as a brand-new customer rather than reactivating your historical account profile.</p>
+                <p>A former customer may be treated as a new customer if the previous service has been closed for more than 12 months and a new order is submitted instead of a reactivation. Final eligibility is determined by EBOX.</p>
               </div>
             </details>
             <details>
-              <summary id="faq-q12">I'm already an EBOX customer — where do I find my own client code?</summary>
+              <summary id="faq-q12">Where can existing EBOX customers find their customer code?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q12">
-                <p>Your client code (client number) appears on your <strong>EBOX invoice, right next to the contract number</strong>. It's typically a few letters followed by digits.</p>
-                <p>💡 Don't want to wait for your first invoice? Your code is already in your <strong>day-one emails</strong> — just not written in the message body, which is why many subscribers report it's "missing". Check two spots: the <strong>account activation link</strong> (the <code>c=</code> parameter in the <code>client.ebox.ca/validate</code> URL is your client code) and the <strong>filename of the contract summary PDF</strong> attached to the "Contract Summary" email (format <code>ebox_contract_<em>yourcode</em>_<em>contractnumber</em>.pdf</code>).</p>
-                <p>If you deleted those emails, contact EBOX at <a href="tel:+18443233269">1-844-323-EBOX (3269)</a> or via live chat to get it.</p>
-                <p>💡 Once you have your code, you can share it too: every new subscriber who enters it earns you a $25 credit — same program as code <code>GE911</code> on this page.</p>
+                <p>Your EBOX customer code appears on your <strong>invoice, next to the contract number</strong>. It usually consists of a few letters followed by numbers.</p>
+                <p>💡 You can also find it in the <strong>emails EBOX sent when you opened your account</strong>. Check the <strong>account activation link</strong>—the <code>c=</code> parameter in the <code>client.ebox.ca/validate</code> URL—and the <strong>filename of the contract summary PDF</strong> attached to the "Contract Summary" email (format: <code>ebox_contract_<em>yourcode</em>_<em>contractnumber</em>.pdf</code>).</p>
+                <p>If you no longer have those emails, contact EBOX at <a href="tel:+18443233269">1-844-323-EBOX (3269)</a> or use live chat to request the code.</p>
+                <p>💡 Once you have your referral code, you can share it with new subscribers through the same referral program as <code>GE911</code>.</p>
               </div>
             </details>
           </div>
         </section>
 
+        <aside class="comparison-reminder" aria-labelledby="final-comparisons-heading">
+          <h2 id="final-comparisons-heading">Still deciding?</h2>
+          <p>Compare <a href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/">EBOX, Bell and Videotron</a>, or review the <a href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/">EBOX, Fizz and oxio comparison</a> before ordering.</p>
+        </aside>
+
         <div class="cta-section">
           <h2>Ready to order your Internet service?</h2>
-          <p>Click below, choose your Internet plan, and simply enter code <strong>GE911</strong> in the Personal Information section: <em>"Code — $25 for you and your friends!"</em> during sign-up to activate your $25 discount.</p>
-          <a class="btn" href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer">
-            🌐 Go to the EBOX website
-          </a>
+          <p>Choose the English sign-up path for your province, then enter <strong>GE911</strong> in the referral customer number field during checkout.</p>
+          <div class="province-links" aria-label="Choose your province">
+            <a href="https://promo.ebox.ca/v-fibre/en-qc" target="_blank" rel="noopener sponsored noreferrer">Quebec</a>
+            <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer">Ontario</a>
+          </div>
           <div class="cta-code-row">
             <span class="cta-code-pill">GE911</span>
             <button class="cta-copy-btn" data-copy="GE911" data-label="Copy code" data-target="copyStatusCta" aria-controls="copyStatusCta" type="button">Copy code</button>
@@ -1526,7 +1543,7 @@
     </div>
     <div class="s-actions">
       <button class="s-btn" id="sticky-copy-btn" type="button" data-copy="GE911" data-label="Copy" data-target="stickyCopyStatus" aria-controls="stickyCopyStatus">Copy</button>
-     <a class="s-btn s-open-btn" href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer" aria-label="Open ebox.ca">Open ↗</a>
+     <a class="s-btn s-open-btn" href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer" aria-label="Open ebox.ca">Open ↗</a>
     </div>
    <span id="stickyCopyStatus" role="status" aria-atomic="true" aria-live="polite" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"></span>  </div>
   
@@ -1534,21 +1551,30 @@
     <div class="container">
       <p>This site is not officially affiliated with EBOX. Trademarks belong to their respective owners.</p>
       <!-- utilise l'id footer-date que le JS attend -->
-      <p style="margin-top:6px;">EBOX client code: <code>GE911</code> — Updated: <time id="footer-date" datetime="2026-07-14">July 2026</time></p>
+      <p style="margin-top:6px;">EBOX referral code: <code>GE911</code> — Updated: <time id="footer-date" datetime="2026-07-23">July 2026</time></p>
     </div>
 
-    <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
-  <nav class="footer-links" aria-label="Liens du site">
-        <a href="https://cashinstinct.ca/stickermule/en/">🏷️ Sticker Mule</a>
-        <a href="https://cashinstinct.ca/hp-instant-ink/en/">🖨️ HP Instant Ink</a>
-        <a href="https://cashinstinct.ca/chexy/en/">🏠 Chexy</a>
-        <a href="https://cashinstinct.ca/tangerine/en/">🍊 Tangerine Bank</a>
-        <a href="https://cashinstinct.ca/achieva/en/">🌱 Achieva Financial</a>
-        <a href="https://cashinstinct.ca/rakuten-canada/en/">🛍️ Rakuten Canada</a>
-        <a href="https://cashinstinct.ca/swagbucks/en/">💙 Swagbucks</a>
-        <a href="https://cashinstinct.ca/ebox/fr/">🇫🇷 Version française</a>
-      </nav>
-    </div>
+    <nav class="footer-hub" aria-label="Site links">
+      <section aria-labelledby="footer-comparisons">
+        <h2 id="footer-comparisons">Internet and comparisons</h2>
+        <ul>
+          <li><a href="https://cashinstinct.ca/ebox/en/">EBOX referral code</a></li>
+          <li><a href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/en/">EBOX vs Bell vs Videotron</a></li>
+          <li><a href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/">EBOX vs Fizz vs oxio</a></li>
+        </ul>
+      </section>
+      <section aria-labelledby="footer-rewards">
+        <h2 id="footer-rewards">Rewards</h2>
+        <ul>
+          <li><a href="https://cashinstinct.ca/hp-instant-ink/en/">HP Instant Ink</a></li>
+          <li><a href="https://cashinstinct.ca/tangerine/en/">Tangerine</a></li>
+          <li><a href="https://cashinstinct.ca/stickermule/en/">Sticker Mule</a></li>
+          <li><a href="https://cashinstinct.ca/chexy/en/">Chexy</a></li>
+          <li><a href="https://cashinstinct.ca/rakuten-canada/en/">Rakuten Canada</a></li>
+        </ul>
+      </section>
+    </nav>
+    <p style="margin-top:16px;"><a href="https://cashinstinct.ca/ebox/fr/" hreflang="fr" lang="fr">Version française</a></p>
   </footer>
 
   
@@ -1641,7 +1667,8 @@
   <script>
     /* ── Countdown promo — 1 MONTH FREE ── */
     (function() {
-      var PROMO_ACTIVE = true;
+      var PROMO_ACTIVE = false;
+      // Inactive placeholder. Replace with the verified official end date before enabling.
       var PROMO_END = new Date('2026-07-26T23:59:59-04:00'); 
 
       if (!PROMO_ACTIVE) return; 
