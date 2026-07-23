@@ -81,7 +81,8 @@
     tarifs actuels ; toutes les mentions « de 10 à 700 pages » →
     « de 10 à 1 500 pages ».
   • dateModified est HARDCODÉ → mettre à jour À LA MAIN à chaque déploiement.
-  • #glossaire (≠ #glossary EN) : CSS table-layout fixed 38%/62% mobile.
+  • #glossaire : structure sémantique <dl>/<dt>/<dd>, grille 2 colonnes
+    sur desktop et 1 colonne sur mobile.
   • x-default → /en/ : VOULU (programme à défaut anglophone). Ne pas
     « corriger » vers /fr/.
   • Le CSS FR = CSS EN à l'identique (vérifié par diff), SAUF le sélecteur
@@ -190,7 +191,7 @@
       {
         "@type": "Article",
         "@id": "https://cashinstinct.ca/hp-instant-ink/fr/#article",
-        "headline": "HP Instant Ink Canada : forfaits, imprimantes admissibles et code du mois gratuit",
+        "headline": "HP Instant Ink Canada (2026) : forfaits, imprimantes admissibles et code du mois gratuit",
         "description": "Guide indépendant sur HP Instant Ink au Canada, les forfaits, les imprimantes compatibles et le code de parrainage SVdn7.",
         "image": [
           "https://cashinstinct.ca/hp-instant-ink/fr/og.png"
@@ -232,7 +233,7 @@
           },
           {
                     "@type": "Question",
-                    "name": "Est-ce que le code fonctionne si j'ai déjà des mois gratuits inclus à l'achat ?",
+                    "name": "Est-ce que le code fonctionne si j’ai déjà des mois gratuits inclus à l’achat ?",
                     "acceptedAnswer": {
                               "@type": "Answer",
                               "text": "Le crédit de parrainage peut s'ajouter à une offre admissible. Lors de notre test canadien de juillet 2026, HP affichait séparément un crédit promotionnel et le crédit « Parrainer un ami — 1 mois » dans la « Répartition des crédits ». Les codes promotionnels ne sont toutefois pas cumulables entre eux : lorsqu'on en saisit plusieurs, HP applique la promotion la plus avantageuse. Vérifiez toujours les crédits affichés avant de confirmer."
@@ -253,7 +254,7 @@
           },
           {
                     "@type": "Question",
-                    "name": "Peut-on annuler l'abonnement facilement ?",
+                    "name": "Peut-on annuler l’abonnement facilement ?",
                     "acceptedAnswer": {
                               "@type": "Answer",
                               "text": "Vous pouvez modifier votre forfait ou résilier le service depuis votre compte HP Instant Ink, conformément aux modalités affichées dans votre compte. Vérifiez la date de fin effective avant de confirmer. Les cartouches Instant Ink cessent de fonctionner après la fin du service et les crédits inutilisés peuvent être perdus."
@@ -317,7 +318,7 @@
           },
           {
                     "@type": "Question",
-                    "name": "Où entrer le code promo ou le code d'essai HP Instant Ink ?",
+                    "name": "Où entrer le code promo ou le code d’essai HP Instant Ink ?",
                     "acceptedAnswer": {
                               "@type": "Answer",
                               "text": "Si vous utilisez le lien de parrainage try.hpinstantink.com/SVdn7, le crédit est appliqué automatiquement. Vous pouvez aussi entrer SVdn7 manuellement pendant l'inscription dans le champ « Entrer le code promotionnel ou le code NIP ». Après validation, HP identifie séparément le crédit sous « Parrainer un ami — 1 mois »."
@@ -330,7 +331,7 @@
           },
           {
                     "@type": "Question",
-                    "name": "Le code ami HP Instant Ink expire-t-il ou a-t-il une limite d'utilisations ?",
+                    "name": "Le code ami HP Instant Ink expire-t-il ou a-t-il une limite d’utilisations ?",
                     "acceptedAnswer": {
                               "@type": "Answer",
                               "text": "Le code SVdn7 n'affiche pas de date d'expiration publique fixe et était encore accepté lors de notre dernière vérification en juillet 2026. HP peut toutefois modifier le programme ou désactiver un code conformément à ses conditions. Chaque nouvelle inscription ne peut utiliser qu'un seul lien ou code de parrainage."
@@ -421,7 +422,7 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.65; color: var(--text); background: var(--bg); }
     a { color: var(--accent-text); text-decoration: underline; }
     a:hover { text-decoration: underline; }
-    .nav a, .breadcrumb a, .footer-links a, .hero-methods a { text-decoration: none; }
+    .nav a, .breadcrumb a, .hero-methods a { text-decoration: none; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
     .prose { max-width: 900px; margin: 0 auto; }
 
@@ -515,16 +516,23 @@
     .compare-table td { padding: 10px 12px; border: 1px solid var(--border); color: var(--text-soft); }
     .compare-table .yes { color: #2a7a2a; font-weight: 700; }
     .compare-table .no { color: #b03a1a; font-weight: 700; }
-    /* Glossaire : contraindre la 1re colonne sur mobile (id="glossaire") */
-    #glossaire .compare-table { table-layout: fixed; }
-    #glossaire .compare-table th:first-child,
-    #glossaire .compare-table td:first-child { width: 38%; word-break: break-word; }
-    #glossaire .compare-table th:last-child,
-    #glossaire .compare-table td:last-child { width: 62%; }
-    @media (max-width: 640px) {
-      #glossaire .compare-table { font-size: 0.88rem; }
-      #glossaire .compare-table th, #glossaire .compare-table td { padding: 8px 10px; }
-    }
+    .glossary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+    .glossary-item { background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--accent); border-radius: 10px; padding: 18px; box-shadow: var(--shadow); }
+    .glossary-item dt { color: var(--text); font-weight: 800; margin-bottom: 7px; }
+    .glossary-item dd { color: var(--text-soft); margin: 0; }
+
+    .experience-proof { background: var(--surface-soft); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 20px 22px; margin: 0 0 22px; box-shadow: var(--shadow); }
+    .experience-proof h3 { color: var(--text); font-size: 1.15rem; margin-bottom: 12px; }
+    .experience-proof ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; list-style: none; margin: 0; }
+    .experience-proof li { color: var(--text-soft); }
+    .experience-proof .test-limit { margin: 14px 0 0; padding-top: 12px; border-top: 1px dashed var(--border); color: var(--muted); font-size: 0.92rem; }
+
+    .comparison-hub { margin: 38px 0; }
+    .comparison-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+    .comparison-card { background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 12px; padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+    .comparison-card h3 { color: var(--text); font-size: 1.1rem; margin-bottom: 10px; }
+    .comparison-card p { color: var(--text-soft); font-size: 0.94rem; margin-bottom: 18px; }
+    .comparison-card a { margin-top: auto; font-weight: 800; }
 
     .faq { display: grid; gap: 16px; }
     details { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
@@ -540,13 +548,18 @@
     .cta-section p { opacity: 0.95; margin-bottom: 24px; font-size: 1.05rem; color: var(--text-soft); }
     .transparency { background: var(--surface-muted); border-radius: 8px; padding: 16px 20px; font-size: 0.9rem; color: var(--text-soft); margin-top: 16px; border: 1px solid var(--border); }
     footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
-   .footer-links a {
-  display: inline-block;
-  padding: 10px 12px;
-  margin: -4px 0;
-}
+    .footer-hub { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; max-width: 900px; margin: 24px auto 0; text-align: left; }
+    .footer-hub h3 { color: var(--text); font-size: 0.95rem; margin-bottom: 8px; }
+    .footer-hub ul { list-style: none; margin: 0; padding: 0; }
+    .footer-hub li { margin: 5px 0; }
+    .footer-hub a { color: var(--muted); text-decoration: none; }
+    .footer-hub a:hover { color: var(--accent-text); text-decoration: underline; }
 
-    @media (max-width: 640px) { .facts { grid-template-columns: 1fr; } }
+    @media (max-width: 767px) { .comparison-cards { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) {
+      .facts, .glossary-grid, .experience-proof ul, .footer-hub { grid-template-columns: 1fr; }
+      .footer-hub { text-align: center; gap: 14px; }
+    }
     @media (min-width: 768px) { body { font-size: 19px; } }
     
     .warning { background: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 14px 20px; font-size: 0.95rem; color: var(--warning-text); margin: 32px 0; border-radius: 0 6px 6px 0; }
@@ -1150,6 +1163,17 @@
           <h2>Pourquoi utiliser le service automatisé HP ?</h2>
           <div class="review-box">
           <div class="trust-badge">✓ Code et formulaire testés par Cash Instinct</div>
+            <aside class="experience-proof" aria-labelledby="experience-proof-title">
+              <h3 id="experience-proof-title">Ce que nous avons vérifié directement</h3>
+              <ul>
+                <li>✓ Test réalisé au Canada en juillet&nbsp;2026</li>
+                <li>✓ Confirmation du mois gratuit par le lien de parrainage</li>
+                <li>✓ Saisie manuelle du code <code>SVdn7</code> validée</li>
+                <li>✓ Crédit classé comme <em>« Parrainer un ami — 1&nbsp;mois »</em></li>
+                <li>✓ Crédit promotionnel et crédit de parrainage affichés séparément</li>
+              </ul>
+              <p class="test-limit"><strong>Limite du test :</strong> aucun nouvel appareil n'a été enregistré jusqu'à l'activation finale. La vérification portait sur le lien, la saisie manuelle et l'affichage des crédits.</p>
+            </aside>
             <p>Le concept HP Instant Ink repose sur une gestion algorithmique de votre niveau d'encre : votre imprimante connectée signale d'elle-même aux serveurs d'HP lorsque vos cartouches tirent à leur fin. De nouvelles cartouches haute capacité vous sont alors expédiées par la poste bien avant la panne sèche.</p>
             <p>Les avantages notables du service au quotidien :</p>
             <ul>
@@ -1163,64 +1187,57 @@
           </div>
         </section>
 
-        <section id="glossaire" aria-label="Glossaire HP Instant Ink">
+<section id="glossaire" aria-label="Glossaire HP Instant Ink">
   <span class="section-label">Glossaire</span>
-  <h2>HP Instant Ink — Termes clés & Glossaire SEO</h2>
+  <h2>HP Instant Ink — Termes clés &amp; Glossaire SEO</h2>
   <p>Les termes liés à HP Instant Ink varient selon les sources. Voici un récapitulatif pour vous aider à trouver le bon champ lors de votre inscription.</p>
 
-  <div style="overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border);">
-    <table class="compare-table" aria-label="Glossaire HP Instant Ink">
-      <thead>
-        <tr><th>Terme / Intention de recherche</th><th>Signification & Application</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Code de parrainage / Clé de parrainage</td>
-          <td>Terme officiel HP pour un code émis par un membre. Le code actif à saisir est <strong>SVdn7</strong>. Aussi recherché comme "code ami HP Instant Ink" ou "code invitation HP encre".</td>
-        </tr>
-        <tr>
-          <td>SVdn7</td>
-          <td>Code de parrainage actif en 2026 — débloque 1&nbsp;mois gratuit sur n'importe quel forfait HP Instant Ink lors de l'inscription.</td>
-        </tr>
-        <tr>
-          <td>Code Promo HP Instant Ink</td>
-          <td>Codes marketing temporaires liés aux campagnes HP (ex. TaxTime26). Ces codes expirent après quelques semaines. SVdn7 est un code de parrainage — les deux peuvent apparaître sur le même formulaire d'inscription.</td>
-        </tr>
-        <tr>
-          <td>Mythe «&nbsp;plusieurs mois&nbsp;» / «&nbsp;code expiré&nbsp;»</td>
-          <td>Le code de parrainage donne <strong>1&nbsp;mois</strong> (pas 6&nbsp;: ça, c'était un ancien bundle imprimante) et il n’affiche pas de date d’expiration publique fixe. HP peut toutefois modifier ou désactiver le programme.</td>
-        </tr>
-        <tr>
-          <td>Cumul (Stacking)</td>
-          <td>Appliquer SVdn7 en plus des mois gratuits déjà inclus avec une nouvelle imprimante (ex. offre HP+). Le crédit de parrainage peut s’ajouter à une offre admissible, selon les conditions affichées par HP.</td>
-        </tr>
-        <tr>
-  <td>Redeem / Comment utiliser le code</td>
-  <td>Pour utiliser le code <strong>SVdn7</strong>, utilisez le lien de parrainage pour l'appliquer automatiquement, ou saisissez-le dans le champ « Entrer le code promotionnel ou le code NIP » à l'étape de facturation.</td>
-</tr>
-        <tr>
-          <td>HP Instant Ink vs HP+</td>
-          <td>HP Instant Ink est le service d'abonnement d'encre (livraison automatique de cartouches). HP+ est un écosystème d'impression (impression cloud, garantie étendue). Ce sont deux programmes distincts — une imprimante peut inclure les deux.</td>
-        </tr>
-        <tr>
-  <td>Imprimantes admissibles / Modèles compatibles</td>
-  <td>La compatibilité dépend du modèle exact. De nombreuses imprimantes HP DeskJet, Envy et OfficeJet à jet d’encre et connectées sont admissibles. Exclues : Ink Advantage (XL uniquement) et modèles laser/toner (plus d'inscription). Voir la <a href="#eligible-printers">section imprimantes admissibles</a>.</td>
-</tr>
-        <tr>
-          <td>Report de pages</td>
-          <td>Pages non utilisées de votre quota mensuel qui sont automatiquement reportées au cycle suivant. Le maximum reportable est généralement 2 à 3 fois votre quota mensuel selon le forfait.</td>
-        </tr>
-        <tr>
-          <td>Propriété des cartouches</td>
-          <td>Les cartouches HP Instant Ink restent la propriété d'HP. Elles cessent de fonctionner si l'abonnement est résilié et doivent être retournées via l'enveloppe de recyclage prépayée fournie.</td>
-        </tr>
-        <tr>
-          <td>try.hpinstantink.com/SVdn7</td>
-          <td>URL de parrainage direct qui applique automatiquement le code SVdn7 — aucune saisie manuelle nécessaire à l'étape de facturation.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <dl class="glossary-grid">
+    <div class="glossary-item">
+      <dt>Code de parrainage / Clé de parrainage</dt>
+      <dd>Terme officiel HP pour un code émis par un membre. Le code actif à saisir est <strong>SVdn7</strong>. Aussi recherché comme "code ami HP Instant Ink" ou "code invitation HP encre".</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>SVdn7</dt>
+      <dd>Code de parrainage actif en 2026 — débloque 1&nbsp;mois gratuit sur n'importe quel forfait HP Instant Ink lors de l'inscription.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Code Promo HP Instant Ink</dt>
+      <dd>Codes marketing temporaires liés aux campagnes HP (ex. TaxTime26). Ces codes expirent après quelques semaines. SVdn7 est un code de parrainage — les deux peuvent apparaître sur le même formulaire d'inscription.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Mythe «&nbsp;plusieurs mois&nbsp;» / «&nbsp;code expiré&nbsp;»</dt>
+      <dd>Le code de parrainage donne <strong>1&nbsp;mois</strong> (pas 6&nbsp;: ça, c'était un ancien bundle imprimante) et il n’affiche pas de date d’expiration publique fixe. HP peut toutefois modifier ou désactiver le programme.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Cumul (Stacking)</dt>
+      <dd>Appliquer SVdn7 en plus des mois gratuits déjà inclus avec une nouvelle imprimante (ex. offre HP+). Le crédit de parrainage peut s’ajouter à une offre admissible, selon les conditions affichées par HP.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Redeem / Comment utiliser le code</dt>
+      <dd>Pour utiliser le code <strong>SVdn7</strong>, utilisez le lien de parrainage pour l'appliquer automatiquement, ou saisissez-le dans le champ « Entrer le code promotionnel ou le code NIP » à l'étape de facturation.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>HP Instant Ink vs HP+</dt>
+      <dd>HP Instant Ink est le service d'abonnement d'encre (livraison automatique de cartouches). HP+ est un écosystème d'impression (impression cloud, garantie étendue). Ce sont deux programmes distincts — une imprimante peut inclure les deux.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Imprimantes admissibles / Modèles compatibles</dt>
+      <dd>La compatibilité dépend du modèle exact. De nombreuses imprimantes HP DeskJet, Envy et OfficeJet à jet d’encre et connectées sont admissibles. Exclues : Ink Advantage (XL uniquement) et modèles laser/toner (plus d'inscription). Voir la <a href="#eligible-printers">section imprimantes admissibles</a>.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Report de pages</dt>
+      <dd>Pages non utilisées de votre quota mensuel qui sont automatiquement reportées au cycle suivant. Le maximum reportable est généralement 2 à 3 fois votre quota mensuel selon le forfait.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Propriété des cartouches</dt>
+      <dd>Les cartouches HP Instant Ink restent la propriété d'HP. Elles cessent de fonctionner si l'abonnement est résilié et doivent être retournées via l'enveloppe de recyclage prépayée fournie.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>try.hpinstantink.com/SVdn7</dt>
+      <dd>URL de parrainage direct qui applique automatiquement le code SVdn7 — aucune saisie manuelle nécessaire à l'étape de facturation.</dd>
+    </div>
+  </dl>
 </section>
         
         <section id="faq">
@@ -1409,6 +1426,29 @@
           </div>
         </section>
 
+        <section class="comparison-hub" aria-labelledby="comparison-hub-title">
+          <span class="section-label">Autres guides vérifiés</span>
+          <h2 id="comparison-hub-title">Comparer d'autres offres et codes</h2>
+          <p>Gardez HP Instant Ink comme priorité, ou consultez un autre guide pratique si vous souhaitez ensuite réduire une autre dépense.</p>
+          <div class="comparison-cards">
+            <article class="comparison-card">
+              <h3>EBOX Internet</h3>
+              <p>Comparez les forfaits Internet et voyez comment fonctionne le code GE911 pour les nouveaux clients EBOX admissibles.</p>
+              <a href="https://cashinstinct.ca/ebox/fr/">Consulter le guide de parrainage EBOX</a>
+            </article>
+            <article class="comparison-card">
+              <h3>Banque Tangerine</h3>
+              <p>Vérifiez le fonctionnement de la Clé Orange et les renseignements utiles avant d'ouvrir un compte.</p>
+              <a href="https://cashinstinct.ca/tangerine/fr/">Consulter le guide de référence Tangerine</a>
+            </article>
+            <article class="comparison-card">
+              <h3>Sticker Mule</h3>
+              <p>Découvrez le fonctionnement de l'offre de référence Sticker Mule si l'impression personnalisée vous intéresse.</p>
+              <a href="https://cashinstinct.ca/stickermule/fr/">Consulter le guide de référence Sticker Mule</a>
+            </article>
+          </div>
+        </section>
+
         <div class="cta-section">
           <h2>Prêt à automatiser vos recharges d'encre ?</h2>
           <p>Ouvrez la page de configuration HP avec le lien ci-dessous (code appliqué automatiquement), ou entrez le code de parrainage <strong>SVdn7</strong> à l'étape de facturation et sécurisez votre mois gratuit d'impression.</p>
@@ -1417,7 +1457,7 @@
           </a>
         </div>
 
-                <div class="transparency">
+                <div class="transparency" id="divulgation">
           <strong>Transparence :</strong> Ce guide indépendant assure un suivi de parrainage. En vous inscrivant via le lien ou en entrant le code <code>SVdn7</code>, vous obtenez 1&nbsp;mois gratuit — et HP me crédite aussi 1&nbsp;mois gratuit en retour, sans aucun coût supplémentaire pour vous.
         </div>
 
@@ -1444,19 +1484,35 @@
     <div class="container">
       <p>Site de référence indépendant, non affilié officiellement à la marque HP ou au service Instant Ink. Toutes les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
       <p style="margin-top:6px;">HP Instant Ink Code : <code>SVdn7</code> — Dernière mise à jour : <time id="footer-date" datetime="2026-07-21">21&nbsp;juillet 2026</time></p>
-    </div>
-    <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
-      <nav class="footer-links" aria-label="Liens du site">
-        <a href="https://cashinstinct.ca/ebox/fr/">🌐 EBOX Internet</a>
-        <a href="https://cashinstinct.ca/stickermule/fr/">🏷️ Sticker Mule</a>
-        <a href="https://cashinstinct.ca/chexy/fr/">🏠 Chexy</a>
-        <a href="https://cashinstinct.ca/tangerine/fr/">🍊 Tangerine</a>
-        <a href="https://cashinstinct.ca/achieva/fr/">🌱 Achieva Financial</a>
-        <a href="https://cashinstinct.ca/rakuten-canada/fr/">🛍️ Rakuten Canada</a>
-        <a href="https://cashinstinct.ca/swagbucks/fr/">💙 Swagbucks</a>
-        <a href="https://cashinstinct.ca/hp-instant-ink/en/">🇬🇧 English version</a>
+      <nav class="footer-hub" aria-label="Guides Cash Instinct">
+        <section>
+          <h3>Codes et économies</h3>
+          <ul>
+            <li><a href="https://cashinstinct.ca/hp-instant-ink/fr/">🖨️ HP Instant Ink</a></li>
+            <li><a href="https://cashinstinct.ca/ebox/fr/">🌐 EBOX Internet</a></li>
+            <li><a href="https://cashinstinct.ca/tangerine/fr/">🍊 Tangerine</a></li>
+            <li><a href="https://cashinstinct.ca/stickermule/fr/">🏷️ Sticker Mule</a></li>
+          </ul>
+        </section>
+        <section>
+          <h3>Guides pratiques</h3>
+          <ul>
+            <li><a href="https://cashinstinct.ca/chexy/fr/">🏠 Chexy</a></li>
+            <li><a href="https://cashinstinct.ca/achieva/fr/">🌱 Achieva Financial</a></li>
+            <li><a href="https://cashinstinct.ca/rakuten-canada/fr/">🛍️ Rakuten Canada</a></li>
+            <li><a href="https://cashinstinct.ca/swagbucks/fr/">💙 Swagbucks</a></li>
+          </ul>
+        </section>
+        <section>
+          <h3>À propos</h3>
+          <ul>
+            <li><a href="https://cashinstinct.ca/">Accueil</a></li>
+            <li><a href="#divulgation">Transparence et divulgation</a></li>
+            <li><a href="https://cashinstinct.ca/hp-instant-ink/en/" hreflang="en" lang="en">🇬🇧 English version</a></li>
+          </ul>
+        </section>
       </nav>
-</div>
+    </div>
   </footer>
 
   
