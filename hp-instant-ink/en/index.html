@@ -89,7 +89,8 @@
     toutes les mentions "10 to 700 pages" → "10 to 1,500 pages".
   • dateModified est HARDCODÉ (script dynamique retiré) → le mettre à
     jour À LA MAIN à chaque déploiement.
-  • #glossary : CSS table-layout fixed (38%/62%) pour mobile iPhone.
+  • #glossary : structure sémantique <dl>/<dt>/<dd>, grille 2 colonnes
+    sur desktop et 1 colonne sur mobile.
   • x-default → /en/ : VOULU (programme à défaut anglophone). Ne pas
     "corriger" vers /fr/.
   • SVdn7 : ~82 occurrences (dont moitié = URLs affiliées, non
@@ -103,7 +104,7 @@
 
   <meta name="theme-color" id="theme-color-meta" content="#f4f9f9" />
 
-  <title>HP Instant Ink Canada (2026): Plans, Prices & Free Month Code</title>
+  <title>HP Instant Ink Canada (2026): Plans, Prices &amp; Free Month Code</title>
   <meta name="description" content="Complete guide to HP Instant Ink in Canada (2026). Compare subscription plans, check eligible printers, and get 1 free month with referral code SVdn7." />
    <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/hp-instant-ink/en/" />
@@ -121,7 +122,7 @@
   <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/hp-instant-ink/en/" />
   <link rel="preload" as="image" href="https://cashinstinct.ca/hp-instant-ink/en/images/hp-link-proof-en.webp" type="image/webp" />
 
-  <meta property="og:title" content="HP Instant Ink Canada (2026): Plans, Prices & Free Month Code" />
+  <meta property="og:title" content="HP Instant Ink Canada (2026): Plans, Prices &amp; Free Month Code" />
   <meta property="og:description" content="Complete guide to HP Instant Ink in Canada (2026). Compare subscription plans, check eligible printers, and get 1 free month with referral code SVdn7." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashinstinct.ca/hp-instant-ink/en/" />
@@ -135,7 +136,7 @@
 
   
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="HP Instant Ink Canada (2026): Plans, Prices & Free Month Code" />
+  <meta name="twitter:title" content="HP Instant Ink Canada (2026): Plans, Prices &amp; Free Month Code" />
   <meta name="twitter:description" content="Complete guide to HP Instant Ink in Canada (2026). Compare subscription plans, check eligible printers, and get 1 free month with referral code SVdn7." />
   <meta name="twitter:image" content="https://cashinstinct.ca/hp-instant-ink/en/og.png" />
 
@@ -204,7 +205,7 @@
       {
         "@type": "Article",
         "@id": "https://cashinstinct.ca/hp-instant-ink/en/#article",
-        "headline": "HP Instant Ink Canada: Plans, Eligible Printers and Free Month Code",
+        "headline": "HP Instant Ink Canada (2026): Plans, Prices & Free Month Code",
         "description": "Independent guide to HP Instant Ink in Canada, subscription plans, compatible printers and referral code SVdn7.",
         "image": [
           "https://cashinstinct.ca/hp-instant-ink/en/og.png"
@@ -530,16 +531,24 @@
     .compare-table .yes { color: #2a7a2a; font-weight: 700; }
     .compare-table .no { color: #b03a1a; font-weight: 700; }
 
-   /* Glossary : contraindre la 1re colonne sur mobile */
-    #glossary .compare-table { table-layout: fixed; }
-    #glossary .compare-table th:first-child,
-    #glossary .compare-table td:first-child { width: 38%; word-break: break-word; }
-    #glossary .compare-table th:last-child,
-    #glossary .compare-table td:last-child { width: 62%; }
-    @media (max-width: 640px) {
-      #glossary .compare-table { font-size: 0.88rem; }
-      #glossary .compare-table th, #glossary .compare-table td { padding: 8px 10px; }
-    }
+    .glossary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+    .glossary-item { background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--accent); border-radius: 10px; padding: 18px; box-shadow: var(--shadow); }
+    .glossary-item dt { color: var(--text); font-weight: 800; margin-bottom: 7px; }
+    .glossary-item dd { color: var(--text-soft); margin: 0; }
+
+    .experience-proof { background: var(--surface-soft); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 20px 22px; margin: 0 0 22px; box-shadow: var(--shadow); }
+    .experience-proof h3 { color: var(--text); font-size: 1.15rem; margin-bottom: 12px; }
+    .experience-proof ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; list-style: none; margin: 0; }
+    .experience-proof li { color: var(--text-soft); }
+    .experience-proof .test-limit { margin: 14px 0 0; padding-top: 12px; border-top: 1px dashed var(--border); color: var(--muted); font-size: 0.92rem; }
+
+    .comparison-hub { margin: 38px 0; }
+    .comparison-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+    .comparison-card { background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 12px; padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+    .comparison-card h3 { color: var(--text); font-size: 1.1rem; margin-bottom: 10px; }
+    .comparison-card p { color: var(--text-soft); font-size: 0.94rem; margin-bottom: 18px; }
+    .comparison-card a { margin-top: auto; font-weight: 800; }
+
     .faq { display: grid; gap: 16px; }
     details { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
     summary { font-weight: 700; padding: 16px 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; background: var(--surface-soft); color: var(--text); }
@@ -554,13 +563,18 @@
     .cta-section p { opacity: 0.95; margin-bottom: 24px; font-size: 1.05rem; color: var(--text-soft); }
     .transparency { background: var(--surface-muted); border-radius: 8px; padding: 16px 20px; font-size: 0.9rem; color: var(--text-soft); margin-top: 16px; border: 1px solid var(--border); }
     footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
-   .footer-links a {
-  display: inline-block;
-  padding: 10px 12px;
-  margin: -4px 0;
-}
+    .footer-hub { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; max-width: 900px; margin: 24px auto 0; text-align: left; }
+    .footer-hub h3 { color: var(--text); font-size: 0.95rem; margin-bottom: 8px; }
+    .footer-hub ul { list-style: none; margin: 0; padding: 0; }
+    .footer-hub li { margin: 5px 0; }
+    .footer-hub a { color: var(--muted); text-decoration: none; }
+    .footer-hub a:hover { color: var(--accent-text); text-decoration: underline; }
 
-    @media (max-width: 640px) { .facts { grid-template-columns: 1fr; } }
+    @media (max-width: 767px) { .comparison-cards { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) {
+      .facts, .glossary-grid, .experience-proof ul, .footer-hub { grid-template-columns: 1fr; }
+      .footer-hub { text-align: center; gap: 14px; }
+    }
     @media (min-width: 768px) { body { font-size: 19px; } }
     
     .warning { background: var(--warning-bg); border-left: 4px solid var(--warning-border); padding: 14px 20px; font-size: 0.95rem; color: var(--warning-text); margin: 32px 0; border-radius: 0 6px 6px 0; }
@@ -1170,7 +1184,7 @@
             <span>Available in Canada and other participating countries where Instant Ink operates.</span>
           </div>
           <div class="fact">
-            <strong>Shipping & Recycling</strong>
+            <strong>Shipping &amp; Recycling</strong>
             <span>Both completely free and included by HP with every cartridge shipment.</span>
           </div>
           <div class="fact">
@@ -1185,6 +1199,18 @@
   <h2>Why Use the HP Automated Service?</h2>
   <div class="review-box">
     <div class="trust-badge">✓ Code and form tested by Cash Instinct</div>
+    <aside class="experience-proof" aria-labelledby="experience-proof-title">
+      <h3 id="experience-proof-title">What we verified firsthand</h3>
+      <ul>
+        <li>✓ Tested in Canada in July&nbsp;2026</li>
+        <li>✓ Existing HP account created in 2020</li>
+        <li>✓ Referral link validated</li>
+        <li>✓ Manual entry of <code>SVdn7</code> validated</li>
+        <li>✓ <em>"Refer a Friend — 1&nbsp;month"</em> confirmation displayed</li>
+        <li>✓ Promotional and referral credits shown separately</li>
+      </ul>
+      <p class="test-limit"><strong>Test boundary:</strong> No new printer was taken through final activation. The test verified the referral flow, form behaviour and displayed credits—not completed billing or hardware performance.</p>
+    </aside>
     <p>HP Instant Ink works on an algorithmic ink management model: your connected printer automatically reports to HP's servers when your cartridges are running low. High-capacity cartridges are then shipped to you by mail well before you run out.</p>
           <p>Notable everyday advantages of the service:</p>
           <ul>
@@ -1200,62 +1226,55 @@
       
 <section id="glossary" aria-label="HP Instant Ink Glossary">
   <span class="section-label">Glossary</span>
-  <h2>HP Instant Ink — Key Terms & SEO Glossary</h2>
+  <h2>HP Instant Ink — Key Terms &amp; SEO Glossary</h2>
   <p>HP Instant Ink promotional terms vary across the web. Here is a unified breakdown to help you navigate the offers and find the right field during sign-up.</p>
 
-  <div style="overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border);">
-    <table class="compare-table" aria-label="HP Instant Ink glossary">
-      <thead>
-        <tr><th>Term / Search Intent</th><th>Meaning & Application</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Referral Code / Referral Key</td>
-          <td>HP's official term for a member-issued code. The active code to enter is <strong>SVdn7</strong>. Also searched as "HP Instant Ink invite code" or "HP ink friend code".</td>
-        </tr>
-        <tr>
-          <td>SVdn7</td>
-          <td>Active referral code for 2026 — unlocks 1&nbsp;free month on any HP Instant Ink plan at sign-up.</td>
-        </tr>
-        <tr>
-          <td>HP Instant Ink Promo Code</td>
-          <td>Temporary marketing codes tied to HP campaigns (e.g. TaxTime26). These expire after a few weeks. SVdn7 is a referral code, not a promo code — both may appear on the same sign-up form.</td>
-        </tr>
-        <tr>
-          <td>"Multiple months" / "expired code" myth</td>
-          <td>The referral code gives <strong>1&nbsp;month</strong> (not 6 — that was an old printer bundle), and as a member code it <strong>doesn't expire</strong> and has no user limit.</td>
-        </tr>
-        <tr>
-          <td>Stacking</td>
-          <td>Applying SVdn7 on top of free months already included with a new printer purchase (e.g. HP+ offer). The referral month adds after the existing trial period.</td>
-        </tr>
-        <tr>
-  <td>Redeem / How to redeem code</td>
-  <td>To redeem code <strong>SVdn7</strong>, use the referral link to auto-apply it, or enter it in the "Enter promo or PIN code" field at the billing step.</td>
-</tr>
-        <tr>
-          <td>HP Instant Ink vs HP+ </td>
-          <td>HP Instant Ink is the ink subscription service (automatic cartridge delivery). HP+ is a printer ecosystem (cloud printing, extended warranty). They are separate — a printer can include both.</td>
-        </tr>
-        <tr>
-  <td>Eligible Printers / Compatible Models</td>
-  <td>Most HP <strong>inkjet</strong> printers under 5 years old with Wi-Fi qualify — Envy, OfficeJet, DeskJet, Tango. Excluded: Ink Advantage (XL-only) and laser/toner models (no new enrollment). See the <a href="#eligible-printers">eligible printers section</a>.</td>
-</tr>
-        <tr>
-          <td>Page Rollover</td>
-          <td>Unused pages from your monthly quota that carry forward to the next billing cycle. Maximum rollover is typically 2–3× your monthly quota depending on your plan.</td>
-        </tr>
-        <tr>
-          <td>Instant Ink Cartridge Ownership</td>
-          <td>Cartridges provided under HP Instant Ink remain HP's property. They stop functioning if the subscription is cancelled and must be returned via the prepaid recycling envelope.</td>
-        </tr>
-        <tr>
-          <td>try.hpinstantink.com/SVdn7</td>
-          <td>The direct referral URL that pre-applies the SVdn7 code automatically — no manual entry needed at the billing step.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <dl class="glossary-grid">
+    <div class="glossary-item">
+      <dt>Referral Code / Referral Key</dt>
+      <dd>HP's official term for a member-issued code. The active code to enter is <strong>SVdn7</strong>. Also searched as "HP Instant Ink invite code" or "HP ink friend code".</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>SVdn7</dt>
+      <dd>Active referral code for 2026 — unlocks 1&nbsp;free month on any HP Instant Ink plan at sign-up.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>HP Instant Ink Promo Code</dt>
+      <dd>Temporary marketing codes tied to HP campaigns (e.g. TaxTime26). These expire after a few weeks. SVdn7 is a referral code, not a promo code — both may appear on the same sign-up form.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>"Multiple months" / "expired code" myth</dt>
+      <dd>The referral code gives <strong>1&nbsp;month</strong> (not 6 — that was an old printer bundle), and as a member code it <strong>doesn't expire</strong> and has no user limit.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Stacking</dt>
+      <dd>Applying SVdn7 on top of free months already included with a new printer purchase (e.g. HP+ offer). The referral month adds after the existing trial period.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Redeem / How to redeem code</dt>
+      <dd>To redeem code <strong>SVdn7</strong>, use the referral link to auto-apply it, or enter it in the "Enter promo or PIN code" field at the billing step.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>HP Instant Ink vs HP+ </dt>
+      <dd>HP Instant Ink is the ink subscription service (automatic cartridge delivery). HP+ is a printer ecosystem (cloud printing, extended warranty). They are separate — a printer can include both.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Eligible Printers / Compatible Models</dt>
+      <dd>Most HP <strong>inkjet</strong> printers under 5 years old with Wi-Fi qualify — Envy, OfficeJet, DeskJet, Tango. Excluded: Ink Advantage (XL-only) and laser/toner models (no new enrollment). See the <a href="#eligible-printers">eligible printers section</a>.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Page Rollover</dt>
+      <dd>Unused pages from your monthly quota that carry forward to the next billing cycle. Maximum rollover is typically 2–3× your monthly quota depending on your plan.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>Instant Ink Cartridge Ownership</dt>
+      <dd>Cartridges provided under HP Instant Ink remain HP's property. They stop functioning if the subscription is cancelled and must be returned via the prepaid recycling envelope.</dd>
+    </div>
+    <div class="glossary-item">
+      <dt>try.hpinstantink.com/SVdn7</dt>
+      <dd>The direct referral URL that pre-applies the SVdn7 code automatically — no manual entry needed at the billing step.</dd>
+    </div>
+  </dl>
 </section>
       
             <section id="faq">
@@ -1442,6 +1461,29 @@
         </div>
       </section>
 
+      <section class="comparison-hub" aria-labelledby="compare-guides-title">
+        <span class="section-label">More Verified Guides</span>
+        <h2 id="compare-guides-title">Still comparing your options?</h2>
+        <p>Keep HP Instant Ink as your focus, or explore another practical guide if a different household expense is next on your list.</p>
+        <div class="comparison-cards">
+          <article class="comparison-card">
+            <h3>EBOX Internet</h3>
+            <p>Compare Internet options and see how referral code GE911 works for eligible new EBOX customers.</p>
+            <a href="https://cashinstinct.ca/ebox/en/">Read the EBOX Internet referral guide</a>
+          </article>
+          <article class="comparison-card">
+            <h3>Tangerine Bank</h3>
+            <p>Review the referral process and current account-opening information before choosing a banking offer.</p>
+            <a href="https://cashinstinct.ca/tangerine/en/">Read the Tangerine referral guide</a>
+          </article>
+          <article class="comparison-card">
+            <h3>Sticker Mule</h3>
+            <p>See how the Sticker Mule referral offer works if custom printing is what brought you here.</p>
+            <a href="https://cashinstinct.ca/stickermule/en/">Read the Sticker Mule referral guide</a>
+          </article>
+        </div>
+      </section>
+
       <div class="cta-section">
         <h2>Ready to automate your ink refills?</h2>
         <p>Open the HP setup page with the link below (code auto-applied), or enter referral code <strong>SVdn7</strong> at the billing step to secure your free month of printing.</p>
@@ -1476,20 +1518,34 @@
 <footer>
   <div class="container">
     <p>Independent reference site, not officially affiliated with HP or the Instant Ink service. All trademarks belong to their respective owners.</p>
-    <p style="margin-top:6px;">HP Instant Ink Code: <code>SVdn7</code> — Last updated: <time id="footer-date" datetime="2026-07-16">July&nbsp;2026</time></p>
+    <p style="margin-top:6px;">HP Instant Ink Code: <code>SVdn7</code> — Last updated: <time id="footer-date" datetime="2026-07-21">July&nbsp;2026</time></p>
+    <nav class="footer-hub" aria-label="Cash Instinct guides">
+      <section>
+        <h3>Internet &amp; household bills</h3>
+        <ul>
+          <li><a href="https://cashinstinct.ca/ebox/en/">🌐 EBOX Internet</a></li>
+          <li><a href="https://cashinstinct.ca/chexy/en/">🏠 Chexy</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Referral codes &amp; savings</h3>
+        <ul>
+          <li><a href="https://cashinstinct.ca/tangerine/en/">🍊 Tangerine</a></li>
+          <li><a href="https://cashinstinct.ca/stickermule/en/">🏷️ Sticker Mule</a></li>
+          <li><a href="https://cashinstinct.ca/achieva/en/">🌱 Achieva Financial</a></li>
+          <li><a href="https://cashinstinct.ca/rakuten-canada/en/">🛍️ Rakuten Canada</a></li>
+          <li><a href="https://cashinstinct.ca/swagbucks/en/">💙 Swagbucks</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>HP Instant Ink</h3>
+        <ul>
+          <li><a href="https://cashinstinct.ca/hp-instant-ink/en/">English guide</a></li>
+          <li><a href="https://cashinstinct.ca/hp-instant-ink/fr/" hreflang="fr" lang="fr">🇫🇷 Version française</a></li>
+        </ul>
+      </section>
+    </nav>
   </div>
-  <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
-     <nav class="footer-links" aria-label="Liens du site">
-        <a href="https://cashinstinct.ca/ebox/en/">🌐 EBOX Internet</a>
-        <a href="https://cashinstinct.ca/stickermule/en/">🏷️ Sticker Mule</a>
-        <a href="https://cashinstinct.ca/chexy/en/">🏠 Chexy</a>
-        <a href="https://cashinstinct.ca/tangerine/en/">🍊 Tangerine</a>
-        <a href="https://cashinstinct.ca/achieva/en/">🌱 Achieva Financial</a>
-        <a href="https://cashinstinct.ca/rakuten-canada/en/">🛍️ Rakuten Canada</a>
-        <a href="https://cashinstinct.ca/swagbucks/en/">💙 Swagbucks</a>
-        <a href="https://cashinstinct.ca/hp-instant-ink/fr/">🇫🇷 Version française</a>
-      </nav>
-</div>
 </footer>
 
   <!-- SCRIPTS -->
