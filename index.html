@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <!-- NOTE: Achieva referral PAUSED (retour été 2026). Carte Achieva ci-dessous = mention "En pause" dans link-desc. Retirer à la reprise.
 Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
+<!--
+NOTE INTERNE DE MAINTENANCE — PAGE D’ACCUEIL
+Cette page demeure volontairement un répertoire concis, pas un substitut aux guides dédiés.
+Le niveau de preuve varie selon le programme : ne jamais prétendre que tous les services ont été testés personnellement.
+Conserver les dates des cartes au mois; les dates précises de vérification appartiennent aux guides.
+Maintenir la symétrie factuelle FR/EN sans traduction mécanique. Conserver Achieva tant que sa pause documentée demeure pertinente.
+Synchroniser title, description, Open Graph, Twitter et CollectionPage après toute révision substantielle.
+dateModified est statique et ne change qu’après une véritable révision éditoriale.
+Les pages officielles EBOX, Tangerine, Achieva et Swagbucks ont été vérifiées le 2026-07-24.
+-->
 <html lang="fr-CA">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2563eb" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0f17" />
+  <meta name="theme-color" id="theme-color-meta" content="#f8fafc" />
 
-  <title>Cash Instinct — Codes de Parrainage & Offres de Bienvenue (2026)</title>
-  <meta name="description" content="Codes de parrainage testés au Canada, comparatifs télécom et stratégies d'optimisation (valeur des points, RHT). Économisez sur vos factures au Québec." />
+  <title>Cash Instinct — Codes de parrainage et guides pratiques (2026)</title>
+  <meta name="description" content="Guides canadiens indépendants : utilisation personnelle, tests documentés, conditions officielles, codes de parrainage, comparatifs et outils pratiques." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/" />
   <link rel="alternate" hreflang="fr-CA"    href="https://cashinstinct.ca/" />
@@ -22,8 +31,8 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
 
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://cashinstinct.ca/" />
-  <meta property="og:title"       content="Cash Instinct — Codes de Parrainage & Offres de Bienvenue" />
-  <meta property="og:description" content="Codes de parrainage testés au Canada, comparatifs télécom et stratégies d'optimisation (valeur des points, RHT). Économisez sur vos factures au Québec." />
+  <meta property="og:title"       content="Cash Instinct — Codes de parrainage et guides pratiques (2026)" />
+  <meta property="og:description" content="Guides canadiens indépendants : utilisation personnelle, tests documentés, conditions officielles, codes de parrainage, comparatifs et outils pratiques." />
   <meta property="og:locale"           content="fr_CA" />
   <meta property="og:locale:alternate" content="en_CA" />
   <meta property="og:site_name"   content="Cash Instinct" />
@@ -33,14 +42,16 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
   <meta property="og:image:type"   content="image/png" />
 
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Cash Instinct — Codes de Parrainage & Optimisation" />
-  <meta name="twitter:description" content="Codes de parrainage testés au Canada, comparatifs télécom et stratégies d'optimisation (valeur des points, RHT). Économisez sur vos factures au Québec." />
+  <meta name="twitter:title"       content="Cash Instinct — Codes de parrainage et guides pratiques (2026)" />
+  <meta name="twitter:description" content="Guides canadiens indépendants : utilisation personnelle, tests documentés, conditions officielles, codes de parrainage, comparatifs et outils pratiques." />
   <meta name="twitter:image"       content="https://cashinstinct.ca/og.png" />
 
    <script>
     try {
       var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', t);
+      var themeMeta = document.getElementById('theme-color-meta');
+      if (themeMeta) themeMeta.setAttribute('content', t === 'dark' ? '#0b0f17' : '#f8fafc');
     } catch(e) {
       document.documentElement.setAttribute('data-theme', 'light');
     }
@@ -55,7 +66,8 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
         "@id": "https://cashinstinct.ca/#website",
         "url": "https://cashinstinct.ca/",
         "name": "Cash Instinct",
-        "description": "Regroupement des meilleures offres de parrainage et bonus de bienvenue testés au Canada. Économisez sur vos services, abonnements et achats.",
+        "description": "Guides canadiens indépendants : utilisation personnelle, tests documentés, conditions officielles, codes de parrainage, comparatifs et outils pratiques.",
+        "inLanguage": "fr-CA",
         "publisher": {
           "@type": "Organization",
           "@id": "https://cashinstinct.ca/#organization",
@@ -68,16 +80,18 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
         "@type": "CollectionPage",
         "@id": "https://cashinstinct.ca/#collectionpage",
         "url": "https://cashinstinct.ca/",
-        "name": "Cash Instinct — Codes de parrainage Canada 2026",
+        "name": "Cash Instinct — Codes de parrainage et guides pratiques (2026)",
+        "description": "Guides canadiens indépendants : utilisation personnelle, tests documentés, conditions officielles, codes de parrainage, comparatifs et outils pratiques.",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "inLanguage": "fr-CA",
         "datePublished": "2026-06-12",
-        "dateModified": "2026-07-19",
+        "dateModified": "2026-07-24",
         "author":    { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization" },
         "mainEntity": {
           "@type": "ItemList",
           "name": "Sélection de parrainages et outils Cash Instinct",
+          "description": "Programmes, comparatifs et outils pratiques présentés sur Cash Instinct.",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "EBOX Internet",      "url": "https://cashinstinct.ca/ebox/fr/" },
             { "@type": "ListItem", "position": 2, "name": "Sticker Mule",       "url": "https://cashinstinct.ca/stickermule/fr/" },
@@ -124,12 +138,17 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
       --line: #1e293b;
       --blue: #3b82f6;
       --blue-soft: #1e293b;
-      --blue-contrast: #3b82f6;
+      --blue-contrast: #60a5fa;
       --shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+
+    :where(a, button):focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
 
     body {
       background: var(--bg);
@@ -540,18 +559,18 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
              aria-label="Chaîne YouTube Cash Instinct (ouvre dans un nouvel onglet)">
             <span aria-hidden="true">▶️</span> YouTube
           </a>
-          <a href="https://cashinstinct.ca/en/" class="lang-btn" hreflang="en" lang="en" aria-label="English version">
+          <a href="https://cashinstinct.ca/en/" class="lang-btn" hreflang="en-CA" lang="en-CA" aria-label="English version">
             English
           </a>
-          <button id="theme-toggle" class="theme-btn" type="button" aria-pressed="false">🌙 Mode Sombre</button>
+          <button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙 Mode Sombre</button>
         </div>
       </div>
 
-      <div class="subtitle">Offres testées personnellement pour Internet, banque, cashback et plus.</div>
+      <div class="subtitle">Expérience personnelle, tests documentés et guides indépendants sur les offres et outils canadiens.</div>
       <p class="intro">
-        Économise sur tes factures et achats quotidiens avec des codes de parrainage que j'utilise et vérifie vraiment. Chaque offre détaille les conditions exactes, des captures d'écran et les étapes d'activation.
+        Certains programmes font encore partie de mon quotidien, certains ont été utilisés pendant des années et d’autres restent suivis même si je les utilise moins aujourd’hui. Chaque guide précise ce qui a été utilisé personnellement, ce qui a été testé et ce qui provient des conditions officielles ou de comparatifs indépendants.
         <br><br>
-        <em style="font-size: 0.9rem; color: var(--text);">Je peux percevoir une récompense de parrainage sans frais supplémentaires pour vous.</em>
+        <em style="font-size: 0.9rem; color: var(--text);">Certains liens sont des liens de parrainage ou d’affiliation. Si vous les utilisez et remplissez les conditions du programme, je peux recevoir une récompense sans frais supplémentaires pour vous.</em>
       </p>
 
       <nav class="quicknav" aria-label="Aller à une catégorie">
@@ -569,8 +588,8 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
           <span class="lbl">programmes de parrainage</span>
         </div>
         <div class="stat" role="listitem">
-          <span class="num">100 %</span>
-          <span class="lbl">testés perso</span>
+          <span class="num">Documenté</span>
+          <span class="lbl">vérification par guide</span>
         </div>
         <div class="stat" role="listitem">
           <span class="num">2009</span>
@@ -598,7 +617,7 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             </div>
             <div class="link-cat">Internet résidentiel</div>
             <p class="link-desc">
-              <strong>25 $ de crédit</strong> sur ta deuxième facture EBOX avec le code client <strong>GE911</strong>.
+              <strong>25 $ de crédit</strong> sur la deuxième facture d’un nouveau client Internet EBOX admissible qui fournit le code de parrainage <strong>GE911</strong> lors de la commande initiale. Québec et Ontario, selon les conditions EBOX.
             </p>
             <div class="link-meta">
               <span class="verified">Vérifié en <span class="verif-month">juillet 2026</span></span> · détails, conditions et capture de la promo sur la page dédiée.
@@ -617,7 +636,7 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             </div>
             <div class="link-cat">Autocollants &amp; merch</div>
             <p class="link-desc">
-              <strong>Crédit promo de 10 $ USD (12,50 $ CAD)</strong> à l'inscription via le lien officiel ou le code <strong>CASHINSTINCT</strong>, dès une première commande d'autocollants personnalisés de 30 $ USD (38 $ CAD) ou plus.
+              Un <strong>crédit de parrainage de 10 $ USD (12,50 $ CAD)</strong> pour un nouveau compte admissible utilisant le lien d’invitation ou <strong>CASHINSTINCT</strong> lors d’une première commande admissible d’au moins 30 $ USD (38 $ CAD).
             </p>
             <div class="link-meta">
               <span class="verified">Vérifié en <span class="verif-month">juillet 2026</span></span> · explications devises et guide d'activation complet en français.
@@ -633,7 +652,7 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             </div>
             <div class="link-cat">Impression &amp; encre</div>
             <p class="link-desc">
-              <strong>1 mois gratuit</strong> d'impression avec le code de parrainage <strong>SVdn7</strong>. Compatible avec la plupart des imprimantes HP récentes au Canada.
+              <strong>1 mois gratuit</strong> avec le code de parrainage <strong>SVdn7</strong>. L’admissibilité dépend du modèle exact d’imprimante HP; vérifiez-la auprès de HP pendant l’inscription.
             </p>
             <div class="link-meta">
               <span class="verified">Vérifié en <span class="verif-month">juillet 2026</span></span> · tutoriel pas à pas + FAQ sur l'abonnement sur la page dédiée.
@@ -652,7 +671,7 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             </div>
             <div class="link-cat">Payer par carte</div>
             <p class="link-desc">
-              <strong>20 $ de crédit </strong> via le lien de parrainage. Paie tes <strong>taxes scolaires et municipales, Hydro-Québec et impôts</strong> par carte de crédit pour accumuler des points. Aucun code — l'inscription se fait par lien.
+              Un <strong>crédit Chexy de 20 $</strong> après l’inscription d’un nouveau client admissible par le lien de parrainage et un premier paiement complété. Payez des factures admissibles — loyer, taxes, Hydro-Québec et impôts — par carte de crédit; conditions et frais de 1,75 % applicables.
             </p>
             <div class="link-meta">
               <span class="verified">Vérifié en <span class="verif-month">juillet 2026</span></span> · frais 1,75 %, calcul de rentabilité, statuts et FAQ sur la page dédiée.
@@ -668,7 +687,7 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             </div>
             <div class="link-cat">Banque en ligne</div>
             <p class="link-desc">
-              Bonus de bienvenue de 50 $ avec la Clé Orange <strong>14130944S1</strong> à l'ouverture d'un compte chèque ou épargne Tangerine. Banque en ligne sans frais mensuels.
+              Une <strong>prime de parrainage de 50 $</strong> avec la Clé Orange <strong>14130944S1</strong> pour un nouveau client admissible qui ouvre un compte admissible, dépose au moins 250 $ dans les 60 jours et maintient ce solde pendant 60 jours consécutifs.
             </p>
             <div class="link-meta">
               <span class="verified">Vérifié en <span class="verif-month">juillet 2026</span></span> · conditions, délais de versement et étapes d'activation sur la page dédiée.
@@ -704,7 +723,7 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             </div>
             <div class="link-cat">Cashback</div>
             <p class="link-desc">
-              <strong>30 $ de cashback</strong> en argent réel sur ton premier achat de 30 $+ via le lien de parrainage. Aucun code — le lien active le bonus automatiquement.
+              <strong>30 $ de remise en argent</strong> lorsqu’un nouveau membre admissible s’inscrit par le lien de parrainage et effectue un premier achat admissible d’au moins 30 $ selon l’offre en vigueur.
             </p>
             <div class="link-meta">
               <span class="verified">Testé perso depuis 2013</span> · guide étape par étape, marchands partenaires et FAQ sur la page dédiée.
@@ -720,7 +739,7 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             </div>
             <div class="link-cat">Sondages &amp; récompenses</div>
             <p class="link-desc">
-              <strong>10 $ de bonus</strong> sur ton premier achat de 25 $+ via le lien de parrainage. Accumule cartes-cadeaux et argent PayPal en répondant à des sondages ou en magasinant.
+              Une <strong>prime de 10 $ (1 000 SB)</strong> après activation dans Swag Ups et un achat Shop admissible d’au moins 25 $ dans les 30 jours, rapportant au moins 25 SB.
             </p>
             <div class="link-meta">
               <span class="verified">Testé perso depuis 2009</span> · inscription gratuite. Détails sur la page dédiée.
@@ -742,10 +761,10 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             </div>
             <div class="link-cat">Internet à petit prix · Québec</div>
             <p class="link-desc">
-              Trois fournisseurs à petit prix face à face&nbsp;: prix mensuels réels, vitesses download/upload, frais d'installation et engagement. <strong>Fibre EBOX vs câble Fizz &amp; oxio.</strong>
+              Comparatif dédié des prix publics actuels, vitesses descendantes et ascendantes, technologies, frais d’installation et modalités d’EBOX, Fizz et oxio.
             </p>
             <div class="link-meta">
-              <span class="verified">Mis à jour <span class="verif-month">juillet 2026</span></span> · comparatif indépendant, prix vérifiés sur le terrain.
+              <span class="verified">Mis à jour <span class="verif-month">juillet 2026</span></span> · entretenu régulièrement à partir des prix publics et des modalités des fournisseurs, séparément du guide de parrainage EBOX.
             </div>
           </div>
 
@@ -758,10 +777,10 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             </div>
             <div class="link-cat">Fibre &amp; câble · Québec</div>
             <p class="link-desc">
-              Les gros joueurs face à EBOX, sur le réseau fibre de Bell lui-même&nbsp;: prix de grille vs promo, plafonds d'upload et petits caractères sur les <strong>crédits qui expirent</strong>.
+              Comparatif dédié des prix publics actuels, vitesses, technologies, équipements et modalités d’EBOX, Bell et Vidéotron.
             </p>
             <div class="link-meta">
-              <span class="verified">Mis à jour <span class="verif-month">juillet 2026</span></span> · comparatif indépendant, prix vérifiés sur le terrain.
+              <span class="verified">Mis à jour <span class="verif-month">juillet 2026</span></span> · entretenu régulièrement à partir des prix publics et des modalités des fournisseurs, séparément du guide de parrainage EBOX.
             </div>
           </div>
         </div>
@@ -779,7 +798,7 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             </div>
             <div class="link-cat">Cartes de crédit · Récompenses</div>
             <p class="link-desc">
-              Calcule la valeur réelle en argent de tes points de récompense (Amex MR, BNC, TD, Scene+, CIBC, BMO). Taux plancher vs taux optimal.
+              Calcule la valeur estimée en argent de vos points de récompense (Amex MR, BNC, TD, Scene+, CIBC, BMO). Taux plancher et taux optimal.
             </p>
             <div class="link-meta">
               <span class="verified">Taux vérifiés (<span class="verif-month">juillet 2026</span>)</span> · comparatif indépendant.
@@ -795,7 +814,7 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
             </div>
             <div class="link-cat">Encaissement de points</div>
             <p class="link-desc">
-              La mécanique canadienne (RHT) détaillée par institution pour convertir tes crédits de voyage et points bancaires directement en argent comptant.
+              Une explication pas à pas de la méthode de l’hôtel remboursable pour utiliser certains crédits voyage ou points admissibles, avec des précautions propres à chaque institution.
             </p>
             <div class="link-meta">
               <span class="verified">Mécaniques validées (<span class="verif-month">juillet 2026</span>)</span> · avertissements inclus.
@@ -804,10 +823,11 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
         </div>
       </section>
 
-      <section class="method-block" id="methodologie" aria-label="Méthodologie et gestion des offres">
-        <h2>Comment sont sélectionnées et suivies les offres ?</h2>
-        <p>Optimiser ses finances personnelles ne doit pas se faire au détriment de la clarté. Contrairement aux plateformes d'accumulation massives qui répertorient des centaines de coupons expirés, Cash Instinct applique une politique de sélection stricte : chaque service présenté ici est utilisé au quotidien ou a fait l'objet d'un suivi de facturation rigoureux.</p>
-        <p>Les critères de maintien d'une offre reposent sur la stabilité technique du parrainage, la transparence des clauses de versement des bonus et l'absence de frais cachés. Les données de cette plateforme sont auditées et nettoyées à chaque cycle trimestriel pour correspondre exactement aux architectures de suivi en vigueur au Canada.</p>
+      <section class="method-block" id="methodologie" aria-label="Méthode de vérification et d’entretien des guides Cash Instinct">
+        <h2>Comment Cash Instinct vérifie et entretient ses guides</h2>
+        <p>Cash Instinct n’applique pas le même niveau de preuve à chaque programme. Selon le guide, l’information peut provenir d’une utilisation personnelle de longue durée, d’un test documenté, d’un parcours de parrainage revérifié, de captures de compte, des conditions officielles ou de comparatifs indépendants.</p>
+        <p>Chaque page dédiée précise les preuves pertinentes et distingue les observations de première main des renseignements publiés par le fournisseur. Une offre ou un outil peut rester présenté lorsque son statut, ses conditions et son historique de maintenance sont expliqués clairement, même si je l’utilise moins souvent aujourd’hui.</p>
+        <p>Les montants et les dates des cartes résument les guides dédiés; les règles d’admissibilité complètes et les derniers détails de vérification se trouvent sur ces pages.</p>
       </section>
 
     </main>
@@ -815,8 +835,8 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
     <footer>
       <p>© 2026 Cash Instinct — Sélection personnelle de codes de parrainage pour le Canada. Mis à jour en <span id="footer-date">juillet 2026</span>.</p>
       <p>
-        Les liens sont affiliés : vous obtenez l'avantage (rabais, mois gratuit, cashback ou bonus),
-        et j'obtiens une récompense de parrainage en retour.
+        Certains liens sont des liens de parrainage ou d’affiliation. Si vous les utilisez et remplissez les conditions du programme,
+        je peux recevoir une récompense sans frais supplémentaires pour vous.
       </p>
       <p>
         Si une offre n'est plus valide ou pour toute question, signalez-le en ouvrant un billet sur le dépôt GitHub
@@ -851,6 +871,8 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
       toggle.textContent = dark ? '☀️ Mode Clair' : '🌙 Mode Sombre';
       toggle.setAttribute('aria-label', dark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
       toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      var themeMeta = document.getElementById('theme-color-meta');
+      if (themeMeta) themeMeta.setAttribute('content', dark ? '#0b0f17' : '#f8fafc');
     }
 
     // Synchronisation immédiate avec l'état réel du document
@@ -859,7 +881,7 @@ Pages dédiées /achieva/fr/ + /en/ ont le bandeau complet. -->
     toggle.addEventListener('click', function() {
       var dark = isDark();
       if (dark) {
-        document.documentElement.removeAttribute('data-theme');
+        document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
       } else {
         document.documentElement.setAttribute('data-theme', 'dark');
