@@ -56,6 +56,8 @@
   • dateModified (JSON-LD) : EN DUR, mis à jour À LA MAIN au push, reflète la VRAIE dernière modif.
     NE PAS automatiser (un dateModified qui change seul = signal SEO négatif).
   • footer-date / trust-date (visibles) : auto-générés par JS, affichage seulement.
+  • referral-verified-date: date of the latest real check of the registration
+    flow and referral-code field. Never update it without repeating that check.
 -->
 
  <!-- VOULU : URL /unlock géo-neutre (SANS /ca). L'audience EN inclut les USA →
@@ -70,7 +72,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0f17" />
 
   <title>Sticker Mule Coupon & Referral Code 2026 — $10 Credit</title>
-  <meta name="description" content="Sticker Mule coupon codes don't work at checkout. Use referral code CASHINSTINCT to get $10 off your first $30+ order. Free worldwide shipping." />
+  <meta name="description" content="Sticker Mule referral code CASHINSTINCT may provide a $10 credit on a qualifying first order of $30 or more. Terms and regional amounts may vary." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/stickermule/en/" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🏷️%3C/text%3E%3C/svg%3E">
@@ -90,7 +92,7 @@
   <meta property="og:type"             content="website" />
   <meta property="og:url"              content="https://cashinstinct.ca/stickermule/en/" />
   <meta property="og:title"            content="Sticker Mule Coupon & Referral Code 2026 — $10 Credit" />
-  <meta property="og:description"      content="Sticker Mule coupon codes don't work at checkout. Use code CASHINSTINCT or our referral link to claim $10 off your first $30+ order. Works worldwide." />
+  <meta property="og:description"      content="CASHINSTINCT may provide a $10 credit on a qualifying first Sticker Mule order of $30 or more. Current terms and regional amounts apply." />
   <meta property="og:locale"           content="en_US" />
   <meta property="og:locale:alternate" content="en_GB" />
   <meta property="og:locale:alternate" content="fr_CA" />
@@ -102,14 +104,22 @@
 
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Sticker Mule Coupon & Referral Code 2026 — $10 Credit" />
-  <meta name="twitter:description" content="Get $10 credit on your first $30+ Sticker Mule order with code CASHINSTINCT or our official referral link." />
+  <meta name="twitter:description" content="Potential $10 credit on a qualifying first Sticker Mule order of $30 or more with CASHINSTINCT." />
   <meta name="twitter:image"       content="https://cashinstinct.ca/stickermule/en/og.png" />
 
 <!--
-  REVIEW SCHEMA — DÉCISION VOLONTAIRE (ne pas "corriger") :
-  reviewRating 4.9 = NOTRE note d'éditeur Cash Instinct (avis subjectif, légitime).
-  Le 4.69/5 cité dans reviewBody = note OFFICIELLE de la plateforme Sticker Mule (source: stickermule.com/stats).
-  Les deux coexistent volontairement : note éditoriale ≠ note plateforme. Ne pas aligner l'une sur l'autre.
+  REVIEW SCHEMA — INTENTIONAL EDITORIAL DECISION (do not remove):
+  • reviewRating 4.9 is Cash Instinct's editorial opinion, not Sticker Mule's public rating.
+  • The review is grounded in personal use: customer since 2022, first referral
+    credit received in 2023 under the previous rewards program, then official
+    enrolment in the current commissions program when it replaced that system.
+  • Keep the visible review and reviewBody consistent.
+  • Never invent an order, product test, market, currency, reward, commission,
+    screenshot, or personal timeline. Personal experience must be true and
+    manually approved.
+  • This guide does not claim to have tested every product, country, or currency.
+  • Platform statistics must remain attributed to Sticker Mule and checked
+    against stickermule.com/stats before they are updated.
 -->
   <script type="application/ld+json">
   {
@@ -133,11 +143,11 @@
         "@id": "https://cashinstinct.ca/stickermule/en/",
         "url": "https://cashinstinct.ca/stickermule/en/",
         "name": "Sticker Mule Coupon & Referral Code 2026 — $10 Credit",
-        "description": "Sticker Mule coupon codes don't work at checkout. Use referral code CASHINSTINCT to get $10 off your first $30+ order. Free worldwide shipping.",
+        "description": "Sticker Mule referral code CASHINSTINCT may provide a $10 credit on a qualifying first order of $30 or more. Terms and regional amounts may vary.",
         "image": "https://cashinstinct.ca/stickermule/en/og.png",
         "inLanguage": "en-US",
         "datePublished": "2026-06-01",
-        "dateModified": "2026-07-11",
+        "dateModified": "2026-07-24",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "author":    { "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@id": "https://cashinstinct.ca/#organization" }
@@ -157,7 +167,7 @@
         "name": "Sticker Mule Custom Printing",
         "image": "https://cashinstinct.ca/stickermule/en/og.png",
         "brand": { "@type": "Brand", "name": "Sticker Mule" },
-        "description": "Custom stickers, labels, magnets, apparel, and packaging. 19 sticker types including die cut, kiss cut, holographic, clear, and window clings. Free worldwide shipping. $10 USD referral credit for new users via code CASHINSTINCT. Unlimited 10% commission program: earn on referral purchases and sales for 1 year.",
+        "description": "Custom stickers, labels, magnets, apparel, and packaging. Sticker Mule lists 19 sticker types and advertises worldwide shipping. Eligible new users may receive a $10 USD referral credit through CASHINSTINCT. The current commissions program describes 10% on eligible referral activity for 1 year.",
         "category": "Custom Printing Services",
         "offers": {
           "@type": "Offer",
@@ -186,7 +196,7 @@
           "@type": "Review",
           "author": { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization", "name": "Cash Instinct" },
           "reviewRating": { "@type": "Rating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1" },
-          "reviewBody": "Active Sticker Mule user since 2022 and referral partner under code CASHINSTINCT since the same year. The CASHINSTINCT store currently has 12 designs across dev/tech humor, Quebec expressions, and kawaii/cottagecore niches. Print quality is consistently excellent across all formats. Sticker Mule's own platform rating sits at 4.69/5 across over 360,000 verified reviews from more than 16 million orders processed — the numbers speak for themselves.",
+          "reviewBody": "Cash Instinct has been a Sticker Mule customer since 2022. The first referral credit was received in 2023 under the previous referral rewards program. When Sticker Mule replaced that system with its current commissions program, Cash Instinct enrolled officially and has continued to participate. This editorial review combines personal orders and account screenshots with Sticker Mule's official documentation and independent checks. It does not claim to cover every product, country, or currency.",
           "publisher": { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization", "name": "Cash Instinct" }
         }
       },
@@ -202,28 +212,28 @@
             "@type": "HowToStep",
             "position": 1,
             "name": "Choose Your Activation Method",
-            "text": "Click the verified referral button to apply the discount automatically, OR copy the manual code CASHINSTINCT to use on their form.",
+            "text": "Click our verified referral button to apply the discount automatically, OR copy the manual code CASHINSTINCT to enter on their sign-up form.",
             "url": "https://cashinstinct.ca/stickermule/en/#howto-step-1"
           },
    {
   "@type": "HowToStep",
   "position": 2,
   "name": "Create a Fresh Account",
-  "text": "Register with a brand-new email address. If signing up manually, click \"Add referral code\" right above the sign-up button and enter CASHINSTINCT.",
+            "text": "Register with a brand-new email address. If signing up manually, click \"Add referral code\" right above the sign-up button and enter CASHINSTINCT.",
   "url": "https://cashinstinct.ca/stickermule/en/#howto-step-2"
 },
           {
             "@type": "HowToStep",
             "position": 3,
             "name": "Add Items to Your Cart",
-            "text": "Select any custom stickers, labels, die-cut designs, or packaging. Ensure your cart reaches the minimum of $30 USD.",
+            "text": "Select any custom stickers, labels, die-cut designs, apparel, or packaging. Minimum cart threshold: $30 USD ($38 CAD). Minimum order is 10 units per design.",
             "url": "https://cashinstinct.ca/stickermule/en/#howto-step-3"
           },
           {
             "@type": "HowToStep",
             "position": 4,
             "name": "Enjoy Your Credit",
-            "text": "The discount is automatically applied at checkout. No further coupon code entry required. Free worldwide shipping is included.",
+            "text": "Confirm that the credit appears on the qualifying order before payment. Sticker Mule advertises worldwide shipping on stickers and many products, although delivery times and local import rules may vary.",
             "url": "https://cashinstinct.ca/stickermule/en/#howto-step-4"
           }
         ]
@@ -234,23 +244,23 @@
   "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is the best Stickermule referral code in 2026?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The best active code is CASHINSTINCT . Clicking the referral link on this page auto-applies the credit to your account — no manual entry needed. Or enter CASHINSTINCT in the \"Add referral code\" field during sign-up." }
+            "name": "Which Sticker Mule referral code is documented in this guide?",
+            "acceptedAnswer": { "@type": "Answer", "text": "This guide documents referral code CASHINSTINCT. Based on our account testing, clicking the referral link associates the credit with a new account; you can also enter CASHINSTINCT in the \"Add referral code\" field during sign-up. Eligibility remains subject to Sticker Mule's current terms." }
           },
           {
             "@type": "Question",
             "name": "Is there a Stickermule coupon code that works at checkout?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. Sticker Mule deactivated public coupon fields at checkout years ago. The only working discount for new accounts is the referral credit — enter CASHINSTINCT at sign-up or use the referral link on this page to activate it." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Sticker Mule does not currently display a standard public coupon field at checkout. According to the current registration flow and our testing, eligible new customers use a referral link or enter CASHINSTINCT in the referral-code field during sign-up. Check the form and current terms before ordering." }
           },
           {
             "@type": "Question",
             "name": "Why is my Stickermule or Make Stickers promo code not working?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Sticker Mule deactivates standard coupon text fields at checkout. Any generic \"make stickers promo code\" found on a coupon aggregator site is almost certainly invalid. To get the discount, use a referral link or apply code CASHINSTINCT during initial account registration." }
+            "acceptedAnswer": { "@type": "Answer", "text": "A code found on a coupon site may be expired, restricted, or intended for a different promotion. Sticker Mule's current flow uses the referral link or the \"Add referral code\" field during initial account registration. Confirm that CASHINSTINCT is accepted before completing registration." }
           },
           {
             "@type": "Question",
             "name": "Does this referral link work worldwide?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The referral program is valid globally. Standard credit amounts: $10 USD ($12.50 CAD). Sticker Mule automatically directs you to your regional store (Canada, UK, Australia, France, Mexico, or global) at sign-up." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Sticker Mule presents the referral program across several regional stores, with amounts adjusted by market. This guide has not tested every country or currency. Confirm the amount shown on Sticker Mule's registration page and review any local delivery or import rules before ordering." }
           },
           {
             "@type": "Question",
@@ -285,12 +295,12 @@
           {
             "@type": "Question",
             "name": "Does this invitation expire?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. The CASHINSTINCT referral program is active and monitored continuously throughout 2026. The code is valid as long as Sticker Mule maintains its commission program — indefinitely under current terms." }
+            "acceptedAnswer": { "@type": "Answer", "text": "No fixed expiry date is displayed in the current flow we monitor. The code remains dependent on Sticker Mule maintaining the referral and commissions program, so verify the confirmation shown during registration before placing an order." }
           },
           {
             "@type": "Question",
             "name": "Should I order a custom sticker sample pack for my first order?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. A custom sticker sample pack is the #3 most ordered product on Sticker Mule with over 1.5 million orders — the cheapest way to test print quality before a large run. Combined with the $10 USD ($12.50 CAD) referral credit via code CASHINSTINCT , your net cost drops to near zero once your cart reaches the $30 USD ($38 CAD) minimum. Note: a sample pack (small test batch of one design) is not the same as sticker packs (multiple designs sold together on one sheet)." }
+            "acceptedAnswer": { "@type": "Answer", "text": "A custom sticker sample pack can be a practical first order if you want to assess print quality before buying a larger run. Sticker Mule lists it among its most ordered products. If the referral credit is accepted and your cart meets the qualifying minimum, it may reduce the net cost. A sample pack tests one design; sticker packs combine multiple designs." }
           }
         ]
 },
@@ -776,7 +786,7 @@
             </a>
           </div>
           <p style="font-size: 0.85rem; margin-top: 20px; text-align: center;">
-            Official confirmation banner displayed by Stickermule after clicking the referral link.
+            Screenshot captured during our own test: confirmation displayed after opening the Sticker Mule referral link.
           </p>
         </div>
 
@@ -806,7 +816,7 @@
             </a>
           </div>
           <p style="font-size: 1rem; line-height: 1.5; text-align: center; margin-top: 24px; color: var(--text-soft);">
-            The registration field showing code CASHINSTINCT successfully verified with a green checkmark.
+            Screenshot from our own registration-flow check: CASHINSTINCT accepted in the referral-code field.
           </p>
         </div>
         
@@ -849,12 +859,13 @@
             <br><br>
             ⚠️ <strong>Important:</strong> The infrastructure at <strong>Stickermule</strong> has disabled standard promo boxes at checkout. If you choose to sign up manually without using the link, you must click <em>"Add referral code"</em> on the registration form and enter code <code>CASHINSTINCT</code>. It cannot be added after account creation.
             <br><br>
-            ✨ <strong>Bonus:</strong> This <strong>Stickermule promo</strong> stacks with rotating weekly flash deals and includes <strong>free worldwide shipping</strong> on custom stickers.
+            ✨ <strong>Current terms:</strong> Sticker Mule indicates that the account credit can be used with qualifying weekly deals and advertises worldwide shipping on custom stickers. Availability, delivery times, and local import rules may vary by destination.
          </div>
         <div class="transparency" style="margin-bottom: 24px;">
-          <strong>Transparency:</strong> this is an independent guide that tracks referrals. Using the link or code <code>CASHINSTINCT</code> gives you a welcome credit and earns me a 10% commission on your purchases for 1 year, at no extra cost to you. Full disclosure at the bottom of this page.
+          <strong>Transparency:</strong> this independent guide combines personal use, account screenshots, official Sticker Mule documentation, and periodic checks. If your account and order qualify, the link or code <code>CASHINSTINCT</code> may provide a welcome credit and Sticker Mule may pay me a 10% commission on eligible activity for 1 year, at no extra cost to you. Full disclosure appears below.
         </div>
-        <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-07-11">July 11, 2026</time></p>
+        <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-07-24">July 24, 2026</time></p>
+        <p class="last-updated">Referral flow verified: <time id="referral-verified-date" datetime="2026-07-24">July 24, 2026</time></p>
         </section>
         
         <section id="how-it-works">
@@ -885,23 +896,23 @@
             <li id="howto-step-4">
               <div>
                 <h3>Enjoy Your Credit</h3>
-                <p>The discount is automatically applied at checkout. No further code entry required. <strong>Free worldwide shipping</strong> is included on stickers and most products.</p>
+                <p>Confirm that the credit appears on the qualifying order before payment. Sticker Mule advertises worldwide shipping on stickers and many products, although delivery times and local import rules may vary.</p>
               </div>
             </li>
           </ol>
-          <div class="trust-badge">✓ Tested and verified by Cash Instinct</div>
+          <div class="trust-badge">✓ Registration flow documented by Cash Instinct</div>
         </section>
 
         <section id="coupon-code">
           <span class="section-label">Coupon Code</span>
           <h2>Sticker Mule Coupon Code vs. Referral Code — What Actually Works in 2026</h2>
         <h3>Why standard Sticker Mule coupon codes don't work</h3>
-<p>If you landed here searching for a <strong>Sticker Mule coupon code</strong> or a <strong>stickermule promo code</strong> to paste at checkout: there is no public coupon field at checkout. Sticker Mule removed standard promo box entry years ago. Any codes circulating on third-party coupon aggregator sites are either expired, invalid, or simply do not apply to new accounts.</p>
+<p>If you landed here searching for a <strong>Sticker Mule coupon code</strong> or a <strong>stickermule promo code</strong> to paste at checkout, the flow we checked does not display a standard public coupon field there. Codes listed by third-party aggregators may be expired, limited to another campaign, or inapplicable to new accounts.</p>
 
 <h3>What actually works: the referral link or registration code</h3>
 <p>What <em>does</em> work is a <strong>referral code</strong> — but only at account registration, not at checkout. Code <code>CASHINSTINCT</code> goes in the <strong>"Add referral code"</strong> field on the sign-up form. Once linked to your new account, the credit applies automatically at checkout on any qualifying order.</p>
           <div class="warning">
-            ⚠️ <strong>Common mistake:</strong> Searching for a "Sticker Mule promo code" to enter at checkout will never work. The only valid activation path is through the referral link or the registration-stage code field.
+            ⚠️ <strong>Common mistake:</strong> searching for a “Sticker Mule promo code” to enter at checkout. In the current flow we tested, activation happens through the referral link or the registration-stage referral-code field.
           </div>
           <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-top: 24px; box-shadow: var(--shadow);">
             <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 14px; color: var(--text);">Quick Comparison</h3>
@@ -1065,7 +1076,7 @@
           <h2>Who Is Eligible for the Welcome Credit?</h2>
           <p>This program is strictly for <strong>new Sticker Mule accounts worldwide</strong>. If you already have an account linked to your current email address, the discount will not apply.</p>
           <p>Unlike some referral programs that cap the number of referrals you can make (e.g. financial institutions with a 4/year limit), <strong>Sticker Mule imposes no cap</strong>: refer as many people as you want and earn 10% on their purchases and sales for 1 year each time.</p>
-          <p style="font-size: 0.95rem; color: var(--text-soft);">The credit adjusts automatically to your local currency at checkout. Free worldwide shipping is included on custom stickers and most products.</p>
+          <p style="font-size: 0.95rem; color: var(--text-soft);">Sticker Mule displays the applicable regional credit during the account and checkout flow. It also advertises worldwide shipping on custom stickers and many products; confirm the amount, availability, delivery time, and local import rules for your destination.</p>
         <p style="font-size: 0.95rem; color: var(--text-soft); margin-top: 16px;">
   Looking for other ways to save in Canada? Check our guides for 
   <a href="https://cashinstinct.ca/ebox/en/">EBOX referral code</a>, 
@@ -1132,16 +1143,16 @@
         </section>
 
         <section id="sticker-samples">
-  <span class="section-label">Smartest First Order</span>
-  <h2>Start With a Custom Sticker Sample Pack — The Best Way to Use Your Credit</h2>
+  <span class="section-label">Practical First Order</span>
+  <h2>Consider a Custom Sticker Sample Pack Before a Larger Order</h2>
 
-  <p>If this is your first Sticker Mule order, the smartest move is a <strong>custom sticker sample pack</strong>. It is the #3 most ordered product on the entire platform — over <strong>1.5 million orders</strong> — sitting right behind die cut and round stickers, and ahead of t-shirts. There is a reason it is that popular: it is the cheapest way to test print quality before committing to a large run.</p>
+  <p>If this is your first Sticker Mule order, a <strong>custom sticker sample pack</strong> can be a practical way to assess one design before committing to a larger run. Sticker Mule lists it as its third most ordered product, with more than <strong>1.5 million orders</strong> at the time of our check.</p>
 
-  <h3>Why samples + the referral credit is the best combo</h3>
+  <h3>How a sample order can work with the referral credit</h3>
   <p>A sample pack is a small quantity of die cut or kiss cut stickers at a reduced per-unit price. Pair it with your <strong>$10 USD ($12.50 CAD) referral credit</strong> activated via code <code>CASHINSTINCT</code>, and your net cost drops to near zero once your cart reaches the <strong>$30 USD ($38 CAD)</strong> minimum. You get real, production-grade stickers in hand — same vinyl, same laminate, same proofing process as a full order — for a fraction of the price.</p>
 
   <div class="field-exact">
-    💡 <strong>Optimal play:</strong> Activate the credit first (link or code <code>CASHINSTINCT</code>), build your cart to the $30 USD / $38 CAD minimum with a sample pack, then apply the credit automatically at checkout. You validate print quality on your own design before scaling to hundreds or thousands of units.
+    💡 <strong>Practical approach:</strong> activate the credit first (link or code <code>CASHINSTINCT</code>), build a qualifying cart, and confirm that the credit appears before payment. A sample order lets you inspect your own design before deciding whether to place a larger order.
   </div>
 
   <h3>Samples vs sticker packs — not the same thing</h3>
@@ -1149,17 +1160,28 @@
 </section>
         
         <section id="review">
-          <span class="section-label">Review</span>
-          <h2>Why Order From Sticker Mule?</h2>
+          <span class="section-label">Personal experience</span>
+          <h2>My Experience With Sticker Mule</h2>
            <div class="review-box">
-            <div class="trust-badge">✓ Tested and verified by Cash Instinct</div>
-            <p>Active Stickermule user since <strong>2022</strong> and referral partner under code CASHINSTINCT since the same year. The <a href="https://www.stickermule.com/cashinstinct" target="_blank" rel="noopener sponsored noreferrer">CASHINSTINCT store</a> currently has <strong>12 designs</strong> across dev/tech humor, Quebec expressions, and kawaii/cottagecore niches. Sticker Mule remains the industry standard for custom vinyl printing — whether for product labels, branded merch, or community stickers.</p>
-            <p>What makes them stand out:</p>
+            <div class="trust-badge">✓ Based on documented personal use</div>
+            <p>I have been a Sticker Mule customer since <strong>2022</strong>. I placed my first orders that year and received my first referral credit in <strong>2023</strong> under the previous referral rewards program. When Sticker Mule replaced that system with its current commissions program, I enrolled officially and have continued to participate.</p>
+            <p>The <a href="https://www.stickermule.com/cashinstinct" target="_blank" rel="noopener sponsored noreferrer">CASHINSTINCT store</a> currently has <strong>12 designs</strong> across dev/tech humour, Quebec expressions, and kawaii/cottagecore themes. This guide combines my orders, screenshots from my account, Sticker Mule’s official documentation, and independent checks.</p>
+            <p><strong>Limits of this review:</strong> I have not tested every Sticker Mule product, destination, or supported currency. Statements about markets and products I have not personally used are attributed to Sticker Mule’s documentation rather than presented as firsthand experience.</p>
+            <p>Why I still order:</p>
             <ul>
-              <li><strong>Consistent print quality:</strong> Thick vinyl with protective laminate — weatherproof, UV-resistant, and dishwasher-safe (except transfer stickers and vinyl lettering).</li>
-              <li><strong>Free automated proofing:</strong> Digital proof delivered within hours. Unlimited free revisions before production — no hidden fees.</li>
-              <li><strong>Free worldwide shipping:</strong> Included on custom stickers and most products, globally.</li>
-              <li><strong>Transparent commission program:</strong> 10% on referral purchases and sales for 1 year, no cap. Over $161,000 USD paid in commissions to date.</li>
+              <li><strong>Print quality on my orders:</strong> the vinyl and finishing have been consistent on the formats I have personally ordered.</li>
+              <li><strong>Proofing workflow:</strong> the ability to review a digital proof and request revisions before production remains useful for my designs.</li>
+              <li><strong>Shipping:</strong> Sticker Mule advertises worldwide shipping on custom stickers and many products; delivery times and local import rules may vary.</li>
+              <li><strong>Documented commission program:</strong> the current terms describe 10% on eligible referral purchases and sales for 1 year. I verify the official commissions page when updating this guide.</li>
+            </ul>
+            <h3>Why You Can Trust This Guide</h3>
+            <ul>
+              <li>Sticker Mule customer since 2022.</li>
+              <li>First referral credit received in 2023 under the previous rewards program.</li>
+              <li>Officially enrolled in the current commissions program after it replaced the previous system.</li>
+              <li>Account screenshots and referral-flow checks performed independently.</li>
+              <li>Official terms are used for products, markets, and currencies I have not personally tested.</li>
+              <li>Cash Instinct is independent and not officially affiliated with Sticker Mule.</li>
             </ul>
             <p style="margin-top: 20px; font-size: 0.95rem; border-top: 1px dashed var(--border); padding-top: 15px;">
               💡 Optimizing your expenses? Explore my other guides for <a href="https://cashinstinct.ca/ebox/en/">EBOX Internet</a> or financial bonuses with <a href="https://cashinstinct.ca/tangerine/en/">Tangerine</a>.
@@ -1181,7 +1203,7 @@
 
     <div class="fact">
       <strong>Sticker Mule promo code</strong>
-      <span>A common search phrase for a Sticker Mule discount. In practice, standard promo codes do not work at checkout. The only working option is a referral code or referral link used when creating a new account — like code <code>CASHINSTINCT</code>.</span>
+      <span>A common search phrase for a Sticker Mule discount. In the registration flow tested for this guide, no standard public coupon field appeared at checkout; eligible new accounts instead used a referral link or the referral-code field during sign-up.</span>
     </div>
 
     <div class="fact">
@@ -1191,7 +1213,7 @@
 
     <div class="fact">
       <strong>Referral link</strong>
-      <span>A unique URL generated by a Sticker Mule referrer. Clicking it before signing up applies the welcome credit automatically — no manual code entry needed. The easiest activation method.</span>
+      <span>A unique URL generated by a Sticker Mule referrer. In the flow tested for this guide, opening it before sign-up associated the referral with the new account without manual code entry. Confirm the credit shown before ordering.</span>
     </div>
 
     <div class="fact">
@@ -1267,7 +1289,7 @@
   <p>Make Stickers is Sticker Mule's simplified ordering flow designed for first-time buyers who want a single product without navigating the full catalogue. You upload a design, pick a size and quantity, and get a proof within hours. The backend — production, shipping, quality control — is identical to a standard Sticker Mule order. There is no separate account, no separate pricing, and no separate promo code system.</p>
 
   <h3>Does a Make Stickers promo code exist?</h3>
-  <p>No standalone Make Stickers promo code exists. The discount system on Make Stickers follows the same rules as the main platform: <strong>no public coupon field at checkout</strong>. The only working discount for new accounts is the referral credit. Use code <code>CASHINSTINCT</code> during account registration — in the <strong>"Add referral code"</strong> field — or click the referral link before signing up. The $10 USD ($12.50 CAD) credit applies automatically on your first qualifying order of $30 or more.</p>
+  <p>We did not find a standalone Make Stickers promo-code field in the current flow. For eligible new accounts, Sticker Mule currently directs users to its referral link or the <strong>"Add referral code"</strong> field during registration. Enter <code>CASHINSTINCT</code> or open the referral link before signing up, then confirm the credit displayed for a qualifying first order.</p>
 
   <h3>Which sticker type should you order first?</h3>
   <p>For most first-time buyers, <strong>die cut stickers</strong> are the default starting point — they are the #1 most ordered product on Sticker Mule with over 6.2 million orders. The cut follows the exact outline of your design, no rectangular border. They include a protective laminate: weatherproof, UV-resistant, and dishwasher-safe. Minimum order is 10 units.</p>
@@ -1285,7 +1307,7 @@
   <p>Before placing a first order, most buyers run a quick search for Sticker Mule alternatives. The usual suspects: StickerApp, CustomStickers.com, and Vistaprint. Here is an honest breakdown of where each platform wins — and where Sticker Mule's pricing is worth paying more for.</p>
 
   <h3>Where Sticker Mule has a clear edge</h3>
-  <p>Three things set Sticker Mule apart from every alternative: <strong>free worldwide shipping on stickers</strong>, a <strong>new customer referral credit</strong> ($10 USD via code CASHINSTINCT), and a <strong>19-type product catalogue</strong> that no competitor comes close to matching. For international buyers especially — Canada, UK, Australia — the free shipping alone offsets the slightly higher per-unit price compared to StickerApp.</p>
+  <p>Three documented differences may matter when comparing Sticker Mule with alternatives: Sticker Mule advertises <strong>worldwide shipping on stickers</strong>, offers an eligible <strong>new-customer referral credit</strong> ($10 USD through CASHINSTINCT under current terms), and lists a <strong>19-type sticker catalogue</strong>. The practical value varies by destination, product, quantity, delivery time, and any local import charges.</p>
   <p>The proofing process is also worth mentioning. Every order includes a free digital proof with <strong>unlimited free revisions</strong> before production starts. Competing platforms either charge for revisions or use fully automated proofing with no human review option.</p>
 
   <h3>Where alternatives have an advantage</h3>
@@ -1389,30 +1411,30 @@
   <div class="faq">
 
     <details>
-      <summary id="faq-q1">What is the best Stickermule referral code in 2026?</summary>
+      <summary id="faq-q1">Which Sticker Mule referral code is documented in this guide?</summary>
       <div class="faq-body" role="region" aria-labelledby="faq-q1">
-        <p>The best active code is <code>CASHINSTINCT</code>. Clicking the referral link on this page auto-applies the credit to your account — no manual entry needed. Or enter <code>CASHINSTINCT</code> in the "Add referral code" field during sign-up.</p>
+        <p>This guide documents referral code <code>CASHINSTINCT</code>. Based on our account testing, clicking the referral link associates the credit with a new account; you can also enter <code>CASHINSTINCT</code> in the "Add referral code" field during sign-up. Eligibility remains subject to Sticker Mule's current terms.</p>
       </div>
     </details>
 
     <details>
       <summary id="faq-q2">Is there a Stickermule coupon code that works at checkout?</summary>
       <div class="faq-body" role="region" aria-labelledby="faq-q2">
-        <p>No. Sticker Mule deactivated public coupon fields at checkout years ago. The only working discount for new accounts is the referral credit — enter <code>CASHINSTINCT</code> at sign-up or use the referral link on this page to activate it.</p>
+        <p>Sticker Mule does not currently display a standard public coupon field at checkout. According to the current registration flow and our testing, eligible new customers use a referral link or enter <code>CASHINSTINCT</code> in the referral-code field during sign-up. Check the form and current terms before ordering.</p>
       </div>
     </details>
 
     <details>
       <summary id="faq-q3">Why is my Stickermule or Make Stickers promo code not working?</summary>
       <div class="faq-body" role="region" aria-labelledby="faq-q3">
-        <p>Sticker Mule deactivates standard coupon text fields at checkout. Any generic "make stickers promo code" found on a coupon aggregator site is almost certainly invalid. To get the discount, use a referral link or apply code <code>CASHINSTINCT</code> during initial account registration.</p>
+        <p>A code found on a coupon site may be expired, restricted, or intended for a different promotion. Sticker Mule's current flow uses the referral link or the "Add referral code" field during initial account registration. Confirm that <code>CASHINSTINCT</code> is accepted before completing registration.</p>
       </div>
     </details>
 
     <details>
       <summary id="faq-q4">Does this referral link work worldwide?</summary>
       <div class="faq-body" role="region" aria-labelledby="faq-q4">
-        <p>Yes. The referral program is valid globally. Standard credit amounts: $10 USD ($12.50 CAD). Sticker Mule automatically directs you to your regional store (Canada, UK, Australia, France, Mexico, or global) at sign-up.</p>
+        <p>Sticker Mule presents the referral program across several regional stores, with amounts adjusted by market. This guide has not tested every country or currency. Confirm the amount shown on Sticker Mule's registration page and review any local delivery or import rules before ordering.</p>
       </div>
     </details>
 
@@ -1467,14 +1489,14 @@
     <details>
       <summary id="faq-q11">Does this invitation expire?</summary>
       <div class="faq-body" role="region" aria-labelledby="faq-q11">
-        <p>No. The CASHINSTINCT referral program is active and monitored continuously throughout 2026. The code is valid as long as Sticker Mule maintains its commission program — indefinitely under current terms.</p>
+        <p>No fixed expiry date is displayed in the current flow we monitor. The code remains dependent on Sticker Mule maintaining the referral and commissions program, so verify the confirmation shown during registration before placing an order.</p>
       </div>
     </details>
 
     <details>
       <summary id="faq-q12">Should I order a custom sticker sample pack for my first order?</summary>
       <div class="faq-body" role="region" aria-labelledby="faq-q12">
-        <p>Yes. A custom sticker sample pack is the #3 most ordered product on Sticker Mule with over 1.5 million orders — the cheapest way to test print quality before a large run. Combined with the $10 USD ($12.50 CAD) referral credit via code <code>CASHINSTINCT</code>, your net cost drops to near zero once your cart reaches the $30 USD ($38 CAD) minimum. Note: a sample pack (small test batch of one design) is not the same as sticker packs (multiple designs sold together on one sheet).</p>
+        <p>A custom sticker sample pack can be a practical first order if you want to assess print quality before buying a larger run. Sticker Mule lists it among its most ordered products. If the referral credit is accepted and your cart meets the qualifying minimum, it may reduce the net cost. A sample pack tests one design; sticker packs combine multiple designs.</p>
       </div>
     </details>
     
@@ -1483,14 +1505,14 @@
 
         <div class="cta-section">
           <h2>Ready to Print Your Custom Designs?</h2>
-          <p>Click below to open Stickermule. Your credit will be applied automatically on your first qualifying order.</p>
+          <p>Open Sticker Mule and confirm the referral credit shown for your account before placing a qualifying first order.</p>
           <a class="btn dynamic-link" href="https://www.stickermule.com/unlock?ref_id=6042474701" target="_blank" rel="noopener sponsored noreferrer">
             🌐 Activate Sticker Mule Credit
           </a>
         </div>
 
         <div class="transparency">
-          <strong>Transparency:</strong> Using the referral link or code <code>CASHINSTINCT</code> gives you a welcome credit and earns me 10% commission on your purchases for 1 year — at no extra cost to you. Pricing is identical to going directly to Sticker Mule.
+          <strong>Transparency:</strong> I have used Sticker Mule since 2022, received my first referral credit in 2023 under the previous rewards program, and later enrolled in the current commissions program. If your account and order qualify, the link or code <code>CASHINSTINCT</code> may provide a welcome credit and Sticker Mule may pay me a 10% commission on eligible activity for 1 year, at no extra cost to you. Terms can change.
         </div>
 
       </div>
@@ -1515,7 +1537,7 @@
   <footer>
     <div class="container">
       <p>This website is an independent resource and is not officially affiliated with Sticker Mule. All trademarks belong to their respective owners.</p>
-      <p style="margin-top:6px;">Last updated: <time id="footer-date" datetime="2026-07-11">July 2026</time></p>
+      <p style="margin-top:6px;">Last updated: <time id="footer-date" datetime="2026-07-24">July 2026</time></p>
     </div>
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
     <nav class="footer-links" aria-label="Liens du site">
