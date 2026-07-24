@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <!--
-════════════════<!DOCTYPE html>
-<!--
 ═══════════════════════════════════════════════════════════════════
   MAINTENANCE NOTE — Points Value Calculator EN — created: 2026-07-08
-  UPDATED: 2026-07-19 — Calculator defaults changed (see defaultIndex
-  per program) + rate verification (see chat summary for detailed 
-  sources re-verified on that day).
+  UPDATED: 2026-07-24 — four programs added, guaranteed/realistic/
+  optimal scenarios, decision ranking, and full FR/EN parity.
 ═══════════════════════════════════════════════════════════════════
   STATUS: new page, NO affiliate program behind it — utility/comparison
   page for SEO/GEO traffic, no promo codes or Offers.
@@ -18,7 +15,7 @@
 
   BREADCRUMB: "#tools" category used = actual anchors from the homepage.
 
-  RATES — SOURCES AND VERIFICATION DATE (2026-07-08, re-validated 2026-07-19)
+  RATES — SOURCES AND VERIFICATION HISTORY (updated 2026-07-24)
   • MR (Amex Membership Rewards CA): statement credit 1¢ fixed, travel portal
     fixed rate 1.5-2¢ depending on category, partner transfer 1.7-2.2¢
     optimized average — Milesopedia, Prince of Travel.
@@ -42,7 +39,7 @@
     on PC Financial card 0.07¢ fixed (10,000 pts = $7) — pcfinancial.ca,
     Milesopedia.
   • BMO Rewards (credit card — DISTINCT from Blue Rewards): travel
-    0.667¢ fixed, statement credit 0.33¢ fixed, gift cards/merchandise 0.54-0.56¢
+    0.667¢ fixed, statement credit 0.5¢ fixed, gift cards/merchandise 0.54-0.56¢
     — Milesopedia, Points Miles and Bling.
   • CIBC Aventura: airline chart up to 2.29¢ (short-haul),
     Rewards Centre (general travel) 1¢ fixed, financial products
@@ -66,7 +63,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090e0e" />
 
   <title>Reward Points Value Calculator (2026) | Cash Instinct</title>
-  <meta name="description" content="Calculate the real cash value of your MR, Blue Rewards, NBC, TD, Scene+, PC Optimum, BMO Rewards, MBNA, and CIBC Aventura points. Rates verified July 2026." />
+  <meta name="description" content="Calculate the real value of MR, Aeroplan, RBC Avion, Avios, Marriott Bonvoy, Blue Rewards, NBC, TD, Scene+, PC Optimum, BMO, MBNA, and CIBC Aventura points." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/valeur-points/en/" />
 
@@ -81,7 +78,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashinstinct.ca/valeur-points/en/" />
   <meta property="og:title" content="Reward Points Value Calculator (2026) | Cash Instinct" />
-  <meta property="og:description" content="Calculate the real cash value of your MR, Blue Rewards, NBC, TD, Scene+, PC Optimum, BMO Rewards, MBNA, and CIBC Aventura points. Rates verified July 2026." />
+  <meta property="og:description" content="Calculate the real value of MR, Aeroplan, RBC Avion, Avios, Marriott Bonvoy, Blue Rewards, NBC, TD, Scene+, PC Optimum, BMO, MBNA, and CIBC Aventura points." />
   <meta property="og:image" content="https://cashinstinct.ca/valeur-points/en/og.png" />
   <meta property="og:locale" content="en_CA" />
   <meta property="og:site_name" content="Cash Instinct" />
@@ -90,7 +87,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Reward Points Value Calculator (2026) | Cash Instinct" />
-  <meta name="twitter:description" content="Calculate the real cash value of your MR, Blue Rewards, NBC, TD, Scene+, PC Optimum, BMO Rewards, MBNA, and CIBC Aventura points. Rates verified July 2026." />
+  <meta name="twitter:description" content="Calculate the real value of MR, Aeroplan, RBC Avion, Avios, Marriott Bonvoy, Blue Rewards, NBC, TD, Scene+, PC Optimum, BMO, MBNA, and CIBC Aventura points." />
   <meta name="twitter:image" content="https://cashinstinct.ca/valeur-points/en/og.png" />
 
   <script>
@@ -120,11 +117,11 @@
         "@id": "https://cashinstinct.ca/valeur-points/en/",
         "url": "https://cashinstinct.ca/valeur-points/en/",
         "name": "Reward Points Value Calculator (2026) | Cash Instinct",
-        "description": "Calculate the real cash value of your MR, Blue Rewards, NBC, TD, Scene+, PC Optimum, BMO Rewards, MBNA, and CIBC Aventura points. Rates verified July 2026.",
+        "description": "Calculate the real value of MR, Aeroplan, RBC Avion, Avios, Marriott Bonvoy, Blue Rewards, NBC, TD, Scene+, PC Optimum, BMO, MBNA, and CIBC Aventura points.",
         "inLanguage": "en-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-07-08",
-        "dateModified": "2026-07-19",
+        "dateModified": "2026-07-24",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
         "publisher": {
           "@type": "Organization",
@@ -163,7 +160,7 @@
           {
             "@type": "Question",
             "name": "Which program has the highest potential value?",
-            "acceptedAnswer": { "@type": "Answer", "text": "CIBC Aventura, via its airline chart, can reach 2.29 cents per point on short-haul flights — significantly higher than other programs. However, this optimal rate requires booking via the CIBC airline chart rather than taking a statement credit, where the value drops to 0.63 cents." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Aeroplan has the highest documented potential in this calculator. Premium-cabin awards, partner airlines, and sweet spots can exceed 4 cents per point, but that value is highly variable and depends on award availability. A floor redemption is closer to 1 cent per point." }
           },
           {
             "@type": "Question",
@@ -305,6 +302,50 @@
     .rate-flag.variable { background: var(--warning-bg); color: var(--warning-text); }
     [data-theme="dark"] .rate-flag.variable { background: rgba(180, 83, 9, 0.2); }
     .calc-note { font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin-top: 16px; }
+    .calc-inputs { display: grid; grid-template-columns: 1.5fr 1fr; gap: 16px; }
+    .program-profile { margin-top: 22px; padding: 20px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-soft); }
+    .program-profile h3 { margin: 0 0 14px; font-size: 1.2rem; color: var(--text); }
+    .profile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+    .profile-score { padding: 10px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border); }
+    .profile-score span { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+    .profile-score strong { display: block; margin-top: 4px; color: var(--accent-text); letter-spacing: 0.08em; }
+    .profile-facts { display: grid; gap: 7px; font-size: 0.9rem; color: var(--text-soft); }
+    .profile-facts strong { color: var(--text); }
+    .result-kicker { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+    .calc-result .range { font-size: 0.85rem; color: var(--text-soft); margin-top: 8px; }
+    .scenario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+    .scenario { padding: 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+    .scenario.recommended { border-color: var(--accent); background: rgba(5, 131, 115, 0.06); }
+    .scenario-label { display: block; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .scenario-value { display: block; margin: 6px 0 3px; color: var(--text); font-size: 1.25rem; font-weight: 900; font-variant-numeric: tabular-nums; }
+    .scenario small { color: var(--muted); line-height: 1.35; }
+    .decision-insight { display: grid; grid-template-columns: 1.25fr 1fr 1.25fr; gap: 10px; margin-top: 14px; }
+    .decision-item { padding: 13px 14px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); }
+    .decision-item.highlight { border-color: var(--accent); background: rgba(5, 131, 115, 0.07); }
+    .decision-item span { display: block; margin-bottom: 4px; color: var(--muted); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+    .decision-item strong { display: block; color: var(--text); font-size: 0.9rem; line-height: 1.35; }
+    .redemption-heading { margin: 28px 0 12px; font-size: 1.15rem; color: var(--text); }
+    .redemption-list { display: grid; gap: 10px; }
+    .redemption-option { display: grid; grid-template-columns: 38px 1fr auto; gap: 12px; align-items: start; padding: 15px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+    .redemption-option.best-option { border-color: var(--accent); }
+    .redemption-medal { font-size: 1.25rem; line-height: 1.2; }
+    .redemption-name { display: block; font-weight: 800; color: var(--text); }
+    .redemption-meta { display: block; margin-top: 4px; font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
+    .redemption-value { text-align: right; white-space: nowrap; font-weight: 900; color: var(--accent-text); font-variant-numeric: tabular-nums; }
+    .redemption-value small { display: block; font-weight: 600; color: var(--muted); }
+    .constraint { display: inline-block; margin-top: 7px; padding: 4px 8px; border-radius: 6px; background: var(--warning-bg); color: var(--warning-text); font-size: 0.75rem; font-weight: 700; }
+    .unavailable { opacity: 0.78; }
+    .unavailable .redemption-value { color: var(--warning-text); }
+    .methods-toggle { display: block; width: 100%; margin-top: 10px; padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-soft); color: var(--accent-text); font: inherit; font-size: 0.86rem; font-weight: 800; cursor: pointer; }
+    .methods-toggle[hidden], .redemption-option[hidden] { display: none !important; }
+    .methods-toggle:hover { border-color: var(--accent); }
+    .program-details { margin-top: 18px; box-shadow: none; }
+    .program-details .program-profile { margin-top: 0; border: 0; border-radius: 0; }
+    @media (max-width: 680px) {
+      .calc-inputs, .profile-grid, .scenario-grid, .decision-insight { grid-template-columns: 1fr; }
+      .redemption-option { grid-template-columns: 32px 1fr; }
+      .redemption-value { grid-column: 2; text-align: left; }
+    }
   </style>
 
 </head>
@@ -329,8 +370,8 @@
 
   <header class="hero">
     <div class="container">
-      <h1>Reward Points <span>Value Calculator</span> — 9&nbsp;Canadian Programs</h1>
-      <p>MR (Amex), Blue Rewards (BMO), NBC À la carte, TD Rewards, Scene+, PC Optimum, BMO Rewards, MBNA Rewards, and CIBC Aventura. Enter your balance, select your redemption method, and get the true dollar value — not the marketing fluff.</p>
+      <h1>Reward Points <span>Value Calculator</span> — 13&nbsp;Canadian Programs</h1>
+      <p>MR, Aeroplan, RBC Avion, British Airways Club (Avios), Marriott Bonvoy, Blue Rewards, NBC, TD, Scene+, PC Optimum, BMO Rewards, MBNA, and CIBC Aventura. Compare guaranteed, realistic, and optimal values, then see every redemption method ranked.</p>
       <a class="cta-btn-hero" href="#calculatrice">Jump to calculator ↓</a>
     </div>
   </header>
@@ -363,9 +404,9 @@
         </nav>
 
         <div class="ai-summary">
-          The <strong>true value of a point</strong> depends entirely on the redemption method chosen — not on a single marketing number. In 2026, rates range from <strong>0.07¢/point</strong> (PC Optimum statement credit) to <strong>2.29¢/point</strong> (CIBC Aventura, short-haul airline chart).
+          The <strong>true value of a point</strong> depends entirely on the redemption method chosen — not on a single marketing number. In 2026, rates range from <strong>0.07¢/point</strong> (PC Optimum statement credit) to <strong>4¢/point or more</strong> (exceptional Aeroplan premium-cabin and partner awards).
           <br><br>
-          📊 <strong>Two program families:</strong> in-house bank programs with a single rate (Blue Rewards, PC Optimum in-store) are easy to evaluate — no optimization possible. Programs with multiple fixed tiers (TD, NBC, Scene+, BMO Rewards, MBNA) or variable rates (MR, CIBC Aventura) reward optimization — sometimes yielding 2 to 4 times the value of the simplest redemption.
+          📊 <strong>Three program families:</strong> fixed-rate programs are predictable, bank programs with multiple tiers reward careful redemption, and transferable travel currencies such as MR, Aeroplan, Avion, and Avios offer the highest potential — with the greatest variability.
           <br><br>
           💡 <strong>Pro tip:</strong> You can force your points to be cashed out at the optimal travel rate (as hard cash) without having to travel by using the <a href="https://cashinstinct.ca/rht/en/">Refundable Hotel Trick (RHT)</a>.
         </div>
@@ -375,38 +416,52 @@
         <section id="calculatrice">
           <span class="section-label">Tool</span>
           <h2>Points Value Calculator</h2>
-          <p>Choose your program and redemption method to see the actual value in Canadian dollars.</p>
+          <p>Enter your balance to see its realistic value, the best uses, and the important constraints.</p>
 
           <div class="calc-card">
-            <div class="calc-field">
-              <label for="program">Program</label>
-              <select id="program">
-                <option value="mr">MR — Amex Membership Rewards</option>
-                <option value="blue">Blue Rewards (BMO, ex-Air Miles)</option>
-                <option value="bnc">NBC — À la carte Rewards</option>
-                <option value="td">TD Rewards</option>
-                <option value="scene">Scene+ (Scotiabank)</option>
-                <option value="pc">PC Optimum</option>
-                <option value="bmorewards">BMO Rewards (credit card)</option>
-                <option value="mbna">MBNA Rewards</option>
-                <option value="aventura">CIBC Aventura</option>
-              </select>
-            </div>
+            <div class="calc-inputs">
+              <div class="calc-field">
+                <label for="program">Program</label>
+                <select id="program">
+                  <option value="mr">MR — Amex Membership Rewards</option>
+                  <option value="aeroplan">Aeroplan</option>
+                  <option value="avion">RBC Avion Rewards</option>
+                  <option value="avios">British Airways Club (Avios)</option>
+                  <option value="marriott">Marriott Bonvoy</option>
+                  <option value="blue">Blue Rewards (BMO, ex-Air Miles)</option>
+                  <option value="bnc">NBC — À la carte Rewards</option>
+                  <option value="td">TD Rewards</option>
+                  <option value="scene">Scene+ (Scotiabank)</option>
+                  <option value="pc">PC Optimum</option>
+                  <option value="bmorewards">BMO Rewards (credit card)</option>
+                  <option value="mbna">MBNA Rewards</option>
+                  <option value="aventura">CIBC Aventura</option>
+                </select>
+              </div>
 
-            <div class="calc-field">
-              <label for="mode">Redemption method</label>
-              <select id="mode"></select>
-            </div>
-
-            <div class="calc-field">
-              <label for="points">Number of points</label>
-              <input type="number" id="points" value="10000" min="0" step="100">
+              <div class="calc-field">
+                <label for="points">Number of points</label>
+                <input type="number" id="points" value="10000" min="0" step="100">
+              </div>
             </div>
 
             <div class="calc-result">
-              <div class="val" id="resultVal">$100.00</div>
-              <div class="rate" id="resultRate">1.00¢/point</div>
+              <div class="result-kicker">Estimated realistic value</div>
+              <div class="val" id="resultVal">$170–$200</div>
+              <div class="range" id="resultRate">Depending on the redemption method</div>
             </div>
+
+            <div class="decision-insight" id="decisionInsight"></div>
+            <div class="scenario-grid" id="scenarioGrid"></div>
+
+            <h3 class="redemption-heading">Redemption methods ranked</h3>
+            <div class="redemption-list" id="redemptionList"></div>
+            <button class="methods-toggle" id="methodsToggle" type="button" hidden>See all methods</button>
+
+            <details class="program-details">
+              <summary>Understand this program</summary>
+              <div class="program-profile" id="programProfile"></div>
+            </details>
 
             <p class="calc-note" id="calcNote"></p>
           </div>
@@ -415,7 +470,7 @@
         <section id="comparatif">
           <span class="section-label">Comparison</span>
           <h2>Comparison Table — Floor Rate vs. Optimal Rate</h2>
-          <p>The "floor" rate is the worst common redemption method (often gift cards or statement credit). The "optimal" rate is the best accessible method without extreme conditions. The gap between the two measures how worthwhile optimization is for that program.</p>
+          <p>The "floor" rate is the worst common redemption method (often gift cards or statement credit). The "optimal" rate is the best documented potential and may require specific conditions. The gap shows how much a poor redemption method can cost.</p>
 
           <div style="overflow-x: auto; border-radius: 8px; border: 1px solid var(--border);">
             <table class="compare-table" aria-label="Points value comparison by program">
@@ -423,12 +478,16 @@
                 <tr><th>Program</th><th>Floor rate</th><th>Optimal rate</th><th>10,000 pts =</th></tr>
               </thead>
                <tbody>
-                <tr><td>MR (Amex)</td><td>1.00¢</td><td class="best">1.7 to 2.2¢ (transfer)</td><td>$100 – $220</td></tr>
+                <tr><td>Aeroplan</td><td>1.00¢</td><td class="best">2.5 to 4¢+ (premium/partners)</td><td>$100 – $400+</td></tr>
+                <tr><td>British Airways Club (Avios)</td><td>0.8 to 1.0¢</td><td class="best">3¢+ (partner sweet spots)</td><td>$80 – $300+</td></tr>
+                <tr><td>RBC Avion Rewards</td><td>about 1.00¢</td><td class="best">1.8 to 2.3¢ (chart/transfers)</td><td>$100 – $230</td></tr>
                 <tr><td>CIBC Aventura</td><td>0.63¢</td><td class="best">up to 2.29¢ (airline chart)</td><td>$63 – $229</td></tr>
+                <tr><td>MR (Amex)</td><td>1.00¢</td><td class="best">1.7 to 2.2¢ (transfer)</td><td>$100 – $220</td></tr>
+                <tr><td>Marriott Bonvoy</td><td>0.70¢</td><td class="best">1.3 to 1.7¢ (selected hotels)</td><td>$70 – $170</td></tr>
                 <tr><td>Scene+ (Scotiabank)</td><td>0.71¢ (gift cards)</td><td class="best">1.00¢ (travel/grocery/credit)</td><td>$71 – $100</td></tr>
                 <tr><td>MBNA Rewards</td><td>0.83¢ (statement credit)</td><td class="best">1.00¢ (travel)</td><td>$83.33 – $100</td></tr>
                 <tr><td>NBC À la carte</td><td>0.40¢ (statement credit)</td><td class="best">1.00¢ (travel agency)</td><td>$40 – $100</td></tr>
-                <tr><td>BMO Rewards (card)</td><td>0.33¢ (statement credit)</td><td class="best">0.67¢ (travel)</td><td>$33.33 – $66.67</td></tr>
+                <tr><td>BMO Rewards (card)</td><td>0.50¢ (statement credit)</td><td class="best">0.67¢ (travel)</td><td>$50.00 – $66.67</td></tr>
                 <tr><td>Blue Rewards (BMO)</td><td colspan="2" style="text-align:center;">0.667¢ (single rate)</td><td>$66.67</td></tr>
                 <tr><td>TD Rewards</td><td>0.23¢ (gifts)</td><td class="best">0.50¢ (Expedia for TD)</td><td>$23 – $50</td></tr>
                 <tr><td>PC Optimum</td><td>0.07¢ (statement credit)</td><td class="best">0.10¢ (in-store)</td><td>$7 – $10</td></tr>
@@ -463,7 +522,7 @@
             <details>
               <summary id="faq-q4">Which program has the highest potential value?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q4">
-                <p><strong>CIBC Aventura</strong>, via its airline chart, can reach <strong>2.29 cents per point</strong> on short-haul flights — significantly higher than other programs. However, this optimal rate requires booking via the CIBC airline chart rather than taking a statement credit, where the value drops to 0.63 cents.</p>
+                <p><strong>Aeroplan</strong> has the highest documented potential in this calculator. Premium-cabin awards, partner airlines, and sweet spots can exceed <strong>4 cents per point</strong>, but that value is highly variable and depends on award availability. A floor redemption is closer to 1 cent per point.</p>
               </div>
             </details>
             <details>
@@ -491,7 +550,7 @@
 
   <footer>
     <div class="container">
-      <p>Independent reference site. No affiliation with MR/Amex, BMO, National Bank, TD, PC Optimum, or CIBC. All trademarks belong to their respective owners.</p>
+      <p>Independent reference site. No affiliation with Amex, Aeroplan, Air Canada, RBC, British Airways, Marriott, BMO, National Bank, TD, PC Optimum, or CIBC. All trademarks belong to their respective owners.</p>
       <p style="margin-top:6px;">Points Value Calculator — Last updated: <time id="footer-date" datetime="2026-07-19">July 2026</time></p>
     </div>
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
@@ -618,11 +677,11 @@
         label: "BMO Rewards",
         defaultIndex: 2,
         modes: [
-          { text: "Statement credit", rate: 0.0033, flag: "fixed", flagText: "fixed, worst rate" },
+          { text: "Statement credit", rate: 0.005, flag: "fixed", flagText: "fixed, worst rate" },
           { text: "Gift cards / merchandise", rate: 0.0055, flag: "variable", flagText: "average 0.54-0.56¢" },
           { text: "Travel (open booking)", rate: 10/1500, flag: "fixed", flagText: "fixed, best rate" }
         ],
-        note: "BMO credit card program — distinct from Blue Rewards. Travel (150 pts = $1) allows you to book anywhere and then request the credit in the BMO app within 90 days."
+        note: "BMO credit card program — distinct from Blue Rewards. Travel (150 pts = $1) allows you to book anywhere and then request the credit in the BMO app within 90 days. A non-travel purchase is reimbursed at 200 pts = $1."
       },
       aventura: {
         label: "CIBC Aventura",
@@ -640,6 +699,7 @@
 
     var programSel = document.getElementById('program');
     var modeSel = document.getElementById('mode');
+    if (!modeSel) return;
     var pointsInput = document.getElementById('points');
     var resultVal = document.getElementById('resultVal');
     var resultRate = document.getElementById('resultRate');
@@ -689,6 +749,400 @@
 
     rebuildModes();
     calc();
+  })();
+  </script>
+
+  <!-- ── DECISION-FOCUSED CALCULATOR ── -->
+  <script>
+  (function() {
+    var PROGRAMS = {
+      mr: {
+        label: "MR — Membership Rewards",
+        simpleModeIndex: 2,
+        profile: { flexibility: 5, potential: 5, simplicity: 3, best: "Transfer to an airline partner", simple: "Statement credit at 1¢/point", avoid: "Transferring before finding a specific redemption" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 0.01, note: "Simple, guaranteed statement credit" },
+          realistic: { kind: "range", minRate: 0.017, maxRate: 0.02, note: "Good travel use or transfer" },
+          optimal: { kind: "upTo", rate: 0.022, note: "Strong airline transfer, not guaranteed" }
+        },
+        modes: [
+          { text: "Transfer to an airline partner", kind: "range", minRate: 0.017, maxRate: 0.022, detail: "Highest potential, but value depends on the flight you find." },
+          { text: "Amex Fixed Points Travel", kind: "range", minRate: 0.015, maxRate: 0.02, detail: "More predictable than a transfer; varies by flight category." },
+          { text: "Statement credit / cash", kind: "fixed", rate: 0.01, detail: "Guaranteed and immediate, but with much lower potential." }
+        ],
+        note: "Transfers are irreversible. Always confirm award availability before moving your points."
+      },
+      aeroplan: {
+        label: "Aeroplan",
+        simpleModeIndex: 2,
+        profile: { flexibility: 5, potential: 5, simplicity: 2, best: "Air Canada, Star Alliance partners, and premium cabins", simple: "Air Canada eGift card at about 1¢/point", avoid: "Gift cards and merchandise" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 0.01, note: "Floor value through an Air Canada eGift card" },
+          realistic: { kind: "range", minRate: 0.014, maxRate: 0.018, note: "Reasonable flight redemption" },
+          optimal: { kind: "range", minRate: 0.025, maxRate: 0.04, maxPlus: true, note: "Premium cabins, partners, and sweet spots" }
+        },
+        modes: [
+          { text: "Premium cabins / partner sweet spots", kind: "range", minRate: 0.025, maxRate: 0.04, maxPlus: true, detail: "Exceptional potential, but limited availability and highly variable value." },
+          { text: "Air Canada / Star Alliance flights", kind: "range", minRate: 0.014, maxRate: 0.018, detail: "A realistic range for a good flight redemption." },
+          { text: "Air Canada eGift card", kind: "fixed", rate: 0.01, detail: "A more predictable floor value without flight optimization." }
+        ],
+        note: "Aeroplan has the highest potential in the calculator, but also one of the least predictable values. Availability and dynamic pricing materially affect the outcome."
+      },
+      avion: {
+        label: "RBC Avion Rewards",
+        simpleModeIndex: 2,
+        profile: { flexibility: 5, potential: 4, simplicity: 3, best: "Fixed airfare chart and transfers, especially to Avios", simple: "Travel at the base rate of about 1¢/point", avoid: "Using the base rate without checking the chart or a transfer" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 0.01, note: "Approximate floor value" },
+          realistic: { kind: "range", minRate: 0.011, maxRate: 0.014, note: "Good use of the airfare chart" },
+          optimal: { kind: "range", minRate: 0.018, maxRate: 0.023, note: "Favourable transfer or optimized flight" }
+        },
+        modes: [
+          { text: "Avios transfer / optimized flight", kind: "range", minRate: 0.018, maxRate: 0.023, detail: "Highest potential when the transfer or chart fits the route." },
+          { text: "Avion fixed airfare chart", kind: "range", minRate: 0.011, maxRate: 0.014, detail: "Realistic value, but dependent on the cash fare versus the chart cap." },
+          { text: "Travel at the base rate", kind: "fixed", rate: 0.01, detail: "Simple and predictable without using the chart or transfers." }
+        ],
+        note: "RBC Avion should not be reduced to 1¢/point: its airfare chart and transfer partners create a second, higher but variable value."
+      },
+      avios: {
+        label: "British Airways Club (Avios)",
+        simpleModeIndex: 1,
+        profile: { flexibility: 4, potential: 5, simplicity: 2, best: "Partner flights and sweet spots", simple: "A well-chosen regular flight redemption", avoid: "Low-value convenience redemptions" },
+        scenarios: {
+          guaranteed: { kind: "range", minRate: 0.008, maxRate: 0.01, note: "Floor value depending on redemption" },
+          realistic: { kind: "range", minRate: 0.015, maxRate: 0.02, note: "Good British Airways or partner flight" },
+          optimal: { kind: "from", rate: 0.03, note: "Sweet spot on selected partners" }
+        },
+        modes: [
+          { text: "Partner sweet spots", kind: "from", rate: 0.03, detail: "Potential above 3¢ when distance, partner, and fees align." },
+          { text: "Well-chosen British Airways or partner flight", kind: "range", minRate: 0.015, maxRate: 0.02, detail: "A realistic range for a useful flight redemption." },
+          { text: "Low-value convenience redemption", kind: "range", minRate: 0.008, maxRate: 0.01, detail: "Floor value; always check partner options before confirming." }
+        ],
+        note: "Avios value depends heavily on the partner, distance, and imposed fees. The strongest results rarely come from choosing solely for convenience."
+      },
+      marriott: {
+        label: "Marriott Bonvoy",
+        simpleModeIndex: 1,
+        profile: { flexibility: 4, potential: 4, simplicity: 4, best: "Hotel stays offering strong value per point", simple: "A typical hotel stay", avoid: "Using points for a low-value stay" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 0.007, note: "Floor value on a poorly optimized stay" },
+          realistic: { kind: "range", minRate: 0.009, maxRate: 0.011, note: "A well-chosen typical hotel stay" },
+          optimal: { kind: "range", minRate: 0.013, maxRate: 0.017, note: "Selected hotels and dates" }
+        },
+        modes: [
+          { text: "High-value hotel stay", kind: "range", minRate: 0.013, maxRate: 0.017, detail: "Highest potential when the cash rate is high relative to the points price." },
+          { text: "Typical hotel stay", kind: "range", minRate: 0.009, maxRate: 0.011, detail: "A realistic range for a well-chosen hotel and dates." },
+          { text: "Poorly optimized stay", kind: "fixed", rate: 0.007, detail: "Floor value when the cash rate is relatively low." }
+        ],
+        note: "Bonvoy is primarily a hotel program. Its value depends on the property, dates, and the gap between the cash and points prices."
+      },
+      blue: {
+        label: "Blue Rewards",
+        simpleModeIndex: 0,
+        profile: { flexibility: 4, potential: 2, simplicity: 5, best: "In-store discount or travel", simple: "Same rate across common uses", avoid: "No common option is meaningfully penalized" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 10/1500, note: "Single rate" },
+          realistic: { kind: "fixed", rate: 10/1500, note: "Same value across common uses" },
+          optimal: { kind: "fixed", rate: 10/1500, note: "Stable potential, no optimization needed" }
+        },
+        modes: [
+          { text: "In store / gift cards / travel", kind: "fixed", rate: 10/1500, detail: "Single rate: choose whichever use is most convenient." }
+        ],
+        note: "Blue Rewards and BMO Rewards are separate programs; their points are not interchangeable."
+      },
+      bnc: {
+        label: "NBC — À la carte Rewards",
+        simpleModeIndex: 1,
+        profile: { flexibility: 4, potential: 4, simplicity: 2, best: "À la carte Travel Agency", simple: "Credit for travel booked elsewhere", avoid: "Generic statement credit" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 0.004, note: "Generic statement credit" },
+          realistic: { kind: "tiers", tiers: [{ min: 0, rate: 0.00833 }, { min: 55000, rate: 0.00909 }], note: "Flexible travel at your current tier rate" },
+          optimal: { kind: "fixed", rate: 0.01, note: "Direct agency booking" }
+        },
+        modes: [
+          { text: "À la carte Travel Agency", kind: "fixed", rate: 0.01, detail: "Best fixed rate, with direct booking." },
+          { text: "Flexible travel credit", kind: "tiers", tiers: [{ min: 0, rate: 0.00833 }, { min: 55000, rate: 0.00909 }], threshold: 55000, detail: "0.83¢ below 55,000 points; 0.91¢ starting at 55,000." },
+          { text: "RRSP / TFSA / mortgage", kind: "fixed", rate: 0.00833, detail: "Fixed value without using points for travel." },
+          { text: "Gift cards / merchandise", kind: "range", minRate: 0.0074, maxRate: 0.0083, detail: "Varies by item or gift card." },
+          { text: "Generic statement credit", kind: "fixed", rate: 0.004, detail: "Simple, but gives up a large share of the potential value." }
+        ],
+        note: "The 55,000-point threshold applies to flexible travel credits, not direct bookings with the agency."
+      },
+      td: {
+        label: "TD Rewards",
+        simpleModeIndex: 1,
+        profile: { flexibility: 3, potential: 2, simplicity: 4, best: "Travel through Expedia for TD", simple: "Travel booked outside Expedia", avoid: "Gift cards and merchandise" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 0.004, note: "Travel booked elsewhere" },
+          realistic: { kind: "progressiveRange", threshold: 300000, baseRate: 0.004, excessRate: 0.005, maxRate: 0.005, note: "Depends on the booking channel and the outside-Expedia tier" },
+          optimal: { kind: "fixed", rate: 0.005, note: "Expedia for TD" }
+        },
+        modes: [
+          { text: "Travel through Expedia for TD", kind: "fixed", rate: 0.005, detail: "Best stable rate in the program." },
+          { text: "Travel booked outside Expedia", kind: "progressive", threshold: 300000, baseRate: 0.004, excessRate: 0.005, detail: "0.4¢ on the first 300,000 points; 0.5¢ only on the excess." },
+          { text: "Gift cards / merchandise", kind: "range", minRate: 0.0023, maxRate: 0.0025, detail: "Much lower value than travel." }
+        ],
+        note: "Outside Expedia, the first 300,000 points are worth 0.4¢ each and only excess points are worth 0.5¢. Through Expedia for TD, every point is worth 0.5¢."
+      },
+      scene: {
+        label: "Scene+",
+        simpleModeIndex: 0,
+        profile: { flexibility: 4, potential: 3, simplicity: 5, best: "Travel, groceries, or statement credit", simple: "1¢/point in several categories", avoid: "Standard-rate gift cards" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 0.01, note: "Credit, travel, or groceries" },
+          realistic: { kind: "fixed", rate: 0.01, note: "Optimal rate is easy to obtain" },
+          optimal: { kind: "fixed", rate: 0.01, note: "Little optimization required" }
+        },
+        modes: [
+          { text: "Statement credit / travel / groceries", kind: "fixed", rate: 0.01, detail: "Best rate and easy to use." },
+          { text: "Standard-rate gift cards", kind: "fixed", rate: 0.0071, detail: "Usually dominated by the 1¢ statement credit." }
+        ],
+        note: "Some merchants exceptionally offer 1¢/point on gift cards; check the displayed rate before redeeming."
+      },
+      pc: {
+        label: "PC Optimum",
+        simpleModeIndex: 0,
+        profile: { flexibility: 2, potential: 1, simplicity: 5, best: "In-store discount", simple: "10,000 points = $10", avoid: "PC Financial statement credit" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 0.001, note: "In-store discount" },
+          realistic: { kind: "fixed", rate: 0.001, note: "Common and predictable value" },
+          optimal: { kind: "fixed", rate: 0.001, note: "Fixed program rate" }
+        },
+        modes: [
+          { text: "In-store discount", kind: "fixed", rate: 0.001, detail: "Best common use: groceries, beauty, or apparel." },
+          { text: "PC Financial statement credit", kind: "fixed", rate: 0.0007, detail: "Lower value than using points in store." }
+        ],
+        note: "At the same balance, an in-store discount gives about 43% more value than a PC Financial statement credit. Tip: selected Shoppers Drug Mart “Spend Your Points” events (including Black Friday, holiday, and other promotions) can exceed the nominal value shown by the calculator. Because these offers change over time, they are not included in the main calculation."
+      },
+      bmorewards: {
+        label: "BMO Rewards",
+        simpleModeIndex: 0,
+        profile: { flexibility: 4, potential: 2, simplicity: 4, best: "Travel with open booking", simple: "Book first, then request the credit", avoid: "Non-travel statement credit" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 0.005, note: "Non-travel statement credit" },
+          realistic: { kind: "range", minRate: 0.0054, maxRate: 10/1500, note: "Favourable gift card or travel" },
+          optimal: { kind: "fixed", rate: 10/1500, note: "Open travel booking" }
+        },
+        modes: [
+          { text: "Travel with open booking", kind: "fixed", rate: 10/1500, detail: "Best rate; request the credit in the BMO app." },
+          { text: "Gift cards / merchandise", kind: "range", minRate: 0.0054, maxRate: 0.0056, detail: "Variable value depending on the selection." },
+          { text: "Statement credit", kind: "fixed", rate: 0.005, detail: "200 points = $1 for a non-travel purchase." }
+        ],
+        note: "BMO Rewards is the BMO credit-card program; it is separate from Blue Rewards."
+      },
+      mbna: {
+        label: "MBNA Rewards",
+        simpleModeIndex: 0,
+        profile: { flexibility: 4, potential: 3, simplicity: 4, best: "Reimburse a travel purchase", simple: "Travel credit after purchase", avoid: "Direct cashback" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 0.00833, note: "Cashback" },
+          realistic: { kind: "fixed", rate: 0.01, note: "Reimburse a travel purchase" },
+          optimal: { kind: "fixed", rate: 0.01, note: "Best stable rate" }
+        },
+        modes: [
+          { text: "Travel portal or reimbursed purchase", kind: "fixed", rate: 0.01, detail: "Best rate with relatively flexible booking." },
+          { text: "Direct cashback", kind: "fixed", rate: 0.00833, detail: "Simpler, but worth less than travel." }
+        ],
+        note: "Travel yields 1¢/point versus about 0.83¢ for direct cashback."
+      },
+      aventura: {
+        label: "CIBC Aventura",
+        simpleModeIndex: 1,
+        profile: { flexibility: 4, potential: 5, simplicity: 2, best: "Airline chart when the fare approaches the cap", simple: "Rewards Centre at 1¢", avoid: "Statement credit or prepaid Visa" },
+        scenarios: {
+          guaranteed: { kind: "fixed", rate: 0.0063, note: "Statement credit or prepaid Visa" },
+          realistic: { kind: "fixed", rate: 0.01, note: "Travel through the Rewards Centre" },
+          optimal: { kind: "upTo", rate: 0.0229, note: "Optimized airline chart, conditional" }
+        },
+        modes: [
+          { text: "Optimized airline chart", kind: "upTo", rate: 0.0229, detail: "Highest potential only when the fare approaches the chart cap." },
+          { text: "Travel through the Rewards Centre", kind: "fixed", rate: 0.01, detail: "Fixed and much more predictable." },
+          { text: "Financial products", kind: "fixed", rate: 0.0083, minPoints: 12000, detail: "RRSP, TFSA, line of credit, or mortgage; 12,000-point minimum." },
+          { text: "Gift cards", kind: "fixed", rate: 0.0071, detail: "Fixed value below travel." },
+          { text: "Statement credit / prepaid Visa", kind: "fixed", rate: 0.0063, detail: "Simple, but the program's floor value." }
+        ],
+        note: "The 2.29¢ rate is a ceiling, not a guaranteed value. It depends on the flight category and actual fare."
+      }
+    };
+
+    var programSel = document.getElementById('program');
+    var pointsInput = document.getElementById('points');
+    var resultVal = document.getElementById('resultVal');
+    var resultRate = document.getElementById('resultRate');
+    var profileEl = document.getElementById('programProfile');
+    var scenariosEl = document.getElementById('scenarioGrid');
+    var insightEl = document.getElementById('decisionInsight');
+    var listEl = document.getElementById('redemptionList');
+    var methodsToggle = document.getElementById('methodsToggle');
+    var noteEl = document.getElementById('calcNote');
+
+    function fmt(n) {
+      return n.toLocaleString('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 2 });
+    }
+
+    function stars(n) {
+      return "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n);
+    }
+
+    function progressiveValue(item, pts) {
+      var basePoints = Math.min(pts, item.threshold);
+      var excessPoints = Math.max(0, pts - item.threshold);
+      return basePoints * item.baseRate + excessPoints * item.excessRate;
+    }
+
+    function effectiveRate(item, pts) {
+      if (item.kind === "progressive" || item.kind === "progressiveRange") {
+        return pts > 0 ? progressiveValue(item, pts) / pts : item.baseRate;
+      }
+      if (item.kind === "tiers") {
+        var rate = item.tiers[0].rate;
+        item.tiers.forEach(function(tier) { if (pts >= tier.min) rate = tier.rate; });
+        return rate;
+      }
+      return item.rate || item.maxRate || 0;
+    }
+
+    function maximumRate(item, pts) {
+      if (item.kind === "progressiveRange") return item.maxRate;
+      return item.kind === "range" ? item.maxRate : effectiveRate(item, pts);
+    }
+
+    function minimumRate(item, pts) {
+      if (item.kind === "progressiveRange") return effectiveRate(item, pts);
+      return item.kind === "range" ? item.minRate : effectiveRate(item, pts);
+    }
+
+    function valueText(item, pts) {
+      if (item.kind === "progressive") return fmt(progressiveValue(item, pts));
+      if (item.kind === "progressiveRange") return fmt(progressiveValue(item, pts)) + "–" + fmt(pts * item.maxRate);
+      if (item.kind === "range") return fmt(pts * item.minRate) + "–" + fmt(pts * item.maxRate) + (item.maxPlus ? "+" : "");
+      if (item.kind === "from") return fmt(pts * item.rate) + "+";
+      if (item.kind === "upTo") return "Up to " + fmt(pts * item.rate);
+      return fmt(pts * effectiveRate(item, pts));
+    }
+
+    function rateText(item, pts) {
+      if (item.kind === "progressive") return (effectiveRate(item, pts) * 100).toFixed(3).replace(/0+$/, "").replace(/\.$/, "") + "¢/point effective";
+      if (item.kind === "progressiveRange") return (effectiveRate(item, pts) * 100).toFixed(3).replace(/0+$/, "").replace(/\.$/, "") + "–" + (item.maxRate * 100).toFixed(2) + "¢/point";
+      if (item.kind === "range") return (item.minRate * 100).toFixed(2) + "–" + (item.maxRate * 100).toFixed(2) + (item.maxPlus ? "+" : "") + "¢/point";
+      if (item.kind === "from") return (item.rate * 100).toFixed(2).replace(/0+$/, "").replace(/\.$/, "") + "+¢/point";
+      if (item.kind === "upTo") return "up to " + (item.rate * 100).toFixed(2) + "¢/point";
+      return (effectiveRate(item, pts) * 100).toFixed(3).replace(/0+$/, "").replace(/\.$/, "") + "¢/point";
+    }
+
+    function renderProfile(program) {
+      profileEl.innerHTML =
+        "<h3>" + program.label + "</h3>" +
+        '<div class="profile-grid">' +
+          '<div class="profile-score"><span>Flexibility</span><strong aria-label="' + program.profile.flexibility + ' out of 5">' + stars(program.profile.flexibility) + "</strong></div>" +
+          '<div class="profile-score"><span>Potential</span><strong aria-label="' + program.profile.potential + ' out of 5">' + stars(program.profile.potential) + "</strong></div>" +
+          '<div class="profile-score"><span>Simplicity</span><strong aria-label="' + program.profile.simplicity + ' out of 5">' + stars(program.profile.simplicity) + "</strong></div>" +
+        "</div>" +
+        '<div class="profile-facts">' +
+          "<div><strong>Best use:</strong> " + program.profile.best + "</div>" +
+          "<div><strong>Simple option:</strong> " + program.profile.simple + "</div>" +
+          "<div><strong>Avoid:</strong> " + program.profile.avoid + "</div>" +
+        "</div>";
+    }
+
+    function renderScenarios(program, pts) {
+      var items = [
+        { label: "Guaranteed", data: program.scenarios.guaranteed },
+        { label: "Realistic", data: program.scenarios.realistic, recommended: true },
+        { label: "Optimal", data: program.scenarios.optimal }
+      ];
+      scenariosEl.innerHTML = items.map(function(item) {
+        return '<div class="scenario' + (item.recommended ? " recommended" : "") + '">' +
+          '<span class="scenario-label">' + item.label + "</span>" +
+          '<span class="scenario-value">' + valueText(item.data, pts) + "</span>" +
+          "<small>" + item.data.note + "</small>" +
+        "</div>";
+      }).join("");
+      resultVal.textContent = valueText(program.scenarios.realistic, pts);
+      resultRate.textContent = rateText(program.scenarios.realistic, pts) + " — an estimate, not a promise";
+    }
+
+    function constraintText(mode, pts) {
+      if (mode.kind === "progressive") {
+        return "The first " + mode.threshold.toLocaleString("en-CA") + " points are worth 0.4¢; only excess points are worth 0.5¢.";
+      }
+      if (mode.minPoints && pts < mode.minPoints) {
+        return "Minimum: " + mode.minPoints.toLocaleString("en-CA") + " points. You need " + (mode.minPoints - pts).toLocaleString("en-CA") + " more points.";
+      }
+      if (mode.threshold && pts < mode.threshold) {
+        return "Next tier at " + mode.threshold.toLocaleString("en-CA") + " points — you need " + (mode.threshold - pts).toLocaleString("en-CA") + " more.";
+      }
+      if (mode.threshold && pts >= mode.threshold) return mode.threshold.toLocaleString("en-CA") + "-point tier reached.";
+      return "";
+    }
+
+    function renderModes(program, pts) {
+      var ranked = program.modes.slice().sort(function(a, b) {
+        return maximumRate(b, pts) - maximumRate(a, pts);
+      });
+      var bestRate = maximumRate(ranked[0], pts);
+      listEl.innerHTML = ranked.map(function(mode, index) {
+        var constraint = constraintText(mode, pts);
+        var unavailable = mode.minPoints && pts < mode.minPoints;
+        var loss = Math.max(0, pts * (bestRate - maximumRate(mode, pts)));
+        var medal = index === 0 ? "🥇" : (index === 1 ? "🥈" : (index === ranked.length - 1 && loss > 0 ? "❌" : "✓"));
+        var status = index === 0 ? (mode.kind === "upTo" ? "Highest potential" : "Best choice") :
+          (index === 1 ? "Good compromise" : (index === ranked.length - 1 && loss > 0 ? "Avoid if value matters" : "Another option"));
+        var lossText = loss >= 0.01 ? " · up to " + fmt(loss) + " less potential value" : "";
+        return '<div class="redemption-option' + (index === 0 ? " best-option" : "") + (unavailable ? " unavailable" : "") + (index >= 3 ? " extra-option" : "") + '"' + (index >= 3 ? " hidden" : "") + '>' +
+          '<div class="redemption-medal" aria-hidden="true">' + medal + "</div>" +
+          "<div><span class=\"redemption-name\">" + status + " — " + mode.text + "</span>" +
+          '<span class="redemption-meta">' + mode.detail + lossText + "</span>" +
+          (constraint ? '<span class="constraint">' + constraint + "</span>" : "") +
+          "</div>" +
+          '<div class="redemption-value">' + (unavailable ? "Unavailable" : valueText(mode, pts)) +
+          "<small>" + rateText(mode, pts) + "</small></div>" +
+        "</div>";
+      }).join("");
+      methodsToggle.hidden = ranked.length <= 3;
+      methodsToggle.textContent = "See all methods";
+      methodsToggle.setAttribute("aria-expanded", "false");
+    }
+
+    function renderInsight(program, pts) {
+      var bestMode = program.modes.slice().sort(function(a, b) {
+        return maximumRate(b, pts) - maximumRate(a, pts);
+      })[0];
+      var simpleMode = program.modes[program.simpleModeIndex];
+      var simpleLow = pts * minimumRate(simpleMode, pts);
+      var simpleHigh = pts * maximumRate(simpleMode, pts);
+      var bestLow = pts * minimumRate(bestMode, pts);
+      var bestHigh = pts * maximumRate(bestMode, pts);
+      var lossLow = Math.max(0, bestLow - simpleHigh);
+      var lossHigh = Math.max(0, bestHigh - simpleLow);
+      var lossText = lossHigh < 0.01 ? "No meaningful loss" :
+        (Math.abs(lossHigh - lossLow) < 0.01 ? fmt(lossHigh) :
+          fmt(lossLow) + "–" + fmt(lossHigh));
+      insightEl.innerHTML =
+        '<div class="decision-item highlight"><span>🥇 Best choice</span><strong>' + bestMode.text + "</strong></div>" +
+        '<div class="decision-item"><span>Simple option</span><strong>' + program.profile.simple + "</strong></div>" +
+        '<div class="decision-item"><span>Potential value left behind</span><strong>' + lossText + "</strong></div>";
+    }
+
+    function render() {
+      var program = PROGRAMS[programSel.value];
+      var pts = Math.max(0, parseFloat(pointsInput.value) || 0);
+      renderProfile(program);
+      renderScenarios(program, pts);
+      renderInsight(program, pts);
+      renderModes(program, pts);
+      noteEl.innerHTML = "<strong>Key takeaway:</strong> " + program.note;
+    }
+
+    programSel.addEventListener("change", render);
+    pointsInput.addEventListener("input", render);
+    methodsToggle.addEventListener("click", function() {
+      var expanded = methodsToggle.getAttribute("aria-expanded") === "true";
+      listEl.querySelectorAll(".extra-option").forEach(function(option) { option.hidden = expanded; });
+      methodsToggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+      methodsToggle.textContent = expanded ? "See all methods" : "Show fewer methods";
+    });
+    render();
   })();
   </script>
 
