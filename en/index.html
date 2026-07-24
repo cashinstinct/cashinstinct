@@ -2,16 +2,25 @@
 Achieva card below = "Paused" badge and mention in link-desc.
 Remove on relaunch. 
 Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
+<!--
+MAINTENANCE NOTE — HOMEPAGE
+This page is intentionally a concise directory, not a substitute for the dedicated guides.
+Evidence varies by program: never claim that every service was personally tested.
+Keep card verification dates at month level; detailed verification dates belong on guide pages.
+Keep FR/EN facts aligned without translating mechanically. Keep Achieva while its documented pause remains relevant.
+Synchronize title, description, Open Graph, Twitter and CollectionPage metadata after substantive edits.
+dateModified is static and must change only after a substantive editorial revision.
+Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked on 2026-07-24.
+-->
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2563eb" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0f17" />
+  <meta name="theme-color" id="theme-color-meta" content="#f8fafc" />
 
-  <title>Cash Instinct — Canadian Referral Codes & Welcome Offers (2026)</title>
-  <meta name="description" content="Tested Canadian referral codes, telecom comparisons, and optimization strategies (points value, RHT). Save on your bills in Quebec and Canada." />
+  <title>Cash Instinct — Canadian Referral Codes &amp; Practical Guides (2026)</title>
+  <meta name="description" content="Independent Canadian guides combining personal use, documented tests, official terms, referral codes, comparisons and practical optimization tools." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/en/" />
 
@@ -25,8 +34,8 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
 
   <meta property="og:type"             content="website" />
   <meta property="og:url"              content="https://cashinstinct.ca/en/" />
-  <meta property="og:title"            content="Cash Instinct — Canadian Referral Codes & Welcome Offers" />
-  <meta property="og:description" content="Tested Canadian referral codes, telecom comparisons, and optimization strategies (points value, RHT). Save on your bills in Quebec and Canada." />
+  <meta property="og:title"            content="Cash Instinct — Canadian Referral Codes &amp; Practical Guides (2026)" />
+  <meta property="og:description" content="Independent Canadian guides combining personal use, documented tests, official terms, referral codes, comparisons and practical optimization tools." />
   <meta property="og:locale"           content="en_CA" />
   <meta property="og:locale:alternate" content="fr_CA" />
   <meta property="og:site_name"        content="Cash Instinct" />
@@ -36,14 +45,16 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
   <meta property="og:image:type"       content="image/png" />
 
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Cash Instinct — Canadian Referral Codes" />
-  <meta name="twitter:description" content="Tested referral codes, telecom comparisons, and optimization tools (points value, RHT) — valid across Quebec and Canada." />
+  <meta name="twitter:title"       content="Cash Instinct — Canadian Referral Codes &amp; Practical Guides (2026)" />
+  <meta name="twitter:description" content="Independent Canadian guides combining personal use, documented tests, official terms, referral codes, comparisons and practical optimization tools." />
   <meta name="twitter:image"       content="https://cashinstinct.ca/og.png" />
   
    <script>
     try {
       var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', t);
+      var themeMeta = document.getElementById('theme-color-meta');
+      if (themeMeta) themeMeta.setAttribute('content', t === 'dark' ? '#0b0f17' : '#f8fafc');
     } catch(e) {
       document.documentElement.setAttribute('data-theme', 'light');
     }
@@ -58,7 +69,8 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
         "@id": "https://cashinstinct.ca/#website",
         "url": "https://cashinstinct.ca/",
         "name": "Cash Instinct",
-        "description": "Independent Canadian referral code directory — tested and verified.",
+        "description": "Independent Canadian guides combining personal use, documented tests, official terms, referral codes, comparisons and practical optimization tools.",
+        "inLanguage": "en-CA",
         "publisher": {
           "@type": "Organization",
           "@id": "https://cashinstinct.ca/#organization",
@@ -71,16 +83,18 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
         "@type": "CollectionPage",
         "@id": "https://cashinstinct.ca/en/#collectionpage",
         "url": "https://cashinstinct.ca/en/",
-        "name": "Cash Instinct — Canadian Referral Codes 2026",
+        "name": "Cash Instinct — Canadian Referral Codes & Practical Guides (2026)",
+        "description": "Independent Canadian guides combining personal use, documented tests, official terms, referral codes, comparisons and practical optimization tools.",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "inLanguage": "en-CA",
         "datePublished": "2026-06-12",
-        "dateModified": "2026-07-19",
+        "dateModified": "2026-07-24",
         "author":    { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization" },
         "mainEntity": {
           "@type": "ItemList",
           "name": "Cash Instinct Referral and Tools Selection",
+          "description": "Programs, comparisons and practical tools featured on Cash Instinct.",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "EBOX Internet",     "url": "https://cashinstinct.ca/ebox/en/" },
             { "@type": "ListItem", "position": 2, "name": "Sticker Mule",      "url": "https://cashinstinct.ca/stickermule/en/" },
@@ -127,12 +141,17 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
       --line: #1e293b;
       --blue: #3b82f6;
       --blue-soft: #1e293b;
-      --blue-contrast: #3b82f6;
+      --blue-contrast: #60a5fa;
       --shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+
+    :where(a, button):focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
 
     body {
       background: var(--bg);
@@ -531,18 +550,18 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
              aria-label="Cash Instinct YouTube channel (opens in a new tab)">
             <span aria-hidden="true">▶️</span> YouTube
           </a>
-          <a href="https://cashinstinct.ca/" class="lang-btn" hreflang="fr" lang="fr" aria-label="Version française">
+          <a href="https://cashinstinct.ca/" class="lang-btn" hreflang="fr-CA" lang="fr-CA" aria-label="Version française">
             Français
           </a>
-          <button id="theme-toggle" class="theme-btn" type="button" aria-pressed="false">🌙 Dark Mode</button>
+          <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch to dark mode" aria-pressed="false">🌙 Dark Mode</button>
         </div>
       </div>
 
-      <div class="subtitle">Personally tested offers for internet, banking, cashback, printing, and more.</div>
+      <div class="subtitle">Personal experience, documented tests and independently maintained guides for Canadian offers and tools.</div>
       <p class="intro">
-        Save on bills and everyday spending with referral codes I actually use and verify. Each offer includes the exact conditions, screenshots, and activation steps. 
+        Some programs are part of my current routine, some were used for years, and others remain actively monitored even when I use them less often today. Each dedicated guide explains what was personally used, what was tested, and what comes from official terms or independent comparisons.
         <br><br>
-        <em style="font-size: 0.9rem; color: var(--text);">I may earn a referral reward at no extra cost to you.</em>
+        <em style="font-size: 0.9rem; color: var(--text);">Some links are referral or affiliate links. If you use one and meet the program’s conditions, I may receive a reward at no extra cost to you.</em>
       </p>
 
       <nav class="quicknav" aria-label="Jump to a category">
@@ -560,8 +579,8 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
           <span class="lbl">referral programs</span>
         </div>
         <div class="stat" role="listitem">
-          <span class="num">100%</span>
-          <span class="lbl">personally tested</span>
+          <span class="num">Documented</span>
+          <span class="lbl">verification by guide</span>
         </div>
         <div class="stat" role="listitem">
           <span class="num">2009</span>
@@ -589,7 +608,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             </div>
             <div class="link-cat">Home internet</div>
             <p class="link-desc">
-              <strong>$25 credit</strong> on your second EBOX bill with referral code <strong>GE911</strong>.
+              <strong>$25 credit</strong> on the second bill for an eligible new EBOX Internet customer who provides referral code <strong>GE911</strong> with the initial order. Available in Quebec and Ontario, subject to EBOX terms.
             </p>
             <div class="link-meta">
               <span class="verified">Verified <span class="verif-month">July 2026</span></span> · full details, conditions and promo screenshot on the dedicated page.
@@ -608,7 +627,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             </div>
             <div class="link-cat">Stickers &amp; merch</div>
             <p class="link-desc">
-              <strong>$10 USD promo credit ($12.50 CAD)</strong> when you sign up via our official invite link or use referral code <strong>CASHINSTINCT</strong> on any first custom sticker order of $30 USD or more.
+              A <strong>$10 USD referral credit ($12.50 CAD)</strong> for an eligible new account using the invite link or <strong>CASHINSTINCT</strong> on a qualifying first order of at least $30 USD ($38 CAD).
             </p>
             <div class="link-meta">
               <span class="verified">Verified <span class="verif-month">July 2026</span></span> · currency breakdown and full activation guide on the dedicated page.
@@ -624,7 +643,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             </div>
             <div class="link-cat">Printing &amp; ink</div>
             <p class="link-desc">
-              <strong>1 free month</strong> of printing with referral code <strong>SVdn7</strong>. Compatible with most recent HP printers in Canada.
+              <strong>1 free month</strong> with referral code <strong>SVdn7</strong>. Eligibility depends on the exact HP printer model; verify it with HP during registration.
             </p>
             <div class="link-meta">
               <span class="verified">Verified <span class="verif-month">July 2026</span></span> · step-by-step tutorial + subscription FAQ on the dedicated page.
@@ -643,7 +662,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             </div>
             <div class="link-cat">Pay by card</div>
             <p class="link-desc">
-              <strong>$20 cashback</strong> via the referral link. Pay your <strong>property tax, Hydro bills and income taxes</strong> by credit card to earn points. No code to enter — sign-up is through a link.
+              A <strong>$20 Chexy credit</strong> after an eligible new customer signs up through the referral link and completes a first payment. Pay eligible bills—including rent, property taxes, Hydro and income taxes—by credit card; current terms and the 1.75% fee apply.
             </p>
             <div class="link-meta">
               <span class="verified">Verified <span class="verif-month">July 2026</span></span> · 1.75% fee, worth-it math, status tiers and FAQ on the dedicated page.
@@ -659,7 +678,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             </div>
             <div class="link-cat">Online banking</div>
             <p class="link-desc">
-               <strong>$50 welcome bonus</strong> with Orange Key <strong>14130944S1</strong> when opening a Tangerine chequing or savings account. No-fee online banking.
+              A <strong>$50 referral bonus</strong> with Orange Key <strong>14130944S1</strong> for an eligible new client who opens a qualifying account, deposits at least $250 within 60 days and maintains it for 60 consecutive days.
             </p>
             <div class="link-meta">
               <span class="verified">Verified <span class="verif-month">July 2026</span></span> · conditions, bonus timeline and activation steps on the dedicated page.
@@ -695,7 +714,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             </div>
             <div class="link-cat">Cashback</div>
             <p class="link-desc">
-              <strong>$30 cash back</strong> on your first $30+ purchase via the referral link. No code needed — the link activates the bonus automatically.
+              <strong>$30 cash back</strong> after an eligible new member signs up through the referral link and completes a qualifying first purchase of $30 or more under the current offer.
             </p>
             <div class="link-meta">
               <span class="verified">Personally tested since 2013</span> · step-by-step guide, partner merchants and FAQ on the dedicated page.
@@ -711,7 +730,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             </div>
             <div class="link-cat">Surveys &amp; rewards</div>
             <p class="link-desc">
-              <strong>$10 bonus</strong> on your first $25+ purchase via the referral link. Earn gift cards and PayPal cash by completing surveys or shopping online.
+              A <strong>$10 bonus (1,000 SB)</strong> after activation in Swag Ups and a qualifying $25+ Shop purchase within 30 days, with at least 25 SB earned.
             </p>
             <div class="link-meta">
               <span class="verified">Personally tested since 2009</span> · free sign-up. Details on the dedicated page.
@@ -733,10 +752,10 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             </div>
             <div class="link-cat">Budget internet · Quebec</div>
             <p class="link-desc">
-              Three budget providers head-to-head: real monthly prices, download/upload speeds, installation fees and contract terms. <strong>EBOX fibre vs Fizz &amp; oxio cable.</strong>
+              Dedicated comparison of current public pricing, download and upload speeds, technology, installation fees and terms for EBOX, Fizz and oxio.
             </p>
             <div class="link-meta">
-              <span class="verified">Updated <span class="verif-month">July 2026</span></span> · independent comparison, field-checked prices.
+              <span class="verified">Updated <span class="verif-month">July 2026</span></span> · regularly maintained from public pricing and provider terms, separately from the EBOX referral guide.
             </div>
           </div>
 
@@ -749,10 +768,10 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             </div>
             <div class="link-cat">Fibre &amp; cable · Quebec</div>
             <p class="link-desc">
-              The big incumbents versus EBOX on Bell's own fibre network: grid vs promo prices, upload ceilings and the fine print on <strong>credits that expire</strong>.
+              Dedicated comparison of current public pricing, speeds, technology, equipment and terms for EBOX, Bell and Videotron.
             </p>
             <div class="link-meta">
-              <span class="verified">Updated <span class="verif-month">July 2026</span></span> · independent comparison, field-checked prices.
+              <span class="verified">Updated <span class="verif-month">July 2026</span></span> · regularly maintained from public pricing and provider terms, separately from the EBOX referral guide.
             </div>
           </div>
         </div>
@@ -770,7 +789,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             </div>
             <div class="link-cat">Credit cards · Rewards</div>
             <p class="link-desc">
-              Calculate the true cash value of your reward points (Amex MR, NBC, TD, Scene+, CIBC, BMO). Floor rate vs. optimal rate.
+              Calculate the estimated cash value of your reward points (Amex MR, NBC, TD, Scene+, CIBC, BMO). Floor rate vs. optimal rate.
             </p>
             <div class="link-meta">
               <span class="verified">Rates verified (<span class="verif-month">July 2026</span>)</span> · independent comparison.
@@ -786,7 +805,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
             </div>
             <div class="link-cat">Points cash-out</div>
             <p class="link-desc">
-              The Canadian method (RHT) detailed by institution to convert your travel credits and bank points directly into hard cash.
+              A step-by-step explanation of the refundable-hotel method used to redeem eligible travel credits or points, with institution-specific cautions.
             </p>
             <div class="link-meta">
               <span class="verified">Mechanics validated (<span class="verif-month">July 2026</span>)</span> · warnings included.
@@ -795,10 +814,11 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
         </div>
       </section>
 
-      <section class="method-block" id="methodology" aria-label="How offers are selected and maintained">
-        <h2>How are offers selected and tracked?</h2>
-        <p>Optimizing personal finances shouldn't come at the cost of clarity. Unlike mass-aggregator platforms that list hundreds of expired coupons, Cash Instinct applies a strict selection policy: every service listed here is either used daily or has been tracked through actual billing cycles.</p>
-        <p>An offer stays listed based on the technical reliability of the referral mechanism, the transparency of bonus payout conditions, and the absence of hidden fees. This platform's data is audited and cleaned each quarter to accurately reflect active referral structures in Canada.</p>
+      <section class="method-block" id="methodology" aria-label="How Cash Instinct verifies and maintains its guides">
+        <h2>How Cash Instinct verifies and maintains its guides</h2>
+        <p>Cash Instinct does not use one evidence standard for every program. Depending on the guide, information may come from long-term personal use, a documented test, a recently verified referral flow, account screenshots, official program terms or independent comparisons.</p>
+        <p>Each dedicated page states which evidence applies and separates firsthand observations from information published by the provider. Offers and tools remain listed when their status, conditions and maintenance history can be explained clearly—even if I use them less often today.</p>
+        <p>Amounts and card dates summarize the dedicated guides; full eligibility rules and the latest verification details remain on those pages.</p>
       </section>
 
     </main>
@@ -806,8 +826,8 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
     <footer>
       <p>© 2026 Cash Instinct — Personal selection of referral codes for Canada. Last update: <span id="footer-date">July 2026</span>.</p>
       <p>
-        Links are affiliate-based: you get the benefit (discount, free month, cashback or bonus),
-        and I receive a referral reward in return.
+        Some links are referral or affiliate links. If you use one and meet the program’s conditions,
+        I may receive a reward at no extra cost to you.
       </p>
       <p>
         If an offer is no longer valid or you have a question, report it by opening an issue on the GitHub repository
@@ -852,6 +872,8 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
       toggle.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
       toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
       toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      var themeMeta = document.getElementById('theme-color-meta');
+      if (themeMeta) themeMeta.setAttribute('content', dark ? '#0b0f17' : '#f8fafc');
     }
 
     // Synchronisation immédiate avec l'état réel du document
@@ -860,7 +882,7 @@ Dedicated pages /achieva/en/ + /fr/ have the full banner. -->
     toggle.addEventListener('click', function() {
       var dark = isDark();
       if (dark) {
-        document.documentElement.removeAttribute('data-theme');
+        document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
       } else {
         document.documentElement.setAttribute('data-theme', 'dark');
