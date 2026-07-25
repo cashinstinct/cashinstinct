@@ -162,8 +162,10 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       padding: 40px 24px 56px;
     }
 
+    /* FIX #16: desktop font size aligned with guide pages */
     @media (min-width: 768px) { body { font-size: 19px; } }
 
+    /* FIX #14: skip navigation */
     .skip-nav {
       position: absolute; top: -100%; left: 0;
       background: var(--blue); color: #fff;
@@ -180,11 +182,12 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
     }
 
     header {
-      margin-bottom: 40px;
+      margin-bottom: 26px;
       position: relative;
-      padding-top: 10px;
+      padding-top: 6px;
     }
 
+    /* FIX #25: header id for skip navigation */
     .header-top {
       display: flex;
       justify-content: space-between;
@@ -218,6 +221,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
     }
     .theme-btn:hover { background: var(--surface-muted); }
 
+    /* Language link */
     .lang-btn {
       background: var(--surface-soft);
       border: 1px solid var(--line);
@@ -246,13 +250,13 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
     .badge span.flag { font-size: 0.9rem; }
 
     .subtitle {
       font-size: 1.25rem;
-      margin: 0 0 16px 0;
+      margin: 0 0 12px 0;
       color: var(--muted);
       font-weight: 600;
     }
@@ -262,6 +266,18 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       color: var(--muted);
       margin-bottom: 28px;
       max-width: 75ch;
+    }
+
+
+    .disclaimer {
+      margin: 0;
+      max-width: 88ch;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .disclaimer em {
+      color: var(--text);
     }
 
     .method-block {
@@ -286,11 +302,11 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
     }
     .method-block p:last-child { margin-bottom: 0; }
 
-     .links-container {
+    .links-container {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
-      margin-bottom: 32px;
+      gap: 16px;
+      margin-bottom: 24px;
       align-items: stretch;
     }
 
@@ -311,7 +327,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       display: block;
     }
 
@@ -319,7 +335,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 4px 0 28px;
+      margin: 0 0 16px;
     }
     .quicknav a {
       display: inline-block;
@@ -394,14 +410,14 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       color: var(--muted);
     }
 
-    /* Category becomes a small label below the title */
+    /* Category label below the title */
     .link-cat {
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -426,7 +442,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 22px;
+      padding: 18px;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -453,7 +469,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .link-title {
@@ -486,7 +502,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
     .link-desc {
       font-size: 0.95rem;
       color: var(--muted);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       position: relative;
       z-index: 2;
       flex-grow: 1;
@@ -499,7 +515,15 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       position: relative;
       z-index: 2;
       border-top: 1px solid var(--line);
-      padding-top: 10px;
+      padding-top: 8px;
+    }
+
+    .link-meta a {
+      color: var(--blue-contrast);
+      text-decoration: underline;
+      position: relative;
+      z-index: 3;
+      font-weight: 600;
     }
 
     footer {
@@ -523,7 +547,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
     }
 
     @media (max-width: 520px) {
-      body { padding: 24px 16px 40px; }
+      body { padding: 20px 16px 36px; }
       .header-top { flex-direction: column; align-items: flex-start; gap: 12px; }
       .theme-btn { align-self: flex-start; }
       .link-header { align-items: flex-start; flex-direction: column; gap: 6px; }
@@ -544,54 +568,24 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
 
       <div class="header-top">
         <h1>Best Canadian Referral Codes and Welcome Offers</h1>
-        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-          <a href="https://www.youtube.com/@cashinstinct_hub/shorts"
-             target="_blank" rel="noopener noreferrer"
-             class="theme-btn"
-             aria-label="Cash Instinct YouTube channel (opens in a new tab)">
-            <span aria-hidden="true">▶️</span> YouTube
-          </a>
-          <a href="https://cashinstinct.ca/" class="lang-btn" hreflang="fr-CA" lang="fr-CA" aria-label="Version française">
-            Français
-          </a>
-          <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch to dark mode" aria-pressed="false">🌙 Dark Mode</button>
-        </div>
       </div>
 
-      <div class="subtitle">Personal experience, documented tests and independently maintained guides for Canadian offers and tools.</div>
-      <p class="intro">
-        Some programs are part of my current routine, some were used for years, and others remain actively monitored even when I use them less often today. Each dedicated guide explains what was personally used, what was tested, and what comes from official terms or independent comparisons.
-        <br><br>
-        <em style="font-size: 0.9rem; color: var(--text);">Some links are referral or affiliate links. If you use one and meet the program’s conditions, I may receive a reward at no extra cost to you.</em>
-      </p>
+      <div class="subtitle">Personal experience, documented tests and independent guides for Canadian offers and tools.</div>
 
       <nav class="quicknav" aria-label="Jump to a category">
         <a href="#internet">🌐 Internet</a>
-        <a href="#printing">🖨️ Printing &amp; merch</a>
-        <a href="#finances">💳 Banking &amp; finance</a>
+        <a href="#printing">🖨️ Printing</a>
+        <a href="#finances">💳 Finance</a>
         <a href="#cashback">🎁 Cashback</a>
-        <a href="#comparatifs">⚖️ Comparisons</a>
-        <a href="#tools">🧮 Tools &amp; strategies</a>
+        <a href="#comparisons">⚖️ Comparisons</a>
+        <a href="#tools">🧮 Tools</a>
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch to dark mode" aria-pressed="false">🌙 Dark</button>
+        <span><a href="https://cashinstinct.ca/" class="lang-btn" hreflang="fr-CA" lang="fr-CA" aria-label="Version française">Français</a></span>
       </nav>
 
-      <ul class="stats" aria-label="At a glance">
-        <li class="stat">
-          <span class="num">8</span>
-          <span class="lbl">referral programs</span>
-        </li>
-        <li class="stat">
-          <span class="num">Documented</span>
-          <span class="lbl">verification by guide</span>
-        </li>
-        <li class="stat">
-          <span class="num">2009</span>
-          <span class="lbl">first program tracked</span>
-        </li>
-        <li class="stat">
-          <span class="num"><span id="stats-month">July 2026</span></span>
-          <span class="lbl">last updated</span>
-        </li>
-      </ul>
+      <div class="disclaimer">
+        <em>Disclosure: some links are referral or affiliate links — at no extra cost to you.</em>
+      </div>
     </header>
 
     <main id="main-content">
@@ -609,15 +603,15 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
             <div class="link-cat">Home internet</div>
             <p class="link-desc">
-              <strong>$25 credit</strong> on the second bill for an eligible new EBOX Internet customer who provides referral code <strong>GE911</strong> with the initial order. Available in Quebec and Ontario, subject to EBOX terms.
+              <strong>$25 credit</strong> on the second bill with code <strong>GE911</strong> for eligible new EBOX Internet customers (QC &amp; ON).
             </p>
             <div class="link-meta">
-              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · full details, conditions and promo screenshot on the dedicated page.
+              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · details, conditions and promo screenshot.
             </div>
           </div>
         </div>
 
-        <h2 class="section-label" id="printing" style="margin-top:24px;">Printing &amp; Merchandise</h2>
+        <h2 class="section-label" id="printing" style="margin-top:18px;">Printing &amp; Merchandise</h2>
         <div class="links-container">
           <div class="link-card">
             <div class="link-header">
@@ -628,10 +622,10 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
             <div class="link-cat">Stickers &amp; merch</div>
             <p class="link-desc">
-              A <strong>$10 USD referral credit ($12.50 CAD)</strong> for an eligible new account using the invite link or <strong>CASHINSTINCT</strong> on a qualifying first order of at least $30 USD ($38 CAD).
+              <strong>$10 USD ($12.50 CAD)</strong> credit with the referral link or code <strong>CASHINSTINCT</strong> on a qualifying first order of at least $30 USD ($38 CAD).
             </p>
             <div class="link-meta">
-              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · currency breakdown and full activation guide on the dedicated page.
+              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · explanations, guide and FAQ.
             </div>
           </div>
 
@@ -644,15 +638,15 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
             <div class="link-cat">Printing &amp; ink</div>
             <p class="link-desc">
-              <strong>1 free month</strong> with referral code <strong>SVdn7</strong>. Eligibility depends on the exact HP printer model; verify it with HP during registration.
+              <strong>1 free month</strong> with referral code <strong>SVdn7</strong>. Simply verify that your HP printer is eligible.
             </p>
             <div class="link-meta">
-              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · step-by-step tutorial + subscription FAQ on the dedicated page.
+              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · step-by-step tutorial + FAQ.
             </div>
           </div>
         </div>
 
-        <h2 class="section-label" id="finances" style="margin-top:24px;">Banking &amp; Finance</h2>
+        <h2 class="section-label" id="finances" style="margin-top:18px;">Banking &amp; Finance</h2>
         <div class="links-container">
           <div class="link-card">
             <div class="link-header">
@@ -663,10 +657,10 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
             <div class="link-cat">Pay by card</div>
             <p class="link-desc">
-              A <strong>$20 Chexy credit</strong> after an eligible new customer signs up through the referral link and completes a first payment. Pay eligible bills—including rent, property taxes, Hydro and income taxes—by credit card; current terms and the 1.75% fee apply.
+              <strong>$20 credit</strong> after a qualifying first payment. Pay rent, taxes and other eligible bills by credit card (1.75% fee).
             </p>
             <div class="link-meta">
-              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · 1.75% fee, worth-it math, status tiers and FAQ on the dedicated page.
+              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · 1.75% fee, value calculation, status tiers and FAQ.
             </div>
           </div>
 
@@ -679,10 +673,10 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
             <div class="link-cat">Online banking</div>
             <p class="link-desc">
-              A <strong>$50 referral bonus</strong> with Orange Key <strong>14130944S1</strong> for an eligible new client who opens a qualifying account, deposits at least $250 within 60 days and maintains it for 60 consecutive days.
+              <strong>$50 bonus</strong> with Orange Key <strong>14130944S1</strong> after opening an eligible account and meeting the deposit requirements.
             </p>
             <div class="link-meta">
-              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · conditions, bonus timeline and activation steps on the dedicated page.
+              <span class="verified">Verified <span class="verif-month">July 2026</span></span> · conditions, payment timeline and activation steps.
             </div>
           </div>
 
@@ -695,16 +689,15 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
             <div class="link-cat">Online savings</div>
            <p class="link-desc">
-            <strong>$25 bonus</strong> when you open an account with referral code <strong>V381566198</strong>. Minimum $250 deposit, balance held at least 1 month. 
-             <em>(Referral program paused — returns Summer 2026.)</em>
+            <strong>$25 bonus</strong> with referral code <strong>V381566198</strong>.
             </p>
             <div class="link-meta">
-              Competitive interest rates, 100% mobile sign-up and bonus details on the dedicated page.
+              <em>Referral program paused — expected to return Summer 2026.</em> · Details in the guide.
             </div>
           </div>
         </div>
 
-        <h2 class="section-label" id="cashback" style="margin-top:24px;">Cashback &amp; Rewards</h2>
+        <h2 class="section-label" id="cashback" style="margin-top:18px;">Cashback &amp; Rewards</h2>
         <div class="links-container">
           <div class="link-card">
             <div class="link-header">
@@ -715,10 +708,10 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
             <div class="link-cat">Cashback</div>
             <p class="link-desc">
-              <strong>$30 cash back</strong> after an eligible new member signs up through the referral link and completes a qualifying first purchase of $30 or more under the current offer.
+              <strong>$30 cash back</strong> after a qualifying first purchase through the referral link.
             </p>
             <div class="link-meta">
-              <span class="verified">Personally tested since 2013</span> · step-by-step guide, partner merchants and FAQ on the dedicated page.
+              <span class="verified">Personally tested since 2013</span> · step-by-step guide, partner stores and FAQ.
             </div>
           </div>
 
@@ -731,10 +724,10 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
             <div class="link-cat">Surveys &amp; rewards</div>
             <p class="link-desc">
-              A <strong>$10 bonus (1,000 SB)</strong> after activation in Swag Ups and a qualifying $25+ Shop purchase within 30 days, with at least 25 SB earned.
+              <strong>$10 (1,000 SB)</strong> after activating the Swag Ups offer and completing a qualifying Shop purchase.
             </p>
             <div class="link-meta">
-              <span class="verified">Personally tested since 2009</span> · free sign-up. Details on the dedicated page.
+              <span class="verified">Personally tested since 2009</span> · free sign-up.
             </div>
           </div>
         </div>
@@ -742,7 +735,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       </section>
 
       <section aria-label="Comparison guides">
-        <h2 class="section-label" id="comparatifs">Provider Comparisons</h2>
+        <h2 class="section-label" id="comparisons">Provider Comparisons</h2>
         <div class="links-container">
           <div class="link-card">
             <div class="link-header">
@@ -753,10 +746,10 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
             <div class="link-cat">Budget internet · Quebec</div>
             <p class="link-desc">
-              Dedicated comparison of current public pricing, download and upload speeds, technology, installation fees and terms for EBOX, Fizz and oxio.
+              Comparison of current public prices, speeds, technologies and terms for EBOX, Fizz and oxio.
             </p>
             <div class="link-meta">
-              <span class="verified">Updated <span class="verif-month">July 2026</span></span> · regularly maintained from public pricing and provider terms, separately from the EBOX referral guide.
+              <span class="verified">Updated <span class="verif-month">July 2026</span></span> · public prices and terms checked regularly.
             </div>
           </div>
 
@@ -769,17 +762,17 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
             <div class="link-cat">Fibre &amp; cable · Quebec</div>
             <p class="link-desc">
-              Dedicated comparison of current public pricing, speeds, technology, equipment and terms for EBOX, Bell and Videotron.
+              Comparison of current public prices, speeds, technologies and terms for EBOX, Bell and Videotron.
             </p>
             <div class="link-meta">
-              <span class="verified">Updated <span class="verif-month">July 2026</span></span> · regularly maintained from public pricing and provider terms, separately from the EBOX referral guide.
+              <span class="verified">Updated <span class="verif-month">July 2026</span></span> · public prices and terms checked regularly.
             </div>
           </div>
         </div>
       </section>
 
       <section aria-label="Optimization tools and strategies">
-        <h2 class="section-label" id="tools" style="margin-top:24px;">Tools &amp; Strategies</h2>
+        <h2 class="section-label" id="tools" style="margin-top:18px;">Tools &amp; Strategies</h2>
         <div class="links-container">
           <div class="link-card">
             <div class="link-header">
@@ -790,7 +783,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
             <div class="link-cat">Credit cards · Rewards</div>
             <p class="link-desc">
-              Calculate the estimated cash value of your reward points (Amex MR, NBC, TD, Scene+, CIBC, BMO). Floor rate vs. optimal rate.
+              Calculate the estimated cash value of your reward points. Floor rate and optimal rate.
             </p>
             <div class="link-meta">
               <span class="verified">Rates verified (<span class="verif-month">July 2026</span>)</span> · independent comparison.
@@ -813,6 +806,28 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
             </div>
           </div>
         </div>
+      </section>
+
+
+      <section id="stats" aria-label="Cash Instinct at a glance">
+        <ul class="stats" aria-label="At a glance">
+          <li class="stat">
+            <span class="num">8</span>
+            <span class="lbl">referral programs</span>
+          </li>
+          <li class="stat">
+            <span class="num">Documented</span>
+            <span class="lbl">verification by guide</span>
+          </li>
+          <li class="stat">
+            <span class="num">2009</span>
+            <span class="lbl">first program tracked</span>
+          </li>
+          <li class="stat">
+            <span class="num"><span id="stats-month">July 2026</span></span>
+            <span class="lbl">last updated</span>
+          </li>
+        </ul>
       </section>
 
       <section class="method-block" id="methodology" aria-label="How Cash Instinct verifies and maintains its guides">
@@ -870,7 +885,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
     }
 
     function applyUI(dark) {
-      toggle.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
+      toggle.textContent = dark ? '☀️ Light' : '🌙 Dark';
       toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
       toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
       var themeMeta = document.getElementById('theme-color-meta');
