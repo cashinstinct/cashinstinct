@@ -625,7 +625,7 @@
       mr: {
         label: "MR — Membership Rewards",
         floorModeIndex: 2,
-        realisticModeIndex: 0,
+        realisticModeIndex: 1,
         optimalModeIndex: 0,
         modes: [
           { text: "Transfert vers un partenaire aérien", kind: "range", minRate: 0.017, maxRate: 0.022, detail: "Meilleur potentiel, mais la valeur dépend du vol trouvé." },
@@ -821,10 +821,6 @@
       return item.kind === "range" ? item.maxRate : effectiveRate(item, pts);
     }
 
-    function minimumRate(item, pts) {
-      if (item.kind === "progressiveRange") return effectiveRate(item, pts);
-      return item.kind === "range" ? item.minRate : effectiveRate(item, pts);
-    }
 
     function valueText(item, pts) {
       if (item.kind === "progressive") return fmt(progressiveValue(item, pts));
