@@ -56,7 +56,7 @@
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-06-01",
-        "dateModified": "2026-07-24",
+        "dateModified": "2026-07-28",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
         "publisher": {
           "@type": "Organization",
@@ -914,7 +914,7 @@
        <div class="ai-summary">
         La Clé Orange présentée dans ce guide est <strong>14130944S1</strong>. Les nouveaux clients admissibles peuvent recevoir une <strong>prime de parrainage de 50&nbsp;$</strong> après avoir déposé au moins 250&nbsp;$ dans les 60&nbsp;jours et maintenu un solde minimal de 250&nbsp;$ pendant 60&nbsp;jours consécutifs. Une offre distincte de <strong>250&nbsp;$ liée au dépôt de paie</strong> peut aussi s'appliquer sans Clé Orange, pour un total potentiel de 300&nbsp;$ lorsque toutes les conditions sont remplies.
         <br><br>
-        📈 <strong>Offre d'épargne distincte&nbsp;:</strong> le taux promotionnel vérifié est de <strong>4,50&nbsp;% pendant un maximum de 5&nbsp;mois</strong> pour les comptes non enregistrés et de 4,60&nbsp;% pour certains comptes enregistrés. Les taux, comptes admissibles et périodes promotionnelles peuvent changer indépendamment des deux primes en argent.
+        📈 <strong>Offre d'épargne distincte&nbsp;:</strong> les clients dont le numéro de client est créé entre le 28&nbsp;juillet 2026 et le 30&nbsp;novembre 2026 peuvent être admissibles à une période promotionnelle de 153&nbsp;jours, soit 5&nbsp;mois dans la calculatrice. Les taux annoncés sont de <strong>4,50&nbsp;% pour les comptes d'épargne non enregistrés admissibles</strong> et de <strong>5,00&nbsp;% pour les comptes d'épargne enregistrés admissibles, notamment les comptes d'épargne CELI et REER</strong>. L'admissibilité, les exclusions et les taux relèvent des modalités Tangerine et peuvent changer indépendamment des deux primes en argent.
         <br><br>
         🔑 La Clé Orange doit être saisie dans le champ <em>« Entrez une Clé Orange »</em> à la <strong>première étape</strong> du formulaire d'inscription — pas à l'étape paiement, pas après la création du compte.
       </div>
@@ -944,10 +944,12 @@
 
       3. TAUX PROMOTIONNEL D'ÉPARGNE
          Offre indépendante des primes de 50 $ et 250 $.
-         Épargne non enregistrée :
+         Épargne non enregistrée admissible : 4,50 %
          https://www.tangerine.ca/fr/offres/compte-d-epargne-promotion
-         Épargne enregistrée :
+         Épargne enregistrée admissible : 5,00 %
          https://www.tangerine.ca/fr/offres/promotion-compte-d-epargne-enregistre
+         Période promotionnelle : 153 jours (illustration de 5 mois).
+         Numéro de client créé du 28 juillet au 30 novembre 2026 inclusivement.
 
       RÈGLES DE SYNCHRONISATION
       - Ne jamais remplacer 14130944S1.
@@ -984,13 +986,13 @@
           </article>
           <article>
             <h3>Taux promotionnel d'épargne</h3>
-            <p>Cette offre d'épargne possède ses propres comptes admissibles, dates et exclusions. Le taux peut changer indépendamment des deux primes en argent.</p>
+            <p>Pour les clients admissibles dont le numéro de client est créé entre le 28&nbsp;juillet 2026 et le 30&nbsp;novembre 2026, la période promotionnelle est de 153&nbsp;jours&nbsp;: 4,50&nbsp;% s'applique aux comptes d'épargne non enregistrés admissibles et 5,00&nbsp;% aux comptes d'épargne enregistrés admissibles, notamment les comptes d'épargne CELI et REER, selon les modalités Tangerine.</p>
           </article>
         </div>
         <p class="cumul-note">L'admissibilité à une offre ne garantit pas automatiquement l'admissibilité aux autres. Consultez les modalités Tangerine en vigueur avant de présenter une demande.</p>
       </section>
 
-      <p class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-07-24">24&nbsp;juillet 2026</time></p>
+      <p class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-07-28">28&nbsp;juillet 2026</time></p>
 
       <div class="transparency" style="margin-bottom: 24px;">
         <strong>Transparence&nbsp;:</strong> ce guide indépendant assure un suivi du programme de parrainage. Si vous ouvrez un compte Tangerine admissible avec la Clé Orange <code>14130944S1</code> et remplissez les exigences du programme, vous pourriez recevoir la prime de parrainage de 50&nbsp;$ réservée aux nouveaux clients et financée par Tangerine. Tangerine pourrait aussi me verser un crédit de parrainage, sans coût supplémentaire pour vous. J'ai déjà reçu des crédits de parrainage Tangerine, notamment dans le cadre du programme actuel de 50&nbsp;$ et d'anciennes versions du programme. Les montants et les conditions ont évolué au fil du temps et pourraient changer de nouveau. Divulgation complète au bas de cette page.
@@ -1031,28 +1033,34 @@
           <h3>🧮 Votre avantage potentiel estimé</h3>
           <div class="calculator-fields">
             <label class="calculator-field" for="c-depot">Dépôt initial ($)</label>
-            <input class="calculator-input" type="number" id="c-depot" value="250" min="0" max="100000000" step="0.01" inputmode="decimal" aria-describedby="c-depot-err">
+            <input class="calculator-input" type="number" id="c-depot" value="250" min="0" max="1000000" step="0.01" inputmode="decimal" aria-describedby="c-depot-err">
             <span id="c-depot-err" class="calculator-error" role="alert">Entrez un montant valide et non négatif. Un dépôt d'au moins 250&nbsp;$ est requis pour la prime Clé Orange potentielle.</span>
 
-            <label class="calculator-field" for="c-epargne">Compte d'épargne&nbsp;? (taux illustratif de 4,5&nbsp;% × 5&nbsp;mois)</label>
+            <label class="calculator-field" for="c-epargne">Inclure un compte d'épargne&nbsp;?</label>
             <select class="calculator-input" id="c-epargne">
               <option value="0">Non — compte-chèques seulement</option>
               <option value="1">Oui — j'ouvre aussi un compte d'épargne</option>
             </select>
 
             <div id="c-epargne-wrap" hidden>
+              <label class="calculator-field" for="c-epargne-type">Type de compte et taux promotionnel</label>
+              <select class="calculator-input" id="c-epargne-type">
+                <option value="0.045">Compte d'épargne non enregistré — 4,50&nbsp;%</option>
+                <option value="0.05">Compte d'épargne enregistré admissible — 5,00&nbsp;%</option>
+              </select>
+
               <label class="calculator-field" for="c-epargne-montant">Montant dans le compte d'épargne ($)</label>
-              <input class="calculator-input" type="number" id="c-epargne-montant" value="" min="0" max="100000000" step="0.01" inputmode="decimal" placeholder="Ex. : 1000" aria-describedby="c-epargne-err">
-              <span id="c-epargne-err" class="calculator-error" role="alert">Entrez un montant d'épargne valide, supérieur à 0 et inférieur à 100&nbsp;000&nbsp;000&nbsp;$.</span>
+              <input class="calculator-input" type="number" id="c-epargne-montant" value="" min="0" max="1000000" step="0.01" inputmode="decimal" placeholder="Ex. : 1000" aria-describedby="c-epargne-err">
+              <span id="c-epargne-err" class="calculator-error" role="alert">Entrez un montant d'épargne valide entre 0,01&nbsp;$ et 1&nbsp;000&nbsp;000&nbsp;$.</span>
             </div>
 
             <label class="calculator-field" for="c-paie">Dépôt direct de paie admissible par mois ($)</label>
-            <input class="calculator-input" type="number" id="c-paie" value="0" min="0" max="100000000" step="0.01" inputmode="decimal" placeholder="0 = aucun dépôt de paie" aria-describedby="c-paie-err">
+            <input class="calculator-input" type="number" id="c-paie" value="0" min="0" max="1000000" step="0.01" inputmode="decimal" placeholder="0 = aucun dépôt de paie" aria-describedby="c-paie-err">
             <span id="c-paie-err" class="calculator-error" role="alert">Entrez un montant de paie valide et non négatif.</span>
           </div>
           <button class="calculator-button" id="calculator-button" type="button">Calculer</button>
           <div id="c-result" class="calculator-result" role="status" aria-live="polite" aria-atomic="true"></div>
-          <p class="calculator-note">La calculatrice fournit une estimation, et non une garantie d'admissibilité ou de versement. Elle utilise volontairement le taux non enregistré de 4,50&nbsp;% pendant cinq mois et ne calcule pas séparément le taux enregistré de 4,60&nbsp;%. Les taux, comptes admissibles et modalités peuvent changer. Des frais situationnels peuvent s'appliquer.</p>
+          <p class="calculator-note">La calculatrice fournit une estimation, et non une garantie d'admissibilité ou de versement. Elle utilise le taux promotionnel sélectionné pour une période illustrative de cinq mois. Les taux actuellement annoncés sont de 4,50&nbsp;% pour les comptes d'épargne non enregistrés admissibles et de 5,00&nbsp;% pour les comptes d'épargne enregistrés admissibles. Les taux, comptes admissibles et modalités peuvent changer. Des frais situationnels peuvent s'appliquer.</p>
         </div>
 
         <h3 style="font-size: 1.15rem; font-weight: 800; margin: 28px 0 16px; color: var(--text);">Obtenir les deux — ordre des étapes</h3>
@@ -1083,6 +1091,40 @@
             </div>
           </li>
         </ol>
+
+        <div class="seo-table-wrap">
+          <table class="seo-table" aria-label="Récapitulatif des offres Tangerine">
+            <thead>
+              <tr>
+                <th>Offre</th>
+                <th>Montant ou taux</th>
+                <th>Condition et durée</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Clé Orange <code>14130944S1</code></td>
+                <td><strong>50&nbsp;$</strong></td>
+                <td>Déposer au moins 250&nbsp;$ dans les 60&nbsp;jours, maintenir le solde pendant 60&nbsp;jours consécutifs, puis prévoir jusqu'à 30&nbsp;jours pour le versement</td>
+              </tr>
+              <tr>
+                <td>Dépôt de paie (aucun code)</td>
+                <td><strong>250&nbsp;$</strong></td>
+                <td>Au moins 200&nbsp;$/mois pendant 2&nbsp;mois, selon les modalités de l'offre</td>
+              </tr>
+              <tr>
+                <td>Épargne non enregistrée</td>
+                <td><strong>4,50&nbsp;%</strong></td>
+                <td>Comptes d'épargne non enregistrés admissibles pendant 153&nbsp;jours (5&nbsp;mois dans la calculatrice)</td>
+              </tr>
+              <tr>
+                <td>Épargne enregistrée admissible</td>
+                <td><strong>5,00&nbsp;%</strong></td>
+                <td>Comptes d'épargne enregistrés admissibles, notamment les comptes d'épargne CELI et REER, pendant 153&nbsp;jours (5&nbsp;mois dans la calculatrice)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         </section>
 
       <!-- === VERDICT (ça vaut la peine) === -->
@@ -1444,7 +1486,7 @@
               <li>✓ Taux promotionnels des comptes enregistrés et non enregistrés</li>
               <li>✓ Cohérence des montants entre les versions française et anglaise</li>
             </ul>
-            <p class="test-limit">Les conditions actuelles, les délais et les taux ont été vérifiés dans les sources publiques le 24&nbsp;juillet 2026. Cette vérification documentaire reste distincte de mon expérience passée comme client référent.</p>
+            <p class="test-limit">Les conditions actuelles, les délais et les taux ont été vérifiés dans les sources publiques le 28&nbsp;juillet 2026. Cette vérification documentaire reste distincte de mon expérience passée comme client référent.</p>
           </aside>
 
           <p><strong>Point à surveiller&nbsp;:</strong> la Clé Orange doit être saisie pendant l'inscription. Les modalités publiées ne promettent pas son ajout rétroactif; vérifiez le champ avant de poursuivre.</p>
@@ -1671,7 +1713,7 @@
 <footer>
   <div class="container">
     <p>Site non affilié officiellement à Tangerine ou à la Banque Scotia. Les marques appartiennent à leurs propriétaires respectifs.</p>
-    <p style="margin-top:6px;">Clé Orange Tangerine&nbsp;: <code>14130944S1</code> — Mis à jour&nbsp;: <time id="footer-date" datetime="2026-07-24">24&nbsp;juillet 2026</time></p>
+    <p style="margin-top:6px;">Clé Orange Tangerine&nbsp;: <code>14130944S1</code> — Mis à jour&nbsp;: <time id="footer-date" datetime="2026-07-28">28&nbsp;juillet 2026</time></p>
     <nav class="footer-hub" aria-label="Guides Cash Instinct">
       <section>
         <h3>Banque et finances</h3>
@@ -1712,11 +1754,12 @@
   var depot = document.getElementById('c-depot');
   var paie = document.getElementById('c-paie');
   var montantEpargne = document.getElementById('c-epargne-montant');
+  var typeEpargne = document.getElementById('c-epargne-type');
   var errEl = document.getElementById('c-depot-err');
   var payErr = document.getElementById('c-paie-err');
   var savingsErr = document.getElementById('c-epargne-err');
   var result = document.getElementById('c-result');
-  var MAX_VALUE = 100000000;
+  var MAX_VALUE = 1000000;
 
   function toggleEpargne() {
     wrap.hidden = sel.value !== '1';
@@ -1745,6 +1788,7 @@
     var p = readAmount(paie, false);
     var epargne = sel.value === '1';
     var em = epargne ? readAmount(montantEpargne, false) : 0;
+    var tauxSelectionne = Number(typeEpargne.value);
     var invalidDeposit = d === null;
     var invalidPay = p === null;
     var invalidSavings = epargne && (em === null || em <= 0);
@@ -1770,12 +1814,13 @@
       addLine(result, 'Le montant de paie indiqué est inférieur au seuil actuel de 200 $ par mois.');
     }
 
-    var interest = epargne && em > 0 ? em * 0.045 * (5 / 12) : 0;
-    if (interest > 0) addLine(result, 'Intérêts illustratifs à 4,5 % pendant cinq mois : ', interest.toFixed(2) + ' $.');
+    var interest = epargne && em > 0 ? em * tauxSelectionne * (5 / 12) : 0;
+    var tauxAffiche = (tauxSelectionne * 100).toFixed(2).replace('.', ',') + ' %';
+    if (interest > 0) addLine(result, 'Intérêts d’épargne estimés à ' + tauxAffiche + ' pendant 5 mois : ', interest.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD' }) + '.');
 
     var totalLine = document.createElement('p');
     var totalStrong = document.createElement('strong');
-    totalStrong.textContent = 'Total estimé : ' + (total + interest).toFixed(2) + ' $.';
+    totalStrong.textContent = 'Total estimé : ' + (total + interest).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD' }) + '.';
     totalLine.appendChild(totalStrong);
     result.appendChild(totalLine);
   }
