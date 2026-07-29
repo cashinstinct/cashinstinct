@@ -5,9 +5,10 @@ CSS inline par page — pas de fichier partagé. Ce doc est la source de vérit�
 
 ## Convention CSS — variables `:root`
 
-Chaque page redéfinit le **même set de noms de variables**, avec des **valeurs
-différentes selon le programme** (couleur brand de l'affilié). C'est voulu, pas
-une dérive — ne pas uniformiser les valeurs entre programmes.
+Les pages de programmes redéfinissent le **même set de noms de variables**, avec
+des **valeurs différentes selon le programme** (couleur brand de l'affilié).
+C'est voulu, pas une dérive — ne pas uniformiser les valeurs entre programmes.
+Les homepages utilisent plutôt `--blue`, `--blue-soft` et `--blue-contrast`.
 
 ```css
 :root {
@@ -45,7 +46,7 @@ aux blocs d'avertissement (ex: "le coupon standard ne fonctionne pas").
 | Rakuten | `#6c00c8` (violet) | `#5500a0` | OK |
 | Swagbucks | `#583be6` (indigo) | `#4126c4` | OK |
 | Achieva | `#107a47` (vert) | `#0b5933` | OK, en pause |
-| Homepage (Cashinstinct) | `--accent: #2563eb` / dark: `#3b82f6` | `--accent-dark: #1e40af` / dark: `#3b82f6` | Renommé le 2026-07-02 (était `--blue`/`--blue-contrast`) |
+| Homepage (Cashinstinct) | `--blue: #2563eb` / dark: `#3b82f6` | `--blue-contrast: #1e40af` / dark: `#60a5fa` | Utilise aussi `--blue-soft: #dbeafe` / dark: `#1e293b` |
 
 ### `--warning-border` — PAS constant, corrige la V1 de ce doc
 
@@ -171,7 +172,8 @@ Pages programmes hardcodent `8px`/`12px` en dur. Pas de action requise, à
   
 ## Historique
 
-- ✅ **Résolu (2026-07-02)** — `--blue`/`--blue-contrast` renommés en
-  `--accent`/`--accent-dark` sur homepage FR/EN, uniforme avec les programmes.
+- ℹ️ **Convention homepage** — les homepages FR/EN utilisent `--blue`,
+  `--blue-soft` et `--blue-contrast`; les pages de programmes utilisent
+  `--accent` et `--accent-dark`.
 - ✅ **Complété (2026-07-02)** — les 8 programmes + homepage extraits. Doc
   fiable pour une nouvelle page.
