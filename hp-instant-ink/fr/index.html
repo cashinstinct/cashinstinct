@@ -578,7 +578,11 @@
      .copy-status { display: block; min-height: 1.2em; font-size: 0.85rem; text-align: center; margin-top: 6px; }
    
  /* ── STICKY CTA MOBILE (+ tablettes ≤1024px) ── */
-    .sticky-mobile-cta { display: none; }
+    .sticky-mobile-cta {
+      display: none;
+      opacity: 0;
+      pointer-events: none;
+    }
 
     @media (max-width: 1024px) {
       body { padding-bottom: 80px; }
@@ -594,7 +598,11 @@
         transform: translateY(100%);
         transition: transform 0.3s ease;
       }
-      .sticky-mobile-cta.visible { transform: translateY(0); }
+      .sticky-mobile-cta.visible {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
 
       .sticky-mobile-cta .s-code {
         font-family: "Courier New", Courier, monospace;
@@ -1477,7 +1485,7 @@
   </main>
 
   <!-- Sticky CTA mobile -->
-  <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="Code HP Instant Ink à copier" aria-hidden="true">
+  <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="Code HP Instant Ink à copier" aria-hidden="true" inert>
     <div>
       <div class="s-code">SVdn7</div>
       <div class="s-label">Code parrain HP Instant Ink</div>
@@ -1634,24 +1642,34 @@
       var cta = document.getElementById('sticky-cta');
       if (!cta) return;
 
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 400) {
-          cta.classList.add('visible');
-          cta.setAttribute('aria-hidden', 'false');
-        } else if (window.scrollY <= 200) {
-          cta.classList.remove('visible');
-          cta.setAttribute('aria-hidden', 'true');
-        }
-      }, { passive: true });
+      var finalCtaVisible = false;
+      var mobileQuery = window.matchMedia('(max-width: 1024px)');
+
+      function setStickyVisibility(visible) {
+        cta.classList.toggle('visible', visible);
+        cta.setAttribute('aria-hidden', visible ? 'false' : 'true');
+        cta.toggleAttribute('inert', !visible);
+        cta.style.pointerEvents = visible ? 'auto' : 'none';
+        cta.style.opacity = visible ? '1' : '0';
+      }
+
+      function updateStickyCta() {
+        setStickyVisibility(
+          mobileQuery.matches && window.scrollY > 400 && !finalCtaVisible
+        );
+      }
+
+      setStickyVisibility(false);
+      updateStickyCta();
+      window.addEventListener('scroll', updateStickyCta, { passive: true });
+      mobileQuery.addEventListener('change', updateStickyCta);
 
       // Masquer quand le CTA final est visible (aligné sur Sticker Mule)
       var ctaSection = document.querySelector('.cta-section');
       if (ctaSection) {
         new IntersectionObserver(function(entries) {
-          var hidden = entries[0].isIntersecting;
-          cta.style.opacity = hidden ? '0' : '1';
-          cta.style.pointerEvents = hidden ? 'none' : 'auto';
-          cta.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+          finalCtaVisible = entries[0].isIntersecting;
+          updateStickyCta();
         }).observe(ctaSection);
       }
     })();
