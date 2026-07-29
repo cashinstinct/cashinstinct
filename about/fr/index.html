@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" id="theme-color-meta" content="#f8fafc" />
+
+  <title>À propos de Cash Instinct — Méthode, sources et contact</title>
+  <meta name="description" content="Pourquoi Cash Instinct existe, comment les guides canadiens sont documentés, quelles sources sont utilisées et comment signaler une correction." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cashinstinct.ca/about/fr/" />
+  <link rel="alternate" hreflang="fr-CA" href="https://cashinstinct.ca/about/fr/" />
+  <link rel="alternate" hreflang="fr" href="https://cashinstinct.ca/about/fr/" />
+  <link rel="alternate" hreflang="en-CA" href="https://cashinstinct.ca/about/en/" />
+  <link rel="alternate" hreflang="en" href="https://cashinstinct.ca/about/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/about/fr/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cashinstinct.ca/about/fr/" />
+  <meta property="og:title" content="À propos de Cash Instinct — Méthode, sources et contact" />
+  <meta property="og:description" content="Pourquoi Cash Instinct existe, comment les guides canadiens sont documentés, quelles sources sont utilisées et comment signaler une correction." />
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:locale:alternate" content="en_CA" />
+  <meta property="og:site_name" content="Cash Instinct" />
+  <meta property="og:image" content="https://cashinstinct.ca/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="À propos de Cash Instinct — Méthode, sources et contact" />
+  <meta name="twitter:description" content="Pourquoi Cash Instinct existe, comment les guides canadiens sont documentés, quelles sources sont utilisées et comment signaler une correction." />
+  <meta name="twitter:image" content="https://cashinstinct.ca/og.png" />
+
+  <script>
+    try {
+      var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+      var themeMeta = document.getElementById('theme-color-meta');
+      if (themeMeta) themeMeta.setAttribute('content', t === 'dark' ? '#0b0f17' : '#f8fafc');
+    } catch(e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://cashinstinct.ca/about/fr/#aboutpage",
+        "url": "https://cashinstinct.ca/about/fr/",
+        "name": "À propos de Cash Instinct — Méthode, sources et contact",
+        "description": "Pourquoi Cash Instinct existe, comment les guides canadiens sont documentés, quelles sources sont utilisées et comment signaler une correction.",
+        "inLanguage": "fr-CA",
+        "datePublished": "2026-07-28",
+        "dateModified": "2026-07-28",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://cashinstinct.ca/#website",
+          "url": "https://cashinstinct.ca/",
+          "name": "Cash Instinct"
+        },
+        "about": { "@id": "https://cashinstinct.ca/#organization" },
+        "mainEntity": { "@id": "https://cashinstinct.ca/#organization" },
+        "publisher": { "@id": "https://cashinstinct.ca/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://cashinstinct.ca/#organization",
+        "name": "Cash Instinct",
+        "url": "https://cashinstinct.ca/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cashinstinct.ca/logo.png"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-soft: #f1f5f9;
+      --surface-muted: #e2e8f0;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --blue: #2563eb;
+      --blue-soft: #dbeafe;
+      --blue-contrast: #1e40af;
+      --shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+      --radius: 14px;
+    }
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0b0f17;
+      --surface: #131a26;
+      --surface-soft: #1a2333;
+      --surface-muted: #222f44;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --line: #1e293b;
+      --blue: #3b82f6;
+      --blue-soft: #1e293b;
+      --blue-contrast: #60a5fa;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    :where(a, button):focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      padding: 40px 24px 56px;
+    }
+    @media (min-width: 768px) { body { font-size: 19px; } }
+    .skip-nav {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      z-index: 9999;
+      padding: 8px 16px;
+      border-radius: 0 0 6px 0;
+      background: #2563eb;
+      color: #fff;
+      font-weight: 700;
+    }
+    .skip-nav:focus { top: 0; }
+    .wrapper {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .top-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .home-link,
+    .control {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface-soft);
+      color: var(--text);
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .home-link:hover,
+    .control:hover { background: var(--surface-muted); }
+    header {
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 34px;
+    }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--blue-contrast);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 21ch;
+      margin-bottom: 14px;
+      font-size: clamp(2rem, 6vw, 3.25rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+    .lead {
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+    main { display: grid; gap: 22px; }
+    .content-section {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .content-section h2 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      line-height: 1.25;
+    }
+    .content-section p,
+    .content-section ul { color: var(--muted); }
+    .content-section p + p,
+    .content-section p + ul,
+    .content-section ul + p { margin-top: 12px; }
+    .content-section ul { padding-left: 1.25rem; }
+    .content-section li + li { margin-top: 7px; }
+    a { color: var(--blue-contrast); }
+    a:hover { text-decoration-thickness: 2px; }
+    .notice {
+      border-left: 4px solid var(--blue);
+      background: var(--blue-soft);
+    }
+    footer {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    footer p + p { margin-top: 8px; }
+    @media (max-width: 520px) {
+      body { padding: 20px 16px 36px; }
+      .top-nav { align-items: flex-start; }
+      .content-section { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-nav" href="#main-content">Passer au contenu principal</a>
+
+  <div class="wrapper">
+    <nav class="top-nav" aria-label="Navigation de la page">
+      <a class="home-link" href="https://cashinstinct.ca/">← Accueil Cash Instinct</a>
+      <div class="top-actions">
+        <a class="control" href="https://cashinstinct.ca/about/en/" hreflang="en-CA" lang="en-CA">English</a>
+        <button id="theme-toggle" class="control" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙 Sombre</button>
+      </div>
+    </nav>
+
+    <header>
+      <span class="eyebrow">À propos et méthodologie</span>
+      <h1>À propos de Cash Instinct</h1>
+      <p class="lead">Cash Instinct rassemble des informations éparpillées pour aider les consommateurs canadiens à comprendre une offre, ses conditions importantes et ses limites avant de s’inscrire ou de payer.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="content-section" aria-labelledby="pourquoi">
+        <h2 id="pourquoi">Pourquoi Cash Instinct existe</h2>
+        <p>Les détails d’une même offre se trouvent souvent à plusieurs endroits : page officielle, conditions, FAQ, espace client ou discussions publiques. Cash Instinct regroupe les éléments utiles dans des guides plus faciles à consulter et adaptés au contexte canadien.</p>
+        <p>L’objectif n’est pas de remplacer les conditions officielles, mais de faire ressortir ce qui mérite d’être vérifié avant une inscription, un achat ou un paiement afin de réduire les mauvaises surprises.</p>
+      </section>
+
+      <section class="content-section" aria-labelledby="preparation">
+        <h2 id="preparation">Comment les guides sont préparés</h2>
+        <ul>
+          <li>Les pages et conditions officielles sont utilisées en priorité.</li>
+          <li>Les limites, exclusions, échéances et conditions d’admissibilité sont recherchées et expliquées.</li>
+          <li>Des captures d’écran, exemples ou FAQ sont ajoutés lorsqu’ils apportent une preuve ou facilitent la compréhension.</li>
+          <li>Les sources pertinentes et les dates de vérification sont rendues visibles dans les guides.</li>
+        </ul>
+      </section>
+
+      <section class="content-section" aria-labelledby="experience">
+        <h2 id="experience">Documentation et expérience personnelle</h2>
+        <p>Tous les programmes présentés sur Cash Instinct n’ont pas été testés personnellement. Lorsqu’une expérience de première main existe, elle est indiquée clairement. Dans les autres cas, le guide est présenté comme un travail de documentation fondé sur les sources disponibles.</p>
+        <p>Cette distinction permet de séparer les observations personnelles des règles publiées par un fournisseur.</p>
+      </section>
+
+      <section class="content-section" aria-labelledby="travaux">
+        <h2 id="travaux">Outils et travaux originaux</h2>
+        <p>Cash Instinct ne se limite pas à répertorier des offres. Le site développe aussi des ressources destinées à faciliter une décision ou un calcul :</p>
+        <ul>
+          <li><a href="/valeur-points/fr/">la calculatrice de valeur des points</a>;</li>
+          <li><a href="/rht/fr/">le guide de la méthode RHT</a>;</li>
+          <li><a href="/ebox-vs-fizz-vs-oxio/fr/">les comparatifs de fournisseurs Internet</a>;</li>
+          <li>des guides étape par étape adaptés aux parcours réels d’inscription ou d’utilisation.</li>
+        </ul>
+      </section>
+
+      <section class="content-section" aria-labelledby="affiliation">
+        <h2 id="affiliation">Affiliation et indépendance</h2>
+        <p>Certains liens sont des liens de parrainage ou d’affiliation. Leur utilisation peut permettre à Cash Instinct de recevoir une récompense, sans coût additionnel pour le lecteur.</p>
+        <p>Une affiliation n’empêche pas de présenter les conditions défavorables, les limites, les exclusions ou la suspension d’un programme. Une offre en pause ne doit pas être présentée comme active.</p>
+      </section>
+
+      <section class="content-section" aria-labelledby="contact">
+        <h2 id="contact">Signaler une correction</h2>
+        <p>Si vous remarquez une erreur factuelle, un lien brisé ou un changement dans les conditions d’un programme, vous pouvez <a href="https://github.com/cashinstinct/cashinstinct.ca/issues/new" target="_blank" rel="noopener noreferrer">ouvrir un billet sur le dépôt GitHub de Cash Instinct</a>.</p>
+        <p>Ce canal sert au suivi des corrections techniques et éditoriales. Les demandes de soutien concernant les services présentés doivent être adressées directement à leur fournisseur.</p>
+      </section>
+
+      <section class="content-section notice" aria-labelledby="mises-a-jour">
+        <h2 id="mises-a-jour">Offres et mises à jour</h2>
+        <p>Les montants, critères et délais peuvent changer. Avant de vous inscrire, consultez la date de vérification affichée dans le guide et confirmez les conditions sur le site officiel du programme.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Cash Instinct — À propos, méthodologie et transparence.</p>
+      <p><a href="https://cashinstinct.ca/">Accueil</a> · <a href="https://cashinstinct.ca/about/en/" hreflang="en-CA" lang="en-CA">English</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+      function isDark() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+      }
+      function applyUI(dark) {
+        toggle.textContent = dark ? '☀️ Clair' : '🌙 Sombre';
+        toggle.setAttribute('aria-label', dark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+        var themeMeta = document.getElementById('theme-color-meta');
+        if (themeMeta) themeMeta.setAttribute('content', dark ? '#0b0f17' : '#f8fafc');
+      }
+      applyUI(isDark());
+      toggle.addEventListener('click', function() {
+        var next = !isDark();
+        document.documentElement.setAttribute('data-theme', next ? 'dark' : 'light');
+        localStorage.setItem('theme', next ? 'dark' : 'light');
+        applyUI(next);
+      });
+    })();
+  </script>
+</body>
+</html>

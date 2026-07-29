@@ -19,8 +19,8 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" id="theme-color-meta" content="#f8fafc" />
 
-  <title>Cash Instinct — Canadian Referral Codes &amp; Practical Guides (2026)</title>
-  <meta name="description" content="Independent Canadian guides combining personal use, documented tests, official terms, referral codes, comparisons and practical optimization tools." />
+  <title>Cash Instinct — Canadian Guides, Tools &amp; Referral Codes</title>
+  <meta name="description" content="Independent Canadian guides, comparisons, tools and referral codes that explain offers and verify their terms before you sign up or pay." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/en/" />
 
@@ -34,8 +34,8 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
 
   <meta property="og:type"             content="website" />
   <meta property="og:url"              content="https://cashinstinct.ca/en/" />
-  <meta property="og:title"            content="Cash Instinct — Canadian Referral Codes &amp; Practical Guides (2026)" />
-  <meta property="og:description" content="Independent Canadian guides combining personal use, documented tests, official terms, referral codes, comparisons and practical optimization tools." />
+  <meta property="og:title"            content="Cash Instinct — Canadian Guides, Tools &amp; Referral Codes" />
+  <meta property="og:description" content="Independent Canadian guides, comparisons, tools and referral codes that explain offers and verify their terms before you sign up or pay." />
   <meta property="og:locale"           content="en_CA" />
   <meta property="og:locale:alternate" content="fr_CA" />
   <meta property="og:site_name"        content="Cash Instinct" />
@@ -45,8 +45,8 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
   <meta property="og:image:type"       content="image/png" />
 
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Cash Instinct — Canadian Referral Codes &amp; Practical Guides (2026)" />
-  <meta name="twitter:description" content="Independent Canadian guides combining personal use, documented tests, official terms, referral codes, comparisons and practical optimization tools." />
+  <meta name="twitter:title"       content="Cash Instinct — Canadian Guides, Tools &amp; Referral Codes" />
+  <meta name="twitter:description" content="Independent Canadian guides, comparisons, tools and referral codes that explain offers and verify their terms before you sign up or pay." />
   <meta name="twitter:image"       content="https://cashinstinct.ca/og.png" />
   
    <script>
@@ -69,7 +69,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
         "@id": "https://cashinstinct.ca/#website",
         "url": "https://cashinstinct.ca/",
         "name": "Cash Instinct",
-        "description": "Independent Canadian guides combining personal use, documented tests, official terms, referral codes, comparisons and practical optimization tools.",
+        "description": "Independent Canadian guides, comparisons, tools and referral codes that explain offers and verify their terms before you sign up or pay.",
         "inLanguage": "en-CA",
         "publisher": {
           "@type": "Organization",
@@ -83,12 +83,12 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
         "@type": "CollectionPage",
         "@id": "https://cashinstinct.ca/en/#collectionpage",
         "url": "https://cashinstinct.ca/en/",
-        "name": "Cash Instinct — Canadian Referral Codes & Practical Guides (2026)",
-        "description": "Independent Canadian guides combining personal use, documented tests, official terms, referral codes, comparisons and practical optimization tools.",
+        "name": "Cash Instinct — Canadian Guides, Tools & Referral Codes",
+        "description": "Independent Canadian guides, comparisons, tools and referral codes that explain offers and verify their terms before you sign up or pay.",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "inLanguage": "en-CA",
         "datePublished": "2026-06-12",
-        "dateModified": "2026-07-24",
+        "dateModified": "2026-07-28",
         "author":    { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@type": "Organization", "@id": "https://cashinstinct.ca/#organization" },
         "mainEntity": {
@@ -168,7 +168,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
     /* FIX #14: skip navigation */
     .skip-nav {
       position: absolute; top: -100%; left: 0;
-      background: var(--blue); color: #fff;
+      background: #2563eb; color: #fff;
       padding: 8px 16px; font-weight: 700;
       z-index: 9999; border-radius: 0 0 6px 0;
     }
@@ -261,14 +261,6 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       font-weight: 600;
     }
 
-    .intro {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 28px;
-      max-width: 75ch;
-    }
-
-
     .disclaimer {
       margin: 0;
       max-width: 88ch;
@@ -278,6 +270,24 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
     }
     .disclaimer em {
       color: var(--text);
+    }
+
+    .intro-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      padding: 0;
+      margin: 0 0 14px;
+      list-style: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .intro-trust li::before {
+      content: "✓";
+      margin-right: 7px;
+      color: var(--blue);
+      font-weight: 800;
     }
 
     .method-block {
@@ -296,11 +306,23 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       color: var(--text);
     }
     .method-block p {
-      font-size: 0.95rem;
+      margin: 0 0 14px;
       color: var(--muted);
-      margin-bottom: 12px;
+      font-size: 0.95rem;
     }
-    .method-block p:last-child { margin-bottom: 0; }
+    .method-block ul {
+      margin: 0;
+      padding-left: 1.25rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .method-block li + li { margin-top: 8px; }
+    .method-block a,
+    .method-block a:visited {
+      color: var(--blue-contrast);
+      text-underline-offset: 2px;
+    }
+    .method-block a:hover { text-decoration-thickness: 2px; }
 
     .links-container {
       display: grid;
@@ -487,18 +509,6 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
     }
     .link-card-link:hover { color: var(--blue); }
 
-    .link-tag {
-      font-size: 0.78rem;
-      padding: 2px 10px;
-      border-radius: 999px;
-      background: var(--surface-muted);
-      color: var(--text);
-      font-weight: 600;
-      white-space: nowrap;
-      position: relative;
-      z-index: 2;
-    }
-
     .link-desc {
       font-size: 0.95rem;
       color: var(--muted);
@@ -551,7 +561,6 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       .header-top { flex-direction: column; align-items: flex-start; gap: 12px; }
       .theme-btn { align-self: flex-start; }
       .link-header { align-items: flex-start; flex-direction: column; gap: 6px; }
-      .link-tag { align-self: flex-start; }
     }
   </style>
 </head>
@@ -567,10 +576,16 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
       </div>
 
       <div class="header-top">
-        <h1>Best Canadian Referral Codes and Welcome Offers</h1>
+        <h1>Cash Instinct — Canadian Guides, Comparisons and Money-Saving Tools</h1>
       </div>
 
-      <div class="subtitle">Personal experience, documented tests and independent guides for Canadian offers and tools.</div>
+      <p class="subtitle">Cash Instinct brings together guides, comparisons and tools designed to help Canadian consumers understand an offer before signing up. Important terms, concrete examples and useful sources are organized in one place to make limitations easier to spot and reduce surprises.</p>
+      <ul class="intro-trust">
+        <li>Important terms summarized in plain language</li>
+        <li>Screenshots, FAQs and examples when useful</li>
+        <li>Comparisons and tools built for the Canadian context</li>
+        <li>Documented checks with visible update dates</li>
+      </ul>
 
       <nav class="quicknav" aria-label="Jump to a category">
         <a href="#internet">🌐 Internet</a>
@@ -589,6 +604,27 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
     </header>
 
     <main id="main-content">
+
+      <section id="stats" aria-label="Cash Instinct at a glance">
+        <ul class="stats" aria-label="At a glance">
+          <li class="stat">
+            <span class="num">8</span>
+            <span class="lbl">referral programs</span>
+          </li>
+          <li class="stat">
+            <span class="num">Documented</span>
+            <span class="lbl">verification by guide</span>
+          </li>
+          <li class="stat">
+            <span class="num">2009</span>
+            <span class="lbl">first program tracked</span>
+          </li>
+          <li class="stat">
+            <span class="num"><span id="stats-month">July 2026</span></span>
+            <span class="lbl">last updated</span>
+          </li>
+        </ul>
+      </section>
 
       <section aria-label="Referral codes">
 
@@ -808,33 +844,14 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
         </div>
       </section>
 
-
-      <section id="stats" aria-label="Cash Instinct at a glance">
-        <ul class="stats" aria-label="At a glance">
-          <li class="stat">
-            <span class="num">8</span>
-            <span class="lbl">referral programs</span>
-          </li>
-          <li class="stat">
-            <span class="num">Documented</span>
-            <span class="lbl">verification by guide</span>
-          </li>
-          <li class="stat">
-            <span class="num">2009</span>
-            <span class="lbl">first program tracked</span>
-          </li>
-          <li class="stat">
-            <span class="num"><span id="stats-month">July 2026</span></span>
-            <span class="lbl">last updated</span>
-          </li>
+      <section class="method-block" id="why-cash-instinct" aria-labelledby="why-cash-instinct-title">
+        <h2 id="why-cash-instinct-title">Why was Cash Instinct created?</h2>
+        <p>Information about Canadian offers is often scattered. Cash Instinct brings it together in guides that cite official sources and point out important limitations or exceptions.</p>
+        <ul>
+          <li>Original comparisons and tools, including the points calculator and RHT guide</li>
+          <li>Personal experience clearly distinguished from documented research</li>
         </ul>
-      </section>
-
-      <section class="method-block" id="methodology" aria-label="How Cash Instinct verifies and maintains its guides">
-        <h2>How Cash Instinct verifies and maintains its guides</h2>
-        <p>Cash Instinct does not use one evidence standard for every program. Depending on the guide, information may come from long-term personal use, a documented test, a recently verified referral flow, account screenshots, official program terms or independent comparisons.</p>
-        <p>Each dedicated page states which evidence applies and separates firsthand observations from information published by the provider. Offers and tools remain listed when their status, conditions and maintenance history can be explained clearly—even if I use them less often today.</p>
-        <p>Amounts and card dates summarize the dedicated guides; full eligibility rules and the latest verification details remain on those pages.</p>
+        <p><a href="https://cashinstinct.ca/about/en/">Learn more about Cash Instinct’s methodology, sources and independence</a>.</p>
       </section>
 
     </main>
@@ -850,6 +867,7 @@ Official program pages for EBOX, Tangerine, Achieva and Swagbucks were checked o
         <a href="https://github.com/cashinstinct/cashinstinct.ca/issues" target="_blank" rel="noopener noreferrer">via the Issues tab</a>.
       </p>
       <div class="internal-links" aria-label="Site links">
+        <a href="https://cashinstinct.ca/about/en/">ℹ️ About and methodology</a>
         <a href="https://cashinstinct.ca/ebox/en/">🌐 EBOX Internet</a>
         <a href="https://cashinstinct.ca/stickermule/en/">🏷️ Sticker Mule</a>
         <a href="https://cashinstinct.ca/hp-instant-ink/en/">🖨️ HP Instant Ink</a>
