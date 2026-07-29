@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "audit:quick": "node tests/quick/audit.mjs",
+    "audit:maintainability": "node tests/maintainability/audit.mjs",
     "audit:full": "playwright test",
     "audit:all": "node tests/run-all.mjs",
     "audit:full:ui": "playwright test --ui",
@@ -17,6 +18,8 @@
     "fast-xml-parser": "^5.2.5",
     "html-validate": "^10.10.0",
     "http-server": "^14.1.1",
-    "image-size": "^2.0.2"
+    "image-size": "^2.0.2",
+    "postcss": "^8.5.25",
+    "postcss-selector-parser": "^7.1.4"
   }
 }

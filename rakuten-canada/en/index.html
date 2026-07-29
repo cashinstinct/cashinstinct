@@ -1024,62 +1024,6 @@ p a, li a { text-decoration: underline; text-underline-offset: 2px; }
   <!-- SCRIPTS -->
 
   <script>
-  // ── MODULE DE COPIE UNIFIÉ — texte page en anglais - source de vérité unique via data-copy / data-target ──
-  (function() {
-    var DONE_LABEL = "Copied!";
-    var STATUS_MSG = "Code copied to clipboard successfully.";
-
-    function feedback(btn, status) {
-      var original = btn.getAttribute("data-label") || btn.textContent;
-      btn.textContent = DONE_LABEL;
-      btn.classList.add("copied");
-      if (status) status.textContent = STATUS_MSG;
-      setTimeout(function() {
-        btn.textContent = original;
-        btn.classList.remove("copied");
-        if (status) status.textContent = "";
-      }, 2000);
-    }
-
-    function copyText(text, btn, status) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function() {
-          feedback(btn, status);
-        }).catch(function() {
-          legacyCopy(text, btn, status);
-        });
-      } else {
-        legacyCopy(text, btn, status);
-      }
-    }
-
-    function legacyCopy(text, btn, status) {
-      var ta = document.createElement("textarea");
-      ta.value = text;
-      ta.style.cssText = "position:fixed;opacity:0;pointer-events:none;";
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand("copy");
-        feedback(btn, status);
-      } catch(e) {
-        if (status) status.textContent = "Please copy manually: " + text;
-      }
-      document.body.removeChild(ta);
-    }
-
-    document.querySelectorAll("[data-copy]").forEach(function(btn) {
-      btn.addEventListener("click", function() {
-        var text = btn.getAttribute("data-copy");
-        var targetId = btn.getAttribute("data-target");
-        var status = targetId ? document.getElementById(targetId) : null;
-        copyText(text, btn, status);
-      });
-    });
-  })();
-  </script>
-
-  <script>
     /* ── thème — bloc unique ── */
     (function() {
       var toggle = document.getElementById('theme-toggle');

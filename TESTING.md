@@ -4,6 +4,8 @@ Cette infrastructure comporte deux niveaux :
 
 - `audit:quick` analyse directement les fichiers HTML, le sitemap, le JSON-LD,
   les métadonnées, les liens et les ressources locales;
+- `audit:maintainability` cherche la dette technique probable dans le HTML,
+  le CSS, le JavaScript et les ressources, sans modifier ni supprimer de code;
 - `audit:full` sert le site localement et parcourt les 28 pages dans Chromium
   aux largeurs 402, 768 et 1280 px.
 
@@ -22,6 +24,7 @@ Node.js 20 ou une version LTS plus récente est recommandé.
 
 ```bash
 npm run audit:quick
+npm run audit:maintainability
 npm run audit:full
 npm run audit:all
 npm run audit:full:ui
@@ -29,6 +32,9 @@ npm run serve:test
 ```
 
 - `audit:quick` doit normalement terminer en moins de dix secondes.
+- `audit:maintainability` produit un rapport conservateur : ses avertissements
+  et éléments à vérifier demandent toujours une confirmation humaine avant
+  toute suppression.
 - `audit:full` démarre et arrête automatiquement le serveur local.
 - `audit:all` exécute les deux niveaux dans l’ordre.
 - `audit:full:ui` ouvre l’interface de diagnostic Playwright.
@@ -40,6 +46,28 @@ npm run serve:test
 - **Avertissement** : signale un sujet réel, mais volontairement non bloquant.
 - **Exception intentionnelle** : documente une décision connue du site; elle ne
   sert pas à masquer une erreur inattendue.
+
+L’audit de maintenabilité utilise ses propres niveaux :
+
+- **Erreur certaine** : syntaxe cassée, ID réellement dupliqué ou référence
+  locale inexistante; la commande retourne alors un code non nul.
+- **Avertissement fort** : preuve statique concordante dans les deux langues,
+  mais confirmation humaine requise avant toute modification.
+- **Élément facultatif** : piste non urgente qui peut avoir une justification
+  éditoriale, dynamique ou historique.
+- **Exception intentionnelle** : code dormant ou comportement connu conservé
+  par décision explicite, comme le compte à rebours promotionnel EBOX.
+- **Information** : parité FR/EN, sélecteur sans correspondance statique ou
+  image sans référence locale détectée dans les 28 pages; ce niveau ne
+  recommande aucune vérification systématique ni suppression.
+
+L’analyse tient compte des sélecteurs littéraux, des gestionnaires HTML, des
+classes et attributs appliqués en JavaScript, ainsi que du balisage construit
+dans les chaînes et les gabarits JavaScript. Les répertoires de rapports,
+les dépendances, les fichiers générés et l’infrastructure `tests/` sont exclus.
+Les images peuvent être utilisées dans Reddit, des publications externes, des
+preuves ou des archives : l’absence de référence locale n’implique jamais
+qu’une image est orpheline ou inutile.
 
 Les exceptions communes sont définies dans
 `tests/config/site-policy.mjs`. Toute nouvelle exception doit comporter une
