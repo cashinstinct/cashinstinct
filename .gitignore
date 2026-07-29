@@ -1,1 +1,11 @@
 .DS_Store
+
+# Node
+node_modules/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Éventuel futur
+coverage/
