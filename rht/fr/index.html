@@ -68,7 +68,7 @@
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-07-19",
-        "dateModified": "2026-07-24",
+        "dateModified": "2026-07-30",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" }
       },
       {
@@ -97,7 +97,7 @@
             "name": "Est-ce que le Refundable Hotel Trick est permis par les banques ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Non. Ces méthodes vont généralement à l'encontre de l'esprit ou des conditions des programmes de récompenses. Leur utilisation peut t'exposer à un rappel des points, à une révision du compte ou à une fermeture de compte."
+              "text": "Les programmes ne documentent pas le RHT comme méthode d'encaissement. Une annulation effectuée après l'utilisation de points ou d'un crédit peut être considérée comme un abus, entraîner une reprise des avantages ou mener à une révision du compte. Vérifie toujours les modalités officielles en vigueur."
             }
           },
           {
@@ -187,6 +187,8 @@
     .nav a.nav-fr:hover, .nav a.nav-en:hover { color: var(--accent-dark); border-color: var(--accent-dark); }
     .theme-btn { background: var(--surface-muted); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 1rem; padding: 6px 12px; border-radius: 6px; transition: background 0.15s; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .theme-btn:hover { background: var(--border-soft); }
+    .skip-link { position: absolute; left: -9999px; top: 4px; z-index: 9999; padding: 8px 16px; background: var(--accent); color: #fff; font-weight: 700; border-radius: 6px; }
+    .skip-link:focus { left: 4px; }
 
     .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 16px; margin-bottom: 8px; }
     .breadcrumb a { color: var(--muted); font-weight: 500; }
@@ -332,7 +334,7 @@
     </style>
 </head>
 <body>
-<a href="#main-content" onblur="this.style.left='-9999px'" onfocus="this.style.left='4px'" style="position:absolute;left:-9999px;top:4px;z-index:9999;padding:8px 16px;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;">Passer au contenu principal</a>
+<a class="skip-link" href="#main-content">Passer au contenu principal</a>
 <nav aria-label="Navigation principale" class="topbar">
 <div class="topbar-inner">
 <a class="brand" href="https://cashinstinct.ca/">Cash Instinct</a>
@@ -343,12 +345,13 @@
 <a aria-label="HP Instant Ink" href="https://cashinstinct.ca/hp-instant-ink/fr/">HP Ink</a>
 <a aria-label="Valeur des Points" href="https://cashinstinct.ca/valeur-points/fr/">Valeur Points</a>
 <a aria-label="Refundable Hotel Trick" class="active" href="https://cashinstinct.ca/rht/fr/">RHT</a>
+<a aria-label="English version" class="nav-en" href="https://cashinstinct.ca/rht/en/" lang="en">EN</a>
 <button aria-label="Activer le mode sombre" aria-pressed="false" class="theme-btn" id="theme-toggle" type="button">🌙</button>
 </div>
 </div>
 </nav>
-<header class="hero tool-hero"><div class="container prose"><span class="section-label">Guide pratique — 7 programmes</span><h1>Refundable Hotel Trick <span>(RHT)</span></h1><p>Compare rapidement la fenêtre, le taux et l’étape critique de chaque programme canadien.</p><p class="hero-updated">Mis à jour le <time datetime="2026-07-24">24 juillet 2026</time></p></div></header>
-<main id="main-content"><div class="container"><div class="prose"><div class="warning top-warning"><strong>Important : </strong>ces méthodes peuvent contrevenir aux conditions des programmes. Une réservation doit être réellement remboursable, et les règles peuvent changer.</div><section id="resume">
+<header class="hero tool-hero"><div class="container prose"><span class="section-label">Guide pratique — 7 programmes</span><h1>Refundable Hotel Trick <span>(RHT)</span></h1><p>Compare rapidement la fenêtre, le taux et l’étape critique de chaque programme canadien.</p><p class="hero-updated">Mis à jour le <time datetime="2026-07-30">30 juillet 2026</time></p></div></header>
+<main id="main-content"><div class="container"><div class="prose"><div class="ai-summary top-warning"><strong>À propos de cette méthode</strong><br/>Le Refundable Hotel Trick (RHT) est une stratégie communautaire basée sur le fonctionnement des programmes de récompenses et l’expérience de nombreux utilisateurs. Les banques ne documentent pas cette technique et ne garantissent pas ses résultats. Les règles officielles — admissibilité, délais, exclusions et portails — sont citées lorsqu’elles existent, tandis que les étapes de la méthode proviennent de l’expérience pratique de la communauté. Les programmes peuvent évoluer; utilise cette information à tes propres risques.</div><section id="resume">
 <h2>Résumé rapide — clique sur un programme</h2>
 <p class="summary-intro">Commence ici : le nom de chaque programme mène directement à sa procédure.</p>
 <div class="table-wrap">
@@ -361,7 +364,7 @@
 <th>Condition critique</th>
 </tr>
 </thead>
-<tbody><tr><td data-label="Programme"><a href="#scene-plus">Scene+</a></td><td class="best" data-label="Taux visé">1,00 ¢</td><td data-label="Déclencheur">Transaction postée (dans les 90 jours)</td><td data-label="Condition critique">Aucune, mécanique très souple.</td></tr><tr><td data-label="Programme"><a href="#mbna">MBNA Rewards</a></td><td class="best" data-label="Taux visé">1,00 ¢</td><td data-label="Déclencheur">Transaction postée (dans les 90 jours)</td><td data-label="Condition critique">Catégorie de la transaction : Voyage.</td></tr><tr><td data-label="Programme"><a href="#bmo-rewards">BMO Rewards</a></td><td class="best" data-label="Taux visé">0,67 ¢</td><td data-label="Déclencheur">Transaction postée (dans les 30 jours)</td><td data-label="Condition critique">Utiliser l'option « Payer avec des points ».</td></tr><tr><td data-label="Programme"><a href="#bnc">BNC À la carte</a></td><td class="best" data-label="Taux visé">0,83 à 0,91 ¢</td><td data-label="Déclencheur">Transaction postée (dans les 60 jours)</td><td data-label="Condition critique">Sélectionner « Rabais voyage flexible ».</td></tr><tr><td data-label="Programme"><a href="#cibc">CIBC Aventura</a></td><td class="best" data-label="Taux visé">1,00 ¢</td><td data-label="Déclencheur">Transaction <strong>en attente (pending)</strong></td><td data-label="Condition critique">Ne jamais réserver via le portail CIBC.</td></tr><tr><td data-label="Programme"><a href="#amex">Amex Gold / Platine</a></td><td class="best" data-label="Taux visé">100 $ ou 200 $</td><td data-label="Déclencheur">Transaction postée (via Amex Travel)</td><td data-label="Condition critique">Réservation prépayée obligatoire.</td></tr><tr><td data-label="Programme"><a href="#td">TD Rewards (FCT)</a></td><td class="best" data-label="Taux visé">0,50 ¢</td><td data-label="Déclencheur">Transaction postée (via ExpediaForTD)</td><td data-label="Condition critique">Nécessite un <strong>Product Switch</strong> de la carte avant d'annuler.</td></tr></tbody>
+<tbody><tr><td data-label="Programme"><a href="#scene-plus">Scene+</a></td><td class="best" data-label="Taux visé">1,00 ¢</td><td data-label="Déclencheur">Achat de voyage admissible (jusqu’à 1 an)</td><td data-label="Condition critique">Appliquer les points depuis le compte Scene+.</td></tr><tr><td data-label="Programme"><a href="#mbna">MBNA Rewards</a></td><td class="best" data-label="Taux visé">1,00 ¢</td><td data-label="Déclencheur">Achat de voyage admissible affiché au portail</td><td data-label="Condition critique">Confirmer l’admissibilité et le délai dans le portail.</td></tr><tr><td data-label="Programme"><a href="#bmo-rewards">BMO Rewards</a></td><td class="best" data-label="Taux visé">0,67 ¢</td><td data-label="Déclencheur">Transaction postée (dans les 90 jours)</td><td data-label="Condition critique">Utiliser l'option « Payer avec des points ».</td></tr><tr><td data-label="Programme"><a href="#bnc">BNC À la carte</a></td><td class="best" data-label="Taux visé">0,83 à 0,91 ¢</td><td data-label="Déclencheur">Transaction postée (dans les 60 jours)</td><td data-label="Condition critique">Sélectionner le rabais voyage.</td></tr><tr><td data-label="Programme"><a href="#cibc">CIBC Aventura</a></td><td class="best" data-label="Taux visé">1,00 ¢ typique</td><td data-label="Déclencheur">Transaction <strong>en attente</strong></td><td data-label="Condition critique">Appliquer les points avant que l’achat soit posté.</td></tr><tr><td data-label="Programme"><a href="#amex">Amex Or / Platine</a></td><td class="best" data-label="Taux visé">100 $ ou 200 $</td><td data-label="Déclencheur">Au moment de réserver avec Amex Travel</td><td data-label="Condition critique">Réservation prépayée et remboursable.</td></tr><tr><td data-label="Programme"><a href="#td">TD Primes (FCT)</a></td><td class="best" data-label="Taux visé">0,50 ¢</td><td data-label="Déclencheur">Au paiement sur Expedia pour la TD</td><td data-label="Condition critique">Transfert de produit avant l’annulation.</td></tr></tbody>
 </table>
 </div>
 <p class="table-note">Sur mobile, chaque programme s’affiche sous forme de fiche pour éviter un tableau horizontal difficile à lire.</p>
@@ -389,92 +392,92 @@
 </section><section class="program-section" id="scene-plus">
 <span class="section-label">Scene+</span>
 <h2>Scene+ Rewards (Banque Scotia)</h2>
-<p class="program-note">Fenêtre : transaction postée, jusqu’à 90 jours.</p>
-<p>Le programme Scene+ est l'un des plus simples et flexibles pour cette méthode, offrant un encaissement direct au <a href="https://cashinstinct.ca/valeur-points/fr/">taux optimal de 1 ¢ par point</a>.</p>
+<p class="program-note">Fenêtre officielle : jusqu’à un an après l’achat de voyage.</p>
+<p>Scene+ permet d’appliquer des points à des achats de voyage admissibles au taux de 1 ¢ par point. Consulte <a href="https://help.sceneplus.ca/hc/fr-ca/articles/7261575710107-Puis-je-utiliser-mes-points-Sc%C3%A8ne-pour-les-voyages" rel="noopener noreferrer" target="_blank">l’aide officielle Scene+</a> avant l’échange.</p>
 <ol>
 <li>Réserve une chambre d'hôtel remboursable avec ta carte de crédit Banque Scotia (ex. : Scotia Or Amex).</li>
 <li>Connecte-toi à ton compte Scotia, navigue vers tes transactions et sélectionne l'option <strong>Appliquer les points au voyage</strong> (<em>Apply Points to Travel</em>).</li>
-<li>Sélectionne la transaction d'hôtel (valide pour les achats de voyage des 90 derniers jours) et applique le montant de points désiré.</li>
+<li>Sélectionne la transaction d'hôtel admissible, jusqu’à un an après l’achat, et applique le montant de points désiré.</li>
 <li>Le crédit au compte apparaîtra dans les jours ouvrables suivants.</li>
-<li>Annule la réservation d'hôtel via le marchand pour recevoir le remboursement en argent.</li>
+<li>Une fois le crédit de points traité, annule la réservation auprès du marchand pour que le remboursement revienne sur la carte.</li>
 </ol>
 </section><section class="program-section" id="mbna">
 <span class="section-label">MBNA Rewards</span>
 <h2>MBNA Rewards</h2>
-<p class="program-note">Fenêtre : transaction postée, jusqu’à 90 jours.</p>
-<p>Le RHT est la méthode recommandée pour ce programme car il permet d'aller chercher le <a href="https://cashinstinct.ca/valeur-points/fr/">taux de voyage optimal de 1 ¢/point</a>, évitant ainsi l'option de remise en argent standard de MBNA qui ampute la valeur des points.</p>
+<p class="program-note">Fenêtre : confirme l’admissibilité et le délai affichés dans le portail.</p>
+<p>MBNA valorise les échanges de voyage à 100 points par dollar. Les modalités publiques ne garantissent pas une fenêtre rétroactive fixe de 90 jours; consulte <a href="https://www.mbna.ca/fr/mes-comptes" rel="noopener noreferrer" target="_blank">la page officielle Récompenses MBNA</a>, puis ouvre le portail sécurisé depuis ton compte.</p>
 <ol>
 <li>Réserve un hôtel entièrement remboursable sur n'importe quel site de réservation (Expedia, Booking ou directement à l'hôtel) avec ta carte MBNA.</li>
 <li>Attends que la transaction passe du statut en attente à <strong>postée</strong>.</li>
-<li>Connecte-toi au portail MBNA Rewards et sélectionne l'option pour échanger tes points contre des achats de voyage admissibles, valide pour les transactions des 90 derniers jours.</li>
+<li>Connecte-toi au portail Récompenses MBNA et vérifie que l’achat apparaît comme dépense de voyage admissible.</li>
 <li>Applique tes points contre l'achat de l'hôtel. Le crédit au compte sera appliqué sous quelques jours.</li>
-<li>Annule la réservation d'hôtel via le marchand pour encaisser le remboursement sur ta carte.</li>
+<li>Une fois le crédit de points traité, annule la réservation auprès du marchand pour que le remboursement revienne sur la carte.</li>
 </ol>
 </section><section class="program-section" id="bmo-rewards">
 <span class="section-label">BMO Rewards</span>
 <h2>BMO Rewards</h2>
-<p class="program-note">Fenêtre : transaction postée, jusqu’à 30 jours.</p>
-<p>Depuis la mise à jour du programme qui permet de réserver ses voyages soi-même sans passer par l'agence BMO, le RHT est devenu la méthode de choix pour encaisser les points au <a href="https://cashinstinct.ca/valeur-points/fr/">taux maximal de 0,67 ¢/point</a>.</p>
+<p class="program-note">Fenêtre officielle : transaction postée, jusqu’à 90 jours.</p>
+<p>BMO permet d’appliquer les points aux achats de voyage admissibles à raison de 150 points par dollar, soit environ 0,67 ¢ par point. Consulte <a href="https://www.bmo.com/fr-ca/principal/particuliers/cartes-de-credit/recompenses/" rel="noopener noreferrer" target="_blank">les renseignements officiels de BMO Récompenses</a>.</p>
 <ol>
 <li>Porte une transaction d'hôtel remboursable sur ta carte BMO Rewards.</li>
-<li>Dans un délai maximum de <strong>30 jours</strong>, connecte-toi au portail BMO Rewards et sélectionne <strong>Payer avec des points</strong> (<em>Pay with Points</em>).</li>
+<li>Dans un délai maximum de <strong>90 jours</strong>, connecte-toi au portail BMO Récompenses et sélectionne <strong>Payer avec des points</strong> (<em>Pay with Points</em>).</li>
 <li>Applique tes points contre cette transaction de voyage. Le crédit s'affichera au compte sous 3 à 5 jours.</li>
-<li>Annule la réservation originale pour obtenir le remboursement en argent.</li>
+<li>Une fois le crédit de points traité, annule la réservation auprès du marchand pour que le remboursement revienne sur la carte.</li>
 </ol>
 </section><section class="program-section" id="bnc">
 <span class="section-label">À la carte</span>
 <h2>BNC Récompenses À la carte</h2>
 <p class="program-note">Fenêtre : transaction postée, jusqu’à 60 jours.</p>
-<p>La mécanique BNC utilise l'option « Rabais voyage flexible ». Elle permet d'encaisser les points à <a href="https://cashinstinct.ca/valeur-points/fr/">0,83 ¢ ou 0,91 ¢</a> selon que l'on dépasse ou non le seuil des 55 000 points, sans avoir à transiger avec leur agence interne.</p>
+<p>La BNC permet d’appliquer un rabais voyage aux achats admissibles dans les 60 jours. La valeur est de 12 000 points par 100 $, ou 11 000 points par 100 $ lors d’un échange admissible de 55 000 points ou plus. Consulte <a href="https://www.bnc.ca/particuliers/centre-aide/carte-credit/remises-recompenses/voyager-grace-a-mes-points-recompenses.html" rel="noopener noreferrer" target="_blank">les instructions officielles de la Banque Nationale</a>.</p>
 <ol>
-<li>Réserve un hôtel remboursable sur un site tiers (Expedia, Booking, etc.) pour que la transaction soit catégorisée comme un achat de voyage par MasterCard.</li>
+<li>Réserve un hôtel remboursable sur un site tiers (Expedia, Booking, etc.) pour que la transaction soit catégorisée comme un achat de voyage par Mastercard.</li>
 <li>Attends que la transaction soit officiellement <strong>postée</strong> sur ton compte, pas en attente.</li>
 <li>Dans un délai de 60 jours suivant l'achat, connecte-toi au portail BNC Récompenses, va dans la section voyage et sélectionne <strong>Rabais voyage flexible</strong>.</li>
 <li>Applique tes points contre cette dépense spécifique. Le crédit au compte sera émis sous quelques jours.</li>
-<li>Annule l'hôtel sur le site tiers pour recevoir le remboursement en argent.</li>
+<li>Une fois le rabais voyage traité, annule la réservation auprès du marchand pour que le remboursement revienne sur la carte.</li>
 </ol>
 </section><section class="program-section" id="cibc">
 <span class="section-label">Aventura</span>
 <h2>CIBC Aventura</h2>
 <p class="program-note">Fenêtre très courte : agir pendant que la transaction est en attente.</p>
-<p>La mécanique CIBC repose sur l'application des points sur une transaction en attente.</p>
+<p>La fonction officielle <em>Shopping with Points</em> de CIBC permet d’appliquer des points uniquement à une transaction admissible qui n’est pas encore postée. Le taux est celui affiché par CIBC au moment de l’échange. Consulte <a href="https://www.cibc.com/fr/personal-banking/ways-to-bank/ways-to-pay/payment-with-points.html" rel="noopener noreferrer" target="_blank">les instructions et modalités CIBC</a>.</p>
 <ol>
 <li>Réserve un hôtel entièrement remboursable via un tiers (Expedia, Booking, etc.). <strong>Ne passe jamais par le portail CIBC.</strong></li>
-<li>Surveille ton compte : dès que la transaction apparaît en <strong>Pending</strong> (en attente), l'option <em>Redeem with points</em> s'active.</li>
+<li>Surveille ton compte : dès que la transaction apparaît <strong>en attente</strong>, l’option <em>Utiliser mes points</em> peut s’activer.</li>
 <li>Applique tes points immédiatement contre cette transaction. L'option disparaîtra une fois la transaction officiellement postée.</li>
-<li>Patiente quelques jours, puis annule l'hôtel via le site du tiers. Le remboursement sera émis en argent directement sur ta carte.</li>
+<li>Une fois le paiement de points traité, annule la réservation auprès du tiers; d’après de nombreux retours concordants de titulaires canadiens, le remboursement revient alors sur la carte.</li>
 </ol>
 <div class="warning">
-<strong>Erreur fatale :</strong> Si tu réserves l'hôtel via le portail de récompenses CIBC en payant avec tes points, l'annulation te remboursera uniquement en points Aventura. Tu n'auras généré aucun encaissement.
+<strong>Erreur à éviter :</strong> ne réserve pas directement avec des points dans le portail de voyages CIBC. Une annulation de ce type de réservation retourne normalement la valeur en points plutôt que sous forme de remboursement sur la carte.
           </div>
 <div class="ai-summary" style="border-left-color: var(--accent-dark); margin-top: 32px;">
-<strong>Note de pro : CIBC Aventura et les promotions</strong><br/>
-            Le RHT standard pour CIBC nécessite d'attraper la transaction pendant qu'elle est en attente (<em>pending</em>) pour <a href="https://cashinstinct.ca/valeur-points/fr/">obtenir 1 ¢/point</a>. Cependant, CIBC lance parfois des promotions <em>Shopping with Points</em> permettant d'effacer <strong>n'importe quel achat</strong> à un taux bonifié, souvent 1,25 ¢/point. Lorsqu'une telle promotion est active, le RHT devient inutile : il suffit de cibler une dépense courante pour encaisser les points à profit.
+<strong>Observations répétées de la communauté : taux et promotions CIBC</strong><br/>
+            Le taux courant observé pour <em>Shopping with Points</em> est souvent de 1 ¢ par point, et certaines promotions ont offert environ 1,25 ¢. CIBC détermine toutefois le ratio et peut le modifier sans préavis; vérifie toujours le taux affiché avant de confirmer.
           </div>
 </section><section class="program-section" id="amex">
 <span class="section-label">Crédit Annuel</span>
-<h2>Amex Gold / Platine — Crédit Voyage</h2>
-<p class="program-note">Crédit annuel : réservation prépayée via Amex Travel.</p>
-<p>Cette mécanique ne touche pas aux points MR, mais permet d'encaisser le crédit statutaire annuel.</p>
+<h2>Amex Or / Platine — Crédit voyage</h2>
+<p class="program-note">Méthode communautaire : réservation prépayée et remboursable via Amex Travel.</p>
+<p>Le crédit annuel est de 100 $ pour la carte Or et de 200 $ pour la carte Platine, sur une seule réservation admissible d’un montant au moins équivalent. Consulte <a href="https://www.americanexpress.com/ca/fr/voyages/utiliser-votre-credit-annuel-pour-voyage/" rel="noopener noreferrer" target="_blank">les règles officielles du crédit voyage Amex</a>.</p>
 <ol>
-<li>Réserve un hôtel remboursable et <strong>prépayé</strong>, obligatoirement via le portail <strong>Amex Travel</strong>.</li>
-<li>Attends que la transaction et le crédit d'accompagnement de 100 $ (Amex Gold) ou de 200 $ (Amex Platine) apparaissent au compte.</li>
-<li>Annule la réservation après quelques jours. L'hôtel te remboursera le montant de la transaction.</li>
-<li>Le crédit de 100 $ ou 200 $ reste sur le compte. Note : Amex Canada ne reprend généralement pas ce crédit, contrairement aux pratiques plus agressives d'Amex US.</li>
+<li>Ouvre <a href="https://www.americanexpress.com/ca/fr/voyages/" rel="noopener noreferrer" target="_blank"><strong>Services voyages Amex Canada</strong></a>, connecte-toi et choisis une réservation admissible d’au moins 100 $ ou 200 $, selon la carte.</li>
+<li>À la caisse, sélectionne le crédit voyage annuel disponible; le montant complet est porté à la carte et le crédit apparaît normalement sous deux jours ouvrables.</li>
+<li>Attends que le crédit annuel soit inscrit au compte, puis annule la réservation conformément aux règles tarifaires du fournisseur.</li>
+<li>Le remboursement revient normalement sur la carte. D’après de nombreux retours d’utilisateurs, le crédit annuel demeure utilisé et n’est pas automatiquement repris, mais ce résultat n’est pas garanti.</li>
 </ol>
 </section><section class="program-section" id="td">
 <span class="section-label">TD Rewards</span>
-<h2>TD First Class Travel (FCT)</h2>
-<p class="program-note">Mécanique avancée : transfert de produit avant l’annulation.</p>
-<p>La méthode TD nécessite un transfert de produit (Product Switch) pour bloquer le retour des points.</p>
+<h2>TD Classe ultime Voyages (FCT)</h2>
+<p class="program-note">Méthode communautaire avancée : transfert de produit avant l’annulation.</p>
+<p>TD permet officiellement d’utiliser les points à raison de 200 points par dollar sur Expedia pour la TD. La séquence de transfert de produit décrite ci-dessous est largement rapportée par les amateurs canadiens de récompenses voyage. Consulte aussi <a href="https://www.td.com/ca/fr/services-bancaires-personnels/produits/cartes-de-credit/primes-td/echanger-des-points-primes-td" rel="noopener noreferrer" target="_blank">les instructions officielles de TD</a>.</p>
 <ol>
-<li>Réserve un hôtel remboursable via le portail <strong>Expedia for TD (E4TD)</strong> pour obtenir le taux maximal.</li>
+<li>Réserve un hôtel remboursable via le portail <a href="https://www.expediafortd.com/" rel="noopener noreferrer" target="_blank"><strong>Expedia for TD (E4TD)</strong></a> pour obtenir le taux maximal.</li>
 <li>Applique tes points TD Rewards pour couvrir la transaction.</li>
-<li><strong>Étape critique :</strong> Avant de faire quoi que ce soit d'autre, fais un <em>Product Switch</em> de ta carte FCT vers une carte TD qui n'utilise pas le système TD Rewards (ex. : une carte Remises / Cash Back).</li>
-<li>Une fois la nouvelle carte active au système, annule la réservation d'hôtel. N'ayant plus de compte TD Rewards où renvoyer les points, le système émettra un crédit en argent sur le nouveau compte.</li>
+<li><strong>Étape critique :</strong> demande un transfert de produit de la carte FCT vers une carte TD qui n’utilise pas les points Primes TD, par exemple une carte Remises.</li>
+<li>Attends que le transfert soit entièrement complété dans les systèmes TD, puis annule la réservation. Selon des retours répétés de titulaires canadiens, l’absence du compte Primes TD d’origine peut entraîner un crédit en argent sur la nouvelle carte.</li>
 </ol>
 <div class="warning">
-<strong>Erreur fatale :</strong> Si tu annules l'hôtel <em>avant</em> que le transfert de carte ne soit complété, les points retourneront simplement dans ton solde TD Rewards.
+<strong>Erreur à éviter :</strong> si tu annules avant la fin du transfert de produit, les points retournent normalement au compte Primes TD. Le résultat demeure variable (<em>YMMV</em>) et TD ne le garantit pas.
           </div>
 </section><section id="faq">
 <span class="section-label">Logistique &amp; FAQ</span>
@@ -489,7 +492,7 @@
 <details>
 <summary id="faq-q2">Est-ce que le Refundable Hotel Trick est permis par les banques ?</summary>
 <div aria-labelledby="faq-q2" class="faq-body" role="region">
-<p>Non. Ces méthodes vont généralement à l'encontre de l'esprit ou des conditions des programmes de récompenses. Leur utilisation peut t'exposer à un rappel des points, à une révision du compte ou à une fermeture de compte.</p>
+<p>Les programmes ne documentent pas le RHT comme méthode d'encaissement. Une annulation effectuée après l'utilisation de points ou d'un crédit peut être considérée comme un abus, entraîner une reprise des avantages ou mener à une révision du compte. Vérifie toujours les modalités officielles en vigueur.</p>
 </div>
 </details>
 <details>
@@ -515,7 +518,7 @@
 <footer>
 <div class="container">
 <p>Site de référence indépendant. Aucune affiliation avec MR/Amex, BMO, Banque Nationale, TD, MBNA, Scotia ou CIBC. Toutes les marques de commerce appartiennent à leurs propriétaires respectifs. Pour en savoir plus sur la préparation des guides, consultez <a href="https://cashinstinct.ca/about/fr/">À&nbsp;propos de Cash&nbsp;Instinct</a>.</p>
-<p style="margin-top:6px;">Dernière mise à jour : <time datetime="2026-07-24" id="footer-date">24 juillet 2026</time></p>
+<p style="margin-top:6px;">Dernière mise à jour : <time datetime="2026-07-30" id="footer-date">30 juillet 2026</time></p>
 </div>
 <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
 <nav aria-label="Liens du site" class="footer-links">
