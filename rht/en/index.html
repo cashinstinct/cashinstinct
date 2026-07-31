@@ -67,7 +67,7 @@
         "inLanguage": "en-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-07-19",
-        "dateModified": "2026-07-24",
+        "dateModified": "2026-07-30",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/en/" }
       },
       {
@@ -91,7 +91,7 @@
           {
             "@type": "Question",
             "name": "Is the Refundable Hotel Trick allowed by banks?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. These methods generally go against the spirit or terms of the rewards programs. Using them can expose you to points clawbacks, account review, or account closure." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Rewards programs do not document the RHT as a cash-out method. Cancelling after using points or a travel credit may be treated as abuse, lead to a benefit reversal, or trigger an account review. Always check the current official terms." }
           },
           {
             "@type": "Question",
@@ -171,6 +171,8 @@
     .nav a.nav-fr:hover, .nav a.nav-en:hover { color: var(--accent-dark); border-color: var(--accent-dark); }
     .theme-btn { background: var(--surface-muted); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 1rem; padding: 6px 12px; border-radius: 6px; transition: background 0.15s; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .theme-btn:hover { background: var(--border-soft); }
+    .skip-link { position: absolute; left: -9999px; top: 4px; z-index: 9999; padding: 8px 16px; background: var(--accent); color: #fff; font-weight: 700; border-radius: 6px; }
+    .skip-link:focus { left: 4px; }
 
     .breadcrumb { font-size: 0.82rem; color: var(--muted); margin-top: 16px; margin-bottom: 8px; }
     .breadcrumb a { color: var(--muted); font-weight: 500; }
@@ -316,7 +318,7 @@
     </style>
 </head>
 <body>
-<a href="#main-content" onblur="this.style.left='-9999px'" onfocus="this.style.left='4px'" style="position:absolute;left:-9999px;top:4px;z-index:9999;padding:8px 16px;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;">Skip to main content</a>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <nav aria-label="Main navigation" class="topbar">
 <div class="topbar-inner">
 <a class="brand" href="https://cashinstinct.ca/en/">Cash Instinct</a>
@@ -327,12 +329,13 @@
 <a aria-label="HP Instant Ink" href="https://cashinstinct.ca/hp-instant-ink/en/">HP Ink</a>
 <a aria-label="Points Value" href="https://cashinstinct.ca/valeur-points/en/">Points Value</a>
 <a aria-label="Refundable Hotel Trick" class="active" href="https://cashinstinct.ca/rht/en/">RHT</a>
+<a aria-label="Version française" class="nav-fr" href="https://cashinstinct.ca/rht/fr/" lang="fr">FR</a>
 <button aria-label="Toggle dark mode" aria-pressed="false" class="theme-btn" id="theme-toggle" type="button">🌙</button>
 </div>
 </div>
 </nav>
-<header class="hero tool-hero"><div class="container prose"><span class="section-label">Practical guide — 7 programs</span><h1>Refundable Hotel Trick <span>(RHT)</span></h1><p>Quickly compare the timing window, rate, and critical step for each Canadian program.</p><p class="hero-updated">Updated <time datetime="2026-07-24">July 24, 2026</time></p></div></header>
-<main id="main-content"><div class="container"><div class="prose"><div class="warning top-warning"><strong>Important: </strong>these methods may conflict with program terms. The booking must be genuinely refundable, and program rules can change.</div><section id="resume">
+<header class="hero tool-hero"><div class="container prose"><span class="section-label">Practical guide — 7 programs</span><h1>Refundable Hotel Trick <span>(RHT)</span></h1><p>Quickly compare the timing window, rate, and critical step for each Canadian program.</p><p class="hero-updated">Updated <time datetime="2026-07-30">July 30, 2026</time></p></div></header>
+<main id="main-content"><div class="container"><div class="prose"><div class="ai-summary top-warning"><strong>About this method</strong><br/>The Refundable Hotel Trick (RHT) is a community strategy based on how rewards programs operate and on the experience of many users. Banks do not document this technique or guarantee its results. Official rules—eligibility, timing, exclusions, and required portals—are cited when available, while the method's steps come from practical community experience. Programs can change; use this information at your own risk.</div><section id="resume">
 <h2>Quick summary — select a program</h2>
 <p class="summary-intro">Start here: each program name links directly to its procedure.</p>
 <div class="table-wrap">
@@ -345,7 +348,7 @@
 <th>Critical Condition</th>
 </tr>
 </thead>
-<tbody><tr><td data-label="Program"><a href="#scene-plus">Scene+</a></td><td class="best" data-label="Target rate">1.00¢</td><td data-label="Trigger">Posted transaction (within 90 days)</td><td data-label="Critical condition">None, very flexible mechanic.</td></tr><tr><td data-label="Program"><a href="#mbna">MBNA Rewards</a></td><td class="best" data-label="Target rate">1.00¢</td><td data-label="Trigger">Posted transaction (within 90 days)</td><td data-label="Critical condition">Transaction category: Travel.</td></tr><tr><td data-label="Program"><a href="#bmo-rewards">BMO Rewards</a></td><td class="best" data-label="Target rate">0.67¢</td><td data-label="Trigger">Posted transaction (within 30 days)</td><td data-label="Critical condition">Use the "Pay with points" option.</td></tr><tr><td data-label="Program"><a href="#nbc">NBC À la carte</a></td><td class="best" data-label="Target rate">0.83¢ to 0.91¢</td><td data-label="Trigger">Posted transaction (within 60 days)</td><td data-label="Critical condition">Select "Flexible travel discount".</td></tr><tr><td data-label="Program"><a href="#cibc">CIBC Aventura</a></td><td class="best" data-label="Target rate">1.00¢</td><td data-label="Trigger"><strong>Pending</strong> transaction</td><td data-label="Critical condition">Never book through the CIBC portal.</td></tr><tr><td data-label="Program"><a href="#amex">Amex Gold / Platinum</a></td><td class="best" data-label="Target rate">$100 or $200</td><td data-label="Trigger">Posted transaction via Amex Travel</td><td data-label="Critical condition">Prepaid booking is mandatory.</td></tr><tr><td data-label="Program"><a href="#td">TD Rewards (FCT)</a></td><td class="best" data-label="Target rate">0.50¢</td><td data-label="Trigger">Posted transaction via ExpediaForTD</td><td data-label="Critical condition">Requires a <strong>Product Switch</strong> of the card before canceling.</td></tr></tbody>
+<tbody><tr><td data-label="Program"><a href="#scene-plus">Scene+</a></td><td class="best" data-label="Target rate">1.00¢</td><td data-label="Trigger">Eligible travel purchase (up to 1 year)</td><td data-label="Critical condition">Apply points through your Scene+ account.</td></tr><tr><td data-label="Program"><a href="#mbna">MBNA Rewards</a></td><td class="best" data-label="Target rate">1.00¢</td><td data-label="Trigger">Eligible travel purchase shown in the portal</td><td data-label="Critical condition">Confirm eligibility and timing in the portal.</td></tr><tr><td data-label="Program"><a href="#bmo-rewards">BMO Rewards</a></td><td class="best" data-label="Target rate">0.67¢</td><td data-label="Trigger">Posted transaction (within 90 days)</td><td data-label="Critical condition">Use the "Pay with Points" option.</td></tr><tr><td data-label="Program"><a href="#nbc">NBC À la carte</a></td><td class="best" data-label="Target rate">0.83¢ to 0.91¢</td><td data-label="Trigger">Posted transaction (within 60 days)</td><td data-label="Critical condition">Select the travel discount.</td></tr><tr><td data-label="Program"><a href="#cibc">CIBC Aventura</a></td><td class="best" data-label="Target rate">Typically 1.00¢</td><td data-label="Trigger"><strong>Pending</strong> transaction</td><td data-label="Critical condition">Apply points before the purchase posts.</td></tr><tr><td data-label="Program"><a href="#amex">Amex Gold / Platinum</a></td><td class="best" data-label="Target rate">$100 or $200</td><td data-label="Trigger">At checkout with Amex Travel</td><td data-label="Critical condition">Refundable prepaid booking.</td></tr><tr><td data-label="Program"><a href="#td">TD Rewards (FCT)</a></td><td class="best" data-label="Target rate">0.50¢</td><td data-label="Trigger">At checkout on Expedia for TD</td><td data-label="Critical condition">Product switch before cancellation.</td></tr></tbody>
 </table>
 </div>
 <p class="table-note">On mobile, each program is displayed as a card instead of a hard-to-read horizontal table.</p>
@@ -373,92 +376,92 @@
 </section><section class="program-section" id="scene-plus">
 <span class="section-label">Scene+</span>
 <h2>Scene+ Rewards (Scotiabank)</h2>
-<p class="program-note">Window: posted transaction, up to 90 days.</p>
-<p>The Scene+ program is one of the simplest and most flexible for this method, offering a direct cash-out at the <a href="https://cashinstinct.ca/valeur-points/en/">optimal rate of 1¢ per point</a>.</p>
+<p class="program-note">Official window: up to one year after the travel purchase.</p>
+<p>Scene+ lets members apply points to eligible travel purchases at 1¢ per point. Review the <a href="https://help.sceneplus.ca/hc/en-ca/articles/7261575710107-Am-I-able-to-apply-my-Scene-points-to-travel" rel="noopener noreferrer" target="_blank">official Scene+ guidance</a> before redeeming.</p>
 <ol>
 <li>Book a refundable hotel room with your Scotiabank credit card (e.g., Scotia Gold Amex).</li>
 <li>Log into your Scotia account, navigate to your transactions, and select the <strong>"Apply Points to Travel"</strong> option.</li>
-<li>Select the hotel transaction (valid for travel purchases in the last 90 days) and apply the desired amount of points.</li>
+<li>Select the eligible hotel transaction, up to one year after purchase, and apply the desired amount of points.</li>
 <li>The statement credit will appear within the following business days.</li>
-<li>Cancel the hotel booking through the merchant to receive the cash refund.</li>
+<li>Once the points credit has processed, cancel with the merchant so the refund returns to the Card.</li>
 </ol>
 </section><section class="program-section" id="mbna">
 <span class="section-label">MBNA Rewards</span>
 <h2>MBNA Rewards</h2>
-<p class="program-note">Window: posted transaction, up to 90 days.</p>
-<p>The RHT is the recommended method for this program because it allows you to get the <a href="https://cashinstinct.ca/valeur-points/en/">optimal travel rate of 1¢/point</a>, avoiding MBNA's standard cashback option which reduces the value of the points.</p>
+<p class="program-note">Window: confirm the eligibility and timing shown in the portal.</p>
+<p>MBNA values travel redemptions at 100 points per dollar. Its public terms do not guarantee a fixed 90-day retroactive window; review the <a href="https://www.mbna.ca/en/my-accounts" rel="noopener noreferrer" target="_blank">official MBNA Rewards page</a>, then open the secure rewards portal from your account.</p>
 <ol>
 <li>Book a fully refundable hotel on any booking site (Expedia, Booking, or directly with the hotel) with your MBNA card.</li>
 <li>Wait for the transaction to change from pending to <strong>posted</strong>.</li>
-<li>Log into the MBNA Rewards portal and select the option to redeem your points for eligible travel purchases (valid for transactions in the last 90 days).</li>
+<li>Log into the MBNA Rewards portal and confirm that the purchase appears as an eligible travel expense.</li>
 <li>Apply your points against the hotel purchase. The statement credit will be applied within a few days.</li>
-<li>Cancel the hotel booking via the merchant to cash out the refund to your card.</li>
+<li>Once the points credit has processed, cancel with the merchant so the refund returns to the Card.</li>
 </ol>
 </section><section class="program-section" id="bmo-rewards">
 <span class="section-label">BMO Rewards</span>
 <h2>BMO Rewards</h2>
-<p class="program-note">Window: posted transaction, up to 30 days.</p>
-<p>Since the program update which allows booking travel yourself without going through the BMO agency, the RHT has become the preferred method to cash out points at the <a href="https://cashinstinct.ca/valeur-points/en/">maximum rate of 0.67¢/point</a>.</p>
+<p class="program-note">Official window: posted transaction, up to 90 days.</p>
+<p>BMO lets members apply points to eligible travel purchases at 150 points per dollar, or about 0.67¢ per point. Review the <a href="https://www.bmo.com/en-ca/main/personal/credit-cards/rewards/" rel="noopener noreferrer" target="_blank">official BMO Rewards information</a>.</p>
 <ol>
 <li>Charge a refundable hotel transaction to your BMO Rewards card.</li>
-<li>Within a maximum of <strong>30 days</strong>, log into the BMO Rewards portal and select <strong>"Pay with points"</strong>.</li>
+<li>Within a maximum of <strong>90 days</strong>, log into the BMO Rewards portal and select <strong>"Pay with Points"</strong>.</li>
 <li>Apply your points against this travel transaction. The credit will post to your account within 3 to 5 days.</li>
-<li>Cancel the original booking to get the cash refund.</li>
+<li>Once the points credit has processed, cancel with the merchant so the refund returns to the Card.</li>
 </ol>
 </section><section class="program-section" id="nbc">
 <span class="section-label">À la carte</span>
 <h2>NBC À la carte Rewards</h2>
 <p class="program-note">Window: posted transaction, up to 60 days.</p>
-<p>The National Bank of Canada (NBC) mechanic uses the "Flexible travel discount" option. It allows you to cash out points at <a href="https://cashinstinct.ca/valeur-points/en/">0.83¢ or 0.91¢</a> (depending on whether you cross the 55,000 points threshold) without having to deal with their internal agency.</p>
+<p>NBC lets members apply a travel discount to eligible purchases within 60 days. The value is 12,000 points per $100, or 11,000 points per $100 for an eligible redemption of 55,000 points or more. Review the <a href="https://www.nbc.ca/personal/help-centre/credit-card/cashback-rewards/use-my-rewards-points-for-travel.html" rel="noopener noreferrer" target="_blank">official National Bank instructions</a>.</p>
 <ol>
-<li>Book a refundable hotel on a third-party site (Expedia, Booking, etc.) so the transaction is categorized as a travel purchase by MasterCard.</li>
+<li>Book a refundable hotel on a third-party site (Expedia, Booking, etc.) so the transaction is categorized as a travel purchase by Mastercard.</li>
 <li>Wait for the transaction to officially <strong>post</strong> to your account (not pending).</li>
 <li>Within 60 days following the purchase, log into the NBC Rewards portal, go to the travel section, and select <strong>"Flexible travel discount"</strong>.</li>
 <li>Apply your points against this specific expense. The statement credit will be issued within a few days.</li>
-<li>Cancel the hotel on the third-party site to receive the cash refund.</li>
+<li>Once the travel credit has processed, cancel with the merchant so the refund returns to the Card.</li>
 </ol>
 </section><section class="program-section" id="cibc">
 <span class="section-label">Aventura</span>
 <h2>CIBC Aventura</h2>
 <p class="program-note">Very short window: act while the transaction is pending.</p>
-<p>The CIBC mechanic relies on applying points to a transaction while it is still pending.</p>
+<p>CIBC's official <em>Shopping with Points</em> feature lets members apply points only to an eligible transaction that has not yet posted. The rate is the one displayed by CIBC at redemption. Review the <a href="https://www.cibc.com/en/personal-banking/ways-to-bank/ways-to-pay/payment-with-points.html" rel="noopener noreferrer" target="_blank">official CIBC instructions and terms</a>.</p>
 <ol>
 <li>Book a fully refundable hotel through a third party (Expedia, Booking, etc.). <strong>Never go through the CIBC portal.</strong></li>
 <li>Monitor your account: as soon as the transaction appears as <strong>"Pending"</strong>, the <em>"Redeem with points"</em> option activates.</li>
 <li>Apply your points immediately against this transaction. The option will disappear once the transaction officially posts.</li>
-<li>Wait a few days, then cancel the hotel via the third-party site. The refund will be issued in cash directly to your card.</li>
+<li>Once the points payment has processed, cancel through the third party; numerous consistent reports from Canadian cardholders indicate that the refund then returns to the Card.</li>
 </ol>
 <div class="warning">
-<strong>Fatal Error:</strong> If you book the hotel through the CIBC rewards portal by paying with your points, the cancellation will only refund you in Aventura points. You won't have generated any cash out.
+<strong>Error to avoid:</strong> do not book directly with points through the CIBC travel portal. Cancelling that type of booking normally returns the value as Aventura points instead of a refund to the Card.
           </div>
 <div class="ai-summary" style="border-left-color: var(--accent-dark); margin-top: 32px;">
-<strong>Pro Tip: CIBC Aventura and promotions</strong><br/>
-            The standard RHT for CIBC requires catching the transaction while it is <em>pending</em> to <a href="https://cashinstinct.ca/valeur-points/en/">get 1¢/point</a>. However, CIBC sometimes launches <em>Shopping with Points</em> promotions allowing you to erase <strong>any purchase</strong> at a boosted rate (often 1.25¢/point). When such a promotion is active, the RHT becomes useless: you simply target a regular daily expense to cash out points at a profit.
+<strong>Repeated community observations: CIBC rates and promotions</strong><br/>
+            The commonly observed <em>Shopping with Points</em> rate is 1¢ per point, and some promotions have offered roughly 1.25¢. CIBC determines the ratio and may change it without notice, so always verify the displayed rate before confirming.
           </div>
 </section><section class="program-section" id="amex">
 <span class="section-label">Annual Credit</span>
 <h2>Amex Gold / Platinum Travel Credit</h2>
-<p class="program-note">Annual credit: prepaid booking through Amex Travel.</p>
-<p>This mechanic does not touch MR points, but allows you to cash out the annual statutory credit.</p>
+<p class="program-note">Community method: refundable prepaid booking through Amex Travel.</p>
+<p>The annual credit is $100 for the Gold Rewards Card and $200 for the Platinum Card, applied to one eligible booking of at least the same amount. Review the <a href="https://www.americanexpress.com/ca/en/travel/how-to-use-travel-credit/" rel="noopener noreferrer" target="_blank">official Amex travel-credit rules</a>.</p>
 <ol>
-<li>Book a refundable and <strong>prepaid</strong> hotel (mandatory) via the <strong>Amex Travel</strong> portal.</li>
-<li>Wait for the transaction and the accompanying $100 (Amex Gold) or $200 (Amex Platinum) credit to appear on the account.</li>
-<li>Cancel the booking after a few days. The hotel will refund the transaction amount.</li>
-<li>The $100 or $200 credit stays on the account. (Note: Amex Canada generally does not claw back this credit, unlike Amex US's more aggressive practices.)</li>
+<li>Open <a href="https://www.americanexpress.com/en-ca/travel/" rel="noopener noreferrer" target="_blank"><strong>Amex Travel Canada</strong></a>, sign in, and choose an eligible booking of at least $100 or $200, depending on the Card.</li>
+<li>At checkout, select the available Annual Travel Credit; the full amount is charged to the Card and the credit normally appears within two business days.</li>
+<li>Wait for the Annual Travel Credit to post, then cancel in accordance with the supplier's fare rules.</li>
+<li>The refund normally returns to the Card. Based on numerous user reports, the Annual Travel Credit remains used and is not automatically clawed back, but this outcome is not guaranteed.</li>
 </ol>
 </section><section class="program-section" id="td">
 <span class="section-label">TD Rewards</span>
 <h2>TD First Class Travel (FCT)</h2>
-<p class="program-note">Advanced mechanic: complete the product switch before cancellation.</p>
-<p>The TD method requires a Product Switch to block the points from returning.</p>
+<p class="program-note">Advanced community method: product switch before cancellation.</p>
+<p>TD officially lets members redeem at 200 points per dollar on Expedia for TD. The product-switch sequence below is widely reported by Canadian travel-rewards enthusiasts. Also review the <a href="https://www.td.com/ca/en/personal-banking/products/credit-cards/td-rewards/redeem-td-rewards-points" rel="noopener noreferrer" target="_blank">official TD instructions</a>.</p>
 <ol>
-<li>Book a refundable hotel through the <strong>Expedia for TD (E4TD)</strong> portal to get the maximum rate.</li>
+<li>Book a refundable hotel through the <a href="https://www.expediafortd.com/" rel="noopener noreferrer" target="_blank"><strong>Expedia for TD (E4TD)</strong></a> portal to get the maximum rate.</li>
 <li>Apply your TD Rewards points to cover the transaction.</li>
-<li><strong>Critical Step:</strong> Before doing anything else, request a <em>Product Switch</em> of your FCT card to a TD card that does not use the TD Rewards system (e.g., a Cash Back card).</li>
-<li>Once the new card is active in the system, cancel the hotel booking. With no TD Rewards account left to send the points back to, the system will issue a cash credit to the new account.</li>
+<li><strong>Critical step:</strong> request a product switch from the FCT card to a TD card that does not use TD Rewards, such as a Cash Back card.</li>
+<li>Wait until the switch is fully completed in TD's systems, then cancel the booking. According to repeated reports from Canadian cardholders, without the original TD Rewards account the value may be credited in cash to the new Card.</li>
 </ol>
 <div class="warning">
-<strong>Fatal Error:</strong> If you cancel the hotel <em>before</em> the card switch is complete, the points will simply return to your TD Rewards balance.
+<strong>Error to avoid:</strong> cancelling before the product switch is complete normally sends the points back to the TD Rewards account. Results still vary (<em>YMMV</em>), and TD does not guarantee the outcome.
           </div>
 </section><section id="faq">
 <span class="section-label">Logistics &amp; FAQ</span>
@@ -473,7 +476,7 @@
 <details>
 <summary id="faq-q2">Is the Refundable Hotel Trick allowed by banks?</summary>
 <div aria-labelledby="faq-q2" class="faq-body" role="region">
-<p>No. These methods generally go against the spirit or terms of the rewards programs. Using them can expose you to points clawbacks, account review, or account closure.</p>
+<p>Rewards programs do not document the RHT as a cash-out method. Cancelling after using points or a travel credit may be treated as abuse, lead to a benefit reversal, or trigger an account review. Always check the current official terms.</p>
 </div>
 </details>
 <details>
@@ -499,7 +502,7 @@
 <footer>
 <div class="container">
 <p>Independent reference site. No affiliation with MR/Amex, BMO, National Bank, TD, MBNA, Scotiabank, or CIBC. All trademarks belong to their respective owners. To learn more about how the guides are prepared, see <a href="https://cashinstinct.ca/about/en/">About Cash&nbsp;Instinct</a>.</p>
-<p style="margin-top:6px;">Last updated: <time datetime="2026-07-24" id="footer-date">July 24, 2026</time></p>
+<p style="margin-top:6px;">Last updated: <time datetime="2026-07-30" id="footer-date">July 30, 2026</time></p>
 </div>
 <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
 <nav aria-label="Site links" class="footer-links">

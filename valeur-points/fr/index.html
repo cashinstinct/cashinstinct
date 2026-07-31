@@ -2,8 +2,8 @@
 <!--
 ═══════════════════════════════════════════════════════════════════
   NOTE DE MAINTENANCE — Calculatrice Valeur des Points FR — création : 2026-07-08
-  MISE À JOUR : 2026-07-24 — ajout de quatre programmes, classement
-  des méthodes de rachat, simplification du rendu et parité FR/EN.
+  MISE À JOUR : 2026-07-30 — audit bilingue des taux, liens officiels
+  directs et distinction explicite PUBLIÉ / SYNTHÈSE ÉDITORIALE.
 ═══════════════════════════════════════════════════════════════════
   STATUT : nouvelle page, PAS de programme affilié derrière — page
   outil/comparatif pour trafic SEO/GEO, pas de code promo ni d'Offer.
@@ -15,7 +15,7 @@
   BREADCRUMB : catégorie "#outils" utilisée = ancres réelles de la page
   d'accueil.
 
-  TAUX — SOURCES ET HISTORIQUE DE VÉRIFICATION (mise à jour 2026-07-24)
+  TAUX — SOURCES ET HISTORIQUE DE VÉRIFICATION (mise à jour 2026-07-30)
   • MR (Amex Membership Rewards CA) : crédit compte 1¢ fixe, portail voyage
     à taux fixe 1,5-2¢ selon catégorie, transfert partenaires 1,7-2,2¢
     moyenne optimisée — Milesopedia, Prince of Travel.
@@ -43,8 +43,12 @@
     — Milesopedia, Points Miles and Bling.
   • CIBC Aventura : grille aérienne jusqu'à 2,29¢ (courts-courriers),
     Centre de récompenses (voyage général) 1¢ fixe, produits financiers
-    (REER/CELI/marge/hypothèque) 0,83¢ fixe, crédit compte/carte-cadeau
-    Visa prépayée 0,63¢ fixe — Frugal Flyer, Prince of Travel, Milesopedia.
+    (REER/CELI/marge/hypothèque) 0,83¢ fixe et paiement au compte
+    0,625¢ (4000 points = 25$) — sources officielles CIBC.
+  • MBNA : le taux comptant dépend de la carte (0,5¢ Platinum Plus;
+    environ 0,83¢ World Elite); le voyage vaut 1¢ pour les deux.
+  • Blue Rewards : 1500 points = 10$ en magasin et pour plusieurs cartes-
+    cadeaux; ce ratio n'est pas présenté comme universel au catalogue.
   • ⚠️ CES TAUX BOUGENT. Prévoir revalidation périodique (comme pagecrawl
     pour EBOX/Achieva) — pas de monitoring automatisé en place pour
     l'instant.
@@ -124,7 +128,7 @@
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-07-08",
-        "dateModified": "2026-07-24",
+        "dateModified": "2026-07-30",
         "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
         "publisher": {
           "@type": "Organization",
@@ -158,12 +162,12 @@
           {
             "@type": "Question",
             "name": "Quel programme a le taux le plus simple à évaluer ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Blue Rewards (BMO) est le seul avec un taux fixe unique (0,667 ¢/point) peu importe le mode de rachat. BNC Récompenses À la carte est prévisible mais pas simple : chaque mode a un taux fixe connu à l'avance (1 ¢ via l'agence voyage, 0,83 ¢ pour REER/CELI, 0,4 ¢ en crédit compte générique), mais il y a 5 paliers différents plutôt qu'un seul." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Plusieurs programmes publient des ratios simples pour certains échanges. Blue Rewards publie 1 500 points = 10 $ en magasin et pour plusieurs cartes-cadeaux, sans que ce ratio s'applique nécessairement à tout son catalogue. Scene+ publie notamment 1 000 points = 10 $ pour le voyage et l'épicerie." }
           },
           {
             "@type": "Question",
             "name": "Quel programme a le plus grand potentiel de valeur ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Aeroplan présente le plus grand potentiel documenté dans cette calculatrice. Les cabines premium, les partenaires aériens et certains sweet spots peuvent dépasser 4 cents par point, mais cette valeur varie fortement et dépend de la disponibilité. La valeur plancher demeure plus proche de 1 cent par point." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Aeroplan présente le plus grand potentiel documenté dans cette calculatrice. Les cabines premium, les partenaires aériens et certains sweet spots peuvent dépasser 4 cents par point, mais cette valeur varie fortement et dépend de la disponibilité. Un rachat peu optimisé peut se rapprocher de 1 cent par point; il ne s'agit pas d'un plancher officiel." }
           },
           {
             "@type": "Question",
@@ -173,7 +177,7 @@
           {
             "@type": "Question",
             "name": "Ces taux sont-ils garantis ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Non. Les taux affichés sont vérifiés à la date indiquée en bas de page à partir de sources publiques (sites officiels des émetteurs et analyses indépendantes). Les émetteurs peuvent les modifier sans préavis — valide toujours le taux exact au moment du rachat sur le site de ton émetteur." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Non. Les badges distinguent les données publiées par le programme, les taux calculés depuis un catalogue officiel variable et les synthèses éditoriales. Même une donnée publiée peut changer; un taux de catalogue dépend de l'article et une synthèse dépend du rachat, de la disponibilité, des taxes et des frais." }
           }
         ]
       }
@@ -285,6 +289,19 @@
     .faq-body { padding: 16px 20px; font-size: 0.97rem; color: var(--text-soft); background: var(--surface); }
 
     .transparency { background: var(--surface-muted); border-radius: 8px; padding: 16px 20px; font-size: 0.9rem; color: var(--text-soft); margin-top: 16px; border: 1px solid var(--border); }
+    .source-levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0; }
+    .source-level { padding: 14px 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text-soft); }
+    .source-level strong { display: block; color: var(--text); margin-bottom: 4px; }
+    .evidence-badge { display: inline-block; margin-right: 7px; padding: 2px 7px; border-radius: 999px; font-size: .7rem; font-weight: 800; letter-spacing: .02em; vertical-align: .08em; }
+    .evidence-badge.official { color: #075985; background: #e0f2fe; }
+    .evidence-badge.catalogue { color: #5b21b6; background: #ede9fe; }
+    .evidence-badge.community { color: #854d0e; background: #fef3c7; }
+    [data-theme="dark"] .evidence-badge.official { color: #bae6fd; background: #0c4a6e; }
+    [data-theme="dark"] .evidence-badge.catalogue { color: #ddd6fe; background: #4c1d95; }
+    [data-theme="dark"] .evidence-badge.community { color: #fde68a; background: #713f12; }
+    .source-list { margin: 12px 0 0 20px; }
+    .source-list li { margin: 7px 0; }
+    @media (max-width: 680px) { .source-levels { grid-template-columns: 1fr; } }
     footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
     .footer-links a { display: inline-block; padding: 10px 12px; margin: -4px 0; }
 
@@ -317,8 +334,6 @@
     .redemption-option.best-option { border-color: var(--accent); }
     .redemption-medal { font-size: 1.25rem; line-height: 1.2; }
     .redemption-name { display: block; font-weight: 800; color: var(--text); }
-    .redemption-role { display: inline-block; margin: 0 0 5px; padding: 3px 8px; border-radius: 999px; background: var(--surface-soft); border: 1px solid var(--border); color: var(--muted); font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
-    .redemption-role.realistic { border-color: var(--accent); color: var(--accent-text); }
     .redemption-meta { display: block; margin-top: 4px; font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
     .redemption-value { text-align: right; white-space: nowrap; font-weight: 900; color: var(--accent-text); font-variant-numeric: tabular-nums; }
     .redemption-value small { display: block; font-weight: 600; color: var(--muted); }
@@ -396,8 +411,8 @@
     <div class="container prose">
       <span class="section-label">13 programmes canadiens</span>
       <h1>Calculatrice de <span>valeur des points</span></h1>
-      <p>Entre ton solde pour voir sa valeur réaliste, les meilleurs usages et les contraintes importantes.</p>
-      <p class="hero-updated">Mis à jour le <time datetime="2026-07-24">24&nbsp;juillet 2026</time></p>
+      <p>Entre ton solde pour voir sa valeur de référence, les usages possibles et les contraintes importantes.</p>
+      <p class="hero-updated">Mis à jour le <time datetime="2026-07-30">30&nbsp;juillet 2026</time></p>
     </div>
   </header>
 
@@ -434,7 +449,7 @@
             </div>
 
             <div class="calc-result" role="status" aria-live="polite" aria-atomic="true">
-              <div class="result-kicker">Valeur réaliste estimée</div>
+              <div class="result-kicker">Valeur de référence</div>
               <div class="val" id="resultVal">170&nbsp;$ – 200&nbsp;$</div>
               <div class="range" id="resultRate">Selon le mode de rachat choisi</div>
             </div>
@@ -475,39 +490,44 @@
           <span class="section-label">Comprendre</span>
           <h2 id="fonctionnement-points">Comment fonctionne réellement la valeur des points</h2>
           <div class="ai-summary">
-          La <strong>valeur réelle d'un point</strong> dépend entièrement du mode de rachat choisi — pas d'un chiffre marketing unique. En 2026, les taux vont de <strong>0,07&nbsp;¢/point</strong> (PC Optimum en crédit compte) à <strong>4&nbsp;¢/point et plus</strong> (rachats Aeroplan exceptionnels en cabine premium ou chez des partenaires).
+          La <strong>valeur obtenue par point</strong> dépend du mode de rachat choisi. Cette page sépare les ratios publiés par les programmes des estimations issues de l'expérience de la communauté.
           <br><br>
           📊 <strong>Trois familles de programmes :</strong> les programmes à taux fixe sont prévisibles, les programmes bancaires à paliers récompensent le bon mode de rachat, et les devises voyage comme MR, Aeroplan, Avion et Avios offrent le plus grand potentiel — avec la plus grande variabilité.
           <br><br>
-          💡 <strong>Astuce de pro :</strong> Tu peux forcer l'encaissement de tes points au taux voyage optimal (en argent comptant) sans avoir à voyager en utilisant la mécanique du <a href="https://cashinstinct.ca/rht/fr/">Refundable Hotel Trick (RHT)</a>.
+          <div class="source-levels">
+            <div class="source-level"><strong><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>Niveau 1</strong>Ratio, seuil ou barème publié directement par le programme.</div>
+            <div class="source-level"><strong><span class="evidence-badge catalogue">TAUX DU CATALOGUE PUBLIÉ</span>Niveau 1 variable</strong>Valeur calculée à partir d'articles actuellement affichés dans le catalogue officiel; ce n'est pas un plancher garanti.</div>
+            <div class="source-level"><strong><span class="evidence-badge community">SYNTHÈSE ÉDITORIALE</span>Niveau 2</strong>Fourchette indicative fondée sur des analyses reconnues et des retours d'utilisateurs. Elle dépend du rachat trouvé.</div>
+          </div>
+          💡 <strong>Méthode communautaire :</strong> certains titulaires utilisent le <a href="https://cashinstinct.ca/rht/fr/">Refundable Hotel Trick (RHT)</a> pour tenter de convertir un crédit voyage en crédit au compte. Ce résultat n'est ni documenté ni garanti par les banques.
         </div>
-          <p class="last-updated">Taux vérifiés le <time id="trust-date" datetime="2026-07-24">24&nbsp;juillet 2026</time></p>
+          <p class="last-updated">Modalités officielles et estimations revalidées le <time id="trust-date" datetime="2026-07-30">30&nbsp;juillet 2026</time></p>
         </section>
 
         <section id="comparatif">
           <span class="section-label">Comparatif</span>
-          <h2>Tableau comparatif — taux plancher vs taux optimal</h2>
-          <p>Le taux « plancher » est le pire mode de rachat courant (souvent cartes-cadeaux ou crédit compte). Le taux « optimal » représente le meilleur potentiel documenté et peut exiger des conditions précises. L'écart montre combien une mauvaise méthode peut coûter.</p>
+          <h2>Tableau comparatif — option de faible valeur vs meilleur potentiel</h2>
+          <p>Les médailles classent les options; les badges décrivent uniquement la provenance de la donnée. Un « taux du catalogue publié » peut varier selon l'article et ne constitue pas un plancher garanti.</p>
 
           <div style="overflow-x: auto; border-radius: 8px; border: 1px solid var(--border);">
             <table class="compare-table" aria-label="Comparatif de la valeur des points par programme">
               <thead>
-                <tr><th scope="col">Programme</th><th scope="col">Taux plancher</th><th scope="col">Taux optimal</th><th scope="col" class="col-10k">10&nbsp;000 pts =</th></tr>
+                <tr><th scope="col">Programme</th><th scope="col">Option de faible valeur</th><th scope="col">Meilleur potentiel</th><th scope="col" class="col-10k">10&nbsp;000 pts =</th></tr>
               </thead>
                <tbody>
-                <tr><td>Aeroplan</td><td>1,00&nbsp;¢</td><td class="best">2,5 à 4&nbsp;¢+ (premium/partenaires)</td><td class="col-10k">100&nbsp;$ – 400&nbsp;$+</td></tr>
-                <tr><td>British Airways Club (Avios)</td><td>0,8 à 1,0&nbsp;¢</td><td class="best">3&nbsp;¢+ (sweet spots partenaires)</td><td class="col-10k">80&nbsp;$ – 300&nbsp;$+</td></tr>
-                <tr><td>RBC Avion Rewards</td><td>environ 1,00&nbsp;¢</td><td class="best">1,8 à 2,3&nbsp;¢ (grille/transferts)</td><td class="col-10k">100&nbsp;$ – 230&nbsp;$</td></tr>
-                <tr><td>CIBC Aventura</td><td>0,63&nbsp;¢</td><td class="best">jusqu'à&nbsp;2,29&nbsp;¢ (grille aérienne)</td><td class="col-10k">63&nbsp;$ – 229&nbsp;$</td></tr>
-                <tr><td>MR (Amex)</td><td>1,00&nbsp;¢</td><td class="best">1,7 à 2,2&nbsp;¢ (transfert)</td><td class="col-10k">100&nbsp;$ – 220&nbsp;$</td></tr>
-                <tr><td>Marriott Bonvoy</td><td>0,70&nbsp;¢</td><td class="best">1,3 à 1,7&nbsp;¢ (certains hôtels)</td><td class="col-10k">70&nbsp;$ – 170&nbsp;$</td></tr>
-                <tr><td>Scene+ (Scotia)</td><td>0,71&nbsp;¢ (cartes-cadeaux)</td><td class="best">1,00&nbsp;¢ (voyage/épicerie/compte)</td><td class="col-10k">71&nbsp;$ – 100&nbsp;$</td></tr>
-                <tr><td>MBNA Rewards</td><td>0,83&nbsp;¢ (crédit compte)</td><td class="best">1,00&nbsp;¢ (voyage)</td><td class="col-10k">83,33&nbsp;$ – 100&nbsp;$</td></tr>
-                <tr><td>BNC À la carte</td><td>0,40&nbsp;¢ (crédit compte)</td><td class="best">1,00&nbsp;¢ (agence voyage)</td><td class="col-10k">40&nbsp;$ – 100&nbsp;$</td></tr>
-                <tr><td>BMO Rewards (carte)</td><td>0,50&nbsp;¢ (crédit compte)</td><td class="best">0,67&nbsp;¢ (voyage)</td><td class="col-10k">50,00&nbsp;$ – 66,67&nbsp;$</td></tr>
-                <tr><td>Blue Rewards (BMO)</td><td colspan="2" style="text-align:center;">0,667&nbsp;¢ (taux unique)</td><td class="col-10k">66,67&nbsp;$</td></tr>
-                <tr><td>TD Rewards</td><td>0,23&nbsp;¢ (cadeaux)</td><td class="best">0,50&nbsp;¢ (Expedia for TD)</td><td class="col-10k">23&nbsp;$ – 50&nbsp;$</td></tr>
-                <tr><td>PC Optimum</td><td>0,07&nbsp;¢ (crédit compte)</td><td class="best">0,10&nbsp;¢ (en magasin)</td><td class="col-10k">7&nbsp;$ – 10&nbsp;$</td></tr>
+                <tr><td>Aeroplan</td><td><span class="evidence-badge community">SYNTHÈSE ÉDITORIALE</span>environ 1,00&nbsp;¢ (rachat peu optimisé)</td><td class="best"><span class="evidence-badge community">SYNTHÈSE ÉDITORIALE</span>2,5 à 4&nbsp;¢+ (premium/partenaires)</td><td class="col-10k">100&nbsp;$ – 400&nbsp;$+</td></tr>
+                <tr><td>British Airways Club (Avios)</td><td><span class="evidence-badge community">SYNTHÈSE ÉDITORIALE</span>0,8 à 1,0&nbsp;¢</td><td class="best"><span class="evidence-badge community">SYNTHÈSE ÉDITORIALE</span>3&nbsp;¢+ (sweet spots partenaires)</td><td class="col-10k">80&nbsp;$ – 300&nbsp;$+</td></tr>
+                <tr><td>RBC Avion Rewards</td><td><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>1,00&nbsp;¢ (voyage libre)</td><td class="best"><span class="evidence-badge community">SYNTHÈSE ÉDITORIALE</span>1,8 à 2,3&nbsp;¢ (grille/transferts)</td><td class="col-10k">100&nbsp;$ – 230&nbsp;$</td></tr>
+                <tr><td>CIBC Aventura</td><td><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>0,625&nbsp;¢ (paiement)</td><td class="best"><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>maximum théorique de 2,29&nbsp;¢ (certains vols)</td><td class="col-10k">62,50&nbsp;$ – jusqu'à 229&nbsp;$</td></tr>
+                <tr><td>MR (Amex)</td><td><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>1,00&nbsp;¢</td><td class="best"><span class="evidence-badge community">SYNTHÈSE ÉDITORIALE</span>1,7 à 2,2&nbsp;¢ (transfert)</td><td class="col-10k">100&nbsp;$ – 220&nbsp;$</td></tr>
+                <tr><td>Marriott Bonvoy</td><td><span class="evidence-badge community">SYNTHÈSE ÉDITORIALE</span>0,70&nbsp;¢</td><td class="best"><span class="evidence-badge community">SYNTHÈSE ÉDITORIALE</span>1,3 à 1,7&nbsp;¢</td><td class="col-10k">70&nbsp;$ – 170&nbsp;$</td></tr>
+                <tr><td>Scene+ (Scotia)</td><td><span class="evidence-badge catalogue">TAUX DU CATALOGUE PUBLIÉ</span>environ 0,71&nbsp;¢ (cartes-cadeaux)</td><td class="best"><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>1,00&nbsp;¢ (voyage/épicerie/compte)</td><td class="col-10k">environ 71&nbsp;$ – 100&nbsp;$</td></tr>
+                <tr><td>MBNA Rewards</td><td><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>0,50 à 0,83&nbsp;¢ (selon la carte)</td><td class="best"><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>1,00&nbsp;¢ (voyage)</td><td class="col-10k">50&nbsp;$ – 100&nbsp;$</td></tr>
+                <tr><td>BNC À la carte</td><td><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>0,40&nbsp;¢ (crédit compte)</td><td class="best"><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>1,00&nbsp;¢ (agence voyage)</td><td class="col-10k">40&nbsp;$ – 100&nbsp;$</td></tr>
+                <tr><td>BMO Rewards (carte)</td><td><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>0,50&nbsp;¢ (crédit compte)</td><td class="best"><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>0,67&nbsp;¢ (voyage)</td><td class="col-10k">50,00&nbsp;$ – 66,67&nbsp;$</td></tr>
+                <tr><td>Blue Rewards (BMO)</td><td colspan="2" style="text-align:center;"><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>0,667&nbsp;¢ en magasin et pour plusieurs cartes-cadeaux</td><td class="col-10k">66,67&nbsp;$</td></tr>
+                <tr><td>TD Rewards</td><td><span class="evidence-badge catalogue">TAUX DU CATALOGUE PUBLIÉ</span>environ 0,23 à 0,25&nbsp;¢</td><td class="best"><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>0,50&nbsp;¢ (Expedia for TD)</td><td class="col-10k">environ 23&nbsp;$ – 50&nbsp;$</td></tr>
+                <tr><td>PC Optimum</td><td><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>0,07&nbsp;¢ (crédit compte)</td><td class="best"><span class="evidence-badge official">PUBLIÉ PAR LE PROGRAMME</span>0,10&nbsp;¢ (en magasin)</td><td class="col-10k">7&nbsp;$ – 10&nbsp;$</td></tr>
               </tbody>
             </table>
           </div>
@@ -533,13 +553,13 @@
             <details>
               <summary id="faq-q3">Quel programme a le taux le plus simple à évaluer&nbsp;?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q3">
-                <p><strong>Blue Rewards (BMO)</strong> est le seul avec un taux fixe unique (0,667 ¢/point) peu importe le mode de rachat. <strong>BNC Récompenses À la carte</strong> est prévisible mais pas simple : chaque mode a un taux fixe connu à l'avance (1 ¢ via l'agence voyage, 0,83 ¢ pour REER/CELI, 0,4 ¢ en crédit compte générique), mais il y a 5 paliers différents plutôt qu'un seul.</p>
+                <p>Plusieurs programmes publient des ratios simples pour certains échanges. <strong>Blue Rewards</strong> publie 1&nbsp;500 points = 10&nbsp;$ en magasin et pour plusieurs cartes-cadeaux, sans que ce ratio s'applique nécessairement à tout son catalogue. <strong>Scene+</strong> publie notamment 1&nbsp;000 points = 10&nbsp;$ pour le voyage et l'épicerie.</p>
               </div>
             </details>
             <details>
               <summary id="faq-q4">Quel programme a le plus grand potentiel de valeur&nbsp;?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q4">
-                <p><strong>Aeroplan</strong> présente le plus grand potentiel documenté dans cette calculatrice. Les cabines premium, les partenaires aériens et certains sweet spots peuvent dépasser <strong>4 cents par point</strong>, mais cette valeur varie fortement et dépend de la disponibilité. La valeur plancher demeure plus proche de 1 cent par point.</p>
+                <p><strong>Aeroplan</strong> présente le plus grand potentiel documenté dans cette calculatrice. Les cabines premium, les partenaires aériens et certains sweet spots peuvent dépasser <strong>4 cents par point</strong>, mais cette valeur varie fortement et dépend de la disponibilité. Un rachat peu optimisé peut se rapprocher de 1 cent par point; il ne s'agit pas d'un plancher officiel.</p>
               </div>
             </details>
             <details>
@@ -551,14 +571,20 @@
             <details>
               <summary id="faq-q6">Ces taux sont-ils garantis&nbsp;?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q6">
-                <p><strong>Non.</strong> Les taux affichés sont vérifiés à la date indiquée en bas de page à partir de sources publiques (sites officiels des émetteurs et analyses indépendantes). Les émetteurs peuvent les modifier sans préavis — valide toujours le taux exact au moment du rachat sur le site de ton émetteur.</p>
+                <p><strong>Non.</strong> Les badges distinguent les données publiées par le programme, les taux calculés depuis un catalogue officiel variable et les synthèses éditoriales. Même une donnée publiée peut changer; un taux de catalogue dépend de l'article et une synthèse dépend du rachat, de la disponibilité, des taxes et des frais.</p>
               </div>
             </details>
           </div>
         </section>
 
         <div class="transparency">
-          <strong>Méthodologie et sources :</strong> taux compilés à partir des sites officiels des émetteurs (bnc.ca, pcfinancial.ca, bluerewards.ca) et d'analyses indépendantes (Milesopedia, Ratehub, Frugal Flyer, Prince of Travel, ThePointCalculator), vérifiés le 8&nbsp;juillet&nbsp;2026, revalidés le 19&nbsp;juillet&nbsp;2026 puis le 24&nbsp;juillet&nbsp;2026, avec recoupement entre au moins deux sources indépendantes pour les taux à paliers (BNC, TD, Aventura). Cette page n'est affiliée à aucun des programmes listés — aucun lien de parrainage, aucune commission. Signale une erreur de taux si tu en repères une. Pour en savoir plus sur la préparation des guides, consultez <a href="https://cashinstinct.ca/about/fr/">À&nbsp;propos de Cash&nbsp;Instinct</a>.
+          <strong>Méthodologie :</strong> « PUBLIÉ PAR LE PROGRAMME » désigne un ratio, seuil ou barème effectivement publié; « TAUX DU CATALOGUE PUBLIÉ » décrit une valeur calculée à partir d'articles variables du catalogue officiel; « SYNTHÈSE ÉDITORIALE » désigne une estimation issue d'analyses communautaires reconnues. Les médailles indiquent seulement le classement relatif des options. La valeur est calculée avant taxes et frais lorsque les points ne les couvrent pas. Vérification effectuée le 30&nbsp;juillet&nbsp;2026.
+          <ul class="source-list">
+            <li><strong>Ratios et barèmes officiels précis :</strong> <a href="https://www.americanexpress.com/en-ca/benefits/rewards/membership-rewards/pay-balance-with-points/">Amex — crédit au compte</a> et <a href="https://www.americanexpress.com/canada/fr/travel/fixed-points-travel.html">barème aérien</a>; <a href="https://www.nbc.ca/particuliers/centre-aide/carte-credit/remises-recompenses/utiliser-points-recompenses-voyage.html">BNC — deux modes voyage</a>; <a href="https://www.td.com/content/dam/tdct/document/pdf/personal-banking/12282-td-rewards-ts-and-cs-e-v2-12-12-final.pdf">TD — modalités et paliers voyage (PDF)</a>; <a href="https://rewards.bluerewards.ca/">Blue Rewards — échanges</a>; <a href="https://cloud.news.sceneplus.ca/bns-acq24-amex-standard-en">Scene+ — équivalences publiées</a>; <a href="https://www.pcfinancial.ca/fr/credit-cards/world-mastercard/">PC Optimum — crédit au compte</a>; <a href="https://www.bmo.com/popups/main/personal/credit-cards/terms-and-conditions-fr.html">BMO Rewards — 150/200 points par dollar</a>; <a href="https://www.mbna.ca/fr/cartes-de-credit/recompenses/mbna-rewards-mastercard">MBNA Platinum Plus</a> et <a href="https://www.mbna.ca/fr/cartes-de-credit/recompenses/mbna-rewards-world-elite-mastercard">World Elite</a>; <a href="https://rewards.cibcrewards.com/Travel/Default.aspx">CIBC — barème aérien</a> et <a href="https://www.cibc.com/fr/personal-banking/ways-to-bank/ways-to-pay/payment-with-points.html">paiements avec points</a>.</li>
+            <li><strong>Règles officielles sans valeur fixe universelle :</strong> <a href="https://www.aircanada.com/ca/fr/aco/home/aeroplan/redeem/air-canada.html">tarification des primes aériennes Aeroplan</a>, <a href="https://www.rbcrewards.com/retailers/termsconditions/rbc_rewards_terms_119753.pdf">modalités et barème RBC Avion (PDF)</a>, <a href="https://www.britishairways.com/content/fr/ca/executive-club/avios">fonctionnement des Avios</a> et <a href="https://help.marriott.com/s/article/Article-33250">tarification flexible Marriott Bonvoy</a>. Ces liens confirment les mécanismes, pas les fourchettes communautaires.</li>
+            <li><strong>Analyses reconnues de la communauté canadienne des récompenses voyage :</strong> <a href="https://princeoftravel.com/news/quarterly-valuation-updates/">évaluations du 2e trimestre 2026 de Prince of Travel</a>, <a href="https://milesopedia.com/programme-fidelite/aeroplan/">guide Aéroplan 2026 de Milesopedia</a> et <a href="https://milesopedia.com/programme-fidelite/marriott-bonvoy/">guide Marriott Bonvoy 2026 de Milesopedia</a>. Elles alimentent une synthèse éditoriale et ne constituent ni une preuve officielle ni un taux contractuel.</li>
+          </ul>
+          Cette page indépendante n'est affiliée à aucun programme et ne contient aucun lien de parrainage.
         </div>
 
       </div>
@@ -568,7 +594,7 @@
   <footer>
     <div class="container">
       <p>Site de référence indépendant. Aucune affiliation avec Amex, Aeroplan, Air Canada, RBC, British Airways, Marriott, BMO, Banque Nationale, TD, PC Optimum ou CIBC. Toutes les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
-      <p style="margin-top:6px;">Calculatrice de valeur des points — Dernière mise à jour&nbsp;: <time id="footer-date" datetime="2026-07-24">Juillet 2026</time></p>
+      <p style="margin-top:6px;">Calculatrice de valeur des points — Dernière mise à jour&nbsp;: <time id="footer-date" datetime="2026-07-30">30&nbsp;juillet 2026</time></p>
     </div>
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
        <nav class="footer-links" aria-label="Liens du site">
@@ -624,33 +650,27 @@
     var PROGRAMS = {
       mr: {
         label: "MR — Membership Rewards",
-        floorModeIndex: 2,
-        realisticModeIndex: 1,
-        optimalModeIndex: 0,
+        referenceModeIndex: 1,
         modes: [
           { text: "Transfert vers un partenaire aérien", kind: "range", minRate: 0.017, maxRate: 0.022, detail: "Meilleur potentiel, mais la valeur dépend du vol trouvé." },
           { text: "Voyage à taux fixe Amex", kind: "range", minRate: 0.015, maxRate: 0.02, detail: "Plus prévisible qu'un transfert; varie selon la catégorie de vol." },
-          { text: "Crédit au compte / argent", kind: "fixed", rate: 0.01, detail: "Garanti et immédiat, mais potentiel nettement inférieur." }
+          { text: "Crédit au compte / argent", kind: "fixed", rate: 0.01, detail: "Ratio publié et immédiat, mais potentiel nettement inférieur." }
         ],
         note: "Les transferts sont irréversibles. Vérifie toujours la disponibilité du rachat avant de déplacer tes points."
       },
       aeroplan: {
         label: "Aeroplan",
-        floorModeIndex: 2,
-        realisticModeIndex: 1,
-        optimalModeIndex: 0,
+        referenceModeIndex: 1,
         modes: [
           { text: "Cabines premium / sweet spots partenaires", kind: "range", minRate: 0.025, maxRate: 0.04, maxPlus: true, detail: "Potentiel exceptionnel, mais disponibilité faible et valeur très variable." },
           { text: "Vols Air Canada / Star Alliance", kind: "range", minRate: 0.014, maxRate: 0.018, detail: "Plage réaliste pour un bon rachat aérien." },
-          { text: "Carte-cadeau électronique Air Canada", kind: "fixed", rate: 0.01, detail: "Valeur plancher plus prévisible, sans optimisation aérienne." }
+          { text: "Carte-cadeau électronique Air Canada", kind: "fixed", rate: 0.01, detail: "Repère plus prévisible, sans optimisation aérienne." }
         ],
         note: "Aeroplan offre le plus grand potentiel de la calculatrice, mais aussi l'une des valeurs les moins prévisibles. La disponibilité et le prix dynamique changent le résultat."
       },
       avion: {
         label: "RBC Avion Rewards",
-        floorModeIndex: 2,
-        realisticModeIndex: 1,
-        optimalModeIndex: 0,
+        referenceModeIndex: 1,
         modes: [
           { text: "Transfert Avios / vol optimisé", kind: "range", minRate: 0.018, maxRate: 0.023, detail: "Meilleur potentiel lorsque le transfert ou la grille convient au trajet." },
           { text: "Grille aérienne fixe Avion", kind: "range", minRate: 0.011, maxRate: 0.014, detail: "Valeur réaliste, mais dépend du prix du billet face au plafond." },
@@ -660,43 +680,35 @@
       },
       avios: {
         label: "British Airways Club (Avios)",
-        floorModeIndex: 2,
-        realisticModeIndex: 1,
-        optimalModeIndex: 0,
+        referenceModeIndex: 1,
         modes: [
           { text: "Sweet spots sur des partenaires", kind: "from", rate: 0.03, detail: "Potentiel supérieur à 3 ¢ lorsque la distance, le partenaire et les frais sont favorables." },
           { text: "Vol British Airways ou partenaire bien choisi", kind: "range", minRate: 0.015, maxRate: 0.02, detail: "Plage réaliste pour un rachat aérien utile." },
-          { text: "Rachat simple à faible valeur", kind: "range", minRate: 0.008, maxRate: 0.01, detail: "Valeur plancher; vérifie toujours les options partenaires avant de confirmer." }
+          { text: "Rachat simple à faible valeur", kind: "range", minRate: 0.008, maxRate: 0.01, detail: "Rachat de faible valeur; vérifie toujours les options partenaires avant de confirmer." }
         ],
         note: "La valeur d'Avios dépend fortement du partenaire, de la distance et des frais imposés. Les meilleurs résultats viennent rarement d'un rachat choisi uniquement pour sa simplicité."
       },
       marriott: {
         label: "Marriott Bonvoy",
-        floorModeIndex: 2,
-        realisticModeIndex: 1,
-        optimalModeIndex: 0,
+        referenceModeIndex: 1,
         modes: [
           { text: "Hôtel à forte valeur", kind: "range", minRate: 0.013, maxRate: 0.017, detail: "Meilleur potentiel lorsque le tarif comptant est élevé face au prix en points." },
           { text: "Séjour hôtelier courant", kind: "range", minRate: 0.009, maxRate: 0.011, detail: "Plage réaliste pour un hôtel et des dates bien choisis." },
-          { text: "Séjour peu optimisé", kind: "fixed", rate: 0.007, detail: "Valeur plancher lorsque le tarif comptant est relativement faible." }
+          { text: "Séjour peu optimisé", kind: "fixed", rate: 0.007, detail: "Faible rendement lorsque le tarif comptant est relativement bas." }
         ],
         note: "Bonvoy est d'abord un programme hôtelier. Sa valeur dépend de l'établissement, des dates et de l'écart entre le prix comptant et le prix en points."
       },
       blue: {
         label: "Blue Rewards",
-        floorModeIndex: 0,
-        realisticModeIndex: 0,
-        optimalModeIndex: 0,
+        referenceModeIndex: 0,
         modes: [
-          { text: "Magasin / cartes-cadeaux / voyage", kind: "fixed", rate: 10/1500, detail: "Taux unique : choisis l'usage le plus pratique." }
+          { text: "En magasin / plusieurs cartes-cadeaux", kind: "fixed", rate: 10/1500, detail: "Ratio publié de 1 500 points = 10 $; le voyage et le catalogue peuvent afficher d'autres prix." }
         ],
         note: "Blue Rewards et BMO Rewards sont deux programmes distincts; leurs points ne sont pas interchangeables."
       },
       bnc: {
         label: "BNC — Récompenses À la carte",
-        floorModeIndex: 4,
-        realisticModeIndex: 1,
-        optimalModeIndex: 0,
+        referenceModeIndex: 1,
         modes: [
           { text: "Agence Voyage À la carte", kind: "fixed", rate: 0.01, detail: "Meilleur taux fixe, avec réservation directe." },
           { text: "Rabais voyage flexible", kind: "tiers", tiers: [{ min: 0, rate: 0.00833 }, { min: 55000, rate: 0.00909 }], threshold: 55000, detail: "0,83 ¢ sous 55 000 points; 0,91 ¢ à partir de 55 000." },
@@ -708,9 +720,7 @@
       },
       td: {
         label: "TD Rewards",
-        floorModeIndex: 2,
-        realisticModeIndex: 1,
-        optimalModeIndex: 0,
+        referenceModeIndex: 1,
         modes: [
           { text: "Voyage via Expedia pour TD", kind: "fixed", rate: 0.005, detail: "Meilleur taux stable du programme." },
           { text: "Voyage réservé hors Expedia", kind: "progressive", threshold: 300000, baseRate: 0.004, excessRate: 0.005, detail: "0,4 ¢ sur les 300 000 premiers points; 0,5 ¢ seulement sur l'excédent." },
@@ -720,9 +730,7 @@
       },
       scene: {
         label: "Scene+",
-        floorModeIndex: 1,
-        realisticModeIndex: 0,
-        optimalModeIndex: 0,
+        referenceModeIndex: 0,
         modes: [
           { text: "Crédit au compte / voyage / épicerie", kind: "fixed", rate: 0.01, detail: "Meilleur taux, facile à utiliser." },
           { text: "Cartes-cadeaux au tarif standard", kind: "fixed", rate: 0.0071, detail: "Souvent dominé par le crédit au compte à 1 ¢." }
@@ -731,9 +739,7 @@
       },
       pc: {
         label: "PC Optimum",
-        floorModeIndex: 1,
-        realisticModeIndex: 0,
-        optimalModeIndex: 0,
+        referenceModeIndex: 0,
         modes: [
           { text: "Rabais en magasin", kind: "fixed", rate: 0.001, detail: "Meilleur usage courant : épicerie, beauté ou vêtements." },
           { text: "Crédit au compte PC Financial", kind: "fixed", rate: 0.0007, detail: "Valeur inférieure au rabais en magasin." }
@@ -742,9 +748,7 @@
       },
       bmorewards: {
         label: "BMO Rewards",
-        floorModeIndex: 2,
-        realisticModeIndex: 1,
-        optimalModeIndex: 0,
+        referenceModeIndex: 1,
         modes: [
           { text: "Voyage avec réservation libre", kind: "fixed", rate: 10/1500, detail: "Meilleur taux; demande de crédit dans l'app BMO." },
           { text: "Cartes-cadeaux / marchandises", kind: "range", minRate: 0.0054, maxRate: 0.0056, detail: "Valeur variable selon le choix." },
@@ -754,29 +758,35 @@
       },
       mbna: {
         label: "MBNA Rewards",
-        floorModeIndex: 1,
-        realisticModeIndex: 0,
-        optimalModeIndex: 0,
+        referenceModeIndex: 0,
         modes: [
           { text: "Voyage via portail ou achat remboursé", kind: "fixed", rate: 0.01, detail: "Meilleur taux, avec réservation relativement flexible." },
-          { text: "Remise en argent directe", kind: "fixed", rate: 0.00833, detail: "Plus simple, mais valeur inférieure au voyage." }
+          { text: "Remise en argent directe", kind: "range", minRate: 0.005, maxRate: 0.00833, detail: "0,50 ¢ avec Platinum Plus; environ 0,83 ¢ avec World Elite." }
         ],
-        note: "Le voyage donne 1 ¢/point, contre environ 0,83 ¢ pour une remise en argent directe."
+        note: "Le voyage donne 1 ¢/point. La remise en argent dépend de la carte : 200 points = 1 $ avec Platinum Plus et 120 points = 1 $ avec World Elite."
       },
       aventura: {
         label: "CIBC Aventura",
-        floorModeIndex: 4,
-        realisticModeIndex: 1,
-        optimalModeIndex: 0,
+        referenceModeIndex: 1,
         modes: [
-          { text: "Grille aérienne optimisée", kind: "upTo", rate: 0.0229, detail: "Meilleur potentiel seulement si le prix du billet approche le plafond." },
+          { text: "Valeur maximale publiée — barème aérien (certains vols)", kind: "upTo", rate: 0.0229, detail: "Maximum théorique seulement si le prix du billet admissible approche le plafond de sa catégorie." },
           { text: "Voyage via le Centre de récompenses", kind: "fixed", rate: 0.01, detail: "Taux fixe et nettement plus prévisible." },
           { text: "Produits financiers", kind: "fixed", rate: 0.0083, minPoints: 12000, detail: "REER, CELI, marge ou hypothèque; minimum de 12 000 points." },
           { text: "Cartes-cadeaux", kind: "fixed", rate: 0.0071, detail: "Valeur fixe, inférieure au voyage." },
-          { text: "Crédit au compte / Visa prépayée", kind: "fixed", rate: 0.0063, detail: "Option simple, mais valeur plancher du programme." }
+          { text: "Paiement au compte", kind: "fixed", rate: 0.00625, detail: "Ratio courant publié : 4 000 points = 25 $." }
         ],
-        note: "Le taux de 2,29 ¢ est un plafond, pas une valeur garantie. Il dépend de la catégorie et du prix réel du billet."
+        note: "Le taux de 2,29 ¢ est un maximum théorique publié, pas la valeur normale de 10 000 points. Il faut un billet admissible dont le prix approche le plafond de sa catégorie."
       }
+    };
+
+    var EVIDENCE_MODES = {
+      mr: ["editorial", "published", "published"], aeroplan: ["editorial", "editorial", "editorial"],
+      avion: ["editorial", "editorial", "published"], avios: ["editorial", "editorial", "editorial"],
+      marriott: ["editorial", "editorial", "editorial"], blue: ["published"],
+      bnc: ["published", "published", "published", "catalogue", "published"],
+      td: ["published", "published", "catalogue"], scene: ["published", "catalogue"],
+      pc: ["published", "published"], bmorewards: ["published", "catalogue", "published"],
+      mbna: ["published", "published"], aventura: ["published", "published", "published", "catalogue", "published"]
     };
 
     var programSel = document.getElementById('program');
@@ -855,43 +865,43 @@
       return "";
     }
 
-    function modeRoles(program, modeIndex) {
-      var labels = [];
-      var allSame = program.floorModeIndex === program.realisticModeIndex && program.realisticModeIndex === program.optimalModeIndex;
-      if (allSame) return labels;
-      if (modeIndex === program.floorModeIndex) labels.push({ text: "Valeur plancher", className: "floor" });
-      if (modeIndex === program.realisticModeIndex) labels.push({ text: "Valeur réaliste", className: "realistic" });
-      if (modeIndex === program.optimalModeIndex) labels.push({ text: "Valeur optimale", className: "optimal" });
-      return labels;
+    function evidenceLabel(programKey, modeIndex) {
+      var evidence = EVIDENCE_MODES[programKey][modeIndex];
+      if (evidence === "published") return "publié par le programme";
+      if (evidence === "catalogue") return "taux du catalogue publié";
+      return "synthèse éditoriale";
     }
 
-    function renderResult(program, pts) {
-      var realisticMode = program.modes[program.realisticModeIndex];
-      resultVal.textContent = valueText(realisticMode, pts);
+    function evidenceBadge(programKey, modeIndex) {
+      var evidence = EVIDENCE_MODES[programKey][modeIndex];
+      var className = evidence === "published" ? "official" : (evidence === "catalogue" ? "catalogue" : "community");
+      var label = evidence === "published" ? "PUBLIÉ PAR LE PROGRAMME" : (evidence === "catalogue" ? "TAUX DU CATALOGUE PUBLIÉ" : "SYNTHÈSE ÉDITORIALE");
+      return '<span class="evidence-badge ' + className + '">' + label + '</span>';
+    }
+
+    function renderResult(program, pts, programKey) {
+      var referenceMode = program.modes[program.referenceModeIndex];
+      resultVal.textContent = valueText(referenceMode, pts);
       resultRate.textContent = pts === 0
         ? "Entrez un nombre de points pour calculer leur valeur."
-        : realisticMode.text + " — " + rateText(realisticMode, pts) + " — estimation, pas une promesse";
+        : referenceMode.text + " — " + rateText(referenceMode, pts) + " — " + evidenceLabel(programKey, program.referenceModeIndex);
     }
 
-    function renderModes(program, pts) {
+    function renderModes(program, pts, programKey) {
       var ranked = program.modes.map(function(mode, modeIndex) { return { mode: mode, modeIndex: modeIndex }; }).sort(function(a, b) {
         return maximumRate(b.mode, pts) - maximumRate(a.mode, pts);
       });
       var bestRate = maximumRate(ranked[0].mode, pts);
       listEl.innerHTML = ranked.map(function(entry, index) {
         var mode = entry.mode;
-        var roles = modeRoles(program, entry.modeIndex);
         var constraint = constraintText(mode, pts);
         var unavailable = mode.minPoints && pts < mode.minPoints;
         var loss = Math.max(0, pts * (bestRate - maximumRate(mode, pts)));
         var medal = index === 0 ? "🥇" : (index === 1 ? "🥈" : (index === ranked.length - 1 && loss > 0 ? "❌" : "✓"));
-        var status = index === 0 ? (mode.kind === "upTo" ? "Meilleur potentiel" : "Meilleur choix") :
-          (index === 1 ? "Bon compromis" : (index === ranked.length - 1 && loss > 0 ? "À éviter si la valeur prime" : "Autre option"));
         var lossText = loss >= 0.01 ? " · jusqu’à " + fmt(loss) + " de valeur potentielle en moins" : "";
         return '<div class="redemption-option' + (index === 0 ? " best-option" : "") + (unavailable ? " unavailable" : "") + (index >= 3 ? " extra-option" : "") + '"' + (index >= 3 ? " hidden" : "") + '>' +
           '<div class="redemption-medal" aria-hidden="true">' + medal + "</div>" +
-          "<div>" + roles.map(function(role) { return '<span class="redemption-role ' + role.className + '">' + role.text + "</span>"; }).join(" ") +
-          "<span class=\"redemption-name\">" + status + " — " + mode.text + "</span>" +
+          "<div>" + evidenceBadge(programKey, entry.modeIndex) + "<span class=\"redemption-name\">" + mode.text + "</span>" +
           '<span class="redemption-meta">' + mode.detail + lossText + "</span>" +
           (constraint ? '<span class="constraint">' + constraint + "</span>" : "") +
           "</div>" +
@@ -908,8 +918,8 @@
     function render() {
       var program = PROGRAMS[programSel.value];
       var pts = Math.max(0, parseFloat(pointsInput.value) || 0);
-      renderResult(program, pts);
-      renderModes(program, pts);
+      renderResult(program, pts, programSel.value);
+      renderModes(program, pts, programSel.value);
       noteEl.textContent = "À retenir : " + program.note;
     }
 
