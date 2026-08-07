@@ -36,9 +36,10 @@
     Vidéotron : GRILLE VÉRIFIÉE TERRAIN (screenshots videotron.com, 10 juillet
     2026, secteur Rive-Sud de Montréal, câble Helix) : 100 = 68 $ (100/30) ·
     500 = 75 $ (500/50) · GIGA = 80 $ (1000/50). « Rabais à vie », location
-    d'équipement incluse, sans contrat. PAS de 2 GIGA à l'adresse testée —
-    ne JAMAIS réintroduire un « 2 Gbit/s symétrique » Vidéotron sans preuve
-    terrain (une source web l'affirmait ; les screenshots l'ont invalidé).
+    d'équipement incluse, sans contrat. PAS de 2 GIGA à l'adresse testée : ce
+    résultat ne doit pas être extrapolé à tout Vidéotron. Vidéotron propose
+    également jusqu'à 200 Mbit/s en téléversement avec le 2 GIGA dans certains
+    secteurs; l'admissibilité doit être confirmée par adresse et technologie.
   • Ligne 500 Mbit/s au tableau : les 3 prix sont relevés (EBOX 55 $ terrain,
     Bell 78 $ promo, Vidéotron 75 $ snapshot). Le face-à-face reste à 1 Gbit/s.
   • Toutes dates STATIQUES bakées au deploy : footer-date, price-check-date,
@@ -53,10 +54,11 @@
     Bell écrit « Les prix peuvent augmenter pendant l'abonnement ». EBOX = grille
     stable ; Vidéotron = « rabais à vie ». L'écart EBOX-Bell varie selon le cycle
     promo (5-20 $/mois) mais la trajectoire diverge toujours.
-  • Vidéotron = câble Helix (secteur mesuré) : upload plafonné 30-50 Mbit/s même
-    sur GIGA (1000/50 à 80 $) — plus cher qu'EBOX ET Bell au palier 1 Gig pour
-    ~15× moins d'upload. Forces réelles : « rabais à vie », écosystème Helix,
-    bundles mobile/télé.
+  • Vidéotron = réseau HFC mesuré à l'adresse testée : upload observé de 30-50
+    Mbit/s sur GIGA (1000/50 à 80 $) — plus cher qu'EBOX ET Bell au palier
+    1 Gig pour ~15× moins d'upload. Vidéotron propose aussi 2 GIGA jusqu'à
+    200 Mbit/s en téléversement dans certains secteurs. Forces réelles :
+    « rabais à vie », écosystème Helix, bundles mobile/télé.
   • Face-à-face 1 Gbit/s : EBOX 65 $ grille (1000/750) · Bell Gigabit 1.5 80 $
     promo (1500/940, palier le plus proche) · Vidéotron GIGA 80 $ (1000/50).
 
@@ -219,7 +221,7 @@
           "name": "Bell ou Vidéotron au Québec ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sur la technologie, Bell : fibre FTTH symétrique, paliers jusqu'à 8 Gbit/s, upload de 940 Mbit/s et plus. Vidéotron roule sur le câble (Helix) dans la plupart des secteurs : upload plafonné à 30-50 Mbit/s et 1 Gbit/s à 80 $ — le même prix mensuel affiché que le Gigabit 1.5 de Bell (80 $ en promo relevée le 7 août 2026). Les forces de Vidéotron : des « rabais à vie » plutôt que des crédits qui expirent, l'écosystème Helix et les rabais bundle mobile/télé."
+            "text": "Sur la technologie, Bell : fibre FTTH symétrique, paliers jusqu'à 8 Gbit/s, upload de 940 Mbit/s et plus. Sur l'adresse testée (réseau HFC), les forfaits Vidéotron offraient entre 30 et 50 Mbit/s en téléversement, y compris le forfait GIGA (1 Gbit/s à 80 $) — le même prix mensuel affiché que le Gigabit 1.5 de Bell (80 $ en promo relevée le 7 août 2026). Vidéotron propose également un forfait 2 GIGA offrant jusqu'à 200 Mbit/s en téléversement dans certains secteurs. Les vitesses offertes dépendent de l'adresse et de la technologie disponible; les forces de Vidéotron comprennent les « rabais à vie », l'écosystème Helix et les rabais bundle mobile/télé."
           }
         },
         {
@@ -243,7 +245,7 @@
           "name": "Quel fournisseur choisir pour le gaming et le télétravail ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pour le meilleur upload par dollar : EBOX (500/500 à 55 $, 1000/750 à 65 $, fibre symétrique). Pour l'upload maximal absolu : Bell Gigabit 3.0 ou 8.0 (jusqu'à 8 Gbit/s symétriques). À éviter pour l'upload : Vidéotron sur câble, plafonné à 30-50 Mbit/s même sur le GIGA. À budget égal, EBOX offre le meilleur ratio upload-prix."
+            "text": "Pour le meilleur upload par dollar : EBOX (500/500 à 55 $, 1000/750 à 65 $, fibre symétrique). Pour l'upload maximal absolu : Bell Gigabit 3.0 ou 8.0 (jusqu'à 8 Gbit/s symétriques). Sur l'adresse HFC testée, Vidéotron offrait 30-50 Mbit/s en téléversement, y compris sur le GIGA; certains secteurs offrent toutefois le 2 GIGA jusqu'à 200 Mbit/s. À budget égal, EBOX offre le meilleur ratio upload-prix là où ses forfaits sont admissibles."
           }
         },
         {
@@ -595,7 +597,7 @@
                 <td>Réseau</td>
                 <td><strong>Bell FTTH — fibre symétrique</strong></td>
                 <td>Bell FTTH (même réseau physique)</td>
-                <td>Câble (Helix)&nbsp;— upload limité</td>
+                <td>HFC/câble (adresse testée); FTTH dans certains secteurs</td>
               </tr>
               <tr>
                 <td>Entrée de gamme</td>
@@ -619,13 +621,13 @@
                 <td>Vitesse maximale</td>
                 <td>1&nbsp;Gbit/s</td>
                 <td><strong>Jusqu'à 8&nbsp;Gbit/s (3&nbsp;Gbit/s à 85&nbsp;$ promo)</strong></td>
-                <td>1&nbsp;Gbit/s (câble)</td>
+                <td>GIGA 1&nbsp;Gbit/s à l'adresse testée; jusqu'à 2&nbsp;Gbit/s dans certains secteurs</td>
               </tr>
               <tr>
                 <td>Upload</td>
                 <td><strong>Symétrique (500/500&nbsp;; 1000/750)</strong></td>
                 <td>Symétrique sur la plupart des paliers (150/150, 500/500, 3000/3000)</td>
-                <td>30 à 50&nbsp;Mbit/s (câble)</td>
+                <td>30 à 50&nbsp;Mbit/s sur l'adresse HFC testée; jusqu'à 200&nbsp;Mbit/s avec 2&nbsp;GIGA dans certains secteurs</td>
               </tr>
               <tr>
                 <td>Stabilité du prix</td>
@@ -755,7 +757,7 @@
         <p>Bell Fibe propose des services basés sur la fibre au Québec&nbsp;; la fibre jusqu'au domicile est offerte là où l'accès et la technologie le permettent. Sa grille actuelle offre la gamme la plus étendue et le plafond de vitesse le plus haut (3&nbsp;Gbit/s symétriques, jusqu'à 8&nbsp;Gbit/s selon le secteur), avec le Wi-Fi&nbsp;7 inclus. Prix observés au Québec le 7 août 2026&nbsp;: Fibe&nbsp;150 à 70&nbsp;$, Fibe&nbsp;500 à 78&nbsp;$, Gigabit&nbsp;1.5 à 80&nbsp;$, Gigabit&nbsp;3.0 à 85&nbsp;$ et Gigabit&nbsp;8.0 à 100&nbsp;$ — crédits temporaires et conditions d'autopaiement inclus. <strong>Le point à surveiller, dans les mots mêmes de Bell&nbsp;: «&nbsp;Les prix peuvent augmenter pendant l'abonnement.&nbsp;»</strong> Ce sont des promotions à durée limitée, pas une grille&nbsp;: le tarif courant est plus élevé et l'écart avec EBOX se creuse à l'échéance des crédits — pour le même réseau physique. <a href="https://www.bell.ca/Services_Internet/Acces_Internet" target="_blank" rel="noopener noreferrer">Voir les forfaits Bell</a>.</p>
 
         <h3>Vidéotron — le joueur local, fort sur l'écosystème, faible sur l'upload</h3>
-        <p>Vidéotron exploite son propre réseau au Québec — du câble (Helix) dans la plupart des secteurs résidentiels. Dans l’instantané historique testé sur la Rive-Sud de Montréal&nbsp;: 100&nbsp;Mbit/s à 68&nbsp;$ (upload&nbsp;30), 500 à 75&nbsp;$ (upload&nbsp;50), GIGA (1&nbsp;Gbit/s) à 80&nbsp;$ (upload&nbsp;50) — «&nbsp;rabais à vie&nbsp;» et location d’équipement incluse. <strong>Le point faible est net&nbsp;: l’upload plafonne à 50&nbsp;Mbit/s même sur le GIGA</strong>, là où EBOX donne 750&nbsp;Mbit/s pour 15&nbsp;$ de moins. Ses vraies forces&nbsp;: des rabais permanents plutôt que des crédits qui expirent, l’écosystème Helix (appli Helix&nbsp;Fi, contrôle parental) et les rabais bundle avec le mobile et la télé. Son entrée de gamme reste chère (68&nbsp;$ pour 100/30, là où EBOX donne 150&nbsp;Mbit/s symétriques à 49&nbsp;$). <a href="https://videotron.com/internet" target="_blank" rel="noopener noreferrer">Voir les forfaits Vidéotron</a>.</p>
+        <p>Vidéotron exploite son propre réseau au Québec. À l’adresse testée, le raccordement était HFC/câble (Helix); certaines zones sont desservies par la fibre jusqu’au domicile. Dans l’instantané historique testé sur la Rive-Sud de Montréal&nbsp;: 100&nbsp;Mbit/s à 68&nbsp;$ (upload&nbsp;30), 500 à 75&nbsp;$ (upload&nbsp;50), GIGA (1&nbsp;Gbit/s) à 80&nbsp;$ (upload&nbsp;50) — «&nbsp;rabais à vie&nbsp;» et location d’équipement incluse. <strong>Sur l’adresse testée (réseau HFC), les forfaits Vidéotron offraient entre 30 et 50&nbsp;Mbit/s en téléversement, y compris le forfait GIGA.</strong> Vidéotron propose également un forfait 2&nbsp;GIGA offrant jusqu’à 200&nbsp;Mbit/s en téléversement dans certains secteurs. Les vitesses offertes dépendent de l’adresse et de la technologie disponible. Ses vraies forces&nbsp;: des rabais permanents plutôt que des crédits qui expirent, l’écosystème Helix (appli Helix&nbsp;Fi, contrôle parental) et les rabais bundle avec le mobile et la télé. Son entrée de gamme reste chère (68&nbsp;$ pour 100/30, là où EBOX donne 150&nbsp;Mbit/s symétriques à 49&nbsp;$). <a href="https://videotron.com/internet" target="_blank" rel="noopener noreferrer">Voir les forfaits Vidéotron</a>.</p>
 
         <section id="conclusion" aria-label="Conclusion du comparatif">
         <span class="section-label">Conclusion</span>
@@ -780,7 +782,7 @@
           </details>
           <details>
             <summary id="faq-q3">Bell ou Vidéotron au Québec&nbsp;?</summary>
-            <div role="region" aria-labelledby="faq-q3">Sur la technologie, Bell&nbsp;: fibre FTTH symétrique, paliers jusqu'à 8&nbsp;Gbit/s, upload de 940&nbsp;Mbit/s et plus. Vidéotron roule sur le câble (Helix) dans la plupart des secteurs&nbsp;: upload plafonné à 30-50&nbsp;Mbit/s et 1&nbsp;Gbit/s à 80&nbsp;$ — le même prix mensuel affiché que le Gigabit&nbsp;1.5 de Bell (80&nbsp;$ en promo relevée le 7 août 2026). Les forces de Vidéotron&nbsp;: des «&nbsp;rabais à vie&nbsp;» plutôt que des crédits qui expirent, l'écosystème Helix et les rabais bundle mobile/télé.</div>
+            <div role="region" aria-labelledby="faq-q3">Sur la technologie, Bell&nbsp;: fibre FTTH symétrique, paliers jusqu'à 8&nbsp;Gbit/s, upload de 940&nbsp;Mbit/s et plus. Sur l’adresse testée (réseau HFC), les forfaits Vidéotron offraient entre 30 et 50&nbsp;Mbit/s en téléversement, y compris le forfait GIGA (1&nbsp;Gbit/s à 80&nbsp;$) — le même prix mensuel affiché que le Gigabit&nbsp;1.5 de Bell (80&nbsp;$ en promo relevée le 7 août 2026). Vidéotron propose également un forfait 2&nbsp;GIGA offrant jusqu'à 200&nbsp;Mbit/s en téléversement dans certains secteurs. Les vitesses offertes dépendent de l’adresse et de la technologie disponible; les forces de Vidéotron comprennent les «&nbsp;rabais à vie&nbsp;», l'écosystème Helix et les rabais bundle mobile/télé.</div>
           </details>
           <details>
             <summary id="faq-q4">Les prix Bell augmentent-ils après la promotion&nbsp;?</summary>
@@ -792,7 +794,7 @@
           </details>
           <details>
             <summary id="faq-q6">Quel fournisseur choisir pour le gaming et le télétravail&nbsp;?</summary>
-            <div role="region" aria-labelledby="faq-q6">Pour le meilleur upload par dollar&nbsp;: EBOX (500/500 à 55&nbsp;$, 1000/750 à 65&nbsp;$, fibre symétrique). Pour l'upload maximal absolu&nbsp;: Bell Gigabit&nbsp;3.0 ou 8.0 (jusqu'à 8&nbsp;Gbit/s symétriques). À éviter pour l'upload&nbsp;: Vidéotron sur câble, plafonné à 30-50&nbsp;Mbit/s même sur le GIGA. À budget égal, EBOX offre le meilleur ratio upload-prix.</div>
+            <div role="region" aria-labelledby="faq-q6">Pour le meilleur upload par dollar&nbsp;: EBOX (500/500 à 55&nbsp;$, 1000/750 à 65&nbsp;$, fibre symétrique). Pour l'upload maximal absolu&nbsp;: Bell Gigabit&nbsp;3.0 ou 8.0 (jusqu'à 8&nbsp;Gbit/s symétriques). Sur l’adresse HFC testée, Vidéotron offrait 30 à 50&nbsp;Mbit/s en téléversement, y compris sur le GIGA; certains secteurs offrent toutefois le 2&nbsp;GIGA jusqu'à 200&nbsp;Mbit/s. À budget égal, EBOX offre le meilleur ratio upload-prix là où ses forfaits sont admissibles.</div>
           </details>
           <details>
             <summary id="faq-q7">Quel forfait Vidéotron équivaut à l'Internet 50 de Bell&nbsp;?</summary>
