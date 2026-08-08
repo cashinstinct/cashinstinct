@@ -12,7 +12,8 @@ export default defineConfig({
   retries: 0,
   reporter: [
     ["line"],
-    ["html", { outputFolder: "playwright-report", open: "never" }]
+    ["html", { outputFolder: "playwright-report", open: "never" }],
+    ["./tests/browser/faq-report.mjs"]
   ],
   use: {
     baseURL: "http://127.0.0.1:4173",

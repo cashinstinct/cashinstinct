@@ -3,6 +3,17 @@
 ═══════════════════════════════════════════════════════════════════
   NOTE DE MAINTENANCE — HP Instant Ink FR — dernière révision majeure : 2026-07-21
 ═══════════════════════════════════════════════════════════════════
+  TRIAGE DÉRIVE FAQ/JSON-LD — 2026-08-07
+  Le rapport d'égalité exacte entre réponse HTML et acceptedAnswer.text est
+  informatif : ne pas forcer l'identité littérale lorsqu'un côté résume ou
+  ajoute du contexte. Cas D à revérifier avec la source avant synchronisation :
+  • Q13 : le HTML parle d'une offre sans expiration fixe; le JSON-LD inclut
+    une vérification de juillet 2026 et la réserve qu'HP peut la modifier ou
+    la désactiver.
+  Vérifier la source actuelle et la note de maintenance avant de choisir la
+  référence. Les incohérences structurelles, réponses vides ou absentes
+  restent bloquantes. Garder FR et EN équivalentes en sens, pas identiques.
+
   STRUCTURE (deux parcours — décision clé)
   • Parcours A (lien, recommandé) : décrit par le HowTo JSON-LD. Le code
     s'applique AUTO via try.hpinstantink.com/SVdn7 — preuve = image

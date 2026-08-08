@@ -29,6 +29,10 @@ const startedAt = performance.now();
 const findings = [];
 const definitionsById = new Map();
 const reportedIdConflicts = new Set();
+const exactFaqAnswerFailures = new Map();
+let exactFaqPageCount = 0;
+let exactFaqQuestionCount = 0;
+let exactFaqQuestionFailureCount = 0;
 
 function jsonLdContradiction(id, first, second) {
   for (const property of ["url", "contentUrl", "embedUrl"]) {
@@ -94,6 +98,21 @@ function extensionMatchesType(file, type) {
   const normalizedType = String(type).toLowerCase();
   if (extension === ".jpg" || extension === ".jpeg") return normalizedType === "jpg";
   return extension === `.${normalizedType}`;
+}
+
+function normalizeComparableText(value) {
+  return String(value)
+    .normalize("NFC")
+    .replace(/[\u00a0\u202f]/g, " ")
+    .replace(/[‘’]/g, "'")
+    .replace(/[“”]/g, '"')
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function hasJsonLdType(node, expectedType) {
+  const types = Array.isArray(node?.["@type"]) ? node["@type"] : [node?.["@type"]];
+  return types.includes(expectedType);
 }
 
 const pages = await discoverPages();
@@ -325,6 +344,7 @@ for (const page of pages) {
   }
 
   const jsonScripts = $('script[type="application/ld+json"]');
+  const jsonLdDocuments = [];
   jsonScripts.each((_, element) => {
     const raw = $(element).text();
     const scriptLine = elementLine(page, element);
@@ -335,6 +355,7 @@ for (const page of pages) {
       error("jsonld.parse", page, cause.message, scriptLine);
       return;
     }
+    jsonLdDocuments.push(document);
     if (!document["@context"]) {
       error("jsonld.context", page, "@context absent du bloc JSON-LD.", scriptLine);
     }
@@ -412,6 +433,97 @@ for (const page of pages) {
       }
     });
   });
+
+  const jsonLdNodes = jsonLdDocuments.flatMap((document) => {
+    const roots = document["@graph"] ?? [document];
+    return Array.isArray(roots) ? roots : [roots];
+  });
+  const jsonLdLine = jsonScripts.length ? elementLine(page, jsonScripts[0]) : null;
+  const webPage = jsonLdNodes.find((node) => hasJsonLdType(node, "WebPage"));
+  if (description && typeof webPage?.description === "string") {
+    if (normalizeComparableText(webPage.description) !== normalizeComparableText(description)) {
+      error(
+        "schema.webpage-description",
+        page,
+        "WebPage.description doit correspondre à la meta description.",
+        jsonLdLine
+      );
+    }
+  }
+  if (title && typeof webPage?.name === "string" && normalizeComparableText(webPage.name) !== normalizeComparableText(title)) {
+    error(
+      "schema.title-surface",
+      page,
+      "WebPage.name doit correspondre au title.",
+      jsonLdLine
+    );
+  }
+
+  const faqPage = jsonLdNodes.find((node) => hasJsonLdType(node, "FAQPage"));
+  if (faqPage) {
+    exactFaqPageCount += 1;
+    const visibleQuestions = $("#faq summary");
+    const schemaQuestions = Array.isArray(faqPage.mainEntity) ? faqPage.mainEntity : [];
+    const exactFailuresForPage = [];
+    if (visibleQuestions.length !== schemaQuestions.length) {
+      error(
+        "schema.faq-visible-count",
+        page,
+        `FAQ visible (${visibleQuestions.length}) et FAQ JSON-LD (${schemaQuestions.length}) doivent avoir le même nombre de questions.`,
+        jsonLdLine
+      );
+    }
+    const questionCount = Math.min(visibleQuestions.length, schemaQuestions.length);
+    for (let index = 0; index < questionCount; index += 1) {
+      exactFaqQuestionCount += 1;
+      const visibleName = normalizeComparableText($(visibleQuestions[index]).text());
+      const schemaName = normalizeComparableText(schemaQuestions[index]?.name ?? "");
+      if (visibleName !== schemaName) {
+        error(
+          "schema.faq-visible-name",
+          page,
+          `FAQ Q${index + 1} visible et JSON-LD doivent avoir le même libellé.`,
+          elementLine(page, visibleQuestions[index])
+        );
+      }
+
+      const question = schemaQuestions[index];
+      const acceptedAnswer = question?.acceptedAnswer;
+      const schemaAnswer = normalizeComparableText(acceptedAnswer?.text ?? "");
+      if (!schemaAnswer) {
+        error(
+          "schema.faq-answer-text",
+          page,
+          `FAQ Q${index + 1} doit avoir un acceptedAnswer.text non vide.`,
+          jsonLdLine
+        );
+      }
+
+      const questionId = $(visibleQuestions[index]).attr("id") ?? "";
+      const linkedAnswer = $("#faq [aria-labelledby]").filter((_, element) =>
+        ($(element).attr("aria-labelledby") ?? "").split(/\s+/).includes(questionId)
+      ).first();
+      const fallbackAnswer = $(visibleQuestions[index]).parent().find(".faq-body").first();
+      const answerElement = linkedAnswer.length ? linkedAnswer : fallbackAnswer;
+      const visibleAnswer = normalizeComparableText(answerElement.text());
+      if (!answerElement.length || !visibleAnswer) {
+        error(
+          "schema.faq-visible-answer",
+          page,
+          `FAQ Q${index + 1} doit avoir une réponse HTML visible (liée par aria-labelledby ou présente dans .faq-body).`,
+          elementLine(page, visibleQuestions[index])
+        );
+      }
+
+      if (visibleAnswer !== schemaAnswer) {
+        exactFaqQuestionFailureCount += 1;
+        exactFailuresForPage.push(index + 1);
+      }
+    }
+    if (visibleQuestions.length !== schemaQuestions.length || exactFailuresForPage.length) {
+      exactFaqAnswerFailures.set(page.relativeFile, exactFailuresForPage);
+    }
+  }
 
   $("script:not([src]):not([type='application/ld+json'])").each((_, element) => {
     const source = $(element).text();
@@ -503,6 +615,18 @@ console.log(`  Entrées sitemap   : ${sitemapEntries.length}`);
 console.log(`  Erreurs bloquantes: ${totals.error}`);
 console.log(`  Avertissements    : ${totals.warning}`);
 console.log(`  Exceptions voulues: ${totals.exception}`);
+const exactFaqPagesWithoutFailure = exactFaqPageCount - exactFaqAnswerFailures.size;
+console.log(
+  `  FAQ réponses exactes: ${exactFaqPagesWithoutFailure}/${exactFaqPageCount} pages, ` +
+  `${exactFaqQuestionCount - exactFaqQuestionFailureCount}/${exactFaqQuestionCount} réponses ` +
+  `(rapport informatif)`
+);
+if (exactFaqAnswerFailures.size) {
+  console.log("  Écarts exacts FAQ par page:");
+  for (const [file, questions] of exactFaqAnswerFailures) {
+    console.log(`    - ${file}: ${questions.length ? `Q${questions.join(", Q")}` : "nombre de questions différent"}`);
+  }
+}
 console.log(`  Durée             : ${duration} s`);
 
 process.exitCode = totals.error > 0 ? 1 : 0;

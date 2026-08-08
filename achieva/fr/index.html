@@ -21,6 +21,17 @@
   - FAQ + étapes + taux : factuels, redeviennent exacts à la reprise
    -  H1 : pas de mention "(programme en pause)" pour raisons SEO
 
+  ── TRIAGE DÉRIVE FAQ/JSON-LD — 2026-08-07 ──
+  Le rapport d'égalité exacte entre réponse HTML et acceptedAnswer.text est
+  informatif : ne pas forcer l'identité littérale si un côté est un résumé ou
+  ajoute un lien. Cas D à revérifier avec les sources avant synchronisation :
+  - Q1 : le HTML insiste sur les gains de parrainage/code personnel; le
+    JSON-LD insiste sur la prime d'inscription et sa condition de dépôt.
+  - Q9 : le HTML affirme que le dépôt initial compte pendant la retenue; le
+    JSON-LD ne confirme pas ce point d'admissibilité.
+  Garder une équivalence de sens. Les nombres de questions différents,
+  réponses absentes ou questions visibles/schema différentes restent bloquants.
+
   ── À FAIRE À LA RELANCE (été 2026) ──
   - Vérifier nouveau programme sur achieva.mb.ca/referral-program
   - Retirer ce bandeau + mentions "(en pause)" (H1, summary-box)
