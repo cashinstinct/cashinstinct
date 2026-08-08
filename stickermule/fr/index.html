@@ -11,12 +11,11 @@
   1. STATS volatiles → arrondies "vers le bas / over X" (zéro maintenance). Voir note STATS POLICY.
   2. DEVISE → page EN en USD, page FR en CAD. Cohérent, voulu.
   3. NOTE 4.9 (schema) ≠ 4.69 (plateforme SM) → deux notes distinctes, voulu.
-  4. priceValidUntil → contrainte technique Google, pas une vraie expiration.
-  5. Geo-routing JS → optimisation par-dessus la redirection serveur de Sticker Mule (redondance voulue).
+  4. Geo-routing JS → optimisation par-dessus la redirection serveur de Sticker Mule (redondance voulue).
   Valeurs STABLES exactes (NE PAS arrondir) : crédit 12,50$CAD/9€/£8/$10USD,
   minimums 38/27/30/30, commission 10%, MOQ 10 unités, 19 types de stickers.
   Source officielle : stickermule.com/stats + stickermule.com/commissions
-  Dernier audit : juillet 2026.
+  Dernier audit : 8 août 2026.
 -->
 
 <!--
@@ -44,7 +43,7 @@
   (alt, aria-label, content, datetime, href, style, title), ni dans le CSS/JS.
   Les rares espaces normales restant devant $/€/ponctuation sont DANS des attributs (alt, aria-label) : voulu, ne pas toucher.
   Insécables sémantiques (valeur+unité) gérés aussi par <span style="white-space:nowrap"> — les deux méthodes coexistent.
-  Audit : juillet 2026.
+  Audit : 8 août 2026.
   -->
 
 <!--
@@ -130,7 +129,7 @@
         "image": "https://cashinstinct.ca/stickermule/fr/og.png",
         "inLanguage": "fr-CA",
         "datePublished": "2026-06-01",
-        "dateModified": "2026-08-06",
+        "dateModified": "2026-08-08",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "author": { "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@id": "https://cashinstinct.ca/#organization" }
@@ -143,39 +142,6 @@
           { "@type": "ListItem", "position": 2, "name": "Impression et Marchandise", "item": "https://cashinstinct.ca/#impression" },
           { "@type": "ListItem", "position": 3, "name": "Sticker Mule FR", "item": "https://cashinstinct.ca/stickermule/fr/" }
         ]
-      },
-      {
-        "@type": "Product",
-        "@id": "https://cashinstinct.ca/stickermule/fr/#product",
-        "name": "Sticker Mule Impression Personnalisée",
-        "image": "https://cashinstinct.ca/stickermule/fr/og.png",
-        "brand": { "@type": "Brand", "name": "Sticker Mule" },
-        "description": "Autocollants, étiquettes, magnets et emballages personnalisés. Sticker Mule répertorie 19 types d'autocollants et annonce la livraison mondiale. Les nouveaux clients admissibles peuvent recevoir un crédit de 12,50 $ CAD ou 9 € via CASHINSTINCT. Le programme actuel décrit une commission de 10% sur l'activité admissible pendant 1 an.",
-        "category": "Custom Printing Services",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "CAD",
-          "price": "12.50",
-          "priceValidUntil": "2027-12-31",
-          "itemCondition": "https://schema.org/NewCondition",
-          "description": "Le lien de parrainage ou le code CASHINSTINCT active un crédit de 12,50 $ CAD / 9 € sur votre première commande admissible (minimum 38 $ CAD / 27 €).",
-          "availability": "https://schema.org/InStock",
-          "shippingDetails": {
-            "@type": "OfferShippingDetails",
-            "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "CAD" },
-            "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "CA" },
-            "deliveryTime": {
-              "@type": "ShippingDeliveryTime",
-              "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-              "transitTime": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "DAY" }
-            }
-          },
-          "hasMerchantReturnPolicy": {
-            "@type": "MerchantReturnPolicy",
-            "applicableCountry": "CA",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
-          }
-        }
       },
       {
         "@type": "HowTo",
@@ -248,7 +214,7 @@
             "name": "Peut-on combiner le crédit avec les deals hebdomadaires Sticker Mule ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui. Le crédit est rattaché à votre profil et s'applique sur n'importe quel produit, y compris les offres flash hebdomadaires, tant que le total du panier atteint le minimum de 38 $ CAD / 27 €. Consultez stickermule.com/ca/deals pour le deal de la semaine."
+              "text": "Le crédit de parrainage et les deals hebdomadaires sont deux promotions distinctes. Leur cumul dépend de l'offre et des conditions du panier; consultez stickermule.com/ca/deals et vérifiez le crédit final avant de payer."
             }
           },
           {
@@ -288,7 +254,7 @@
             "name": "Comment fonctionne le programme de commissions Sticker Mule ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le programme de commissions Sticker Mule permet de gagner 10 % sur tous les achats et ventes de vos filleuls pendant 1 an, sans limite de parrainages. Trois méthodes pour obtenir des filleuls : lien de parrainage — donnez 12,50 $ CAD de crédit au nouveau client; quand il achète, il devient votre filleul. Boutique — tout client qui achète ou vend depuis votre boutique Sticker Mule est tagué comme filleul. Inscriptions boutique — toute personne qui s'inscrit depuis votre boutique devient automatiquement votre filleul. Détails complets sur stickermule.com/ca/commissions."
+              "text": "Le programme de commissions Sticker Mule permet de gagner 10 % sur tous les achats et ventes de vos filleuls pendant 1 an, sans limite de parrainages. Trois méthodes pour obtenir des filleuls : Lien de parrainage : Donnez 12,50 $ CAD de crédit au nouveau client. Quand il achète, il devient votre filleul. Boutique : Tout client qui achète ou vend depuis votre boutique Sticker Mule est tagué comme filleul. Inscriptions boutique : Toute personne qui s'inscrit depuis votre boutique devient automatiquement votre filleul. Détails complets sur stickermule.com/ca/commissions."
             }
           },
           {
@@ -303,7 +269,7 @@
             "name": "L'invitation a-t-elle une date d'expiration ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Aucune date d'expiration fixe n'est affichée dans le parcours que nous surveillons. Le code dépend du maintien du programme de parrainage et de commissions par Sticker Mule; vérifiez donc la confirmation affichée à l'inscription avant de commander."
+              "text": "Aucune date d'expiration fixe n'est affichée pour l'invitation dans le parcours que nous surveillons. Le crédit lui-même dépend des conditions de Sticker Mule après son émission; la page d'assistance officielle indique actuellement une expiration du crédit après 90 jours. Vérifiez les conditions en vigueur avant de commander."
             }
           },
           {
@@ -760,7 +726,7 @@
 
      <div class="container">
       <h1>Code Promo &amp; Code Parrainage Sticker Mule 2026</h1>
-      <p>Deux façons d'activer votre crédit de bienvenue de <strong>12,50&nbsp;$ CAD (Canada) ou 9&nbsp;€ (Europe)</strong> sur stickermule.com — choisissez la méthode qui vous convient.</p>
+        <p>Deux façons d'activer le crédit régional actuellement affiché par Sticker Mule — <strong>12,50&nbsp;$ CAD dans le parcours canadien documenté ici</strong> — sur une première commande admissible. Confirmez le montant et les conditions en vigueur lors de l'inscription et dans le panier.</p>
 
       <div class="hero-methods">
 
@@ -853,24 +819,24 @@
         <section class="summary-box" aria-labelledby="summary-heading">
           <h2 id="summary-heading">Résumé rapide du parrainage Sticker Mule</h2>
        <div class="ai-summary">
-            La façon la plus rapide de réclamer votre <strong>crédit de bienvenue Sticker Mule de 12,50&nbsp;$ CAD</strong> (9&nbsp;€ / 10&nbsp;$ USD) est d'utiliser notre <a class="dynamic-link" href="https://www.stickermule.com/ca/unlock?ref_id=6042474701" target="_blank" rel="noopener sponsored noreferrer" style="text-decoration: underline; font-weight: 700;">lien de parrainage officiel</a> avant de créer votre compte. Le rabais s'appliquera automatiquement sur toute première commande de 38&nbsp;$ CAD (30&nbsp;$ USD) et plus.
+            La façon la plus rapide de réclamer votre <strong>crédit de bienvenue Sticker Mule de 12,50&nbsp;$ CAD</strong> (9&nbsp;€ / 10&nbsp;$ USD) est d'utiliser notre <a class="dynamic-link" href="https://www.stickermule.com/ca/unlock?ref_id=6042474701" target="_blank" rel="noopener sponsored noreferrer" style="text-decoration: underline; font-weight: 700;">lien de parrainage officiel</a> avant de créer votre compte. Si votre compte et votre commande sont admissibles, le crédit peut alors s'appliquer automatiquement à une première commande de 38&nbsp;$ CAD (30&nbsp;$ USD) et plus.
            <br><br>
-            ⚠️ <strong>Important&nbsp;:</strong> La plateforme <strong>Stickermule</strong> a désactivé les cases de codes promos standard lors du paiement. Si vous choisissez de vous inscrire manuellement sans utiliser le lien, vous devez cliquer sur <em>« Ajouter un code de parrainage »</em> dans le formulaire d'inscription et entrer le code <code>CASHINSTINCT</code>. Il ne peut pas être ajouté après la création du compte.
+            ⚠️ <strong>Important&nbsp;:</strong> Le parcours de parrainage actuel de Sticker Mule n'utilise pas de champ de code promo public standard à la caisse. Si vous choisissez de vous inscrire manuellement sans utiliser le lien, vous devez cliquer sur <em>« Ajouter un code de parrainage »</em> dans le formulaire d'inscription et entrer le code <code>CASHINSTINCT</code>. Il ne peut pas être ajouté après la création du compte.
             <br><br>
-            ✨ <strong>Conditions actuelles&nbsp;:</strong> Sticker Mule indique que le crédit du compte peut s'appliquer aux offres hebdomadaires admissibles et annonce la livraison mondiale sur les autocollants personnalisés. La disponibilité, les délais et les règles d'importation peuvent varier selon la destination.
+            ✨ <strong>Conditions actuelles&nbsp;:</strong> Sticker Mule décrit le crédit de parrainage et les deals hebdomadaires séparément. Leur cumul dépend de l'offre et des conditions du panier; confirmez le montant, la disponibilité, les délais et les règles d'importation applicables à votre destination.
           </div>
           <div class="transparency" style="margin-bottom: 24px;">
           <strong>Transparence&nbsp;:</strong> ce guide indépendant combine utilisation personnelle, captures du compte, documentation officielle de Sticker Mule et vérifications périodiques. Si votre compte et votre commande sont admissibles, le lien ou le code <code>CASHINSTINCT</code> peut donner droit à un crédit, et Sticker Mule peut me verser une commission de 10&nbsp;% sur l'activité admissible pendant 1&nbsp;an, sans coût supplémentaire pour vous. Divulgation complète au bas de la page.
           </div>
-          <p class="last-updated">Dernière mise à jour&nbsp;: <time id="trust-date" datetime="2026-08-06">6&nbsp;août&nbsp;2026</time></p>
-          <p class="last-updated">Parcours de parrainage vérifié&nbsp;: <time id="referral-verified-date" datetime="2026-07-27">27 juillet 2026</time></p>
+        <p class="last-updated">Dernière mise à jour&nbsp;: <time id="trust-date" datetime="2026-08-08">8&nbsp;août&nbsp;2026</time></p>
+          <p class="last-updated">Parcours de parrainage vérifié&nbsp;: <time id="referral-verified-date" datetime="2026-08-08">8&nbsp;août&nbsp;2026</time></p>
         </section>
         
         <section id="how-it-works">
           <span class="section-label">Guide Rapide</span>
           <h2>Comment activer l'offre de parrainage Sticker Mule</h2>
           <div class="warning">
-            ⚠️ <strong>Étape cruciale&nbsp;:</strong> Beaucoup d'utilisateurs cherchent un <em>code promo Sticker Mule</em> textuel au moment du paiement, mais les champs de coupon au checkout public sont désactivés. Vous devez utiliser un lien d'invitation ou entrer un code <strong>pendant l'inscription</strong> pour débloquer le crédit.
+            ⚠️ <strong>Étape cruciale&nbsp;:</strong> Beaucoup d'utilisateurs cherchent un <em>code promo Sticker Mule</em> textuel au moment du paiement, mais le parcours de parrainage actuel de Sticker Mule n'utilise pas de champ de coupon public standard à la caisse. Vous devez utiliser un lien d'invitation ou entrer un code <strong>pendant l'inscription</strong> pour débloquer le crédit.
           </div>
           <ol class="steps">
             <li id="howto-step-1">
@@ -1018,7 +984,7 @@
   https://www.stickermule.com/fr/support/faq/ordering/why-is-there-a-30-minimum-order-size-when-using-store-credit
   https://www.stickermule.com/uk/support/faq/ordering/why-is-there-a-30-minimum-order-size-when-using-store-credit
   https://www.stickermule.com/support/faq/ordering/why-is-there-a-30-minimum-order-size-when-using-store-credit
-        Vérifié juillet 2026.
+        Vérifié 8 août 2026.
 -->
         <section id="global-rates">
           <span class="section-label">Valeur Mondiale</span>
@@ -1045,7 +1011,7 @@
           <h2>Qui est admissible au crédit de bienvenue&nbsp;?</h2>
           <p>Ce programme s'adresse strictement aux <strong>nouveaux comptes Sticker Mule</strong>. Si vous possédez déjà un compte lié à votre adresse courriel actuelle, la remise ne s'appliquera pas.</p>
           <p>Contrairement à certains programmes de parrainage qui plafonnent le nombre de parrainages (ex.&nbsp;: 4/an chez certaines institutions financières), <strong>Sticker Mule n'impose aucune limite</strong>&nbsp;: vous pouvez parrainer autant de personnes que vous le souhaitez et percevoir 10&nbsp;% sur leurs achats et ventes pendant 1 an à chaque fois.</p>
-          <p style="color: var(--text-soft); font-size: 0.95rem;"><strong>Note&nbsp;:</strong> Le crédit s'ajuste automatiquement selon votre devise locale au moment de la facturation. La livraison est gratuite dans le monde entier sur les autocollants personnalisés et la majorité des produits.</p>
+          <p style="color: var(--text-soft); font-size: 0.95rem;"><strong>Note&nbsp;:</strong> Sticker Mule affiche le crédit régional applicable et annonce la livraison mondiale sur certains produits; vérifiez le montant, la disponibilité, les délais et les règles d'importation selon votre destination.</p>
      <p style="font-size: 0.95rem; color: var(--text-soft); margin-top: 16px;">
   Vous cherchez d'autres façons d'économiser au Canada&nbsp;? Consultez aussi notre guide 
   <a href="https://cashinstinct.ca/ebox/fr/">code de parrainage EBOX</a>, 
@@ -1058,19 +1024,19 @@
           <span class="section-label">En Bref</span>
           <h2>Détails et conditions de la promotion</h2>
           <div class="facts">
-            <div class="fact"><strong>Montant crédité</strong><span>12,50&nbsp;$ CAD (Canada) · 9&nbsp;€ (Europe) · £8 (UK) · $10 USD (États-Unis)</span></div>
-            <div class="fact"><strong>Panier minimum</strong><span>38&nbsp;$ CAD · 27&nbsp;€ · £30 · $30 USD selon la région.</span></div>
-            <div class="fact"><strong>Livraison</strong><span>Gratuite partout dans le monde sur les autocollants et la plupart des produits.</span></div>
+            <div class="fact"><strong>Montant crédité</strong><span>12,50&nbsp;$ CAD dans le parcours canadien documenté ici; les montants régionaux peuvent changer.</span></div>
+            <div class="fact"><strong>Panier minimum</strong><span>Minimum actuellement indiqué par Sticker Mule; il dépend de la région et des conditions.</span></div>
+            <div class="fact"><strong>Livraison</strong><span>Sticker Mule annonce la livraison mondiale sur certains produits; les conditions varient selon la destination.</span></div>
             <div class="fact"><strong>Commande minimum</strong><span>10 unités par design. Quantités personnalisées disponibles (multiples de 10).</span></div>
             <div class="fact"><strong>BAT inclus</strong><span>Bon à tirer numérique gratuit et révisions illimitées avant production.</span></div>
-            <div class="fact"><strong>Cumulable</strong><span>S'applique par-dessus les deals hebdomadaires rotatifs de la plateforme.</span></div>
+            <div class="fact"><strong>Cumul possible</strong><span>Deals et crédit sont distincts; vérifiez si le panier en cours accepte les deux.</span></div>
           </div>
         </section>
 
         <section id="stack-deals">
           <span class="section-label">Optimisation</span>
-          <h2>Comment combiner votre crédit avec les deals hebdomadaires Sticker Mule</h2>
-          <p>Sticker Mule propose chaque semaine une <strong>promotion flash rotative</strong> sur un produit différent — parfois 10 autocollants pour 1&nbsp;$, parfois 50 magnets à prix réduit, ou d'autres offres du même type. Les nouveaux clients se demandent souvent si le crédit de bienvenue peut s'additionner. La réponse est oui, à condition que votre panier atteigne le seuil de 38&nbsp;$ CAD / 27&nbsp;€ après l'application du deal. Consultez <a href="https://www.stickermule.com/ca/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/ca/deals</a> pour l'offre en cours.</p>
+          <h2>Peut-on combiner le crédit avec les deals hebdomadaires Sticker Mule&nbsp;?</h2>
+          <p>Sticker Mule propose chaque semaine une <strong>promotion flash rotative</strong> sur un produit différent — parfois 10 autocollants pour 1&nbsp;$, parfois 50 magnets à prix réduit, ou d'autres offres du même type. Le crédit de parrainage et un deal hebdomadaire sont deux promotions distinctes; leur cumul dépend de l'offre et des conditions du panier. Consultez <a href="https://www.stickermule.com/ca/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/ca/deals</a> et vérifiez le crédit final avant de payer.</p>
           <ol class="steps" style="margin-top: 20px;">
             <li id="stack-step-1">
               <div>
@@ -1081,17 +1047,17 @@
             <li id="stack-step-2">
               <div>
                 <h3>Vérifiez le deal de la semaine</h3>
-                <p>Rendez-vous sur <a href="https://www.stickermule.com/ca/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/ca/deals</a> pour voir le produit en promotion cette semaine. Ajoutez-le à votre commande principale pour franchir le cap des 38&nbsp;$ CAD / 27&nbsp;€.</p>
+                <p>Rendez-vous sur <a href="https://www.stickermule.com/ca/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/ca/deals</a> pour voir le produit en promotion cette semaine. S'il est admissible, ajoutez-le à une commande admissible et vérifiez les conditions finales du panier.</p>
               </div>
             </li>
             <li id="stack-step-3">
               <div>
-                <h3>Vérifiez la réduction finale</h3>
-                <p>Le crédit apparaît automatiquement dans le résumé des coûts. Pas besoin de chercher un coupon tiers, l'infrastructure reconnaît votre éligibilité.</p>
+                <h3>Vérifiez le crédit dans le panier</h3>
+                <p>Si l'offre et votre compte sont admissibles, vérifiez le crédit dans le résumé du panier avant de payer. Aucun coupon à saisir à la caisse n'est nécessaire.</p>
               </div>
             </li>
           </ol>
-          <p style="color: var(--text-soft); font-size: 0.95rem;">Note&nbsp;: les deals hebdomadaires sont des promotions indépendantes et rotatives gérées par la plateforme. Ils ne remplacent pas le crédit de parrainage — ce sont deux opportunités distinctes à cumuler.</p>
+          <p style="color: var(--text-soft); font-size: 0.95rem;">Note&nbsp;: les deals hebdomadaires sont des promotions indépendantes et rotatives gérées par la plateforme. Ne présumez pas qu'un deal et le crédit de parrainage sont cumulables sans vérifier les conditions et le panier.</p>
         </section>
 
           <section id="sticker-samples">
@@ -1116,6 +1082,7 @@
           <h2>Mon expérience avec Sticker Mule</h2>
           <div class="review-box">
            <div class="trust-badge">✓ Fondé sur une utilisation personnelle documentée</div>
+            <p><strong>Testé par Cash Instinct&nbsp;:</strong> ce guide repose sur une utilisation personnelle documentée, des vérifications du compte et l'examen de sources officielles. Consultez <a href="https://cashinstinct.ca/about/fr/">À&nbsp;propos de Cash Instinct</a> pour la méthode et le canal de correction.</p>
             <p>Je suis client de Sticker Mule depuis <strong>2022</strong>. J'ai passé mes premières commandes cette année-là et reçu mon premier crédit de parrainage en <strong>2023</strong> sous l'ancien programme de récompenses. Lorsque Sticker Mule a remplacé ce système par son programme de commissions actuel, je m'y suis inscrit officiellement et je continue d'y participer.</p>
             <p>La boutique <a href="https://www.stickermule.com/cashinstinct" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/cashinstinct</a> compte actuellement <strong>12 designs</strong> liés à l'humour dev/tech, aux expressions québécoises et au kawaii/cottagecore. Ce guide combine mes commandes, des captures de mon compte, la documentation officielle de Sticker Mule et des vérifications indépendantes.</p>
             <p><strong>Limites de cet avis&nbsp;:</strong> je n'ai pas testé tous les produits Sticker Mule, toutes les destinations ni toutes les devises prises en charge. Les affirmations sur les marchés et produits que je n'ai pas utilisés personnellement sont attribuées à la documentation de Sticker Mule plutôt que présentées comme une expérience directe.</p>
@@ -1292,7 +1259,7 @@
   ce n'est ni une erreur, ni un oubli de traduction, ni un souci hreflang.
   Google juge chaque page indépendamment — pas de miroir 1:1 requis.
   SEULE règle intra-page à garder : nb questions HTML = nb entrées mainEntity JSON-LD.
-  Audit : juillet 2026.
+  Audit : 8 août 2026.
 -->
           <span class="section-label">FAQ</span>
           <h2>Questions fréquentes sur le code StickerMule</h2>
@@ -1322,7 +1289,7 @@
             <details>
               <summary id="faq-q4">Peut-on combiner le crédit avec les deals hebdomadaires Sticker Mule&nbsp;?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q4">
-                <p>Oui. Le crédit est rattaché à votre profil et s'applique sur n'importe quel produit, y compris les offres flash hebdomadaires, tant que le total du panier atteint le minimum de 38&nbsp;$ CAD / 27&nbsp;€. Consultez <a href="https://www.stickermule.com/ca/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/ca/deals</a> pour le deal de la semaine.</p>
+                <p>Le crédit de parrainage et les deals hebdomadaires sont deux promotions distinctes. Leur cumul dépend de l'offre et des conditions du panier; consultez <a href="https://www.stickermule.com/ca/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/ca/deals</a> et vérifiez le crédit final avant de payer.</p>
               </div>
             </details>
 
@@ -1377,7 +1344,7 @@
             <details>
               <summary id="faq-q10">L'invitation a-t-elle une date d'expiration&nbsp;?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q10">
-                <p>Aucune date d'expiration fixe n'est affichée dans le parcours que nous surveillons. Le code dépend du maintien du programme de parrainage et de commissions par Sticker Mule; vérifiez donc la confirmation affichée à l'inscription avant de commander.</p>
+                <p>Aucune date d'expiration fixe n'est affichée pour l'invitation dans le parcours que nous surveillons. Le crédit lui-même dépend des conditions de Sticker Mule après son émission; la <a href="https://www.stickermule.com/ca/support/faq/miscellaneous/how-does-store-credit-work" target="_blank" rel="noopener noreferrer">page d'assistance officielle</a> indique actuellement une expiration du crédit après 90 jours. Vérifiez les conditions en vigueur avant de commander.</p>
               </div>
             </details>
 
@@ -1427,7 +1394,7 @@
   <footer>
     <div class="container">
       <p>Site indépendant non affilié officiellement à la marque Sticker Mule. Les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
-      <p style="margin-top:6px;">Mise à jour&nbsp;: <time id="footer-date" datetime="2026-08-06">6&nbsp;août&nbsp;2026</time></p>
+      <p style="margin-top:6px;">Mise à jour&nbsp;: <time id="footer-date" datetime="2026-08-08">8&nbsp;août&nbsp;2026</time></p>
     </div>
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
      <nav class="footer-links" aria-label="Liens du site">

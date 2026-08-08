@@ -12,12 +12,11 @@
   1. STATS volatiles → arrondies "vers le bas / over X" (zéro maintenance). Voir note STATS POLICY.
   2. DEVISE → page EN (celle-ci) en USD, page FR en CAD. Cohérent, voulu.
   3. NOTE 4.9 (schema) ≠ 4.69 (plateforme SM) → deux notes distinctes, voulu.
-  4. priceValidUntil → contrainte technique Google, pas une vraie expiration.
-  5. Geo-routing JS → optimisation par-dessus la redirection serveur de Sticker Mule (redondance voulue).
+  4. Geo-routing JS → optimisation par-dessus la redirection serveur de Sticker Mule (redondance voulue).
   Valeurs STABLES exactes (NE PAS arrondir) : crédit 12,50$CAD/9€/£8/$10USD,
   minimums 38/27/30/30, commission 10%, MOQ 10 unités, 19 types de stickers.
   Source officielle : stickermule.com/stats + stickermule.com/commissions
-  Dernier audit : juillet 2026.
+  Last audit: August 8, 2026.
 -->
 
 <!--
@@ -44,7 +43,7 @@
   PARTOUT (EN comme FR) : JAMAIS de &nbsp; dans le JSON-LD, ni dans les ATTRIBUTS
   (alt, aria-label, content, datetime, href, style, title), ni dans le CSS/JS.
   Insécables sémantiques (valeur+unité, ex. "$30 USD") gérés par <span style="white-space:nowrap"> — méthode autorisée.
-  Audit : juillet 2026.
+  Audit: August 8, 2026.
   -->
 
 <!--
@@ -133,7 +132,7 @@
         "image": "https://cashinstinct.ca/stickermule/en/og.png",
         "inLanguage": "en-US",
         "datePublished": "2026-06-01",
-        "dateModified": "2026-08-06",
+        "dateModified": "2026-08-08",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "author":    { "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@id": "https://cashinstinct.ca/#organization" }
@@ -146,38 +145,6 @@
           { "@type": "ListItem", "position": 2, "name": "Printing and Merchandise","item": "https://cashinstinct.ca/en/#printing" },
           { "@type": "ListItem", "position": 3, "name": "Sticker Mule Referral Code", "item": "https://cashinstinct.ca/stickermule/en/" }
         ]
-      },
-      {
-        "@type": "Product",
-        "@id": "https://cashinstinct.ca/stickermule/en/#product",
-        "name": "Sticker Mule Custom Printing",
-        "image": "https://cashinstinct.ca/stickermule/en/og.png",
-        "brand": { "@type": "Brand", "name": "Sticker Mule" },
-        "description": "Custom stickers, labels, magnets, apparel, and packaging. Sticker Mule lists 19 sticker types and advertises worldwide shipping. Eligible new users may receive a $10 USD referral credit through CASHINSTINCT. The current commissions program describes 10% on eligible referral activity for 1 year.",
-        "category": "Custom Printing Services",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "priceValidUntil": "2027-12-31",
-          "itemCondition": "https://schema.org/NewCondition",
-          "description": "The referral link or code CASHINSTINCT activates a free $10 USD discount credit on any initial purchase of $30 or more.",
-          "availability": "https://schema.org/InStock",
-          "shippingDetails": {
-            "@type": "OfferShippingDetails",
-            "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
-            "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" },
-            "deliveryTime": {
-              "@type": "ShippingDeliveryTime",
-              "transitTime": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "DAY" }
-            }
-          },
-          "hasMerchantReturnPolicy": {
-            "@type": "MerchantReturnPolicy",
-            "applicableCountry": "US",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
-          }
-        }
       },
       {
         "@type": "HowTo",
@@ -244,12 +211,12 @@
           {
             "@type": "Question",
             "name": "Can I stack the referral credit with weekly deals?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The credit is tied to your account balance and applies to any qualifying order — including weekly flash deals and sample packs — as long as your cart total reaches the minimum of $30 USD ($38 CAD). Check stickermule.com/deals for the current offer." }
+            "acceptedAnswer": { "@type": "Answer", "text": "The referral credit and weekly deals are separate promotions. Whether they can be combined depends on the current offer and cart conditions, so check stickermule.com/deals and confirm the final credit before paying." }
           },
           {
             "@type": "Question",
             "name": "How does the Sticker Mule commission program work?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Earn 10% on all purchases and sales by your referrals for 1 year , with no cap on referrals. Three ways to earn: Share your link — gives the new customer $10 USD off. They become your referral when they buy. Sell in your store — any new customer buying or selling from your store is tagged as your referral. Store signups — anyone signing up from your store page is tagged as your referral. Full details: stickermule.com/commissions ." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Earn 10% on all purchases and sales by your referrals for 1 year, with no cap on referrals. Three ways to earn: Share your link — gives the new customer $10 USD off. They become your referral when they buy. Sell in your store — any new customer buying or selling from your store is tagged as your referral. Store signups — anyone signing up from your store page is tagged as your referral. Full details: stickermule.com/commissions." }
           },
           {
             "@type": "Question",
@@ -274,7 +241,7 @@
           {
             "@type": "Question",
             "name": "Does this invitation expire?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No fixed expiry date is displayed in the current flow we monitor. The code remains dependent on Sticker Mule maintaining the referral and commissions program, so verify the confirmation shown during registration before placing an order." }
+            "acceptedAnswer": { "@type": "Answer", "text": "No fixed expiry date is displayed for the invitation in the current flow we monitor. The credit itself is subject to Sticker Mule's conditions after it is issued; the official support page currently says store credit expires 90 days after issue. Check the current terms before ordering." }
           },
           {
             "@type": "Question",
@@ -738,7 +705,7 @@
     
     <div class="container">
       <h1>Sticker Mule Coupon Code &amp; Referral Code 2026</h1>
-      <p>Sign up using our official referral link to automatically claim a <strong>$10 USD ($12.50 CAD) promo credit</strong> on your first order. Valid worldwide. Stacks with weekly deals.</p>
+      <p>Sign up using our official referral link to see the current regional credit — <strong>$10 USD ($12.50 CAD) in the flows documented here</strong> — on your first qualifying order. Confirm the amount and any stacking conditions during registration and checkout.</p>
 
       <div class="hero-methods">
 
@@ -834,24 +801,24 @@
           <section class="summary-box" aria-labelledby="summary-heading">
           <h2 id="summary-heading">Quick summary of the Sticker Mule referral</h2>
           <div class="ai-summary">
-            The fastest way to claim your <strong>$10 USD ($12.50 CAD) Sticker Mule welcome credit</strong> is to use our <a class="dynamic-link" href="https://www.stickermule.com/unlock?ref_id=6042474701" target="_blank" rel="noopener sponsored noreferrer" style="text-decoration: underline; font-weight: 700;">official referral link</a> before creating your account. The discount will apply automatically to any first order of $30+.
+            The fastest way to claim your <strong>$10 USD ($12.50 CAD) Sticker Mule welcome credit</strong> is to use our <a class="dynamic-link" href="https://www.stickermule.com/unlock?ref_id=6042474701" target="_blank" rel="noopener sponsored noreferrer" style="text-decoration: underline; font-weight: 700;">official referral link</a> before creating your account. If your account and order qualify, the credit may then apply automatically to a first order of $30 or more.
             <br><br>
-            ⚠️ <strong>Important:</strong> The infrastructure at <strong>Stickermule</strong> has disabled standard promo boxes at checkout. If you choose to sign up manually without using the link, you must click <em>"Add referral code"</em> on the registration form and enter code <code>CASHINSTINCT</code>. It cannot be added after account creation.
+            ⚠️ <strong>Important:</strong> Sticker Mule's current referral flow does not use a standard public coupon field at checkout. If you choose to sign up manually without using the link, you must click <em>"Add referral code"</em> on the registration form and enter code <code>CASHINSTINCT</code>. It cannot be added after account creation.
             <br><br>
-            ✨ <strong>Current terms:</strong> Sticker Mule indicates that the account credit can be used with qualifying weekly deals and advertises worldwide shipping on custom stickers. Availability, delivery times, and local import rules may vary by destination.
+            ✨ <strong>Current terms:</strong> Sticker Mule describes the referral credit and weekly deals separately. Whether both apply to a particular cart depends on the current offer and conditions; confirm the amount, availability, delivery times, and local import rules for your destination.
          </div>
         <div class="transparency" style="margin-bottom: 24px;">
           <strong>Transparency:</strong> this independent guide combines personal use, account screenshots, official Sticker Mule documentation, and periodic checks. If your account and order qualify, the link or code <code>CASHINSTINCT</code> may provide a welcome credit and Sticker Mule may pay me a 10% commission on eligible activity for 1 year, at no extra cost to you. Full disclosure appears below.
         </div>
-        <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-08-06">August&nbsp;6, 2026</time></p>
-        <p class="last-updated">Referral flow verified: <time id="referral-verified-date" datetime="2026-07-27">July 27, 2026</time></p>
+        <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-08-08">August&nbsp;8, 2026</time></p>
+        <p class="last-updated">Referral flow verified: <time id="referral-verified-date" datetime="2026-08-08">August 8, 2026</time></p>
         </section>
         
         <section id="how-it-works">
           <span class="section-label">Quick Guide</span>
           <h2>How to Activate Your Sticker Mule Discount</h2>
           <div class="warning">
-            ⚠️ <strong>Crucial step:</strong> Many users search for a text-based <em>Sticker Mule coupon code</em> at checkout, but public checkout promo fields are deactivated. You must use an invite link or enter a code <strong>during account registration</strong> to unlock the credit.
+            ⚠️ <strong>Crucial step:</strong> Many users search for a text-based <em>Sticker Mule coupon code</em> at checkout, but Sticker Mule's current referral flow does not use a standard public coupon field there. You must use an invite link or enter a code <strong>during account registration</strong> to unlock the credit.
           </div>
           <ol class="steps">
             <li id="howto-step-1">
@@ -1026,7 +993,7 @@
   https://www.stickermule.com/fr/support/faq/ordering/why-is-there-a-30-minimum-order-size-when-using-store-credit
   https://www.stickermule.com/uk/support/faq/ordering/why-is-there-a-30-minimum-order-size-when-using-store-credit
   https://www.stickermule.com/support/faq/ordering/why-is-there-a-30-minimum-order-size-when-using-store-credit
-        Vérifié juillet 2026.
+        Verified August 8, 2026.
 -->
         <section id="global-rates">
           <span class="section-label">Global Value</span>
@@ -1053,7 +1020,7 @@
         <section id="eligibility">
           <span class="section-label">Conditions</span>
           <h2>Who Is Eligible for the Welcome Credit?</h2>
-          <p>This program is strictly for <strong>new Sticker Mule accounts worldwide</strong>. If you already have an account linked to your current email address, the discount will not apply.</p>
+          <p>This program is strictly for <strong>new Sticker Mule accounts</strong>. Regional availability, amounts, and conditions may vary. If you already have an account linked to your current email address, the discount will not apply.</p>
           <p>Unlike some referral programs that cap the number of referrals you can make (e.g. financial institutions with a 4/year limit), <strong>Sticker Mule imposes no cap</strong>: refer as many people as you want and earn 10% on their purchases and sales for 1 year each time.</p>
           <p style="font-size: 0.95rem; color: var(--text-soft);">Sticker Mule displays the applicable regional credit during the account and checkout flow. It also advertises worldwide shipping on custom stickers and many products; confirm the amount, availability, delivery time, and local import rules for your destination.</p>
         <p style="font-size: 0.95rem; color: var(--text-soft); margin-top: 16px;">
@@ -1069,15 +1036,15 @@
           <div class="facts">
             <div class="fact">
               <strong>Credit Amount</strong>
-              <span>$10 USD · $12.50 CAD — applied automatically.</span>
+              <span>$10 USD · $12.50 CAD in the flows documented here; regional amounts may change.</span>
             </div>
             <div class="fact">
               <strong>Minimum Cart</strong>
-              <span>$30 USD · $38 CAD depending on region.</span>
+              <span>$30 USD · $38 CAD in the official flows documented here; region and conditions apply.</span>
             </div>
             <div class="fact">
               <strong>Shipping</strong>
-              <span>Free worldwide on stickers and most products.</span>
+              <span>Sticker Mule advertises free shipping on stickers and many products; destination conditions may vary.</span>
             </div>
             <div class="fact">
               <strong>Minimum Order</strong>
@@ -1088,16 +1055,16 @@
               <span>Free automated digital proof with unlimited revisions before production starts.</span>
             </div>
             <div class="fact">
-              <strong>Stackable</strong>
-              <span>Combines with rotating weekly deals and sample promotions.</span>
+              <strong>Possible stacking</strong>
+              <span>Weekly deals and referral credit are separate; confirm whether the current cart accepts both.</span>
             </div>
           </div>
         </section>
 
         <section id="stack-deals">
           <span class="section-label">Stack Your Savings</span>
-          <h2>How to Combine Your Credit With Sticker Mule Weekly Deals</h2>
-          <p>Sticker Mule runs <strong>rotating weekly flash promotions</strong> on different products — sometimes a custom sticker sample pack, sometimes magnets or other items. The deal changes every week. New users often wonder whether the referral credit stacks on top. The answer is yes, as long as your cart hits the minimum threshold after sample pricing. Check <a href="https://www.stickermule.com/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/deals</a> for the current week's offer.</p>
+          <h2>Can You Combine Your Referral Credit With Sticker Mule Weekly Deals?</h2>
+          <p>Sticker Mule runs <strong>rotating weekly flash promotions</strong> on different products — sometimes a custom sticker sample pack, sometimes magnets or other items. The deal changes every week. The referral credit and a weekly deal are separate promotions; whether they can be combined depends on the current offer and cart conditions. Check <a href="https://www.stickermule.com/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/deals</a> and confirm the final credit before paying.</p>
           <ol class="steps" style="margin-top: 20px;">
             <li id="stack-step-1">
               <div>
@@ -1108,17 +1075,17 @@
             <li id="stack-step-2">
               <div>
                 <h3>Check This Week's Deal</h3>
-                <p>Visit <a href="https://www.stickermule.com/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/deals</a> for the current promotion. Add it alongside your main order to reach the cart minimum.</p>
+                <p>Visit <a href="https://www.stickermule.com/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/deals</a> for the current promotion. If the offer is eligible, add it to a qualifying order and check the final cart conditions.</p>
               </div>
             </li>
             <li id="stack-step-3">
               <div>
-                <h3>Credit Applies Automatically</h3>
-                <p>Your referral credit appears in the cart summary. No coupon entry needed — it is already tied to your account.</p>
+                <h3>Confirm the Credit in the Cart</h3>
+                <p>If the current offer and your account qualify, confirm the credit in the cart summary before paying. No checkout coupon entry is required.</p>
               </div>
             </li>
           </ol>
-          <p style="color: var(--text-soft); font-size: 0.95rem;">Note: weekly deals are independent rotating promotions managed by Sticker Mule. They are separate from the referral credit — both apply independently.</p>
+          <p style="color: var(--text-soft); font-size: 0.95rem;">Note: weekly deals are independent rotating promotions managed by Sticker Mule. Do not assume that a weekly deal and referral credit can be combined without checking the current terms and cart.</p>
         </section>
 
         <section id="sticker-samples">
@@ -1143,6 +1110,7 @@
           <h2>My Experience With Sticker Mule</h2>
            <div class="review-box">
             <div class="trust-badge">✓ Based on documented personal use</div>
+            <p><strong>Tested by Cash Instinct:</strong> this guide is maintained from documented personal use, account checks, and official source review. See <a href="https://cashinstinct.ca/about/en/">About Cash Instinct</a> for the methodology and correction channel.</p>
             <p>I have been a Sticker Mule customer since <strong>2022</strong>. I placed my first orders that year and received my first referral credit in <strong>2023</strong> under the previous referral rewards program. When Sticker Mule replaced that system with its current commissions program, I enrolled officially and have continued to participate.</p>
             <p>The <a href="https://www.stickermule.com/cashinstinct" target="_blank" rel="noopener sponsored noreferrer">CASHINSTINCT store</a> currently has <strong>12 designs</strong> across dev/tech humour, Quebec expressions, and kawaii/cottagecore themes. This guide combines my orders, screenshots from my account, Sticker Mule’s official documentation, and independent checks.</p>
             <p><strong>Limits of this review:</strong> I have not tested every Sticker Mule product, destination, or supported currency. Statements about markets and products I have not personally used are attributed to Sticker Mule’s documentation rather than presented as firsthand experience.</p>
@@ -1382,7 +1350,7 @@
   ce n'est ni une erreur, ni un oubli de traduction, ni un souci hreflang.
   Google juge chaque page indépendamment — pas de miroir 1:1 requis.
   SEULE règle intra-page à garder : nb questions HTML = nb entrées mainEntity JSON-LD.
-  Audit : juillet 2026.
+  Audit: August 8, 2026.
 -->
          
   <span class="section-label">FAQ</span>
@@ -1420,7 +1388,7 @@
     <details>
       <summary id="faq-q5">Can I stack the referral credit with weekly deals?</summary>
       <div class="faq-body" role="region" aria-labelledby="faq-q5">
-        <p>Yes. The credit is tied to your account balance and applies to any qualifying order — including weekly flash deals and sample packs — as long as your cart total reaches the minimum of $30 USD ($38 CAD). Check <a href="https://www.stickermule.com/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/deals</a> for the current offer.</p>
+        <p>The referral credit and weekly deals are separate promotions. Whether they can be combined depends on the current offer and cart conditions, so check <a href="https://www.stickermule.com/deals" target="_blank" rel="noopener sponsored noreferrer">stickermule.com/deals</a> and confirm the final credit before paying.</p>
       </div>
     </details>
 
@@ -1468,7 +1436,7 @@
     <details>
       <summary id="faq-q11">Does this invitation expire?</summary>
       <div class="faq-body" role="region" aria-labelledby="faq-q11">
-        <p>No fixed expiry date is displayed in the current flow we monitor. The code remains dependent on Sticker Mule maintaining the referral and commissions program, so verify the confirmation shown during registration before placing an order.</p>
+        <p>No fixed expiry date is displayed for the invitation in the current flow we monitor. The credit itself is subject to Sticker Mule's conditions after it is issued; the <a href="https://www.stickermule.com/support/faq/miscellaneous/how-does-store-credit-work" target="_blank" rel="noopener noreferrer">official support page</a> currently says store credit expires 90 days after issue. Check the current terms before ordering.</p>
       </div>
     </details>
 
@@ -1516,7 +1484,7 @@
   <footer>
     <div class="container">
       <p>This website is an independent resource and is not officially affiliated with Sticker Mule. All trademarks belong to their respective owners.</p>
-      <p style="margin-top:6px;">Last updated: <time id="footer-date" datetime="2026-08-06">August&nbsp;6, 2026</time></p>
+      <p style="margin-top:6px;">Last updated: <time id="footer-date" datetime="2026-08-08">August&nbsp;8, 2026</time></p>
     </div>
     <div style="margin-top: 16px; font-size: 0.8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center;">
     <nav class="footer-links" aria-label="Liens du site">
