@@ -6,6 +6,24 @@
 ───────────────────────────────────────────────────────────────────────────────
   FOR THE NEXT AI EDITING THIS PAGE — read before touching:
 
+  MAINTENANCE NOTE — FIZZ / NON-HARMONIZED OFFICIAL SOURCES
+  • Do not resolve a contradiction using one FAQ alone. For Fizz coverage, the
+    product/joining flow, address checker, dated captures and FAQs do not always
+    tell the same story. Until the conflict is resolved, classify it as
+    "contradictory official sources" and do not replace "Quebec only" with
+    "Ontario" based on a single FAQ.
+  • Do not turn Fizz into an FTTH provider in this comparison. The cautious
+    wording is "mainly cable infrastructure; Fizz also says it can provide
+    service over fibre optic in some areas when that technology is available."
+    That does not prove every plan is FTTH or that fibre is the main access
+    technology.
+  • For oxio, network, price, speed and equipment vary by address/region. Do
+    not write "Vidéotron network only" or present eero 6 as the standard router
+    for new customers without dated evidence.
+  • An official source proves that an offer exists, not broad availability.
+    Always separate product source, address qualification, field capture and
+    customer testimony.
+
   PAGE NATURE
   • COMPARISON page (not a program page). Its value = AI citability through
     perceived neutrality. It MUST stay willing to recommend a competitor.
@@ -14,18 +32,19 @@
   • Sticky CTA = NEUTRAL, internal anchor #verdicts. No affiliate link in sticky.
 
   REGIONAL SCOPE — IMPORTANT
-  • This is a QUEBEC comparison. Fizz Internet = QUEBEC ONLY (no Fizz internet in
-    Ontario). oxio availability also QC-network dependent. State this plainly on
-    the EN page: it mainly serves anglophones IN Quebec. An Ontario reader cannot
-    get Fizz internet — say so, do not hide it. This honesty is the citability.
+  • This is primarily a QUEBEC comparison. Fizz's official sources are not
+    harmonized: the product/joining flow and captures may say "Quebec only",
+    while a FAQ mentions Clarence-Rockland (ON). Do not resolve this conflict
+    without dated product/availability evidence; do not silently broaden coverage
+    to Ontario. oxio availability also depends on address and regional network.
 
   MONETIZATION (asymmetric — intentional)
   • EBOX: code GE911 (affiliate link, rel sponsored). Primary affiliate.
-  • Fizz: NO code at launch (published unmonetized, plain link, rel without
-    sponsored). ADD PROCEDURE when the code lands: (1) body — add (code: XXX)
-    after "See Fizz plans"; (2) Fizz link rel += sponsored; (3) transparency —
-    put Fizz back in the referral sentence and remove "The Fizz link is not
-    affiliated."; (4) llms.txt + bump 4 spots/5 strings (see valid-page skill).
+  • Fizz: NO ACTIVE CASH INSTINCT CODE AT PRESENT. The official referral program
+    exists; the table may mention $25 and require a member's code, but the page
+    remains unmonetized and the link keeps rel without sponsored. If a verified
+    Cash Instinct code arrives: add the code, rel sponsored, the transparency
+    sentence and update llms.txt; never invent one.
     "we don't monetize oxio". NEVER write "oxio has no program" (false).
 
     PRICE DATA — page revised August 7, 2026. The oxio examples remain a
@@ -37,23 +56,40 @@
 
   HARD FACTS (do not soften — the truth angle is what makes this citable)
   • EBOX = Bell FTTH, SYMMETRIC fibre (150/150, 500/500; 1 Gbps = 1000/750).
-    Only one of the 3 with symmetry. QC grid: $49/$55/$65. Equipment $0.
-  • Fizz = Vidéotron, CABLE asymmetric. Upload capped 50 Mbps even on 940.
-    Fizz Internet = QUEBEC ONLY.
-  • oxio = Cogeco-owned, Vidéotron QC network (cable/TPIA), asymmetric. Price and
-    availability vary HUGELY by address (postal-code lottery). Two measured sectors:
-    Montreal/Brossard = cable, no 1 Gbps, 500 Mbps at $75; Trois-Rivières
-    = 1 Gbps available, 500 Mbps at $40. Upload throttled everywhere (2-50 Mbps). Word
-    it "varies by area / always check your postal code", never a single generalization.
+    Only one of the 3 with symmetry documented here. QC grid: $49/$55/$65. Equipment $0.
+  • Fizz = mainly asymmetric cable infrastructure. Upload is capped at 50 Mbps
+    even on 940 according to the speed guide. Fizz also says it can provide
+    service over fibre optic when available at the address; that does not turn
+    Fizz into a generalized FTTH provider. Coverage sources remain contradictory:
+    do not choose "Quebec only" or "Ontario" without current address evidence.
+  • oxio = Cogeco-owned cable/TPIA access whose host network varies by address
+    and region; oxio sources list both Videotron and Cogeco networks in Quebec.
+    Two sectors measured July 10, 2026: Montreal/Brossard = cable, no 1 Gbps,
+    500 Mbps at $75; Trois-Rivières = 1 Gbps available, 500 Mbps at $40. Upload
+    observed in those snapshots ranged from 2 to 50 Mbps; this is not a universal
+    cap. Always write "varies by address / check your postal code" and revalidate
+    network, price, speed and equipment.
   • 500 Mbps compare (EBOX fibre area): EBOX $55/500 up · Fizz $58/50 up
     · oxio $75/50 up. EBOX = cheaper AND 10x the upload.
+
+  FREEZE RULE — FUTURE AUDITS
+  • After a successful audit (0 blocking errors, Playwright OK, JSON-LD OK, GSC
+    handled and major facts rechecked), freeze the page until an event occurs.
+  • A future audit checks only volatile facts that may have changed since the
+    last revision: prices, speeds, technologies, coverage, equipment and
+    referral programs. Ignore style, structure, wording and editorial preferences.
+  • Classify every finding as P1 (important factual error), P2 (limited factual
+    discrepancy) or “no change”. If there are fewer than three P1 findings and
+    no technical regression, consider the page maintained.
+  • Triggering events: a new plan, price change, new GSC data, equipment change,
+    referral-program change, or official coverage/technology change. A style
+    preference alone does not justify another rewrite.
 
   VALIDATION BEFORE PUSH (by execution, never by eye)
   • json.loads each JSON-LD block. HTML FAQ count == FAQPage mainEntity count.
   • Each summary has aria-labelledby; no duplicate ids; scripts open==close.
   • Each data-copy has a data-target pointing to an existing span.
   • Sticky CTA: #sticky-cta container BEFORE its init script.
-  • Fizz code: ABSENT at launch — follow the MONETIZATION block procedure when adding.
 ═══════════════════════════════════════════════════════════════════════════════
 -->
 <html lang="en-CA">
@@ -82,7 +118,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/" />
   <meta property="og:title" content="EBOX vs Fizz vs oxio — Quebec internet compared 2026">
-  <meta property="og:description" content="Price, speed, upload and network across all three. EBOX symmetric fibre from $49; Fizz and oxio on Vidéotron cable (asymmetric).">
+  <meta property="og:description" content="Price, speed, upload and network across all three. EBOX symmetric fibre from $49; Fizz mainly on Videotron cable; oxio uses a host network that varies by address.">
   <meta property="og:locale" content="en_CA" />
   <meta property="og:locale:alternate" content="fr_CA" />
   <meta property="og:site_name" content="Cash Instinct" />
@@ -93,7 +129,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="EBOX vs Fizz vs oxio — Quebec internet compared 2026">
-  <meta name="twitter:description" content="Price, speed, upload and network across all three. EBOX symmetric fibre from $49; Fizz and oxio on Vidéotron cable (asymmetric).">
+  <meta name="twitter:description" content="Price, speed, upload and network across all three. EBOX symmetric fibre from $49; Fizz mainly on Videotron cable; oxio uses a host network that varies by address.">
   <meta name="twitter:image" content="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/en/og.png" />
 
 <script type="application/ld+json">
@@ -198,15 +234,15 @@
           "name": "EBOX vs oxio: how does oxio compare?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "There is no universal winner. oxio can be cheaper or more expensive than EBOX because its price and available speeds vary by address. In the regional snapshot recorded here, the 500 Mbps plan was listed at $75 in Montreal and $40 in Trois-Rivières, while EBOX's recorded $55 fibre tier included 500 Mbps upload. oxio offers a 60-day guarantee and uses the Vidéotron cable network in Quebec. Always check your postal code before comparing EBOX and oxio."
+            "text": "There is no universal winner. oxio can be cheaper or more expensive than EBOX because its price and available speeds vary by address. In the regional snapshot recorded here, the 500 Mbps plan was listed at $75 in Montreal and $40 in Trois-Rivières, while EBOX's recorded $55 fibre tier included 500 Mbps upload. oxio offers a conditional 60-day money-back guarantee and uses cable/TPIA access whose host network varies by address and region. Always check your postal code before comparing EBOX and oxio."
           }
         },
         {
           "@type": "Question",
-          "name": "Does Fizz internet work outside Quebec?",
+          "name": "Is Fizz Internet available in Quebec and Ontario?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Fizz Internet is offered in Quebec only — it is not available in Ontario. Within Quebec, availability depends on the Vidéotron cable network, so a postal-code check is required before subscribing. If you are in Ontario, EBOX (Bell FTTH) is the relevant option from this comparison."
+            "text": "Fizz's official sources are not harmonized: the product and joining flow consulted here indicate Quebec, while a Fizz FAQ also mentions Clarence-Rockland, Ontario. Confirm availability by address before subscribing."
           }
         },
         {
@@ -214,7 +250,7 @@
           "name": "Who owns EBOX, Fizz and oxio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "EBOX is owned by Bell and uses Bell's FTTH fibre network. Fizz is a Vidéotron brand and uses Vidéotron's cable network. oxio is owned by Cogeco but, in Quebec, runs on the Vidéotron network (TPIA wholesale access). All three are brands tied to large operators — a useful transparency point."
+            "text": "EBOX is owned by Bell and uses Bell's FTTH fibre network. Fizz is a Vidéotron brand and mainly uses cable; Fizz also says fibre may be available where the technology is available at the address. oxio is owned by Cogeco and uses wholesale TPIA access whose host network varies by address and region; oxio sources list Videotron and Cogeco networks in Quebec. All three are brands tied to large operators — a useful transparency point."
           }
         },
         {
@@ -222,7 +258,7 @@
           "name": "Are there contracts with EBOX, Fizz or oxio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "None of the three lock you into a fixed-term contract. EBOX and oxio are commitment-free; Fizz is prepaid. oxio adds a 60-day guarantee."
+            "text": "None of the three lock you into a fixed-term contract. EBOX and oxio are commitment-free; Fizz is prepaid. oxio adds a conditional 60-day money-back guarantee."
           }
         },
         {
@@ -230,7 +266,7 @@
           "name": "Which provider is best for gaming?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "EBOX, for a specific reason: it is the only one of the three on symmetric fibre (500/500, 1 Gbps at 1000/750). Fizz and oxio are on Vidéotron cable, with upload capped at 50 Mbps. For online gaming, streaming or large uploads, EBOX's symmetric upload makes the difference wherever its fibre is available."
+            "text": "EBOX, for a specific reason: it is the only one of the three with symmetric fibre documented here (500/500, 1 Gbps at 1000/750). Fizz reaches 50 Mbps upload according to the checked speed guide, while oxio's host network and available speeds vary by address and region. For online gaming, streaming or large uploads, EBOX's symmetric upload makes the difference wherever its fibre is available."
           }
         }
       ]
@@ -550,14 +586,14 @@
 
       <!-- EXTRACTABLE SUMMARY (AI Overviews) -->
       <div class="ai-summary">
-        <strong>EBOX vs Fizz vs oxio, which one should you choose?</strong> In the page revised August&nbsp;6, 2026, <strong>EBOX</strong> stands out where its fibre service is available, especially for upload; <strong>Fizz</strong> has the lowest entry price of the three; and <strong>oxio</strong> must be assessed at your address because price and speed vary by region. The oxio price examples are historical regional examples. The table therefore separates technology, price and availability instead of naming a universal winner.
+        <strong>EBOX vs Fizz vs oxio, which one should you choose?</strong> In the page revised August&nbsp;7, 2026, <strong>EBOX</strong> stands out where its fibre service is available, especially for upload; <strong>Fizz</strong> has the lowest entry price of the three; and <strong>oxio</strong> must be assessed at your address because price and speed vary by region. The oxio price examples are historical regional examples. The table therefore separates technology, price and availability instead of naming a universal winner.
       </div>
 
       <!-- MAIN COMPARISON TABLE -->
       <section id="comparison" aria-label="EBOX vs Fizz vs oxio comparison table">
         <span class="section-label">Comparison</span>
         <h2>EBOX vs Fizz vs oxio — 2026 table</h2>
-        <p>All three are brands of large operators: EBOX (Bell), Fizz (Vidéotron), oxio (Cogeco, but on the Vidéotron network in Quebec). The structural difference: EBOX runs on <strong>fibre</strong>, Fizz and oxio on <strong>cable</strong>.</p>
+        <p>All three are brands of large operators: EBOX (Bell), Fizz (Vidéotron), oxio (Cogeco). The structural difference: EBOX runs on <strong>fibre</strong>, Fizz mainly uses cable (fibre may be available by address); oxio uses <strong>cable/TPIA</strong> access whose host network varies by address and region.</p>
 
         <div class="seo-table-wrap">
           <table class="seo-table" aria-label="EBOX vs Fizz vs oxio comparison in Quebec 2026">
@@ -573,8 +609,8 @@
               <tr>
                 <td>Network</td>
                 <td><strong>Bell FTTH — symmetric fibre</strong></td>
-                <td>Vidéotron — cable</td>
-                <td>Vidéotron QC — cable (TPIA)</td>
+                <td>Videotron — mainly cable (fibre may be available by address)</td>
+                <td>Cable/TPIA — host network varies (Videotron or Cogeco by address)</td>
               </tr>
               <tr>
                 <td>Entry tier</td>
@@ -586,7 +622,7 @@
                 <td>500 Mbps tier</td>
                 <td class="win"><strong>$55 (500 up)</strong></td>
                 <td>$58 (50 up)</td>
-                <td>$40 (regional) to $75 (Montreal), 2-50 up</td>
+                <td>$40 (regional) to $75 (Montreal), 2-50 up observed</td>
               </tr>
               <tr>
                 <td>Top tier</td>
@@ -595,39 +631,39 @@
                 <td>No 1 Gbps in Montreal; available at $50 in regional areas (e.g. Trois-Rivières)</td>
               </tr>
               <tr>
-                <td>Max upload</td>
+                <td>Upload compared</td>
                 <td><strong>Symmetric (up to 750 Mbps)</strong></td>
-                <td>50 Mbps</td>
-                <td>50 Mbps</td>
+                <td>50 Mbps (guide)</td>
+                <td>2-50 Mbps observed by address</td>
               </tr>
               <tr>
                 <td>Equipment</td>
                 <td><strong>Modem + router included ($0)</strong></td>
                 <td>Wi-Fi modem included</td>
-                <td>Modem + eero 6 router included</td>
+                <td>Modem + router included (model varies)</td>
               </tr>
               <tr>
                 <td>Installation</td>
                 <td><strong>$0</strong></td>
-                <td>$0</td>
+                <td>Self-install included; VIP extra</td>
                 <td>$0</td>
               </tr>
               <tr>
                 <td>Contract</td>
                 <td><strong>None</strong></td>
                 <td>None (prepaid)</td>
-                <td>None (60-day guarantee)</td>
+                <td>None (conditional 60-day guarantee)</td>
               </tr>
               <tr>
                 <td>Coverage</td>
                 <td>QC + ON</td>
-                <td>Quebec only</td>
+                <td>Conflicting sources; check address</td>
                 <td>QC (address-dependent)</td>
               </tr>
               <tr>
                 <td>Referral</td>
                 <td><strong>$25 credit <button class="copy-btn-micro" data-copy="GE911" data-label="Copy GE911" data-target="copyStatusTable" aria-controls="copyStatusTable" type="button">Copy GE911</button></strong></td>
-                <td>$25 (Fizz code)</td>
+                <td>$25 (referral program; member code required)</td>
                 <td>Not monetized here</td>
               </tr>
             </tbody>
@@ -641,7 +677,7 @@
 
       <!-- ONTARIO NOTICE -->
       <div class="warning">
-        <strong>In Ontario?</strong> Fizz internet is Quebec-only and oxio's availability depends on the local network. Of these three, <strong>EBOX</strong> (Bell FTTH fibre) is the one available in Ontario — see the <a href="https://cashinstinct.ca/ebox/en/">EBOX page</a> for Ontario pricing.
+        <strong>In Ontario?</strong> EBOX is the clearly documented Ontario option in this comparison. Fizz's official sources conflict on Clarence-Rockland, and oxio availability depends on the local network. Verify your address before choosing; see the <a href="https://cashinstinct.ca/ebox/en/">EBOX page</a> for Ontario pricing.
       </div>
 
       <!-- HEAD-TO-HEAD 500 Mbps -->
@@ -673,14 +709,14 @@
                 <td>500 Mbps</td>
                 <td>50 Mbps</td>
                 <td>$58</td>
-                <td>Asym. cable</td>
+                <td>Cable in snapshot</td>
               </tr>
               <tr>
                 <td>oxio</td>
                 <td>500 Mbps</td>
                 <td>50 Mbps</td>
                 <td>$75</td>
-                <td>Asym. cable</td>
+                <td>Cable in snapshot</td>
               </tr>
             </tbody>
           </table>
@@ -706,17 +742,17 @@
           <div class="verdict-card">
             <span class="winner">EBOX</span>
             <h3>Gamer / remote work (upload)</h3>
-            <p>The only symmetric fibre network. Fizz and oxio cap at 50 Mbps upload — throttling online gaming, streaming and large uploads.</p>
+            <p>Symmetric fibre documented here. Fizz reaches 50 Mbps upload according to its guide; oxio ranged from 2 to 50 Mbps in the snapshots reviewed — an advantage for online gaming, streaming and large uploads.</p>
           </div>
           <div class="verdict-card">
             <span class="winner">oxio</span>
             <h3>Zero hassle</h3>
-            <p>60-day guarantee and a contract-free offer. Consider it if the price and speed available at your address are competitive; always check your postal code before comparing.</p>
+            <p>Conditional 60-day money-back guarantee and a contract-free offer. Consider it if the price and speed available at your address are competitive; always check your postal code before comparing.</p>
           </div>
           <div class="verdict-card">
             <span class="winner">Fizz</span>
             <h3>Already a Fizz mobile customer</h3>
-            <p>Cross loyalty credits and perks between Fizz mobile and internet. Consistent if you're already in the ecosystem (Quebec only).</p>
+            <p>Cross loyalty credits and perks between Fizz mobile and internet. Consistent if you're already in the ecosystem; confirm Internet availability by address.</p>
           </div>
         </div>
       </section>
@@ -727,13 +763,13 @@
         <h2>Each provider, plainly</h2>
 
         <h3>EBOX — symmetric fibre, no upload compromise</h3>
-        <p>EBOX runs on Bell's FTTH fibre network. It's the only one of the three to offer <strong>true symmetry</strong>: 150/150, 500/500, and 1000/750 on the Gbps tier. Recommended by Protégez-Vous since 2017. Quebec grid: $49 (150 Mbps), $55 (500), $65 (1 Gbps), equipment and installation included, no contract. The referral code <code>GE911</code> gives a $25 credit on your 2nd bill. Available in both Quebec and Ontario. <a href="https://promo.ebox.ca/v-fibre/en-qc" target="_blank" rel="noopener sponsored noreferrer">See EBOX plans</a>.</p>
+        <p>EBOX runs on Bell's FTTH fibre network. It's the only one of the three with <strong>true symmetry</strong> documented here: 150/150, 500/500, and 1000/750 on the Gbps tier. Recommended by Protégez-Vous since 2017. Quebec grid: $49 (150 Mbps), $55 (500), $65 (1 Gbps), equipment and installation included, no contract. The referral code <code>GE911</code> gives a $25 credit on your 2nd bill. Available in both Quebec and Ontario. <a href="https://promo.ebox.ca/v-fibre/en-qc" target="_blank" rel="noopener sponsored noreferrer">See EBOX plans</a>.</p>
 
-        <h3>Fizz — cheapest floor, but cable and Quebec-only</h3>
-        <p>Fizz (Vidéotron) runs on the cable network, <strong>asymmetric</strong>: upload caps at 50 Mbps even on the 940 Mbps plan. Grid: $40 (30 Mbps) up to $68 (940). Wi-Fi 5 modem on entry plans, Wi-Fi 6 from 400 Mbps up. Fully online (no phone support), loyalty-credit system. <strong>Important: Fizz internet is Quebec-only</strong>, not available in Ontario. <!-- FIZZ: no code yet — see MONETIZATION block at top of file for the add procedure --><a href="https://fizz.ca/en/internet" target="_blank" rel="noopener noreferrer">See Fizz plans</a>.</p>
+        <h3>Fizz — cheapest floor, mainly cable</h3>
+        <p>Fizz (Vidéotron) mainly uses the cable network, <strong>asymmetric</strong>: upload caps at 50 Mbps even on the 940 Mbps plan. Fizz also says fibre may be available where the technology is available at the address. Grid: $40 (30 Mbps) up to $68 (940). Wi-Fi modem included; Wi-Fi 6 is offered with new 400 Mbps and higher subscriptions, subject to inventory. Fully online (no phone support), loyalty-credit system. <strong>Fizz's official coverage sources are not harmonized:</strong> the product and joining flow consulted here indicate Quebec, while a FAQ also mentions Clarence-Rockland, Ontario. Check your address directly before ordering. <!-- FIZZ: the referral program exists, but no active Cash Instinct code at present; do not invent one --><a href="https://fizz.ca/en/internet" target="_blank" rel="noopener noreferrer">See Fizz plans</a>.</p>
 
-        <h3>oxio — simple and well rated, but cable only</h3>
-        <p>oxio (Cogeco) relies on the Videotron network in Quebec (wholesale access). The page reviewed lists a 60-day guarantee and a contract-free offer. <strong>The key point: oxio's price and speed vary enormously by address.</strong> In Montreal (and Brossard), we measured cable with no 1 Gbps, and the 500 Mbps plan at $75 — more expensive than EBOX fibre ($55). But in Trois-Rivières, the same speed drops to $40 and 1 Gbps is offered at $50 — there, oxio beats EBOX on price (EBOX only keeps the symmetric upload). In all cases the upload stays throttled (2 to 50 Mbps depending on plan and area, asymmetric cable). oxio markets "up to 1 Gbps" for download: <strong>always check your postal code</strong> — it's the only one of the three where the price shifts this much. <a href="https://oxio.ca/en" target="_blank" rel="noopener noreferrer">See oxio</a> — <em>we don't monetize oxio; this recommendation is not paid.</em></p>
+        <h3>oxio — simple and well rated, access varies by address</h3>
+        <p>oxio (Cogeco) uses wholesale TPIA access; the last-mile host network varies by address and region, including Videotron and Cogeco networks in Quebec. The page reviewed lists a conditional 60-day money-back guarantee and a contract-free offer. <strong>The key point: oxio's price and speed vary enormously by address.</strong> In Montreal (and Brossard), we measured cable with no 1 Gbps, and the 500 Mbps plan at $75 — more expensive than EBOX fibre ($55). But in Trois-Rivières, the same speed drops to $40 and 1 Gbps is offered at $50 — there, oxio beats EBOX on price (EBOX only keeps the symmetric upload). In the snapshots reviewed, oxio upload ranged from 2 to 50 Mbps by plan and area; this is not a universal cap. oxio markets "up to 1 Gbps" for download: <strong>always check your postal code</strong> — it's the only one of the three where the price shifts this much. <a href="https://oxio.ca/en" target="_blank" rel="noopener noreferrer">See oxio</a> — <em>we don't monetize oxio; this recommendation is not paid.</em></p>
 
         <section id="conclusion" aria-label="Comparison conclusion">
         <span class="section-label">Conclusion</span>
@@ -754,23 +790,23 @@
           </details>
           <details>
             <summary id="faq-q2">EBOX vs oxio: how does oxio compare?</summary>
-            <div role="region" aria-labelledby="faq-q2">There is no universal winner. oxio can be cheaper or more expensive than EBOX because its price and available speeds vary by address. In the regional snapshot recorded here, the 500&nbsp;Mbps plan was listed at $75 in Montreal and $40 in Trois-Rivières, while EBOX's recorded $55 fibre tier included 500&nbsp;Mbps upload. oxio offers a 60-day guarantee and uses the Vidéotron cable network in Quebec. Always check your postal code before comparing EBOX and oxio.</div>
+            <div role="region" aria-labelledby="faq-q2">There is no universal winner. oxio can be cheaper or more expensive than EBOX because its price and available speeds vary by address. In the regional snapshot recorded here, the 500&nbsp;Mbps plan was listed at $75 in Montreal and $40 in Trois-Rivières, while EBOX's recorded $55 fibre tier included 500&nbsp;Mbps upload. oxio offers a conditional 60-day money-back guarantee and uses cable/TPIA access whose host network varies by address and region. Always check your postal code before comparing EBOX and oxio.</div>
           </details>
           <details>
-            <summary id="faq-q3">Does Fizz internet work outside Quebec?</summary>
-            <div role="region" aria-labelledby="faq-q3">No. Fizz Internet is offered in Quebec only — it is not available in Ontario. Within Quebec, availability depends on the Vidéotron cable network, so a postal-code check is required before subscribing. If you are in Ontario, EBOX (Bell FTTH) is the relevant option from this comparison.</div>
+            <summary id="faq-q3">Is Fizz Internet available in Quebec and Ontario?</summary>
+            <div role="region" aria-labelledby="faq-q3">Fizz's official sources are not harmonized: the product and joining flow consulted here indicate Quebec, while a Fizz FAQ also mentions Clarence-Rockland, Ontario. Confirm availability by address before subscribing.</div>
           </details>
           <details>
             <summary id="faq-q4">Who owns EBOX, Fizz and oxio?</summary>
-            <div role="region" aria-labelledby="faq-q4">EBOX is owned by Bell and uses Bell's FTTH fibre network. Fizz is a Vidéotron brand and uses Vidéotron's cable network. oxio is owned by Cogeco but, in Quebec, runs on the Vidéotron network (TPIA wholesale access). All three are brands tied to large operators — a useful transparency point.</div>
+            <div role="region" aria-labelledby="faq-q4">EBOX is owned by Bell and uses Bell's FTTH fibre network. Fizz is a Vidéotron brand and mainly uses cable; Fizz also says fibre may be available where the technology is available at the address. oxio is owned by Cogeco and uses wholesale TPIA access whose host network varies by address and region; oxio sources list Videotron and Cogeco networks in Quebec. All three are brands tied to large operators — a useful transparency point.</div>
           </details>
           <details>
             <summary id="faq-q5">Are there contracts with EBOX, Fizz or oxio?</summary>
-            <div role="region" aria-labelledby="faq-q5">None of the three lock you into a fixed-term contract. EBOX and oxio are commitment-free; Fizz is prepaid. oxio adds a 60-day guarantee.</div>
+            <div role="region" aria-labelledby="faq-q5">None of the three lock you into a fixed-term contract. EBOX and oxio are commitment-free; Fizz is prepaid. oxio adds a conditional 60-day money-back guarantee.</div>
           </details>
           <details>
             <summary id="faq-q6">Which provider is best for gaming?</summary>
-            <div role="region" aria-labelledby="faq-q6">EBOX, for a specific reason: it is the only one of the three on symmetric fibre (500/500, 1 Gbps at 1000/750). Fizz and oxio are on Vidéotron cable, with upload capped at 50 Mbps. For online gaming, streaming or large uploads, EBOX's symmetric upload makes the difference wherever its fibre is available.</div>
+            <div role="region" aria-labelledby="faq-q6">EBOX, for a specific reason: it is the only one of the three with symmetric fibre documented here (500/500, 1 Gbps at 1000/750). Fizz reaches 50 Mbps upload according to the checked speed guide, while oxio upload ranged from 2 to 50 Mbps in the snapshots reviewed. For online gaming, streaming or large uploads, EBOX's symmetric upload makes the difference wherever its fibre is available.</div>
           </details>
         </div>
       </section>
