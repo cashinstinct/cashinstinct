@@ -132,6 +132,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/en/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
       <url>
     <loc>https://cashinstinct.ca/valeur-points/fr/</loc>
     <lastmod>2026-08-06</lastmod>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  CASHINSTINCT.CA — FTTH vs HFC vs FTTN — PAGE FR   état : GUIDE EVERGREEN
+  Création : 7 août 2026
+───────────────────────────────────────────────────────────────────────────────
+  POUR LA PROCHAINE IA QUI ÉDITE CETTE PAGE — lire avant de toucher :
+
+  NATURE DE LA PAGE
+  • Guide pédagogique neutre sur les technologies d'accès fixes au Canada.
+    Aucun prix, forfait, code de parrainage ou fournisseur à promouvoir.
+  • La question centrale est le dernier segment qui entre réellement chez le
+    client : FTTH = fibre jusqu'au domicile; HFC = fibre jusqu'au nœud puis
+    coaxial; FTTN = fibre jusqu'au nœud puis généralement cuivre/DSL.
+  • Les termes ne sont pas parfaitement uniformes. Le CRTC peut aussi employer
+    FTTN dans certains contextes d'accès de gros par câble, souvent décrits comme
+    HFC. Dans le texte visible, garder HFC pour fibre + coaxial et FTTN pour
+    fibre + cuivre/DSL afin de rendre la comparaison compréhensible.
+  • Ne jamais écrire que FTTH garantit toujours le meilleur ping, le meilleur
+    Wi-Fi ou la meilleure expérience. Distinguer technologie d'accès, réseau du
+    FSI, congestion, installation, équipement et réseau domestique.
+  • FTTH peut faciliter un téléversement élevé ou symétrique, mais le profil du
+    forfait reste une décision du fournisseur. HFC peut être très performant et
+    suffire largement; FTTN peut convenir si le dernier segment est court et en
+    bon état.
+
+  RÈGLE DE GEL — AUDIT FUTUR
+  • Vérifier seulement les définitions techniques, les liens de référence et
+    les éventuelles évolutions majeures de technologie. Ignorer les préférences
+    de style et ne pas ajouter de contenu commercial.
+  • Classer chaque constat P1, P2 ou « aucune modification ». Sans erreur
+    factuelle importante, la page reste gelée.
+
+  VALIDATION AVANT PUSH
+  • JSON-LD valide; FAQ HTML == FAQ JSON-LD; IDs/ARIA uniques; ancres et liens
+    internes fonctionnels; lang=fr-CA; dateModified et date visible statiques.
+═══════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#bf2222" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f131a" />
+
+  <title>FTTH vs HFC vs FTTN : quelles différences entre fibre, câble et DSL ?</title>
+  <meta name="description" content="Comprendre FTTH, HFC et FTTN : différences entre fibre, câble et fibre jusqu’au nœud, upload, ping, Wi-Fi et choix selon l’usage." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Cash Instinct" />
+
+  <link rel="canonical" href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  <link rel="alternate" hreflang="fr-CA" href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/" />
+  <link rel="alternate" hreflang="fr" href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/" />
+  <link rel="alternate" hreflang="en-CA" href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/en/" />
+  <link rel="alternate" hreflang="en" href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/" />
+  <meta property="og:title" content="FTTH vs HFC vs FTTN : quelles différences entre fibre, câble et DSL ?" />
+  <meta property="og:description" content="Un guide neutre pour comprendre la fibre jusqu’au domicile, le câble HFC, le FTTN, l’upload, le ping et le rôle du Wi-Fi." />
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:locale:alternate" content="en_CA" />
+  <meta property="og:site_name" content="Cash Instinct" />
+  <meta property="og:image" content="https://cashinstinct.ca/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FTTH vs HFC vs FTTN : quelles différences entre fibre, câble et DSL ?" />
+  <meta name="twitter:description" content="Comprendre les différences entre FTTH, HFC et FTTN sans réduire la performance au seul mot fibre." />
+  <meta name="twitter:image" content="https://cashinstinct.ca/og.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://cashinstinct.ca/#website",
+        "url": "https://cashinstinct.ca/",
+        "name": "Cash Instinct"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/",
+        "url": "https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/",
+        "name": "FTTH vs HFC vs FTTN : quelles différences entre fibre, câble et DSL ?",
+        "description": "Guide neutre sur les différences entre FTTH, HFC et FTTN, le téléversement, la latence, le Wi-Fi et les usages concernés.",
+        "inLanguage": "fr-CA",
+        "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
+        "datePublished": "2026-08-07",
+        "dateModified": "2026-08-07",
+        "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
+        "publisher": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cashinstinct.ca/" },
+          { "@type": "ListItem", "position": 2, "name": "Internet", "item": "https://cashinstinct.ca/#internet" },
+          { "@type": "ListItem", "position": 3, "name": "Technologies d'accès", "item": "https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/" }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/#article",
+        "headline": "FTTH vs HFC vs FTTN : quelles différences entre fibre, câble et DSL ?",
+        "description": "Guide neutre sur les différences entre FTTH, HFC et FTTN, le téléversement, la latence, le Wi-Fi et les usages concernés.",
+        "inLanguage": "fr-CA",
+        "datePublished": "2026-08-07",
+        "dateModified": "2026-08-07",
+        "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
+        "publisher": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
+        "mainEntityOfPage": { "@id": "https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Quelle est la différence entre FTTH, HFC et FTTN ?", "acceptedAnswer": { "@type": "Answer", "text": "La FTTH amène la fibre jusqu'au domicile. Le HFC amène la fibre jusqu'à un nœud optique puis utilise du câble coaxial jusqu'au modem. Le FTTN amène la fibre jusqu'à un nœud puis utilise généralement du cuivre ou du DSL sur le dernier segment. La technologie n'est qu'un élément de la performance finale." } },
+          { "@type": "Question", "name": "Pourquoi deux forfaits de 500 Mbit/s peuvent-ils être différents ?", "acceptedAnswer": { "@type": "Answer", "text": "Le 500 Mbit/s décrit surtout le téléchargement. Les forfaits peuvent avoir des téléversements différents, utiliser des technologies différentes et être touchés différemment par la capacité du réseau, la congestion, le modem, l'installation et le Wi-Fi du domicile." } },
+          { "@type": "Question", "name": "Pourquoi l'upload est-il souvent plus élevé en FTTH ?", "acceptedAnswer": { "@type": "Answer", "text": "La fibre jusqu'au domicile offre une grande capacité dans les deux directions, ce qui facilite des profils à téléversement élevé ou symétrique. Le fournisseur choisit tout de même le profil du forfait. Les réseaux HFC modernes peuvent aussi augmenter leur capacité montante, tandis que le FTTN dépend davantage du cuivre et de la distance." } },
+          { "@type": "Question", "name": "Le ping dépend-il uniquement de la technologie ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. La distance jusqu'au serveur, le routage du fournisseur, la congestion, la latence sous charge, le modem, le Wi-Fi et le réseau domestique comptent aussi. La FTTH ne garantit donc pas à elle seule un meilleur ping, et un HFC bien exploité peut être très réactif." } },
+          { "@type": "Question", "name": "Le Wi-Fi est-il lié au type de réseau ?", "acceptedAnswer": { "@type": "Answer", "text": "Pas directement. FTTH, HFC et FTTN décrivent l'accès entre le fournisseur et le domicile. Le Wi-Fi est le réseau local entre le modem-routeur et les appareils. Le placement du routeur, les interférences, la norme Wi-Fi et les appareils peuvent limiter le résultat." } },
+          { "@type": "Question", "name": "Quand le HFC est-il largement suffisant ?", "acceptedAnswer": { "@type": "Answer", "text": "Le HFC convient souvent à la navigation, au streaming, aux appels vidéo, au télétravail et au jeu en ligne lorsque le forfait, l'upload et la qualité du réseau sont adaptés au foyer. La fibre devient surtout intéressante quand le téléversement élevé, la capacité montante ou plusieurs usages simultanés sont importants." } },
+          { "@type": "Question", "name": "Le FTTN est-il toujours un mauvais choix ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Le FTTN peut rester suffisant si la distance jusqu'au nœud et l'état du dernier segment permettent le service dont le foyer a besoin. Il offre généralement moins de marge que la fibre jusqu'au domicile, mais le bon choix dépend de l'adresse et de l'usage réel." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root { --bg:#fff; --surface:#fff; --surface-soft:#f8fafc; --surface-muted:#f1f5f9; --text:#0f172a; --text-soft:#334155; --muted:#64748b; --border:#e2e8f0; --border-soft:#cbd5e1; --accent:#bf2222; --warning-bg:#fffbeb; --warning-text:#92400e; --warning-border:#f59e0b; }
+    [data-theme="dark"] { --bg:#0f131a; --surface:#161c24; --surface-soft:#1b2430; --surface-muted:#1a2029; --text:#f4f7fb; --text-soft:#d5dbe5; --muted:#aeb7c4; --border:#2a3442; --border-soft:#2f3b4d; --accent:#ef4444; --warning-bg:#2a2111; --warning-text:#ffd98f; --warning-border:#f59e0b; }
+    [data-theme="dark"] main p a, [data-theme="dark"] main li a { color:#f87171; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; font-size:18px; line-height:1.65; color:var(--text); background:var(--bg); }
+    a { color:var(--accent); text-decoration:none; font-weight:600; } a:hover { text-decoration:underline; }
+    h2 { font-size:clamp(1.4rem,3vw,1.9rem); font-weight:800; line-height:1.25; margin-bottom:14px; }
+    h3 { font-size:1.2rem; font-weight:800; margin-bottom:8px; }
+    main p { margin-bottom:16px; color:var(--text-soft); } main ul, main ol { margin:16px 0 16px 24px; color:var(--text-soft); } main li { margin-bottom:8px; }
+    .container { max-width:1100px; margin:0 auto; padding:0 20px; } main { padding:42px 0 52px; } section { margin-bottom:56px; } section[id] { scroll-margin-top:72px; }
+    .topbar { background:var(--surface); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; backdrop-filter:blur(10px); }
+    .topbar-inner { max-width:1100px; margin:0 auto; padding:10px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px; }
+    .brand { font-size:.95rem; font-weight:800; color:var(--text); letter-spacing:-.02em; text-decoration:none; }
+    .nav { display:flex; gap:12px; flex-wrap:nowrap; align-items:center; overflow-x:auto; scrollbar-width:none; } .nav::-webkit-scrollbar { display:none; }
+    .nav a { color:var(--muted); font-size:.95rem; font-weight:600; text-decoration:none; white-space:nowrap; } .nav a:hover { color:var(--accent); }
+    .nav a.lang-link { font-size:.85rem; padding:3px 8px; border:1px solid var(--border-soft); border-radius:4px; }
+    .theme-btn { background:var(--surface-muted); border:1px solid var(--border); color:var(--text); cursor:pointer; font-size:1rem; padding:6px 12px; border-radius:6px; } .theme-btn:hover { background:var(--border-soft); }
+    .breadcrumb { font-size:.82rem; color:var(--muted); margin-top:16px; margin-bottom:16px; } .breadcrumb a { color:var(--muted); font-weight:500; } .breadcrumb span { margin:0 6px; }
+    header.hero { background:linear-gradient(135deg,var(--accent) 0%,#7a1d1a 100%); color:#fff; padding:64px 20px; text-align:center; }
+    header.hero h1 { font-size:clamp(1.8rem,4.5vw,2.6rem); font-weight:900; line-height:1.2; margin-bottom:16px; } header.hero p { font-size:1.15rem; opacity:.95; max-width:760px; margin:0 auto 8px; color:#fff; }
+    footer { border-top:1px solid var(--border); padding:28px 20px; text-align:center; font-size:.85rem; color:var(--muted); background:var(--bg); }
+    .section-label { display:inline-block; text-transform:uppercase; font-size:.75rem; font-weight:700; letter-spacing:.12em; color:#962521; background:rgba(176,49,45,.08); padding:4px 12px; border-radius:12px; margin-bottom:12px; } [data-theme="dark"] .section-label { color:#ef4444; background:rgba(239,68,68,.15); }
+    .ai-summary { background:var(--surface-soft); border:1px solid var(--border); border-left:4px solid var(--accent); padding:20px; border-radius:8px; margin-bottom:32px; font-size:1.05rem; line-height:1.6; } .ai-summary strong { font-weight:800; }
+    .technology-grid, .usage-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px; }
+    .guide-card { background:var(--surface-soft); border:1px solid var(--border); border-radius:12px; padding:20px; } .guide-card h3 { color:var(--text); } .guide-card p, .guide-card ul { font-size:.96rem; margin-bottom:0; } .guide-card ul { margin-top:12px; }
+    .callout { background:var(--warning-bg); border-left:4px solid var(--warning-border); padding:18px 24px; font-size:1rem; color:var(--warning-text); margin:28px 0; border-radius:0 6px 6px 0; }
+    .comparison-table-wrap { overflow-x:auto; margin:16px 0; border:1px solid var(--border); border-radius:8px; } .comparison-table { width:100%; min-width:680px; border-collapse:collapse; font-size:.98rem; background:var(--surface); } .comparison-table th, .comparison-table td { border-bottom:1px solid var(--border); padding:14px 16px; text-align:left; vertical-align:top; } .comparison-table th { background:var(--surface-muted); font-weight:700; } .comparison-table tr:last-child td { border-bottom:0; } .comparison-table td:first-child { font-weight:700; color:var(--text); white-space:nowrap; }
+    .steps { counter-reset:guide-step; list-style:none; margin-left:0; } .steps li { counter-increment:guide-step; position:relative; padding-left:44px; margin-bottom:18px; } .steps li::before { content:counter(guide-step); position:absolute; left:0; top:0; width:30px; height:30px; border-radius:50%; background:var(--accent); color:#fff; font-weight:800; text-align:center; line-height:30px; }
+    .faq details { border:1px solid var(--border); border-radius:8px; margin-bottom:12px; background:var(--surface-soft); } .faq summary { cursor:pointer; padding:16px 20px; font-weight:700; color:var(--text); font-size:1.05rem; list-style:none; } .faq summary::-webkit-details-marker { display:none; } .faq summary::after { content:"+"; float:right; font-size:1.3rem; color:var(--accent); line-height:1; } .faq details[open] summary::after { content:"−"; } .faq details > div { padding:0 20px 18px; color:var(--text-soft); font-size:1rem; }
+    .source-list { margin-bottom:0; } .transparency { background:var(--surface-soft); border:1px solid var(--border); border-radius:8px; padding:20px 24px; font-size:.92rem; color:var(--text-soft); } .transparency strong { color:var(--text); }
+    @media (max-width:640px) { body { font-size:17px; } .container { padding:0 16px; } header.hero { padding:48px 16px; } .comparison-table { min-width:0; font-size:.9rem; } .comparison-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); } .comparison-table, .comparison-table tbody, .comparison-table tr, .comparison-table td { display:block; width:100%; } .comparison-table tr { border-bottom:1px solid var(--border); padding:8px 0; } .comparison-table tr:last-child { border-bottom:0; } .comparison-table td { display:grid; grid-template-columns:36% 64%; gap:8px; border-bottom:0; padding:7px 10px; } .comparison-table td::before { content:attr(data-label); color:var(--muted); font-size:.76rem; font-weight:800; text-transform:uppercase; } .comparison-table td:first-child { display:block; background:var(--surface-muted); white-space:normal; } .comparison-table td:first-child::before { display:none; } }
+  </style>
+  <script>
+    try { var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); }
+    catch(e) { document.documentElement.setAttribute('data-theme', 'light'); }
+  </script>
+</head>
+<body>
+  <a href="#main-content" style="position:absolute;left:-9999px;top:4px;z-index:9999;padding:8px 16px;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Passer au contenu principal</a>
+  <nav class="topbar" aria-label="Navigation principale"><div class="topbar-inner">
+    <a class="brand" href="https://cashinstinct.ca/">Cash Instinct</a><div class="nav">
+      <a href="https://cashinstinct.ca/ebox/fr/" aria-label="EBOX">EBOX</a><a href="https://cashinstinct.ca/stickermule/fr/" aria-label="Sticker Mule">Sticker&nbsp;Mule</a><a href="https://cashinstinct.ca/tangerine/fr/" aria-label="Banque Tangerine">Tangerine</a><a href="https://cashinstinct.ca/hp-instant-ink/fr/" aria-label="HP Instant Ink">HP&nbsp;Ink</a><a class="lang-link" href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/en/" hreflang="en" lang="en" aria-label="Voir ce guide en anglais">English&nbsp;↗</a><button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
+    </div>
+  </div></nav>
+  <header class="hero"><h1>FTTH vs HFC vs FTTN&nbsp;: quelles différences entre fibre, câble et DSL&nbsp;?</h1><p>Comprendre ce qui relie réellement votre domicile au réseau, pourquoi l’upload varie et ce que le Wi-Fi ou le ping ont à voir — ou non — avec cette technologie.</p></header>
+  <main id="main-content"><div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true">›</span><a href="https://cashinstinct.ca/#internet">Internet</a><span aria-hidden="true">›</span>Technologies d'accès</nav>
+    <div class="ai-summary"><strong>FTTH, HFC ou FTTN&nbsp;: quelle différence&nbsp;?</strong> La FTTH amène la fibre jusqu’au domicile; le HFC combine fibre jusqu’à un nœud optique et câble coaxial jusqu’au modem; le FTTN arrête la fibre au nœud et utilise généralement du cuivre ou du DSL sur le dernier segment. La FTTH facilite souvent un téléversement élevé ou symétrique, mais le ping, le Wi-Fi et la qualité réelle dépendent aussi du fournisseur, de la congestion, de l’installation et de l’équipement.</div>
+
+    <section id="difference" aria-label="Différence entre FTTH HFC et FTTN"><span class="section-label">En bref</span><h2>La différence tient au dernier segment</h2><p>Le mot «&nbsp;fibre&nbsp;» ne dit pas toujours où la fibre s’arrête. Pour comparer deux accès Internet, il faut regarder le chemin entre le réseau du fournisseur et le modem du domicile, puis distinguer ce chemin du réseau Wi-Fi à l’intérieur de la maison.</p><div class="technology-grid">
+      <article class="guide-card"><h3>FTTH — fibre jusqu’au domicile</h3><p>La fibre optique se rend jusqu’au domicile ou au terminal optique qui alimente le modem.</p><ul><li>Grande capacité dans les deux directions.</li><li>Facilite les forfaits à upload élevé ou symétrique.</li><li>Le profil vendu, le réseau et le Wi-Fi comptent toujours.</li></ul></article>
+      <article class="guide-card"><h3>HFC — fibre et câble coaxial</h3><p>La fibre relie le centre du réseau à un nœud optique; le coaxial relie ensuite ce nœud au modem.</p><ul><li>Peut offrir d’excellents débits descendants.</li><li>La capacité du segment coaxial est partagée entre plusieurs foyers.</li><li>L’upload et la latence sous charge dépendent du réseau et du profil.</li></ul></article>
+      <article class="guide-card"><h3>FTTN — fibre jusqu’au nœud</h3><p>La fibre s’arrête dans le voisinage; le dernier trajet utilise généralement du cuivre et une technologie DSL.</p><ul><li>La distance et l’état du cuivre ont une influence importante.</li><li>Peut rester suffisant pour des usages modérés.</li><li>Offre généralement moins de marge que la fibre jusqu’au domicile.</li></ul></article>
+    </div><div class="callout"><strong>Nuance de vocabulaire&nbsp;:</strong> dans certains documents réglementaires canadiens, FTTN peut aussi désigner des installations de câble jusqu’au nœud, généralement décrites ailleurs comme HFC. Dans ce guide, HFC désigne volontairement fibre + coaxial, et FTTN fibre + cuivre/DSL, pour éviter de mélanger les deux cas.</div></section>
+
+    <section id="comparaison" aria-label="Comparaison rapide des technologies"><span class="section-label">Comparaison</span><h2>FTTH, HFC et FTTN en un coup d’œil</h2><div class="comparison-table-wrap"><table class="comparison-table"><thead><tr><th>Technologie</th><th>Dernier segment</th><th>Avantage fréquent</th><th>Point à vérifier</th></tr></thead><tbody>
+      <tr><td>FTTH</td><td data-label="Dernier segment">Fibre jusqu’au domicile</td><td data-label="Avantage fréquent">Upload élevé, capacité et marge d’évolution</td><td data-label="Point à vérifier">Le forfait est-il réellement symétrique&nbsp;?</td></tr>
+      <tr><td>HFC</td><td data-label="Dernier segment">Coaxial entre le nœud et le modem</td><td data-label="Avantage fréquent">Débit descendant élevé et réseau largement déployé</td><td data-label="Point à vérifier">Upload, capacité partagée et performance aux heures de pointe</td></tr>
+      <tr><td>FTTN</td><td data-label="Dernier segment">Cuivre/DSL entre le nœud et le domicile</td><td data-label="Avantage fréquent">Accès possible sans remplacer tout le dernier segment</td><td data-label="Point à vérifier">Distance, qualité de ligne et vitesses réellement admissibles</td></tr>
+    </tbody></table></div></section>
+
+    <section id="speed-500" aria-label="Pourquoi deux forfaits 500 Mbit/s diffèrent"><span class="section-label">Débits</span><h2>Pourquoi deux forfaits de 500&nbsp;Mbit/s peuvent-ils se comporter différemment&nbsp;?</h2><p>Le chiffre de 500&nbsp;Mbit/s décrit généralement le téléchargement maximal annoncé. Il ne décrit pas à lui seul le téléversement, la latence, la stabilité ni la capacité du réseau lorsque plusieurs voisins utilisent leur connexion en même temps.</p><ul><li><strong>Le rapport download/upload&nbsp;:</strong> un forfait 500/500 n’a pas le même profil qu’un 500/50 pour les sauvegardes, les fichiers lourds ou plusieurs appels vidéo.</li><li><strong>La technologie d’accès&nbsp;:</strong> FTTH, HFC et FTTN n’ont pas le même dernier segment ni les mêmes contraintes de capacité.</li><li><strong>Le réseau du fournisseur&nbsp;:</strong> le transport, le dimensionnement, le routage et la gestion de la congestion influencent l’expérience.</li><li><strong>L’installation et l’équipement&nbsp;:</strong> modem, routeur, câblage, ordinateur, serveur distant et Wi-Fi peuvent limiter le résultat avant la ligne elle-même.</li></ul><p>La bonne comparaison commence donc par les deux vitesses annoncées, puis vérifie ce qui se passe à l’adresse et dans le réseau domestique. Le même chiffre de téléchargement ne rend pas automatiquement deux accès équivalents.</p></section>
+
+    <section id="upload" aria-label="Téléversement et fibre"><span class="section-label">Téléversement</span><h2>Pourquoi l’upload est-il souvent plus élevé en FTTH&nbsp;?</h2><p>Une fibre jusqu’au domicile offre une grande capacité de transmission dans les deux directions. Le fournisseur peut donc plus facilement proposer un upload élevé ou symétrique, c’est-à-dire un téléversement proche du téléchargement.</p><p>Ce n’est toutefois pas une loi commerciale. Le fournisseur peut vendre un forfait FTTH asymétrique, et les réseaux HFC modernes peuvent améliorer leur voie montante. Historiquement, la portion coaxiale, le spectre réservé à l’amont et la capacité partagée ont souvent limité l’upload davantage que la fibre jusqu’au domicile.</p><p>Le FTTN dépend encore plus du dernier segment cuivre&nbsp;: la distance au nœud, la qualité de la ligne et les conditions locales peuvent réduire les vitesses montantes. C’est pourquoi il faut lire le profil complet du forfait au lieu de déduire l’upload du seul mot «&nbsp;fibre&nbsp;».</p></section>
+
+    <section id="ping-wifi" aria-label="Ping et Wi-Fi"><span class="section-label">Performance réelle</span><h2>Le ping et le Wi-Fi ne se résument pas au type de réseau</h2><div class="usage-grid"><article class="guide-card"><h3>Le ping</h3><p>La latence dépend notamment de la distance au serveur, du routage, de la congestion, de la file d’attente sous charge, du modem et du Wi-Fi. La FTTH peut retirer certaines contraintes d’accès, mais elle ne garantit pas le chemin le plus court ni le meilleur ping vers chaque service.</p></article><article class="guide-card"><h3>Le Wi-Fi</h3><p>Le Wi-Fi est le réseau local entre le routeur et vos appareils. La position du routeur, les murs, les interférences, la norme Wi-Fi, le nombre d’appareils et la qualité du terminal peuvent modifier le résultat, quelle que soit la technologie qui arrive au modem.</p></article></div><div class="callout"><strong>Pour comparer proprement&nbsp;:</strong> faites au moins un test filaire au modem-routeur lorsque c’est possible. Un résultat Wi-Fi mesure la ligne et votre réseau local en même temps; il ne permet pas toujours d’identifier la cause d’une limite.</div></section>
+
+    <section id="usages" aria-label="Quand la différence est perceptible"><span class="section-label">Choix pratique</span><h2>Quand la différence devient-elle réellement perceptible&nbsp;?</h2><div class="usage-grid"><article class="guide-card"><h3>HFC suffit souvent si…</h3><p>Le foyer navigue, regarde des vidéos, participe à des appels et joue en ligne avec un réseau stable, un upload adapté et une capacité suffisante aux heures chargées.</p></article><article class="guide-card"><h3>FTTH devient un avantage si…</h3><p>Plusieurs personnes téléversent des fichiers, font des sauvegardes cloud, diffusent en direct, travaillent avec de gros volumes ou utilisent souvent la connexion montante en même temps.</p></article><article class="guide-card"><h3>FTTN peut convenir si…</h3><p>Les usages sont modérés et la ligne locale fournit une vitesse stable. Il faut surtout vérifier l’adresse, la distance au nœud, l’upload et les résultats réels avant de conclure.</p></article></div></section>
+
+    <section id="voir-aussi" aria-label="Comparatifs associés"><span class="section-label">Voir aussi</span><h2>Appliquer ces distinctions aux comparatifs</h2><p>Le guide aide à lire les différences de fibre, de câble, d’upload et de réseau dans nos comparatifs sans transformer une technologie en promesse universelle&nbsp;:</p><ul><li><a href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/">EBOX vs Bell vs Vidéotron</a>&nbsp;: comparer la fibre FTTH de Bell/EBOX avec le HFC ou la fibre offerte selon l’adresse chez Vidéotron.</li><li><a href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/">EBOX vs Fizz vs oxio</a>&nbsp;: comprendre pourquoi l’upload et le réseau hôte ne se déduisent pas seulement du débit descendant.</li></ul></section>
+
+    <section id="checklist" aria-label="Comment comparer deux accès Internet"><span class="section-label">Méthode</span><h2>Comment comparer deux forfaits Internet sans se faire piéger</h2><ol class="steps"><li><strong>Confirmer la technologie à l’adresse.</strong> «&nbsp;Fibre&nbsp;» peut désigner le réseau général; vérifiez si la fibre se rend réellement au domicile.</li><li><strong>Comparer download et upload.</strong> Notez les deux valeurs, surtout si vous envoyez des fichiers, utilisez le cloud ou faites plusieurs appels vidéo.</li><li><strong>Demander ce qui est inclus.</strong> Modem, routeur, installation et câblage font partie de l’expérience, mais ne sont pas la technologie d’accès elle-même.</li><li><strong>Regarder la performance sous charge.</strong> Une ligne peut être rapide au repos et moins réactive pendant un gros téléchargement ou téléversement.</li><li><strong>Séparer la ligne du Wi-Fi.</strong> Comparez d’abord au modem-routeur, puis optimisez le réseau local si les appareils sont plus lents.</li></ol></section>
+
+    <section id="faq" aria-label="Foire aux questions"><span class="section-label">FAQ</span><h2>Questions fréquentes sur la fibre et le câble</h2><div class="faq"><details><summary id="faq-q1">Quelle est la différence entre FTTH, HFC et FTTN&nbsp;?</summary><div role="region" aria-labelledby="faq-q1">La FTTH amène la fibre jusqu’au domicile. Le HFC combine fibre jusqu’à un nœud optique et coaxial jusqu’au modem. Le FTTN arrête la fibre au nœud et utilise généralement du cuivre ou du DSL sur le dernier segment.</div></details><details><summary id="faq-q2">Pourquoi deux forfaits de 500&nbsp;Mbit/s peuvent-ils être différents&nbsp;?</summary><div role="region" aria-labelledby="faq-q2">Parce que 500&nbsp;Mbit/s décrit surtout le téléchargement. L’upload, la technologie, la capacité partagée, la congestion, l’équipement et le Wi-Fi peuvent différer.</div></details><details><summary id="faq-q3">Pourquoi la fibre offre-t-elle souvent plus d’upload&nbsp;?</summary><div role="region" aria-labelledby="faq-q3">La FTTH dispose d’une grande capacité dans les deux directions et facilite donc les profils symétriques. Le fournisseur choisit quand même le profil du forfait, et les réseaux HFC modernes peuvent aussi améliorer l’amont.</div></details><details><summary id="faq-q4">La FTTH garantit-elle un meilleur ping&nbsp;?</summary><div role="region" aria-labelledby="faq-q4">Non. Le ping dépend aussi du serveur, de la distance, du routage, de la congestion, de la latence sous charge et du réseau local. Un HFC bien dimensionné peut être très réactif.</div></details><details><summary id="faq-q5">Le Wi-Fi dépend-il de la fibre ou du câble&nbsp;?</summary><div role="region" aria-labelledby="faq-q5">Pas directement. Le Wi-Fi est le réseau local entre le routeur et les appareils. Son résultat dépend notamment du routeur, de sa position, des interférences et des appareils utilisés.</div></details><details><summary id="faq-q6">Quand le HFC est-il suffisant&nbsp;?</summary><div role="region" aria-labelledby="faq-q6">Pour beaucoup de foyers, le HFC suffit à la navigation, au streaming, aux appels vidéo, au télétravail et au jeu en ligne si le forfait, l’upload et la qualité du réseau conviennent à l’usage.</div></details><details><summary id="faq-q7">Le FTTN est-il toujours un mauvais choix&nbsp;?</summary><div role="region" aria-labelledby="faq-q7">Non. Il peut convenir si la ligne locale est courte, en bon état et adaptée aux besoins du foyer. La distance au nœud et les vitesses réellement admissibles doivent être vérifiées à l’adresse.</div></details></div></section>
+
+    <section id="sources" aria-label="Sources de référence"><span class="section-label">Sources</span><h2>Sources de référence</h2><p>Les définitions sont générales et ne remplacent pas une vérification d’adresse. Les sources suivantes expliquent les architectures et les facteurs de performance utilisés dans ce guide&nbsp;:</p><ul class="source-list"><li><a href="https://crtc.gc.ca/fra/internet/facbill.htm" target="_blank" rel="noopener noreferrer">CRTC — services d’accès haute vitesse et distinction FTTN/FTTH</a>.</li><li><a href="https://www.cablelabs.com/technologies/hfc-networks" target="_blank" rel="noopener noreferrer">CableLabs — architecture des réseaux hybrides fibre-coaxial (HFC)</a> (en anglais).</li><li><a href="https://crtc.gc.ca/fra/internet/performance.htm" target="_blank" rel="noopener noreferrer">CRTC — rendement, latence, équipement et réseau domestique</a>.</li></ul></section>
+    <section id="transparency" aria-label="Transparence"><div class="transparency"><strong>Transparence.</strong> Ce guide est informatif et ne contient aucun lien affilié, prix, promotion ou code de parrainage. Les marques et technologies appartiennent à leurs propriétaires respectifs. Les limites réelles dépendent de l’adresse, du fournisseur, de l’installation et du réseau domestique.</div></section>
+  </div></main>
+  <footer><div class="container"><p>Guide canadien des technologies d’accès Internet — Révisé&nbsp;: <time id="footer-date" datetime="2026-08-07">7&nbsp;août&nbsp;2026</time></p><p style="margin-top:6px;"><a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true"> · </span><a href="https://cashinstinct.ca/about/fr/">À propos</a><span aria-hidden="true"> · </span><a href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/en/" hreflang="en">English</a></p></div></footer>
+  <script>
+    (function() { var toggle = document.getElementById('theme-toggle'); if (!toggle) return; function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; } function applyUI(dark) { toggle.textContent = dark ? '☀️' : '🌙'; toggle.setAttribute('aria-label', dark ? 'Désactiver le mode sombre' : 'Activer le mode sombre'); toggle.setAttribute('aria-pressed', dark ? 'true' : 'false'); } applyUI(isDark()); toggle.addEventListener('click', function() { var dark = isDark(); if (dark) { document.documentElement.removeAttribute('data-theme'); localStorage.setItem('theme', 'light'); } else { document.documentElement.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); } applyUI(!dark); }); })();
+  </script>
+</body>
+</html>
