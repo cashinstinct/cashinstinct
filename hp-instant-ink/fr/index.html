@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <!--
 ═══════════════════════════════════════════════════════════════════
-  NOTE DE MAINTENANCE — HP Instant Ink FR — dernière révision majeure : 2026-07-21
+  NOTE DE MAINTENANCE — HP Instant Ink FR — dernière révision majeure : 2026-08-08
 ═══════════════════════════════════════════════════════════════════
   TRIAGE DÉRIVE FAQ/JSON-LD — 2026-08-07
   Le rapport d'égalité exacte entre réponse HTML et acceptedAnswer.text est
   informatif : ne pas forcer l'identité littérale lorsqu'un côté résume ou
-  ajoute du contexte. Cas D à revérifier avec la source avant synchronisation :
-  • Q13 : le HTML parle d'une offre sans expiration fixe; le JSON-LD inclut
-    une vérification de juillet 2026 et la réserve qu'HP peut la modifier ou
-    la désactiver.
-  Vérifier la source actuelle et la note de maintenance avant de choisir la
-  référence. Les incohérences structurelles, réponses vides ou absentes
+  ajoute du contexte. Cas D résolu par revue des sources le 2026-08-08 :
+  • Q13 : la page canadienne de parrainage affichait 1 mois gratuit et
+    aucune date d'expiration publique fixe; HP peut tout de même modifier ou
+    désactiver le programme. Séparer cette observation publique de la preuve
+    des forfaits du compte connecté documentée ci-dessous.
+  Les incohérences structurelles, réponses vides ou absentes
   restent bloquantes. Garder FR et EN équivalentes en sens, pas identiques.
+
+  GARDE-FOU POUR L'ÉDITION IA/AUTOMATISÉE :
+  NE PAS simplifier, normaliser, refactoriser ou « corriger » les différences
+  intentionnelles documentées ci-dessous. Lorsque les pages HP publiques, les
+  preuves du compte connecté et les notes historiques diffèrent, suivre la
+  section PREUVE ACTUELLE. Ne jamais déduire que l'absence d'une information
+  publique invalide une preuve authentifiée. Préserver les asymétries
+  schema/HTML documentées, sauf si une nouvelle preuve vérifiée exige un
+  changement.
+
+  PRIORITÉ DES PREUVES (de la plus forte à la plus faible) :
+  1. Preuve actuelle et datée du parcours public ou du compte connecté.
+  2. Décision éditoriale ou structurelle documentée.
+  3. Ancienne entrée du changelog historique.
+  4. Déduction ou normalisation de l'IA.
+  En cas de contradiction apparente, ne pas la résoudre par déduction :
+  préserver la distinction documentée et demander une revue des sources.
+
+  PREUVE ACTUELLE — VÉRIFICATION HP CANADA COMPLÈTE — 2026-08-08
+  • Parcours public de parrainage : le lien canadien direct affichait un
+    sous-ensemble de forfaits (10, 50, 100, 300 et 700 pages).
+  • Tableau de bord connecté : le compte HP Instant Ink Canada affichait
+    10, 25, 50, 100, 300, 500, 700 et 1 500 pages par mois. Les captures
+    fournies pour cette revue montrent les forfaits 25, 500 et 1 500 pages,
+    avec leurs prix mensuels et leurs contrôles de sélection.
+  • RÈGLE POUR LES FUTURES MODIFICATIONS : ne jamais supprimer les forfaits
+    25, 500 ou 1 500 pages simplement parce qu'ils n'apparaissent pas dans le
+    parcours public de parrainage. Le guide doit documenter la portée du
+    compte connecté jusqu'à 1 500 pages et expliquer la différence de surface.
+    La vérification du 8 août remplace toutes les anciennes formulations de
+    test pour les faits actuels.
+  • L'ABSENCE D'UN FORFAIT DANS LE PARCOURS PUBLIC DE PARRAINAGE NE PROUVE
+    PAS QU'IL A ÉTÉ SUPPRIMÉ.
+
+  NOTE SUR L'HISTORIQUE : les entrées datées ci-dessous documentent seulement
+  d'anciennes modifications techniques. Elles ne constituent pas des preuves
+  d'offre actuelles; les faits courants doivent utiliser la vérification du
+  8 août 2026, publique et dans le compte connecté, ci-dessus.
 
   STRUCTURE (deux parcours — décision clé)
   • Parcours A (lien, recommandé) : décrit par le HowTo JSON-LD. Le code
@@ -29,10 +67,10 @@
     séquentiels (l'ancien faq-q3b bâtard a été renuméroté). Chacun avec
     son aria-labelledby. NE PAS ajouter une question d'un seul côté.
   • Compter <div> ouvrants = fermants AVANT push (comptage machine).
-  • referral-verified-date = dernière vérification RÉELLE du lien, du
-    formulaire et des crédits affichés : 2026-07-21. Ne jamais avancer
-    cette date sans refaire le parcours complet documenté. Elle est
-    distincte de dateModified, trust-date et footer-date.
+
+  • referral-verified-date = dernière vérification RÉELLE de la page de
+    parrainage et des forfaits du compte canadien connecté : 2026-08-08.
+    Elle est distincte de dateModified, trust-date et footer-date.
   • EXPÉRIENCE AUTORISÉE : l'auteur utilise personnellement HP Instant
     Ink depuis 2020. Garder cette mention courte et factuelle; ne pas la
     transformer en témoignage ni inventer imprimante, économies, livraison
@@ -185,7 +223,7 @@
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-05-01",
-        "dateModified": "2026-08-06",
+        "dateModified": "2026-08-08",
         "citation": {
           "@type": "WebPage",
           "name": "FAQ HP Instant Ink (Canada)",
@@ -217,7 +255,7 @@
           "https://cashinstinct.ca/hp-instant-ink/fr/og.png"
         ],
         "datePublished": "2026-05-01",
-        "dateModified": "2026-08-06",
+        "dateModified": "2026-08-08",
         "inLanguage": "fr-CA",
         "mainEntityOfPage": {
           "@id": "https://cashinstinct.ca/hp-instant-ink/fr/"
@@ -256,7 +294,7 @@
                     "name": "Est-ce que le code fonctionne si j’ai déjà des mois gratuits inclus à l’achat ?",
                     "acceptedAnswer": {
                               "@type": "Answer",
-                              "text": "Le crédit de parrainage peut s'ajouter à une offre admissible. Lors de notre test canadien de juillet 2026, HP affichait séparément un crédit promotionnel et le crédit « Parrainer un ami — 1 mois » dans la « Répartition des crédits ». Les codes promotionnels ne sont toutefois pas cumulables entre eux : lorsqu'on en saisit plusieurs, HP applique la promotion la plus avantageuse. Vérifiez toujours les crédits affichés avant de confirmer."
+                              "text": "Le crédit de parrainage peut s'ajouter à une offre admissible. Lors de notre vérification canadienne du compte le 8 août 2026, HP affichait séparément un crédit promotionnel et le crédit « Parrainer un ami — 1 mois » dans la « Répartition des crédits ». Les codes promotionnels ne sont toutefois pas cumulables entre eux : lorsqu'on en saisit plusieurs, HP applique la promotion la plus avantageuse. Vérifiez toujours les crédits affichés avant de confirmer."
                     }
           },
           {
@@ -316,7 +354,7 @@
           {
             "@type": "Question",
             "name": "Quelle est la différence entre un code promotionnel HP et un code de parrainage ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Les codes promos HP sont des mots-clés temporaires liés à des événements marketing. Le code de parrainage SVdn7 est un identifiant de membre qui appliquait 1 mois gratuit lors de notre vérification de juillet 2026 et n'affiche pas de date d'expiration publique fixe. HP peut toutefois modifier ou désactiver le programme. Les deux types de crédit peuvent apparaître sur le même formulaire d'inscription." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Les codes promos HP sont des mots-clés temporaires liés à des événements marketing. Le code de parrainage SVdn7 est un identifiant de membre; la page canadienne de parrainage affichait 1 mois gratuit et aucune date d'expiration publique fixe lors de la revérification du 8 août 2026. HP peut toutefois modifier ou désactiver le programme. Les deux types de crédit peuvent apparaître sur le même formulaire d'inscription." }
           },
           {
             "@type": "Question",
@@ -326,14 +364,14 @@
           {
             "@type": "Question",
             "name": "Le code ami HP Instant Ink fonctionne-t-il hors du Canada (États-Unis, Royaume-Uni, France, Europe) ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Oui, dans les pays participants. Le code de parrainage (ou code ami) HP Instant Ink est un code membre, pas un coupon propre à un pays. Le code SVdn7 fonctionne pour les nouvelles inscriptions au Canada, aux États-Unis, au Royaume-Uni et partout en Europe (dont la France) — là où HP Instant Ink et son programme de parrainage sont offerts. Le système d'inscription d'HP lit le pays que vous choisissez lors de l'enregistrement de l'imprimante et applique la valeur locale du mois gratuit dans la devise correspondante (CAD, USD, GBP ou EUR). La seule exigence : une imprimante HP à jet d'encre admissible et une connexion Wi-Fi dans un pays où Instant Ink est offert. HP précise que la disponibilité et les conditions du parrainage peuvent varier selon le pays et la date." }
+            "acceptedAnswer": { "@type": "Answer", "text": "HP Instant Ink et son programme de parrainage peuvent être offerts dans des pays participants, notamment au Canada, aux États-Unis, au Royaume-Uni et dans certains marchés européens. HP précise que l'offre peut varier selon le pays et la date. Notre vérification du 8 août 2026 confirme que SVdn7 était accepté au Canada; elle ne prouve pas que ce code précis fonctionne dans tous les autres marchés. Vérifiez la page d'inscription locale, l'admissibilité et la valeur affichée avant de vous y fier à l'étranger." }
           },
           {
                     "@type": "Question",
                     "name": "Existe-t-il encore un forfait HP Instant Ink gratuit (ou 6 mois gratuits) ?",
                     "acceptedAnswer": {
                               "@type": "Answer",
-                              "text": "Le forfait gratuit à vie n'est plus offert aux nouveaux abonnés. Les offres de 3 ou 6 mois peuvent provenir de l'achat de certaines imprimantes admissibles ; elles ne sont pas générées par le code de parrainage. Lors de notre vérification de juillet 2026, le forfait canadien de 10 pages était affiché à 2,49 $ par mois. Les prix peuvent être modifiés par HP ; la grille affichée pendant l'inscription prévaut. Le code SVdn7 ajoute 1 mois de crédit aux nouvelles inscriptions admissibles, sous réserve des conditions de l'offre."
+                              "text": "Le forfait gratuit à vie n'est plus offert aux nouveaux abonnés. Les offres de 3 ou 6 mois peuvent provenir de l'achat de certaines imprimantes admissibles ; elles ne sont pas générées par le code de parrainage. Lors de notre revérification canadienne du 8 août 2026, le forfait de 10 pages était affiché à 2,49 $ par mois. Les prix peuvent être modifiés par HP ; la grille affichée pendant l'inscription prévaut. Le code SVdn7 ajoute 1 mois de crédit aux nouvelles inscriptions admissibles, sous réserve des conditions de l'offre."
                     }
           },
           {
@@ -347,14 +385,14 @@
           {
             "@type": "Question",
             "name": "Le code de parrainage HP Instant Ink donne-t-il plus d'un mois gratuit ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Non. L'offre standard actuelle du code de parrainage (code ami) est de 1 mois gratuit sur le forfait choisi. Les mentions de 2, 3 ou 6 mois « par code » sont fausses : les 6 mois gratuits provenaient d'un ancien bundle à l'achat d'une imprimante (type HP+), pas du parrainage. Lors de notre dernier test au Canada en juillet 2026, le crédit affiché était « Parrainer un ami — 1 mois ». HP peut ajuster la valeur selon le pays et la date." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Non. L'offre standard actuelle du code de parrainage (code ami) est de 1 mois gratuit sur le forfait choisi. Les mentions de 2, 3 ou 6 mois « par code » sont fausses : les 6 mois gratuits provenaient d'un ancien bundle à l'achat d'une imprimante (type HP+), pas du parrainage. Lors de la revérification de la page canadienne le 8 août 2026, HP affichait une offre d'un mois gratuit. HP peut ajuster la valeur selon le pays et la date." }
           },
           {
                     "@type": "Question",
                     "name": "Le code ami HP Instant Ink expire-t-il ou a-t-il une limite d’utilisations ?",
                     "acceptedAnswer": {
                               "@type": "Answer",
-                              "text": "Le code SVdn7 n'affiche pas de date d'expiration publique fixe et était encore accepté lors de notre dernière vérification en juillet 2026. HP peut toutefois modifier le programme ou désactiver un code conformément à ses conditions. Chaque nouvelle inscription ne peut utiliser qu'un seul lien ou code de parrainage."
+                              "text": "Le code SVdn7 n'affiche pas de date d'expiration publique fixe et était encore accepté lors de la revérification de la page canadienne de parrainage le 8 août 2026. Les conditions actuelles d'inscription de HP limitent chaque compte à 12 parrainages par année et chaque nouvelle inscription ne peut utiliser qu'un seul lien ou code par imprimante. HP peut toutefois modifier le programme ou désactiver un code conformément à ses conditions."
                     }
           }
         ]
@@ -793,14 +831,14 @@
   mais HP peut modifier les conditions ou désactiver le programme.
 </div>
 
-<p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-08-06">6&nbsp;août&nbsp;2026</time></p>
+<p style="font-size:0.8rem; color:var(--muted); margin-bottom:24px;" class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-08-08">8&nbsp;août&nbsp;2026</time></p>
 
         <!-- ── SECTION : Disponibilité Canada (cible "hp instant ink disponible canada", "instant ink canada") ── -->
       <section id="disponible-canada">
         <span class="section-label">Disponibilité au Canada</span>
         <h2>HP Instant Ink est-il disponible au Canada ?</h2>
 
-        <p><strong>Oui.</strong> HP Instant Ink est offert partout au Canada, dans toutes les provinces et tous les territoires, et facturé en dollars canadiens. Le service fonctionne de la même façon qu'aux États-Unis : votre imprimante HP à jet d'encre connectée transmet ses niveaux d'encre à HP, et les cartouches de remplacement sont expédiées à votre adresse canadienne avant la panne sèche. Le code de parrainage <code>SVdn7</code> est valide pour les nouvelles inscriptions canadiennes et ajoute <strong>1&nbsp;mois gratuit</strong> sur n'importe quel forfait.</p>
+            <p><strong>Oui.</strong> HP Instant Ink est offert partout au Canada, dans toutes les provinces et tous les territoires, et facturé en dollars canadiens. Le service fonctionne de la même façon qu'aux États-Unis : votre imprimante HP à jet d'encre connectée transmet ses niveaux d'encre à HP, et les cartouches de remplacement sont expédiées à votre adresse canadienne avant la panne sèche. Le code de parrainage <code>SVdn7</code> est valide pour les nouvelles inscriptions canadiennes et ajoute <strong>1&nbsp;mois gratuit</strong> sur un forfait admissible.</p>
 
         <div class="warning">
           🇨🇦 <strong>Précision pour le Canada :</strong> le portail d'inscription est <strong>hpinstantink.com</strong> (il n'existe pas de site d'inscription <em>.ca</em> distinct). En choisissant le Canada comme pays, la tarification passe en dollars canadiens et l'expédition se fait depuis le Canada. Le code <code>SVdn7</code> fonctionne peu importe la province.
@@ -819,7 +857,7 @@
         <span class="section-label">Autres pays</span>
         <h2>Le code ami HP Instant Ink fonctionne-t-il hors du Canada ?</h2>
 
-        <p><strong>Oui — dans les pays participants.</strong> Le code <code>SVdn7</code> est un code de parrainage de membre, pas un coupon propre à un pays. Le même code applique un essai d'<strong>1&nbsp;mois gratuit</strong> pour les nouvelles inscriptions au Canada, aux <strong>États-Unis</strong>, au <strong>Royaume-Uni</strong> et partout en <strong>Europe</strong> (dont la France) — là où HP Instant Ink et son programme de parrainage sont offerts. Le système d'HP lit le pays que vous choisissez lors de l'enregistrement de l'imprimante et fixe la valeur du mois gratuit dans votre devise locale automatiquement.</p>
+        <p><strong>Le programme peut être offert dans des pays participants.</strong> HP cite le Canada, les <strong>États-Unis</strong>, le <strong>Royaume-Uni</strong> et des marchés européens, mais précise que la disponibilité et les conditions du parrainage peuvent varier selon le pays et la date. Notre vérification du 8&nbsp;août&nbsp;2026 confirme <code>SVdn7</code> au Canada seulement; elle ne prouve pas que le même code fonctionne à l'étranger. Utilisez la page d'inscription HP locale pour vérifier le code, l'imprimante admissible et la valeur affichée avant de vous y fier.</p>
 
         <div class="warning">
           🌍 <strong>Comment la région est détectée :</strong> la devise et l'offre locale (CAD, USD, GBP ou EUR) sont fixées par le pays que vous choisissez lors de l'enregistrement de votre imprimante sur <strong>hpinstantink.com</strong> — pas par le code lui-même. Vous entrez le même <code>SVdn7</code> peu importe où vous habitez, tant qu'Instant Ink y est offert. HP précise que la disponibilité et les conditions du parrainage peuvent varier selon le pays et la date ; vérifiez les conditions locales lors de l'inscription.
@@ -833,16 +871,15 @@
           <h2>Comment se connecter et activer HP Instant Ink au Canada</h2>
 
           <div class="warning" style="background: rgba(5,131,115,0.06); border-left-color: var(--accent-text); color: var(--text-soft);">
-            ✅ <strong>Dernière vérification :</strong> test effectué au Canada en
-            juillet&nbsp;2026. Le lien de parrainage a affiché la confirmation
-            d’un mois gratuit et le formulaire manuel a classé
-            <code>SVdn7</code> sous
-            <em>« Parrainer un ami — 1&nbsp;mois »</em>.
+            ✅ <strong>Dernière vérification :</strong> la page canadienne de
+            parrainage et le tableau de bord du compte connecté ont été
+            vérifiés le 8&nbsp;août&nbsp;2026. HP affichait la confirmation d’un
+            mois gratuit; le compte connecté montrait la gamme complète de
+            10 à 1 500&nbsp;pages.
             <br><br>
-            Le test a été effectué avec un compte HP existant depuis 2020,
-            séparément de l’abonnement Instant Ink déjà en service. Aucun nouvel
-            appareil n’a été enregistré jusqu’à l’activation finale&nbsp;: le test
-            portait sur le lien, la saisie du code et l’affichage des crédits.
+            Le parcours public affichait seulement les forfaits de 10, 50, 100,
+            300 et 700 pages. Le compte connecté affichait aussi 25, 500 et
+            1 500 pages avec leurs contrôles de sélection.
           </div>
 
           <div class="warning">
@@ -855,8 +892,8 @@
           <ol class="steps">
             <li id="howto-step-1"><div><h3>Ouvrez le lien de parrainage</h3><p>Ouvrez <a href="https://try.hpinstantink.com/SVdn7" target="_blank" rel="noopener sponsored noreferrer">try.hpinstantink.com/SVdn7</a>. Le code ami est appliqué automatiquement — il n'y a rien à taper. HP confirme votre mois gratuit immédiatement (voir l'écran de confirmation en haut de cette page). Vous pouvez ensuite configurer votre imprimante via l'application HP Smart ou continuer dans le navigateur.</p></div></li>
             <li id="howto-step-2"><div><h3>Connectez-vous avec votre compte HP (ou créez-en un)</h3><p>Sur <strong>start.hp.com</strong>, connectez-vous avec votre compte HP existant si vous en avez un — le même identifiant que pour un PC ou un achat sur hp.com. Pas encore de compte HP ? Créez-en un en une minute. Dans les deux cas, ceci vous connecte seulement ; vous n'êtes <strong>pas</strong> encore inscrit à Instant Ink — cela se fait aux étapes suivantes.</p></div></li>
-            <li id="howto-step-3"><div><h3>Choisissez votre forfait et ajoutez la livraison</h3><p>Choisissez le volume de pages qui correspond à vos besoins (de 10 à <span style="white-space:nowrap">1 500 pages</span> par mois). Tous les forfaits sont admissibles à l'essai gratuit. Ajoutez ensuite votre adresse de livraison pour qu'HP sache où expédier votre encre.</p></div></li>
-            <li id="howto-step-4"><div><h3>Confirmez — le mois gratuit est déjà crédité</h3><p>À l'étape de facturation, le crédit apparaît automatiquement sous <strong>« Répartition des crédits »</strong> comme <em>« Parrainer un ami — 1&nbsp;mois »</em>. Confirmez pour terminer ; le mois gratuit est appliqué à votre compte.</p></div></li>
+            <li id="howto-step-3"><div><h3>Choisissez votre forfait et ajoutez la livraison</h3><p>Choisissez le volume de pages qui correspond à vos besoins (de 10 à <span style="white-space:nowrap">1 500 pages</span> par mois). Le parcours public de parrainage peut n'afficher qu'un sous-ensemble; la gamme complète apparaît dans le compte HP Instant Ink Canada connecté. Tous les forfaits sont admissibles à l'essai gratuit. Ajoutez ensuite votre adresse de livraison pour qu'HP sache où expédier votre encre.</p></div></li>
+            <li id="howto-step-4"><div><h3>Confirmez — vérifiez le crédit affiché</h3><p>À l'étape de facturation, vérifiez la répartition des crédits avant de confirmer. Si HP affiche <em>« Parrainer un ami — 1&nbsp;mois »</em>, assurez-vous que l'offre et le prix final correspondent à vos attentes avant de soumettre l'inscription.</p></div></li>
           </ol>
         </section>
 
@@ -866,6 +903,7 @@
         <h2>Pas de lien ? Entrez le code SVdn7 manuellement (et où ne pas le mettre)</h2>
 
         <p>Si vous arrivez à l'inscription HP <strong>sans</strong> passer par le lien de parrainage, le code n'est pas pré-rempli — vous l'entrez vous-même. HP n'affiche le champ du code <strong>qu'une seule fois</strong>, à l'étape de facturation d'une toute nouvelle inscription.</p>
+        <p style="font-size:0.9rem; color:var(--muted);">Les conditions actuelles d'inscription de HP limitent aussi chaque compte à 12 parrainages par année. La vérification de la page en août n'a pas soumis de nouveau compte ni de paiement; vérifiez donc les conditions affichées dans votre propre parcours d'inscription.</p>
 
         <div class="warning">
           ⚠️ <strong>Le champ du code apparaît à l'étape de facturation, lors de l'inscription initiale seulement.</strong> Cherchez le lien <em>« Entrer le code promotionnel ou le code NIP »</em> sous <strong>Facturation</strong> au moment du paiement. Le code <code>SVdn7</code> <strong>ne peut pas</strong> être ajouté après la création du compte, et ce <strong>n'est pas</strong> le même que le NIP imprimé sur une carte HP Instant Ink prépayée achetée en magasin — ce sont des produits distincts.
@@ -922,10 +960,10 @@
         </p>
 
         <p style="font-size:0.9rem; color:var(--muted);">
-          Test effectué en juillet&nbsp;2026 avec un compte HP existant depuis
-          2020, sans enregistrer de nouvelle imprimante jusqu’à l’activation
-          finale. Le test servait à vérifier le comportement du formulaire et
-          la classification des crédits.
+          La vérification complète du compte a été effectuée le 8&nbsp;août&nbsp;2026
+          dans le tableau de bord HP Canada connecté. Elle a confirmé
+          l'affichage du crédit de parrainage et la gamme complète, y compris
+          les forfaits 25, 500 et 1 500 pages absents du parcours public.
         </p>
       </section>
 
@@ -937,9 +975,9 @@
   <p>Le <strong>code ami HP Instant Ink</strong> <code>SVdn7</code> fait partie du programme officiel de parrainage d’HP.</p>
 
   <p>
-    Lors de notre vérification de juillet&nbsp;2026, le code de parrainage
-    <code>SVdn7</code> accordait <strong>1&nbsp;mois gratuit</strong> lors d’une
-    nouvelle inscription admissible. Ouvrez le
+    Lors de la revérification de la page canadienne le 8&nbsp;août&nbsp;2026, le
+    code de parrainage <code>SVdn7</code> affichait <strong>1&nbsp;mois gratuit</strong>
+    pour une nouvelle inscription admissible. Ouvrez le
     <a href="#how-it-works">lien de parrainage</a> pour l’appliquer
     automatiquement, ou entrez vous-même le code à l’étape de facturation,
     comme l’explique la
@@ -971,10 +1009,21 @@
   </p>
 
   <p style="font-size: 0.9rem; color: var(--muted); font-style: italic; margin-bottom: 12px;">
-    Prix canadiens vérifiés en juillet&nbsp;2026. HP peut modifier ses forfaits
-    et ses tarifs; confirmez donc le montant final affiché pendant
-    l’inscription.
+    Prix canadiens vérifiés le 8&nbsp;août&nbsp;2026 à partir de l'affichage HP
+    pendant l'inscription et du tableau de bord du compte connecté. HP peut
+    modifier ses forfaits et ses tarifs; confirmez donc le montant final dans
+    votre compte. Consultez aussi la <a href="https://www.hp.com/ca-fr/printers/instant-ink/plans.html" target="_blank" rel="noopener noreferrer">page officielle des forfaits HP Canada</a>.
   </p>
+
+  <div class="warning" id="plan-surface-note">
+    <strong>Distinction importante&nbsp;:</strong> le parcours public du lien
+    <code>try.hpinstantink.com/SVdn7</code> affichait seulement 10, 50, 100, 300
+    et 700 pages lors de la vérification du 8&nbsp;août. Après connexion au compte
+    HP Instant Ink Canada, le tableau de bord affichait la gamme complète&nbsp;:
+    <strong>10, 25, 50, 100, 300, 500, 700 et 1 500 pages par mois</strong>.
+    Le tableau ci-dessous documente la gamme du compte connecté; l'affichage
+    du compte et son prix courant font foi pour un abonné existant.
+  </div>
 
   <div style="overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-top: 24px; box-shadow: var(--shadow);">
 
@@ -1021,7 +1070,7 @@
         <tr>
           <td><span style="white-space: nowrap;">500 pages</span></td>
           <td><strong>29,99&nbsp;$ CA</strong></td>
-          <td>Usage intensif à la maison ou au bureau</td>
+          <td>Usage intensif à domicile ou au bureau</td>
         </tr>
 
         <tr>
@@ -1033,8 +1082,9 @@
         <tr>
           <td><span style="white-space: nowrap;">1 500 pages</span></td>
           <td><strong>72,99&nbsp;$ CA</strong></td>
-          <td>Usage professionnel à gros volume</td>
+          <td>Impression professionnelle à volume élevé</td>
         </tr>
+
       </tbody>
     </table>
 
@@ -1154,11 +1204,11 @@
         <section id="mythes">
           <span class="section-label">À clarifier</span>
           <h2>Idées reçues sur le code de parrainage HP Instant Ink</h2>
-          <p>Deux affirmations fausses circulent en ligne sur le code ami. Voici ce que le formulaire d'inscription HP affiche réellement — vérifié au Canada en juillet&nbsp;2026.</p>
+          <p>Deux affirmations fausses circulent en ligne sur le code ami. Voici ce que la page d'inscription HP affichait réellement — revérifié au Canada le 8&nbsp;août&nbsp;2026.</p>
           <div style="overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border);">
             <table class="compare-table" aria-label="Idées reçues sur le code HP Instant Ink">
               <thead>
-                <tr><th>Ce qu'on lit en ligne</th><th>La réalité (vérifié juillet&nbsp;2026)</th></tr>
+                <tr><th>Ce qu'on lit en ligne</th><th>La réalité (revérifiée le 8&nbsp;août&nbsp;2026)</th></tr>
               </thead>
               <tbody>
                 <tr>
@@ -1167,7 +1217,7 @@
                 </tr>
                 <tr>
                   <td>« Le code ami a une limite d'utilisations ou finit par expirer. »</td>
-                  <td><strong>À nuancer.</strong> Un code de parrainage n’affiche pas de date d’expiration publique fixe, mais HP peut modifier ou désactiver le programme. Chaque nouvelle inscription ne peut utiliser qu’un seul lien ou code. À distinguer d'une carte prépayée en magasin (NIP à usage unique) et des codes promo type <code>TaxTime26</code>, qui, eux, expirent.</td>
+                  <td><strong>À nuancer.</strong> Un code de parrainage n’affiche pas de date d’expiration publique fixe. Les conditions actuelles d'inscription de HP limitent chaque compte à 12 parrainages par année et chaque nouvelle inscription ne peut utiliser qu’un seul lien ou code par imprimante. HP peut modifier ou désactiver le programme. À distinguer d'une carte prépayée en magasin (NIP à usage unique) et des codes promo type <code>TaxTime26</code>, qui, eux, expirent.</td>
                 </tr>
               </tbody>
             </table>
@@ -1178,8 +1228,8 @@
           <span class="section-label">En Bref</span>
           <h2>Paramètres de l'offre HP Instant Ink</h2>
           <div class="facts">
-            <div class="fact"><strong>Valeur de la prime</strong><span>1&nbsp;mois complet gratuit, applicable sur n'importe quel forfait choisi.</span></div>
-            <div class="fact"><strong>Disponibilité géographique</strong><span>Offert au Canada et dans d'autres pays participants où Instant Ink est disponible.</span></div>
+            <div class="fact"><strong>Valeur de la prime</strong><span>1&nbsp;mois gratuit sur une inscription admissible, sous réserve du forfait et de l'offre affichés par HP.</span></div>
+            <div class="fact"><strong>Disponibilité géographique</strong><span>Offert au Canada et dans d'autres pays participants; l'admissibilité du code varie selon le marché.</span></div>
             <div class="fact"><strong>Livraison &amp; Recyclage</strong><span>Entièrement gratuits et inclus par HP lors de chaque envoi de cartouches.</span></div>
             <div class="fact"><strong>Flexibilité du forfait</strong><span>Modifiable ou annulable en tout temps sans aucun frais de pénalité.</span></div>
           </div>
@@ -1190,21 +1240,21 @@
           <span class="section-label">Avis indépendant</span>
           <h2>Comment ce guide évalue HP Instant Ink</h2>
           <div class="review-box">
-          <div class="trust-badge">✓ Parcours de parrainage vérifié par Cash Instinct</div>
+          <div class="trust-badge">✓ Page de parrainage et forfaits du compte vérifiés par Cash Instinct</div>
             <aside class="experience-proof" aria-labelledby="experience-proof-title">
-              <h3 id="experience-proof-title">Vérifié pendant notre test canadien du 21 juillet 2026</h3>
-              <p class="last-updated">Parcours de parrainage vérifié&nbsp;: <time id="referral-verified-date" datetime="2026-07-21">21&nbsp;juillet 2026</time></p>
-              <p><strong>Transparence&nbsp;:</strong> j'utilise personnellement HP Instant Ink depuis 2020. Le parcours de parrainage présenté ici a été revérifié indépendamment le 21&nbsp;juillet 2026. Ce guide distingue mes observations personnelles des renseignements publiés par HP.</p>
+              <h3 id="experience-proof-title">Page canadienne de parrainage et compte connecté revérifiés le 8 août 2026</h3>
+              <p class="last-updated">Page et forfaits vérifiés&nbsp;: <time id="referral-verified-date" datetime="2026-08-08">8&nbsp;août 2026</time></p>
+              <p><strong>Transparence&nbsp;:</strong> j'utilise personnellement HP Instant Ink depuis 2020. Le 8&nbsp;août&nbsp;2026, la vérification complète couvrait la page canadienne de parrainage et un compte HP Instant Ink Canada connecté. Le tableau de bord affichait 10, 25, 50, 100, 300, 500, 700 et 1 500 pages par mois; le parcours public de parrainage n'en affichait qu'un sous-ensemble.</p>
               <ul>
                 <li>✓ Lien de parrainage accepté</li>
-                <li>✓ Mention <em>«&nbsp;Parrainer un ami — 1&nbsp;mois&nbsp;»</em> affichée</li>
-                <li>✓ Saisie manuelle du code <code>SVdn7</code> acceptée</li>
-                <li>✓ Écran de répartition des crédits vérifié</li>
-                <li>✓ Crédit promotionnel et crédit de parrainage affichés séparément</li>
+                <li>✓ Mention <em>«&nbsp;1 mois gratuit&nbsp;»</em> affichée par HP</li>
+                <li>✓ Parcours public affichant le sous-ensemble de 10 à 700 pages</li>
+                <li>✓ Compte connecté affichant la gamme complète de 10 à 1 500 pages</li>
+                <li>✓ Forfaits 25, 500 et 1 500 pages avec contrôles de sélection</li>
               </ul>
-              <p class="test-limit"><strong>Limite du test :</strong> aucun nouvel appareil n'a été enregistré jusqu'à l'activation finale. La vérification portait sur le lien, la saisie manuelle et l'affichage des crédits.</p>
+              <p class="test-limit"><strong>Limite de la vérification&nbsp;:</strong> cette preuve documente les offres et les contrôles de forfait visibles dans les surfaces publique et connectée. Elle ne garantit pas l'admissibilité de chaque imprimante, le résultat d'une facturation ou une modification future du compte.</p>
             </aside>
-            <p><strong>Selon HP&nbsp;:</strong> Instant Ink utilise une imprimante connectée pour transmettre le niveau d'encre et organiser l'envoi de cartouches de remplacement selon les modalités du forfait choisi. Ces règles proviennent de la documentation publiée par HP; elles n'ont pas été vérifiées au moyen de l'activation complète d'une nouvelle imprimante pendant notre test de juillet.</p>
+            <p><strong>Selon HP&nbsp;:</strong> Instant Ink utilise une imprimante connectée pour transmettre le niveau d'encre et organiser l'envoi de cartouches de remplacement selon les modalités du forfait choisi. Ces règles proviennent de la documentation publiée par HP; la vérification d'août portait sur les surfaces publique et connectée des forfaits.</p>
             <p>Les caractéristiques du service décrites par HP comprennent&nbsp;:</p>
             <ul>
               <li><strong>Facturation à la page&nbsp;:</strong> l'utilisation du forfait est mesurée selon les pages imprimées plutôt que la couverture d'encre, sous réserve du forfait choisi.</li>
@@ -1229,7 +1279,7 @@
     </div>
     <div class="glossary-item">
       <dt>SVdn7</dt>
-      <dd>Code de parrainage actif en 2026 — débloque 1&nbsp;mois gratuit sur n'importe quel forfait HP Instant Ink lors de l'inscription.</dd>
+      <dd>Code de parrainage accepté dans le parcours canadien le 8&nbsp;août&nbsp;2026; les autres marchés exigent une vérification locale.</dd>
     </div>
     <div class="glossary-item">
       <dt>Code Promo HP Instant Ink</dt>
@@ -1291,7 +1341,7 @@
               <div class="faq-body" role="region" aria-labelledby="faq-q3">
                 <p>
                   <strong>Il peut s’ajouter à une offre admissible.</strong>
-                  Lors de notre test canadien de juillet&nbsp;2026, HP affichait
+                  Lors de notre vérification canadienne du compte le 8&nbsp;août&nbsp;2026, HP affichait
                   séparément un crédit promotionnel et le crédit
                   <em>« Parrainer un ami — 1&nbsp;mois »</em> dans la
                   <em>« Répartition des crédits »</em>.
@@ -1383,7 +1433,7 @@
             <details>
               <summary id="faq-q13">Quelle est la différence entre un code promotionnel HP et un code de parrainage ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q13">
-                <p>Les codes promos HP sont des mots-clés publicitaires temporaires liés à des événements marketing — ils expirent après quelques semaines. Le code de parrainage (ici <code>SVdn7</code>) est un identifiant de membre qui applique une offre d'invitation d'un mois gratuit sans date d'expiration fixe. Les deux peuvent apparaître sur le même formulaire d'inscription.</p>
+                <p>Les codes promos HP sont des mots-clés publicitaires temporaires liés à des événements marketing — ils expirent après quelques semaines. Le code de parrainage (ici <code>SVdn7</code>) est un identifiant de membre; la page canadienne de parrainage affichait une offre d'un mois gratuit et aucune date d'expiration publique fixe lors de la revérification du 8&nbsp;août&nbsp;2026. Les deux peuvent apparaître sur le même formulaire d'inscription.</p>
               </div>
             </details>
             <details>
@@ -1395,7 +1445,7 @@
             <details>
               <summary id="faq-q15">Le code ami HP Instant Ink fonctionne-t-il hors du Canada (États-Unis, Royaume-Uni, France, Europe) ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q15">
-                <p><strong>Oui, dans les pays participants.</strong> Le code de parrainage (ou <em>code ami</em>) HP Instant Ink est un code membre, pas un coupon propre à un pays. Le code <code>SVdn7</code> fonctionne pour les nouvelles inscriptions au <strong>Canada, aux États-Unis, au Royaume-Uni et partout en Europe</strong> (dont la France) — là où HP Instant Ink et son programme de parrainage sont offerts. Le système d'inscription d'HP lit le pays que vous choisissez lors de l'enregistrement de l'imprimante et applique la valeur locale du mois gratuit dans la devise correspondante (CAD, USD, GBP ou EUR). La seule exigence : une imprimante HP à jet d'encre admissible et une connexion Wi-Fi dans un pays où Instant Ink est offert. HP précise que la disponibilité et les conditions du parrainage peuvent varier selon le pays et la date.</p>
+    <p><strong>Le programme HP peut être offert dans des pays participants.</strong> HP cite le Canada, les États-Unis, le Royaume-Uni et des marchés européens, mais précise que la disponibilité et les conditions du parrainage peuvent varier selon le pays et la date. Notre vérification du 8&nbsp;août&nbsp;2026 confirme <code>SVdn7</code> au Canada seulement; elle ne prouve pas que ce code précis fonctionne dans tous les autres marchés. Vérifiez la page d'inscription HP locale, l'imprimante admissible et la valeur affichée avant de vous y fier à l'étranger.</p>
               </div>
             </details>
             <details>
@@ -1408,8 +1458,8 @@
                   elles ne sont pas générées par le code de parrainage.
                 </p>
                 <p>
-                  Lors de notre vérification de juillet&nbsp;2026, le forfait
-                  canadien de 10&nbsp;pages était affiché à
+                  Lors de notre revérification canadienne du 8&nbsp;août&nbsp;2026, le forfait
+                  de 10&nbsp;pages était affiché à
                   <strong>2,49&nbsp;$ par mois</strong>. Les prix peuvent être
                   modifiés par HP&nbsp;; la grille affichée pendant l’inscription
                   prévaut. Le code <code>SVdn7</code> ajoute 1&nbsp;mois de
@@ -1435,7 +1485,7 @@
             <details>
               <summary id="faq-q18">Le code de parrainage HP Instant Ink donne-t-il plus d'un mois gratuit&nbsp;?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q18">
-                <p><strong>Non.</strong> L'offre standard actuelle du code ami est de <strong>1&nbsp;mois gratuit</strong> sur le forfait choisi. Les mentions de 2, 3 ou 6&nbsp;mois «&nbsp;par code&nbsp;» sont fausses&nbsp;: les 6&nbsp;mois venaient d'un <strong>ancien bundle à l'achat d'imprimante</strong> (type HP+), pas du parrainage. À notre dernier test au Canada (juillet&nbsp;2026), le crédit affiché était <em>« Parrainer un ami — 1&nbsp;mois »</em>. HP peut ajuster la valeur selon le pays et la date.</p>
+                <p><strong>Non.</strong> L'offre standard actuelle du code ami est de <strong>1&nbsp;mois gratuit</strong> sur le forfait choisi. Les mentions de 2, 3 ou 6&nbsp;mois «&nbsp;par code&nbsp;» sont fausses&nbsp;: les 6&nbsp;mois venaient d'un <strong>ancien bundle à l'achat d'imprimante</strong> (type HP+), pas du parrainage. Lors de la revérification de la page canadienne le 8&nbsp;août&nbsp;2026, HP affichait une offre d'un mois gratuit. HP peut ajuster la valeur selon le pays et la date.</p>
               </div>
             </details>
             <details>
@@ -1443,13 +1493,15 @@
               <div class="faq-body" role="region" aria-labelledby="faq-q19">
                 <p>
                   Le code <code>SVdn7</code> n’affiche pas de date d’expiration
-                  publique fixe et était encore accepté lors de notre dernière
-                  vérification en juillet&nbsp;2026.
+                  publique fixe et était encore accepté lors de la
+                  revérification de la page canadienne le 8&nbsp;août&nbsp;2026.
                 </p>
                 <p>
-                  HP peut toutefois modifier le programme ou désactiver un code
-                  conformément à ses conditions. Chaque nouvelle inscription ne
-                  peut utiliser qu’un seul lien ou code de parrainage.
+                  Les conditions actuelles d'inscription de HP limitent chaque
+                  compte à 12 parrainages par année. Chaque nouvelle inscription
+                  ne peut utiliser qu’un seul lien ou code par imprimante. HP
+                  peut toutefois modifier le programme ou désactiver un code
+                  conformément à ses conditions.
                 </p>
               </div>
             </details>
@@ -1513,7 +1565,7 @@
   <footer>
     <div class="container">
       <p>Site de référence indépendant, non affilié officiellement à la marque HP ou au service Instant Ink. Toutes les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
-      <p style="margin-top:6px;">HP Instant Ink Code : <code>SVdn7</code> — Dernière mise à jour : <time id="footer-date" datetime="2026-08-06">6&nbsp;août&nbsp;2026</time></p>
+      <p style="margin-top:6px;">HP Instant Ink Code : <code>SVdn7</code> — Dernière mise à jour : <time id="footer-date" datetime="2026-08-08">8&nbsp;août&nbsp;2026</time></p>
       <nav class="footer-hub" aria-label="Guides Cash Instinct">
         <section>
           <h3>Codes et économies</h3>
