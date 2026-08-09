@@ -2,7 +2,7 @@
 <!--
 ═══════════════════════════════════════════════════════════════════════════════
   CASHINSTINCT.CA — EBOX — PAGE FR (Québec)        état : AUCUNE PROMO ACTIVE
-  Dernière révision éditoriale : 7 août 2026
+  Dernière révision éditoriale : 9 août 2026
 ───────────────────────────────────────────────────────────────────────────────
   POUR LA PROCHAINE IA QUI ÉDITE CETTE PAGE — lire avant de toucher :
 
@@ -124,7 +124,7 @@
       "inLanguage": "fr-CA",
       "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
       "datePublished": "2026-06-02",
-      "dateModified": "2026-08-07",
+      "dateModified": "2026-08-09",
       "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
       "publisher": {
         "@type": "Organization",
@@ -616,11 +616,18 @@
     .verification-panel ul { display: flex; flex-wrap: wrap; gap: 2px 16px; margin: 7px 0 0; padding: 0; list-style: none; color: var(--text-soft); line-height: 1.4; font-size: 0.86rem; }
     .verification-panel li::before { content: '✓ '; color: var(--accent); font-weight: 800; }
     .verification-panel time { font-weight: 800; color: var(--text); }
-    .verification-method { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin: 24px 0; }
-    .verification-method h2 { margin-top: 0; }
-    .verification-log { margin-top: 16px; }
-    .verification-log summary { cursor: pointer; font-weight: 700; }
-    .verification-log ul { margin-top: 10px; }
+    .confidence-decision-card { margin: 24px 0; padding: 20px; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow); }
+    .confidence-card-head { display: flex; align-items: start; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+    .confidence-kicker { display: block; margin-bottom: 4px; color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .confidence-card-head h2 { margin: 0; font-size: 1.35rem; }
+    .confidence-status { flex: 0 0 auto; padding: 4px 9px; border-radius: 999px; background: rgba(26, 122, 60, .12); color: var(--ok); font-size: .75rem; font-weight: 800; }
+    .confidence-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; }
+    .confidence-field { padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-soft); }
+    .confidence-field dt { margin-bottom: 3px; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+    .confidence-field dd { margin: 0; color: var(--text-soft); font-size: .92rem; }
+    .confidence-field dd strong { color: var(--text); }
+    .confidence-source a { font-weight: 700; }
+    .confidence-note { margin: 14px 0 0; color: var(--muted); font-size: .82rem; }
     .verification-record { border-top: 1px solid var(--border); margin: 32px 0 0; padding-top: 20px; }
     .verification-record h2 { margin-top: 0; font-size: 1.2rem; }
     .verification-record ul { margin: 0; padding-left: 20px; color: var(--text-soft); }
@@ -792,6 +799,8 @@
       .input-copy-group input[type="text"] { background: var(--surface-soft) !important; border: 1px solid var(--border) !important; border-radius: 8px !important; width: 100% !important; }
       .input-copy-group .copy-btn { width: 100% !important; padding: 12px 16px !important; border-radius: 8px !important; border-left: none !important; justify-content: center; }
       .hero-methods > div { padding: 20px 16px !important; }
+      .confidence-card-head { flex-direction: column; }
+      .confidence-fields { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 380px) { #theme-toggle { display: none; } }
@@ -972,25 +981,26 @@
           <br><br>
           ℹ️ <strong>À propos des promotions :</strong> EBOX lance régulièrement des offres à durée limitée (cartes prépayées, baisses de prix sur la Fibre) pour les nouveaux clients au Québec et en Ontario. Le code GE911 est distinct de la case Code Promo et donne <strong>25&nbsp;$ de crédit</strong> sur votre 2e&nbsp;facture. Consultez <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> pour la promotion en cours. Sans contrat, modem inclus.
         </div>
-          <p class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-08-07">7&nbsp;août&nbsp;2026</time></p>
+          <p class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-08-09">9&nbsp;août&nbsp;2026</time></p>
         </section>
+
+        <aside class="confidence-decision-card" aria-labelledby="confidence-decision-title">
+          <div class="confidence-card-head">
+            <div><span class="confidence-kicker">Fiche décisionnelle</span><h2 id="confidence-decision-title">Code EBOX GE911</h2></div>
+            <span class="confidence-status">Testé par Cash Instinct</span>
+          </div>
+          <dl class="confidence-fields">
+            <div class="confidence-field"><dt>Meilleur pour</dt><dd><strong>Nouveaux clients résidentiels</strong> au Québec ou en Ontario qui veulent un crédit de 25&nbsp;$ sur la 2e&nbsp;facture, sans contrat.</dd></div>
+            <div class="confidence-field"><dt>À surveiller</dt><dd>Le code doit être saisi pendant la commande initiale; l’admissibilité, l’adresse, le formulaire affiché et les conditions EBOX peuvent varier.</dd></div>
+            <div class="confidence-field"><dt>Vérifié le</dt><dd><time datetime="2026-08-07">7&nbsp;août&nbsp;2026</time> — parcours Québec et Ontario, saisie du code et conditions revérifiés.</dd></div>
+            <div class="confidence-field confidence-source"><dt>Source</dt><dd><a href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer">Formulaire officiel EBOX</a> · <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">conditions sur ebox.ca</a></dd></div>
+          </dl>
+          <p class="confidence-note">Cette fiche résume la décision; elle ne remplace pas les conditions officielles ni la confirmation finale affichée par EBOX.</p>
+        </aside>
 
         <div class="transparency" style="margin-bottom: 24px;">
   <strong>Transparence&nbsp;:</strong> ce guide indépendant assure un suivi de parrainage EBOX. Si vous vous abonnez avec le code client <code>GE911</code>, vous obtenez votre crédit de 25&nbsp;$ sur la 2e&nbsp;facture (entièrement financé par EBOX) — et EBOX me verse aussi un crédit de parrainage, sans aucun coût supplémentaire pour vous. Divulgation complète au bas de cette page.
 </div>
-
-        <section class="verification-method" aria-labelledby="verification-method-title">
-          <h2 id="verification-method-title">Comment cette page est-elle vérifiée&nbsp;?</h2>
-          <p>Nous vérifions régulièrement le formulaire d'inscription, les conditions officielles et les captures d'écran.</p>
-          <details class="verification-log">
-            <summary>Voir les éléments vérifiés</summary>
-            <ul>
-              <li>Parcours d'inscription et champ de parrainage</li>
-              <li>Conditions du programme et montant du crédit</li>
-              <li>Captures d'écran et liens officiels</li>
-            </ul>
-          </details>
-        </section>
 
         <section id="promo-100" aria-label="Comment fonctionne le parrainage EBOX GE911">
           <span class="section-label">Programme de parrainage</span>
@@ -1583,7 +1593,7 @@
   <footer>
     <div class="container">
       <p>Site non affilié officiellement à EBOX. Les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
-      <p style="margin-top:6px;">Code client EBOX : <code>GE911</code> — Mis à jour : <time id="footer-date" datetime="2026-08-07">7&nbsp;août&nbsp;2026</time></p>
+      <p style="margin-top:6px;">Code client EBOX : <code>GE911</code> — Mis à jour : <time id="footer-date" datetime="2026-08-09">9&nbsp;août&nbsp;2026</time></p>
     </div>
 
     <nav class="footer-hub" aria-label="Liens du site">
