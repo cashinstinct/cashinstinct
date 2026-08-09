@@ -2,7 +2,7 @@
 <!--
 ═══════════════════════════════════════════════════════════════════════════════
   CASHINSTINCT.CA — EBOX — ENGLISH PAGE (QC + ON)   STATUS: NO ACTIVE PROMOTION
-  Last editorial review: August 7, 2026
+  Last editorial review: August 9, 2026
 ───────────────────────────────────────────────────────────────────────────────
   MAINTENANCE NOTES — READ BEFORE EDITING
   • GE911 is the referral code presented on this page. It gives eligible new
@@ -91,7 +91,7 @@
       "inLanguage": "en-CA",
       "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
       "datePublished": "2026-06-02",
-      "dateModified": "2026-08-07",
+      "dateModified": "2026-08-09",
       "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
       "publisher": {
         "@type": "Organization",
@@ -624,11 +624,18 @@
     .verification-panel ul { display: flex; flex-wrap: wrap; gap: 2px 16px; margin: 7px 0 0; padding: 0; list-style: none; color: var(--text-soft); line-height: 1.4; font-size: 0.86rem; }
     .verification-panel li::before { content: '✓ '; color: var(--accent); font-weight: 800; }
     .verification-panel time { font-weight: 800; color: var(--text); }
-    .verification-method { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin: 24px 0; }
-    .verification-method h2 { margin-top: 0; }
-    .verification-log { margin-top: 16px; }
-    .verification-log summary { cursor: pointer; font-weight: 700; }
-    .verification-log ul { margin-top: 10px; }
+    .confidence-decision-card { margin: 24px 0; padding: 20px; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow); }
+    .confidence-card-head { display: flex; align-items: start; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+    .confidence-kicker { display: block; margin-bottom: 4px; color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .confidence-card-head h2 { margin: 0; font-size: 1.35rem; }
+    .confidence-status { flex: 0 0 auto; padding: 4px 9px; border-radius: 999px; background: rgba(26, 122, 60, .12); color: var(--ok); font-size: .75rem; font-weight: 800; }
+    .confidence-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; }
+    .confidence-field { padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-soft); }
+    .confidence-field dt { margin-bottom: 3px; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+    .confidence-field dd { margin: 0; color: var(--text-soft); font-size: .92rem; }
+    .confidence-field dd strong { color: var(--text); }
+    .confidence-source a { font-weight: 700; }
+    .confidence-note { margin: 14px 0 0; color: var(--muted); font-size: .82rem; }
     .verification-record { border-top: 1px solid var(--border); margin: 32px 0 0; padding-top: 20px; }
     .verification-record h2 { margin-top: 0; font-size: 1.2rem; }
     .verification-record ul { margin: 0; padding-left: 20px; color: var(--text-soft); }
@@ -809,6 +816,8 @@
       .input-copy-group input[type="text"] { background: var(--surface-soft) !important; border: 1px solid var(--border) !important; border-radius: 8px !important; width: 100% !important; }
       .input-copy-group .copy-btn { width: 100% !important; padding: 12px 16px !important; border-radius: 8px !important; border-left: none !important; justify-content: center; }
       .hero-methods > div { padding: 20px 16px !important; }
+      .confidence-card-head { flex-direction: column; }
+      .confidence-fields { grid-template-columns: 1fr; }
     }
     
     @media (max-width: 380px) { #theme-toggle { display: none; } }
@@ -1005,20 +1014,21 @@
           <div class="transparency" style="margin-bottom: 24px;">
             <strong>Transparency:</strong> This is an independent guide to the EBOX referral program. If you sign up with referral code <code>GE911</code>, you receive a $25 credit on your second bill, funded by EBOX. EBOX also gives me a referral credit at no additional cost to you. Full disclosure appears at the bottom of this page.
           </div>
-          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-08-07">August&nbsp;7, 2026</time></p>
+          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-08-09">August&nbsp;9, 2026</time></p>
 
-          <section class="verification-method" aria-labelledby="verification-method-title">
-            <h2 id="verification-method-title">How is this page verified?</h2>
-            <p>We regularly check the sign-up form, official conditions and screenshots.</p>
-            <details class="verification-log">
-              <summary>See what is checked</summary>
-              <ul>
-                <li>Sign-up path and referral field</li>
-                <li>Program conditions and credit amount</li>
-                <li>Screenshots and official links</li>
-              </ul>
-            </details>
-          </section>
+          <aside class="confidence-decision-card" aria-labelledby="confidence-decision-title">
+            <div class="confidence-card-head">
+              <div><span class="confidence-kicker">Decision brief</span><h2 id="confidence-decision-title">EBOX referral code GE911</h2></div>
+              <span class="confidence-status">Tested by Cash Instinct</span>
+            </div>
+            <dl class="confidence-fields">
+              <div class="confidence-field"><dt>Best for</dt><dd><strong>New residential customers</strong> in Quebec or Ontario who want a $25 credit on the second bill, with no contract.</dd></div>
+              <div class="confidence-field"><dt>Watch for</dt><dd>The code must be entered during the initial order; eligibility, address, displayed form and EBOX terms may vary.</dd></div>
+              <div class="confidence-field"><dt>Verified on</dt><dd><time datetime="2026-08-07">August&nbsp;7, 2026</time> — Quebec and Ontario paths, code entry and official conditions rechecked.</dd></div>
+              <div class="confidence-field confidence-source"><dt>Source</dt><dd><a href="https://promo.ebox.ca/v-fibre/en-qc" target="_blank" rel="noopener sponsored noreferrer">Official EBOX form</a> · <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">terms on ebox.ca</a></dd></div>
+            </dl>
+            <p class="confidence-note">This brief summarizes the decision; it does not replace the official terms or the final confirmation shown by EBOX.</p>
+          </aside>
         </section>
 
         <section id="promo-100" aria-label="How the EBOX GE911 referral works">
@@ -1581,7 +1591,7 @@
     <div class="container">
       <p>This site is not officially affiliated with EBOX. Trademarks belong to their respective owners.</p>
       <!-- utilise l'id footer-date que le JS attend -->
-      <p style="margin-top:6px;">EBOX referral code: <code>GE911</code> — Updated: <time id="footer-date" datetime="2026-08-07">August&nbsp;7, 2026</time></p>
+      <p style="margin-top:6px;">EBOX referral code: <code>GE911</code> — Updated: <time id="footer-date" datetime="2026-08-09">August&nbsp;9, 2026</time></p>
     </div>
 
     <nav class="footer-hub" aria-label="Site links">
