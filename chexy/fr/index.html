@@ -103,7 +103,7 @@
           {
             "@type": "Question",
             "name": "Comment fonctionne le système de statuts Chexy : Rose (Pink), Or (Gold), Élite (Elite) ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent : Starter (1+ filleul) donne 20 $ de crédit ; Rose / Pink (3+) descend les frais à 1,5 % ; Or / Gold (5+) à 1,0 % ; Élite / Elite (10+) à 0,5 %. À partir de Rose, votre récompense passe du crédit aux frais réduits — vous ne cumulez pas les deux. Nouveau pour 2026 : si votre crew (vos filleuls) complète assez de paiements dans l'année — 15 pour Rose, 50 pour Or, 250 pour Élite — votre statut existant est prolongé jusqu'au 31 décembre 2027. Seuls les paiements de vos filleuls comptent (pas les vôtres), et l'extension prolonge votre palier actuel sans vous faire monter au suivant." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent : Starter (1+ filleul) donne 20 $ de crédit ; Rose / Pink (3+) donne 20 $ de crédit et réduit les frais à 1,5 % ; Or / Gold (5+) donne 20 $ de crédit et réduit les frais à 1,0 % ; Élite / Elite (10+) donne 20 $ de crédit et réduit les frais à 0,5 %. Le programme 2026 maintient donc le crédit de 20 $ et ajoute la réduction de frais aux statuts supérieurs. Nouveau pour 2026 : si votre crew (vos filleuls) complète assez de paiements dans l'année — 15 pour Rose, 50 pour Or, 250 pour Élite — votre statut existant est prolongé jusqu'au 31 décembre 2027. Seuls les paiements de vos filleuls comptent (pas les vôtres), et l'extension prolonge votre palier actuel sans vous faire monter au suivant." }
           },
           {
             "@type": "Question",
@@ -153,7 +153,7 @@
           {
             "@type": "Question",
             "name": "Le bonus de 20 $, c'est un virement ou un crédit ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "C'est un crédit Chexy, pas un virement dans votre compte bancaire. Une fois votre premier paiement complété, les 20 $ apparaissent comme un solde de crédit dans votre compte Chexy. Vous le rachetez ensuite via le bouton Redeem (dans le Wallet ou à l'écran de paiement) pour réduire un paiement futur fait via Chexy. Deux conséquences concrètes : le crédit s'applique sur un paiement récurrent actif, et il ne peut être ni retiré ni transféré — il sert uniquement à diminuer le coût d'un paiement Chexy (par exemple, effacer une partie des frais de 1,75 %). Le crédit peut apparaître quelques jours après que le paiement est complété, parfois un peu plus selon le traitement." }
+            "acceptedAnswer": { "@type": "Answer", "text": "C'est un crédit Chexy, pas un virement dans votre compte bancaire. Une fois votre premier paiement complété, les 20 $ apparaissent comme un solde de crédit dans votre compte Chexy. Vous le rachetez ensuite via le bouton Redeem (dans le Wallet ou à l'écran de paiement) pour réduire un paiement futur fait via Chexy. Deux conséquences concrètes : le crédit peut s'appliquer à un paiement récurrent ou ponctuel, et il ne peut être ni retiré ni transféré — il sert uniquement à diminuer le coût d'un paiement Chexy (par exemple, effacer une partie des frais de 1,75 %). Le crédit peut apparaître quelques jours après que le paiement est complété, parfois un peu plus selon le traitement." }
           }
         ]
       },
@@ -595,9 +595,9 @@
       → cartes INTERNATIONALES = base 2,5 % (réduc Rose −0,25 / Or −0,75 / Élite −1,25).
         VOLONTAIREMENT non affiché : cible = cartes canadiennes. Ne pas ajouter de 2e barème.
 
-  (c) À partir de Rose (Pink), la récompense passe du crédit AUX frais réduits.
-      → On NE cumule PAS 20 $ + frais réduits. C'est l'un OU l'autre.
-      → Seul Starter touche le 20 $ crédit. Le FILLEUL touche toujours 20 $.
+  (c) Le programme officiel 2026 maintient le crédit de 20 $ et ajoute une réduction de frais aux statuts supérieurs.
+      → Tous les statuts (Starter, Rose/Pink, Or/Gold et Élite/Elite) donnent 20 $ de crédit au parrain; Rose, Or et Élite ajoutent les frais réduits.
+      → Le FILLEUL touche toujours 20 $ après un premier paiement complété, sous réserve des conditions du programme.
 
   ⚠ STATS POLICY : tous les calculs $ de la page utilisent 1,75 % (taux Starter),
     cohérent avec le profil "usage perso + petit volume de filleuls".
@@ -611,15 +611,15 @@
         2. Le lien Branch auto-détecte l’appareil : mobile → ouvre l’app (ou store) ;
            desktop → fallback web automatique en CONSERVANT l’attribution. Un seul lien couvre
            les deux, pas besoin de JS de swap.
-        3. Path app = 20 $ CASH pour le parrain PEU IMPORTE le tier. Le path web/standard
-           bascule la récompense du parrain vers frais réduits dès Pink (3 filleuls).
+        3. Le parcours mobile ajoute le bonus bidirectionnel de 20 $ pour le parrain et le filleul,
+           peu importe le statut. Le tableau officiel 2026 indique aussi 20 $ de crédit au parrain
+           avec les frais réduits pour les statuts Rose/Pink, Or/Gold et Élite/Elite.
       → Le lien web https://app.chexy.co?ref=86GwJRXw20iY52PmYweG reste documenté dans le
         glossaire comme FORMAT ALTERNATIF / secours manuel. NE PAS le remettre dans les CTA.
         Si un futur chat hésite entre app/web : c’est TRANCHÉ = APP PRIMAIRE.
-      → Contradiction source : la doc Chexy 2026 décrit 2 mécaniques qui se chevauchent
-        (référence standard par tier VS promo app). Les deux payent 20 $. Chaque IA qui lit
-        une seule section donne une réponse différente → d’où le flip-flop app/web. Le lien
-        app est le choix supérieur, ne pas rouvrir le débat.
+      → La page officielle 2026 distingue le programme par statuts et le bonus mobile, mais
+        confirme dans les deux cas le crédit de 20 $ au parrain et au filleul. L'app reste le
+        parcours primaire des CTA parce que le bonus mobile y est explicitement documenté.
 
   ⚠ MODIF 12 JUILLET 2026 — DÉLAI DU CRÉDIT HARMONISÉ :
       → Ancienne formulation q16 « jusqu’à 2 semaines » venait d’un résumé tiers non confirmé
@@ -817,7 +817,7 @@
       <section id="statuts" aria-label="Statuts Chexy et frais réduits">
         <span class="section-label">Statuts &amp; frais</span>
         <h2>Le système de statuts Chexy : Rose (Pink), Or (Gold), Élite (Elite)</h2>
-        <p>Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent. Important&nbsp;: à partir de <strong>Rose (Pink)</strong>, votre récompense passe du crédit aux <strong>frais réduits</strong> — vous ne touchez pas les deux. Seul le statut Starter reçoit le 20&nbsp;$. Votre filleul, lui, reçoit toujours 20&nbsp;$.</p>
+        <p>Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent. Important&nbsp;: le programme 2026 maintient le <strong>crédit de 20&nbsp;$</strong> à tous les statuts et ajoute les <strong>frais réduits</strong> à partir de Rose (Pink). Votre filleul, lui, reçoit toujours 20&nbsp;$ après un premier paiement complété, sous réserve des conditions en vigueur.</p>
 
         <div class="cumul-box">
           <h3>
@@ -832,17 +832,17 @@
             <span class="cumul-sep" aria-hidden="true">→</span>
             <div class="cumul-item">
               <span class="amount">1,5&nbsp;%</span>
-              <span class="label">Rose (Pink)<br><strong>3+ filleuls</strong></span>
+              <span class="label">Rose (Pink)<br><strong>3+ filleuls</strong><br>+ 20&nbsp;$ crédit</span>
             </div>
             <span class="cumul-sep" aria-hidden="true">→</span>
             <div class="cumul-item">
               <span class="amount">1,0&nbsp;%</span>
-              <span class="label">Or (Gold)<br><strong>5+ filleuls</strong></span>
+              <span class="label">Or (Gold)<br><strong>5+ filleuls</strong><br>+ 20&nbsp;$ crédit</span>
             </div>
             <span class="cumul-sep" aria-hidden="true">→</span>
             <div class="cumul-item cumul-total">
               <span class="amount">0,5&nbsp;%</span>
-              <span class="label">Élite (Elite)<br><strong>10+ filleuls</strong></span>
+              <span class="label">Élite (Elite)<br><strong>10+ filleuls</strong><br>+ 20&nbsp;$ crédit</span>
             </div>
           </div>
           <p class="cumul-note">
@@ -1023,7 +1023,7 @@
           <details>
             <summary id="faq-q6">Comment fonctionne le système de statuts Chexy&nbsp;: Rose (Pink), Or (Gold), Élite (Elite)&nbsp;?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q6">
-              <p>Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent&nbsp;: Starter (1+ filleul) donne 20&nbsp;$ de crédit&nbsp;; Rose / Pink (3+) descend les frais à 1,5&nbsp;%&nbsp;; Or / Gold (5+) à 1,0&nbsp;%&nbsp;; Élite / Elite (10+) à 0,5&nbsp;%. À partir de Rose, votre récompense passe du crédit aux frais réduits — vous ne cumulez pas les deux. Nouveau pour 2026&nbsp;: si votre «&nbsp;crew&nbsp;» (vos filleuls) complète assez de paiements dans l'année — 15 pour Rose, 50 pour Or, 250 pour Élite — votre statut <em>existant</em> est prolongé jusqu'au 31&nbsp;décembre 2027. Seuls les paiements de vos filleuls comptent (pas les vôtres), et l'extension prolonge votre palier actuel sans vous faire monter au suivant.</p>
+              <p>Plus vous parrainez de personnes, plus votre statut monte et plus vos frais baissent&nbsp;: Starter (1+ filleul) donne 20&nbsp;$ de crédit&nbsp;; Rose / Pink (3+) donne 20&nbsp;$ de crédit et réduit les frais à 1,5&nbsp;%&nbsp;; Or / Gold (5+) donne 20&nbsp;$ de crédit et réduit les frais à 1,0&nbsp;%&nbsp;; Élite / Elite (10+) donne 20&nbsp;$ de crédit et réduit les frais à 0,5&nbsp;%. Le programme 2026 maintient donc le crédit de 20&nbsp;$ et ajoute la réduction de frais aux statuts supérieurs. Nouveau pour 2026&nbsp;: si votre «&nbsp;crew&nbsp;» (vos filleuls) complète assez de paiements dans l'année — 15 pour Rose, 50 pour Or, 250 pour Élite — votre statut <em>existant</em> est prolongé jusqu'au 31&nbsp;décembre 2027. Seuls les paiements de vos filleuls comptent (pas les vôtres), et l'extension prolonge votre palier actuel sans vous faire monter au suivant.</p>
             </div>
           </details>
           <details>
@@ -1083,7 +1083,7 @@
           <details>
             <summary id="faq-q16">Le bonus de 20&nbsp;$, c'est un virement ou un crédit&nbsp;?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q16">
-              <p>C'est un <strong>crédit Chexy</strong>, pas un virement dans votre compte bancaire. Une fois votre premier paiement complété, les 20&nbsp;$ apparaissent comme un solde de crédit dans votre compte Chexy. Vous le rachetez ensuite via le bouton «&nbsp;Redeem&nbsp;» (dans le Wallet ou à l'écran de paiement) pour <strong>réduire un paiement futur</strong> fait via Chexy. Deux conséquences concrètes&nbsp;: le crédit s'applique sur un <strong>paiement récurrent actif</strong>, et il <strong>ne peut être ni retiré ni transféré</strong> — il sert uniquement à diminuer le coût d'un paiement Chexy (par exemple, effacer une partie des frais de 1,75&nbsp;%). Le crédit peut apparaître quelques jours après que le paiement est complété, parfois un peu plus selon le traitement.</p>
+              <p>C'est un <strong>crédit Chexy</strong>, pas un virement dans votre compte bancaire. Une fois votre premier paiement complété, les 20&nbsp;$ apparaissent comme un solde de crédit dans votre compte Chexy. Vous le rachetez ensuite via le bouton «&nbsp;Redeem&nbsp;» (dans le Wallet ou à l'écran de paiement) pour <strong>réduire un paiement futur</strong> fait via Chexy. Deux conséquences concrètes&nbsp;: le crédit peut s'appliquer à un <strong>paiement récurrent ou ponctuel</strong>, et il <strong>ne peut être ni retiré ni transféré</strong> — il sert uniquement à diminuer le coût d'un paiement Chexy (par exemple, effacer une partie des frais de 1,75&nbsp;%). Le crédit peut apparaître quelques jours après que le paiement est complété, parfois un peu plus selon le traitement.</p>
             </div>
           </details>
         </div>

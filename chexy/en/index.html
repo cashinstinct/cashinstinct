@@ -112,7 +112,7 @@
           {
             "@type": "Question",
             "name": "How does the Chexy tier system work: Pink, Gold, Elite?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The more people you refer, the higher your tier and the lower your fees: Starter (1+ referral) gives $20 credit; Pink (3+) drops fees to 1.5%; Gold (5+) to 1.0%; Elite (10+) to 0.5%. Starting at Pink, your reward shifts from credit to reduced fees — you don't get both. New for 2026: if your crew (the people you refer) completes enough payments during the year — 15 for Pink, 50 for Gold, 250 for Elite — your existing tier is extended until December 31, 2027. Only your referrals' payments count (not your own), and the extension prolongs your current tier without bumping you up." }
+            "acceptedAnswer": { "@type": "Answer", "text": "The more people you refer, the higher your tier and the lower your fees: Starter (1+ referral) gives $20 credit; Pink (3+) gives $20 credit and reduces the fee to 1.5%; Gold (5+) gives $20 credit and reduces the fee to 1.0%; Elite (10+) gives $20 credit and reduces the fee to 0.5%. The 2026 program keeps the $20 credit and adds the reduced fee at the higher tiers. New for 2026: if your crew (the people you refer) completes enough payments during the year — 15 for Pink, 50 for Gold, 250 for Elite — your existing tier is extended until December 31, 2027. Only your referrals' payments count (not your own), and the extension prolongs your current tier without bumping you up." }
           },
           {
             "@type": "Question",
@@ -162,7 +162,7 @@
           {
             "@type": "Question",
             "name": "Is the $20 bonus a transfer or a credit?",
-            "acceptedAnswer": { "@type": "Answer", "text": "It's a Chexy credit, not a transfer to your bank account. Once your first payment is completed, the $20 appears as a credit balance in your Chexy account. You then redeem it via the Redeem button (in the Wallet or at the checkout screen) to reduce a future payment made through Chexy. Two concrete consequences: the credit applies to an active recurring payment, and it cannot be withdrawn or transferred — it only serves to lower the cost of a Chexy payment (for example, wiping out part of the 1.75% fee). The credit may appear a few days after the payment is completed, sometimes a bit longer depending on processing." }
+            "acceptedAnswer": { "@type": "Answer", "text": "It's a Chexy credit, not a transfer to your bank account. Once your first payment is completed, the $20 appears as a credit balance in your Chexy account. You then redeem it via the Redeem button (in the Wallet or at the checkout screen) to reduce a future payment made through Chexy. Two concrete consequences: the credit can be applied to a recurring or one-time payment, and it cannot be withdrawn or transferred — it only serves to lower the cost of a Chexy payment (for example, wiping out part of the 1.75% fee). The credit may appear a few days after the payment is completed, sometimes a bit longer depending on processing." }
           }
         ]
       },
@@ -597,9 +597,9 @@
       → cartes INTERNATIONALES = base 2,5 % (réduc Rose −0,25 / Or −0,75 / Élite −1,25).
         VOLONTAIREMENT non affiché : cible = cartes canadiennes. Ne pas ajouter de 2e barème.
 
-  (c) À partir de Rose (Pink), la récompense passe du crédit AUX frais réduits.
-      → On NE cumule PAS 20 $ + frais réduits. C'est l'un OU l'autre.
-      → Seul Starter touche le 20 $ crédit. Le FILLEUL touche toujours 20 $.
+  (c) Le programme officiel 2026 maintient le crédit de 20 $ et ajoute une réduction de frais aux statuts supérieurs.
+      → Tous les statuts (Starter, Rose/Pink, Or/Gold et Élite/Elite) donnent 20 $ de crédit au parrain; Rose, Or et Élite ajoutent les frais réduits.
+      → Le FILLEUL touche toujours 20 $ après un premier paiement complété, sous réserve des conditions du programme.
 
   ⚠ STATS POLICY : tous les calculs $ de la page utilisent 1,75 % (taux Starter),
     cohérent avec le profil "usage perso + petit volume de filleuls".
@@ -613,15 +613,15 @@
         2. Le lien Branch auto-détecte l’appareil : mobile → ouvre l’app (ou store) ;
            desktop → fallback web automatique en CONSERVANT l’attribution. Un seul lien couvre
            les deux, pas besoin de JS de swap.
-        3. Path app = 20 $ CASH pour le parrain PEU IMPORTE le tier. Le path web/standard
-           bascule la récompense du parrain vers frais réduits dès Pink (3 filleuls).
+        3. Le parcours mobile ajoute le bonus bidirectionnel de 20 $ pour le parrain et le filleul,
+           peu importe le statut. Le tableau officiel 2026 indique aussi 20 $ de crédit au parrain
+           avec les frais réduits pour les statuts Rose/Pink, Or/Gold et Élite/Elite.
       → Le lien web https://app.chexy.co?ref=86GwJRXw20iY52PmYweG reste documenté dans le
         glossaire comme FORMAT ALTERNATIF / secours manuel. NE PAS le remettre dans les CTA.
         Si un futur chat hésite entre app/web : c’est TRANCHÉ = APP PRIMAIRE.
-      → Contradiction source : la doc Chexy 2026 décrit 2 mécaniques qui se chevauchent
-        (référence standard par tier VS promo app). Les deux payent 20 $. Chaque IA qui lit
-        une seule section donne une réponse différente → d’où le flip-flop app/web. Le lien
-        app est le choix supérieur, ne pas rouvrir le débat.
+      → La page officielle 2026 distingue le programme par statuts et le bonus mobile, mais
+        confirme dans les deux cas le crédit de 20 $ au parrain et au filleul. L'app reste le
+        parcours primaire des CTA parce que le bonus mobile y est explicitement documenté.
 
   ⚠ MODIF 12 JUILLET 2026 — DÉLAI DU CRÉDIT HARMONISÉ :
       → Ancienne formulation q16 « jusqu’à 2 semaines » venait d’un résumé tiers non confirmé
@@ -818,7 +818,7 @@
       <section id="status" aria-label="Chexy tiers and reduced fees">
         <span class="section-label">Tiers &amp; fees</span>
         <h2>The Chexy tier system: Pink, Gold, Elite</h2>
-        <p>The more people you refer, the higher your tier and the lower your fees. Important: starting at <strong>Pink</strong>, your reward shifts from credit to <strong>reduced fees</strong> — you don't get both. Only the Starter tier receives the $20. The person you refer always receives $20.</p>
+        <p>The more people you refer, the higher your tier and the lower your fees. Important: the 2026 program keeps the <strong>$20 credit</strong> at every tier and adds <strong>reduced fees</strong> starting at Pink. The person you refer always receives $20 after a completed first payment, subject to the current terms.</p>
 
         <div class="cumul-box">
           <h3>
@@ -833,17 +833,17 @@
             <span class="cumul-sep" aria-hidden="true">→</span>
             <div class="cumul-item">
               <span class="amount">1.5%</span>
-              <span class="label">Pink<br><strong>3+ referrals</strong></span>
+              <span class="label">Pink<br><strong>3+ referrals</strong><br>+ $20 credit</span>
             </div>
             <span class="cumul-sep" aria-hidden="true">→</span>
             <div class="cumul-item">
               <span class="amount">1.0%</span>
-              <span class="label">Gold<br><strong>5+ referrals</strong></span>
+              <span class="label">Gold<br><strong>5+ referrals</strong><br>+ $20 credit</span>
             </div>
             <span class="cumul-sep" aria-hidden="true">→</span>
             <div class="cumul-item cumul-total">
               <span class="amount">0.5%</span>
-              <span class="label">Elite<br><strong>10+ referrals</strong></span>
+              <span class="label">Elite<br><strong>10+ referrals</strong><br>+ $20 credit</span>
             </div>
           </div>
           <p class="cumul-note">
@@ -1024,7 +1024,7 @@
           <details>
             <summary id="faq-q6">How does the Chexy tier system work: Pink, Gold, Elite?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q6">
-              <p>The more people you refer, the higher your tier and the lower your fees: Starter (1+ referral) gives $20 credit; Pink (3+) drops fees to 1.5%; Gold (5+) to 1.0%; Elite (10+) to 0.5%. Starting at Pink, your reward shifts from credit to reduced fees — you don't get both. New for 2026: if your crew (the people you refer) completes enough payments during the year — 15 for Pink, 50 for Gold, 250 for Elite — your <em>existing</em> tier is extended until December 31, 2027. Only your referrals' payments count (not your own), and the extension prolongs your current tier without bumping you up.</p>
+              <p>The more people you refer, the higher your tier and the lower your fees: Starter (1+ referral) gives $20 credit; Pink (3+) gives $20 credit and reduces the fee to 1.5%; Gold (5+) gives $20 credit and reduces the fee to 1.0%; Elite (10+) gives $20 credit and reduces the fee to 0.5%. The 2026 program keeps the $20 credit and adds the reduced fee at the higher tiers. New for 2026: if your crew (the people you refer) completes enough payments during the year — 15 for Pink, 50 for Gold, 250 for Elite — your <em>existing</em> tier is extended until December 31, 2027. Only your referrals' payments count (not your own), and the extension prolongs your current tier without bumping you up.</p>
             </div>
           </details>
           <details>
@@ -1084,7 +1084,7 @@
           <details>
             <summary id="faq-q16">Is the $20 bonus a transfer or a credit?</summary>
             <div class="faq-body" role="region" aria-labelledby="faq-q16">
-              <p>It's a <strong>Chexy credit</strong>, not a transfer to your bank account. Once your first payment is completed, the $20 appears as a credit balance in your Chexy account. You then redeem it via the "Redeem" button (in the Wallet or at the checkout screen) to <strong>reduce a future payment</strong> made through Chexy. Two concrete consequences: the credit applies to an <strong>active recurring payment</strong>, and it <strong>cannot be withdrawn or transferred</strong> — it only serves to lower the cost of a Chexy payment (for example, wiping out part of the 1.75% fee). The credit may appear a few days after the payment is completed, sometimes a bit longer depending on processing.</p>
+              <p>It's a <strong>Chexy credit</strong>, not a transfer to your bank account. Once your first payment is completed, the $20 appears as a credit balance in your Chexy account. You then redeem it via the "Redeem" button (in the Wallet or at the checkout screen) to <strong>reduce a future payment</strong> made through Chexy. Two concrete consequences: the credit can be applied to a <strong>recurring or one-time payment</strong>, and it <strong>cannot be withdrawn or transferred</strong> — it only serves to lower the cost of a Chexy payment (for example, wiping out part of the 1.75% fee). The credit may appear a few days after the payment is completed, sometimes a bit longer depending on processing.</p>
             </div>
           </details>
         </div>
