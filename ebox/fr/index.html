@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <!--
 ═══════════════════════════════════════════════════════════════════════════════
-  CASHINSTINCT.CA — EBOX — PAGE FR (Québec)        état : AUCUNE PROMO ACTIVE
-  Dernière révision éditoriale : 9 août 2026
+  CASHINSTINCT.CA — EBOX — PAGE FR (Québec + Ontario) état : PROMO ACTIVE
+  Dernière révision éditoriale : 10 août 2026
 ───────────────────────────────────────────────────────────────────────────────
   POUR LA PROCHAINE IA QUI ÉDITE CETTE PAGE — lire avant de toucher :
 
   CONTEXTE / RAISONNEMENT
-  • Cette page FR cible le QUÉBEC (liens d'inscription vers v-fibre/fr-qc ;
-    préfixe v-fibre = QC, r-fibre = ON).
+  • Cette page FR sert le QUÉBEC et l'ONTARIO. Conserver les deux parcours
+    officiels : Québec = promo.ebox.ca/v-fibre/fr-qc/ ; Ontario =
+    promo.ebox.ca/r-fibre/fr-on/.
   • Le code de parrainage GE911 = 25 $ de crédit sur la 2e facture selon les
     conditions applicables. Ne pas le confondre avec une promo.
-  • AUCUNE PROMOTION À DURÉE LIMITÉE ACTIVE. Le bloc de compte à rebours est
-    conservé, commenté, pour une prochaine offre vérifiée.
-  • Les promos EBOX changent souvent et sont en général « non jumelables » entre
-    elles. Présenter GE911 comme un avantage DISTINCT du rabais de prix ou de promo.
-  • La promo diffère selon la province : au QC c'était 1 Gbit/s à 55 $, en Ontario
-    500 Mbit/s à 55 $. Ne pas mélanger à la réactivation.
+  • PROMOTION ACTIVE vérifiée le 10 août 2026 : carte numérique de 100 $ avec
+    Fibre 500 Mbit/s ou 1 Gbit/s, nouveaux clients au Québec et en Ontario,
+    du 10 août au 6 septembre 2026.
+  • La carte prépayée et GE911 sont deux mécanismes distincts. Le cumul visuel
+    « jusqu'à 125 $ de valeur » est permis, mais ne doit jamais être garanti.
+  • La promo carte indique qu'elle n'est pas jumelable à d'autres offres ou
+    promotions. Ne pas en déduire automatiquement que le programme de parrainage
+    est exclu; renvoyer aux modalités EBOX en vigueur.
+  • Countdown réactivé avec PROMO_END au 7 septembre à 00:00 (heure de l'Est).
+    Après expiration, masquer le compteur et remettre PROMO_ACTIVE à false.
 
-  POUR RÉACTIVER UNE PROMO (quand EBOX en republie une au Québec)
-  1. Hero : décommenter le bloc #countdown-wrapper (actuellement en commentaire
-     dans le header hero). Mettre à jour le label « … expire dans ».
-  2. Script countdown (bas de page) : passer PROMO_ACTIVE à true et régler
-     PROMO_END à la date de fin RÉELLE (vérifier note légale ET bandeau EBOX —
-     ils se contredisent parfois ; en cas de doute, demander au support EBOX).
-  3. Section #promo-100 (actuellement « comment fonctionne GE911 ») : y réinjecter
-     les détails de la promo (montant, forfait, dates, région). Le CSS cumul-* est
-     conservé et réutilisable. Rétablir aussi hero badge/p, résumé, admissibilité,
-     comparatif, details et les FAQ q4/q5 datées.
+  POUR RÉACTIVER UNE PROMO (quand EBOX en republie une au Québec ou en Ontario)
+  1. Hero : le bloc #countdown-wrapper est actif pendant la promotion.
+  2. À l'expiration : passer PROMO_ACTIVE à false et conserver GE911 pleinement
+     fonctionnel. Le CSS cumul-* reste réutilisable pour une prochaine offre.
+  3. Toute nouvelle promo doit resynchroniser le hero, le résumé, #promo-100,
+     les métadonnées et les FAQ pertinentes après vérification officielle.
   4. Resynchroniser : meta description / og / twitter / JSON-LD WebPage +
      FAQ JSON-LD ↔ FAQ HTML (compter, doit être égal).
 
@@ -74,7 +75,7 @@
 
   <title>Code EBOX GE911 — 25 $ de crédit sur la 2e facture (2026)</title>
 
-  <meta name="description" content="Code EBOX GE911 : 25 $ de crédit sur la 2e facture pour les nouveaux clients admissibles. Guide, vérification et conditions du programme EBOX." />
+  <meta name="description" content="Code EBOX GE911 : 25 $ sur la 2e facture. Promo actuelle : carte prépayée de 100 $ sur Fibre 500 ou 1 Gbit/s, soit jusqu’à 125 $ de valeur." />
 
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Cash Instinct" />
@@ -120,11 +121,11 @@
       "@id": "https://cashinstinct.ca/ebox/fr/",
       "url": "https://cashinstinct.ca/ebox/fr/",
       "name": "Code EBOX GE911 — 25 $ de crédit sur la 2e facture (2026)",
-      "description": "Code EBOX GE911 : 25 $ de crédit sur la 2e facture pour les nouveaux clients admissibles. Guide, vérification et conditions du programme EBOX.",
+      "description": "Code EBOX GE911 : 25 $ sur la 2e facture. Promo actuelle : carte prépayée de 100 $ sur Fibre 500 ou 1 Gbit/s, soit jusqu’à 125 $ de valeur.",
       "inLanguage": "fr-CA",
       "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
       "datePublished": "2026-06-02",
-      "dateModified": "2026-08-09",
+      "dateModified": "2026-08-10",
       "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
       "publisher": {
         "@type": "Organization",
@@ -227,7 +228,7 @@
         {
           "@type": "Question",
           "name": "EBOX offre-t-il des promotions en plus du code GE911 ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "EBOX lance régulièrement des promotions à durée limitée pour les nouveaux clients au Québec et en Ontario. Ces offres changent au fil du temps. Le code de parrainage GE911 s'inscrit dans un champ distinct de la case Code Promo et donne 25 $ de crédit sur la 2e facture aux clients admissibles. Vérifiez toujours les conditions de l'offre en cours sur ebox.ca." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui. Jusqu'au 6 septembre 2026, EBOX offre une carte prépayée de 100 $ aux nouveaux clients admissibles qui choisissent un forfait Fibre 500 Mbit/s ou 1 Gbit/s. Le code client GE911 appartient au programme de parrainage distinct et donne 25 $ de crédit sur la deuxième facture. Les deux mécanismes peuvent représenter jusqu'à 125 $ de valeur lorsque les conditions applicables aux deux sont remplies. La promotion de carte indique qu'elle n'est pas jumelable à d'autres offres ou promotions; vérifiez les modalités EBOX en vigueur au moment de l'inscription." }
         },
         {
           "@type": "Question",
@@ -564,6 +565,15 @@
     .experience-proof ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 20px; }
     .experience-proof li { color: var(--text-soft); }
 
+    /* Choix de province */
+    .province-picker { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin: 22px auto 0; max-width: 560px; text-align: center; }
+    .province-picker strong { display: block; color: var(--text); margin-bottom: 12px; }
+    .province-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .province-links a { display: inline-block; background: var(--accent); color: #fff; border-radius: 7px; padding: 10px 18px; font-weight: 800; text-decoration: none; }
+    .province-links a:hover { background: var(--accent-dark); }
+    [data-theme="dark"] .province-links a { background: #b91c1c; color: #fff; }
+    [data-theme="dark"] .province-links a:hover { background: #991b1b; color: #fff; }
+
     /* Cartes de comparatifs */
     .comparison-hub { margin: 34px 0; }
     .comparison-hub > h3 { font-size: 1.55rem; font-weight: 800; margin-bottom: 18px; color: var(--text); letter-spacing: -0.02em; }
@@ -849,12 +859,11 @@
       </div>
       <h1>Code EBOX GE911 — 25&nbsp;$ de crédit</h1>
       <p>Entrez le <strong>code de parrainage GE911</strong> à votre inscription pour obtenir <strong>25&nbsp;$ de crédit</strong> sur votre 2e&nbsp;facture pour les nouveaux clients admissibles.</p>
+      <p style="font-size: 1rem; margin-bottom: 12px;">Offre temporaire&nbsp;: <strong>carte prépayée de 100&nbsp;$</strong> avec les forfaits Fibre 500&nbsp;Mbit/s ou 1&nbsp;Gbit/s admissibles.</p>
 
-      <!-- PROMOTION À DURÉE LIMITÉE — conserver ce bloc commenté et le
-           réactiver avec une date vérifiée lors de la prochaine offre EBOX.
       <div id="countdown-wrapper">
         <div class="countdown-bar" id="countdown-bar">
-          <span class="countdown-label">⏳ Cette promotion expire dans</span>
+          <span class="countdown-label">⏳ L'offre carte 100&nbsp;$ expire dans</span>
           <div class="countdown-units">
             <div class="countdown-unit"><span class="val" id="cd-days">--</span><span class="lbl">jours</span></div>
             <div class="countdown-unit"><span class="val" id="cd-hours">--</span><span class="lbl">heures</span></div>
@@ -866,7 +875,6 @@
           ✅ Cette promotion est terminée — le code <strong>GE911</strong> reste actif et donne toujours <strong>25&nbsp;$ de crédit</strong> sur votre 2e&nbsp;facture.
         </div>
       </div>
-      -->
 
       <div class="hero-methods">
 
@@ -892,7 +900,7 @@
           </div>
 
           <p style="font-size: 0.95rem; line-height: 1.3; text-align: center; margin: 24px 0 0 0;">
-            <a href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer" style="text-decoration: underline; font-weight: 700;">Ouvrez le site officiel d'EBOX</a> et entrez-le dans le champ illustré ici-haut.
+            Choisissez votre province d'inscription ci-dessous avant de poursuivre.
           </p>
         </div>
         
@@ -901,7 +909,7 @@
             <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-soft); letter-spacing: 0.05em;">
               Étape&nbsp;2 — Coller lors de votre inscription
             </p>
-            <a href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer" style="display: block;">
+            <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer" style="display: block;">
               <picture>
                 <source srcset="https://cashinstinct.ca/ebox/fr/images/ebox-ge911-code-inscrit-valide-FR.webp" type="image/webp">
                 <img src="https://cashinstinct.ca/ebox/fr/images/ebox-ge911-code-inscrit-valide-FR.png"
@@ -920,17 +928,24 @@
           </div>
 
           <p style="font-size: 0.95rem; line-height: 1.3; text-align: center; margin: 24px 0 0 0;">
-            <a href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer" style="text-decoration: underline; font-weight: 700;">Ouvrez le site officiel d'EBOX</a> et entrez-le dans le champ illustré ici-haut.
+            Utilisez ensuite le champ du numéro de client indiqué ci-dessus, et non la case Code Promo.
           </p>
         </div>
 
       </div>
+      <div class="province-picker" role="group" aria-labelledby="province-picker-heading">
+        <strong id="province-picker-heading">Choisissez votre province</strong>
+        <div class="province-links">
+          <a href="https://promo.ebox.ca/v-fibre/fr-qc/" target="_blank" rel="noopener sponsored noreferrer">Québec</a>
+          <a href="https://promo.ebox.ca/r-fibre/fr-on/" target="_blank" rel="noopener sponsored noreferrer">Ontario</a>
+        </div>
+      </div>
       <section class="verification-panel" aria-labelledby="hero-verification-title">
         <h2 id="hero-verification-title">✓ Statut de vérification</h2>
-        <p><strong>Dernière vérification :</strong> <time datetime="2026-08-07">7 août 2026</time></p>
+        <p><strong>Promo vérifiée le :</strong> <time datetime="2026-08-10">10 août 2026</time></p>
         <ul>
-          <li>Parcours Québec et Ontario testés</li>
-          <li>Code GE911 accepté dans les deux formulaires</li>
+          <li>Pages officielles Québec et Ontario chargées</li>
+          <li>Carte 100&nbsp;$ sur Fibre 500 et 1&nbsp;Gbit/s</li>
           <li>Conditions officielles revérifiées</li>
         </ul>
       </section>
@@ -976,12 +991,11 @@
           <section class="summary-box" aria-labelledby="summary-heading">
           <h2 id="summary-heading">Sommaire du programme de parrainage EBOX</h2>
           <div class="ai-summary">
-          Le numéro de client EBOX présenté sur cette page est <strong>GE911</strong>. Il donne un crédit de <strong>25&nbsp;$ applicable sur la deuxième facture</strong> aux nouveaux abonnés résidentiels admissibles. Il doit être saisi dans la section Informations personnelles : <em>« Code — 25&nbsp;$ pour toi et tes amis ! »</em> lors de la commande initiale en ligne ou par téléphone au 1-844-323-EBOX (3269).
-          Beaucoup de gens cherchent « code EBOX », «&nbsp;EBOX promo code&nbsp;» ou «&nbsp;EBOX referral code&nbsp;» ; dans le formulaire, le champ officiel s'appelle « numéro de client EBOX de l'ami qui te réfère ».
+          Le numéro de client EBOX présenté sur cette page est <strong>GE911</strong>. Il donne un crédit de <strong>25&nbsp;$ sur la deuxième facture</strong> aux nouveaux abonnés résidentiels admissibles. Il doit être saisi dans la section Informations personnelles : <em>« Code — 25&nbsp;$ pour toi et tes amis ! »</em>, et non dans la case Code Promo, lors de la commande initiale.
           <br><br>
-          ℹ️ <strong>À propos des promotions :</strong> EBOX lance régulièrement des offres à durée limitée (cartes prépayées, baisses de prix sur la Fibre) pour les nouveaux clients au Québec et en Ontario. Le code GE911 est distinct de la case Code Promo et donne <strong>25&nbsp;$ de crédit</strong> sur votre 2e&nbsp;facture. Consultez <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> pour la promotion en cours. Sans contrat, modem inclus.
+          EBOX offre aussi temporairement une <strong>carte prépayée de 100&nbsp;$</strong> avec les forfaits Fibre 500&nbsp;Mbit/s et 1&nbsp;Gbit/s admissibles jusqu'au 6 septembre 2026. Les deux mécanismes distincts peuvent représenter <strong>jusqu'à 125&nbsp;$ de valeur</strong> lorsque les conditions applicables à chacun sont remplies.
         </div>
-          <p class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-08-09">9&nbsp;août&nbsp;2026</time></p>
+          <p class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-08-10">10&nbsp;août&nbsp;2026</time></p>
         </section>
 
         <aside class="confidence-decision-card" aria-labelledby="confidence-decision-title">
@@ -992,8 +1006,8 @@
           <dl class="confidence-fields">
             <div class="confidence-field"><dt>Meilleur pour</dt><dd><strong>Nouveaux clients résidentiels</strong> au Québec ou en Ontario qui veulent un crédit de 25&nbsp;$ sur la 2e&nbsp;facture, sans contrat.</dd></div>
             <div class="confidence-field"><dt>À surveiller</dt><dd>Le code doit être saisi pendant la commande initiale; l’admissibilité, l’adresse, le formulaire affiché et les conditions EBOX peuvent varier.</dd></div>
-            <div class="confidence-field"><dt>Vérifié le</dt><dd><time datetime="2026-08-07">7&nbsp;août&nbsp;2026</time> — parcours Québec et Ontario, saisie du code et conditions revérifiés.</dd></div>
-            <div class="confidence-field confidence-source"><dt>Source</dt><dd><a href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer">Formulaire officiel EBOX</a> · <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">conditions sur ebox.ca</a></dd></div>
+            <div class="confidence-field"><dt>Vérifié le</dt><dd><time datetime="2026-08-10">10&nbsp;août&nbsp;2026</time> — parcours Québec et Ontario, saisie du code et conditions revérifiés.</dd></div>
+            <div class="confidence-field confidence-source"><dt>Source</dt><dd>Formulaires officiels EBOX : <a href="https://promo.ebox.ca/v-fibre/fr-qc/" target="_blank" rel="noopener sponsored noreferrer">Québec</a> · <a href="https://promo.ebox.ca/r-fibre/fr-on/" target="_blank" rel="noopener sponsored noreferrer">Ontario</a> · <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">conditions sur ebox.ca</a></dd></div>
           </dl>
           <p class="confidence-note">Cette fiche résume la décision; elle ne remplace pas les conditions officielles ni la confirmation finale affichée par EBOX.</p>
         </aside>
@@ -1002,43 +1016,57 @@
   <strong>Transparence&nbsp;:</strong> ce guide indépendant assure un suivi de parrainage EBOX. Si vous vous abonnez avec le code client <code>GE911</code>, vous obtenez votre crédit de 25&nbsp;$ sur la 2e&nbsp;facture (entièrement financé par EBOX) — et EBOX me verse aussi un crédit de parrainage, sans aucun coût supplémentaire pour vous. Divulgation complète au bas de cette page.
 </div>
 
-        <section id="promo-100" aria-label="Comment fonctionne le parrainage EBOX GE911">
-          <span class="section-label">Programme de parrainage</span>
-          <h2>Code de parrainage EBOX GE911 — comment fonctionne le crédit</h2>
+        <section id="promo-100" aria-label="Promotion EBOX et parrainage GE911">
+          <span class="section-label">Promotion EBOX</span>
+          <h2>Carte prépayée de 100&nbsp;$ + code de parrainage GE911</h2>
+
+          <div class="facts" style="margin-top: 24px;">
+            <div class="fact">
+              <strong>🎁 Carte prépayée de 100&nbsp;$</strong>
+              <span>Avec un forfait Fibre 500&nbsp;Mbit/s ou 1&nbsp;Gbit/s admissible, du 10 août au 6 septembre 2026.</span>
+            </div>
+            <div class="fact">
+              <strong>👤 Nouveaux clients</strong>
+              <span>Québec et Ontario; offre non disponible par les canaux partenaires.</span>
+            </div>
+            <div class="fact">
+              <strong>⏱️ Service actif</strong>
+              <span>Un nouveau service doit être installé et rester actif avec un compte en règle pendant 60 jours.</span>
+            </div>
+            <div class="fact">
+              <strong>📧 Réclamation</strong>
+              <span>Après le courriel EBOX, 30 jours pour s'inscrire; carte numérique, une par client, valide jusqu'à 12 mois, fonds non utilisés perdus à l'expiration.</span>
+            </div>
+          </div>
+
+          <p style="margin-top: 20px;">
+            La promotion de carte prépayée indique qu'elle n'est pas jumelable à d'autres offres ou promotions. Le programme de parrainage EBOX utilise toutefois un champ distinct lors de l'inscription : le code client <strong>GE911</strong> donne <strong>25&nbsp;$ de crédit sur la 2e&nbsp;facture</strong> aux nouveaux clients admissibles. Consultez les <a href="https://promo.ebox.ca/v-fibre/fr-qc/" target="_blank" rel="noopener sponsored noreferrer">conditions officielles du Québec</a> ou de l'<a href="https://promo.ebox.ca/r-fibre/fr-on/" target="_blank" rel="noopener sponsored noreferrer">Ontario</a> avant de commander.
+          </p>
 
           <div class="cumul-box">
             <h3>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="color:var(--accent);"><polyline points="20 6 9 17 4 12"/></svg>
-              Parrainage EBOX : l'essentiel
+              Jusqu'à 125&nbsp;$ de valeur
             </h3>
-            <div class="cumul-row" style="grid-template-columns: 1fr; max-width: 360px; margin: 0 auto;">
+            <div class="cumul-row">
               <div class="cumul-item">
-                <span class="amount">25&nbsp;$</span>
-                <span class="label">Crédit sur la 2e&nbsp;facture<br>avec le code GE911</span>
+                <span class="amount" style="white-space: nowrap;">100&nbsp;$</span>
+                <span class="label">Carte prépayée</span>
+              </div>
+              <span class="cumul-sep" aria-hidden="true">+</span>
+              <div class="cumul-item">
+                <span class="amount" style="white-space: nowrap;">25&nbsp;$</span>
+                <span class="label">Crédit GE911 sur la 2e&nbsp;facture</span>
+              </div>
+              <span class="cumul-sep" aria-hidden="true">=</span>
+              <div class="cumul-item cumul-total">
+                <span class="amount" style="white-space: nowrap;">Jusqu'à 125&nbsp;$</span>
+                <span class="label">de valeur</span>
               </div>
             </div>
             <p class="cumul-note" style="margin-top: 16px;">
-              💡 <strong>Comment ça marche.</strong> Entrez le code <code>GE911</code> dans le champ de parrainage pendant l'inscription. Le crédit de <strong>25&nbsp;$</strong> est appliqué sur votre 2e&nbsp;facture.
+              La carte prépayée et le programme de parrainage utilisent des mécanismes distincts. Admissibilité et avantages soumis aux conditions EBOX en vigueur.
             </p>
-          </div>
-
-          <div class="facts" style="margin-top: 24px;">
-            <div class="fact">
-              <strong>💵 Montant du crédit</strong>
-              <span>25&nbsp;$ appliqués automatiquement sur votre 2e&nbsp;facture.</span>
-            </div>
-            <div class="fact">
-              <strong>♾️ Validité</strong>
-              <span>Statut indiqué dans le bloc de vérification.</span>
-            </div>
-            <div class="fact">
-              <strong>📍 Régions admissibles</strong>
-              <span>Nouveaux clients résidentiels au Québec et en Ontario.</span>
-            </div>
-            <div class="fact">
-              <strong>📦 Inclus</strong>
-              <span>Modem et routeur inclus, installation à 0&nbsp;$. Sans contrat.</span>
-            </div>
           </div>
 
           <h3 style="font-size: 1.15rem; font-weight: 800; margin: 32px 0 16px; color: var(--text);">Comment appliquer le code GE911</h3>
@@ -1458,7 +1486,7 @@
             <details>
               <summary id="faq-q4">EBOX offre-t-il des promotions en plus du code GE911 ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q4">
-                <p>EBOX lance régulièrement des promotions à durée limitée pour les nouveaux clients au Québec et en Ontario. Ces offres changent au fil du temps. Le code <code>GE911</code> s'inscrit dans un champ distinct de la case Code Promo et donne <strong>25&nbsp;$ de crédit</strong> sur votre 2e&nbsp;facture aux clients admissibles. Vérifiez toujours les conditions de l'offre en cours sur <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a>. Vous pouvez également consulter notre comparatif <a href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/">EBOX vs Fizz vs oxio</a> pour mettre les offres en contexte.</p>
+                <p>Oui. Jusqu'au 6 septembre 2026, EBOX offre une carte prépayée de 100&nbsp;$ aux nouveaux clients admissibles qui choisissent un forfait Fibre 500&nbsp;Mbit/s ou 1&nbsp;Gbit/s au Québec ou en Ontario. Le code client <code>GE911</code> appartient au programme de parrainage distinct et donne 25&nbsp;$ de crédit sur la deuxième facture. Les deux mécanismes peuvent représenter <strong>jusqu'à 125&nbsp;$ de valeur</strong> lorsque les conditions applicables aux deux sont remplies. La promotion de carte indique qu'elle n'est pas jumelable à d'autres offres ou promotions; vérifiez les <a href="https://promo.ebox.ca/v-fibre/fr-qc/" target="_blank" rel="noopener sponsored noreferrer">modalités du Québec</a> ou de l'<a href="https://promo.ebox.ca/r-fibre/fr-on/" target="_blank" rel="noopener sponsored noreferrer">Ontario</a> en vigueur au moment de l'inscription.</p>
               </div>
             </details>
             <details>
@@ -1548,7 +1576,7 @@
         <section class="verification-record" aria-labelledby="verification-record-title">
           <h2 id="verification-record-title">Dernière vérification effectuée</h2>
           <ul>
-            <li><time datetime="2026-08-07">7 août 2026</time> — Parcours Québec et Ontario testés; code GE911 accepté dans les deux formulaires; conditions officielles revérifiées.</li>
+            <li><time datetime="2026-08-10">10 août 2026</time> — Parcours EBOX revérifiés; code GE911 testé et accepté dans le formulaire; nouvelle promotion de carte prépayée de 100 $ et conditions officielles Québec/Ontario revérifiées.</li>
           </ul>
         </section>
 
@@ -1559,10 +1587,11 @@
 
         <div class="cta-section">
           <h2>Prêt à commander votre accès Internet ?</h2>
-          <p>Cliquez ci-dessous, choisissez votre forfait Internet et entrez simplement le code <strong>GE911</strong> dans la section Informations personnelles: <em>« Code — 25&nbsp;$ pour toi et tes amis ! »</em> pendant votre inscription pour activer votre rabais de 25&nbsp;$.</p>
-          <a class="btn" href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer">
-            🌐 Aller sur le site d'EBOX
-          </a>
+          <p>Choisissez le parcours d'inscription français pour votre province, puis entrez le code <strong>GE911</strong> dans le champ du numéro de client pendant votre inscription pour activer votre crédit de 25&nbsp;$.</p>
+          <div class="province-links" aria-label="Choisissez votre province">
+            <a href="https://promo.ebox.ca/v-fibre/fr-qc/" target="_blank" rel="noopener sponsored noreferrer">Québec</a>
+            <a href="https://promo.ebox.ca/r-fibre/fr-on/" target="_blank" rel="noopener sponsored noreferrer">Ontario</a>
+          </div>
           <div class="cta-code-row">
             <span class="cta-code-pill">GE911</span>
             <button class="cta-copy-btn" data-copy="GE911" data-label="Copier le code" data-target="copyStatusCta" aria-controls="copyStatusCta" type="button">Copier le code</button>
@@ -1585,7 +1614,7 @@
     </div>
     <div class="s-actions">
       <button class="s-btn" id="sticky-copy-btn" type="button" data-copy="GE911" data-label="Copier" data-target="stickyCopyStatus" aria-controls="stickyCopyStatus">Copier</button>
-      <a class="s-btn s-open-btn" href="https://promo.ebox.ca/v-fibre/fr-qc" target="_blank" rel="noopener sponsored noreferrer" aria-label="Ouvrir ebox.ca">Ouvrir ↗</a>
+      <a class="s-btn s-open-btn" href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer" aria-label="Ouvrir ebox.ca">Ouvrir ↗</a>
     </div>
     <span id="stickyCopyStatus" role="status" aria-atomic="true" aria-live="polite" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"></span>
   </div>
@@ -1593,7 +1622,7 @@
   <footer>
     <div class="container">
       <p>Site non affilié officiellement à EBOX. Les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
-      <p style="margin-top:6px;">Code client EBOX : <code>GE911</code> — Mis à jour : <time id="footer-date" datetime="2026-08-09">9&nbsp;août&nbsp;2026</time></p>
+      <p style="margin-top:6px;">Code client EBOX : <code>GE911</code> — Mis à jour : <time id="footer-date" datetime="2026-08-10">10&nbsp;août&nbsp;2026</time></p>
     </div>
 
     <nav class="footer-hub" aria-label="Liens du site">
@@ -1712,13 +1741,17 @@
   </script>
 
   <script>
-    /* ── Countdown promo — 1 MOIS GRATUIT ── */
+    /* ── Countdown promo — carte prépayée de 100 $ ── */
     (function() {
-      var PROMO_ACTIVE = false;
-      var PROMO_END = new Date('2026-07-26T23:59:59-04:00');
+      var PROMO_ACTIVE = true;
+      var PROMO_END = new Date('2026-09-07T00:00:00-04:00');
       var postPromoBlock = document.getElementById('post-promo-block');
+      var countdownWrapper = document.getElementById('countdown-wrapper');
 
-      if (!PROMO_ACTIVE) return;
+      if (!PROMO_ACTIVE) {
+        if (countdownWrapper) countdownWrapper.style.display = 'none';
+        return;
+      }
       if (postPromoBlock) postPromoBlock.style.display = 'none';
 
       var cdDays    = document.getElementById('cd-days');

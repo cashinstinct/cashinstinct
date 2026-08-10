@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
 ═══════════════════════════════════════════════════════════════════════════════
-  CASHINSTINCT.CA — EBOX — ENGLISH PAGE (QC + ON)   STATUS: NO ACTIVE PROMOTION
-  Last editorial review: August 9, 2026
+  CASHINSTINCT.CA — EBOX — ENGLISH PAGE (QC + ON)   STATUS: ACTIVE PROMOTION
+  Last editorial review: August 10, 2026
 ───────────────────────────────────────────────────────────────────────────────
   MAINTENANCE NOTES — READ BEFORE EDITING
   • GE911 is the referral code presented on this page. It gives eligible new
@@ -12,11 +12,15 @@
       Quebec:  promo.ebox.ca/v-fibre/en-qc
       Ontario: promo.ebox.ca/r-fibre/en-on
   • Do not reuse prices, plan details, dates or promotions from one province in
-    the other. No limited-time promotion is active on this page.
-  • The countdown markup is intentionally commented out and PROMO_ACTIVE is
-    false. To reactivate it, verify the official offer and province, update the
-    label and PROMO_END, set PROMO_ACTIVE to true, then resynchronize the hero,
-    offer section, eligibility copy, metadata and relevant FAQ answers.
+    the other. The active promotion is a verified $100 digital prepaid card for
+    eligible 500 Mbps or 1 Gbps Fibre plans, August 10 to September 6, 2026.
+  • The prepaid card and GE911 are separate mechanisms. The visual “up to $125
+    in value” is allowed, but must never be presented as guaranteed.
+  • The card promotion says it cannot be combined with other offers or
+    promotions. Do not automatically infer that the separate referral program
+    is excluded; refer readers to EBOX's current terms.
+  • The countdown is active with PROMO_END at September 7, 2026, 00:00 Eastern.
+    After expiry, hide the counter and set PROMO_ACTIVE back to false.
   • FAQ HTML and FAQPage.mainEntity must always have the same number of
     questions and convey the same information.
   • Update dateModified manually before publishing. Footer and trust dates are
@@ -42,7 +46,7 @@
 
   <title>EBOX Referral Code GE911 — $25 Credit on Your Second Bill</title>
 
-  <meta name="description" content="Use EBOX referral code GE911 for a $25 credit on your second bill for eligible new residential customers. Guide, verification and current program terms." />
+  <meta name="description" content="EBOX referral code GE911: $25 on the second bill. Current offer: $100 prepaid card on eligible 500 Mbps or 1 Gbps plans, up to $125 in value." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Cash Instinct" />
 
@@ -87,11 +91,11 @@
       "@id": "https://cashinstinct.ca/ebox/en/",
       "url": "https://cashinstinct.ca/ebox/en/",
       "name": "EBOX Referral Code GE911 — $25 Credit on Your Second Bill",
-      "description": "Use EBOX referral code GE911 for a $25 credit on your second bill for eligible new residential customers. Guide, verification and current program terms.",
+      "description": "EBOX referral code GE911: $25 on the second bill. Current offer: $100 prepaid card on eligible 500 Mbps or 1 Gbps plans, up to $125 in value.",
       "inLanguage": "en-CA",
       "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
       "datePublished": "2026-06-02",
-      "dateModified": "2026-08-09",
+      "dateModified": "2026-08-10",
       "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
       "publisher": {
         "@type": "Organization",
@@ -197,7 +201,7 @@
         {
           "@type": "Question",
           "name": "Does EBOX offer other promotions?",
-          "acceptedAnswer": { "@type": "Answer", "text": "EBOX occasionally offers limited-time promotions. GE911 is entered in a separate referral field. Check the terms of the current offer to confirm whether the benefits can be combined." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Through September 6, 2026, EBOX is offering eligible new customers a $100 prepaid card with a Fibre 500 Mbps or 1 Gbps plan. Client code GE911 belongs to the separate referral program and gives a $25 credit on the second bill. The two mechanisms can represent up to $125 in value when the applicable conditions for both are met. The card promotion says it cannot be combined with other offers or promotions; check EBOX's current terms when signing up." }
         },
         {
           "@type": "Question",
@@ -868,12 +872,10 @@
       </div>
       <h1>EBOX Referral Code GE911 — $25 Credit</h1>
       <p>Enter <strong>referral code GE911</strong> during sign-up to receive a <strong>$25 credit on your second bill</strong> for eligible new residential customers in Quebec and Ontario.</p>
-      
-      <!-- LIMITED-TIME PROMOTION — keep this block commented out. Reactivate it
-           only after verifying the offer, province and official end date.
+      <p style="font-size: 1rem; margin-bottom: 12px;">Limited-time offer: <strong>$100 prepaid card</strong> with eligible Fibre 500 Mbps or 1 Gbps plans.</p>
       <div id="countdown-wrapper">
         <div class="countdown-bar" id="countdown-bar">
-          <span class="countdown-label">⏳ This offer expires in</span>
+          <span class="countdown-label">⏳ $100 prepaid card offer ends in</span>
           <div class="countdown-units">
             <div class="countdown-unit"><span class="val" id="cd-days">--</span><span class="lbl">days</span></div>
             <div class="countdown-unit"><span class="val" id="cd-hours">--</span><span class="lbl">hours</span></div>
@@ -885,7 +887,6 @@
           ✅ This limited-time offer has ended. Check the current verification status for referral code GE911.
         </div>
       </div>
-      -->
 
    
       <div class="hero-methods">
@@ -956,11 +957,11 @@
         </div>
         <section class="verification-panel" aria-labelledby="hero-verification-title">
           <h2 id="hero-verification-title">✓ Verification status</h2>
-          <p><strong>Last verification:</strong> <time datetime="2026-08-07">August 7, 2026</time></p>
+          <p><strong>Offer verified:</strong> <time datetime="2026-08-10">August 10, 2026</time></p>
           <ul>
-            <li>Quebec and Ontario paths tested</li>
-            <li>Code GE911 accepted in both forms</li>
-            <li>Official conditions rechecked</li>
+            <li>Official Quebec and Ontario pages loaded</li>
+            <li>$100 card on 500 Mbps and 1 Gbps Fibre</li>
+            <li>Official terms rechecked</li>
           </ul>
         </section>
     </div>
@@ -1006,12 +1007,11 @@
           <section class="summary-box" aria-labelledby="summary-heading">
           <h2 id="summary-heading">Quick summary of the EBOX referral code</h2>
           <div class="ai-summary">
-          The EBOX referral code featured on this page is <strong>GE911</strong>. Eligible new residential customers receive a <strong>$25 credit on their second bill</strong>. Enter it in the Personal Information section under <em>"Code — $25 for you and your friends!"</em> when ordering online, or provide it by phone at <a href="tel:+18443233269">1-844-323-EBOX (3269)</a>.
-          Many people search for "EBOX referral code", "EBOX promo code", or "EBOX client number"; in the order form, the official field is labelled "Enter the client number of the friend who referred you".
+          The EBOX referral code featured on this page is <strong>GE911</strong>. Eligible new residential customers receive a <strong>$25 credit on the second bill</strong>. Enter it in the Personal Information section under <em>"Code — $25 for you and your friends!"</em>, not in the separate Promo Code field, during the initial order.
           <br><br>
-          ℹ️ <strong>About promotions:</strong> EBOX occasionally offers limited-time promotions. GE911 is entered in a separate referral field. Check the terms of the current offer to confirm whether the benefits can be combined.
+          EBOX is also offering a limited-time <strong>$100 prepaid card</strong> with eligible 500 Mbps and 1 Gbps Fibre plans through September 6, 2026. The two separate mechanisms can represent <strong>up to $125 in value</strong> when the applicable conditions for both are met.
         </div>
-          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-08-09">August&nbsp;9, 2026</time></p>
+          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-08-10">August&nbsp;10, 2026</time></p>
 
           <aside class="confidence-decision-card" aria-labelledby="confidence-decision-title">
             <div class="confidence-card-head">
@@ -1021,7 +1021,7 @@
             <dl class="confidence-fields">
               <div class="confidence-field"><dt>Best for</dt><dd><strong>New residential customers</strong> in Quebec or Ontario who want a $25 credit on the second bill, with no contract.</dd></div>
               <div class="confidence-field"><dt>Watch for</dt><dd>The code must be entered during the initial order; eligibility, address, displayed form and EBOX terms may vary.</dd></div>
-              <div class="confidence-field"><dt>Verified on</dt><dd><time datetime="2026-08-07">August&nbsp;7, 2026</time> — Quebec and Ontario paths, code entry and official conditions rechecked.</dd></div>
+              <div class="confidence-field"><dt>Verified on</dt><dd><time datetime="2026-08-10">August&nbsp;10, 2026</time> — Quebec and Ontario paths, code entry and official conditions rechecked.</dd></div>
               <div class="confidence-field confidence-source"><dt>Source</dt><dd>Official EBOX forms: <a href="https://promo.ebox.ca/v-fibre/en-qc" target="_blank" rel="noopener sponsored noreferrer">Quebec</a> · <a href="https://promo.ebox.ca/r-fibre/en-on" target="_blank" rel="noopener sponsored noreferrer">Ontario</a> · <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">terms on ebox.ca</a></dd></div>
             </dl>
             <p class="confidence-note">This brief summarizes the decision; it does not replace the official terms or the final confirmation shown by EBOX.</p>
@@ -1031,43 +1031,57 @@
           </div>
         </section>
 
-        <section id="promo-100" aria-label="How the EBOX GE911 referral works">
-          <span class="section-label">Referral Program</span>
-          <h2>How the EBOX GE911 referral credit works</h2>
+        <section id="promo-100" aria-label="EBOX promotion and GE911 referral">
+          <span class="section-label">EBOX promotion</span>
+          <h2>$100 prepaid card + EBOX referral code GE911</h2>
+
+          <div class="facts" style="margin-top: 24px;">
+            <div class="fact">
+              <strong>🎁 $100 prepaid card</strong>
+              <span>With an eligible Fibre 500 Mbps or 1 Gbps plan, from August 10 through September 6, 2026.</span>
+            </div>
+            <div class="fact">
+              <strong>👤 New customers</strong>
+              <span>Quebec and Ontario; not available through partner channels.</span>
+            </div>
+            <div class="fact">
+              <strong>⏱️ Active service</strong>
+              <span>A new service must be installed and remain active with the account in good standing for 60 days.</span>
+            </div>
+            <div class="fact">
+              <strong>📧 Redemption</strong>
+              <span>After EBOX emails you, register within 30 days; digital card, one per customer, valid for up to 12 months, unused funds forfeit at expiry.</span>
+            </div>
+          </div>
+
+          <p style="margin-top: 20px;">
+            The prepaid-card promotion says it cannot be combined with other offers or promotions. The EBOX referral program uses a separate sign-up field: client code <strong>GE911</strong> gives eligible new customers a <strong>$25 credit on the second bill</strong>. Review the <a href="https://promo.ebox.ca/v-fibre/en-qc" target="_blank" rel="noopener sponsored noreferrer">official offer terms</a> before ordering.
+          </p>
 
           <div class="cumul-box">
             <h3>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="color:var(--accent);"><polyline points="20 6 9 17 4 12"/></svg>
-              EBOX referral program at a glance
+              Up to $125 in value
             </h3>
-            <div class="cumul-row" style="grid-template-columns: 1fr; max-width: 360px; margin: 0 auto;">
+            <div class="cumul-row">
               <div class="cumul-item">
-                <span class="amount">$25</span>
-                <span class="label">Credit on the second bill<br>with code GE911</span>
+                <span class="amount" style="white-space: nowrap;">$100</span>
+                <span class="label">Prepaid card</span>
+              </div>
+              <span class="cumul-sep" aria-hidden="true">+</span>
+              <div class="cumul-item">
+                <span class="amount" style="white-space: nowrap;">$25</span>
+                <span class="label">GE911 referral credit on the 2nd bill</span>
+              </div>
+              <span class="cumul-sep" aria-hidden="true">=</span>
+              <div class="cumul-item cumul-total">
+                <span class="amount" style="white-space: nowrap;">Up to $125</span>
+                <span class="label">in value</span>
               </div>
             </div>
             <p class="cumul-note" style="margin-top: 16px;">
-              💡 <strong>How it works.</strong> Enter <code>GE911</code> in the referral customer number field during sign-up. Eligible new residential customers receive a <strong>$25 credit on the second bill</strong>.
+              The prepaid-card offer and referral program use separate mechanisms. Eligibility and benefits remain subject to EBOX's current terms.
             </p>
-          </div>
-
-          <div class="facts" style="margin-top: 24px;">
-            <div class="fact">
-              <strong>💵 Credit amount</strong>
-              <span>$25 applied automatically to your second bill.</span>
-            </div>
-            <div class="fact">
-              <strong>♾️ Validity</strong>
-              <span>Status shown in the verification block.</span>
-            </div>
-            <div class="fact">
-              <strong>📍 Eligible regions</strong>
-              <span>New residential customers in Quebec and Ontario.</span>
-            </div>
-            <div class="fact">
-              <strong>📍 Province-specific order</strong>
-              <span>Choose the Quebec or Ontario English sign-up path for your service address.</span>
-            </div>
           </div>
 
           <h3 style="font-size: 1.15rem; font-weight: 800; margin: 32px 0 16px; color: var(--text);">How to apply code GE911</h3>
@@ -1456,7 +1470,7 @@
             <details>
               <summary id="faq-q4">Does EBOX offer other promotions?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q4">
-                <p>EBOX occasionally offers limited-time promotions. GE911 is entered in a separate referral field. Check the terms of the current offer on <a href="https://www.ebox.ca/" target="_blank" rel="noopener sponsored noreferrer">ebox.ca</a> to confirm whether the benefits can be combined.</p>
+                <p>Yes. Through September 6, 2026, EBOX is offering eligible new customers a $100 prepaid card with a Fibre 500 Mbps or 1 Gbps plan. Client code <code>GE911</code> belongs to the separate referral program and gives a $25 credit on the second bill. The two mechanisms can represent <strong>up to $125 in value</strong> when the applicable conditions for both are met. The card promotion says it cannot be combined with other offers or promotions; check EBOX's <a href="https://promo.ebox.ca/v-fibre/en-qc" target="_blank" rel="noopener sponsored noreferrer">current terms</a> when signing up.</p>
               </div>
             </details>
             <details>
@@ -1545,7 +1559,7 @@
         <section class="verification-record" aria-labelledby="verification-record-title">
           <h2 id="verification-record-title">Last verification completed</h2>
           <ul>
-            <li><time datetime="2026-08-07">August 7, 2026</time> — Quebec and Ontario paths tested; code GE911 accepted in both forms; official conditions rechecked.</li>
+            <li><time datetime="2026-08-10">August 10, 2026</time> — EBOX sign-up paths rechecked; GE911 tested and accepted in the form; new $100 prepaid-card promotion and official Quebec/Ontario terms rechecked.</li>
           </ul>
         </section>
 
@@ -1591,7 +1605,7 @@
     <div class="container">
       <p>This site is not officially affiliated with EBOX. Trademarks belong to their respective owners.</p>
       <!-- utilise l'id footer-date que le JS attend -->
-      <p style="margin-top:6px;">EBOX referral code: <code>GE911</code> — Updated: <time id="footer-date" datetime="2026-08-09">August&nbsp;9, 2026</time></p>
+      <p style="margin-top:6px;">EBOX referral code: <code>GE911</code> — Updated: <time id="footer-date" datetime="2026-08-10">August&nbsp;10, 2026</time></p>
     </div>
 
     <nav class="footer-hub" aria-label="Site links">
@@ -1705,14 +1719,17 @@
   </script>
 
   <script>
-    /* ── Countdown promo — 1 MONTH FREE ── */
+    /* ── Countdown promo — $100 prepaid card ── */
     (function() {
-      var PROMO_ACTIVE = false;
-      // Inactive placeholder. Replace with the verified official end date before enabling.
-      var PROMO_END = new Date('2026-07-26T23:59:59-04:00'); 
+      var PROMO_ACTIVE = true;
+      var PROMO_END = new Date('2026-09-07T00:00:00-04:00');
       var postPromoBlock = document.getElementById('post-promo-block');
+      var countdownWrapper = document.getElementById('countdown-wrapper');
 
-      if (!PROMO_ACTIVE) return; 
+      if (!PROMO_ACTIVE) {
+        if (countdownWrapper) countdownWrapper.style.display = 'none';
+        return;
+      }
       if (postPromoBlock) postPromoBlock.style.display = 'none';
 
       var cdDays    = document.getElementById('cd-days');
