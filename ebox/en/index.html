@@ -19,6 +19,8 @@
   • The card promotion says it cannot be combined with other offers or
     promotions. Do not automatically infer that the separate referral program
     is excluded; refer readers to EBOX's current terms.
+  • The hero cumulative badge is hidden by default and shown only while
+    PROMO_CUMUL_100_ACTIVE is true and the $100 promotion has not expired.
   • The countdown is active with PROMO_END at September 7, 2026, 00:00 Eastern.
     After expiry, hide the counter and set PROMO_ACTIVE back to false.
   • FAQ HTML and FAQPage.mainEntity must always have the same number of
@@ -378,14 +380,16 @@
     header.hero {
       background: linear-gradient(135deg, var(--accent) 0%, #7a1d1a 100%);
       color: #fff;
-      padding: 64px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
-    header.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
-    header.hero p { font-size: 1.15rem; opacity: 0.95; max-width: 620px; margin: 0 auto 28px; color: #fff; }
+    header.hero > .container > div:first-child { margin-bottom: 10px !important; }
+    header.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+    header.hero > .container > p { font-size: 1.15rem; opacity: 0.95; max-width: 620px; margin-right: auto; margin-bottom: 14px; margin-left: auto; color: #fff; text-align: center; }
+    header.hero > .container > p:nth-of-type(2) { margin-bottom: 6px !important; }
 
     /* Compteur de la vente flash (Countdown) */
-    .countdown-bar { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 20px auto 0; flex-wrap: wrap; }
+    .countdown-bar { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 8px auto 0; flex-wrap: wrap; }
     .countdown-label { font-size: 0.9rem; font-weight: 700; color: rgba(255,255,255,0.85); text-transform: uppercase; letter-spacing: 0.06em; }
     .countdown-units { display: flex; gap: 6px; }
     .countdown-unit { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 4px 10px; text-align: center; min-width: 52px; }
@@ -669,10 +673,11 @@
     .video-container:active { transform: scale(0.99); }
 
     /* Hero cards */
-    .hero-methods { display: flex; flex-direction: column; gap: 20px; margin: 28px auto 0; width: 100%; max-width: 560px; }
+    .hero-methods { display: flex; flex-direction: column; gap: 16px; margin: 12px auto 0; width: 100%; max-width: 560px; }
     .hero-methods > div { width: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
     /* suppression du !important sur la couleur dark — géré via variable CSS */
     .hero-methods p { color: var(--text-soft); font-size: 0.85rem; margin-top: 8px; text-align: center; }
+    .hero-methods > div > div > p:first-child { margin: 0 0 8px; }
 
     /* Liste d'étapes */
     .steps { list-style: none; counter-reset: steps; }
@@ -706,8 +711,8 @@
       .hero-methods {
         flex-direction: row;
         max-width: 1000px;
-        margin: 40px auto 0;
-        gap: 32px;
+        margin: 8px auto 0;
+        gap: 24px;
         align-items: stretch;
       }
       .hero-methods > div {
@@ -715,7 +720,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        padding: 32px 24px !important;
+        padding: 24px 20px !important;
       }
       .input-copy-group { max-width: 320px; margin-left: auto; margin-right: auto; width: 100%; }
       .hero-methods img, .hero-methods a:has(img) { margin-top: auto !important; }
@@ -736,7 +741,7 @@
     @media (max-width: 767px) {
       .nav a { font-size: 0.82rem; }
       .nav { gap: 8px; }
-      header.hero { padding: 28px 20px 36px; }
+      header.hero { padding: 16px 20px 24px; }
       .seo-table { font-size: 0.88rem !important; }
       .seo-table th, .seo-table td { padding: 10px 8px !important; }
     }
@@ -819,7 +824,7 @@
       .input-copy-group { flex-direction: column; background: transparent !important; border: none !important; gap: 8px; padding: 0 !important; }
       .input-copy-group input[type="text"] { background: var(--surface-soft) !important; border: 1px solid var(--border) !important; border-radius: 8px !important; width: 100% !important; }
       .input-copy-group .copy-btn { width: 100% !important; padding: 12px 16px !important; border-radius: 8px !important; border-left: none !important; justify-content: center; }
-      .hero-methods > div { padding: 20px 16px !important; }
+      .hero-methods > div { padding: 16px 16px !important; }
       .confidence-card-head { flex-direction: column; }
       .confidence-fields { grid-template-columns: 1fr; }
     }
@@ -863,11 +868,13 @@
 
   <header class="hero">
     <div class="container">
-      <div style="display:flex;justify-content:center;margin-bottom:28px;">
-        <div class="cumul-badge" style="display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 6px; background: rgba(0,0,0,.25); border: 2px solid rgba(255,255,255,.6); border-radius: 40px; padding: 10px 16px; font-size: 0.9rem; font-weight: 800; color: #fff; max-width: calc(100% - 32px); box-sizing: border-box;">
-          <span style="white-space:nowrap;">🌐 EBOX Referral Code GE911</span>
-          <span class="plus" style="opacity: .8; font-size: .9em; margin: 0 2px;">→</span>
-          <span class="total-pill" style="background: #fff; color: var(--accent); border-radius: 20px; padding: 4px 14px; font-size: .95rem; font-weight: 900; white-space: nowrap;">🎁 $25 credit</span>
+      <div id="promo-cumul-badge-wrapper" hidden style="display:flex;justify-content:center;margin-bottom:28px;">
+        <div id="promo-cumul-badge" class="cumul-badge" aria-label="$100 prepaid card plus $25 GE911 credit, up to $125 in value" style="display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 6px; background: rgba(0,0,0,.25); border: 2px solid rgba(255,255,255,.6); border-radius: 40px; padding: 10px 16px; font-size: 0.9rem; font-weight: 800; color: #fff; max-width: calc(100% - 32px); box-sizing: border-box;">
+          <span style="white-space:nowrap;">💵 $100 prepaid card</span>
+          <span class="plus" style="opacity: .8; font-size: .9em; margin: 0 2px;">+</span>
+          <span style="white-space:nowrap;">🎁 $25 GE911</span>
+          <span class="plus" style="opacity: .8; font-size: .9em; margin: 0 2px;">=</span>
+          <span class="total-pill" style="background: #fff; color: var(--accent); border-radius: 20px; padding: 4px 14px; font-size: .95rem; font-weight: 900; white-space: nowrap;">⭐ Up to $125 value</span>
         </div>
       </div>
       <h1>EBOX Referral Code GE911 — $25 Credit</h1>
@@ -1722,11 +1729,14 @@
     /* ── Countdown promo — $100 prepaid card ── */
     (function() {
       var PROMO_ACTIVE = true;
+      var PROMO_CUMUL_100_ACTIVE = true;
       var PROMO_END = new Date('2026-09-07T00:00:00-04:00');
       var postPromoBlock = document.getElementById('post-promo-block');
       var countdownWrapper = document.getElementById('countdown-wrapper');
+      var promoCumulBadge = document.getElementById('promo-cumul-badge-wrapper');
 
       if (!PROMO_ACTIVE) {
+        if (promoCumulBadge) promoCumulBadge.hidden = true;
         if (countdownWrapper) countdownWrapper.style.display = 'none';
         return;
       }
@@ -1744,11 +1754,13 @@
       function tick() {
         var diff = PROMO_END - new Date();
         if (diff <= 0) {
+          if (promoCumulBadge) promoCumulBadge.hidden = true;
           if (cdBar)          cdBar.style.display = 'none';
           if (heroExpired)    heroExpired.style.display = 'block';
           if (postPromoBlock) postPromoBlock.style.display = 'block';
           return;
         }
+        if (promoCumulBadge) promoCumulBadge.hidden = !PROMO_CUMUL_100_ACTIVE;
         var s = Math.floor(diff / 1000);
         if (cdDays)  cdDays.textContent  = pad(Math.floor(s / 86400));
         if (cdHours) cdHours.textContent = pad(Math.floor((s % 86400) / 3600));
