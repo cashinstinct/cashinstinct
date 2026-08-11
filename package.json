@@ -6,7 +6,7 @@
     "test:regression": "node --test tests/regression/*.test.mjs",
     "audit:quick": "npm run test:regression && node tests/quick/audit.mjs",
     "audit:maintainability": "node tests/maintainability/audit.mjs",
-    "audit:full": "playwright test",
+    "audit:full": "node tests/full/external-links.mjs && playwright test",
     "audit:all": "node tests/run-all.mjs",
     "audit:full:ui": "playwright test --ui",
     "serve:test": "http-server . -p 4173 -c-1"
