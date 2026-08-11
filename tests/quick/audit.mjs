@@ -24,6 +24,7 @@ import {
   valuesOfMeta,
   walkJson
 } from "../lib/site.mjs";
+import { auditInternalLinkPolicy } from "../lib/internal-link-policy.mjs";
 
 const startedAt = performance.now();
 const findings = [];
@@ -122,6 +123,15 @@ const sitemapEntries = await readSitemap();
 const sitemapByUrl = new Map(sitemapEntries.map((entry) => [entry.loc, entry]));
 const htmlValidator = new HtmlValidate(htmlValidateConfig);
 const now = new Date().toISOString().slice(0, 10);
+
+for (const finding of auditInternalLinkPolicy(pages)) {
+  error(
+    finding.rule,
+    finding.page,
+    finding.message,
+    finding.element ? elementLine(finding.page, finding.element) : null
+  );
+}
 
 for (const page of pages) {
   const { $, html } = page;

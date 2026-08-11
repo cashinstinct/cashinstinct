@@ -1,7 +1,17 @@
 import { test, expect } from "@playwright/test";
 import { discoverPages } from "../lib/site.mjs";
+import { auditInternalLinkPolicy } from "../lib/internal-link-policy.mjs";
 
 const pages = await discoverPages();
+
+test("politique transversale des liens internes", async () => {
+  const findings = auditInternalLinkPolicy(pages).map(({ rule, page, message }) => ({
+    rule,
+    file: page.relativeFile,
+    message
+  }));
+  expect(findings, JSON.stringify(findings, null, 2)).toEqual([]);
+});
 
 function isLocal(url) {
   return new URL(url).origin === "http://127.0.0.1:4173";

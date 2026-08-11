@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "audit:quick": "node tests/quick/audit.mjs",
+    "test:regression": "node --test tests/regression/*.test.mjs",
+    "audit:quick": "npm run test:regression && node tests/quick/audit.mjs",
     "audit:maintainability": "node tests/maintainability/audit.mjs",
     "audit:full": "playwright test",
     "audit:all": "node tests/run-all.mjs",
