@@ -26,6 +26,7 @@ import {
 } from "../lib/site.mjs";
 import { auditInternalLinkPolicy } from "../lib/internal-link-policy.mjs";
 import { auditStaticExternalLinks } from "../lib/external-link-policy.mjs";
+import { auditAccessibleNames } from "../lib/accessibility-policy.mjs";
 
 const startedAt = performance.now();
 const findings = [];
@@ -135,6 +136,15 @@ for (const finding of auditInternalLinkPolicy(pages)) {
 }
 
 for (const finding of auditStaticExternalLinks(pages)) {
+  error(
+    finding.rule,
+    finding.page,
+    finding.message,
+    finding.element ? elementLine(finding.page, finding.element) : null
+  );
+}
+
+for (const finding of auditAccessibleNames(pages)) {
   error(
     finding.rule,
     finding.page,

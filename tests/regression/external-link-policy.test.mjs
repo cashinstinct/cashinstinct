@@ -5,6 +5,7 @@ import {
   auditStaticExternalLinks,
   checkExternalUrl,
   clearExternalLinkCache,
+  collectDynamicExternalUrls,
   collectExternalUrls
 } from "../lib/external-link-policy.mjs";
 
@@ -58,6 +59,16 @@ test("collecte une seule fois une URL externe répétée", () => {
   assert.equal(entries[0].sources.length, 2);
 });
 
+test("retient les hrefs externes apparus après hydratation", () => {
+  const knownUrls = new Set(["https://provider.example/static"]);
+  const dynamicUrls = collectDynamicExternalUrls([
+    "https://provider.example/static#section",
+    "https://provider.example/runtime",
+    "https://cashinstinct.ca/guide/fr/"
+  ], "https://cashinstinct.ca/offer/fr/", knownUrls);
+  assert.deepEqual(dynamicUrls, ["https://provider.example/runtime"]);
+});
+
 test("classe une réponse 200 comme OK", async () => {
   const { result, calls } = await check([{ method: "HEAD", status: 200 }]);
   assert.equal(result.level, "ok");
@@ -85,6 +96,24 @@ test("classe 403 comme avertissement indéterminé", async () => {
   assert.equal(result.code, "access-uncertain");
 });
 
+test("accepte HEAD 403 puis GET 200 comme lien valide", async () => {
+  const { result } = await check([
+    { method: "HEAD", status: 403 },
+    { method: "GET", status: 200 }
+  ]);
+  assert.equal(result.level, "ok");
+  assert.equal(result.method, "GET");
+});
+
+test("accepte HEAD 405 puis GET 206 comme lien valide", async () => {
+  const { result } = await check([
+    { method: "HEAD", status: 405 },
+    { method: "GET", status: 206 }
+  ]);
+  assert.equal(result.level, "ok");
+  assert.equal(result.status, 206);
+});
+
 test("utilise GET limité quand HEAD échoue puis retrouve une réponse 2xx", async () => {
   const { result, calls } = await check([
     { method: "HEAD", error: "ETIMEDOUT" },
@@ -106,6 +135,48 @@ test("suit une redirection et la signale sans la classer comme erreur", async ()
   assert.equal(result.code, "redirected");
   assert.equal(result.finalUrl, "https://provider.example/new-source");
   assert.equal(result.redirects.length, 1);
+});
+
+test("classe une redirection finale vers 404 comme erreur certaine", async () => {
+  const { result } = await check([
+    { method: "HEAD", status: 301, location: "https://provider.example/missing" },
+    { method: "HEAD", url: "https://provider.example/missing", status: 404 },
+    { method: "GET", status: 301, location: "https://provider.example/missing" },
+    { method: "GET", url: "https://provider.example/missing", status: 404 }
+  ]);
+  assert.equal(result.level, "error");
+  assert.equal(result.code, "not-found");
+  assert.equal(result.finalUrl, "https://provider.example/missing");
+});
+
+test("classe une boucle de redirections comme avertissement", async () => {
+  const sequence = [
+    { method: "HEAD", status: 301, location: "https://provider.example/loop" },
+    { method: "HEAD", url: "https://provider.example/loop", status: 302, location: "https://provider.example/loop" },
+    { method: "GET", status: 301, location: "https://provider.example/loop" },
+    { method: "GET", url: "https://provider.example/loop", status: 302, location: "https://provider.example/loop" }
+  ];
+  const { result } = await check(sequence, "https://provider.example/start", { maxRedirects: 1 });
+  assert.equal(result.level, "warning");
+  assert.equal(result.code, "network-uncertain");
+});
+
+test("classe une redirection sans Location comme avertissement", async () => {
+  const { result } = await check([
+    { method: "HEAD", status: 301 },
+    { method: "GET", status: 301 }
+  ]);
+  assert.equal(result.level, "warning");
+  assert.equal(result.code, "network-uncertain");
+});
+
+test("classe 410 comme erreur certaine", async () => {
+  const { result } = await check([
+    { method: "HEAD", status: 410 },
+    { method: "GET", status: 410 }
+  ]);
+  assert.equal(result.level, "error");
+  assert.equal(result.code, "not-found");
 });
 
 test("classe timeout comme avertissement avec le retry désactivé de la fixture", async () => {

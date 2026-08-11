@@ -1,8 +1,14 @@
 import { test, expect } from "@playwright/test";
 import { discoverPages } from "../lib/site.mjs";
 import { auditInternalLinkPolicy } from "../lib/internal-link-policy.mjs";
+import {
+  checkExternalUrls,
+  collectDynamicExternalUrls,
+  collectExternalUrls
+} from "../lib/external-link-policy.mjs";
 
 const pages = await discoverPages();
+const staticExternalUrls = new Set(collectExternalUrls(pages).map((entry) => entry.url));
 
 test("politique transversale des liens internes", async () => {
   const findings = auditInternalLinkPolicy(pages).map(({ rule, page, message }) => ({
@@ -49,6 +55,35 @@ for (const sitePage of pages) {
     expect(response, "La navigation doit produire une réponse.").not.toBeNull();
     expect(response.status(), "La page doit charger avec un statut réussi.").toBeLessThan(400);
     await page.waitForTimeout(100);
+
+    if (test.info().project.name === "chromium-402") {
+      const runtimeHrefs = await page.locator("a[href]").evaluateAll((anchors) =>
+        anchors.map((anchor) => anchor.href).filter(Boolean)
+      );
+      const dynamicUrls = collectDynamicExternalUrls(
+        runtimeHrefs,
+        sitePage.canonical,
+        staticExternalUrls
+      );
+      const runtimeEntries = dynamicUrls.map((url) => ({
+        url,
+        sources: [{ file: sitePage.relativeFile, line: null, text: "DOM après hydratation" }]
+      }));
+      const runtimeResults = await checkExternalUrls(runtimeEntries, { concurrency: 4 });
+      const runtimeErrors = runtimeResults.filter((result) => result.level === "error");
+      const runtimeWarnings = runtimeResults.filter((result) => result.level === "warning");
+      if (dynamicUrls.length) {
+        console.log(
+          `[RUNTIME] ${sitePage.relativeFile}: ${dynamicUrls.length} URL(s) externe(s) ` +
+          `nouvelles, ${runtimeErrors.length} erreur(s), ${runtimeWarnings.length} avertissement(s).`
+        );
+      }
+      test.info().annotations.push({
+        type: "runtime-external-links",
+        description: JSON.stringify({ dynamicUrls, warnings: runtimeWarnings.map(({ url, status, code }) => ({ url, status, code })) })
+      });
+      expect(runtimeErrors, JSON.stringify(runtimeErrors, null, 2)).toEqual([]);
+    }
 
     const schemaState = await page.evaluate(() => {
       const normalize = (value) => String(value)

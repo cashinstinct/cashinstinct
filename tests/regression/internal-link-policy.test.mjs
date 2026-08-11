@@ -140,3 +140,16 @@ test("détecte une destination essentielle présente dans une seule navigation p
 test("une paire cohérente ne produit aucun constat", () => {
   assert.deepEqual(auditInternalLinkPolicy(fixturePages()), []);
 });
+
+test("détecte les alias d'origine internes www et HTTP", () => {
+  const pages = fixturePages({
+    offerFr: {
+      main:
+        `<a href="https://www.cashinstinct.ca/guide/fr/">Alias www</a>` +
+        `<a href="http://cashinstinct.ca/guide/fr/">Alias HTTP</a>`
+    }
+  });
+  const findings = findingsFor("links.internal-origin-alias", pages);
+  assert.equal(findings.length, 2);
+  assert.match(findings[0].message, /Origine interne inattendue/);
+});

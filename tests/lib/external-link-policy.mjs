@@ -11,15 +11,28 @@ export const DEFAULT_EXTERNAL_LINK_OPTIONS = Object.freeze({
 
 const responseCache = new Map();
 
-function normalizedExternalUrl(rawHref, base, siteOrigin) {
+function isProjectHost(url, siteOrigin) {
+  const siteHostname = new URL(siteOrigin).hostname.replace(/^www\./, "");
+  return url.hostname === siteHostname || url.hostname === `www.${siteHostname}`;
+}
+
+export function normalizeExternalUrl(rawHref, base, siteOrigin = SITE_ORIGIN) {
   try {
     const url = new URL(rawHref, base);
-    if (!/^https?:$/.test(url.protocol) || url.origin === siteOrigin) return null;
+    if (!/^https?:$/.test(url.protocol) || isProjectHost(url, siteOrigin)) return null;
     url.hash = "";
     return url.href;
   } catch {
     return null;
   }
+}
+
+export function collectDynamicExternalUrls(rawHrefs, base, knownUrls, { siteOrigin = SITE_ORIGIN } = {}) {
+  return [...new Set(
+    rawHrefs
+      .map((href) => normalizeExternalUrl(href, base, siteOrigin))
+      .filter(Boolean)
+  )].filter((url) => !knownUrls.has(url));
 }
 
 function locationFromResponse(response) {
@@ -71,7 +84,7 @@ export function collectExternalUrls(pages, { siteOrigin = SITE_ORIGIN } = {}) {
   for (const page of pages) {
     page.$("a[href]").each((_, element) => {
       const rawHref = (page.$(element).attr("href") || "").trim();
-      const url = normalizedExternalUrl(rawHref, page.canonical, siteOrigin);
+      const url = normalizeExternalUrl(rawHref, page.canonical, siteOrigin);
       if (!url) return;
       const entry = entries.get(url) || { url, sources: [] };
       entry.sources.push({
@@ -104,7 +117,7 @@ export function auditStaticExternalLinks(pages, { siteOrigin = SITE_ORIGIN } = {
         });
         return;
       }
-      if (url.origin === siteOrigin) return;
+      if (isProjectHost(url, siteOrigin)) return;
 
       if (url.protocol !== "https:") {
         findings.push({
@@ -182,7 +195,18 @@ export async function followExternalRedirects(
         error: "redirect-without-location"
       };
     }
-    const nextUrl = new URL(location, currentUrl).href;
+    let nextUrl;
+    try {
+      nextUrl = new URL(location, currentUrl).href;
+    } catch {
+      return {
+        method,
+        status,
+        finalUrl: currentUrl,
+        redirects,
+        error: "invalid-redirect-location"
+      };
+    }
     redirects.push({ from: currentUrl, status, to: nextUrl });
     currentUrl = nextUrl;
   }

@@ -49,6 +49,16 @@ function internalTarget(rawHref, page, pagesByCanonical, siteOrigin) {
   }
 }
 
+function isProjectHost(rawHref, page, siteOrigin) {
+  try {
+    const url = new URL(rawHref, page.canonical);
+    const siteHostname = new URL(siteOrigin).hostname.replace(/^www\./, "");
+    return url.hostname === siteHostname || url.hostname === `www.${siteHostname}`;
+  } catch {
+    return false;
+  }
+}
+
 function navigationIdentities(page, surface, pagesByCanonical, siteOrigin) {
   const identities = new Set();
   const anchors = surface === "primary"
@@ -76,6 +86,19 @@ export function auditInternalLinkPolicy(pages, { siteOrigin = SITE_ORIGIN } = {}
     const sourceLanguage = pageLanguage(page);
     page.$("a[href]").each((_, element) => {
       const rawHref = (page.$(element).attr("href") || "").trim();
+      if (isProjectHost(rawHref, page, siteOrigin)) {
+        try {
+          const url = new URL(rawHref, page.canonical);
+          if (url.origin !== siteOrigin) {
+            findings.push({
+              rule: "links.internal-origin-alias",
+              page,
+              element,
+              message: `Origine interne inattendue : ${url.origin}; utiliser ${siteOrigin}.`
+            });
+          }
+        } catch {}
+      }
       const target = internalTarget(rawHref, page, pagesByCanonical, siteOrigin);
       if (!target) return;
 
