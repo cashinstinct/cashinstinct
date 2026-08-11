@@ -132,21 +132,21 @@
           "position": 2,
           "name": "Créez votre compte gratuit",
           "text": "Inscrivez-vous avec une nouvelle adresse courriel. Laissez le champ 'Code d'inscription' vide — le lien gère le suivi automatiquement.",
-          "url": "https://cashinstinct.ca/rakuten-canada/fr/#step-2"
+          "url": "https://cashinstinct.ca/rakuten-canada/fr/#step-2a"
         },
         {
           "@type": "HowToStep",
           "position": 3,
           "name": "Effectuez un achat admissible",
           "text": "Passez par le portail Rakuten pour un achat de 30 $ ou plus chez un marchand partenaire dans vos 90 premiers jours.",
-          "url": "https://cashinstinct.ca/rakuten-canada/fr/#step-3"
+          "url": "https://cashinstinct.ca/rakuten-canada/fr/#step-2b"
         },
         {
           "@type": "HowToStep",
           "position": 4,
           "name": "Réclamez votre cashback",
           "text": "L'offre de bonus affichée lors de l'inscription s'ajoute à votre solde de cashback après confirmation de l'achat par le marchand.",
-          "url": "https://cashinstinct.ca/rakuten-canada/fr/#step-4"
+          "url": "https://cashinstinct.ca/rakuten-canada/fr/#step-3"
         }
       ]
     },
@@ -465,10 +465,10 @@ p a, li a { text-decoration: underline; text-underline-offset: 2px; }
     }
 
     /* ── STEPS ── */
-    .steps { list-style: none; counter-reset: steps; }
-    .steps li { counter-increment: steps; display: flex; gap: 20px; margin-bottom: 32px; }
+    .steps { list-style: none; }
+    .steps li { display: flex; gap: 20px; margin-bottom: 32px; }
     .steps li::before {
-      content: counter(steps);
+      content: attr(data-step);
       min-width: 38px; height: 38px;
       background: var(--surface-muted); color: var(--accent);
       font-weight: 800; font-size: 1rem;
@@ -748,25 +748,25 @@ p a, li a { text-decoration: underline; text-underline-offset: 2px; }
         </div>
 
         <ol class="steps">
-          <li id="step-1">
+          <li id="step-1" data-step="1">
             <div>
               <h3>Suivre l'invitation sécurisée</h3>
               <p>Cliquez sur le lien de parrainage de cette page. La session d'attribution s'active de manière transparente en arrière-plan sans action manuelle.</p>
             </div>
           </li>
-          <li id="step-2">
+          <li id="step-2a" data-step="2a">
             <div>
               <h3>Créer un compte de membre</h3>
               <p>Inscrivez-vous gratuitement avec une adresse de courriel valide. Aucun frais d'adhésion ni engagement n'est exigé.</p>
             </div>
           </li>
-         <li id="step-3">
+         <li id="step-2b" data-step="2b">
             <div>
               <h3>Effectuer un achat admissible de 30 $+</h3>
               <p>Dans les 90 jours suivant l'adhésion, passez par le portail Rakuten pour effectuer un achat totalisant un minimum de 30 $ avant taxes et livraison chez l'un des marchands partenaires.</p>
             </div>
           </li>
-          <li id="step-4">
+          <li id="step-3" data-step="3">
             <div>
               <h3>Recevoir l'argent réel</h3>
               <p>Une fois l'achat confirmé par le marchand, le bonus affiché lors de l'inscription s'ajoute à vos gains de cashback standard pour le prochain cycle de paiement trimestriel.</p>
