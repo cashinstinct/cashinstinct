@@ -4,13 +4,22 @@
   Le rapport d'égalité exacte entre réponse HTML et acceptedAnswer.text est
   informatif : ne pas forcer l'identité littérale si la réponse visible est
   une expansion utile.
-  Cas D à revérifier avec les sources avant synchronisation :
-  • Q4 : le HTML décrit un achat de 25 $ pour débloquer le bonus de 10 $ et
-    un jalon distinct de 300 SB; le JSON-LD décrit une première activité
-    admissible et un déclenchement différent.
-  Vérifier l'offre actuelle avant de choisir une référence. Les incohérences
-  structurelles, réponses vides ou absentes restent bloquantes. Garder FR et
-  EN équivalentes en sens, pas identiques mécaniquement.
+  NOTE DE MAINTENANCE — sources officielles vérifiées le 2026-08-12 :
+  • la page publique d'inscription présente le bonus de bienvenue comme un
+    SwagUp de 1 000 SB (10 $), à activer puis à débloquer avec un seul achat
+    admissible d'au moins 25 $ dans une boutique Swagbucks Shop, générant au
+    moins 25 SB, dans les 30 jours; MyGiftCardsPlus, les voyages et d'autres
+    exclusions des conditions du marchand peuvent ne pas compter;
+  • le centre d'aide décrit un bonus de parrainage de 300 SB lié aux gains
+    admissibles du filleul, mais deux articles officiels divergent :
+    205640984 attribue le bonus au parrain; 360030542251 dit que le parrain et
+    le filleul le reçoivent. Ne pas présenter 300 SB comme le bonus de
+    bienvenue du nouveau membre ni confirmer un crédit Cash Instinct sans
+    preuve du compte;
+  • 140 SB provient d'une ancienne ressource; 300 SB est cité dans un autre
+    contexte de carte-cadeau, pas comme minimum universel actuel. Vérifier le
+    catalogue canadien en direct avant d'annoncer un seuil.
+  Garder FR et EN équivalentes en sens, pas identiques mécaniquement.
 -->
 <html lang="fr-CA">
 <head>
@@ -20,7 +29,7 @@
   <meta name="theme-color" content="#09061a"  media="(prefers-color-scheme: dark)" />
 
   <title>Code de Parrainage Swagbucks 2026 — 10 $ de Bonus</title>
-  <meta name="description" content="Membre vérifié depuis 2009 · 10 $ + 300 SB de bonus via notre lien Swagbucks Canada officiel. Toutes les provinces incluant le Québec." />
+  <meta name="description" content="Membre vérifié depuis 2009 · Bonus de bienvenue de 10 $ via notre lien Swagbucks Canada officiel, sous conditions Swagbucks. Toutes les provinces incluant le Québec." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/swagbucks/fr/" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E💙%3C/text%3E%3C/svg%3E">
@@ -36,7 +45,7 @@
   <meta property="og:type"              content="website" />
   <meta property="og:url"               content="https://cashinstinct.ca/swagbucks/fr/" />
   <meta property="og:title"             content="Code de parrainage Swagbucks 2026 : 10 $ de bonus de bienvenue Canada" />
-  <meta property="og:description"       content="Membre vérifié depuis 2009 · Réclamez 10 $ gratuits + 300 SB de bonus via notre lien officiel Swagbucks Canada. Toutes les provinces incluant le Québec." />
+  <meta property="og:description"       content="Membre vérifié depuis 2009 · Réclamez le bonus de bienvenue de 10 $ via notre lien officiel Swagbucks Canada, sous conditions Swagbucks. Toutes les provinces incluant le Québec." />
   <meta property="og:image"             content="https://cashinstinct.ca/swagbucks/fr/og.png" />
   <meta property="og:image:width"       content="1200" />
   <meta property="og:image:height"      content="630" />
@@ -48,7 +57,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Code de parrainage Swagbucks 2026 : 10 $ de bonus Canada" />
-  <meta name="twitter:description" content="Membre vérifié depuis 2009 · 10 $ gratuits + 300 SB via lien officiel. Toutes les provinces canadiennes." />
+  <meta name="twitter:description" content="Membre vérifié depuis 2009 · Bonus de bienvenue de 10 $ via lien officiel, sous conditions Swagbucks. Toutes les provinces canadiennes." />
   <meta name="twitter:image"       content="https://cashinstinct.ca/swagbucks/fr/og.png" />
 
   <!-- Correction FOUC : initialisation dark mode avant le rendu -->
@@ -90,12 +99,12 @@
         "@id": "https://cashinstinct.ca/swagbucks/fr/",
         "url": "https://cashinstinct.ca/swagbucks/fr/",
         "name": "Code de Parrainage Swagbucks 2026 — 10 $ de Bonus",
-        "description": "Membre vérifié depuis 2009 · 10 $ + 300 SB de bonus via notre lien Swagbucks Canada officiel. Toutes les provinces incluant le Québec.",
+        "description": "Membre vérifié depuis 2009 · Bonus de bienvenue de 10 $ via notre lien Swagbucks Canada officiel, sous conditions Swagbucks. Toutes les provinces incluant le Québec.",
         "image": "https://cashinstinct.ca/swagbucks/fr/og.png",
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-06-01",
-        "dateModified": "2026-08-06",
+        "dateModified": "2026-08-12",
         "author": { "@id": "https://cashinstinct.ca/#organization" },
         "publisher": { "@id": "https://cashinstinct.ca/#organization" }
       },
@@ -109,49 +118,16 @@
         ]
       },
       {
-        "@type": "Product",
-        "@id": "https://cashinstinct.ca/swagbucks/fr/#product",
-        "name": "Swagbucks Canada — Plateforme de récompenses",
-        "image": "https://cashinstinct.ca/swagbucks/fr/og.png",
-        "brand": { "@type": "Brand", "name": "Swagbucks" },
-        "description": "Gagnez des cartes-cadeaux et du remboursement en effectuant des sondages, des achats en ligne et des offres. Les nouveaux membres canadiens reçoivent un bonus de bienvenue de 10 $ via un lien de parrainage.",
-        "category": "Programmes de fidélité et récompenses",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "CAD",
-          "price": "10.00",
-          "priceValidUntil": "2027-12-31",
-          "itemCondition": "https://schema.org/NewCondition",
-          "description": "Bonus de bienvenue de 10 $ offert via le lien de parrainage officiel pour les nouveaux comptes canadiens.",
-          "availability": "https://schema.org/InStock",
-          "hasMerchantReturnPolicy": {
-            "@type": "MerchantReturnPolicy",
-            "applicableCountry": "CA",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
-          },
-          "shippingDetails": {
-            "@type": "OfferShippingDetails",
-            "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "CAD" },
-            "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "CA" },
-            "deliveryTime": {
-              "@type": "ShippingDeliveryTime",
-              "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-              "transitTime":  { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
-            }
-          }
-        }
-      },
-      {
         "@type": "HowTo",
         "@id": "https://cashinstinct.ca/swagbucks/fr/#howto",
         "name": "Comment obtenir votre bonus de bienvenue Swagbucks de 10 $",
-        "description": "Guide étape par étape pour débloquer votre bonus de bienvenue de 10 $ et l'équivalent de 300 SB sur Swagbucks Canada.",
+        "description": "Guide étape par étape pour activer le bonus de bienvenue de 10 $ et vérifier les conditions d'achat de Swagbucks Canada.",
         "totalTime": "PT10M",
         "step": [
-          { "@type": "HowToStep", "position": 1, "name": "Cliquez le lien de parrainage",         "text": "Cliquez notre bouton de parrainage vérifié sur cette page. Le bonus de 10 $ est automatiquement attaché à votre formulaire d'inscription.", "url": "https://cashinstinct.ca/swagbucks/fr/#step-1" },
-          { "@type": "HowToStep", "position": 2, "name": "Créez votre compte gratuit",             "text": "Inscrivez-vous avec une nouvelle adresse courriel. Laissez le champ \"Code d'inscription\" vide — le lien gère le suivi automatiquement.", "url": "https://cashinstinct.ca/swagbucks/fr/#step-2" },
+          { "@type": "HowToStep", "position": 1, "name": "Cliquez le lien de parrainage",         "text": "Cliquez notre bouton de parrainage vérifié sur cette page pour ouvrir le parcours Swagbucks avec l'offre. Après l'inscription, vérifiez la section Swag Ups de votre compte.", "url": "https://cashinstinct.ca/swagbucks/fr/#step-1" },
+          { "@type": "HowToStep", "position": 2, "name": "Créez votre compte gratuit",             "text": "Inscrivez-vous avec une nouvelle adresse courriel. Laissez le champ \"Code d'inscription\" vide, sauf indication contraire affichée par Swagbucks, puis vérifiez que l'offre apparaît dans votre compte.", "url": "https://cashinstinct.ca/swagbucks/fr/#step-2" },
           { "@type": "HowToStep", "position": 3, "name": "Explorez les activités de la plateforme", "text": "Gagnez des SB via des sondages, la numérisation de reçus d'épicerie, des jeux mobiles et le portail de remboursement sur achats.", "url": "https://cashinstinct.ca/swagbucks/fr/#step-3" },
-          { "@type": "HowToStep", "position": 4, "name": "Réclamez vos récompenses de bienvenue",  "text": "Votre tranche de bonus de 10 $ et les 300 SB de contrepartie d'étape sont crédités automatiquement après votre première activité admissible dans les 30 premiers jours.", "url": "https://cashinstinct.ca/swagbucks/fr/#step-4" }
+          { "@type": "HowToStep", "position": 4, "name": "Activez votre bonus de bienvenue",  "text": "Activez le SwagUp, puis effectuez un seul achat admissible d'au moins 25 $ dans une boutique présentée sur Swagbucks Shop dans les 30 jours suivant l'inscription. L'achat doit générer au moins 25 SB; MyGiftCardsPlus et les achats de voyage ne sont pas admissibles, et les conditions du marchand peuvent ajouter des exclusions.", "url": "https://cashinstinct.ca/swagbucks/fr/#step-4" }
         ]
       },
       {
@@ -166,7 +142,7 @@
           {
             "@type": "Question",
             "name": "Quel est le meilleur code de parrainage Swagbucks pour le Canada en 2026 ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Swagbucks n'utilise pas de code texte manuel à l'inscription. Le bonus de 10 $ s'obtient en cliquant notre lien officiel avant de créer un compte. Le suivi est appliqué automatiquement — aucun code à copier." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Swagbucks n'utilise pas de code texte manuel à l'inscription. Cliquez notre lien officiel pour ouvrir le parcours avec l'offre, puis vérifiez la section Swag Ups de votre compte. Aucun code à copier." }
           },
           {
             "@type": "Question",
@@ -176,7 +152,7 @@
           {
             "@type": "Question",
             "name": "Combien de temps faut-il pour obtenir le bonus de bienvenue de 10 $ ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Le bonus de 10 $ et la contrepartie de 300 SB sont crédités après votre première activité admissible, généralement dans les jours suivant l'inscription. Vous avez 30 jours après la création du compte pour déclencher l'admissibilité — passé ce délai, le bonus de bienvenue expire." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Activez le bonus dans la section Swag Ups, puis dépensez au moins 25 $ en un seul achat dans une boutique admissible de Swagbucks Shop. L'achat doit générer au moins 25 SB et être effectué dans les 30 jours suivant l'inscription. MyGiftCardsPlus et les achats de voyage ne sont pas admissibles; les conditions du marchand peuvent ajouter des exclusions. Swagbucks indique que l'achat crédite typiquement dans les 32 jours et que le bonus est attribué quelques jours plus tard. Ce bonus de bienvenue de 10 $ (1 000 SB) est distinct du bonus de parrainage de 300 SB; les pages officielles d'aide divergent sur le bénéficiaire de ce dernier, qui n'est donc pas présenté comme un crédit garanti au nouveau membre." }
           },
           {
             "@type": "Question",
@@ -191,7 +167,7 @@
           {
             "@type": "Question",
             "name": "Quel est le retrait minimum sur Swagbucks Canada ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Les retraits PayPal débutent à 500 SB (environ 5 $ CAD). Certaines cartes-cadeaux numériques sont disponibles dès 140 SB. Le taux de change est d'environ 100 SB = 1 $ CAD." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Swagbucks ne confirme pas un minimum universel actuel dans les sources vérifiées. Une ancienne ressource officielle citait 140 SB pour une carte Amazon de 1 $, tandis qu'une autre source officielle utilise 300 SB comme exemple pour une carte de 3 $; ces contextes ne permettent pas d'annoncer un seuil canadien permanent. Consultez le catalogue de récompenses de votre compte. Le taux observé sur plusieurs cartes canadiennes actuelles est d'environ 100 SB = 1 $ CAD, mais il peut varier selon la récompense." }
           }
         ]
       }
@@ -566,7 +542,7 @@ header.hero h1 {
     <h1>Code de parrainage Swagbucks Canada 2026<br><span>Obtenez votre bonus de bienvenue de 10 $</span></h1>
   
     <p class="hero-sub">
-      Inscrivez-vous via notre <strong>lien officiel</strong> pour débloquer automatiquement votre <strong>bonus de 10 $</strong>. Aucune saisie de code requise, le suivi est automatique.
+      Inscrivez-vous via notre <strong>lien officiel</strong> pour rattacher l'offre de <strong>bonus de 10 $</strong>, puis activez-la et remplissez les conditions d'achat de Swagbucks. Aucune saisie de code requise.
     </p>
     
     <a class="cta-btn-hero"
@@ -580,7 +556,7 @@ header.hero h1 {
       <span class="trust-badge">💙 26 418 SB gagnés à vie</span>
       <span class="trust-badge">🇨🇦 Toutes provinces + Québec</span>
       <span class="trust-badge">🔒 Aucun coût pour vous</span>
-      <span class="trust-badge">🗓️ Dernière vérification&nbsp;: <time id="trust-date" datetime="2026-07-06">6 juillet 2026</time></span>
+      <span class="trust-badge">🗓️ Offre et parcours public vérifiés&nbsp;: <time id="trust-date" datetime="2026-08-12">12 août 2026</time></span>
     </div>
 
       <div class="hero-proof">
@@ -620,32 +596,32 @@ header.hero h1 {
         <h2>Comment obtenir votre bonus de 10 $ en 4 étapes</h2>
 
         <div class="warning" role="note">
-          ⚠️ <strong>Important :</strong> Le bonus de 10 $ est déclenché par le lien de parrainage — pas par un code texte. Cliquer notre lien avant l'inscription est la seule action requise. Tout le reste est automatique.
+          ⚠️ <strong>Important :</strong> Le lien de parrainage est nécessaire pour rattacher l'offre — pas un code texte — mais l'achat admissible et les conditions de Swagbucks restent requis. <a href="https://www.swagbucks.com/?gw=1" target="_blank" rel="noopener noreferrer sponsored">Voir les conditions officielles d'inscription</a>.
         </div>
 
         <ol class="steps">
           <li id="step-1">
             <div>
               <h3>Cliquez notre lien de parrainage vérifié</h3>
-              <p>Utilisez le bouton sur cette page. Cela applique la couche de suivi du bonus de 10 $ directement à votre formulaire de création de compte. Vous n'avez aucun code à copier ou coller.</p>
+              <p>Utilisez le bouton sur cette page pour ouvrir le parcours Swagbucks avec l'offre. Après l'inscription, vérifiez la section Swag Ups de votre compte. Vous n'avez aucun code à copier ou coller.</p>
             </div>
           </li>
           <li id="step-2">
             <div>
               <h3>Créez votre compte gratuit</h3>
-              <p>Inscrivez-vous avec un nouveau courriel. Laissez le champ « Code d'inscription » vide — le lien de parrainage gère déjà le suivi promotionnel. Inscrire un code Swag aléatoire ici causera une erreur de validation.</p>
+              <p>Inscrivez-vous avec un nouveau courriel. Laissez le champ « Code d'inscription » vide, sauf indication contraire affichée par Swagbucks, puis vérifiez que l'offre apparaît dans votre compte. Inscrire un code Swag aléatoire ici peut causer une erreur de validation.</p>
             </div>
           </li>
          <li id="step-3">
             <div>
-              <h3>Commencez à accumuler des SB</h3>
-              <p>Explorez la plateforme : complétez votre sondage de profil, numérisez un reçu d'épicerie ou vérifiez le portail de remboursement pour un détaillant que vous utilisez déjà. Votre première activité lance le décompte du bonus.</p>
+              <h3>Activez le bonus dans votre compte</h3>
+              <p>Après l'inscription, ouvrez la section Swag Ups et activez le bonus de bienvenue. Les activités ordinaires peuvent vous faire gagner des SB, mais elles ne remplacent pas l'achat admissible requis pour ce bonus.</p>
             </div>
           </li>
           <li id="step-4">
             <div>
-              <h3>Réclamez vos 10 $ + 300 SB de bonus</h3>
-              <p>Effectuez un achat admissible de 25 $ ou plus via le portail d'achats dans vos 30 premiers jours. Votre tranche de bienvenue de 10 $ et les 300 SB de contrepartie sont crédités automatiquement à votre solde.</p>
+              <h3>Débloquez votre bonus de bienvenue de 10 $</h3>
+              <p>Effectuez un seul achat admissible d'au moins 25 $ dans une boutique présentée sur Swagbucks Shop dans les 30 jours suivant l'inscription. L'achat doit générer au moins 25 SB; MyGiftCardsPlus et les achats de voyage ne sont pas admissibles, et les conditions du marchand peuvent ajouter des exclusions. Le bonus de bienvenue correspond à 1 000 SB (10 $); il est distinct du bonus de parrainage de 300 SB.</p>
             </div>
           </li>
         </ol>
@@ -653,8 +629,8 @@ header.hero h1 {
         <div class="verified-banner">
           <span class="vb-icon">🔗</span>
           <div>
-            <strong>Statut du lien : Actif en juin 2026.</strong>
-            <span> Ce lien de parrainage est opérationnel et vérifié personnellement depuis 2009. Si l'écran de bonus n'apparaît pas après le clic, effacez les cookies de votre navigateur et réessayez en navigation privée.</span>
+            <strong>Offre et parcours public vérifiés le 12 août 2026.</strong>
+            <span> Le compte Cash Instinct est membre depuis 2009. Après avoir suivi le lien, vérifiez que l'offre apparaît dans votre section Swag Ups; si nécessaire, effacez les cookies et réessayez en navigation privée.</span>
           </div>
         </div>
       </section>
@@ -668,7 +644,7 @@ header.hero h1 {
 
         <p>Un <strong>Code Swag quotidien</strong> est une chaîne promotionnelle de courte durée publiée pour les <em>membres existants</em> via l'extension Swagbucks, les infolettres ou les médias sociaux. Ces codes accordent un petit nombre de SB (typiquement 3 à 25 SB) lorsqu'entrés dans le tableau de bord ou l'extension — pas dans le formulaire d'inscription. Ils expirent en quelques heures.</p>
 
-        <p>Le <strong>champ « Code d'inscription »</strong> est conçu pour les codes de partenaires affiliés — ce que notre lien fournit, de façon invisible et automatique. En cliquant d'abord le lien de parrainage, le code de suivi est intégré à votre session. Vous pouvez laisser le champ texte visible complètement vide.</p>
+        <p>Le <strong>champ « Code d'inscription »</strong> peut servir au suivi d'un partenaire. Cliquez d'abord le lien de parrainage, puis vérifiez dans votre compte que l'offre est bien rattachée. Vous pouvez laisser le champ texte visible vide, sauf indication contraire affichée par Swagbucks.</p>
 
         <div class="compare-wrap">
           <h3>Référence rapide : quelle méthode donne le bonus ?</h3>
@@ -693,7 +669,7 @@ header.hero h1 {
                   <td>Lien de parrainage / code d'invitation</td>
                   <td>Lien affilié partenaire</td>
                   <td class="yes">✓ Cliquez avant de s'inscrire</td>
-                  <td class="yes">✓ Oui — 10 $ + 300 SB</td>
+                  <td class="yes">✓ Oui — 10 $ sous conditions</td>
                 </tr>
                 <tr>
                   <td>Texte aléatoire dans le champ</td>
@@ -714,19 +690,19 @@ header.hero h1 {
         <div class="facts">
           <div class="fact">
             <strong>10 $</strong>
-            <span>Tranche de bonus de bienvenue, active dès l'inscription</span>
+            <span>Offre de bienvenue affichée après l'inscription; activation et conditions requises</span>
           </div>
           <div class="fact">
             <strong>300 SB</strong>
-            <span>Contrepartie d'étape créditée après votre première activité admissible</span>
+            <span>Bonus de parrainage; les sources officielles divergent sur le bénéficiaire</span>
           </div>
           <div class="fact">
-            <strong>100 SB</strong>
-            <span>≈ 1 $ CAD — échangeable via PayPal ou cartes-cadeaux Amazon.ca</span>
+            <strong>1 000 SB</strong>
+            <span>Valeur en points du bonus de bienvenue de 10 $</span>
           </div>
           <div class="fact">
-            <strong>140 SB</strong>
-            <span>Retrait minimum — certaines cartes-cadeaux disponibles sous 2 $</span>
+            <strong>25 SB</strong>
+            <span>Minimum que l'achat admissible doit générer pour activer le bonus</span>
           </div>
         </div>
       </section>
@@ -771,7 +747,7 @@ header.hero h1 {
             <span class="review-meta-tag">💙 Niveau Amethyst</span>
             <span class="review-meta-tag">💰 26 418 SB gagnés</span>
             <span class="review-meta-tag">🇨🇦 Compte Canada</span>
-            <span class="review-meta-tag">✓ Vérifié juin 2026</span>
+            <span class="review-meta-tag">✓ Offre et parcours public vérifiés 12 août 2026</span>
           </div>
 
           <p style="margin-top: 20px; font-size: 0.93rem; border-top: 1px dashed var(--border); padding-top: 16px;">
@@ -806,9 +782,9 @@ header.hero h1 {
               <tbody>
                 <tr class="highlight">
                   <td>⭐ Swagbucks</td>
-                  <td>10 $ + 300 SB</td>
+                  <td>10 $ sous conditions</td>
                   <td>Élevé</td>
-                  <td>140 SB (~1,40 $)</td>
+                  <td>Variable; consulter le catalogue actuel</td>
                   <td>✓ Excellent</td>
                   <td>2008</td>
                 </tr>
@@ -871,7 +847,7 @@ header.hero h1 {
           <details>
             <summary>Quel est le meilleur code de parrainage Swagbucks pour le Canada en 2026 ?</summary>
             <div class="faq-body">
-              <p>Il n'y a pas de code texte à entrer. Swagbucks utilise un système de parrainage par lien — le « code » est intégré dans l'URL et appliqué à votre session automatiquement lorsque vous cliquez notre bouton. Vous contournez complètement le champ texte du formulaire d'inscription tout en recevant le forfait complet de bienvenue de 10 $ + 300 SB.</p>
+              <p>Il n'y a pas de code texte à entrer. Swagbucks utilise un système de parrainage par lien : cliquez le bouton, puis vérifiez dans votre compte que l'offre est bien rattachée. Le bonus de bienvenue de 10 $ reste soumis aux conditions d'achat officielles. Le 300 SB est un montant distinct du programme de parrainage et ne doit pas être présenté comme un crédit garanti au nouveau membre.</p>
               <p>Si vous trouvez un site listant une chaîne comme <code>CASHINSTINCT</code> en tant que « code de parrainage », sachez que ces codes manuels n'activent généralement pas la tranche de bonus de 10 $ — ce sont souvent des contournements affiliés à valeur minimale.</p>
             </div>
           </details>
@@ -886,8 +862,8 @@ header.hero h1 {
           <details>
             <summary>Combien de temps faut-il pour obtenir le bonus de bienvenue de 10 $ ?</summary>
             <div class="faq-body">
-              <p>La tranche de 10 $ est attachée à votre compte dès l'instant où vous vous inscrivez via le lien de parrainage. Elle se débloque entièrement une fois que vous effectuez un achat admissible de 25 $ ou plus chez un détaillant partenaire via le portail d'achats Swagbucks dans vos 30 premiers jours. La plupart des nouveaux utilisateurs completent ceci dans leur première semaine, lors d'un achat en ligne qu'ils prévoyaient déjà faire.</p>
-              <p>Les 300 SB de contrepartie d'étape supplémentaires sont crédités automatiquement une fois que vous atteignez votre premier palier de gains sur la plateforme.</p>
+              <p>Activez le SwagUp, puis dépensez au moins 25 $ en un seul achat dans une boutique admissible de Swagbucks Shop. L'achat doit générer au moins 25 SB et être effectué dans les 30 jours suivant l'inscription. MyGiftCardsPlus et les achats de voyage ne sont pas admissibles; les conditions du marchand peuvent ajouter des exclusions. Swagbucks indique que l'achat crédite typiquement dans les 32 jours et que le bonus est attribué quelques jours plus tard.</p>
+              <p>Le bonus de bienvenue vaut 1 000 SB (10 $). Le bonus de parrainage de 300 SB est séparé : une page d'aide officielle l'attribue au parrain lorsque le filleul atteint 300 SB admissibles dans les 30 premiers jours, tandis qu'une autre dit que le parrain et le filleul le reçoivent. Nous ne promettons donc pas ce 300 SB au nouveau membre.</p>
             </div>
           </details>
 
@@ -913,7 +889,7 @@ header.hero h1 {
           <details>
             <summary>Quel est le retrait minimum sur Swagbucks Canada ?</summary>
             <div class="faq-body">
-              <p>Le remboursement disponible le plus bas est généralement une carte-cadeau numérique à partir de <strong>140 à 300 SB</strong> (environ 1,40 $ à 3,00 $ CAD). Les transferts PayPal débutent à <strong>500 SB (~5 $ CAD)</strong>. Le taux d'échange est d'environ 100 SB = 1 $, mais cela varie légèrement selon le type de remboursement.</p>
+              <p>Le catalogue canadien varie et Swagbucks ne confirme pas un minimum universel actuel dans les sources vérifiées. Une ancienne ressource officielle citait 140 SB pour une carte Amazon de 1 $, tandis qu'une autre source officielle utilise 300 SB comme exemple pour une carte de 3 $; ces contextes ne permettent pas d'annoncer un seuil permanent. Consultez le catalogue de récompenses de votre compte : les coûts en SB peuvent différer selon la récompense.</p>
               <p>Les membres de niveau Amethyst (comme le compte Cash Instinct) ont parfois accès à des événements de remboursement bonifiés où le taux SB/CAD est temporairement amélioré.</p>
             </div>
           </details>
@@ -924,19 +900,19 @@ header.hero h1 {
       <!-- CTA DE FIN -->
       <div class="cta-section">
         <h2>Prêt à réclamer votre bonus de bienvenue de 10 $ ?</h2>
-        <p>Cliquez le bouton ci-dessous pour ouvrir la page d'inscription Swagbucks Canada avec votre bonus de bienvenue pré-activé. Aucun code à copier — cliquez et inscrivez-vous.</p>
+        <p>Cliquez le bouton ci-dessous pour ouvrir le parcours d'inscription Swagbucks Canada avec l'offre rattachée. Activez-la dans Swag Ups et respectez les conditions d'achat; aucun code à copier.</p>
         <a class="btn"
            href="https://www.swagbucks.com/profile/Cashinstinct?rp=1"
            target="_blank" rel="noopener noreferrer sponsored">
           Obtenir mon bonus de 10 $ Swagbucks →
         </a>
         <p style="font-size: 0.82rem; opacity: 0.7; margin-top: 14px; margin-bottom: 0;">
-          ✓ Lien vérifié juin 2026 &nbsp;·&nbsp; ✓ Valide dans toutes les provinces &nbsp;·&nbsp; ✓ Aucun coût pour vous
+          ✓ Parcours public vérifié le 12 août 2026 &nbsp;·&nbsp; ✓ Valide dans toutes les provinces &nbsp;·&nbsp; ✓ Aucun coût pour vous
         </p>
       </div>
 
       <div class="transparency">
-        <strong>Divulgation d'affiliation :</strong> Ce guide est une ressource indépendante. Lorsque vous vous inscrivez via notre lien de parrainage, Swagbucks crédite votre compte d'un bonus de bienvenue de 10 $ et crédite Cash Instinct d'une contrepartie de 300 SB ainsi qu'une commission de 10 % à vie sur vos gains sur la plateforme — entièrement financée par Swagbucks, sans frais supplémentaires pour vous. Nous recommandons uniquement des plateformes que nous avons personnellement utilisées et vérifiées. Pour en savoir plus sur la préparation des guides, consultez <a href="https://cashinstinct.ca/about/fr/">À&nbsp;propos de Cash&nbsp;Instinct</a>.
+        <strong>Divulgation d'affiliation :</strong> Ce guide est une ressource indépendante. Le nouveau membre peut recevoir le bonus de bienvenue Swagbucks de 10 $ (1 000 SB) après activation et achat admissible : au moins 25 $ en une seule transaction, au moins 25 SB générés, dans les 30 jours, avec les exclusions et conditions du marchand applicables. Si le lien attribue correctement le compte, Cash Instinct peut recevoir 10 % des gains admissibles du filleul à vie comme parrain. Le programme mentionne aussi un bonus de 300 SB, mais deux pages officielles divergent sur le fait qu'il soit versé au parrain seul ou aux deux; Cash Instinct ne le présente donc pas comme un crédit garanti au nouveau membre et ne confirme pas un 300 SB spécifique pour Cash Instinct sans preuve du compte. Nous recommandons uniquement des plateformes que nous avons personnellement utilisées et vérifiées. Pour en savoir plus sur la préparation des guides, consultez <a href="https://cashinstinct.ca/about/fr/">À&nbsp;propos de Cash&nbsp;Instinct</a>.
       </div>
 
     </div>
@@ -945,7 +921,7 @@ header.hero h1 {
   <footer>
     <div class="container">
       <p>Cash Instinct est une ressource affiliée indépendante sans affiliation administrative officielle avec Swagbucks ou Prodege LLC. Toutes les marques de commerce sont la propriété de leurs détenteurs respectifs.</p>
-      <p style="margin-top: 6px;">Guide Swagbucks Canada — Dernière mise à jour : <time id="footer-date" datetime="2026-08-06">6&nbsp;août&nbsp;2026</time></p>
+      <p style="margin-top: 6px;">Guide Swagbucks Canada — Dernière mise à jour : <time id="footer-date" datetime="2026-08-12">12&nbsp;août&nbsp;2026</time></p>
       <nav class="footer-links" aria-label="Liens du site">
         <a href="https://cashinstinct.ca/ebox/fr/">🌐 EBOX Internet</a>
         <a href="https://cashinstinct.ca/stickermule/fr/">🏷️ Sticker Mule</a>
