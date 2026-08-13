@@ -9,33 +9,48 @@
   Date validation pause encore active: 2026-07-08
   Montant/structure au retour = INCONNUS (ne rien promettre).
 
+  ── FICHE DE MAINTENANCE — AOÛT 2026 ──
+  Garder cette page indexée et sa structure intacte pendant la pause du
+  programme; ne pas la supprimer ni la réduire pour des raisons SEO. Corrigé
+  maintenant : l'ancienne page décrivait l'ouverture comme exclusivement
+  mobile, alors que la FAQ actuelle d'Achieva documente aussi un parcours
+  d'ouverture par Online Banking : https://www.achieva.mb.ca/faq/open-account.
+  Cette passe factuelle met à jour
+  le texte visible et les données structurées pour refléter la pause, sans
+  modifier dateModified, les dates de confiance/pied de page ni le sitemap.
+  Revérifier le parcours d'ouverture et le programme de parrainage ensemble
+  lorsque l'offre Achieva sera relancée.
+
   ── MODIFS DE PAUSE APPLIQUÉES SUR CETTE PAGE ──
   [x] Bandeau .notice-warning ajouté dans .prose, après breadcrum
   [x] .summary-box : "(en pause)" ajouté après "25 $ CAD"
-  [X] JSON-LD Offer availability → enlever InStock , mis 
-      LimitedAvailability (sinon snippet "offre dispo" persiste)
+  [X] Offer Product JSON-LD retiré pendant la pause du programme
 
   ── LAISSÉ INCHANGÉ VOLONTAIREMENT (réauditer à l'été) ──
   - OG image : garde "25 $" (re-render seulement si montant change)
   - Code V381566198 : laissé (peut être invalidé/remplacé au retour)
-  - FAQ + étapes + taux : factuels, redeviennent exacts à la reprise
-   -  H1 : pas de mention "(programme en pause)" pour raisons SEO
+  - Taux et faits généraux sur les comptes : conservés; FAQ/étapes de
+    parrainage maintenant explicitement historiques, à revérifier à la reprise
+  - H1/titre : aucune mention de pause ajoutée, pour préserver la cible SEO
 
   ── TRIAGE DÉRIVE FAQ/JSON-LD — 2026-08-07 ──
   Le rapport d'égalité exacte entre réponse HTML et acceptedAnswer.text est
   informatif : ne pas forcer l'identité littérale si un côté est un résumé ou
   ajoute un lien. Cas D à revérifier avec les sources avant synchronisation :
-  - Q1 : le HTML insiste sur les gains de parrainage/code personnel; le
-    JSON-LD insiste sur la prime d'inscription et sa condition de dépôt.
-  - Q9 : le HTML affirme que le dépôt initial compte pendant la retenue; le
-    JSON-LD ne confirme pas ce point d'admissibilité.
+  - Q1 : les deux surfaces identifient maintenant les modalités de parrainage
+    comme anciennes; garder le qualificatif de pause lors d'une modification.
+  - Q9 : les deux surfaces identifient maintenant le traitement du dépôt comme
+    une ancienne condition à revérifier.
   Garder une équivalence de sens. Les nombres de questions différents,
   réponses absentes ou questions visibles/schema différentes restent bloquants.
 
   ── À FAIRE À LA RELANCE (été 2026) ──
   - Vérifier nouveau programme sur achieva.mb.ca/referral-program
-  - Retirer ce bandeau + mentions "(en pause)" (H1, summary-box)
-  - Remettre Offer availability → "https://schema.org/InStock
+  - Retirer ce bandeau + les qualificatifs de pause du résumé, des étapes et
+    de la FAQ seulement après publication officielle du nouveau programme; le
+    H1/titre a volontairement été conservé.
+  - Envisager un Offer Product seulement après publication officielle des
+    nouvelles modalités; ne pas restaurer l'ancien Offer historique
   - Re-render OG si montant changé
   - MAJ post Reddit r/CanadaReferralShare
   - Resoumettre URL en réindexation GSC
@@ -52,7 +67,7 @@
   <meta name="theme-color" content="#199e5e" media="(prefers-color-scheme: dark)" />
   <title>Achieva Petal Code V381566198 — Prime de 25 $ + Taux (2026)</title>
   <!-- META DESCRIPTION — VOULU : ≤155 caractères (troncature SERP au-delà), aucune date de promo expirante (maintenance). Synchronisée VERBATIM avec JSON-LD WebPage.description — modifier les deux ensemble. -->
-  <meta name="description" content="Code Achieva Petal Code V381566198 dans l'app mobile = 25 $ CAD de prime. Taux 2026 : 1,80 %–1,95 % épargne, 3,60 %–4,05 % CPG. Partout au Canada." />
+  <meta name="description" content="Le programme de parrainage Achieva est en pause; les anciennes modalités de 25 $ doivent être revérifiées. Taux : 1,80 %–1,95 % épargne, 3,60 %–4,05 % CPG." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/achieva/fr/" />
   <link rel="alternate" hreflang="fr-CA"     href="https://cashinstinct.ca/achieva/fr/" />
@@ -63,7 +78,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
 
   <meta property="og:title"            content="Achieva Petal Code V381566198 — Prime de 25 $ CAD" />
-  <meta property="og:description"      content="Ouvrez un compte Achieva via l'application avec le Petal Code V381566198 et recevez 25 $ CAD. Taux : 1,80 %–1,95 % épargne, jusqu'à 4,05 % en CPG." />
+  <meta property="og:description"      content="Le programme de parrainage Achieva est en pause; les anciennes modalités de 25 $ sont historiques et doivent être revérifiées. Taux : 1,80 %–1,95 % épargne, jusqu'à 4,05 % en CPG." />
   <meta property="og:locale"           content="fr_CA" />
   <meta property="og:locale:alternate" content="en_CA" />
   <meta property="og:site_name"        content="Cash Instinct" />
@@ -76,7 +91,7 @@
 
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Achieva Petal Code V381566198 — Prime de 25 $ CAD" />
-  <meta name="twitter:description" content="Saisissez le Petal Code V381566198 dans l'application Achieva à l'inscription et recevez 25 $ CAD. Taux épargne jusqu'à 4,05 % en CPG." />
+  <meta name="twitter:description" content="Le programme de parrainage Achieva est en pause; les anciennes modalités de 25 $ doivent être revérifiées. Taux de 1,80 % à 4,05 %." />
   <meta name="twitter:image"       content="https://cashinstinct.ca/achieva/fr/og.png" />
 
   <script>
@@ -111,7 +126,7 @@
         "@id": "https://cashinstinct.ca/achieva/fr/",
         "url": "https://cashinstinct.ca/achieva/fr/",
         "name": "Achieva Petal Code V381566198 — Prime de 25 $ + Taux (2026)",
-        "description": "Code Achieva Petal Code V381566198 dans l'app mobile = 25 $ CAD de prime. Taux 2026 : 1,80 %–1,95 % épargne, 3,60 %–4,05 % CPG. Partout au Canada.",
+        "description": "Le programme de parrainage Achieva est en pause; les anciennes modalités de 25 $ sont historiques et doivent être revérifiées à la reprise. Taux actuels indiqués : 1,80 %–1,95 % épargne, 3,60 %–4,05 % CPG.",
         "image": "https://cashinstinct.ca/achieva/fr/og.png",
         "inLanguage": "fr-CA",
         "datePublished": "2026-06-01",
@@ -135,74 +150,48 @@
         "name": "Achieva Financial Compte d'Épargne",
         "image": "https://cashinstinct.ca/achieva/fr/og.png",
         "brand": { "@type": "Brand", "name": "Achieva Financial" },
-        "description": "Compte d'épargne en ligne à haut intérêt sans frais de gestion mensuels au Canada. En juin 2026 : 1,80 % sur l'épargne non enregistrée, 1,95 % sur les comptes enregistrés (CELI/REER/FERR), et des CPG de 3,60 % à 4,05 % selon le terme. Prime d'inscription de 25 $ CAD avec le Petal Code V381566198.",
-        "category": "Financial Services",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "CAD",
-          "price": "25.00",
-          "priceValidUntil": "2027-12-31",
-          "itemCondition": "https://schema.org/NewCondition",
-          "description": "L'ouverture de compte est entièrement gratuite via l'application mobile Achieva. L'utilisation du Petal Code V381566198 à l'inscription génère automatiquement une prime de 25 $ CAD.",
-          "availability": "https://schema.org/LimitedAvailability",
-          "hasMerchantReturnPolicy": {
-            "@type": "MerchantReturnPolicy",
-            "applicableCountry": "CA",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
-          },
-          "shippingDetails": {
-            "@type": "OfferShippingDetails",
-            "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "CAD" },
-            "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "CA" },
-            "deliveryTime": {
-              "@type": "ShippingDeliveryTime",
-              "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-              "transitTime":  { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
-            }
-          }
-        }
+        "description": "Compte d'épargne en ligne à haut intérêt sans frais de gestion mensuels au Canada. En juin 2026 : 1,80 % sur l'épargne non enregistrée, 1,95 % sur les comptes enregistrés (CELI/REER/FERR), et des CPG de 3,60 % à 4,05 % selon le terme. Le programme de parrainage est actuellement en pause; les anciennes modalités de 25 $ devront être revérifiées à la reprise.",
+        "category": "Financial Services"
       },
       {
         "@type": "HowTo",
         "@id": "https://cashinstinct.ca/achieva/fr/#howto",
-        "name": "Comment activer le Petal Code dans l'application Achieva",
-        "description": "Guide étape par étape pour activer votre rabais Achieva via le code V381566198 lors de l'inscription sur l'application mobile.",
-        "totalTime": "PT10M",
-        "estimatedCost": { "@type": "MonetaryAmount", "currency": "CAD", "value": "0" },
+        "name": "Anciennes étapes de parrainage Achieva — à vérifier à la reprise",
+        "description": "Archive des modalités de parrainage documentées avant la pause d'Achieva. Il ne s'agit pas d'une offre actuellement utilisable; revérifiez le programme, le code, le montant et les conditions à la reprise.",
         "step": [
           {
             "@type": "HowToStep",
             "position": 1,
-            "name": "Copiez votre Petal Code",
-            "text": "Cliquez sur le bouton pour copier le code V381566198 dans le presse-papiers de votre téléphone.",
+            "name": "Ancienne étape — copier le Petal Code",
+            "text": "La page indiquait auparavant de copier le code V381566198 avant l'inscription. Le code et le programme relancé doivent être revérifiés.",
             "url": "https://cashinstinct.ca/achieva/fr/#step-1"
           },
           {
             "@type": "HowToStep",
             "position": 2,
-            "name": "Téléchargez l'application Achieva Mobile",
-            "text": "Ouvrez l'App Store (Apple) ou Google Play (Android) et installez l'application officielle Achieva Mobile.",
+            "name": "Vérifier le parcours d'ouverture",
+            "text": "Avant la pause, le parcours de parrainage documentait l'application Achieva Mobile. Achieva propose maintenant aussi l'ouverture en ligne; le parcours admissible à la reprise du parrainage doit être vérifié.",
             "url": "https://cashinstinct.ca/achieva/fr/#step-2"
           },
           {
             "@type": "HowToStep",
             "position": 3,
-            "name": "Collez le code à l'ouverture",
-            "text": "Dès que vous ouvrez l'application Achieva pour créer votre compte, collez le code dans le champ « Achieva Petal Code » sur le tout premier écran.",
+            "name": "Ancienne instruction de saisie du code",
+            "text": "Avant la pause, la page demandait de coller le code dans le champ Achieva Petal Code pendant l'inscription. Ne présumez pas que ce champ ou ce code seront encore actifs à la reprise.",
             "url": "https://cashinstinct.ca/achieva/fr/#step-3"
           },
           {
             "@type": "HowToStep",
             "position": 4,
-            "name": "Transférez un minimum de 250 $ CAD",
-            "text": "Finalisez votre profil en liant votre compte bancaire externe et effectuez un dépôt initial d'au moins 250 $ CAD.",
+            "name": "Ancienne condition de 250 $",
+            "text": "Les anciennes modalités indiquaient un dépôt initial d'au moins 250 $. Revérifiez le montant et la retenue applicable lorsque le programme reviendra.",
             "url": "https://cashinstinct.ca/achieva/fr/#step-4"
           },
           {
             "@type": "HowToStep",
             "position": 5,
-            "name": "Percevez votre prime de 25 $",
-            "text": "Maintenez le solde de 250 $ pendant au moins un mois complet. Achieva créditera la prime de 25 $ directement dans votre compte le mois suivant.",
+            "name": "Ancienne prime annoncée",
+            "text": "Les anciennes modalités indiquaient qu'un solde de 250 $ maintenu pendant un mois complet menait à un crédit de 25 $ le mois suivant. Le montant, le délai et les conditions de reprise sont inconnus.",
             "url": "https://cashinstinct.ca/achieva/fr/#step-5"
           }
         ]
@@ -216,25 +205,25 @@
             "name": "Comment fonctionne le programme de parrainage Achieva Financial ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Pour utiliser le programme de parrainage Achieva, il faut saisir un Petal Code valide lors de l'inscription dans l'application mobile. Collez le code V381566198 dès le premier écran de l'appli, déposez au moins 250 $ CAD et maintenez ce solde pendant au moins un mois complet pour déclencher la prime de 25 $. Vous recevrez ensuite votre propre code pour parrainer d'autres personnes, jusqu'à 4 fois par an (maximum 100 $ par année)."
+              "text": "Le programme de parrainage Achieva est actuellement en pause. L'ancienne page documentait un Petal Code, un dépôt de 250 $ et un solde maintenu pendant un mois, suivis d'une prime d'inscription de 25 $ et d'une mécanique de parrainage. Ces étapes et gains doivent être revérifiés à la reprise."
             }
           },
           {
             "@type": "Question",
             "name": "Qu'est-ce qu'un Achieva Petal Code et est-il valide en 2026 ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Le Petal Code est le nom officiel donné par Achieva Financial à son code de recommandation. Le code V381566198 est entièrement valide tout au long de l'année 2026 pour sécuriser une prime d'inscription de 25 $ CAD." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Le Petal Code est le nom donné par Achieva Financial à son code de recommandation. Le programme est actuellement en pause; la validité actuelle de V381566198, le montant de la prime et les futures conditions ne peuvent pas être promis. L'ancienne page indiquait une prime de 25 $ CAD; revérifiez-la à la reprise." }
           },
           {
             "@type": "Question",
             "name": "Où appliquer le Petal Code Achieva Financial V381566198 ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "L'ouverture de compte se fait exclusivement via l'application mobile d'Achieva. Collez le code V381566198 dans le champ 'Achieva Petal Code' dès le premier écran de l'application. Déposez ensuite un minimum de 250 $ CAD et maintenez ce montant pendant au moins un mois complet." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Achieva offre actuellement l'ouverture de compte via l'application mobile (recommandée) et en ligne à openaccount.achieva.mb.ca. Avant la pause, la page demandait de saisir V381566198 dans le champ Petal Code et de respecter la condition de 250 $/un mois; vérifiez si ces instructions reviennent avec le nouveau programme." }
           },
           {
             "@type": "Question",
             "name": "Qui n'est PAS admissible à la prime de parrainage Achieva ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Toute personne dont le nom figure sur un compte Achieva Financial au cours des 12 derniers mois est inéligible à la prime de 25 $, même si ce compte est maintenant fermé. Le nouveau client doit également maintenir un solde minimum de 250 $ CAD pendant au moins un mois complet."
+              "text": "L'ancienne page indiquait que toute personne dont le nom figurait sur un compte Achieva Financial au cours des 12 derniers mois était inadmissible à sa prime de 25 $, même si le compte était fermé. Elle indiquait aussi un solde minimum de 250 $ pendant un mois. Revérifiez ces conditions à la reprise du programme en pause."
             }
           },
           {
@@ -242,7 +231,7 @@
             "name": "Combien de parrainages puis-je obtenir ? Y a-t-il une limite ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Achieva Financial limite les récompenses de parrainage à 4 par année civile, pour un maximum de 100 $ CAD par an. Chaque parrainage réussi rapporte 25 $ à la fois au parrain et au nouveau client."
+              "text": "L'ancienne page indiquait une limite de 4 récompenses par année civile, jusqu'à 100 $ CAD par année, avec 25 $ pour le parrain et le nouveau client. Ces chiffres décrivent seulement les anciennes modalités; le plafond et les montants futurs sont inconnus."
             }
           },
           {
@@ -250,7 +239,7 @@
             "name": "Les conjoints peuvent-ils tous les deux recevoir la prime de 25 $ ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui. Chaque personne doit ouvrir son propre compte Achieva individuel et saisir le Petal Code V381566198 à l'inscription pour recevoir sa propre prime de 25 $. Achieva permet également les comptes joints en plus des comptes individuels, de sorte que les partenaires peuvent chacun se qualifier de façon indépendante."
+              "text": "Les anciennes modalités disaient que chaque personne pouvait ouvrir un compte Achieva individuel et se qualifier séparément. Le programme de parrainage est en pause; il faudra confirmer à la reprise si les deux personnes peuvent recevoir la future prime."
             }
           },
           {
@@ -274,7 +263,7 @@
             "name": "Y a-t-il une retenue sur mon dépôt initial — compte-t-il pour la prime ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui. Les virements entrants via Achieva Direct sont retenus 5 jours ouvrables. Tous les autres dépôts (virements bancaires externes, guichet automatique, application mobile) sont retenus 10 jours ouvrables. Planifiez votre dépôt initial de 250 $ en conséquence pour maintenir ce solde pendant au moins un mois complet."
+              "text": "Les virements entrants via Achieva Direct sont retenus 5 jours ouvrables. Tous les autres dépôts (virements bancaires externes, guichet automatique, application mobile) sont retenus 10 jours ouvrables. Les anciennes modalités de parrainage indiquaient que le dépôt de 250 $ comptait pendant la retenue; cette admissibilité doit être revérifiée après la pause."
             }
           },
           {
@@ -282,7 +271,7 @@
             "name": "Peut-on ouvrir un compte Achieva Financial depuis un ordinateur ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Non — l'ouverture de compte nécessite l'application mobile Achieva sur iOS ou Android. Il n'existe pas de formulaire web. Si vous êtes sur un ordinateur, visitez achieva.mb.ca/open-an-account pour scanner leur code QR avec votre téléphone, téléchargez l'application, puis collez le code V381566198 dès le premier écran d'inscription."
+              "text": "Oui. Achieva offre actuellement l'ouverture de compte en ligne à openaccount.achieva.mb.ca et l'application mobile (recommandée). L'ancien parcours de parrainage utilisait l'application et un Petal Code, mais il faut vérifier si le programme relancé acceptera le code en ligne ou dans l'application."
             }
           },
           {
@@ -290,7 +279,7 @@
             "name": "Est-ce qu'Achieva Financial offre un CELI ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui. Achieva offre un compte d'épargne CELI à 1,95 % variable et des CPG CELI avec des taux fixes de 3,60 % (1 an) à 4,05 % (5 ans). Tous les dépôts CELI chez Achieva sont garantis sans limite par la DGCM."
+              "text": "Oui. Achieva offre un compte d'épargne CELI à 1,95 % variable et des CPG CELI avec des taux fixes de 3,60 % (1 an) à 4,05 % (5 ans). Tous les dépôts CELI chez Achieva sont garantis sans limite par la DGCM. Vous pouvez ouvrir un compte en ligne ou via l'application mobile; l'ancienne prime du Petal Code est en pause et doit être revérifiée."
             }
           },
           {
@@ -309,7 +298,7 @@
           {
             "@type": "Question",
             "name": "Peut-on ouvrir un compte Achieva Financial si l'on réside au Québec ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Oui, les services d'Achieva Financial sont accessibles aux résidents du Québec et de toutes les autres provinces canadiennes. Il faut télécharger l'application mobile Achieva (iOS ou Android). L'interface et le service client sont toutefois disponibles exclusivement en anglais." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Oui, les services d'Achieva Financial sont accessibles aux résidents du Québec et de toutes les autres provinces canadiennes. L'ouverture est offerte en ligne ou via l'application mobile (recommandée). L'interface et le service client sont toutefois disponibles exclusivement en anglais." }
           }
         ]
       }
@@ -606,7 +595,7 @@
   <header class="hero">
     <div class="hero-inner">
       <h1>Code de parrainage Achieva Financial V381566198 — Prime de 25 $</h1>
-      <p>L'ouverture de compte se fait <strong>exclusivement via l'application mobile</strong>. Copiez le code <strong>V381566198</strong> ci-dessous avant de la télécharger.</p>
+      <p>L'ouverture de compte Achieva est offerte via l'<strong>application mobile (recommandée)</strong> ou <a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">en ligne</a>. Le programme de parrainage est actuellement en pause; gardez le code <strong>V381566198</strong> uniquement pour une vérification future.</p>
 
       <div class="code-wrap">
         <div class="code-hero">V381566198</div>
@@ -652,29 +641,29 @@
         
         <section class="summary-box" aria-labelledby="summary-heading">
          <h2 id="summary-heading">Résumé rapide — code de parrainage et prime d'inscription</h2>
-          <p>Le <strong>Petal Code Achieva Financial V381566198</strong>, valide en 2026, permet d'obtenir une prime d'inscription de 25 $ CAD (en pause). Pour être admissible, le nouveau client doit copier ce code, télécharger l'application mobile, l'insérer lors de l'inscription, effectuer un dépôt initial d'au moins 250 $ CAD et conserver ce solde pendant au moins un mois complet. À noter : toute personne ayant détenu un compte Achieva au cours des 12 derniers mois n'est pas admissible.</p>
+          <p>Le programme de parrainage est actuellement <strong>en pause</strong>. L'ancienne page documentait une prime de 25 $ CAD associée au Petal Code <strong>V381566198</strong>, un dépôt initial de 250 $ et un solde maintenu pendant un mois, mais le montant et la structure au retour sont inconnus. Ne présentez pas ces anciennes modalités comme une offre actuellement utilisable.</p>
         </section>
         <p class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-08-06">6&nbsp;août&nbsp;2026</time></p>
 
         <section id="guide-utilisation">
-          <span class="section-label">Protocole mobile</span>
-          <h2>Comment activer le Petal Code dans l'application Achieva ?</h2>
+          <span class="section-label">Modalités de parrainage en pause</span>
+          <h2>Anciennes étapes de parrainage — à vérifier à la reprise</h2>
 
           <div class="warning" role="note">
-            ⚠️ <strong>Important :</strong> Il n'existe pas de formulaire d'ouverture sur le site web. Vous devez télécharger l'application Achieva Mobile sur iOS ou Android pour procéder. Sur ordinateur, visitez <a href="https://www.achieva.mb.ca/open-an-account" target="_blank" rel="noopener noreferrer sponsored">achieva.mb.ca/open-an-account</a> pour scanner le code QR avec votre téléphone.
+            ⚠️ <strong>Programme en pause :</strong> Les étapes ci-dessous résument les anciennes modalités et ne constituent pas une promesse actuelle. Achieva offre maintenant deux parcours d'ouverture : l'<strong>application mobile (recommandée)</strong> et l'<a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">ouverture en ligne</a>. Vérifiez le nouveau programme, le code et le parcours admissible à la reprise.
           </div>
 
           <ol class="steps">
             <li id="step-1">
               <div>
-                <h3>Copiez votre Petal Code</h3>
-                <p>Cliquez sur le bouton en haut de cette page pour copier automatiquement le code <code>V381566198</code> dans le presse-papiers de votre téléphone.</p>
+                <h3>Ancienne étape : copier le Petal Code</h3>
+                <p>L'ancienne page demandait de copier le code <code>V381566198</code> avant l'inscription. Le code et le programme relancé doivent être revérifiés.</p>
               </div>
             </li>
             <li id="step-2">
               <div>
-                <h3>Téléchargez l'application Achieva Mobile</h3>
-                <p>Ouvrez l'App Store (Apple) ou Google Play (Android) et installez l'application officielle <strong>Achieva Mobile</strong>.</p>
+                <h3>Choisir le parcours d'ouverture</h3>
+                <p>Pour un compte Achieva ordinaire, l'application mobile est recommandée et l'<a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">ouverture en ligne</a> est aussi offerte. L'ancien parcours de parrainage utilisait l'application; confirmez le parcours admissible à la reprise.</p>
                 <div class="app-store-badges" style="justify-content:flex-start; margin-top:16px;">
                   <a href="https://apps.apple.com/ca/app/achievamobile/id911123831"
                      target="_blank" rel="noopener noreferrer sponsored"
@@ -695,8 +684,8 @@
             </li>
             <li id="step-3">
               <div>
-                <h3>Collez le code à l'ouverture</h3>
-                <p>Dès que vous ouvrez l'application Achieva pour créer votre compte, collez le code dans le champ <strong style="white-space: nowrap;">« Achieva Petal Code »</strong> sur le tout premier écran.</p>
+                <h3>Ancienne instruction de saisie du code</h3>
+                <p>Avant la pause, la page demandait de coller le code dans le champ <strong style="white-space: nowrap;">« Achieva Petal Code »</strong> pendant l'inscription. Ne présumez pas que ce champ ou ce code seront encore actifs à la reprise.</p>
                 <img src="https://cashinstinct.ca/achieva/images/achieva-petal-code.webp"
                      alt="Champ Achieva Petal Code dans l'application Achieva"
                      style="display:block; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--border); box-shadow:var(--shadow); margin-top:14px;"
@@ -705,14 +694,14 @@
             </li>
             <li id="step-4">
               <div>
-                <h3>Transférez un minimum de 250 $ CAD</h3>
-                <p>Finalisez votre profil en liant votre compte bancaire externe et effectuez un dépôt initial d'au moins 250 $. Notez que la plupart des virements entrants sont retenus <strong>10 jours ouvrables</strong> — planifiez en conséquence pour maintenir le solde minimum pendant au moins un mois complet.</p>
+                <h3>Ancienne condition de 250 $</h3>
+                <p>Les anciennes modalités indiquaient un dépôt initial d'au moins 250 $. La plupart des virements entrants sont retenus <strong>10 jours ouvrables</strong>; revérifiez le montant et la retenue applicable lorsque le programme reviendra.</p>
               </div>
             </li>
            <li id="step-5">
               <div>
-                <h3>Percevez votre prime de 25 $</h3>
-                <p>Maintenez le solde de 250 $ pendant au moins un mois complet. Achieva créditera la prime de 25 $ directement dans votre compte le mois suivant.</p>
+                <h3>Ancienne prime annoncée</h3>
+                <p>Les anciennes modalités indiquaient qu'un solde de 250 $ maintenu pendant un mois complet menait à un crédit de 25 $ le mois suivant. Le montant, le délai et les conditions de reprise sont inconnus.</p>
               </div>
             </li>
           </ol>
@@ -724,7 +713,7 @@
           <p>Achieva Financial est une division d'épargne en ligne de la <strong>Cambrian Credit Union</strong>, l'une des plus importantes coopératives de crédit du Manitoba. Active depuis 1998, la plateforme propose des comptes d'épargne performants couvrant plusieurs types de produits — Épargne quotidienne, CELI, REER, FERR et CPG — sans aucuns frais de gestion mensuels.</p>
           <p>Le principal avantage d'Achieva repose sur sa structure de sécurité : contrairement aux institutions rattachées à la SADC (plafonnée à 100 000 $ par catégorie de déposant), <strong>100 % des dépôts confiés à Achieva Financial sont garantis sans aucune limite de plafond</strong> par la Corporation d'assurance-dépôts du Manitoba (DGCM). C'est un choix de premier ordre pour sécuriser un fonds d'urgence d'envergure ou maximiser un CELI sans s'inquiéter des plafonds de couverture.</p>
           <p>Côté rendement, le <strong>CPG 5 ans à 4,05 %</strong> et les taux sur comptes enregistrés (1,95 % variable sur CELI/REER/FERR) font partie des options les plus compétitives offertes par une institution canadienne en ligne sans frais. Contrairement à certaines banques numériques, Achieva donne également accès à un réseau de guichets automatiques — un avantage concret pour les retraits occasionnels en espèces.</p>
-          <p>Les principaux compromis : l'ouverture de compte se fait <strong>exclusivement via l'application mobile</strong> Achieva (iOS ou Android), les dépôts initiaux provenant d'une banque externe sont retenus jusqu'à 10 jours ouvrables, et la plateforme est disponible <strong>en anglais seulement</strong>. Pour les épargnants à l'aise avec une expérience 100 % mobile, Achieva offre une valeur solide — surtout combinée à la <strong>prime de 25 $ via le Petal Code V381566198</strong>.</p>
+          <p>Les principaux compromis : l'ouverture de compte Achieva est offerte via l'<strong>application mobile (recommandée)</strong> ou <a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">en ligne</a>, les dépôts initiaux provenant d'une banque externe sont retenus jusqu'à 10 jours ouvrables, et la plateforme est disponible <strong>en anglais seulement</strong>. Le programme de parrainage est en pause; les anciennes <strong>modalités de 25 $ du Petal Code ne sont pas actuellement utilisables</strong>.</p>
         </section>
 
         <section id="garantie-depots">
@@ -786,7 +775,7 @@
           <span class="section-label">Spécifications</span>
           <h2>Fiche technique des comptes Achieva</h2>
          <h3 style="font-size:1.15rem; font-weight:700; margin:8px 0 12px; color:var(--text);">Combien de temps avant que mon dépôt Achieva soit disponible ?</h3>
-        <p>Le délai dépend du mode de dépôt : <strong>5 jours ouvrables</strong> pour un virement <em>Achieva Direct</em>, et <strong>10 jours ouvrables</strong> pour tous les autres dépôts (virement bancaire externe, GAB, application mobile). Pour la prime de 25 $, le dépôt initial de 250 $ est tout de même comptabilisé dès sa réception — mais planifiez votre virement pour que le solde reste intact pendant au moins un mois complet après la levée de la retenue.</p>
+        <p>Le délai dépend du mode de dépôt : <strong>5 jours ouvrables</strong> pour un virement <em>Achieva Direct</em>, et <strong>10 jours ouvrables</strong> pour tous les autres dépôts (virement bancaire externe, GAB, application mobile). Les anciennes modalités de parrainage indiquaient que le dépôt de 250 $ comptait dès sa réception; cette règle doit être revérifiée après la pause.</p>
           <div class="table-wrap">
             <table aria-label="Fiche technique des spécifications de compte et frais de service Achieva Financial">
               <thead>
@@ -794,7 +783,7 @@
               </thead>
               <tbody>
                 <tr><td>Frais de gestion mensuels</td><td><strong>0 $</strong> (entièrement gratuit)</td></tr>
-                <tr><td>Solde minimal exigé</td><td>Aucun (sauf les 250 $ temporaires pour la prime de parrainage)</td></tr>
+                <tr><td>Solde minimal exigé</td><td>Aucun pour le compte; les anciennes modalités de parrainage mentionnaient 250 $ temporairement, à revérifier</td></tr>
                 <tr><td>Garantie des fonds</td><td><strong>100 % illimitée</strong> — garantie par la DGCM (aucun plafond)</td></tr>
                 <tr><td>Calcul des intérêts</td><td>Calculés quotidiennement sur le solde de clôture, versés mensuellement</td></tr>
                 <tr><td>Retenue sur les dépôts</td><td>5 jours (Achieva Direct) / <strong>10 jours ouvrables</strong> (tous les autres dépôts)</td></tr>
@@ -816,9 +805,9 @@
             <li><span class="icon">🍁</span><div><strong>Ouverture interprovinciale :</strong> Les résidents du Québec et de toutes les provinces canadiennes peuvent ouvrir un compte via l'application mobile sans contrainte réglementaire.</div></li>
             <li><span class="icon">📈</span><div><strong>Gamme complète de produits :</strong> CELI (1,95 %), REER, FERR, et CPG jusqu'à 4,05 % sur 5 ans — bien plus qu'un simple compte d'épargne de base.</div></li>
             <li><span class="icon">🏧</span><div><strong>Accès aux guichets automatiques :</strong> Contrairement à certaines banques exclusivement numériques, Achieva donne accès à un réseau de GAB pour les retraits en espèces.</div></li>
-            <li><span class="icon">⏳</span><div><strong>Retenue de 10 jours sur les dépôts :</strong> Tous les virements entrants (sauf Achieva Direct à 5 jours) sont retenus 10 jours ouvrables. Planifiez votre dépôt initial en conséquence pour satisfaire à l'exigence de 250 $ minimum.</div></li>
+            <li><span class="icon">⏳</span><div><strong>Retenue de 10 jours sur les dépôts :</strong> Tous les virements entrants (sauf Achieva Direct à 5 jours) sont retenus 10 jours ouvrables. Les anciennes modalités de parrainage exigeaient un solde de 250 $; revérifiez cette condition lorsque le programme reviendra.</div></li>
             <li><span class="icon">💬</span><div><strong>Interface unilingue anglais :</strong> L'application mobile et le service à la clientèle opèrent exclusivement en anglais.</div></li>
-            <li><span class="icon">📱</span><div><strong>Ouverture mobile uniquement :</strong> L'inscription exige l'application Achieva sur iOS ou Android. Sur ordinateur, scannez le code QR disponible sur <a href="https://www.achieva.mb.ca/open-an-account" target="_blank" rel="noopener noreferrer sponsored">achieva.mb.ca/open-an-account</a>.</div></li>
+            <li><span class="icon">📱</span><div><strong>Deux parcours d'ouverture :</strong> Achieva recommande l'application mobile et offre aussi l'<a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">ouverture en ligne</a>.</div></li>
           </ul>
         </section>
 
@@ -836,31 +825,31 @@
             <details id="programme-parrainage" style="scroll-margin-top: calc(var(--topbar-h) + 20px);">
               <summary id="faq-q1">Comment fonctionne le programme de parrainage Achieva Financial ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q1">
-                <p>Le programme est simple : saisissez un <strong>Petal Code</strong> valide (le nom officiel d'Achieva pour son code de recommandation) lors de l'inscription dans l'application mobile. Collez le code <code>V381566198</code> dès le premier écran de l'appli. Une fois votre compte actif et les conditions de dépôt respectées, vous recevrez votre propre code unique pour parrainer d'autres personnes et gagner 25 $ par parrainage réussi — jusqu'à 4 fois par an (maximum 100 $ par année civile).</p>
+                <p>Le programme de parrainage Achieva est actuellement en pause. L'ancienne page documentait un <strong>Petal Code</strong>, un dépôt de 250 $ et un solde maintenu pendant un mois, suivis d'une prime d'inscription de 25 $ et d'une mécanique de parrainage. Ces étapes et gains doivent être revérifiés à la reprise.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q2">Qu'est-ce qu'un Achieva Petal Code et est-il valide en 2026 ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q2">
-                <p>Le Petal Code est le nom officiel donné par Achieva Financial à son code de recommandation. Le code <code>V381566198</code> est entièrement valide tout au long de l'année 2026 pour sécuriser une prime d'inscription de 25 $ CAD.</p>
+                <p>Le Petal Code est le nom donné par Achieva Financial à son code de recommandation. Le programme est actuellement en pause; la validité actuelle de <code>V381566198</code>, le montant de la prime et les futures conditions ne peuvent pas être promis. L'ancienne page indiquait une prime de 25 $ CAD; revérifiez-la à la reprise.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q3">Où appliquer le Petal Code Achieva Financial V381566198 ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q3">
-                <p>L'ouverture de compte se fait exclusivement via l'application mobile d'Achieva. Collez le code <code>V381566198</code> dans le champ <strong>« Achieva Petal Code »</strong> dès le premier écran de l'application. Déposez ensuite un minimum de 250 $ CAD et maintenez ce montant pendant au moins un mois complet.</p>
+                <p>Achieva offre actuellement l'ouverture de compte via l'<strong>application mobile (recommandée)</strong> et <a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">en ligne</a>. Avant la pause, la page demandait de saisir <code>V381566198</code> dans le champ Petal Code et de respecter la condition de 250 $/un mois; vérifiez si ces instructions reviennent avec le nouveau programme.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q4">Qui n'est PAS admissible à la prime de parrainage Achieva ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q4">
-                <p>Deux situations rendent un nouveau client inéligible à la prime de 25 $ :</p>
+                <p>L'ancienne page indiquait deux situations rendant un nouveau client inadmissible à sa prime de 25 $. Comme le programme est en pause, revérifiez ces conditions à la reprise :</p>
                 <ul>
                   <li><strong>Anciens clients Achieva :</strong> Toute personne dont le nom figure sur un compte Achieva au cours des 12 derniers mois est inéligible — même si ce compte est maintenant fermé.</li>
-                  <li><strong>Solde minimum non maintenu :</strong> Le dépôt de 250 $ CAD doit être maintenu pendant au moins un mois complet pour que la prime soit déclenchée.</li>
+                  <li><strong>Solde minimum non maintenu :</strong> Les anciennes modalités exigeaient 250 $ CAD pendant un mois; la future exigence est inconnue.</li>
                 </ul>
               </div>
             </details>
@@ -868,14 +857,14 @@
             <details>
               <summary id="faq-q5">Combien de parrainages puis-je obtenir ? Y a-t-il une limite ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q5">
-                <p>Oui — Achieva Financial limite les récompenses de parrainage à <strong>4 par année civile</strong>, pour un maximum de <strong>100 $ CAD par an</strong>. Chaque parrainage réussi rapporte 25 $ à la fois au parrain et au nouveau client.</p>
+                <p>L'ancienne page indiquait une limite de <strong>4 récompenses par année civile</strong>, jusqu'à <strong>100 $ CAD par année</strong>, avec 25 $ pour le parrain et le nouveau client. Ces chiffres décrivent seulement les anciennes modalités; le plafond et les montants futurs sont inconnus.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q6">Les conjoints peuvent-ils tous les deux recevoir la prime de 25 $ ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q6">
-                <p>Oui. Chaque personne doit ouvrir son propre compte <strong>individuel</strong> Achieva et saisir le Petal Code <code>V381566198</code> à l'inscription pour recevoir sa prime de 25 $. Achieva Financial permet également d'ouvrir des comptes conjoints en plus des comptes individuels — les partenaires peuvent donc chacun se qualifier indépendamment.</p>
+                <p>Les anciennes modalités disaient que chaque personne pouvait ouvrir un compte <strong>individuel</strong> Achieva et se qualifier séparément. Le programme de parrainage est en pause; il faudra confirmer à la reprise si les deux personnes peuvent recevoir la future prime.</p>
               </div>
             </details>
 
@@ -896,21 +885,21 @@
             <details>
               <summary id="faq-q9">Y a-t-il une retenue sur mon dépôt initial — compte-t-il pour la prime ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q9">
-                <p>Oui — Achieva applique une retenue sur les dépôts entrants. <strong>Les virements Achieva Direct sont retenus 5 jours ouvrables</strong> ; tous les autres dépôts (virements bancaires externes, GAB, application mobile) sont retenus <strong>10 jours ouvrables</strong>. Votre dépôt initial de 250 $ est tout de même comptabilisé pendant la période de retenue, mais planifiez votre virement pour maintenir ce solde pendant au moins un mois complet.</p>
+                <p>Achieva applique une retenue sur les dépôts entrants : <strong>les virements Achieva Direct sont retenus 5 jours ouvrables</strong>; tous les autres dépôts (virements bancaires externes, GAB, application mobile) sont retenus <strong>10 jours ouvrables</strong>. Les anciennes modalités de parrainage indiquaient que le dépôt de 250 $ comptait pendant la retenue; cette admissibilité doit être revérifiée après la pause.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q10">Peut-on ouvrir un compte Achieva Financial depuis un ordinateur ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q10">
-                <p>Non — l'ouverture de compte nécessite l'application mobile Achieva sur iOS ou Android. Il n'existe pas de formulaire web. Si vous êtes sur un ordinateur, visitez <a href="https://www.achieva.mb.ca/open-an-account" target="_blank" rel="noopener noreferrer sponsored">achieva.mb.ca/open-an-account</a> pour scanner leur code QR avec votre téléphone, téléchargez l'application, puis collez le code <code>V381566198</code> dès le premier écran d'inscription.</p>
+                <p>Oui. Achieva offre actuellement l'<strong>ouverture de compte en ligne</strong> et l'application mobile (recommandée). Commencez en ligne à <a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">openaccount.achieva.mb.ca</a>. L'ancien parcours de parrainage utilisait l'application et un Petal Code, mais il faut vérifier si le programme relancé acceptera le code en ligne ou dans l'application.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q11">Est-ce qu'Achieva Financial offre un CELI ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q11">
-                <p>Oui. Achieva propose un <strong>compte d'épargne CELI à 1,95 % variable</strong> et des <strong>CPG CELI</strong> avec des taux fixes de 3,60 % (1 an) à 4,05 % (5 ans). Tous les dépôts CELI chez Achieva sont garantis sans limite par la DGCM. Vous pouvez ouvrir un CELI via l'application Achieva Mobile en utilisant le Petal Code <code>V381566198</code> pour obtenir votre prime de 25 $.</p>
+                <p>Oui. Achieva propose un <strong>compte d'épargne CELI à 1,95 % variable</strong> et des <strong>CPG CELI</strong> avec des taux fixes de 3,60 % (1 an) à 4,05 % (5 ans). Tous les dépôts CELI chez Achieva sont garantis sans limite par la DGCM. Vous pouvez ouvrir un compte en ligne ou via l'application mobile; l'ancienne prime du Petal Code est en pause et doit être revérifiée.</p>
               </div>
             </details>
 
@@ -931,15 +920,15 @@
             <details>
               <summary id="faq-q14">Peut-on ouvrir un compte Achieva Financial si l'on réside au Québec ?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q14">
-                <p>Oui, les services d'Achieva Financial sont accessibles aux résidents du Québec et de toutes les provinces canadiennes via l'application mobile Achieva (iOS ou Android). L'interface et le service client sont toutefois disponibles exclusivement en anglais.</p>
+                <p>Oui, les services d'Achieva Financial sont accessibles aux résidents du Québec et de toutes les provinces canadiennes. L'ouverture est offerte en ligne ou via l'application mobile (recommandée). L'interface et le service client sont toutefois disponibles exclusivement en anglais.</p>
               </div>
             </details>
           </div>
         </section>
         
         <div class="cta-section">
-          <h2>Avez-vous copié votre Petal Code ?</h2>
-          <p>Gardez le Petal Code <strong>V381566198</strong> à portée de main et téléchargez l'application Achieva pour ouvrir votre compte.</p>
+          <h2>Programme de parrainage Achieva en pause</h2>
+          <p>Gardez le Petal Code <strong>V381566198</strong> uniquement comme référence pour une vérification à la reprise. Vous pouvez ouvrir un compte Achieva en ligne ou via l'application mobile (recommandée).</p>
           <div class="cta-code-row">
             <span class="cta-code-pill">V381566198</span>
             <button class="cta-copy-btn" type="button" data-copy="V381566198" data-target="copyStatusCta" data-label="Copier le code">Copier le code</button>
@@ -952,7 +941,7 @@
         </div>
 
         <aside class="transparency">
-          <strong>Transparence :</strong> Si vous ouvrez un compte via l'application Achieva avec le Petal Code <code>V381566198</code>, nous recevons chacun une prime de parrainage de 25 $ (maximum 4 par an de notre côté). Pour les taux d'intérêt en vigueur ou les conditions légales, visitez le site officiel d'<a href="https://www.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">Achieva Financial</a>. Pour en savoir plus sur la préparation des guides, consultez <a href="https://cashinstinct.ca/about/fr/">À&nbsp;propos de Cash&nbsp;Instinct</a>.
+          <strong>Transparence :</strong> Le programme de parrainage Achieva est en pause. Le montant de 25 $ et les limites précédemment affichés sont historiques et pourraient ne pas être reconduits à la reprise. Pour les options d'ouverture, les taux ou les modalités légales, visitez le site officiel d'<a href="https://www.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">Achieva Financial</a>. Pour en savoir plus sur la préparation des guides, consultez <a href="https://cashinstinct.ca/about/fr/">À&nbsp;propos de Cash&nbsp;Instinct</a>.
         </aside>
 
       </div><!-- /prose -->

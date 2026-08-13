@@ -9,33 +9,46 @@
   Still on pause as of: 2026-07-08
   Amount/structure on return = UNKNOWN (do not promise anything).
 
+  ── MAINTENANCE RECORD — AUGUST 2026 ──
+  Keep this page indexed and structurally intact while the referral program is
+  paused; do not remove or reduce it for SEO reasons. Corrected now: the
+  previous page described account opening as exclusively mobile, while
+  Achieva's current FAQ documents an Online Banking opening path:
+  https://www.achieva.mb.ca/faq/open-account. This factual pass updates the
+  visible copy and structured data to reflect the pause, but does not change
+  dateModified, trust/footer dates or sitemap.
+  Recheck the opening path and referral program together when Achieva relaunches.
+
   ── PAUSE EDITS APPLIED TO THIS PAGE ──
   [x] .notice-warning banner added in .prose, after breadcrumb
   [x] .summary-box : "(paused)" added after "$25 CAD"
-  [x] JSON-LD Offer availability → InStock to
-      LimitedAvailability (otherwise "in stock" snippet persists)
+  [x] JSON-LD Product Offer removed while the referral program is paused
 
   ── LEFT UNCHANGED ON PURPOSE (re-audit in summer) ──
   - OG image : keeps "$25" (re-render only if amount changes)
   - Code V381566198 : kept (may be invalidated/replaced on return)
-  - FAQ + steps + rates : factual, become accurate again on relaunch
--   H1 : no mention
+  - Rates and general account facts : preserved; referral FAQ/steps are now
+    explicitly historical and must be reverified at relaunch
+  - H1/title : no pause wording added, to preserve the SEO target
 
   ── FAQ JSON-LD DRIFT TRIAGE — 2026-08-07 ──
   The exact HTML-answer/acceptedAnswer.text report is informational: do not
   force literal equality when one side is a concise summary or adds a link.
   D cases requiring source review before synchronization:
-  - Q1: HTML emphasizes referral earnings/own code; JSON-LD emphasizes the
-    sign-up bonus and its deposit condition.
-  - Q9: HTML says the initial deposit counts during the hold; JSON-LD does
-    not state that eligibility point.
+  - Q1: both surfaces now identify the referral mechanics as pre-pause terms;
+    keep the pause qualifier if either answer is edited.
+  - Q9: both surfaces now identify the deposit treatment as a previous referral
+    condition that must be reverified.
   Keep the visible FAQ and JSON-LD semantically equivalent. Structural
   mismatches, missing answers, or mismatched question counts remain blocking.
 
   ── TO DO AT RELAUNCH (Summer 2026) ──
   - Verify new program at achieva.mb.ca/referral-program
-  - Remove this banner + "(paused)" mentions (H1, summary-box)
-  - Restore Offer availability →  https://schema.org/InStock
+  - Remove this banner + pause qualifiers from the summary, steps and FAQ only
+    after the new program and its terms are officially available; the H1/title
+    was intentionally preserved.
+  - Consider adding a Product Offer only after the new referral terms are
+    officially available; do not restore the old Offer from historical data
   - Re-render OG if amount changed
   - Update Reddit post r/CanadaReferralShare
   - Resubmit URL for GSC reindexing
@@ -52,7 +65,7 @@
   <meta name="theme-color" content="#199e5e" media="(prefers-color-scheme: dark)" />
   <title>Achieva Petal Code V381566198 — $25 Bonus + Rates (2026)</title>
   <!-- META DESCRIPTION — VOULU : ≤155 caractères (troncature SERP au-delà), aucune date de promo expirante (maintenance). Synchronisée VERBATIM avec JSON-LD WebPage.description — modifier les deux ensemble. -->
-  <meta name="description" content="Use Achieva Petal Code V381566198 in the mobile app to get a $25 CAD bonus. Rates: 1.80%–1.95% savings, 3.60%–4.05% GICs. Valid across Canada." />
+  <meta name="description" content="Achieva's referral program is paused; previous $25 terms need rechecking. Current rates: 1.80%–1.95% savings, 3.60%–4.05% GICs." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/achieva/en/" />
   <link rel="alternate" hreflang="en-CA"     href="https://cashinstinct.ca/achieva/en/" />
@@ -63,7 +76,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
 
   <meta property="og:title"            content="Achieva Petal Code V381566198 — $25 CAD Bonus" />
-  <meta property="og:description"      content="Open an Achieva account via the mobile app using Petal Code V381566198 and automatically receive a $25 CAD welcome bonus. Rates: 1.80%–1.95% savings, up to 4.05% GICs." />
+  <meta property="og:description"      content="Achieva's referral program is paused; the previous $25 terms are historical and need rechecking. Current rates: 1.80%–1.95% savings, up to 4.05% GICs." />
   <meta property="og:locale"           content="en_CA" />
   <meta property="og:locale:alternate" content="fr_CA" />
   <meta property="og:site_name"        content="Cash Instinct" />
@@ -76,7 +89,7 @@
 
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Achieva Petal Code V381566198 — $25 CAD Bonus" />
-  <meta name="twitter:description" content="Enter Petal Code V381566198 in the Achieva app when signing up and receive a $25 CAD welcome bonus. Rates from 1.80% to 4.05%." />
+  <meta name="twitter:description" content="Achieva's referral program is paused; previous $25 terms need rechecking. Current rates range from 1.80% to 4.05%." />
   <meta name="twitter:image"       content="https://cashinstinct.ca/achieva/en/og.png" />
 
   <script>
@@ -111,7 +124,7 @@
         "@id": "https://cashinstinct.ca/achieva/en/",
         "url": "https://cashinstinct.ca/achieva/en/",
         "name": "Achieva Petal Code V381566198 — $25 Bonus + Rates (2026)",
-        "description": "Use Achieva Petal Code V381566198 in the mobile app to get a $25 CAD bonus. Rates: 1.80%\u20131.95% savings, 3.60%\u20134.05% GICs. Valid across Canada.",
+        "description": "Achieva's referral program is paused; previous $25 terms are historical and need rechecking at relaunch. Current rates: 1.80%\u20131.95% savings, 3.60%\u20134.05% GICs.",
         "image": "https://cashinstinct.ca/achieva/en/og.png",
         "inLanguage": "en-CA",
         "datePublished": "2026-05-01",
@@ -135,74 +148,48 @@
         "name": "Achieva Financial Savings Account",
         "image": "https://cashinstinct.ca/achieva/en/og.png",
         "brand": { "@type": "Brand", "name": "Achieva Financial" },
-        "description": "High-interest online savings account with no monthly fees in Canada. As of June 2026: 1.80% on non-registered daily savings, 1.95% on registered accounts (TFSA/RRSP/RRIF), and GIC rates from 3.60% to 4.05% (1–5 year terms). $25 CAD sign-up bonus with referral Petal Code V381566198.",
-        "category": "Financial Services",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "CAD",
-          "price": "25.00",
-          "priceValidUntil": "2027-12-31",
-          "itemCondition": "https://schema.org/NewCondition",
-          "description": "Account opening is completely free via the Achieva mobile app. Using Petal Code V381566198 at sign-up automatically generates a $25 CAD welcome bonus.",
-          "availability": "https://schema.org/LimitedAvailability",
-          "hasMerchantReturnPolicy": {
-            "@type": "MerchantReturnPolicy",
-            "applicableCountry": "CA",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
-          },
-          "shippingDetails": {
-            "@type": "OfferShippingDetails",
-            "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "CAD" },
-            "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "CA" },
-            "deliveryTime": {
-              "@type": "ShippingDeliveryTime",
-              "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-              "transitTime":  { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
-            }
-          }
-        }
+        "description": "High-interest online savings account with no monthly fees in Canada. As of June 2026: 1.80% on non-registered daily savings, 1.95% on registered accounts (TFSA/RRSP/RRIF), and GIC rates from 3.60% to 4.05% (1–5 year terms). The referral program is currently paused; previous $25 terms are historical and must be reverified at relaunch.",
+        "category": "Financial Services"
       },
          {
       "@type": "HowTo",
       "@id": "https://cashinstinct.ca/achieva/en/#howto",
-      "name": "How to Activate Your Achieva Financial Referral Credit",
-      "description": "Step-by-step guide to claim your Achieva Financial discount using Petal Code V381566198 upon mobile enrollment.",
-      "totalTime": "PT10M",
-      "estimatedCost": { "@type": "MonetaryAmount", "currency": "CAD", "value": "0" },
+      "name": "Historical Achieva referral steps — verify at relaunch",
+      "description": "Historical record of the referral terms documented before Achieva paused the program. This is not a currently claimable offer; verify the relaunched program, code, amount and conditions before using these steps.",
       "step": [
         {
           "@type": "HowToStep",
           "position": 1,
-          "name": "Copy Your Petal Code",
-          "text": "Tap the copy button at the top of this page to automatically save code V381566198 to your phone's clipboard.",
+          "name": "Historical code step — copy the Petal Code",
+          "text": "The previous page instructed readers to copy code V381566198 before registration. The code and the relaunched program must be reverified.",
           "url": "https://cashinstinct.ca/achieva/en/#step-1"
         },
         {
           "@type": "HowToStep",
           "position": 2,
-          "name": "Download the Achieva Mobile App",
-          "text": "Open the App Store (Apple) or Google Play (Android) and install the official Achieva Mobile application.",
+          "name": "Verify the account-opening path",
+          "text": "Before the pause, the referral flow documented the Achieva Mobile app. Achieva currently also offers online account opening; which path will support a relaunched referral must be verified.",
           "url": "https://cashinstinct.ca/achieva/en/#step-2"
         },
         {
           "@type": "HowToStep",
           "position": 3,
-          "name": "Paste the Code at Sign-up",
-          "text": "As soon as you open the Achieva app to create your account, paste the code into the 'Achieva Petal Code' field on the very first screen.",
+          "name": "Historical code-entry instruction",
+          "text": "Before the pause, the page instructed applicants to paste the code into the Achieva Petal Code field during registration. Do not assume this field or code remains active after relaunch.",
           "url": "https://cashinstinct.ca/achieva/en/#step-3"
         },
         {
           "@type": "HowToStep",
           "position": 4,
-          "name": "Transfer a Minimum of $250 CAD",
-          "text": "Complete your profile by linking your primary external account and make an initial deposit of at least $250.",
+          "name": "Historical $250 condition",
+          "text": "The previous terms stated that applicants should make an initial deposit of at least $250. Reverify the amount and hold requirement when the program returns.",
           "url": "https://cashinstinct.ca/achieva/en/#step-4"
         },
         {
           "@type": "HowToStep",
           "position": 5,
-          "name": "Receive Your $25 Bonus",
-          "text": "Maintain the $250 balance for at least one full month. Achieva will credit the $25 bonus directly to your account the following month.",
+          "name": "Historical bonus outcome",
+          "text": "The previous terms stated that maintaining $250 for one full month led to a $25 credit the following month. The amount, timing and conditions at relaunch are unknown.",
           "url": "https://cashinstinct.ca/achieva/en/#step-5"
         }
       ]
@@ -216,7 +203,7 @@
             "name": "How do I use the Achieva Financial referral program?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Using the Achieva Financial referral program requires entering a valid referral code (officially called a Petal Code) during registration. Paste code V381566198 on the first screen of the Achieva mobile app, deposit a minimum of $250 CAD, and maintain that balance for at least one full month to unlock your $25 sign-up bonus."
+              "text": "The Achieva referral program is currently paused. The previous page documented a Petal Code, a $250 deposit and a one-month balance condition, followed by a $25 sign-up bonus and referral mechanics. Those steps and earnings must be reverified when the program relaunches."
             }
           },
           {
@@ -224,7 +211,7 @@
             "name": "What is an Achieva Petal Code and is it still valid in 2026?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A Petal Code is the official name Achieva Financial uses for its referral code. Code V381566198 is fully valid throughout 2026 and unlocks a $25 CAD sign-up bonus."
+              "text": "A Petal Code is Achieva Financial's name for its referral code. The program is currently paused, so current validity of V381566198, the bonus amount and the future conditions cannot be promised. The previous page documented a $25 CAD sign-up bonus; reverify it at relaunch."
             }
           },
           {
@@ -232,7 +219,7 @@
             "name": "Where do I enter the Achieva Petal Code V381566198?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Account opening is done exclusively through the Achieva mobile app. Paste code V381566198 into the 'Achieva Petal Code' field on the first screen of the app. Then deposit a minimum of $250 CAD and keep that balance for at least one full month."
+              "text": "Achieva currently offers account opening through the mobile app (recommended) and online at openaccount.achieva.mb.ca. Before the pause, the referral page instructed applicants to paste V381566198 into the Petal Code field and meet the $250/one-month condition; verify whether those instructions return with the new program."
             }
           },
           {
@@ -240,7 +227,7 @@
             "name": "Who is NOT eligible for the Achieva referral bonus?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Anyone whose name appears on an Achieva Financial account within the past 12 months is not eligible for the $25 sign-up bonus — even if that account is now closed. The new customer must also maintain a minimum balance of $250 CAD for at least one full month."
+              "text": "The previous page stated that anyone whose name appeared on an Achieva Financial account within the past 12 months was not eligible for its $25 sign-up bonus, even if that account was closed. It also stated a $250 minimum balance for one full month. Reverify these conditions when the paused program relaunches."
             }
           },
           {
@@ -248,7 +235,7 @@
             "name": "How many referrals can I earn? Is there a limit?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can earn a maximum of 4 referral rewards per year with Achieva Financial, for a total of up to $100 CAD annually. Each successful referral earns both the referrer and the new customer $25 CAD."
+              "text": "The previous page stated a maximum of 4 referral rewards per year, up to $100 CAD annually, with $25 for the referrer and the new customer. Those figures describe the pre-pause terms only; the future cap and amounts are unknown."
             }
           },
           {
@@ -256,7 +243,7 @@
             "name": "Can couples both receive the $25 Achieva referral bonus?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Each person must open their own individual Achieva account and enter Petal Code V381566198 at sign-up to receive their own $25 bonus. Achieva also allows joint accounts in addition to individual accounts, so partners can each qualify independently."
+              "text": "The previous terms said that each person could open an individual Achieva account and qualify separately. The referral program is paused, so whether both people can receive the future bonus must be confirmed when it returns."
             }
           },
           {
@@ -280,7 +267,7 @@
             "name": "Is there a hold on my initial deposit — will it count toward the referral bonus?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Incoming Achieva Direct transfers are held for 5 business days. All other deposits — including bank transfers, ATM deposits, and mobile app transfers — are held for 10 business days. Plan your initial $250 deposit accordingly to meet the referral bonus eligibility requirement."
+              "text": "Achieva Direct transfers are held for 5 business days. All other deposits — including bank transfers, ATM deposits, and mobile app transfers — are held for 10 business days. The previous referral terms said the $250 deposit counted during the hold; that eligibility treatment must be reverified after the pause."
             }
           },
           {
@@ -288,7 +275,7 @@
             "name": "Can I open an Achieva Financial account from my computer?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No — account creation requires the Achieva mobile app on iOS or Android. There is no web-based sign-up form. If you are on a desktop, visit achieva.mb.ca/open-an-account to scan their QR code with your phone's camera, then download the app and enter Petal Code V381566198 at the first sign-up screen."
+              "text": "Yes. Achieva currently offers online account opening at openaccount.achieva.mb.ca and a mobile app (recommended). The previous referral flow used the app and a Petal Code, but whether the relaunched program accepts the code online or in-app must be verified."
             }
           },
           {
@@ -296,7 +283,7 @@
             "name": "Does Achieva Financial offer a TFSA savings account?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Achieva offers a TFSA Daily Savings Account at 1.95% variable and a TFSA GIC with fixed rates from 3.60% (1-year) to 4.05% (5-year). All TFSA deposits are guaranteed without limit by the DGCM."
+              "text": "Yes. Achieva offers a TFSA Daily Savings Account at 1.95% variable and a TFSA GIC with fixed rates from 3.60% (1-year) to 4.05% (5-year). All TFSA deposits are guaranteed without limit by the DGCM. You can open an account online or through the mobile app; the previous Petal Code bonus is paused and must be reverified."
             }
           },
           {
@@ -320,7 +307,7 @@
             "name": "Can I open an Achieva Financial account if I live outside Manitoba?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Achieva Financial accepts residents from all Canadian provinces and territories. You simply need a smartphone (iOS or Android) to download the app and complete registration."
+              "text": "Yes. Achieva Financial accepts residents from all Canadian provinces and territories. Account opening is available online or through the mobile app (recommended)."
             }
           }
         ]
@@ -617,7 +604,7 @@
   <header class="hero">
     <div class="hero-inner">
       <h1>Achieva Financial Referral Code V381566198 — $25 Welcome Bonus</h1>
-      <p>Account opening is done <strong>exclusively through the mobile app</strong>. Copy code <strong>V381566198</strong> below before you download it.</p>
+      <p>Achieva account opening is available through the <strong>mobile app (recommended)</strong> or <a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">online</a>. The referral program is currently paused; keep code <strong>V381566198</strong> only for a future recheck.</p>
 
       <div class="code-wrap">
         <div class="code-hero">V381566198</div>
@@ -665,28 +652,28 @@
         
         <section class="summary-box" aria-labelledby="summary-heading">
          <h2 id="summary-heading">Quick summary of the Achieva referral code &amp; bonus</h2>
-          <p>The <strong>Achieva Financial Petal Code (Referral Code) V381566198</strong>, unlocks a $25 CAD sign-up bonus (paused). To qualify, a new customer must copy this promo code, download the mobile app, enter it during registration, make an initial deposit of at least $250 CAD, and maintain that balance for a minimum of one full month. Note: anyone who has held an Achieva account in the past 12 months is not eligible.</p>
+          <p>The referral program is currently <strong>paused</strong>. The previous page documented a $25 CAD sign-up bonus associated with Petal Code <strong>V381566198</strong>, a $250 initial deposit and one-month balance condition, but the amount and structure at relaunch are unknown. Do not treat those previous terms as a currently claimable offer.</p>
         </section>
         <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-08-06">August&nbsp;6, 2026</time></p>
 
         <section id="how-to-use">
-          <span class="section-label">Mobile Protocol</span>
-          <h2>How to activate the referral Petal Code in the Achieva app</h2>
+          <span class="section-label">Paused referral terms</span>
+          <h2>Historical referral steps — verify at relaunch</h2>
           <div class="warning" role="note">
-            ⚠️ <strong>Important:</strong> There is no web-based sign-up form. You must download the Achieva Mobile app on iOS or Android to open an account. If you are on a desktop, visit <a href="https://www.achieva.mb.ca/open-an-account" target="_blank" rel="noopener noreferrer sponsored">achieva.mb.ca/open-an-account</a> to scan the QR code with your phone.
+            ⚠️ <strong>Program paused:</strong> The steps below summarize the previous referral terms and are not a current promise. Achieva currently offers two account-opening paths: the <strong>mobile app (recommended)</strong> and <a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">online account opening</a>. Verify the new referral terms, code and eligible path when the program returns.
           </div>
 
                     <ol class="steps">
             <li id="step-1">
               <div>
-                <h3>Copy your Petal Code</h3>
-                <p>Tap the copy button at the top of this page to automatically save code <code>V381566198</code> to your phone's clipboard.</p>
+                <h3>Historical step: copy your Petal Code</h3>
+                <p>The previous page instructed readers to copy code <code>V381566198</code> before registration. The code and relaunched program must be reverified.</p>
               </div>
             </li>
             <li id="step-2">
               <div>
-                <h3>Download the Achieva Mobile app</h3>
-                <p>Open the App Store (Apple) or Google Play (Android) and install the official <strong>Achieva Mobile</strong> application.</p>
+                <h3>Choose the account-opening path</h3>
+                <p>For a regular Achieva account, the mobile app is recommended, and <a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">online account opening</a> is also available. The previous referral flow used the app; confirm the eligible path when the program relaunches.</p>
                 <div class="app-store-badges" style="justify-content:flex-start; margin-top:16px;">
                   <a href="https://apps.apple.com/ca/app/achievamobile/id911123831"
                      target="_blank" rel="noopener noreferrer sponsored"
@@ -707,8 +694,8 @@
             </li>
             <li id="step-3">
               <div>
-                <h3>Paste the code at sign-up</h3>
-                <p>As soon as you open the Achieva app to create your account, paste the code into the <strong style="white-space: nowrap;">"Achieva Petal Code"</strong> field on the very first screen.</p>
+                <h3>Historical code-entry instruction</h3>
+                <p>Before the pause, the page instructed applicants to paste the code into the <strong style="white-space: nowrap;">"Achieva Petal Code"</strong> field during registration. Do not assume this field or code remains active after relaunch.</p>
                 <img src="https://cashinstinct.ca/achieva/images/achieva-petal-code.webp"
                      alt="Achieva Petal Code field in the Achieva Mobile app"
                      style="display:block; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--border); box-shadow:var(--shadow); margin-top:14px;"
@@ -717,14 +704,14 @@
             </li>
             <li id="step-4">
               <div>
-                <h3>Transfer a minimum of $250 CAD</h3>
-                <p>Complete your profile by linking your primary external account and make an initial deposit of at least $250. Be aware that most incoming transfers are subject to a <strong>10-business-day hold</strong> — plan accordingly so your balance stays above $250 for at least one full month.</p>
+                <h3>Historical $250 condition</h3>
+                <p>The previous terms stated that applicants should make an initial deposit of at least $250. Most incoming transfers are subject to a <strong>10-business-day hold</strong>; reverify the amount and hold requirement when the program returns.</p>
               </div>
             </li>
             <li id="step-5">
               <div>
-                <h3>Receive your $25 bonus</h3>
-                <p>Maintain the $250 balance for at least one full month. Achieva will credit the $25 bonus directly to your account the following month.</p>
+                <h3>Historical bonus outcome</h3>
+                <p>The previous terms stated that maintaining $250 for one full month led to a $25 credit the following month. The amount, timing and conditions at relaunch are unknown.</p>
               </div>
             </li>
           </ol>
@@ -736,7 +723,7 @@
           <p>Achieva Financial is the online savings division of <strong>Cambrian Credit Union</strong>, one of Manitoba's largest cooperative financial institutions. Operating since 1998, the platform offers competitive high-interest savings accounts across multiple account types — Daily Savings, TFSA, RRSP, RRIF, and GICs — with absolutely no monthly management fees.</p>
           <p>Achieva's biggest differentiator is its security structure: unlike traditional institutions backed by CDIC (capped at $100,000 per depositor category), <strong>100% of deposits held with Achieva Financial are fully guaranteed with no upper limit</strong> by the Deposit Guarantee Corporation of Manitoba (DGCM). This makes it an exceptional choice for parking a large emergency fund or maxing out a TFSA without worrying about coverage limits.</p>
           <p>On the investment side, the <strong>5-year GIC at 4.05%</strong> and registered account rates (1.95% variable on TFSA/RRSP/RRIF) are among the more competitive options available from a no-fee Canadian online savings institution. Unlike some digital banks, Achieva also provides ATM access — a practical advantage if you occasionally need physical withdrawals.</p>
-          <p>The main trade-offs: account opening is done <strong>exclusively through the Achieva mobile app</strong> (iOS or Android), initial deposits from external banks are subject to a 10-business-day hold, and the platform operates in English only. For savers comfortable with a mobile-first experience, Achieva delivers strong value — especially combined with the <strong>$25 sign-up bonus via Petal Code V381566198</strong>.</p>
+          <p>The main trade-offs: Achieva account opening is available through the <strong>mobile app (recommended)</strong> or <a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">online</a>, initial deposits from external banks are subject to a 10-business-day hold, and the platform operates in English only. The referral program is paused, so the previous <strong>$25 Petal Code terms are not currently claimable</strong>.</p>
         </section>
 
         <section id="deposit-guarantee">
@@ -797,7 +784,7 @@
           <span class="section-label">Specifications</span>
           <h2>Achieva account at a glance</h2>
           <h3 style="font-size:1.15rem; font-weight:700; margin:8px 0 12px; color:var(--text);">How long until my Achieva deposit is available?</h3>
-          <p>The hold period depends on the deposit method: <strong>5 business days</strong> for an <em>Achieva Direct</em> transfer, and <strong>10 business days</strong> for all other deposits (external bank transfer, ATM, mobile app). For the $25 bonus, your initial $250 deposit still counts from the moment it's received — but schedule your transfer so the balance stays intact for at least one full month after the hold is released.</p>
+          <p>The hold period depends on the deposit method: <strong>5 business days</strong> for an <em>Achieva Direct</em> transfer, and <strong>10 business days</strong> for all other deposits (external bank transfer, ATM, mobile app). The previous referral terms said the $250 deposit counted from the moment it was received; that treatment must be reverified after the pause.</p>
           <div class="table-wrap">
             <table aria-label="Achieva Financial account specifications and service features at a glance">
               <thead>
@@ -805,7 +792,7 @@
               </thead>
               <tbody>
                 <tr><td>Monthly management fees</td><td><strong>$0</strong> (completely free)</td></tr>
-                <tr><td>Minimum balance required</td><td>None (only the temporary $250 for the referral bonus)</td></tr>
+                <tr><td>Minimum balance required</td><td>None for the account; previous referral terms mentioned a temporary $250 condition, to be reverified</td></tr>
                 <tr><td>Deposit guarantee</td><td><strong>100% unlimited</strong> — guaranteed by DGCM (no cap)</td></tr>
                 <tr><td>Interest calculation</td><td>Calculated daily on closing balance, paid monthly</td></tr>
                 <tr><td>Deposit hold period</td><td>5 days (Achieva Direct transfers) / <strong>10 days</strong> (all other deposits)</td></tr>
@@ -827,9 +814,9 @@
             <li><span class="icon">🍁</span><div><strong>Nationwide access:</strong> Residents of all Canadian provinces and territories can open an account through the Achieva mobile app.</div></li>
             <li><span class="icon">📈</span><div><strong>Multiple account types:</strong> TFSA (1.95%), RRSP, RRIF savings accounts, and GICs up to 4.05% for 5-year terms — not just a basic savings account.</div></li>
             <li><span class="icon">🏧</span><div><strong>ATM access included:</strong> Unlike some online-only banks, Achieva provides ATM network access for withdrawals.</div></li>
-            <li><span class="icon">⏳</span><div><strong>10-day hold on deposits:</strong> All incoming transfers (except Achieva Direct at 5 days) are held for 10 business days. Factor this into your timeline to meet the $250 minimum for the referral bonus.</div></li>
+            <li><span class="icon">⏳</span><div><strong>10-day hold on deposits:</strong> All incoming transfers (except Achieva Direct at 5 days) are held for 10 business days. The previous referral terms required a $250 balance; reverify that condition when the program returns.</div></li>
             <li><span class="icon">💬</span><div><strong>English only:</strong> The mobile app and customer service operate exclusively in English.</div></li>
-            <li><span class="icon">📱</span><div><strong>Mobile-first sign-up:</strong> Account opening requires the Achieva smartphone app (iOS or Android). No desktop account creation form exists — on desktop, scan the QR code at <a href="https://www.achieva.mb.ca/open-an-account" target="_blank" rel="noopener noreferrer sponsored">achieva.mb.ca/open-an-account</a>.</div></li>
+            <li><span class="icon">📱</span><div><strong>Two account-opening paths:</strong> Achieva recommends the mobile app, and also offers <a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">online account opening</a>.</div></li>
           </ul>
         </section>
 
@@ -847,31 +834,31 @@
             <details id="referral-program" style="scroll-margin-top: calc(var(--topbar-h) + 20px);">
               <summary id="faq-q1">How do I use the Achieva Financial referral program?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q1">
-                <p>Using the Achieva Financial referral program is simple: enter a valid <strong>Petal Code</strong> (Achieva's official term for referral code) during registration. Paste code <code>V381566198</code> on the very first screen of the Achieva mobile app. Once your account is active and you've met the deposit requirements, you will also receive your own unique code to invite others and earn $25 per successful referral — up to 4 referrals per year ($100 maximum annually).</p>
+                <p>The Achieva referral program is currently paused. The previous page documented a valid <strong>Petal Code</strong>, a $250 deposit and a one-month balance condition, followed by a $25 sign-up bonus and referral mechanics. Those steps and earnings must be reverified when the program relaunches.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q2">What is an Achieva Petal Code and is it still valid in 2026?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q2">
-                <p>A Petal Code is the official name Achieva Financial uses for its referral code. Code <code>V381566198</code> is fully valid throughout 2026 and unlocks a $25 CAD sign-up bonus.</p>
+                <p>A Petal Code is Achieva Financial's name for its referral code. The program is currently paused, so current validity of <code>V381566198</code>, the bonus amount and the future conditions cannot be promised. The previous page documented a $25 CAD sign-up bonus; reverify it at relaunch.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q3">Where do I enter the Achieva Petal Code V381566198?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q3">
-                <p>Account opening is done exclusively through the Achieva mobile app. Paste code <code>V381566198</code> into the <strong>"Achieva Petal Code"</strong> field on the very first screen of the app. Then deposit a minimum of $250 CAD and maintain that balance for at least one full month.</p>
+                <p>Achieva currently offers account opening through the <strong>mobile app (recommended)</strong> and <a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">online</a>. Before the pause, the referral page instructed applicants to paste <code>V381566198</code> into the Petal Code field and meet the $250/one-month condition; verify whether those instructions return with the new program.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q4">Who is NOT eligible for the Achieva referral bonus?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q4">
-                <p>Two situations disqualify a new customer from the $25 bonus:</p>
+                <p>The previous page listed two situations that disqualified a new customer from its $25 bonus. Because the program is paused, reverify both conditions at relaunch:</p>
                 <ul>
                   <li><strong>Former Achieva customers:</strong> Anyone whose name appeared on an Achieva account within the past 12 months is ineligible — even if that account is now closed.</li>
-                  <li><strong>Minimum balance not met:</strong> You must deposit at least $250 CAD and maintain that balance for at least one full month for the bonus to trigger.</li>
+                  <li><strong>Minimum balance not met:</strong> The previous terms required at least $250 CAD for one full month; the future requirement is unknown.</li>
                 </ul>
               </div>
             </details>
@@ -879,14 +866,14 @@
             <details>
               <summary id="faq-q5">How many referrals can I earn? Is there a limit?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q5">
-                <p>Yes — Achieva caps referral earnings at <strong>4 rewards per year</strong>, for a maximum of <strong>$100 CAD per calendar year</strong>. Each successful referral earns both you and the new customer $25 CAD.</p>
+                <p>The previous page stated a limit of <strong>4 rewards per year</strong>, up to <strong>$100 CAD per calendar year</strong>, with $25 for the referrer and new customer. Those figures describe the pre-pause terms only; the future cap and amounts are unknown.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q6">Can couples both receive the $25 Achieva referral bonus?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q6">
-                <p>Yes. Each person must open their own <strong>individual</strong> Achieva account and enter Petal Code <code>V381566198</code> at sign-up to receive their own $25 bonus. Achieva Financial also allows joint accounts in addition to individual accounts — so partners can open separate individual accounts and each earn the bonus independently.</p>
+                <p>The previous terms said that each person could open an <strong>individual</strong> Achieva account and qualify separately. The referral program is paused, so whether both people can receive the future bonus must be confirmed when it returns.</p>
               </div>
             </details>
 
@@ -910,21 +897,21 @@
             <details>
               <summary id="faq-q8">Is there a hold on my initial deposit — will it count toward the referral bonus?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q8">
-                <p>Yes — Achieva places holds on incoming deposits. <strong>Achieva Direct transfers are held for 5 business days</strong>; all other deposits (external bank transfers, ATM, mobile app) are held for <strong>10 business days</strong>. Your $250 minimum deposit still counts toward referral bonus eligibility during the hold period, but plan ahead so your balance stays at or above $250 for at least one full calendar month.</p>
+                <p>Achieva places holds on incoming deposits: <strong>Achieva Direct transfers are held for 5 business days</strong>; all other deposits (external bank transfers, ATM, mobile app) are held for <strong>10 business days</strong>. The previous referral terms said the $250 deposit counted during the hold; that eligibility treatment must be reverified after the pause.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q9">Can I open an Achieva Financial account from my computer?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q9">
-                <p>No — account creation requires the Achieva mobile app on iOS or Android. There is no web-based sign-up form. If you are reading this on a desktop computer, visit <a href="https://www.achieva.mb.ca/open-an-account" target="_blank" rel="noopener noreferrer sponsored">achieva.mb.ca/open-an-account</a> to scan their QR code directly with your phone's camera, download the app, then paste code <code>V381566198</code> on the very first sign-up screen.</p>
+                <p>Yes. Achieva currently offers <strong>online account opening</strong> and a mobile app (recommended). Start online at <a href="https://openaccount.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">openaccount.achieva.mb.ca</a>. The previous referral flow used the app and a Petal Code, but whether the relaunched program accepts the code online or in-app must be verified.</p>
               </div>
             </details>
 
             <details>
               <summary id="faq-q10">Does Achieva Financial offer a TFSA savings account?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q10">
-                <p>Yes. Achieva offers a <strong>TFSA Daily Savings Account at 1.95% variable</strong> and a <strong>TFSA GIC</strong> with fixed rates from 3.60% (1-year) to 4.05% (5-year). All TFSA deposits at Achieva are guaranteed without limit by the DGCM. You can open a TFSA through the Achieva mobile app using Petal Code <code>V381566198</code> to also claim your $25 sign-up bonus.</p>
+                <p>Yes. Achieva offers a <strong>TFSA Daily Savings Account at 1.95% variable</strong> and a <strong>TFSA GIC</strong> with fixed rates from 3.60% (1-year) to 4.05% (5-year). All TFSA deposits at Achieva are guaranteed without limit by the DGCM. You can open an account online or through the mobile app; the previous Petal Code bonus is paused and must be reverified.</p>
               </div>
             </details>
 
@@ -945,15 +932,15 @@
             <details>
               <summary id="faq-q13">Can I open an Achieva Financial account if I live outside Manitoba?</summary>
               <div class="faq-body" role="region" aria-labelledby="faq-q13">
-                <p>Yes. Achieva Financial accepts residents from all Canadian provinces and territories. You simply need a smartphone (iOS or Android) to download the app and complete registration.</p>
+                <p>Yes. Achieva Financial accepts residents from all Canadian provinces and territories. Account opening is available online or through the mobile app (recommended).</p>
               </div>
             </details>
           </div>
         </section>
 
         <div class="cta-section">
-          <h2>Did you copy your Achieva referral code?</h2>
-          <p>Keep Petal Code <strong>V381566198</strong> handy and download the Achieva app to open your account.</p>
+          <h2>Achieva referral program paused</h2>
+          <p>Keep Petal Code <strong>V381566198</strong> only as a reference for a future relaunch check. You can open an Achieva account online or through the mobile app (recommended).</p>
           <div class="cta-code-row">
             <span class="cta-code-pill">V381566198</span>
             <button class="cta-copy-btn" type="button" data-copy="V381566198" data-target="copyStatusCta" data-label="Copy code">Copy code</button>
@@ -966,7 +953,7 @@
         </div>
 
         <aside class="transparency">
-          <strong>Transparency:</strong> If you open an account through the Achieva app using Petal Code <code>V381566198</code>, we each receive a $25 referral bonus (up to 4 per year on our end). For current interest rates or legal terms, visit the official <a href="https://www.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">Achieva Financial website</a>. To learn more about how the guides are prepared, see <a href="https://cashinstinct.ca/about/en/">About Cash&nbsp;Instinct</a>.
+          <strong>Transparency:</strong> The Achieva referral program is paused. The $25 amount and previous limits shown on this page are historical and may not be available or retained at relaunch. For current account-opening options, rates or legal terms, visit the official <a href="https://www.achieva.mb.ca" target="_blank" rel="noopener noreferrer sponsored">Achieva Financial website</a>. To learn more about how the guides are prepared, see <a href="https://cashinstinct.ca/about/en/">About Cash&nbsp;Instinct</a>.
         </aside>
 
       </div><!-- /prose -->

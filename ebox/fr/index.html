@@ -20,6 +20,20 @@
   • La promo carte indique qu'elle n'est pas jumelable à d'autres offres ou
     promotions. Ne pas en déduire automatiquement que le programme de parrainage
     est exclu; renvoyer aux modalités EBOX en vigueur.
+  • FICHE SOURCE — AOÛT 2026 : les parcours provinciaux officiels vérifiés dans
+    le flux promotionnel actuel sont https://promo.ebox.ca/v-fibre/fr-qc/ et
+    https://promo.ebox.ca/r-fibre/fr-on/. Le flux/la capture de la promotion du
+    10 août présentait la carte numérique de 100 $ pour les forfaits Fibre
+    500 Mbit/s/1 Gbit/s admissibles dans les deux contextes provinciaux. Dans
+    le même parcours officiel d'inscription, la promotion de carte de 100 $ et
+    le mécanisme/champ de parrainage GE911 étaient affichés ensemble. Cela
+    démontre leur coexistence dans ce parcours, sans constituer à lui seul une
+    garantie contractuelle de cumul. Ne pas conclure automatiquement que GE911
+    est exclu uniquement à partir de la clause générique « non jumelable ».
+    Conserver « jusqu'à 125 $ de valeur » sous forme conditionnelle; ne jamais
+    en faire un 125 $ garanti. Si une future page de modalités contredit le flux,
+    revérifier le parcours provincial exact plutôt qu'une page EBOX générique ou
+    expirée.
   • Le badge de cumul du hero est masqué par défaut et affiché seulement si
     PROMO_CUMUL_100_ACTIVE est vrai et avant l'expiration de la promo de 100 $.
   • Countdown réactivé avec PROMO_END au 7 septembre à 00:00 (heure de l'Est).
@@ -42,9 +56,11 @@
   • dateModified : codé EN DUR dans le head, à mettre à jour au push (le JS n'y
     touche plus — corrigé juin 2026 car l'injection client-side était invisible
     aux crawlers en passe brute). Les <time> footer/trust restent auto-JS (visuel).
-  • JSON-LD Product/Offer : NE PAS y mettre le prix du forfait (55/65 $). C'est un
-    crédit de parrainage, pas un prix de produit. price = "0" + priceSpecification
-    explicite (sinon Google affiche un faux « Prix : X $ » → Price Mismatch).
+  • Product/Offer est une représentation historique destinée à décrire le crédit
+    GE911 sans faire passer 25 $ pour le prix du service Internet. Ne pas modifier
+    automatiquement. Lors du chantier I-01 sur Offer.price, réévaluer si Offer
+    reste approprié; ne jamais représenter le crédit de 25 $ comme le prix du
+    forfait.
 
    ESPACES INSÉCABLES (coupures mobile FR)
   • Coller chiffre + unité/symbole/mois avec &nbsp; dans le TEXTE VISIBLE :
