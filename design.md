@@ -1,179 +1,77 @@
 # design.md — cashinstinct.ca
 
-Système de design extrait de StickerMule EN, Chexy EN, homepage FR (2026-07-02).
-CSS inline par page — pas de fichier partagé. Ce doc est la source de vérité.
+Ce document décrit les patterns actuellement observés dans les pages live. Il
+sert de repère pour une nouvelle page ou une retouche ciblée; les fichiers HTML
+restent l'autorité pour les détails d'implémentation. Le site n'a pas de feuille
+CSS partagée : les styles sont principalement intégrés à chaque page.
 
-## Convention CSS — variables `:root`
+## Familles de tokens
 
-Les pages de programmes redéfinissent le **même set de noms de variables**, avec
-des **valeurs différentes selon le programme** (couleur brand de l'affilié).
-C'est voulu, pas une dérive — ne pas uniformiser les valeurs entre programmes.
-Les homepages utilisent plutôt `--blue`, `--blue-soft` et `--blue-contrast`.
+Les pages ne forment pas un thème unique. Elles reprennent souvent des noms de
+variables communs, mais leurs valeurs et leurs surcharges en mode sombre sont
+locales à la famille éditoriale ou au programme.
 
-```css
-:root {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --surface-soft: #...;      /* teinte très pâle de --accent */
-  --surface-muted: #...;
-  --text: #...;               /* texte principal, foncé */
-  --text-soft: #...;          /* texte secondaire */
-  --muted: #...;               /* texte tertiaire, désaturé */
-  --border: #...;
-  --border-soft: #...;
-  --accent: #...;              /* COULEUR BRAND DU PROGRAMME — voir table */
-  --accent-dark: #...;         /* accent assombri, pour bouton .btn */
-  --warning-bg: #fff8e1 / #fffbeb;
-  --warning-text: #7c5800 / #92400e;
-  --warning-border: #f59e0b;   /* CONSTANT sur toutes les pages */
-  --shadow: 0 10px 30px rgba(0,0,0,0.06);
-  --radius: 14px;              /* présent seulement sur homepage — à généraliser? */
-}
-```
+| Famille observée | Tokens ou usage |
+|---|---|
+| Accueil et À propos | `--blue`, `--blue-soft`, `--blue-contrast` et `--radius`; cette famille a ses propres variantes clair/sombre. |
+| Guides de programmes | `--bg`, `--surface`, `--text`, `--muted`, `--border`, `--accent` et `--accent-dark`, avec une couleur d'accent choisie pour le programme. |
+| Comparatifs Internet | même logique de surfaces et d'accent, souvent dans une famille rouge dédiée aux comparaisons EBOX/Internet. |
+| Outils et tutoriels | réutilisation partielle des tokens de guide, sans obligation de reprendre l'accent d'un programme de parrainage. |
 
-**`--warning-border: #f59e0b`** est la seule valeur figée cross-programme — sert
-aux blocs d'avertissement (ex: "le coupon standard ne fonctionne pas").
+Ne pas uniformiser les valeurs d'accent entre programmes et ne pas transformer
+les pages en composants partagés sans demande explicite. La présence de mêmes
+noms de variables ne prouve pas que les valeurs doivent être identiques.
 
-## Palette par programme (accent)
+`--warning-border` n'est pas une constante cross-site : les pages utilisent
+notamment `#f59e0b` ou `#ffcc66`, avec des valeurs de mode sombre distinctes.
+Les blocs d'avertissement doivent donc reprendre la palette de leur page au
+lieu d'imposer une valeur globale.
 
-| Programme | `--accent` | `--accent-dark` | Notes |
-|---|---|---|---|
-| StickerMule | `#ffaa00` (orange) | `#b0312d` | OK |
-| Chexy | `#c4248f` (magenta) | `#1c0e42` | OK |
-| EBOX | `#b0312d` (rouge) | **`#1e40af` (bleu)** | ⚠️ **BUG** — paire non cohérente, seul cas où accent/accent-dark sont dans deux teintes différentes. Copier-coller cassé, probablement collé depuis homepage. À corriger. |
-| HP Instant Ink | `#058373` (teal) | `#036256` | OK |
-| Tangerine | `#ff6600` (orange) | `#e06c00` | OK |
-| Rakuten | `#6c00c8` (violet) | `#5500a0` | OK |
-| Swagbucks | `#583be6` (indigo) | `#4126c4` | OK |
-| Achieva | `#107a47` (vert) | `#0b5933` | OK, en pause |
-| Homepage (Cashinstinct) | `--blue: #2563eb` / dark: `#3b82f6` | `--blue-contrast: #1e40af` / dark: `#60a5fa` | Utilise aussi `--blue-soft: #dbeafe` / dark: `#1e293b` |
+## Composants et CTA
 
-### `--warning-border` — PAS constant, corrige la V1 de ce doc
+Les composants suivants sont des familles observées, pas un contrat que toutes
+les pages doivent adopter :
 
-Deux valeurs coexistent, pas de règle claire sur laquelle utiliser :
-- `#f59e0b` (ambre standard) : StickerMule, Chexy, EBOX, Tangerine, Achieva
-- `#ffcc66` (ambre clair) : HP Instant Ink, Rakuten, Swagbucks
+- la navigation, le footer, le fil d'Ariane, les cartes, les FAQ et les tables
+  sont redéfinis localement; les paires FR/EN partagent généralement leur
+  structure tout en conservant leurs textes et certaines surfaces propres;
+- `.cta-btn-hero` apparaît sur plusieurs guides et possède plusieurs versions,
+  d'un bouton plat à un bouton en pilule avec ombre. Son nom ne garantit pas
+  une géométrie ou une interaction identique;
+- `.btn` et `.cta-section` existent dans plusieurs pages, mais leurs couleurs,
+  rayons et traitements dépendent du contexte;
+- `.cta-code-row`, `.cta-code-pill` et `.cta-copy-btn` servent au parcours de
+  copie d'un code sur certaines pages, notamment EBOX, Tangerine et Achieva.
+  Ce pattern n'est pas requis pour toutes les pages qui mentionnent un code;
+- les codes et montants utilisent fréquemment une police monospace de type
+  `"Courier New", Courier, monospace`, tandis que le texte courant s'appuie
+  sur une pile sans-serif système.
 
-Pas grave en soi (les deux sont dans la même famille de couleur), mais pas une
-convention volontaire identifiable — probablement deux générations de code.
+Une différence de CTA entre deux pages existantes n'est pas, à elle seule, une
+régression. Pour une nouvelle page, choisir la famille qui correspond à son
+parcours et vérifier les deux langues avant de copier un bloc CSS.
 
-## Composants — deux familles de CTA, pas une
+## Responsive et thèmes
 
-### Famille A : `.cta-btn-hero` (bouton simple)
-Utilisée sur StickerMule, Chexy, HP, Rakuten, Swagbucks — mais **pas
-uniforme** :
+Les pages prévoient un mode sombre via `data-theme="dark"` et un contrôle de
+thème, mais les variables et détails visuels sont définis localement. Les
+layouts doivent rester utilisables sur petits écrans, éviter le débordement
+horizontal et conserver des contrôles visibles et accessibles au clavier.
+Les audits Playwright vérifient ces invariants à plusieurs largeurs; ils ne
+constituent pas une autorisation de modifier les styles d'une page non incluse
+dans la tâche.
 
-| Page | border-radius | box-shadow | hover |
-|---|---|---|---|
-| StickerMule / Chexy | `8px` | aucune | opacity seulement |
-| HP / Rakuten / Swagbucks | `24-28px` (pilule) | oui, colorée | `translateY(-1px)` + shadow renforcée |
+## Règles de maintenance visuelle
 
-Deux générations de style pour le même composant nommé pareil. Pas
-nécessairement un bug (peut être une évolution volontaire du design), mais à
-trancher : tu veux repasser toutes les pages "anciennes" (StickerMule/Chexy)
-au style pilule+ombre, ou c'est acceptable que ça diffère ?
-
-### Famille B : `.cta-code-pill` / `.cta-code-row` / `.cta-copy-btn`
-Utilisée sur EBOX, Tangerine, Achieva — pattern différent (code affiché +
-bouton copier), pas extrait en détail ce tour. Probablement lié au fait que
-ces 3 programmes fonctionnent par **code à copier** plutôt que lien direct
-(à vérifier — StickerMule a aussi un code CASHINSTINCT mais utilise Famille A,
-donc la distinction n'est pas purement fonctionnelle).
-
-## Standard CTA pour nouvelles pages (décidé 2026-07-02)
-
-Aucune des deux versions n'est chronologiquement "la bonne" (vérifié : HP,
-la plus ancienne des pages testées, est déjà en style pilule — pas
-d'évolution linéaire). Décision arbitraire mais actée : **pilule + ombre**
-pour toute nouvelle page à partir de maintenant. Pages existantes en style
-plat (StickerMule, Chexy) pas retouchées pour ça seul — trop peu de valeur
-pour le coût.
-
-```css
-.cta-btn-hero {
-  display: inline-block;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 1.15rem;
-  padding: 18px 48px;
-  border-radius: 28px;
-  box-shadow: 0 6px 20px rgba(R, G, B, 0.28); /* accent en RGB */
-  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
-  text-decoration: none;
-}
-.cta-btn-hero:hover {
-  background: var(--accent-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(R, G, B, 0.35);
-}
-```
-
-Famille B (`.cta-code-pill`) abandonnée pour les nouvelles pages, même si le
-programme a un code — afficher le code dans une carte séparée au-dessus du
-bouton plutôt que d'utiliser le composant pill dédié.
-
-
-```css
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-```
-Codes/montants en `"Courier New", Courier, monospace` — constant aussi.
-Tailles/poids H1-H4 non extraits systématiquement — à faire si besoin précis.
-
-## Autres composants (`.btn`, inchangé, toujours en usage)
-```css
-.btn {
-  display: inline-block;
-  background: var(--accent-dark);
-  color: #fff;
-  font-weight: 800;
-  font-size: 1.05rem;
-  padding: 14px 36px;
-  border-radius: 8px;
-  transition: opacity 0.15s;
-}
-```
-
-### Bloc section CTA (encadré)
-```css
-.cta-section {
-  background: var(--surface-soft);
-  border: 1px solid var(--border);
-  text-align: center;
-  padding: 52px 20px;
-  border-radius: 12px;
-  margin-bottom: 40px;
-}
-```
-
-*(`.cta-btn-hero` → voir section "Standard CTA pour nouvelles pages" plus haut.
-Badge "code copié", carte programme homepage, FAQ accordion — pas extraits,
-à faire si besoin pour une prochaine page.)*
-
-## Border-radius — valeurs observées (fréquence)
-
-| Valeur | Occurrences | Usage probable |
-|---|---|---|
-| 8px | 15 | boutons, éléments interactifs |
-| 12px | 9 | cards, blocs CTA |
-| 6px | 7 | petits éléments (badges) |
-| 999px | 4 | pills / badges arrondis complets |
-| 50% | 3 | icônes rondes |
-| var(--radius) | 3 | homepage seulement (14px) |
-
-Pas de règle unique claire — 8px/12px dominent, cohérent avec les composants
-ci-dessus.
-
-## Nice to have** — `--radius` en variable n'existe que sur homepage.
-
-Pages programmes hardcodent `8px`/`12px` en dur. Pas de action requise, à
-  généraliser en variable la prochaine fois que tu repasses sur une page
-  programme (pas une passe dédiée).
-  
-## Historique
-
-- ℹ️ **Convention homepage** — les homepages FR/EN utilisent `--blue`,
-  `--blue-soft` et `--blue-contrast`; les pages de programmes utilisent
-  `--accent` et `--accent-dark`.
-- ✅ **Complété (2026-07-02)** — les 8 programmes + homepage extraits. Doc
-  fiable pour une nouvelle page.
+- Observer la page live et son équivalent linguistique avant toute retouche;
+  conserver la hiérarchie, les espacements, les états de focus et les
+  composants locaux déjà utilisés.
+- Préserver les conventions d'accessibilité associées aux composants : nom
+  accessible des boutons/liens, `alt`, références ARIA, focus visible et
+  comportement du contrôle de thème.
+- Ne pas créer une règle globale à partir d'un pattern observé sur une seule
+  page. Ne pas retoucher les anciennes variantes uniquement pour rendre les
+  rayons ou les ombres identiques.
+- Les commentaires de maintenance et les source records dans les pages ont
+  priorité sur une simplification visuelle qui ferait perdre le contexte d'une
+  preuve, d'une date ou d'un parcours.

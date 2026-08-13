@@ -1,49 +1,67 @@
-# Cashinstinct — Codes de parrainage au Canada 🇨🇦
+# Cash Instinct
 
-> Hub de codes de parrainage et offres exclusives testées au Canada (Québec et reste du Canada).  
-> Chaque page liste les conditions exactes, les étapes d'activation et la marche à suivre.
+Cash Instinct est un site statique bilingue consacré aux offres, codes de
+parrainage, comparatifs et outils utiles aux consommateurs canadiens. Les
+pages françaises et anglaises sont publiées comme des pages HTML autonomes;
+chaque guide indique ses conditions, son parcours d'activation, ses sources
+et ses limites.
 
-🔗 **Site :** [cashinstinct.ca](https://cashinstinct.ca/)
+Site : [cashinstinct.ca](https://cashinstinct.ca/)
 
----
+## Contenu du dépôt
 
-## Offres disponibles
+### Guides de programmes
 
-| Service | Type | Code / Lien | Avantage pour vous |
-|---|---|---|---|
-| [EBOX Internet](https://cashinstinct.ca/ebox/fr/) | Internet résidentiel | `GE911` | Crédit 25 $ CAD sur la 2e facture |
-| [Stickermule Global](https://cashinstinct.ca/stickermule/en/) | Autocollants & merch | `CASHINSTINCT` ou [Lien](https://www.stickermule.com/unlock?ref_id=6042474701) | Crédit $10 sur la première commande de $30 |
-| [Stickermule FR](https://cashinstinct.ca/stickermule/fr/) | Autocollants & merch | `CASHINSTINCT` ou [Lien](https://www.stickermule.com/ca/unlock?ref_id=6042474701) | Crédit 12,50 $ CAD sur la première commande de 38$ CAD |
-| [HP Instant Ink](https://cashinstinct.ca/hp-instant-ink/fr/) | Impression & encre | `SVdn7` | 1 mois gratuit |
-| [Chexy](https://cashinstinct.ca/chexy/fr/) | Paiements en ligne | [Lien](https://app.chexy.co/?ref=86GwJRXw20iY52PmYweG) | Bonus 20 $ CAD |
-| [Tangerine](https://cashinstinct.ca/tangerine/fr/) | Banque en ligne | `14130944S1` | Bonus 50 $ CAD à l'ouverture |
-| [Achieva Financial](https://cashinstinct.ca/achieva/fr/) | Épargne en ligne | `V381566198` | Bonus 25 $ CAD à l'ouverture |
-| [Rakuten Canada](https://cashinstinct.ca/rakuten-canada/fr/) | Cashback en ligne | [Lien](https://www.rakuten.ca/r/cashinstinct?src=Link) | Bonus 30 $ CAD |
-| [Swagbucks](https://cashinstinct.ca/swagbucks/en/) | Récompenses Sondages | [Lien](https://swagbucks.com/profile/Cashinstinct?rp=1) | Bonus 10 $ |
+| Programme | Français | English |
+|---|---|---|
+| EBOX | [guide FR](https://cashinstinct.ca/ebox/fr/) | [guide EN](https://cashinstinct.ca/ebox/en/) |
+| Sticker Mule | [guide FR](https://cashinstinct.ca/stickermule/fr/) | [guide EN](https://cashinstinct.ca/stickermule/en/) |
+| HP Instant Ink | [guide FR](https://cashinstinct.ca/hp-instant-ink/fr/) | [guide EN](https://cashinstinct.ca/hp-instant-ink/en/) |
+| Tangerine | [guide FR](https://cashinstinct.ca/tangerine/fr/) | [guide EN](https://cashinstinct.ca/tangerine/en/) |
+| Chexy | [guide FR](https://cashinstinct.ca/chexy/fr/) | [guide EN](https://cashinstinct.ca/chexy/en/) |
+| Achieva Financial | [guide FR](https://cashinstinct.ca/achieva/fr/) | [guide EN](https://cashinstinct.ca/achieva/en/) |
+| Rakuten Canada | [guide FR](https://cashinstinct.ca/rakuten-canada/fr/) | [guide EN](https://cashinstinct.ca/rakuten-canada/en/) |
+| Swagbucks | [guide FR](https://cashinstinct.ca/swagbucks/fr/) | [guide EN](https://cashinstinct.ca/swagbucks/en/) |
 
----
+### Comparatifs et outils
 
-## Structure du dépôt
+- Comparatifs Internet : [EBOX, Fizz et oxio](https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/),
+  [EBOX, Bell et Vidéotron](https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/) et
+  [FTTH, HFC et FTTN](https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/).
+- Outils et guides spécialisés : [valeur des points](https://cashinstinct.ca/valeur-points/fr/)
+  et [Refundable Hotel Trick](https://cashinstinct.ca/rht/fr/).
+- Méthodologie : [À propos de Cash Instinct](https://cashinstinct.ca/about/fr/).
 
-Ce repo (`cashinstinct`) héberge le **hub** 
+La page [d'accueil française](https://cashinstinct.ca/) et la [page d'accueil
+anglaise](https://cashinstinct.ca/en/) servent d'annuaires. Les chemins
+`/fr/` et `/en/` correspondent aux pages publiées; les anciennes formes sont
+redirigées par `_redirects` lorsqu'une redirection est nécessaire.
 
-```
+## Structure technique
+
+```text
 cashinstinct.ca/
-├── index.html       ← Hub landing page (FR, optimisé SEO)
-├── sitemap.xml      ← Sitemap centralisé (toutes les pages)
-├── robots.txt       ← Directives Googlebot
-└── README.md        ← Ce fichier
+├── index.html / en/index.html        ← annuaires FR et EN
+├── */fr/index.html / */en/index.html ← pages bilingues autonomes
+├── tests/                             ← régressions et audits
+├── sitemap.xml                        ← URLs canoniques publiées
+├── _redirects                         ← anciennes routes prises en charge
+├── package.json                       ← commandes d'audit
+└── AGENTS.md, TESTING.md, design.md   ← conventions et documentation
 ```
-    
----
+
+Les styles et scripts sont principalement intégrés à chaque page. Les
+conventions observées sont décrites dans [`design.md`](design.md); les
+commandes et limites de validation sont dans [`TESTING.md`](TESTING.md).
 
 ## Transparence
 
-Les liens sont affiliés ou de parrainage : vous obtenez l'avantage (rabais, mois gratuit ou bonus),
-et j'obtiens une récompense en retour — sans coût additionnel pour vous.
+Les liens de parrainage ou d'affiliation peuvent donner lieu à une
+rémunération, sans coût additionnel pour l'utilisateur. Les pages distinguent,
+lorsque c'est pertinent, les sources publiques, les parcours officiels rendus,
+les vérifications dans un compte authentifié et l'expérience personnelle.
+Les conditions et dates sont donc à relire sur la page concernée plutôt qu'à
+être résumées ici en montants susceptibles de changer.
 
-Si une offre n'est plus valide ou si vous avez une question, ouvrez une [issue](https://github.com/cashinstinct/cashinstinct/issues).
-
----
-
-*Mis à jour : juillet 2026*
+Pour signaler une information factuelle, un lien brisé ou une modification de
+conditions, [ouvrir un billet GitHub](https://github.com/cashinstinct/cashinstinct/issues/new).
