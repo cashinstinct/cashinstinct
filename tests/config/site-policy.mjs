@@ -26,11 +26,17 @@ const englishDefaults = new Set([
   "swagbucks"
 ]);
 
+const xDefaultOverrides = new Map([
+  ["internet-cout-reel", "/internet-cout-reel/fr/"],
+  ["internet-real-cost", "/internet-cout-reel/fr/"]
+]);
+
 export function expectedXDefault(pathname) {
   const parts = pathname.split("/").filter(Boolean);
   if (parts.length === 0 || parts[0] === "en" && parts.length === 1) return "/";
 
   const section = parts[0];
+  if (xDefaultOverrides.has(section)) return xDefaultOverrides.get(section);
   if (section === "about") return "/about/fr/";
   if (englishDefaults.has(section)) return `/${section}/en/`;
   return `/${section}/fr/`;

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!--
+  NOTE DE MAINTENANCE — Calculateur de coût Internet réel FR — création : 2026-08-13
+  Outil mathématique sans prix fournisseur prérempli, sans lien affilié et sans score arbitraire.
+  Les montants, vitesses et technologies sont entrés par l'utilisateur. Le moteur partagé
+  internet-cout-reel/calculator.js est testé séparément et cette page doit rester en parité
+  sémantique avec sa version anglaise /internet-real-cost/en/.
+  SOURCES DE MÉTHODE : Code sur les services Internet du CRTC et page officielle du CRTC
+  sur la performance Internet, consultés le 2026-08-13. Ces sources encadrent la distinction
+  entre prix promotionnel, prix après promotion, frais ponctuels, équipement et vitesses;
+  elles ne fournissent aucun tarif par défaut dans l'outil.
+-->
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0096d6" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090e0e" />
+  <title>Calculateur de coût Internet réel au Canada | Cash Instinct</title>
+  <meta name="description" content="Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, en séparant promotions, frais, équipement et crédits." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cashinstinct.ca/internet-cout-reel/fr/" />
+  <link rel="alternate" hreflang="fr-CA" href="https://cashinstinct.ca/internet-cout-reel/fr/" />
+  <link rel="alternate" hreflang="fr" href="https://cashinstinct.ca/internet-cout-reel/fr/" />
+  <link rel="alternate" hreflang="en-CA" href="https://cashinstinct.ca/internet-real-cost/en/" />
+  <link rel="alternate" hreflang="en" href="https://cashinstinct.ca/internet-real-cost/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.ca/internet-cout-reel/fr/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cashinstinct.ca/internet-cout-reel/fr/" />
+  <meta property="og:title" content="Calculateur de coût Internet réel au Canada | Cash Instinct" />
+  <meta property="og:description" content="Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, en séparant promotions, frais, équipement et crédits." />
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:site_name" content="Cash Instinct" />
+  <meta property="og:image" content="https://cashinstinct.ca/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculateur de coût Internet réel au Canada | Cash Instinct" />
+  <meta name="twitter:description" content="Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, en séparant promotions, frais, équipement et crédits." />
+  <meta name="twitter:image" content="https://cashinstinct.ca/og.png" />
+  <script>
+    try {
+      let theme = localStorage.getItem('theme');
+      if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (error) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://cashinstinct.ca/#website",
+        "url": "https://cashinstinct.ca/",
+        "name": "Cash Instinct"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://cashinstinct.ca/internet-cout-reel/fr/",
+        "url": "https://cashinstinct.ca/internet-cout-reel/fr/",
+        "name": "Calculateur de coût Internet réel au Canada | Cash Instinct",
+        "description": "Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, en séparant promotions, frais, équipement et crédits.",
+        "inLanguage": "fr-CA",
+        "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
+        "datePublished": "2026-08-13",
+        "dateModified": "2026-08-13",
+        "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
+        "publisher": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/", "logo": { "@type": "ImageObject", "url": "https://cashinstinct.ca/logo.png" } }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cashinstinct.ca/internet-cout-reel/fr/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cashinstinct.ca/" },
+          { "@type": "ListItem", "position": 2, "name": "Internet", "item": "https://cashinstinct.ca/#internet" },
+          { "@type": "ListItem", "position": 3, "name": "Calculateur de coût réel", "item": "https://cashinstinct.ca/internet-cout-reel/fr/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://cashinstinct.ca/internet-cout-reel/fr/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Quel est le calcul utilisé ?", "acceptedAnswer": { "@type": "Answer", "text": "Le coût total correspond aux mois promotionnels multipliés par le prix promotionnel, plus les mois restants multipliés par le prix régulier, plus les frais ponctuels et l'équipement, moins les crédits ou cartes-cadeaux. Le coût mensuel effectif est le total divisé par la durée choisie." } },
+          { "@type": "Question", "name": "Pourquoi séparer le crédit ou la carte-cadeau du prix mensuel ?", "acceptedAnswer": { "@type": "Answer", "text": "Un crédit ou une carte-cadeau est un avantage ponctuel soumis à ses propres conditions; ce n'est pas une baisse permanente du prix mensuel. Le champ séparé rend son effet visible et permet de le retirer facilement si l'admissibilité n'est pas confirmée." } },
+          { "@type": "Question", "name": "Dois-je entrer les taxes dans le calculateur ?", "acceptedAnswer": { "@type": "Answer", "text": "Le calculateur ne détermine pas les taxes. Entrez des montants comparables, en suivant la façon dont les prix sont affichés dans les offres que vous comparez, puis vérifiez le total et les frais dans le contrat ou le sommaire critique du fournisseur." } },
+          { "@type": "Question", "name": "Que signifie le prix après promotion ?", "acceptedAnswer": { "@type": "Answer", "text": "C'est le prix mensuel utilisé après la durée promotionnelle. Si vous laissez ce champ vide, le calculateur réutilise le prix promotionnel ou actuel; cela convient à un prix permanent, mais il faut saisir le tarif régulier lorsqu'il est différent." } },
+          { "@type": "Question", "name": "Cet outil recommande-t-il un fournisseur ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Il compare les valeurs que vous entrez et n'attribue aucun score arbitraire. La vitesse, le téléversement, la technologie, la disponibilité, le service et les conditions de l'offre doivent encore être vérifiés pour votre adresse." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#f4f9f9; --surface:#fff; --soft:#eaf5f5; --soft-2:#dbebe3; --text:#0f1c1c; --muted:#516363; --border:#cee3e3; --accent:#058373; --accent-dark:#036256; --danger:#a33a2b; --danger-bg:#fff1ef; --shadow:0 8px 28px rgba(5,131,115,.08); }
+    [data-theme="dark"] { --bg:#090e0e; --surface:#111a1a; --soft:#172424; --soft-2:#1e302f; --text:#f0f7f7; --muted:#a9bcbc; --border:#294443; --accent:#0db39e; --accent-dark:#0bc4ad; --danger:#ff9d8e; --danger-bg:#321b19; --shadow:0 14px 40px rgba(0,0,0,.55); color-scheme:dark; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+    body { margin:0; background:var(--bg); color:var(--text); font:17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+    a { color:var(--accent-dark); text-decoration:underline; }
+    a:hover { text-decoration-thickness:2px; }
+    .topbar { position:sticky; top:0; z-index:10; border-bottom:1px solid var(--border); background:color-mix(in srgb,var(--surface) 94%,transparent); backdrop-filter:blur(10px); }
+    .topbar-inner,.container { max-width:1100px; margin:0 auto; padding-left:20px; padding-right:20px; }
+    .topbar-inner { min-height:58px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .brand { color:var(--text); font-weight:800; text-decoration:none; white-space:nowrap; }
+    nav { display:flex; align-items:center; gap:12px; overflow-x:auto; scrollbar-width:none; }
+    nav::-webkit-scrollbar { display:none; }
+    nav a { white-space:nowrap; text-decoration:none; font-size:.93rem; }
+    .theme-btn { border:1px solid var(--border); border-radius:999px; background:var(--soft); color:var(--text); min-width:38px; min-height:38px; cursor:pointer; font-size:1rem; }
+    .theme-btn:focus-visible,.preset:focus-visible,button:focus-visible,input:focus-visible { outline:3px solid color-mix(in srgb,var(--accent) 45%,transparent); outline-offset:2px; }
+    main { padding:36px 0 70px; }
+    .breadcrumb { color:var(--muted); font-size:.9rem; margin-bottom:24px; }
+    .breadcrumb span { margin:0 7px; }
+    .hero { max-width:850px; margin-bottom:28px; }
+    .eyebrow,.section-label { color:var(--accent-dark); font-size:.78rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+    h1,h2,h3 { line-height:1.16; letter-spacing:-.025em; }
+    h1 { font-size:clamp(2rem,5vw,3.45rem); margin:8px 0 16px; max-width:820px; }
+    h2 { font-size:clamp(1.55rem,3vw,2.25rem); margin:0 0 14px; }
+    h3 { font-size:1.15rem; margin:0 0 8px; }
+    p { margin:0 0 14px; }
+    .lead { color:var(--muted); font-size:1.1rem; max-width:790px; }
+    .notice,.method-note { padding:16px 18px; border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; background:var(--soft); }
+    .calculator-panel { padding:24px; border:1px solid var(--border); border-radius:18px; background:var(--surface); box-shadow:var(--shadow); }
+    .calculator-panel > h2 { margin-bottom:6px; }
+    .calculator-intro { color:var(--muted); margin-bottom:20px; }
+    .duration-row { display:flex; align-items:end; gap:18px; flex-wrap:wrap; padding:16px; margin-bottom:20px; border:1px solid var(--border); border-radius:12px; background:var(--soft); }
+    .duration-field { min-width:180px; }
+    .preset-wrap { flex:1; min-width:240px; }
+    .preset-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:7px; }
+    .preset { padding:9px 14px; border:1px solid var(--border); border-radius:999px; background:var(--surface); color:var(--text); cursor:pointer; font:inherit; font-size:.92rem; }
+    .preset[aria-pressed="true"] { border-color:var(--accent); background:var(--accent); color:#fff; }
+    .plans-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    fieldset { min-width:0; margin:0; padding:18px; border:1px solid var(--border); border-radius:14px; }
+    legend { padding:0 8px; font-weight:800; font-size:1.15rem; }
+    .input-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px 12px; }
+    .field { min-width:0; }
+    .field-wide { grid-column:1/-1; }
+    label { display:block; margin-bottom:5px; font-weight:700; font-size:.92rem; }
+    input { width:100%; min-height:42px; padding:9px 10px; border:1px solid var(--border); border-radius:8px; background:var(--surface); color:var(--text); font:inherit; }
+    input::placeholder { color:var(--muted); opacity:.8; }
+    .field-note { color:var(--muted); font-size:.82rem; margin-top:5px; }
+    .form-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:20px; }
+    .primary-btn { padding:12px 20px; border:0; border-radius:9px; background:var(--accent); color:#fff; cursor:pointer; font:inherit; font-weight:800; }
+    .primary-btn:hover { background:var(--accent-dark); }
+    [data-calculator-error] { margin-top:15px; padding:12px 14px; border:1px solid color-mix(in srgb,var(--danger) 55%,var(--border)); border-radius:9px; background:var(--danger-bg); color:var(--danger); }
+    [data-calculator-status] { color:var(--muted); font-size:.92rem; }
+    [hidden] { display:none !important; }
+    .results { margin-top:28px; padding-top:26px; border-top:1px solid var(--border); }
+    .results-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .result-card,.comparison-card,.content-card { padding:18px; border:1px solid var(--border); border-radius:13px; background:var(--soft); }
+    .result-card h3 { display:flex; justify-content:space-between; gap:10px; }
+    .result-card h3 span { color:var(--muted); font-size:.82rem; font-weight:500; }
+    dl { display:grid; grid-template-columns:1fr auto; gap:6px 14px; margin:0; }
+    dt { color:var(--muted); }
+    dd { margin:0; font-weight:750; text-align:right; }
+    .total { color:var(--accent-dark); font-size:1.35rem; }
+    .comparison-card { grid-column:1/-1; background:var(--soft-2); }
+    .comparison-result { margin:0; font-size:1.1rem; font-weight:750; }
+    .small { color:var(--muted); font-size:.9rem; }
+    .content-section { max-width:930px; margin:48px auto 0; }
+    .content-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .content-card ul,.content-card ol { margin:8px 0 0; padding-left:22px; }
+    .formula { display:block; margin:10px 0; padding:12px 14px; overflow-wrap:anywhere; border-radius:9px; background:var(--surface); font:600 .93rem/1.5 ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .related-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 22px; margin:0; padding-left:22px; }
+    .sources { border-top:1px solid var(--border); }
+    .faq details { border-top:1px solid var(--border); padding:14px 0; }
+    .faq details:last-child { border-bottom:1px solid var(--border); }
+    summary { cursor:pointer; font-weight:750; }
+    .faq-body { padding:10px 0 0 22px; color:var(--muted); }
+    footer { border-top:1px solid var(--border); padding:24px 0 36px; color:var(--muted); font-size:.9rem; }
+    footer p { margin:0 0 6px; }
+    @media (max-width:760px) { .plans-grid,.results-grid,.content-grid,.related-list { grid-template-columns:1fr; } .comparison-card { grid-column:auto; } .topbar-inner { align-items:flex-start; padding-top:10px; padding-bottom:10px; flex-direction:column; } nav { width:100%; } }
+    @media (max-width:480px) { body { font-size:16px; } .container,.topbar-inner { padding-left:14px; padding-right:14px; } main { padding-top:24px; } .calculator-panel { padding:15px; border-radius:13px; } fieldset { padding:14px 12px; } .input-grid { grid-template-columns:1fr; } .field-wide { grid-column:auto; } .duration-row { padding:13px; } h1 { font-size:2rem; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="https://cashinstinct.ca/">Cash Instinct</a>
+      <nav aria-label="Navigation principale">
+        <a href="https://cashinstinct.ca/ebox/fr/">EBOX</a>
+        <a href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/">Comparatifs</a>
+        <a href="https://cashinstinct.ca/valeur-points/fr/">Outils</a>
+        <a href="https://cashinstinct.ca/about/fr/">À&nbsp;propos</a>
+        <a href="https://cashinstinct.ca/internet-real-cost/en/" hreflang="en" lang="en">English&nbsp;↗</a>
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb" aria-label="Fil d’Ariane"><a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true">›</span><a href="https://cashinstinct.ca/#internet">Internet</a><span aria-hidden="true">›</span><span>Calculateur de coût réel</span></div>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow">Outil canadien · Internet résidentiel</div>
+      <h1 id="page-title">Calculateur de coût Internet au Canada&nbsp;: comparez le prix réel</h1>
+      <p class="lead">Comparez deux offres avec vos propres chiffres. La durée peut être de 12, 24, 36 mois ou toute autre échéance de 1 à 120 mois.</p>
+      <p class="notice"><strong>Pourquoi aucun prix n’est prérempli&nbsp;?</strong> Les tarifs, crédits, frais et vitesses dépendent du fournisseur, de l’adresse et de la date. Entrez les montants affichés dans votre parcours de commande pour garder un résultat vérifiable et limiter la maintenance de l’outil.</p>
+    </section>
+
+    <section class="calculator-panel" aria-labelledby="calculator-title">
+      <h2 id="calculator-title">Comparez vos deux forfaits</h2>
+      <p class="calculator-intro">Le calculateur compare uniquement les coûts. Les vitesses et la technologie sont affichées comme contexte; elles n’entrent ni dans le total ni dans un score. Le prix mensuel, les frais ponctuels, l’équipement et les crédits ou cartes-cadeaux restent séparés.</p>
+      <form class="calculator-form" novalidate>
+        <div class="duration-row">
+          <div class="duration-field field">
+            <label for="duration-months">Durée de comparaison (mois)</label>
+            <input id="duration-months" data-duration-input type="number" min="1" max="120" step="1" value="12" inputmode="numeric" aria-describedby="duration-help" />
+            <p id="duration-help" class="field-note">De 1 à 120 mois.</p>
+          </div>
+          <div class="preset-wrap">
+            <label>Durées rapides</label>
+            <div class="preset-list" role="group" aria-label="Choisir une durée rapide">
+              <button class="preset" type="button" data-duration="12" aria-pressed="true">12 mois</button>
+              <button class="preset" type="button" data-duration="24" aria-pressed="false">24 mois</button>
+              <button class="preset" type="button" data-duration="36" aria-pressed="false">36 mois</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="plans-grid">
+          <fieldset class="plan-fields" data-plan="a">
+            <legend>Forfait A</legend>
+            <div class="input-grid">
+              <div class="field field-wide"><label for="plan-a-name">Nom du forfait A <span class="small">(facultatif)</span></label><input id="plan-a-name" data-field="name" type="text" placeholder="Ex. offre actuelle" /></div>
+              <div class="field"><label for="plan-a-promo">Prix mensuel promo ou actuel ($)</label><input id="plan-a-promo" data-field="promoPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 55" /></div>
+              <div class="field"><label for="plan-a-promo-months">Durée de la promo (mois)</label><input id="plan-a-promo-months" data-field="promoMonths" type="number" min="0" max="120" step="1" value="0" inputmode="numeric" /><p class="field-note">0 = prix permanent ou actuel.</p></div>
+              <div class="field"><label for="plan-a-regular">Prix mensuel après promo ($)</label><input id="plan-a-regular" data-field="regularPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 85" /></div>
+              <div class="field"><label for="plan-a-equipment">Équipement par mois ($)</label><input id="plan-a-equipment" data-field="equipmentMonthly" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si inclus" /></div>
+              <div class="field"><label for="plan-a-fees">Frais ponctuels (installation, activation, résiliation) ($)</label><input id="plan-a-fees" data-field="oneTimeFees" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Installation, activation, résiliation…" /></div>
+              <div class="field"><label for="plan-a-credits">Crédits ou cartes-cadeaux ($)</label><input id="plan-a-credits" data-field="credits" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si aucun" /><p class="field-note">Crédit ou carte-cadeau, soustrait une seule fois si admissible.</p></div>
+              <div class="field"><label for="plan-a-download">Téléchargement (Mbit/s)</label><input id="plan-a-download" data-field="download" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 500" /></div>
+              <div class="field"><label for="plan-a-upload">Téléversement (Mbit/s)</label><input id="plan-a-upload" data-field="upload" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 500" /></div>
+              <div class="field field-wide"><label for="plan-a-technology">Technologie <span class="small">(facultatif)</span></label><input id="plan-a-technology" data-field="technology" type="text" placeholder="Ex. FTTH, câble/HFC, FTTN" /></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="plan-fields" data-plan="b">
+            <legend>Forfait B</legend>
+            <div class="input-grid">
+              <div class="field field-wide"><label for="plan-b-name">Nom du forfait B <span class="small">(facultatif)</span></label><input id="plan-b-name" data-field="name" type="text" placeholder="Ex. nouvelle offre" /></div>
+              <div class="field"><label for="plan-b-promo">Prix mensuel promo ou actuel ($)</label><input id="plan-b-promo" data-field="promoPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 49" /></div>
+              <div class="field"><label for="plan-b-promo-months">Durée de la promo (mois)</label><input id="plan-b-promo-months" data-field="promoMonths" type="number" min="0" max="120" step="1" value="0" inputmode="numeric" /><p class="field-note">0 = prix permanent ou actuel.</p></div>
+              <div class="field"><label for="plan-b-regular">Prix mensuel après promo ($)</label><input id="plan-b-regular" data-field="regularPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 79" /></div>
+              <div class="field"><label for="plan-b-equipment">Équipement par mois ($)</label><input id="plan-b-equipment" data-field="equipmentMonthly" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si inclus" /></div>
+              <div class="field"><label for="plan-b-fees">Frais ponctuels (installation, activation, résiliation) ($)</label><input id="plan-b-fees" data-field="oneTimeFees" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Installation, activation, résiliation…" /></div>
+              <div class="field"><label for="plan-b-credits">Crédits ou cartes-cadeaux ($)</label><input id="plan-b-credits" data-field="credits" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si aucun" /><p class="field-note">Crédit ou carte-cadeau, soustrait une seule fois si admissible.</p></div>
+              <div class="field"><label for="plan-b-download">Téléchargement (Mbit/s)</label><input id="plan-b-download" data-field="download" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 500" /></div>
+              <div class="field"><label for="plan-b-upload">Téléversement (Mbit/s)</label><input id="plan-b-upload" data-field="upload" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 50" /></div>
+              <div class="field field-wide"><label for="plan-b-technology">Technologie <span class="small">(facultatif)</span></label><input id="plan-b-technology" data-field="technology" type="text" placeholder="Ex. FTTH, câble/HFC, FTTN" /></div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-actions">
+          <button class="primary-btn" type="submit">Calculer le coût réel</button>
+          <p data-calculator-status role="status" aria-live="polite">Entrez les deux prix mensuels pour commencer.</p>
+        </div>
+        <p data-calculator-error role="alert" hidden></p>
+      </form>
+
+      <section class="results" data-results aria-labelledby="results-title" hidden>
+        <h2 id="results-title">Résultat sur <span data-output="duration">12</span> mois</h2>
+        <div class="results-grid">
+          <article class="result-card" aria-labelledby="result-a-title">
+            <h3 id="result-a-title"><span data-output="a-name">Forfait A</span><span aria-hidden="true">Forfait A</span></h3>
+            <dl>
+              <dt>Coût total net</dt><dd class="total" data-output="a-total">—</dd>
+              <dt>Coût mensuel effectif</dt><dd data-output="a-monthly">—</dd>
+              <dt>Coût mensuel après promo (équipement inclus)</dt><dd data-output="a-regular">—</dd>
+              <dt>Téléchargement / téléversement</dt><dd data-output="a-speed">—</dd>
+              <dt>Technologie</dt><dd data-output="a-technology">—</dd>
+            </dl>
+          </article>
+          <article class="result-card" aria-labelledby="result-b-title">
+            <h3 id="result-b-title"><span data-output="b-name">Forfait B</span><span aria-hidden="true">Forfait B</span></h3>
+            <dl>
+              <dt>Coût total net</dt><dd class="total" data-output="b-total">—</dd>
+              <dt>Coût mensuel effectif</dt><dd data-output="b-monthly">—</dd>
+              <dt>Coût mensuel après promo (équipement inclus)</dt><dd data-output="b-regular">—</dd>
+              <dt>Téléchargement / téléversement</dt><dd data-output="b-speed">—</dd>
+              <dt>Technologie</dt><dd data-output="b-technology">—</dd>
+            </dl>
+          </article>
+          <div class="comparison-card">
+            <div class="section-label">Lecture du résultat</div>
+            <p class="comparison-result" data-output="comparison">Les deux forfaits ont le même coût.</p>
+            <p class="small">Le résultat décrit un coût net sur la durée choisie. Les vitesses et la technologie sont affichées comme contexte, pas intégrées au calcul. Vérifiez aussi l’adresse, la disponibilité, les conditions de crédit, le contrat et la qualité de service.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="content-section" aria-labelledby="method-title">
+      <div class="section-label">Méthode</div>
+      <h2 id="method-title">Un prix mensuel ne raconte pas toute l’histoire</h2>
+      <p>Une promotion de 24 mois, un prix permanent et une carte-cadeau ne se comparent pas correctement dans une seule colonne de prix. Le moteur conserve chaque élément séparé, puis calcule le coût net sur l’échéance que vous avez choisie.</p>
+      <code class="formula">mois promo × prix promo + mois restants × prix régulier + frais ponctuels + équipement − crédits</code>
+      <p class="method-note"><strong>Important&nbsp;:</strong> le coût net peut être négatif si le crédit entré dépasse les coûts de la période. Cela signifie que le modèle contient plus de crédits que de frais; ce n’est pas une promesse de paiement.</p>
+    </section>
+
+    <section class="content-section" aria-labelledby="use-title">
+      <div class="section-label">Mode d’emploi</div>
+      <h2 id="use-title">Comment utiliser l’outil</h2>
+      <div class="content-grid">
+        <article class="content-card"><h3>1. Copiez les offres</h3><p>Relevez le prix promo ou actuel, la durée de la promotion, le tarif après promo, les frais d’installation ou d’activation et l’équipement facturé chaque mois.</p></article>
+        <article class="content-card"><h3>2. Traitez les crédits séparément</h3><p>Entrez une carte-cadeau, un crédit au compte ou une remise ponctuelle dans son propre champ, seulement si vous avez confirmé son admissibilité et son moment d’application.</p></article>
+        <article class="content-card"><h3>3. Choisissez votre échéance</h3><p>Les boutons 12, 24 et 36 mois sont des raccourcis. La durée personnalisée permet de viser une date de déménagement, la fin d’une promo ou une autre échéance réelle.</p></article>
+        <article class="content-card"><h3>4. Lisez plus que le total</h3><p>Le total et le coût effectif aident à décider, mais le téléchargement, le téléversement, la technologie et les conditions de service peuvent compter davantage pour votre usage.</p></article>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="related-title">
+      <div class="section-label">Dans le silo Internet</div>
+      <h2 id="related-title">Approfondir avant de choisir</h2>
+      <ul class="related-list">
+        <li><a href="https://cashinstinct.ca/ebox/fr/">Guide EBOX et code GE911</a> — conditions et expérience documentée.</li>
+        <li><a href="https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/">EBOX vs Fizz vs oxio</a> — comparaison québécoise des offres et modalités.</li>
+        <li><a href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/">EBOX vs Bell vs Vidéotron</a> — prix, vitesses et technologies selon l’adresse.</li>
+        <li><a href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/">FTTH vs HFC vs FTTN</a> — comprendre le dernier segment de la connexion.</li>
+        <li><a href="https://cashinstinct.ca/about/fr/">Méthode de Cash Instinct</a> — distinguer sources, expérience et limites.</li>
+      </ul>
+    </section>
+
+    <section class="content-section sources" aria-labelledby="sources-title">
+      <div class="section-label">Sources et limites</div>
+      <h2 id="sources-title">Ce que les sources officielles aident à vérifier</h2>
+      <p>Le <a href="https://crtc.gc.ca/fra/internet/codesimpl.htm" target="_blank" rel="noopener noreferrer">Code sur les services Internet du CRTC</a> explique notamment comment présenter le prix pendant et après une promotion, ainsi que les frais uniques. La page du CRTC sur la <a href="https://crtc.gc.ca/fra/internet/performance.htm" target="_blank" rel="noopener noreferrer">performance et la fiabilité d’Internet</a> définit le téléchargement et le téléversement et rappelle que l’équipement, le réseau domestique et l’adresse influencent l’expérience.</p>
+      <p>Ces sources ne disent pas quel forfait est le meilleur pour vous. Elles justifient la structure de l’outil; les valeurs affichées dans le calculateur viennent de vos propres contrats, paniers et vérifications.</p>
+    </section>
+
+    <section class="content-section faq" id="faq" aria-labelledby="faq-title">
+      <div class="section-label">Questions fréquentes</div>
+      <h2 id="faq-title">À propos du calculateur</h2>
+      <details><summary id="faq-q1">Quel est le calcul utilisé&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q1">Le coût total correspond aux mois promotionnels multipliés par le prix promotionnel, plus les mois restants multipliés par le prix régulier, plus les frais ponctuels et l’équipement, moins les crédits ou cartes-cadeaux. Le coût mensuel effectif est le total divisé par la durée choisie.</div></details>
+      <details><summary id="faq-q2">Pourquoi séparer le crédit ou la carte-cadeau du prix mensuel&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q2">Un crédit ou une carte-cadeau est un avantage ponctuel soumis à ses propres conditions; ce n’est pas une baisse permanente du prix mensuel. Le champ séparé rend son effet visible et permet de le retirer facilement si l’admissibilité n’est pas confirmée.</div></details>
+      <details><summary id="faq-q3">Dois-je entrer les taxes dans le calculateur&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q3">Le calculateur ne détermine pas les taxes. Entrez des montants comparables, en suivant la façon dont les prix sont affichés dans les offres que vous comparez, puis vérifiez le total et les frais dans le contrat ou le sommaire critique du fournisseur.</div></details>
+      <details><summary id="faq-q4">Que signifie le prix après promotion&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q4">C’est le prix mensuel utilisé après la durée promotionnelle. Si vous laissez ce champ vide, le calculateur réutilise le prix promotionnel ou actuel; cela convient à un prix permanent, mais il faut saisir le tarif régulier lorsqu’il est différent.</div></details>
+      <details><summary id="faq-q5">Cet outil recommande-t-il un fournisseur&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q5">Non. Il compare les valeurs que vous entrez et n’attribue aucun score arbitraire. La vitesse, le téléversement, la technologie, la disponibilité, le service et les conditions de l’offre doivent encore être vérifiés pour votre adresse.</div></details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Calculateur de coût Internet canadien — créé le <time datetime="2026-08-13">13&nbsp;août&nbsp;2026</time>.</p>
+      <p><a href="https://cashinstinct.ca/">Accueil</a><span aria-hidden="true"> · </span><a href="https://cashinstinct.ca/about/fr/">À&nbsp;propos</a><span aria-hidden="true"> · </span><a href="https://cashinstinct.ca/internet-real-cost/en/" hreflang="en">English</a></p>
+      <p>Outil indépendant sans prix fournisseur prérempli, code de parrainage ni commission.</p>
+    </div>
+  </footer>
+  <script type="module" src="/internet-cout-reel/calculator.js"></script>
+  <script>
+    const themeButton = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    function updateThemeButton() {
+      const dark = root.getAttribute('data-theme') === 'dark';
+      themeButton.setAttribute('aria-pressed', String(dark));
+      themeButton.setAttribute('aria-label', dark ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
+      themeButton.textContent = dark ? '☀️' : '🌙';
+    }
+    themeButton.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (error) {}
+      updateThemeButton();
+    });
+    updateThemeButton();
+  </script>
+</body>
+</html>
