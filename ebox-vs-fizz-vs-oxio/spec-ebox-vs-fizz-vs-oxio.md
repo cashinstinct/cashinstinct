@@ -1,3 +1,12 @@
+> **STATUT — HISTORIQUE / NON NORMATIF**
+>
+> Ce document conserve le brief de génération de juillet 2026 et ses hypothèses
+> historiques. Il ne constitue plus une source de vérité actuelle et ne doit
+> pas servir d'instruction d'implémentation sans revalidation des pages live,
+> d'`AGENTS.md`, de `docs/maintenance-watch.md`, de `TESTING.md` et des sources
+> officielles actuelles. Les pages HTML live et les instructions courantes du
+> projet ont priorité.
+
 # SPEC — Page comparative EBOX vs Fizz vs oxio (cashinstinct.ca)
 
 Instructions pour le modèle générateur : produire DEUX fichiers HTML complets
