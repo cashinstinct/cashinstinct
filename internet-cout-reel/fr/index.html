@@ -2,12 +2,12 @@
 <!--
   NOTE DE MAINTENANCE — Calculateur de coût Internet réel FR — création : 2026-08-13
   Outil mathématique sans prix fournisseur prérempli, sans lien affilié et sans score arbitraire.
-  Les montants, vitesses et technologies sont entrés par l'utilisateur. Le moteur partagé
+  Les montants sont entrés par l'utilisateur. Le moteur partagé
   internet-cout-reel/calculator.js est testé séparément et cette page doit rester en parité
   sémantique avec sa version anglaise /internet-real-cost/en/.
   SOURCES DE MÉTHODE : Code sur les services Internet du CRTC et page officielle du CRTC
   sur la performance Internet, consultés le 2026-08-13. Ces sources encadrent la distinction
-  entre prix promotionnel, prix après promotion, frais ponctuels, équipement et vitesses;
+  entre prix promotionnel, prix après promotion, frais ponctuels et crédits;
   elles ne fournissent aucun tarif par défaut dans l'outil.
 -->
 <html lang="fr-CA">
@@ -17,7 +17,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0096d6" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090e0e" />
   <title>Calculateur de coût Internet réel au Canada | Cash Instinct</title>
-  <meta name="description" content="Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, en séparant promotions, frais, équipement et crédits." />
+  <meta name="description" content="Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, avec promotions, frais et crédits." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.ca/internet-cout-reel/fr/" />
   <link rel="alternate" hreflang="fr-CA" href="https://cashinstinct.ca/internet-cout-reel/fr/" />
@@ -28,7 +28,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashinstinct.ca/internet-cout-reel/fr/" />
   <meta property="og:title" content="Calculateur de coût Internet réel au Canada | Cash Instinct" />
-  <meta property="og:description" content="Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, en séparant promotions, frais, équipement et crédits." />
+  <meta property="og:description" content="Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, avec promotions, frais et crédits." />
   <meta property="og:locale" content="fr_CA" />
   <meta property="og:site_name" content="Cash Instinct" />
   <meta property="og:image" content="https://cashinstinct.ca/og.png" />
@@ -36,7 +36,7 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Calculateur de coût Internet réel au Canada | Cash Instinct" />
-  <meta name="twitter:description" content="Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, en séparant promotions, frais, équipement et crédits." />
+  <meta name="twitter:description" content="Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, avec promotions, frais et crédits." />
   <meta name="twitter:image" content="https://cashinstinct.ca/og.png" />
   <script>
     try {
@@ -62,7 +62,7 @@
         "@id": "https://cashinstinct.ca/internet-cout-reel/fr/",
         "url": "https://cashinstinct.ca/internet-cout-reel/fr/",
         "name": "Calculateur de coût Internet réel au Canada | Cash Instinct",
-        "description": "Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, en séparant promotions, frais, équipement et crédits.",
+        "description": "Comparez le coût réel de deux forfaits Internet au Canada sur 12, 24, 36 mois ou une durée personnalisée, avec promotions, frais et crédits.",
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
         "datePublished": "2026-08-13",
@@ -83,11 +83,11 @@
         "@type": "FAQPage",
         "@id": "https://cashinstinct.ca/internet-cout-reel/fr/#faq",
         "mainEntity": [
-          { "@type": "Question", "name": "Quel est le calcul utilisé ?", "acceptedAnswer": { "@type": "Answer", "text": "Le coût total correspond aux mois promotionnels multipliés par le prix promotionnel, plus les mois restants multipliés par le prix régulier, plus les frais ponctuels et l'équipement, moins les crédits ou cartes-cadeaux. Le coût mensuel effectif est le total divisé par la durée choisie." } },
+          { "@type": "Question", "name": "Quel est le calcul utilisé ?", "acceptedAnswer": { "@type": "Answer", "text": "Le coût total correspond aux mois promotionnels multipliés par le prix promotionnel, plus les mois restants multipliés par le prix régulier, plus les frais ponctuels, moins les crédits ou cartes-cadeaux. Le coût mensuel effectif est le total divisé par la durée choisie." } },
           { "@type": "Question", "name": "Pourquoi séparer le crédit ou la carte-cadeau du prix mensuel ?", "acceptedAnswer": { "@type": "Answer", "text": "Un crédit ou une carte-cadeau est un avantage ponctuel soumis à ses propres conditions; ce n'est pas une baisse permanente du prix mensuel. Le champ séparé rend son effet visible et permet de le retirer facilement si l'admissibilité n'est pas confirmée." } },
           { "@type": "Question", "name": "Dois-je entrer les taxes dans le calculateur ?", "acceptedAnswer": { "@type": "Answer", "text": "Le calculateur ne détermine pas les taxes. Entrez des montants comparables, en suivant la façon dont les prix sont affichés dans les offres que vous comparez, puis vérifiez le total et les frais dans le contrat ou le sommaire critique du fournisseur." } },
           { "@type": "Question", "name": "Que signifie le prix après promotion ?", "acceptedAnswer": { "@type": "Answer", "text": "C'est le prix mensuel utilisé après la durée promotionnelle. Si vous laissez ce champ vide, le calculateur réutilise le prix promotionnel ou actuel; cela convient à un prix permanent, mais il faut saisir le tarif régulier lorsqu'il est différent." } },
-          { "@type": "Question", "name": "Cet outil recommande-t-il un fournisseur ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Il compare les valeurs que vous entrez et n'attribue aucun score arbitraire. La vitesse, le téléversement, la technologie, la disponibilité, le service et les conditions de l'offre doivent encore être vérifiés pour votre adresse." } }
+          { "@type": "Question", "name": "Cet outil recommande-t-il un fournisseur ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Il compare les valeurs que vous entrez et n'attribue aucun score arbitraire. La vitesse, le téléversement, la technologie, la disponibilité, le service et les conditions de l'offre doivent encore être vérifiés pour votre adresse; consultez les comparatifs et le guide FTTH, HFC et FTTN pour le contexte technique." } }
         ]
       }
     ]
@@ -198,12 +198,12 @@
       <div class="eyebrow">Outil canadien · Internet résidentiel</div>
       <h1 id="page-title">Calculateur de coût Internet au Canada&nbsp;: comparez le prix réel</h1>
       <p class="lead">Comparez deux offres avec vos propres chiffres. La durée peut être de 12, 24, 36 mois ou toute autre échéance de 1 à 120 mois.</p>
-      <p class="notice"><strong>Pourquoi aucun prix n’est prérempli&nbsp;?</strong> Les tarifs, crédits, frais et vitesses dépendent du fournisseur, de l’adresse et de la date. Entrez les montants affichés dans votre parcours de commande pour garder un résultat vérifiable et limiter la maintenance de l’outil.</p>
+      <p class="notice"><strong>Pourquoi aucun prix n’est prérempli&nbsp;?</strong> Les tarifs, crédits et frais dépendent du fournisseur, de l’adresse et de la date. Entrez les montants affichés dans votre parcours de commande pour garder un résultat vérifiable et limiter la maintenance de l’outil.</p>
     </section>
 
     <section class="calculator-panel" aria-labelledby="calculator-title">
       <h2 id="calculator-title">Comparez vos deux forfaits</h2>
-      <p class="calculator-intro">Le calculateur compare uniquement les coûts. Les vitesses et la technologie sont affichées comme contexte; elles n’entrent ni dans le total ni dans un score. Le prix mensuel, les frais ponctuels, l’équipement et les crédits ou cartes-cadeaux restent séparés.</p>
+      <p class="calculator-intro">Le calculateur compare uniquement les coûts. Entrez le prix mensuel réellement facturé, avec la promotion et le tarif après promo si nécessaire, puis ajoutez les frais ponctuels et les crédits ou cartes-cadeaux.</p>
       <form class="calculator-form" novalidate>
         <div class="duration-row">
           <div class="duration-field field">
@@ -229,12 +229,8 @@
               <div class="field"><label for="plan-a-promo">Prix mensuel promo ou actuel ($)</label><input id="plan-a-promo" data-field="promoPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 55" /></div>
               <div class="field"><label for="plan-a-promo-months">Durée de la promo (mois)</label><input id="plan-a-promo-months" data-field="promoMonths" type="number" min="0" max="120" step="1" value="0" inputmode="numeric" /><p class="field-note">0 = prix permanent ou actuel.</p></div>
               <div class="field"><label for="plan-a-regular">Prix mensuel après promo ($)</label><input id="plan-a-regular" data-field="regularPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 85" /></div>
-              <div class="field"><label for="plan-a-equipment">Équipement par mois ($)</label><input id="plan-a-equipment" data-field="equipmentMonthly" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si inclus" /></div>
               <div class="field"><label for="plan-a-fees">Frais ponctuels (installation, activation, résiliation) ($)</label><input id="plan-a-fees" data-field="oneTimeFees" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Installation, activation, résiliation…" /></div>
               <div class="field"><label for="plan-a-credits">Crédits ou cartes-cadeaux ($)</label><input id="plan-a-credits" data-field="credits" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si aucun" /><p class="field-note">Crédit ou carte-cadeau, soustrait une seule fois si admissible.</p></div>
-              <div class="field"><label for="plan-a-download">Téléchargement (Mbit/s)</label><input id="plan-a-download" data-field="download" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 500" /></div>
-              <div class="field"><label for="plan-a-upload">Téléversement (Mbit/s)</label><input id="plan-a-upload" data-field="upload" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 500" /></div>
-              <div class="field field-wide"><label for="plan-a-technology">Technologie <span class="small">(facultatif)</span></label><input id="plan-a-technology" data-field="technology" type="text" placeholder="Ex. FTTH, câble/HFC, FTTN" /></div>
             </div>
           </fieldset>
 
@@ -245,12 +241,8 @@
               <div class="field"><label for="plan-b-promo">Prix mensuel promo ou actuel ($)</label><input id="plan-b-promo" data-field="promoPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 49" /></div>
               <div class="field"><label for="plan-b-promo-months">Durée de la promo (mois)</label><input id="plan-b-promo-months" data-field="promoMonths" type="number" min="0" max="120" step="1" value="0" inputmode="numeric" /><p class="field-note">0 = prix permanent ou actuel.</p></div>
               <div class="field"><label for="plan-b-regular">Prix mensuel après promo ($)</label><input id="plan-b-regular" data-field="regularPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 79" /></div>
-              <div class="field"><label for="plan-b-equipment">Équipement par mois ($)</label><input id="plan-b-equipment" data-field="equipmentMonthly" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si inclus" /></div>
               <div class="field"><label for="plan-b-fees">Frais ponctuels (installation, activation, résiliation) ($)</label><input id="plan-b-fees" data-field="oneTimeFees" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Installation, activation, résiliation…" /></div>
               <div class="field"><label for="plan-b-credits">Crédits ou cartes-cadeaux ($)</label><input id="plan-b-credits" data-field="credits" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si aucun" /><p class="field-note">Crédit ou carte-cadeau, soustrait une seule fois si admissible.</p></div>
-              <div class="field"><label for="plan-b-download">Téléchargement (Mbit/s)</label><input id="plan-b-download" data-field="download" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 500" /></div>
-              <div class="field"><label for="plan-b-upload">Téléversement (Mbit/s)</label><input id="plan-b-upload" data-field="upload" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 50" /></div>
-              <div class="field field-wide"><label for="plan-b-technology">Technologie <span class="small">(facultatif)</span></label><input id="plan-b-technology" data-field="technology" type="text" placeholder="Ex. FTTH, câble/HFC, FTTN" /></div>
             </div>
           </fieldset>
         </div>
@@ -270,9 +262,7 @@
             <dl>
               <dt>Coût total net</dt><dd class="total" data-output="a-total">—</dd>
               <dt>Coût mensuel effectif</dt><dd data-output="a-monthly">—</dd>
-              <dt>Coût mensuel après promo (équipement inclus)</dt><dd data-output="a-regular">—</dd>
-              <dt>Téléchargement / téléversement</dt><dd data-output="a-speed">—</dd>
-              <dt>Technologie</dt><dd data-output="a-technology">—</dd>
+              <dt>Prix mensuel après promo</dt><dd data-output="a-regular">—</dd>
             </dl>
           </article>
           <article class="result-card" aria-labelledby="result-b-title">
@@ -280,15 +270,13 @@
             <dl>
               <dt>Coût total net</dt><dd class="total" data-output="b-total">—</dd>
               <dt>Coût mensuel effectif</dt><dd data-output="b-monthly">—</dd>
-              <dt>Coût mensuel après promo (équipement inclus)</dt><dd data-output="b-regular">—</dd>
-              <dt>Téléchargement / téléversement</dt><dd data-output="b-speed">—</dd>
-              <dt>Technologie</dt><dd data-output="b-technology">—</dd>
+              <dt>Prix mensuel après promo</dt><dd data-output="b-regular">—</dd>
             </dl>
           </article>
           <div class="comparison-card">
             <div class="section-label">Lecture du résultat</div>
             <p class="comparison-result" data-output="comparison">Les deux forfaits ont le même coût.</p>
-            <p class="small">Le résultat décrit un coût net sur la durée choisie. Les vitesses et la technologie sont affichées comme contexte, pas intégrées au calcul. Vérifiez aussi l’adresse, la disponibilité, les conditions de crédit, le contrat et la qualité de service.</p>
+            <p class="small">Le résultat décrit uniquement le coût net sur la durée choisie. Vérifiez aussi l’adresse, la disponibilité, les conditions de crédit, le contrat et la qualité de service; les comparatifs et le guide <a href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/">FTTH, HFC et FTTN</a> couvrent le contexte technique.</p>
           </div>
         </div>
       </section>
@@ -298,7 +286,7 @@
       <div class="section-label">Méthode</div>
       <h2 id="method-title">Un prix mensuel ne raconte pas toute l’histoire</h2>
       <p>Une promotion de 24 mois, un prix permanent et une carte-cadeau ne se comparent pas correctement dans une seule colonne de prix. Le moteur conserve chaque élément séparé, puis calcule le coût net sur l’échéance que vous avez choisie.</p>
-      <code class="formula">mois promo × prix promo + mois restants × prix régulier + frais ponctuels + équipement − crédits</code>
+      <code class="formula">mois promo × prix promo + mois restants × prix régulier + frais ponctuels − crédits</code>
       <p class="method-note"><strong>Important&nbsp;:</strong> le coût net peut être négatif si le crédit entré dépasse les coûts de la période. Cela signifie que le modèle contient plus de crédits que de frais; ce n’est pas une promesse de paiement.</p>
     </section>
 
@@ -306,10 +294,10 @@
       <div class="section-label">Mode d’emploi</div>
       <h2 id="use-title">Comment utiliser l’outil</h2>
       <div class="content-grid">
-        <article class="content-card"><h3>1. Copiez les offres</h3><p>Relevez le prix promo ou actuel, la durée de la promotion, le tarif après promo, les frais d’installation ou d’activation et l’équipement facturé chaque mois.</p></article>
+        <article class="content-card"><h3>1. Copiez les offres</h3><p>Relevez le prix promo ou actuel, la durée de la promotion, le tarif après promo et les frais ponctuels. Entrez le prix mensuel réellement facturé, équipement compris.</p></article>
         <article class="content-card"><h3>2. Traitez les crédits séparément</h3><p>Entrez une carte-cadeau, un crédit au compte ou une remise ponctuelle dans son propre champ, seulement si vous avez confirmé son admissibilité et son moment d’application.</p></article>
         <article class="content-card"><h3>3. Choisissez votre échéance</h3><p>Les boutons 12, 24 et 36 mois sont des raccourcis. La durée personnalisée permet de viser une date de déménagement, la fin d’une promo ou une autre échéance réelle.</p></article>
-        <article class="content-card"><h3>4. Lisez plus que le total</h3><p>Le total et le coût effectif aident à décider, mais le téléchargement, le téléversement, la technologie et les conditions de service peuvent compter davantage pour votre usage.</p></article>
+        <article class="content-card"><h3>4. Vérifiez le contexte</h3><p>Le prix n’est pas le seul critère. Consultez le <a href="https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/">comparatif des fournisseurs</a> et le guide <a href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/">FTTH, HFC et FTTN</a> pour les vitesses, la technologie et les limites selon l’adresse.</p></article>
       </div>
     </section>
 
@@ -328,18 +316,18 @@
     <section class="content-section sources" aria-labelledby="sources-title">
       <div class="section-label">Sources et limites</div>
       <h2 id="sources-title">Ce que les sources officielles aident à vérifier</h2>
-      <p>Le <a href="https://crtc.gc.ca/fra/internet/codesimpl.htm" target="_blank" rel="noopener noreferrer">Code sur les services Internet du CRTC</a> explique notamment comment présenter le prix pendant et après une promotion, ainsi que les frais uniques. La page du CRTC sur la <a href="https://crtc.gc.ca/fra/internet/performance.htm" target="_blank" rel="noopener noreferrer">performance et la fiabilité d’Internet</a> définit le téléchargement et le téléversement et rappelle que l’équipement, le réseau domestique et l’adresse influencent l’expérience.</p>
-      <p>Ces sources ne disent pas quel forfait est le meilleur pour vous. Elles justifient la structure de l’outil; les valeurs affichées dans le calculateur viennent de vos propres contrats, paniers et vérifications.</p>
+      <p>Le <a href="https://crtc.gc.ca/fra/internet/codesimpl.htm" target="_blank" rel="noopener noreferrer">Code sur les services Internet du CRTC</a> explique notamment comment présenter le prix pendant et après une promotion, ainsi que les frais uniques. Les valeurs affichées dans le calculateur viennent de vos propres contrats, paniers et vérifications; le calculateur ne préremplit aucun tarif fournisseur.</p>
+      <p>Cette source ne dit pas quel forfait est le meilleur pour vous. Le contexte des vitesses et de la technologie se trouve dans les comparatifs et le guide FTTH, HFC et FTTN.</p>
     </section>
 
     <section class="content-section faq" id="faq" aria-labelledby="faq-title">
       <div class="section-label">Questions fréquentes</div>
       <h2 id="faq-title">À propos du calculateur</h2>
-      <details><summary id="faq-q1">Quel est le calcul utilisé&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q1">Le coût total correspond aux mois promotionnels multipliés par le prix promotionnel, plus les mois restants multipliés par le prix régulier, plus les frais ponctuels et l’équipement, moins les crédits ou cartes-cadeaux. Le coût mensuel effectif est le total divisé par la durée choisie.</div></details>
+      <details><summary id="faq-q1">Quel est le calcul utilisé&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q1">Le coût total correspond aux mois promotionnels multipliés par le prix promotionnel, plus les mois restants multipliés par le prix régulier, plus les frais ponctuels, moins les crédits ou cartes-cadeaux. Le coût mensuel effectif est le total divisé par la durée choisie.</div></details>
       <details><summary id="faq-q2">Pourquoi séparer le crédit ou la carte-cadeau du prix mensuel&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q2">Un crédit ou une carte-cadeau est un avantage ponctuel soumis à ses propres conditions; ce n’est pas une baisse permanente du prix mensuel. Le champ séparé rend son effet visible et permet de le retirer facilement si l’admissibilité n’est pas confirmée.</div></details>
       <details><summary id="faq-q3">Dois-je entrer les taxes dans le calculateur&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q3">Le calculateur ne détermine pas les taxes. Entrez des montants comparables, en suivant la façon dont les prix sont affichés dans les offres que vous comparez, puis vérifiez le total et les frais dans le contrat ou le sommaire critique du fournisseur.</div></details>
       <details><summary id="faq-q4">Que signifie le prix après promotion&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q4">C’est le prix mensuel utilisé après la durée promotionnelle. Si vous laissez ce champ vide, le calculateur réutilise le prix promotionnel ou actuel; cela convient à un prix permanent, mais il faut saisir le tarif régulier lorsqu’il est différent.</div></details>
-      <details><summary id="faq-q5">Cet outil recommande-t-il un fournisseur&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q5">Non. Il compare les valeurs que vous entrez et n’attribue aucun score arbitraire. La vitesse, le téléversement, la technologie, la disponibilité, le service et les conditions de l’offre doivent encore être vérifiés pour votre adresse.</div></details>
+      <details><summary id="faq-q5">Cet outil recommande-t-il un fournisseur&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q5">Non. Il compare les valeurs que vous entrez et n’attribue aucun score arbitraire. La vitesse, le téléversement, la technologie, la disponibilité, le service et les conditions de l’offre doivent encore être vérifiés pour votre adresse; consultez les comparatifs et le guide FTTH, HFC et FTTN pour le contexte technique.</div></details>
     </section>
   </main>
 

@@ -2,10 +2,9 @@ const MAX_DURATION_MONTHS = 120;
 
 const COPY = {
   fr: {
-    invalid: "Entrez un prix mensuel valide pour les deux forfaits. Les champs numériques facultatifs doivent être positifs ou égaux à zéro.",
+    invalid: "Entrez un prix mensuel valide pour les deux forfaits. Les frais, crédits et autres champs numériques doivent être positifs ou égaux à zéro.",
     duration: `La durée doit être un nombre entier entre 1 et ${MAX_DURATION_MONTHS} mois.`,
     calculated: "Comparaison mise à jour à partir des valeurs entrées.",
-    notProvided: "Non indiqué",
     same: "Les deux forfaits reviennent au même coût net sur la durée choisie.",
     cheaper: (name, amount, duration) => `${name} revient à ${amount} de moins sur ${duration} mois, selon les valeurs entrées.`,
     dearer: (name, amount, duration) => `${name} revient à ${amount} de plus sur ${duration} mois, selon les valeurs entrées.`,
@@ -14,10 +13,9 @@ const COPY = {
     defaultNameB: "Forfait B"
   },
   en: {
-    invalid: "Enter a valid monthly price for both plans. Optional numeric fields must be zero or greater.",
+    invalid: "Enter a valid monthly price for both plans. Fees, credits and other numeric fields must be zero or greater.",
     duration: `The duration must be a whole number between 1 and ${MAX_DURATION_MONTHS} months.`,
     calculated: "Comparison updated from the values entered.",
-    notProvided: "Not entered",
     same: "Both plans have the same net cost over the selected period.",
     cheaper: (name, amount, duration) => `${name} costs ${amount} less over ${duration} months, based on the values entered.`,
     dearer: (name, amount, duration) => `${name} costs ${amount} more over ${duration} months, based on the values entered.`,
@@ -70,12 +68,8 @@ export function normalizePlan(plan = {}) {
     promoPrice,
     regularPrice,
     promoMonths,
-    equipmentMonthly: nonNegative(plan.equipmentMonthly),
     oneTimeFees: nonNegative(plan.oneTimeFees),
-    credits: nonNegative(plan.credits),
-    download: nonNegative(plan.download, null),
-    upload: nonNegative(plan.upload, null),
-    technology: String(plan.technology ?? "").trim()
+    credits: nonNegative(plan.credits)
   };
 }
 
@@ -84,9 +78,7 @@ export function calculatePlanCost(plan, durationMonths) {
   const duration = positiveDuration(durationMonths);
   const promoMonths = Math.min(normalizedPlan.promoMonths, duration);
   const remainingMonths = duration - promoMonths;
-  const promoMonthlyTotal = normalizedPlan.promoPrice + normalizedPlan.equipmentMonthly;
-  const regularMonthlyTotal = normalizedPlan.regularPrice + normalizedPlan.equipmentMonthly;
-  const total = promoMonths * promoMonthlyTotal + remainingMonths * regularMonthlyTotal +
+  const total = promoMonths * normalizedPlan.promoPrice + remainingMonths * normalizedPlan.regularPrice +
     normalizedPlan.oneTimeFees - normalizedPlan.credits;
 
   return {
@@ -94,8 +86,6 @@ export function calculatePlanCost(plan, durationMonths) {
     durationMonths: duration,
     promoMonths,
     remainingMonths,
-    promoMonthlyTotal,
-    regularMonthlyTotal,
     total,
     effectiveMonthly: total / duration
   };
@@ -122,11 +112,6 @@ export function formatCurrency(value, locale = "fr-CA") {
   }).format(value);
 }
 
-function formatSpeed(value, language, locale) {
-  if (value === null || value === undefined || Number.isNaN(value)) return COPY[language].notProvided;
-  return new Intl.NumberFormat(locale, { maximumFractionDigits: 2 }).format(value);
-}
-
 function getPlanInput(root, field) {
   return root.querySelector(`[data-field="${field}"]`)?.value ?? "";
 }
@@ -137,12 +122,8 @@ function readPlan(root) {
     promoPrice: getPlanInput(root, "promoPrice"),
     promoMonths: getPlanInput(root, "promoMonths"),
     regularPrice: getPlanInput(root, "regularPrice"),
-    equipmentMonthly: getPlanInput(root, "equipmentMonthly"),
     oneTimeFees: getPlanInput(root, "oneTimeFees"),
-    credits: getPlanInput(root, "credits"),
-    download: getPlanInput(root, "download"),
-    upload: getPlanInput(root, "upload"),
-    technology: getPlanInput(root, "technology")
+    credits: getPlanInput(root, "credits")
   };
 }
 
@@ -196,9 +177,7 @@ function setupCalculator() {
     setText(`[data-output="${key}-name"]`, name);
     setText(`[data-output="${key}-total"]`, formatCurrency(result.total, locale));
     setText(`[data-output="${key}-monthly"]`, formatCurrency(result.effectiveMonthly, locale));
-    setText(`[data-output="${key}-regular"]`, formatCurrency(result.regularMonthlyTotal, locale));
-    setText(`[data-output="${key}-speed"]`, `${formatSpeed(result.download, language, locale)} / ${formatSpeed(result.upload, language, locale)} Mbps`);
-    setText(`[data-output="${key}-technology"]`, result.technology || copy.notProvided);
+    setText(`[data-output="${key}-regular"]`, formatCurrency(result.regularPrice, locale));
   }
 
   function calculate(showValidation = true) {

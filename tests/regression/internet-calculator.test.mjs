@@ -7,12 +7,12 @@ import {
   formatCurrency
 } from "../../internet-cout-reel/calculator.js";
 
-test("calcule un prix permanent avec équipement mensuel", () => {
-  const result = calculatePlanCost({ promoPrice: 50, equipmentMonthly: 5 }, 36);
+test("calcule un prix permanent à partir du montant mensuel réel", () => {
+  const result = calculatePlanCost({ promoPrice: 50 }, 36);
 
-  assert.equal(result.total, 1980);
-  assert.equal(result.effectiveMonthly, 55);
-  assert.equal(result.regularMonthlyTotal, 55);
+  assert.equal(result.total, 1800);
+  assert.equal(result.effectiveMonthly, 50);
+  assert.equal(result.regularPrice, 50);
   assert.equal(result.promoMonths, 0);
 });
 
@@ -21,13 +21,12 @@ test("sépare promo, tarif régulier, frais ponctuels et crédit", () => {
     promoPrice: 50,
     promoMonths: 24,
     regularPrice: 80,
-    equipmentMonthly: 5,
     oneTimeFees: 60,
     credits: 100
   }, 36);
 
-  assert.equal(result.total, 2300);
-  assert.equal(result.effectiveMonthly, 2300 / 36);
+  assert.equal(result.total, 2120);
+  assert.equal(result.effectiveMonthly, 2120 / 36);
   assert.equal(result.remainingMonths, 12);
 });
 
@@ -53,8 +52,8 @@ test("accepte une durée personnalisée bornée", () => {
   assert.throws(() => calculatePlanCost({ promoPrice: 40 }, 12.5), /Duration/);
 });
 
-test("refuse une vitesse négative comme les autres valeurs numériques", () => {
-  assert.throws(() => calculatePlanCost({ promoPrice: 40, download: -1 }, 12), /negative/);
+test("refuse des frais ponctuels négatifs", () => {
+  assert.throws(() => calculatePlanCost({ promoPrice: 40, oneTimeFees: -1 }, 12), /negative/);
 });
 
 test("préserve la lisibilité monétaire canadienne", () => {
