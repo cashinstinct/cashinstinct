@@ -28,7 +28,8 @@ const englishDefaults = new Set([
 
 const xDefaultOverrides = new Map([
   ["internet-cout-reel", "/internet-cout-reel/fr/"],
-  ["internet-real-cost", "/internet-cout-reel/fr/"]
+  ["internet-real-cost", "/internet-cout-reel/fr/"],
+  ["real-value-canadian-promotion", "/valeur-reelle-promotion-canada/fr/"]
 ]);
 
 export function expectedXDefault(pathname) {
