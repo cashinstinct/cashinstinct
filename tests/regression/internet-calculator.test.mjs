@@ -16,6 +16,13 @@ test("calcule un prix permanent à partir du montant mensuel réel", () => {
   assert.equal(result.promoMonths, 0);
 });
 
+test("ignore le prix après promo pour un prix permanent", () => {
+  const result = calculatePlanCost({ promoPrice: 55, promoMonths: 0, regularPrice: 80 }, 24);
+
+  assert.equal(result.total, 1320);
+  assert.equal(result.regularPrice, 55);
+});
+
 test("sépare promo, tarif régulier, frais ponctuels et crédit", () => {
   const result = calculatePlanCost({
     promoPrice: 50,

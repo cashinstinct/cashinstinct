@@ -5,6 +5,11 @@
   Les montants sont entrés par l'utilisateur. Le moteur partagé
   internet-cout-reel/calculator.js est testé séparément et cette page doit rester en parité
   sémantique avec sa version anglaise /internet-real-cost/en/.
+  PÉRIMÈTRE ÉDITORIAL V1 : cette version doit rester volontairement légère et comparer uniquement
+  le coût monétaire. Ne pas ajouter vitesse, téléversement, technologie d'accès, équipement
+  séparé, score fournisseur ou logique de recommandation sans besoin utilisateur documenté et
+  révision délibérée du périmètre. L'équipement appartient au montant mensuel réellement facturé;
+  les critères techniques restent dans les comparatifs et guides liés.
   SOURCES DE MÉTHODE : Code sur les services Internet du CRTC et page officielle du CRTC
   sur la performance Internet, consultés le 2026-08-13. Ces sources encadrent la distinction
   entre prix promotionnel, prix après promotion, frais ponctuels et crédits;
@@ -86,7 +91,7 @@
           { "@type": "Question", "name": "Quel est le calcul utilisé ?", "acceptedAnswer": { "@type": "Answer", "text": "Le coût total correspond aux mois promotionnels multipliés par le prix promotionnel, plus les mois restants multipliés par le prix régulier, plus les frais ponctuels, moins les crédits ou cartes-cadeaux. Le coût mensuel effectif est le total divisé par la durée choisie." } },
           { "@type": "Question", "name": "Pourquoi séparer le crédit ou la carte-cadeau du prix mensuel ?", "acceptedAnswer": { "@type": "Answer", "text": "Un crédit ou une carte-cadeau est un avantage ponctuel soumis à ses propres conditions; ce n'est pas une baisse permanente du prix mensuel. Le champ séparé rend son effet visible et permet de le retirer facilement si l'admissibilité n'est pas confirmée." } },
           { "@type": "Question", "name": "Dois-je entrer les taxes dans le calculateur ?", "acceptedAnswer": { "@type": "Answer", "text": "Le calculateur ne détermine pas les taxes. Entrez des montants comparables, en suivant la façon dont les prix sont affichés dans les offres que vous comparez, puis vérifiez le total et les frais dans le contrat ou le sommaire critique du fournisseur." } },
-          { "@type": "Question", "name": "Que signifie le prix après promotion ?", "acceptedAnswer": { "@type": "Answer", "text": "C'est le prix mensuel utilisé après la durée promotionnelle. Si vous laissez ce champ vide, le calculateur réutilise le prix promotionnel ou actuel; cela convient à un prix permanent, mais il faut saisir le tarif régulier lorsqu'il est différent." } },
+          { "@type": "Question", "name": "Que signifie le prix après promotion ?", "acceptedAnswer": { "@type": "Answer", "text": "C'est le prix mensuel utilisé après la durée promotionnelle. Si la durée de la promo est 0, le champ est sans objet et le prix promotionnel ou actuel est utilisé. Pour une promotion, laissez-le vide si le tarif ne change pas ou saisissez le tarif régulier lorsqu'il est différent." } },
           { "@type": "Question", "name": "Cet outil recommande-t-il un fournisseur ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Il compare les valeurs que vous entrez et n'attribue aucun score arbitraire. La vitesse, le téléversement, la technologie, la disponibilité, le service et les conditions de l'offre doivent encore être vérifiés pour votre adresse; consultez les comparatifs et le guide FTTH, HFC et FTTN pour le contexte technique." } }
         ]
       }
@@ -141,6 +146,7 @@
     label { display:block; margin-bottom:5px; font-weight:700; font-size:.92rem; }
     input { width:100%; min-height:42px; padding:9px 10px; border:1px solid var(--border); border-radius:8px; background:var(--surface); color:var(--text); font:inherit; }
     input::placeholder { color:var(--muted); opacity:.8; }
+    input:disabled { cursor:not-allowed; opacity:.6; }
     .field-note { color:var(--muted); font-size:.82rem; margin-top:5px; }
     .form-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:20px; }
     .primary-btn { padding:12px 20px; border:0; border-radius:9px; background:var(--accent); color:#fff; cursor:pointer; font:inherit; font-weight:800; }
@@ -228,7 +234,7 @@
               <div class="field field-wide"><label for="plan-a-name">Nom du forfait A <span class="small">(facultatif)</span></label><input id="plan-a-name" data-field="name" type="text" placeholder="Ex. offre actuelle" /></div>
               <div class="field"><label for="plan-a-promo">Prix mensuel promo ou actuel ($)</label><input id="plan-a-promo" data-field="promoPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 55" /></div>
               <div class="field"><label for="plan-a-promo-months">Durée de la promo (mois)</label><input id="plan-a-promo-months" data-field="promoMonths" type="number" min="0" max="120" step="1" value="0" inputmode="numeric" /><p class="field-note">0 = prix permanent ou actuel.</p></div>
-              <div class="field"><label for="plan-a-regular">Prix mensuel après promo ($)</label><input id="plan-a-regular" data-field="regularPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 85" /></div>
+              <div class="field"><label for="plan-a-regular">Prix mensuel après promo ($)</label><input id="plan-a-regular" data-field="regularPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 85" aria-describedby="plan-a-regular-help" /><p id="plan-a-regular-help" class="field-note" data-regular-note></p></div>
               <div class="field"><label for="plan-a-fees">Frais ponctuels (installation, activation, résiliation) ($)</label><input id="plan-a-fees" data-field="oneTimeFees" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Installation, activation, résiliation…" /></div>
               <div class="field"><label for="plan-a-credits">Crédits ou cartes-cadeaux ($)</label><input id="plan-a-credits" data-field="credits" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si aucun" /><p class="field-note">Crédit ou carte-cadeau, soustrait une seule fois si admissible.</p></div>
             </div>
@@ -240,7 +246,7 @@
               <div class="field field-wide"><label for="plan-b-name">Nom du forfait B <span class="small">(facultatif)</span></label><input id="plan-b-name" data-field="name" type="text" placeholder="Ex. nouvelle offre" /></div>
               <div class="field"><label for="plan-b-promo">Prix mensuel promo ou actuel ($)</label><input id="plan-b-promo" data-field="promoPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 49" /></div>
               <div class="field"><label for="plan-b-promo-months">Durée de la promo (mois)</label><input id="plan-b-promo-months" data-field="promoMonths" type="number" min="0" max="120" step="1" value="0" inputmode="numeric" /><p class="field-note">0 = prix permanent ou actuel.</p></div>
-              <div class="field"><label for="plan-b-regular">Prix mensuel après promo ($)</label><input id="plan-b-regular" data-field="regularPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 79" /></div>
+              <div class="field"><label for="plan-b-regular">Prix mensuel après promo ($)</label><input id="plan-b-regular" data-field="regularPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex. 79" aria-describedby="plan-b-regular-help" /><p id="plan-b-regular-help" class="field-note" data-regular-note></p></div>
               <div class="field"><label for="plan-b-fees">Frais ponctuels (installation, activation, résiliation) ($)</label><input id="plan-b-fees" data-field="oneTimeFees" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Installation, activation, résiliation…" /></div>
               <div class="field"><label for="plan-b-credits">Crédits ou cartes-cadeaux ($)</label><input id="plan-b-credits" data-field="credits" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si aucun" /><p class="field-note">Crédit ou carte-cadeau, soustrait une seule fois si admissible.</p></div>
             </div>
@@ -326,7 +332,7 @@
       <details><summary id="faq-q1">Quel est le calcul utilisé&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q1">Le coût total correspond aux mois promotionnels multipliés par le prix promotionnel, plus les mois restants multipliés par le prix régulier, plus les frais ponctuels, moins les crédits ou cartes-cadeaux. Le coût mensuel effectif est le total divisé par la durée choisie.</div></details>
       <details><summary id="faq-q2">Pourquoi séparer le crédit ou la carte-cadeau du prix mensuel&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q2">Un crédit ou une carte-cadeau est un avantage ponctuel soumis à ses propres conditions; ce n’est pas une baisse permanente du prix mensuel. Le champ séparé rend son effet visible et permet de le retirer facilement si l’admissibilité n’est pas confirmée.</div></details>
       <details><summary id="faq-q3">Dois-je entrer les taxes dans le calculateur&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q3">Le calculateur ne détermine pas les taxes. Entrez des montants comparables, en suivant la façon dont les prix sont affichés dans les offres que vous comparez, puis vérifiez le total et les frais dans le contrat ou le sommaire critique du fournisseur.</div></details>
-      <details><summary id="faq-q4">Que signifie le prix après promotion&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q4">C’est le prix mensuel utilisé après la durée promotionnelle. Si vous laissez ce champ vide, le calculateur réutilise le prix promotionnel ou actuel; cela convient à un prix permanent, mais il faut saisir le tarif régulier lorsqu’il est différent.</div></details>
+      <details><summary id="faq-q4">Que signifie le prix après promotion&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q4">C'est le prix mensuel utilisé après la durée promotionnelle. Si la durée de la promo est 0, le champ est sans objet et le prix promotionnel ou actuel est utilisé. Pour une promotion, laissez-le vide si le tarif ne change pas ou saisissez le tarif régulier lorsqu'il est différent.</div></details>
       <details><summary id="faq-q5">Cet outil recommande-t-il un fournisseur&nbsp;?</summary><div class="faq-body" role="region" aria-labelledby="faq-q5">Non. Il compare les valeurs que vous entrez et n’attribue aucun score arbitraire. La vitesse, le téléversement, la technologie, la disponibilité, le service et les conditions de l’offre doivent encore être vérifiés pour votre adresse; consultez les comparatifs et le guide FTTH, HFC et FTTN pour le contexte technique.</div></details>
     </section>
   </main>

@@ -4,7 +4,9 @@ async function fillFrenchPlan(page, prefix, values) {
   await page.locator(`#plan-${prefix}-name`).fill(values.name);
   await page.locator(`#plan-${prefix}-promo`).fill(String(values.promo));
   await page.locator(`#plan-${prefix}-promo-months`).fill(String(values.promoMonths));
-  await page.locator(`#plan-${prefix}-regular`).fill(String(values.regular));
+  if (values.promoMonths > 0) {
+    await page.locator(`#plan-${prefix}-regular`).fill(String(values.regular));
+  }
   await page.locator(`#plan-${prefix}-fees`).fill(String(values.fees));
   await page.locator(`#plan-${prefix}-credits`).fill(String(values.credits));
 }
@@ -15,6 +17,8 @@ test("le calculateur FR accepte une durée personnalisée avec six champs par fo
   await expect(page.locator('[data-plan="a"] [data-field]')).toHaveCount(6);
   await expect(page.locator('[data-field="equipmentMonthly"]')).toHaveCount(0);
   await expect(page.locator('[data-field="download"], [data-field="upload"], [data-field="technology"]')).toHaveCount(0);
+  await expect(page.locator("#plan-a-regular")).toBeDisabled();
+  await expect(page.locator("#plan-a-regular-help")).toContainText("Sans objet");
   await expect(page.locator('label[for="plan-a-fees"]')).toContainText("installation, activation, résiliation");
   await expect(page.locator("#plan-a-credits + .field-note")).toContainText("soustrait une seule fois");
 
@@ -50,6 +54,8 @@ test("the English calculator exposes the same six-field workflow", async ({ page
   await expect(page.locator('[data-plan="a"] [data-field]')).toHaveCount(6);
   await expect(page.locator('[data-field="equipmentMonthly"]')).toHaveCount(0);
   await expect(page.locator('[data-field="download"], [data-field="upload"], [data-field="technology"]')).toHaveCount(0);
+  await expect(page.locator("#plan-a-regular")).toBeDisabled();
+  await expect(page.locator("#plan-a-regular-help")).toContainText("Not used");
   await expect(page.locator('label[for="plan-a-fees"]')).toContainText("installation, activation, early termination");
   await expect(page.locator("#plan-a-credits + .field-note")).toContainText("subtracted once");
   await page.getByRole("button", { name: "36 months" }).click();

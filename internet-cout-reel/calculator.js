@@ -5,6 +5,8 @@ const COPY = {
     invalid: "Entrez un prix mensuel valide pour les deux forfaits. Les frais, crédits et autres champs numériques doivent être positifs ou égaux à zéro.",
     duration: `La durée doit être un nombre entier entre 1 et ${MAX_DURATION_MONTHS} mois.`,
     calculated: "Comparaison mise à jour à partir des valeurs entrées.",
+    regularNotUsed: "Sans objet lorsque la durée de la promo est de 0 mois.",
+    regularPrompt: "Saisissez le tarif régulier s’il est différent.",
     same: "Les deux forfaits reviennent au même coût net sur la durée choisie.",
     cheaper: (name, amount, duration) => `${name} revient à ${amount} de moins sur ${duration} mois, selon les valeurs entrées.`,
     dearer: (name, amount, duration) => `${name} revient à ${amount} de plus sur ${duration} mois, selon les valeurs entrées.`,
@@ -16,6 +18,8 @@ const COPY = {
     invalid: "Enter a valid monthly price for both plans. Fees, credits and other numeric fields must be zero or greater.",
     duration: `The duration must be a whole number between 1 and ${MAX_DURATION_MONTHS} months.`,
     calculated: "Comparison updated from the values entered.",
+    regularNotUsed: "Not used when promotion length is 0 months.",
+    regularPrompt: "Enter the regular rate when it differs.",
     same: "Both plans have the same net cost over the selected period.",
     cheaper: (name, amount, duration) => `${name} costs ${amount} less over ${duration} months, based on the values entered.`,
     dearer: (name, amount, duration) => `${name} costs ${amount} more over ${duration} months, based on the values entered.`,
@@ -54,14 +58,16 @@ export function normalizePlan(plan = {}) {
     throw new TypeError("A valid promotional or current monthly price is required.");
   }
 
-  const regularPriceValue = parseNumber(plan.regularPrice);
-  const regularPrice = regularPriceValue === null ? promoPrice : nonNegative(regularPriceValue);
   const promoMonthsValue = parseNumber(plan.promoMonths);
   const promoMonths = promoMonthsValue === null ? 0 : nonNegative(promoMonthsValue);
 
   if (!Number.isInteger(promoMonths)) {
     throw new RangeError("Promotion duration must be a whole number of months.");
   }
+
+  const regularPriceValue = parseNumber(plan.regularPrice);
+  const enteredRegularPrice = regularPriceValue === null ? promoPrice : nonNegative(regularPriceValue);
+  const regularPrice = promoMonths === 0 ? promoPrice : enteredRegularPrice;
 
   return {
     name: String(plan.name ?? "").trim(),
@@ -116,15 +122,34 @@ function getPlanInput(root, field) {
   return root.querySelector(`[data-field="${field}"]`)?.value ?? "";
 }
 
+function isPermanentPrice(value) {
+  const number = parseNumber(value);
+  return number === null || number === 0;
+}
+
 function readPlan(root) {
+  const promoMonths = getPlanInput(root, "promoMonths");
   return {
     name: getPlanInput(root, "name"),
     promoPrice: getPlanInput(root, "promoPrice"),
-    promoMonths: getPlanInput(root, "promoMonths"),
-    regularPrice: getPlanInput(root, "regularPrice"),
+    promoMonths,
+    regularPrice: isPermanentPrice(promoMonths) ? "" : getPlanInput(root, "regularPrice"),
     oneTimeFees: getPlanInput(root, "oneTimeFees"),
     credits: getPlanInput(root, "credits")
   };
+}
+
+function syncRegularPriceField(root, copy) {
+  const promoMonthsInput = root?.querySelector('[data-field="promoMonths"]');
+  const regularPriceInput = root?.querySelector('[data-field="regularPrice"]');
+  const regularPriceNote = root?.querySelector("[data-regular-note]");
+  if (!promoMonthsInput || !regularPriceInput) return;
+
+  const permanent = isPermanentPrice(promoMonthsInput.value);
+  regularPriceInput.disabled = permanent;
+  regularPriceInput.setAttribute("aria-disabled", String(permanent));
+  regularPriceInput.closest(".field")?.classList.toggle("is-disabled", permanent);
+  if (regularPriceNote) regularPriceNote.textContent = permanent ? copy.regularNotUsed : copy.regularPrompt;
 }
 
 function setText(selector, value) {
@@ -180,6 +205,10 @@ function setupCalculator() {
     setText(`[data-output="${key}-regular"]`, formatCurrency(result.regularPrice, locale));
   }
 
+  function syncRegularPriceFields() {
+    Object.values(planRoots).forEach((root) => syncRegularPriceField(root, copy));
+  }
+
   function calculate(showValidation = true) {
     try {
       const duration = positiveDuration(durationInput?.value);
@@ -228,6 +257,7 @@ function setupCalculator() {
   });
 
   form.addEventListener("input", () => {
+    syncRegularPriceFields();
     if (hasCalculated) calculate(false);
   });
   form.addEventListener("submit", (event) => {
@@ -235,6 +265,7 @@ function setupCalculator() {
     calculate(true);
   });
   updatePressedPreset(durationInput?.value);
+  syncRegularPriceFields();
 }
 
 if (typeof document !== "undefined") {
