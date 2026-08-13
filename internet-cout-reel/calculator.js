@@ -5,8 +5,17 @@ const COPY = {
     invalid: "Entrez un prix mensuel valide pour les deux forfaits. Les frais, crédits et autres champs numériques doivent être positifs ou égaux à zéro.",
     duration: `La durée doit être un nombre entier entre 1 et ${MAX_DURATION_MONTHS} mois.`,
     calculated: "Comparaison mise à jour à partir des valeurs entrées.",
+    ready: "Entrez les deux prix mensuels pour commencer.",
     regularNotUsed: "Sans objet lorsque la durée de la promo est de 0 mois.",
     regularPrompt: "Saisissez le tarif régulier s’il est différent.",
+    copied: "Résultat copié dans le presse-papiers.",
+    copyError: "Impossible de copier le résultat. Sélectionnez et copiez le texte manuellement.",
+    breakdownLabel: "Calcul",
+    averageLabel: "en moyenne",
+    postPromotionLabel: "après promo",
+    totalLabel: "total",
+    summaryTitle: (duration) => `Comparaison sur ${duration} mois`,
+    sameSummary: "Les deux forfaits ont le même coût net.",
     same: "Les deux forfaits reviennent au même coût net sur la durée choisie.",
     cheaper: (name, amount, duration) => `${name} revient à ${amount} de moins sur ${duration} mois, selon les valeurs entrées.`,
     dearer: (name, amount, duration) => `${name} revient à ${amount} de plus sur ${duration} mois, selon les valeurs entrées.`,
@@ -18,8 +27,17 @@ const COPY = {
     invalid: "Enter a valid monthly price for both plans. Fees, credits and other numeric fields must be zero or greater.",
     duration: `The duration must be a whole number between 1 and ${MAX_DURATION_MONTHS} months.`,
     calculated: "Comparison updated from the values entered.",
+    ready: "Enter both monthly prices to begin.",
     regularNotUsed: "Not used when promotion length is 0 months.",
     regularPrompt: "Enter the regular rate when it differs.",
+    copied: "Result copied to the clipboard.",
+    copyError: "Could not copy the result. Select and copy the text manually.",
+    breakdownLabel: "Calculation",
+    averageLabel: "average",
+    postPromotionLabel: "after promotion",
+    totalLabel: "total",
+    summaryTitle: (duration) => `Comparison over ${duration} months`,
+    sameSummary: "Both plans have the same net cost.",
     same: "Both plans have the same net cost over the selected period.",
     cheaper: (name, amount, duration) => `${name} costs ${amount} less over ${duration} months, based on the values entered.`,
     dearer: (name, amount, duration) => `${name} costs ${amount} more over ${duration} months, based on the values entered.`,
@@ -118,6 +136,16 @@ export function formatCurrency(value, locale = "fr-CA") {
   }).format(value);
 }
 
+export function formatPlanBreakdown(result, locale = "fr-CA", language = locale.startsWith("fr") ? "fr" : "en") {
+  const recurringTerms = [];
+  if (result.promoMonths > 0) recurringTerms.push(`${result.promoMonths} × ${formatCurrency(result.promoPrice, locale)}`);
+  if (result.remainingMonths > 0) recurringTerms.push(`${result.remainingMonths} × ${formatCurrency(result.regularPrice, locale)}`);
+  let expression = recurringTerms.join(" + ");
+  if (result.oneTimeFees > 0) expression += ` + ${formatCurrency(result.oneTimeFees, locale)}`;
+  if (result.credits > 0) expression += ` − ${formatCurrency(result.credits, locale)}`;
+  return `${language === "fr" ? "Calcul" : "Calculation"} : ${expression} = ${formatCurrency(result.total, locale)}`;
+}
+
 function getPlanInput(root, field) {
   return root.querySelector(`[data-field="${field}"]`)?.value ?? "";
 }
@@ -157,6 +185,28 @@ function setText(selector, value) {
   if (element) element.textContent = value;
 }
 
+async function copyText(value) {
+  if (navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(value);
+      return;
+    } catch (error) {
+      // Try the legacy path below when the Clipboard API is unavailable or denied.
+    }
+  }
+  const textarea = document.createElement("textarea");
+  textarea.value = value;
+  textarea.setAttribute("readonly", "");
+  textarea.setAttribute("aria-hidden", "true");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  const copied = document.execCommand("copy");
+  textarea.remove();
+  if (!copied) throw new Error("Clipboard copy failed.");
+}
+
 function updatePressedPreset(months) {
   document.querySelectorAll("[data-duration]").forEach((button) => {
     const selected = Number(button.dataset.duration) === Number(months);
@@ -174,12 +224,16 @@ function setupCalculator() {
   const durationInput = form.querySelector("[data-duration-input]");
   const errorElement = document.querySelector("[data-calculator-error]");
   const statusElement = document.querySelector("[data-calculator-status]");
+  const copyStatusElement = document.querySelector("[data-copy-status]");
+  const copyButton = form.querySelector("[data-copy-result]");
+  const resetButton = form.querySelector("[data-reset-calculator]");
   const resultElement = document.querySelector("[data-results]");
   const planRoots = {
     a: form.querySelector('[data-plan="a"]'),
     b: form.querySelector('[data-plan="b"]')
   };
   let hasCalculated = false;
+  let lastComparison = null;
 
   function showError(message) {
     if (errorElement) {
@@ -188,6 +242,8 @@ function setupCalculator() {
     }
     if (resultElement) resultElement.hidden = true;
     if (statusElement) statusElement.textContent = "";
+    if (copyButton) copyButton.disabled = true;
+    if (copyStatusElement) copyStatusElement.textContent = "";
   }
 
   function clearError() {
@@ -203,6 +259,7 @@ function setupCalculator() {
     setText(`[data-output="${key}-total"]`, formatCurrency(result.total, locale));
     setText(`[data-output="${key}-monthly"]`, formatCurrency(result.effectiveMonthly, locale));
     setText(`[data-output="${key}-regular"]`, formatCurrency(result.regularPrice, locale));
+    setText(`[data-output="${key}-breakdown"]`, formatPlanBreakdown(result, locale, language));
   }
 
   function syncRegularPriceFields() {
@@ -232,7 +289,10 @@ function setupCalculator() {
       clearError();
       if (resultElement) resultElement.hidden = false;
       if (statusElement) statusElement.textContent = copy.calculated;
+      if (copyStatusElement) copyStatusElement.textContent = "";
+      if (copyButton) copyButton.disabled = false;
       hasCalculated = true;
+      lastComparison = comparison;
       return comparison;
     } catch (error) {
       if (showValidation || hasCalculated) {
@@ -259,6 +319,40 @@ function setupCalculator() {
   form.addEventListener("input", () => {
     syncRegularPriceFields();
     if (hasCalculated) calculate(false);
+  });
+  resetButton?.addEventListener("click", () => {
+    form.reset();
+    updatePressedPreset(durationInput?.value);
+    syncRegularPriceFields();
+    clearError();
+    if (resultElement) resultElement.hidden = true;
+    if (statusElement) statusElement.textContent = copy.ready;
+    if (copyButton) copyButton.disabled = true;
+    if (copyStatusElement) copyStatusElement.textContent = "";
+    hasCalculated = false;
+    lastComparison = null;
+  });
+  copyButton?.addEventListener("click", async () => {
+    if (!lastComparison) return;
+    const nameA = lastComparison.a.name || copy.defaultNameA;
+    const nameB = lastComparison.b.name || copy.defaultNameB;
+    const comparisonLine = lastComparison.difference === 0
+      ? copy.sameSummary
+      : document.querySelector('[data-output="comparison"]')?.textContent || "";
+    const summary = [
+      copy.summaryTitle(lastComparison.durationMonths),
+      `${nameA} : ${formatCurrency(lastComparison.a.total, locale)} ${copy.totalLabel}; ${formatCurrency(lastComparison.a.effectiveMonthly, locale)} ${copy.averageLabel}; ${formatCurrency(lastComparison.a.regularPrice, locale)} ${copy.postPromotionLabel}.`,
+      `${nameB} : ${formatCurrency(lastComparison.b.total, locale)} ${copy.totalLabel}; ${formatCurrency(lastComparison.b.effectiveMonthly, locale)} ${copy.averageLabel}; ${formatCurrency(lastComparison.b.regularPrice, locale)} ${copy.postPromotionLabel}.`,
+      comparisonLine,
+      `${copy.breakdownLabel} A : ${formatPlanBreakdown(lastComparison.a, locale, language).replace(/^Calcul(ation)?\s:\s/, "")}`,
+      `${copy.breakdownLabel} B : ${formatPlanBreakdown(lastComparison.b, locale, language).replace(/^Calcul(ation)?\s:\s/, "")}`
+    ].join("\n");
+    try {
+      await copyText(summary);
+      if (copyStatusElement) copyStatusElement.textContent = copy.copied;
+    } catch (error) {
+      if (copyStatusElement) copyStatusElement.textContent = copy.copyError;
+    }
   });
   form.addEventListener("submit", (event) => {
     event.preventDefault();

@@ -10,6 +10,9 @@
   recommendation logic without a documented user need and deliberate scope review. Equipment
   belongs in the actual monthly billed amount; technical criteria stay in linked comparison and
   technology guides.
+  V1 USAGE HELPERS: the visible calculation breakdown, reset control and copy action exist only
+  to verify and use the comparison. They do not authorize saved data, accounts, charts, URL
+  sharing or provider ranking.
   METHOD SOURCES: the CRTC Internet Code and the CRTC's official Internet performance
   page, checked 2026-08-13. They support separating promotional price, post-promotion
   price, one-time fees and credits; they do not provide default prices here.
@@ -150,6 +153,9 @@
     .form-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:20px; }
     .primary-btn { padding:12px 20px; border:0; border-radius:9px; background:var(--accent); color:#fff; cursor:pointer; font:inherit; font-weight:800; }
     .primary-btn:hover { background:var(--accent-dark); }
+    .secondary-btn { padding:11px 16px; border:1px solid var(--border); border-radius:9px; background:var(--surface); color:var(--text); cursor:pointer; font:inherit; font-weight:750; }
+    .secondary-btn:hover { border-color:var(--accent); color:var(--accent-dark); }
+    .secondary-btn:disabled { cursor:not-allowed; opacity:.55; }
     [data-calculator-error] { margin-top:15px; padding:12px 14px; border:1px solid color-mix(in srgb,var(--danger) 55%,var(--border)); border-radius:9px; background:var(--danger-bg); color:var(--danger); }
     [data-calculator-status] { color:var(--muted); font-size:.92rem; }
     [hidden] { display:none !important; }
@@ -162,6 +168,7 @@
     dt { color:var(--muted); }
     dd { margin:0; font-weight:750; text-align:right; }
     .total { color:var(--accent-dark); font-size:1.35rem; }
+    .breakdown { margin:12px 0 0; color:var(--muted); font-size:.82rem; overflow-wrap:anywhere; }
     .comparison-card { grid-column:1/-1; background:var(--soft-2); }
     .comparison-result { margin:0; font-size:1.1rem; font-weight:750; }
     .small { color:var(--muted); font-size:.9rem; }
@@ -242,14 +249,14 @@
             <div class="field"><label for="plan-b-credits">Credits or gift cards ($)</label><input id="plan-b-credits" data-field="credits" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 if none" /><p class="field-note">Account credit or gift card, subtracted once if eligible.</p></div>
           </div></fieldset>
         </div>
-        <div class="form-actions"><button class="primary-btn" type="submit">Calculate real cost</button><p data-calculator-status role="status" aria-live="polite">Enter both monthly prices to begin.</p></div>
+        <div class="form-actions"><button class="primary-btn" type="submit">Calculate real cost</button><button class="secondary-btn" type="button" data-reset-calculator>Reset</button><button class="secondary-btn" type="button" data-copy-result disabled>Copy result</button><p data-calculator-status role="status" aria-live="polite">Enter both monthly prices to begin.</p><p data-copy-status class="small" role="status" aria-live="polite"></p></div>
         <p data-calculator-error role="alert" hidden></p>
       </form>
       <section class="results" data-results aria-labelledby="results-title" hidden>
         <h2 id="results-title">Result over <span data-output="duration">12</span> months</h2>
         <div class="results-grid">
-          <article class="result-card" aria-labelledby="result-a-title"><h3 id="result-a-title"><span data-output="a-name">Plan A</span><span aria-hidden="true">Plan A</span></h3><dl><dt>Net total cost</dt><dd class="total" data-output="a-total">—</dd><dt>Effective monthly cost</dt><dd data-output="a-monthly">—</dd><dt>Monthly price after promotion</dt><dd data-output="a-regular">—</dd></dl></article>
-          <article class="result-card" aria-labelledby="result-b-title"><h3 id="result-b-title"><span data-output="b-name">Plan B</span><span aria-hidden="true">Plan B</span></h3><dl><dt>Net total cost</dt><dd class="total" data-output="b-total">—</dd><dt>Effective monthly cost</dt><dd data-output="b-monthly">—</dd><dt>Monthly price after promotion</dt><dd data-output="b-regular">—</dd></dl></article>
+          <article class="result-card" aria-labelledby="result-a-title"><h3 id="result-a-title"><span data-output="a-name">Plan A</span><span aria-hidden="true">Plan A</span></h3><dl><dt>Net total cost</dt><dd class="total" data-output="a-total">—</dd><dt>Effective monthly cost</dt><dd data-output="a-monthly">—</dd><dt>Monthly price after promotion</dt><dd data-output="a-regular">—</dd></dl><p class="breakdown" data-output="a-breakdown">Calculation: —</p></article>
+          <article class="result-card" aria-labelledby="result-b-title"><h3 id="result-b-title"><span data-output="b-name">Plan B</span><span aria-hidden="true">Plan B</span></h3><dl><dt>Net total cost</dt><dd class="total" data-output="b-total">—</dd><dt>Effective monthly cost</dt><dd data-output="b-monthly">—</dd><dt>Monthly price after promotion</dt><dd data-output="b-regular">—</dd></dl><p class="breakdown" data-output="b-breakdown">Calculation: —</p></article>
           <div class="comparison-card"><div class="section-label">How to read it</div><p class="comparison-result" data-output="comparison">Both plans have the same cost.</p><p class="small">This describes net cost over the selected period. Also check address availability, credit conditions, the contract and service quality; the <a href="https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/en/">FTTH, HFC and FTTN guide</a> covers the technical context.</p></div>
         </div>
       </section>

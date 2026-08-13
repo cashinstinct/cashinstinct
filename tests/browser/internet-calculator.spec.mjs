@@ -1,5 +1,9 @@
 import { test, expect } from "@playwright/test";
 
+test.beforeEach(async ({ context, baseURL }) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"], { origin: baseURL });
+});
+
 async function fillFrenchPlan(page, prefix, values) {
   await page.locator(`#plan-${prefix}-name`).fill(values.name);
   await page.locator(`#plan-${prefix}-promo`).fill(String(values.promo));
@@ -19,6 +23,7 @@ test("le calculateur FR accepte une durée personnalisée avec six champs par fo
   await expect(page.locator('[data-field="download"], [data-field="upload"], [data-field="technology"]')).toHaveCount(0);
   await expect(page.locator("#plan-a-regular")).toBeDisabled();
   await expect(page.locator("#plan-a-regular-help")).toContainText("Sans objet");
+  await expect(page.locator("[data-copy-result]")).toBeDisabled();
   await expect(page.locator('label[for="plan-a-fees"]')).toContainText("installation, activation, résiliation");
   await expect(page.locator("#plan-a-credits + .field-note")).toContainText("soustrait une seule fois");
 
@@ -45,8 +50,21 @@ test("le calculateur FR accepte une durée personnalisée avec six champs par fo
   await expect(page.locator("[data-output='duration']")).toHaveText("24");
   await expect(page.locator("[data-output='a-total']")).toHaveText(/1.*160/);
   await expect(page.locator("[data-output='a-regular']")).toContainText("80");
+  await expect(page.locator("[data-output='a-breakdown']")).toContainText("24");
+  await expect(page.locator("[data-output='a-breakdown']")).toContainText("100");
   await expect(page.locator("[data-output='comparison']")).toContainText("Offre A");
   await expect(page.locator("[data-results]")).not.toContainText("vitesses et la technologie");
+
+  await page.getByRole("button", { name: "Copier le résultat" }).click();
+  await expect(page.locator("[data-copy-status]")).toContainText("copié");
+  const copiedText = await page.evaluate(() => navigator.clipboard.readText());
+  expect(copiedText).toContain("Offre A");
+  expect(copiedText).toContain("1 160,00 $");
+  await page.getByRole("button", { name: "Réinitialiser" }).click();
+  await expect(page.locator("[data-results]")).toBeHidden();
+  await expect(page.locator("#plan-a-promo")).toHaveValue("");
+  await expect(page.locator("#duration-months")).toHaveValue("12");
+  await expect(page.locator("[data-copy-result]")).toBeDisabled();
 });
 
 test("the English calculator exposes the same six-field workflow", async ({ page }) => {
@@ -70,5 +88,9 @@ test("the English calculator exposes the same six-field workflow", async ({ page
   await expect(page.locator("[data-output='duration']")).toHaveText("36");
   await expect(page.locator("[data-output='a-total']")).toContainText("2,340");
   await expect(page.locator("[data-output='b-total']")).toContainText("1,800");
+  await expect(page.locator("[data-output='a-breakdown']")).toContainText("Calculation");
+  await page.getByRole("button", { name: "Reset" }).click();
+  await expect(page.locator("[data-results]")).toBeHidden();
+  await expect(page.locator("[data-copy-result]")).toBeDisabled();
   await expect(page.locator("[data-results]")).not.toContainText("Speed and technology");
 });

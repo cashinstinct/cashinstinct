@@ -4,7 +4,8 @@ import {
   MAX_DURATION_MONTHS,
   calculatePlanCost,
   comparePlans,
-  formatCurrency
+  formatCurrency,
+  formatPlanBreakdown
 } from "../../internet-cout-reel/calculator.js";
 
 test("calcule un prix permanent à partir du montant mensuel réel", () => {
@@ -66,4 +67,20 @@ test("refuse des frais ponctuels négatifs", () => {
 test("préserve la lisibilité monétaire canadienne", () => {
   assert.match(formatCurrency(1234.5, "fr-CA"), /1.*234,50/);
   assert.match(formatCurrency(1234.5, "en-CA"), /1,234\.50/);
+});
+
+test("rend une décomposition vérifiable sans modifier le calcul", () => {
+  const result = calculatePlanCost({
+    promoPrice: 50,
+    promoMonths: 12,
+    regularPrice: 80,
+    credits: 250
+  }, 24);
+
+  const breakdown = formatPlanBreakdown(result, "en-CA", "en");
+  assert.match(breakdown, /12.*50\.00/);
+  assert.match(breakdown, /\+/);
+  assert.match(breakdown, /12.*80\.00/);
+  assert.match(breakdown, /250\.00/);
+  assert.match(breakdown, /1,310\.00/);
 });
