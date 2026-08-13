@@ -61,6 +61,12 @@ footer et `lastmod` restent statiques; ne pas les changer sans révision
 éditoriale réelle et sans vérifier les surfaces liées. Ne pas supprimer ni
 contourner un commentaire de maintenance pour simplifier une page.
 
+Avant toute mise à jour factuelle, promotionnelle ou de programme, consulter
+[`docs/maintenance-watch.md`](docs/maintenance-watch.md). Lorsqu’une
+affirmation maintenue y est modifiée, vérifier et synchroniser aussi
+[`llms.txt`](llms.txt), qui est une surface éditoriale publique synthétique;
+ne pas recopier le calendrier dans `AGENTS.md`.
+
 Une erreur 404/410 de lien externe ou une erreur bloquante d’audit doit être
 traitée. Un timeout, un 403/429 ou une réponse serveur incertaine reste une
 incertitude à documenter et à revoir, pas une preuve automatique que la page
