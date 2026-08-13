@@ -23,6 +23,7 @@ llms.txt synchronization audit: August 13, 2026 / Audit de synchronisation de ll
 ## Guides / Guides pédagogiques
 
 - [FTTH vs HFC vs FTTN — fibre, câble ou DSL](https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/en/): Neutral evergreen guide to fixed-access technologies in Canada. It contains no prices, plans, referral codes, or provider promotion; it explains the last-mile distinction and the limits of claims about upload, ping, Wi-Fi, and real-world experience. Guides: [EN](https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/en/) · [FR](https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/)
+- [The Real Value of a Promotion / Valeur réelle d’une promotion](https://cashinstinct.ca/valeur-reelle-promotion-canada/fr/): A bilingual methodology guide based on documented Canadian case studies. It distinguishes announced value, usable value, real value, incremental costs and eligibility conditions; it is not a provider ranking, referral-code list or calculator. Guides: [FR](https://cashinstinct.ca/valeur-reelle-promotion-canada/fr/) · [EN](https://cashinstinct.ca/real-value-canadian-promotion/en/)
 
 ## Comparison guides / Comparatifs
 

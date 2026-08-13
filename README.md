@@ -28,9 +28,13 @@ Site : [cashinstinct.ca](https://cashinstinct.ca/)
 - Comparatifs Internet : [EBOX, Fizz et oxio](https://cashinstinct.ca/ebox-vs-fizz-vs-oxio/fr/),
   [EBOX, Bell et Vidéotron](https://cashinstinct.ca/ebox-vs-bell-vs-videotron/fr/) et
   [FTTH, HFC et FTTN](https://cashinstinct.ca/ftth-vs-hfc-vs-fttn/fr/).
-- Outils et guides spécialisés : [valeur des points](https://cashinstinct.ca/valeur-points/fr/)
-  et [Refundable Hotel Trick](https://cashinstinct.ca/rht/fr/).
-- Méthodologie : [À propos de Cash Instinct](https://cashinstinct.ca/about/fr/).
+- Outils et guides spécialisés : [valeur des points](https://cashinstinct.ca/valeur-points/fr/),
+  le [calculateur de coût Internet réel](https://cashinstinct.ca/internet-cout-reel/fr/) — un outil
+  monétaire permettant de comparer le coût réel de deux offres saisies par l’utilisateur — et
+  [Refundable Hotel Trick](https://cashinstinct.ca/rht/fr/).
+- Méthodologie : [À propos de Cash Instinct](https://cashinstinct.ca/about/fr/) et [valeur réelle
+  d’une promotion](https://cashinstinct.ca/valeur-reelle-promotion-canada/fr/) — un guide fondé sur
+  des études de cas documentées pour distinguer valeur annoncée, valeur utilisable et valeur réelle.
 
 La page [d'accueil française](https://cashinstinct.ca/) et la [page d'accueil
 anglaise](https://cashinstinct.ca/en/) servent d'annuaires. Les chemins
