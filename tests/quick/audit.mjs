@@ -411,7 +411,7 @@ for (const page of pages) {
         warning(
           "schema.offer-price-deferred",
           page,
-          `Offer.price=${JSON.stringify(node.price)} doit être revu dans le chantier I-01.`,
+          `Offer.price=${JSON.stringify(node.price)} doit être vérifié selon le contexte de l'offre.`,
           scriptLine
         );
       }

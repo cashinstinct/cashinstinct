@@ -45,11 +45,6 @@ export function expectedXDefault(pathname) {
 
 export const intentionalExceptions = [
   {
-    rule: "schema.offer-price-deferred",
-    description:
-      "I-01 est volontairement reporté : Offer.price demeure un avertissement sur les pages de parrainage."
-  },
-  {
     rule: "html.style-preferences",
     description:
       "prefer-native-element, tel-non-breaking et les préférences de formatage ne bloquent pas les audits."

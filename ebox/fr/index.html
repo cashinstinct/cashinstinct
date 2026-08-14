@@ -2,7 +2,7 @@
 <!--
 ═══════════════════════════════════════════════════════════════════════════════
   CASHINSTINCT.CA — EBOX — PAGE FR (Québec + Ontario) état : PROMO ACTIVE
-  Dernière révision éditoriale : 10 août 2026
+  Dernière révision éditoriale : 14 août 2026
 ───────────────────────────────────────────────────────────────────────────────
   POUR LA PROCHAINE IA QUI ÉDITE CETTE PAGE — lire avant de toucher :
 
@@ -64,11 +64,10 @@
   • dateModified : codé EN DUR dans le head, à mettre à jour au push (le JS n'y
     touche plus — corrigé juin 2026 car l'injection client-side était invisible
     aux crawlers en passe brute). Les <time> footer/trust restent auto-JS (visuel).
-  • Product/Offer est une représentation historique destinée à décrire le crédit
-    GE911 sans faire passer 25 $ pour le prix du service Internet. Ne pas modifier
-    automatiquement. Lors du chantier I-01 sur Offer.price, réévaluer si Offer
-    reste approprié; ne jamais représenter le crédit de 25 $ comme le prix du
-    forfait.
+  • FACTURATION — les modalités de service du 23 juin 2026 indiquent que les
+    frais du forfait mensuel sont facturés à l'avance. La FAQ q14 explique que
+    le premier paiement peut donc différer d'un mois normal et que le crédit
+    GE911 arrive normalement sur la deuxième facture.
 
    ESPACES INSÉCABLES (coupures mobile FR)
   • Coller chiffre + unité/symbole/mois avec &nbsp; dans le TEXTE VISIBLE :
@@ -151,7 +150,7 @@
       "inLanguage": "fr-CA",
       "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
       "datePublished": "2026-06-02",
-      "dateModified": "2026-08-10",
+      "dateModified": "2026-08-14",
       "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
       "publisher": {
         "@type": "Organization",
@@ -167,33 +166,6 @@
         { "@type": "ListItem", "position": 2, "name": "Internet", "item": "https://cashinstinct.ca/#internet" },
         { "@type": "ListItem", "position": 3, "name": "EBOX", "item": "https://cashinstinct.ca/ebox/fr/" }
       ]
-    },
-    {
-      "@type": "Product",
-      "@id": "https://cashinstinct.ca/ebox/fr/#product",
-      "name": "EBOX Internet Résidentiel",
-      "brand": { "@type": "Brand", "name": "EBOX" },
-      "description": "Service Internet résidentiel EBOX au Québec et en Ontario avec une offre de parrainage donnant un crédit de 25 $ sur la 2e facture pour les nouveaux clients utilisant le code GE911.",
-      "category": "Internet Service Provider",
-      "image": "https://cashinstinct.ca/ebox/fr/og.png",
-      "offers": {
-        "@type": "Offer",
-        "name": "Crédit de parrainage EBOX (code GE911)",
-        "description": "L'utilisation du code parrain GE911 à l'inscription applique un crédit de 25 $ sur la deuxième facture pour les nouveaux clients résidentiels d'EBOX admissibles au Québec et en Ontario. Aucun coût initial (installation à 0 $, modem inclus); le tarif mensuel Internet est fixé par EBOX et varie selon le forfait.",
-        "price": "0",
-        "priceCurrency": "CAD",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "0",
-          "priceCurrency": "CAD",
-          "description": "Aucun coût initial pour s'abonner avec le code GE911. Le crédit de parrainage de 25 $ est appliqué sur la deuxième facture. Le tarif mensuel du forfait est fixé par EBOX."
-        },
-        "availability": "https://schema.org/InStock",
-        "eligibleRegion": [
-          { "@type": "AdministrativeArea", "name": "Quebec" },
-          { "@type": "AdministrativeArea", "name": "Ontario" }
-        ]
-      }
     },
     {
       "@type": "HowTo",
@@ -300,6 +272,11 @@
           "@type": "Question",
           "name": "EBOX effectue-t-elle une vérification de crédit ?",
           "acceptedAnswer": { "@type": "Answer", "text": "Oui. EBOX exige une vérification de crédit lors de l'inscription. Dans mon cas, il s'agissait d'une vérification souple (« soft check »), qui n'a pas créé d'enquête ferme à mon dossier de crédit. Les modalités officielles d'EBOX ne garantissent toutefois pas explicitement qu'il s'agit toujours d'une vérification souple." }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi ma première facture EBOX peut-elle sembler étrange ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "EBOX facture ses services mensuels à l'avance. Selon les dates de commande, d'activation et de facturation, le premier paiement ou la première facture peut donc différer d'un mois normal. Le crédit de parrainage de 25 $ n'est pas appliqué à cette première facture : il est normalement porté à la deuxième facture des nouveaux clients admissibles." }
         }
       ]
     },
@@ -1031,7 +1008,7 @@
           <br><br>
           EBOX offre aussi temporairement une <strong>carte prépayée de 100&nbsp;$</strong> avec les forfaits Fibre 500&nbsp;Mbit/s et 1&nbsp;Gbit/s admissibles jusqu'au 6 septembre 2026. Les deux mécanismes distincts peuvent représenter <strong>jusqu'à 125&nbsp;$ de valeur</strong> lorsque les conditions applicables à chacun sont remplies.
         </div>
-          <p class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-08-10">10&nbsp;août&nbsp;2026</time></p>
+          <p class="last-updated">Mis à jour le <time id="trust-date" datetime="2026-08-14">14&nbsp;août&nbsp;2026</time></p>
         </section>
 
         <aside class="confidence-decision-card" aria-labelledby="confidence-decision-title">
@@ -1621,6 +1598,12 @@
                 <p>Oui. EBOX exige une vérification de crédit lors de l'inscription. Dans mon cas, il s'agissait d'une vérification souple («&nbsp;soft check&nbsp;»), qui n'a pas créé d'enquête ferme à mon dossier de crédit. Les modalités officielles d'EBOX ne garantissent toutefois pas explicitement qu'il s'agit toujours d'une vérification souple.</p>
               </div>
             </details>
+            <details>
+              <summary id="faq-q14">Pourquoi ma première facture EBOX peut-elle sembler étrange&nbsp;?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q14">
+                <p>EBOX facture ses services mensuels à l'avance. Selon les dates de commande, d'activation et de facturation, le premier paiement ou la première facture peut donc différer d'un mois normal. Le crédit de parrainage de 25&nbsp;$ n'est pas appliqué à cette première facture&nbsp;: il est normalement porté à la deuxième facture des nouveaux clients admissibles.</p>
+              </div>
+            </details>
           </div>
         </section>
 
@@ -1673,7 +1656,7 @@
   <footer>
     <div class="container">
       <p>Site non affilié officiellement à EBOX. Les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
-      <p style="margin-top:6px;">Code client EBOX : <code>GE911</code> — Mis à jour : <time id="footer-date" datetime="2026-08-10">10&nbsp;août&nbsp;2026</time></p>
+      <p style="margin-top:6px;">Code client EBOX : <code>GE911</code> — Mis à jour : <time id="footer-date" datetime="2026-08-14">14&nbsp;août&nbsp;2026</time></p>
     </div>
 
     <nav class="footer-hub" aria-label="Liens du site">

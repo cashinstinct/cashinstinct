@@ -2,7 +2,7 @@
 <!--
 ═══════════════════════════════════════════════════════════════════════════════
   CASHINSTINCT.CA — EBOX — ENGLISH PAGE (QC + ON)   STATUS: ACTIVE PROMOTION
-  Last editorial review: August 10, 2026
+  Last editorial review: August 14, 2026
 ───────────────────────────────────────────────────────────────────────────────
   MAINTENANCE NOTES — READ BEFORE EDITING
   • GE911 is the referral code presented on this page. It gives eligible new
@@ -37,10 +37,9 @@
     Keep “up to $125 in value” conditional; never turn it into a guaranteed
     $125. If a later terms page conflicts with the flow, recheck the exact
     provincial path rather than a generic or expired EBOX page.
-  • Product/Offer is a historical representation of the GE911 referral credit,
-    not the Internet plan price. Do not modify it automatically. During the
-    I-01 Offer.price work, reassess whether Offer remains appropriate; never
-    represent the $25 credit as the price of the Internet plan.
+  • BILLING — the June 23, 2026 terms state that monthly plan charges are billed
+    in advance. FAQ q14 explains that the initial payment may therefore differ
+    from a normal monthly bill and that GE911 normally arrives on bill two.
   • The hero cumulative badge is hidden by default and shown only while
     PROMO_CUMUL_100_ACTIVE is true and the $100 promotion has not expired.
   • The countdown is active with PROMO_END at September 7, 2026, 00:00 Eastern.
@@ -119,7 +118,7 @@
       "inLanguage": "en-CA",
       "isPartOf": { "@id": "https://cashinstinct.ca/#website" },
       "datePublished": "2026-06-02",
-      "dateModified": "2026-08-10",
+      "dateModified": "2026-08-14",
       "author": { "@type": "Organization", "name": "Cash Instinct", "url": "https://cashinstinct.ca/" },
       "publisher": {
         "@type": "Organization",
@@ -138,33 +137,6 @@
         { "@type": "ListItem", "position": 2, "name": "Internet", "item": "https://cashinstinct.ca/en/#internet" },
         { "@type": "ListItem", "position": 3, "name": "EBOX", "item": "https://cashinstinct.ca/ebox/en/" }
       ]
-    },
-    {
-      "@type": "Product",
-      "@id": "https://cashinstinct.ca/ebox/en/#product",
-      "name": "EBOX Residential Internet",
-      "brand": { "@type": "Brand", "name": "EBOX" },
-      "description": "EBOX residential Internet service in Quebec and Ontario with a referral offer giving a $25 credit on the 2nd bill for eligible new customers using client number GE911.",
-      "category": "Internet Service Provider",
-      "image": "https://cashinstinct.ca/ebox/en/og.png",
-      "offers": {
-        "@type": "Offer",
-        "name": "EBOX referral credit (code GE911)",
-        "description": "Using referral code GE911 at sign-up provides a $25 credit on the second bill for eligible new EBOX residential customers in Quebec and Ontario. The referral code itself has no purchase price; monthly Internet pricing is set by EBOX and varies by plan.",
-        "price": "0",
-        "priceCurrency": "CAD",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "0",
-          "priceCurrency": "CAD",
-          "description": "The referral code itself has no purchase price. The $25 referral credit is applied on the second bill for eligible customers. Monthly service pricing is determined by EBOX according to the selected plan."
-        },
-        "availability": "https://schema.org/InStock",
-        "eligibleRegion": [
-          { "@type": "AdministrativeArea", "name": "Quebec" },
-          { "@type": "AdministrativeArea", "name": "Ontario" }
-        ]
-      }
     },
     {
       "@type": "HowTo",
@@ -271,6 +243,11 @@
           "@type": "Question",
           "name": "Does EBOX perform a credit check?",
           "acceptedAnswer": { "@type": "Answer", "text": "Yes. EBOX requires a credit check during sign-up. In my case, it was a soft credit check and no hard inquiry appeared on my credit report. However, EBOX’s official terms do not explicitly guarantee that every credit check will be a soft inquiry." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why can my first EBOX bill look unusual?",
+          "acceptedAnswer": { "@type": "Answer", "text": "EBOX bills its monthly services in advance. Depending on the order, activation and billing dates, the initial payment or first bill may therefore differ from a normal monthly bill. The $25 referral credit is not applied to the first bill; it is normally applied to the eligible new customer's second bill." }
         }
       ]
     },
@@ -1045,7 +1022,7 @@
           <br><br>
           EBOX is also offering a limited-time <strong>$100 prepaid card</strong> with eligible 500 Mbps and 1 Gbps Fibre plans through September 6, 2026. The two separate mechanisms can represent <strong>up to $125 in value</strong> when the applicable conditions for both are met.
         </div>
-          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-08-10">August&nbsp;10, 2026</time></p>
+          <p class="last-updated">Last updated: <time id="trust-date" datetime="2026-08-14">August&nbsp;14, 2026</time></p>
 
           <aside class="confidence-decision-card" aria-labelledby="confidence-decision-title">
             <div class="confidence-card-head">
@@ -1602,6 +1579,12 @@
                 <p>Yes. EBOX requires a credit check during sign-up. In my case, it was a soft credit check and no hard inquiry appeared on my credit report. However, EBOX’s official terms do not explicitly guarantee that every credit check will be a soft inquiry.</p>
               </div>
             </details>
+            <details>
+              <summary id="faq-q14">Why can my first EBOX bill look unusual?</summary>
+              <div class="faq-body" role="region" aria-labelledby="faq-q14">
+                <p>EBOX bills its monthly services in advance. Depending on the order, activation and billing dates, the initial payment or first bill may therefore differ from a normal monthly bill. The $25 referral credit is not applied to the first bill; it is normally applied to the eligible new customer's second bill.</p>
+              </div>
+            </details>
           </div>
         </section>
 
@@ -1654,7 +1637,7 @@
     <div class="container">
       <p>This site is not officially affiliated with EBOX. Trademarks belong to their respective owners.</p>
       <!-- utilise l'id footer-date que le JS attend -->
-      <p style="margin-top:6px;">EBOX referral code: <code>GE911</code> — Updated: <time id="footer-date" datetime="2026-08-10">August&nbsp;10, 2026</time></p>
+      <p style="margin-top:6px;">EBOX referral code: <code>GE911</code> — Updated: <time id="footer-date" datetime="2026-08-14">August&nbsp;14, 2026</time></p>
     </div>
 
     <nav class="footer-hub" aria-label="Site links">

@@ -50,8 +50,7 @@ Surfaces à revérifier :
 
 - hero, résumé, `#promo-100`, admissibilité, détails et FAQ visibles;
 - `<title>`, meta description, Open Graph, Twitter, canonical et hreflang;
-- `WebPage`/`FAQPage` JSON-LD et le traitement historique `Product/Offer` de
-  GE911;
+- `WebPage`/`FAQPage` JSON-LD et les données structurées présentes;
 - `PROMO_ACTIVE`, `PROMO_CUMUL_100_ACTIVE`, `PROMO_END`, compte à rebours et
   blocs masqués;
 - HTML brut et JSON-LD après expiration : masquer le compteur ne retire pas
@@ -63,8 +62,8 @@ Décision :
 - **prolongée/remplacée** : vérifier les nouvelles conditions puis synchroniser
   toutes les surfaces FR/EN et `llms.txt`;
 - **terminée** : retirer ou qualifier toutes les mentions de 100 $/125 $,
-  masquer le bloc promotionnel, conserver GE911 et ne pas modifier
-  automatiquement son `Product/Offer` historique.
+  masquer le bloc promotionnel et conserver GE911 après revalidation de ses
+  conditions indépendantes.
 
 ### M-02 — Tangerine, prime de paie de 250 $
 
