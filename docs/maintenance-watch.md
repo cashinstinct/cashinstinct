@@ -107,6 +107,22 @@ Cette note est strictement destinée à la maintenance interne. Aucun détail su
 le quota, la clé habituelle ou la gestion interne des clés ne doit apparaître
 dans le contenu public. Aucun changement automatique planifié n’est autorisé.
 
+### Tangerine — suivi post-correction de cohérence
+
+- **Nature de l’intervention :** correction éditoriale ciblée du champ combiné
+  « Clé Orange / Code promotionnel » et synchronisation de la FAQ FR/EN avec
+  FAQPage; aucune promesse de gain de classement, d’impressions ou de clics.
+- **Révision GSC suggérée :** environ quatre semaines après publication,
+  comparer les clics, impressions, position moyenne et CTR des pages FR/EN
+  ainsi que les requêtes Tangerine déjà observées. Cette évolution sera un
+  signal à analyser, pas un effet automatiquement attribué à la correction.
+- **Idées reportées :** ne pas construire maintenant le calculateur
+  d’échéancier, le guide sur les dépôts de paie, le comparatif bancaire ou le
+  guide de dépannage. Réévaluer ces idées seulement si les données GSC ou les
+  questions des utilisateurs démontrent un besoin durable.
+- **Veille concurrentielle :** omise de cette note, qui est déployée
+  publiquement; aucun détail concurrentiel sensible ne doit y être ajouté.
+
 ### M-03 — Tangerine, taux promotionnels d’épargne
 
 **Dernière vérification locale enregistrée :** 2026-08-05
