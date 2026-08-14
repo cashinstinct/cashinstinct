@@ -84,7 +84,28 @@ de versement.
 Surfaces à revérifier : titres et métadonnées, résumé, carte de l’offre,
 tableau, étapes, calculatrice, divulgation, 16 FAQ visibles et `FAQPage`, quatre
 étapes et `HowTo`, ainsi que l’entrée Tangerine de `llms.txt`. La Clé Orange
-14130944S1 de 50 $ reste une offre indépendante.
+28709877S1 de 50 $ reste une offre indépendante.
+
+### Continuité de la clé Orange — maintenance interne
+
+- **Clé habituelle du propriétaire :** `14130944S1` (valeur présente sur le
+  site avant la bascule du 2026-08-13).
+- **Clé temporaire utilisée en 2026 :** `28709877S1`.
+- **Raison interne :** le quota annuel de la clé habituelle est atteint pour
+  2026.
+- **Date du changement :** 2026-08-13.
+- **Révision prévue :** avril 2027.
+- **Action prévue :** vérifier manuellement la validité de la clé habituelle,
+  son quota 2027, les conditions et montants Tangerine ainsi que l’exactitude
+  de la divulgation, puis remettre la clé habituelle partout si elle est de
+  nouveau admissible.
+- **Conservation :** les anciennes images contenant `14130944S1` ne sont pas
+  déployées publiquement. La valeur et les assets restent récupérables dans
+  l’historique Git de la révision précédant la bascule.
+
+Cette note est strictement destinée à la maintenance interne. Aucun détail sur
+le quota, la clé habituelle ou la gestion interne des clés ne doit apparaître
+dans le contenu public. Aucun changement automatique planifié n’est autorisé.
 
 ### M-03 — Tangerine, taux promotionnels d’épargne
 

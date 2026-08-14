@@ -14,7 +14,7 @@ export const referralCodes = new Map([
   ["ebox", "GE911"],
   ["hp-instant-ink", "SVdn7"],
   ["stickermule", "CASHINSTINCT"],
-  ["tangerine", "14130944S1"]
+  ["tangerine", "28709877S1"]
 ]);
 
 const englishDefaults = new Set([
