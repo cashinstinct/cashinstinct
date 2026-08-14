@@ -33,7 +33,7 @@ Statuts utilisés : `active`, `à vérifier le [date]`, `conditionnelle` et
 
 ### M-01 — EBOX, carte prépayée de 100 $
 
-**Dernière vérification locale enregistrée :** 2026-08-10
+**Dernière vérification locale enregistrée :** 2026-08-14
 
 **Sources officielles à recharger :**
 
