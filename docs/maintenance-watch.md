@@ -175,12 +175,37 @@ après une modification du parcours fournisseur ou selon la cadence indiquée.
 | Swagbucks | `active` — mensuel ou changement du catalogue/bonus | 10 $/1 000 SB, achat unique d’au moins 25 $, au moins 25 SB, 30 jours, exclusions et séparation du 300 SB conflictuel; surfaces FR/EN, homepages et `llms.txt`. |
 | HP Instant Ink | `active` — trimestriel ou changement du parcours | Parcours public et compte connecté séparément, 1 mois, code SVdn7, plans, expiration publique; surfaces FR/EN, homepages et `llms.txt`. |
 | Sticker Mule | `active` — trimestriel ou changement du flux | Montants régionaux, minimums, champ de parrainage, durée des crédits et conditions de cumul; surfaces FR/EN, homepages et `llms.txt`. |
-| Chexy | `conditionnelle` — trimestriel ou changement de source | Confirmer le 20 $ contre toute surface officielle affichant 15 $, en arbitrant l’article 2026 du centre d’aide, la landing publique et la preuve de compte selon la surface/parcours applicable; vérifier lien, premier paiement complété, frais et distinction du code promo. Ne pas rétrograder le contenu actuel sans nouvelle preuve arbitrée. |
+| Chexy | `conditionnelle` — trimestriel ou changement de source | Confirmer le 20 $ contre toute surface officielle affichant 15 $, en arbitrant l’article 2026 du centre d’aide, la landing publique et la preuve de compte selon la surface/parcours applicable; vérifier lien, premier paiement complété, frais et distinction du code promo. Depuis l’annonce Chexy du 2026-08-17, contrôler aussi le changement Scotia Momentum Visa Infinite+ du 2026-10-22 et les catégories touchées. |
 | Comparatifs Internet | `active` — audit GSC mensuel ou changement fournisseur | Prix, vitesses, technologie, couverture, matériel, promotions, adresse, date de relevé, contradictions officielles et snapshots historiques; synchroniser `llms.txt`. |
 
 Les pages `ftth-vs-hfc-vs-fttn`, `valeur-points` et `rht` sont hors calendrier
 promotionnel : les revoir lorsqu’une définition, une source, un taux officiel
 ou une expérience documentée change.
+
+### Chexy — changement de remise Scotia Momentum Visa Infinite+
+
+**Dernière vérification locale enregistrée :** 2026-08-17
+
+**Source officielle :** [Chexy Insider — changement du 22 octobre 2026](https://chexy.co/insider/changes-to-cashback-rewards-for-the-scotiabank-momentum-visa-infinite-on-oct-22-2026)
+
+Chexy annonce que le taux de remise de la Scotia Momentum Visa Infinite+ passe
+de 4 % à 1 % à partir du 22 octobre 2026 pour le loyer, les dépenses du
+ménage, les frais de condo/strata, les taxes foncières et l'impôt (ARC et
+Revenu Québec). Les services publics, le financement automobile, la garderie,
+les frais de scolarité, l'assurance, le bien-être et les télécommunications
+restent annoncés à 4 %. La date de débit de la carte, et non l'échéance du
+paiement, détermine le taux.
+
+**Décision :** le calculateur conserve l'exemple générique d'une carte qui
+rapporte 2 % sur la catégorie concernée, mais les pages FR/EN signalent que la
+Scotia Momentum n'est plus un exemple optimal pour les catégories passées à
+1 %. Au tarif Chexy de base de 1,75 %, le rendement devient −0,75 % avant
+intérêts et impôts pour ces paiements. Ce changement ne rend pas Chexy
+globalement non rentable : d'autres cartes peuvent encore rapporter 2 % ou 3 %
+selon la catégorie et les conditions. Revalider les catégories, taux, plafonds
+et cartes de remplacement avant le 22 octobre; ne pas présenter les
+suggestions de Chexy comme une recommandation indépendante sans audit des
+émetteurs.
 
 ## Surfaces communes à traiter
 
