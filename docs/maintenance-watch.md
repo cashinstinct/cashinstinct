@@ -171,8 +171,8 @@ après une modification du parcours fournisseur ou selon la cadence indiquée.
 
 | Programme | Statut / cadence | Contrôles minimums |
 | --- | --- | --- |
-| Rakuten Canada | `active` — mensuel ou changement du parcours | 30 $, lien, premier achat admissible, conditions, FAQ/HowTo, métadonnées, date de vérification; surfaces FR/EN, homepages et `llms.txt`. |
-| Swagbucks | `active` — mensuel ou changement du catalogue/bonus | 10 $/1 000 SB, achat unique d’au moins 25 $, au moins 25 SB, 30 jours et exclusions; le 300 SB du parrain est soutenu par l’article officiel 205640984 et la preuve du compte vérifiée le 18 août 2026, tandis que la question du 300 SB du filleul reste distincte; surfaces FR/EN, homepages et `llms.txt`. |
+| Rakuten Canada | `active` — promotion vérifiée le 2026-08-18; revoir après le 2026-08-25 ou au changement du parcours | Promotion 40 $ du 18 au 25 août 2026, inscription pendant la fenêtre, achats totalisant 40 $ et générant du Cash Back dans les 90 jours, lien, conditions, FAQ/HowTo, métadonnées, date de vérification et compteur; surfaces FR/EN, homepages et `llms.txt`. |
+| Swagbucks | `active` — mensuel ou changement du catalogue/bonus | 10 $/1 000 SB, achat unique d’au moins 25 $, au moins 25 SB, 30 jours, exclusions et séparation du 300 SB conflictuel; surfaces FR/EN, homepages et `llms.txt`. |
 | HP Instant Ink | `active` — trimestriel ou changement du parcours | Parcours public et compte connecté séparément, 1 mois, code SVdn7, plans, expiration publique; surfaces FR/EN, homepages et `llms.txt`. |
 | Sticker Mule | `active` — trimestriel ou changement du flux | Montants régionaux, minimums, champ de parrainage, durée des crédits et conditions de cumul; surfaces FR/EN, homepages et `llms.txt`. |
 | Chexy | `conditionnelle` — trimestriel ou changement de source | Confirmer le 20 $ contre toute surface officielle affichant 15 $, en arbitrant l’article 2026 du centre d’aide, la landing publique et la preuve de compte selon la surface/parcours applicable; vérifier lien, premier paiement complété, frais et distinction du code promo. Depuis l’annonce Chexy du 2026-08-17, contrôler aussi le changement Scotia Momentum Visa Infinite+ du 2026-10-22 et les catégories touchées. |
@@ -181,6 +181,32 @@ après une modification du parcours fournisseur ou selon la cadence indiquée.
 Les pages `ftth-vs-hfc-vs-fttn`, `valeur-points` et `rht` sont hors calendrier
 promotionnel : les revoir lorsqu’une définition, une source, un taux officiel
 ou une expérience documentée change.
+
+### Rakuten Canada — promotion temporaire de 40 $
+
+**Dernière vérification locale enregistrée :** 2026-08-18
+
+**Sources consultées :** [parcours de parrainage Rakuten Canada](https://www.rakuten.ca/member/refer-a-friend) et visuel de promotion fourni dans le parcours membre; le lien public redirige vers la connexion lorsqu’il n’est pas authentifié.
+
+**Faits maintenus :** la fenêtre d’inscription va du 18 août à 00 h 00 au
+25 août 2026 à 23 h 59, heure de l’Est. Le visuel indique 40 $ pour le nouveau
+membre et la personne qui l’invite. Le texte juridique reproduit confirme
+explicitement 40 $ au membre qui parraine une recommandation admissible lorsque
+les achats de la personne recommandée totalisent au moins 40 $ et génèrent du
+Cash Back dans les 90 jours suivant l’inscription. Il rappelle aussi le suivi
+par lien, l’interdiction de l’auto-parrainage et le délai possible de 3 à 4
+semaines avant l’approbation du bonus.
+
+**Décision :** publier une mention temporaire et un compteur jusqu’au
+2026-08-26 à 00 h 00 (HE), en distinguant clairement la fin de la fenêtre
+d’inscription du délai d’achat de 90 jours. Après expiration, vérifier le
+montant affiché par Rakuten avant de conserver, remplacer ou retirer le 40 $.
+L’état expiré masque le compteur, neutralise les CTA 40 $ du hero et de fin de
+page, puis masque le sticky; cette protection automatique ne remplace pas la
+revue des mentions historiques et des modalités.
+Contrôler les deux pages, les cartes d’accueil, les visuels OG, `llms.txt`, les
+FAQ/HowTo et les métadonnées; ne pas présenter la prime versée à Cash Instinct
+comme un avantage pour le lecteur.
 
 ### Chexy — changement de remise Scotia Momentum Visa Infinite+
 
